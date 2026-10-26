@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Adaptive swipe learning (Swipe typing > Adaptive swipe learning) -->
+    <string name="adaptive_swipe_title">Adaptive swipe learning</string>
+    <string name="adaptive_swipe_nav_subtitle">Learns where you really swipe over each key, so your swipes are read more accurately over time</string>
+    <string name="adaptive_swipe_toggle_title">Learn from my swiping</string>
+    <string name="adaptive_swipe_toggle_subtitle">Learns where your swipes start, end and turn for each key, and adjusts new swipes to match before they are read.</string>
+    <string name="adaptive_swipe_strength">Strength</string>
+    <string name="adaptive_swipe_strength_subtitle">How quickly it trusts what it learned, and how far it adjusts your swipes. Stronger adapts sooner and more.</string>
+    <string name="adaptive_swipe_strength_gentlest">Gentlest</string>
+    <string name="adaptive_swipe_strength_gentle">Gentle</string>
+    <string name="adaptive_swipe_strength_default">Default</string>
+    <string name="adaptive_swipe_strength_strong">Strong</string>
+    <string name="adaptive_swipe_strength_strongest">Strongest</string>
+    <string name="adaptive_swipe_explanation">It learns from swipes you keep, and from swipes you fix (delete and swipe again, pick another suggestion, or go back and change the word). A fix only counts when your swipe really went over every letter of the new word, so a botched swipe is never learned. Only per-key positions are saved, never words or swipe paths, and never from password or incognito fields.</string>
+    <string name="adaptive_swipe_disabled">Adaptive swipe learning is off. What it learned is kept, but not used or updated.</string>
+    <string name="adaptive_swipe_learned">Swipe points learned: %1$d</string>
+    <string name="adaptive_swipe_view_heatmap">See what it learned</string>
+    <string name="adaptive_swipe_view_heatmap_subtitle">Swipe profiles show up in the typing heatmap, marked \"swipe\"</string>
+    <string name="adaptive_swipe_reset">Reset swipe learning</string>
+    <string name="adaptive_swipe_reset_confirm_title">Reset adaptive swipe learning?</string>
+    <string name="adaptive_swipe_reset_confirm_body">This deletes everything Pluto has learned about how you swipe. What it learned from your taps is kept. It can\'t be undone.</string>
+    <string name="typing_heatmap_swipe">swipe</string>
+    <string name="typing_heatmap_total_swipe_points">Swipe points learned: %1$d</string>
+</resources>

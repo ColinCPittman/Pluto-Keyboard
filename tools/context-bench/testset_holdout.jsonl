@@ -1,0 +1,84 @@
+{"id": "hsa01", "option": "soundalike", "cat": "boundary", "input": "I'll look in to it tomorrow morning.", "expected": "I'll look into it tomorrow morning."}
+{"id": "hsa02", "option": "soundalike", "cat": "boundary", "input": "Some times I forget to eat lunch.", "expected": "Sometimes I forget to eat lunch."}
+{"id": "hsa03", "option": "soundalike", "cat": "boundary", "input": "Can some body help me with this box?", "expected": "Can somebody help me with this box?"}
+{"id": "hsa04", "option": "soundalike", "cat": "boundary", "input": "We should leave a way earlier next time.", "expected": "We should leave way earlier next time.", "alts": ["We should leave a way earlier next time."]}
+{"id": "hsa05", "option": "soundalike", "cat": "boundary", "input": "I left my phone some where in the car.", "expected": "I left my phone somewhere in the car."}
+{"id": "hsa06", "option": "soundalike", "cat": "boundary", "input": "The store is just a cross the street.", "expected": "The store is just across the street."}
+{"id": "hsa07", "option": "soundalike", "cat": "boundary", "input": "Every body loved the cake you made.", "expected": "Everybody loved the cake you made."}
+{"id": "hsa08", "option": "soundalike", "cat": "boundary", "input": "I'll call you back in a few minutes, I'm driving a head.", "expected": "I'll call you back in a few minutes, I'm driving ahead.", "alts": ["I'll call you back in a few minutes, I'm driving a head."]}
+{"id": "hsan01", "option": "soundalike", "cat": "control", "input": "Some times are better than others.", "expected": "Some times are better than others."}
+{"id": "hsan02", "option": "soundalike", "cat": "control", "input": "Pick any one you like.", "expected": "Pick any one you like."}
+{"id": "hsan03", "option": "soundalike", "cat": "control", "input": "I need to back up my phone tonight.", "expected": "I need to back up my phone tonight."}
+{"id": "hsan04", "option": "soundalike", "cat": "control", "input": "Let's sign up for the class together.", "expected": "Let's sign up for the class together."}
+{"id": "hsan05", "option": "soundalike", "cat": "control", "input": "We had to go a long way to get there.", "expected": "We had to go a long way to get there."}
+{"id": "hsan06", "option": "soundalike", "cat": "control", "input": "Turn the lights off on your way out.", "expected": "Turn the lights off on your way out."}
+{"id": "hsan07", "option": "soundalike", "cat": "control", "input": "I'll log on after dinner.", "expected": "I'll log on after dinner."}
+{"id": "hsan08", "option": "soundalike", "cat": "control", "input": "She gave me a hand with the boxes.", "expected": "She gave me a hand with the boxes."}
+{"id": "hnm01", "option": "names", "cat": "name", "input": "Is Brin coming to the barbecue?", "expected": "Is Brynn coming to the barbecue?", "personal": ["Brynn"]}
+{"id": "hnm02", "option": "names", "cat": "name", "input": "Tell Anjolie I'll be late.", "expected": "Tell Anjali I'll be late.", "personal": ["Anjali"]}
+{"id": "hnm03", "option": "names", "cat": "case", "input": "We're driving to chicago on friday.", "expected": "We're driving to Chicago on Friday."}
+{"id": "hnm04", "option": "names", "cat": "case", "input": "I put the leftovers in the Fridge.", "expected": "I put the leftovers in the fridge.", "segments": ["I put the leftovers in the", "Fridge."]}
+{"id": "hnm05", "option": "names", "cat": "case", "input": "Did you call michael back?", "expected": "Did you call Michael back?"}
+{"id": "hnm06", "option": "names", "cat": "case", "input": "Can you walk the Dog after work?", "expected": "Can you walk the dog after work?", "segments": ["Can you walk the", "Dog after work?"]}
+{"id": "hnm07", "option": "names", "cat": "name", "input": "Mckena is bringing dessert.", "expected": "McKenna is bringing dessert.", "personal": ["McKenna"]}
+{"id": "hnmn01", "option": "names", "cat": "control", "input": "Is Brian coming to the barbecue?", "expected": "Is Brian coming to the barbecue?", "personal": ["Brynn"]}
+{"id": "hnmn02", "option": "names", "cat": "control", "input": "We stayed at the Hilton downtown.", "expected": "We stayed at the Hilton downtown."}
+{"id": "hnmn03", "option": "names", "cat": "control", "input": "My Dad loves the Yankees.", "expected": "My Dad loves the Yankees."}
+{"id": "hnmn04", "option": "names", "cat": "control", "input": "I need to renew my Costco membership.", "expected": "I need to renew my Costco membership."}
+{"id": "hnmn05", "option": "names", "cat": "control", "input": "The more I think about it, the better it sounds.", "expected": "The more I think about it, the better it sounds.", "personal": ["Mara", "Moira"]}
+{"id": "hnmn06", "option": "names", "cat": "control", "input": "She's a Senior Engineer now.", "expected": "She's a Senior Engineer now."}
+{"id": "hnmn07", "option": "names", "cat": "control", "input": "Grab me a Coke from the fridge.", "expected": "Grab me a Coke from the fridge."}
+{"id": "hnmn08", "option": "names", "cat": "control", "input": "Can we sit near the window?", "expected": "Can we sit near the window?", "personal": ["Nia"]}
+{"id": "hnu01", "option": "numbers", "cat": "number", "input": "The rent is eleven hundred dollars a month.", "expected": "The rent is $1,100 a month."}
+{"id": "hnu02", "option": "numbers", "cat": "number", "input": "Dinner is at seven thirty pm.", "expected": "Dinner is at 7:30 PM."}
+{"id": "hnu03", "option": "numbers", "cat": "number", "input": "Only twenty percent of people showed up.", "expected": "Only 20% of people showed up."}
+{"id": "hnu04", "option": "numbers", "cat": "number", "input": "She was born in nineteen eighty seven.", "expected": "She was born in 1987."}
+{"id": "hnu05", "option": "numbers", "cat": "number", "input": "We drove two hundred and forty miles today.", "expected": "We drove 240 miles today."}
+{"id": "hnu06", "option": "numbers", "cat": "number", "input": "The lunch special is nine dollars and ninety nine cents.", "expected": "The lunch special is $9.99."}
+{"id": "hnu07", "option": "numbers", "cat": "number", "input": "My appointment is at eight fifteen.", "expected": "My appointment is at 8:15."}
+{"id": "hnu08", "option": "numbers", "cat": "number", "input": "There are sixty four teams in the tournament.", "expected": "There are 64 teams in the tournament."}
+{"id": "hnun01", "option": "numbers", "cat": "control", "input": "I'll take one of each.", "expected": "I'll take one of each."}
+{"id": "hnun02", "option": "numbers", "cat": "control", "input": "Give me five minutes.", "expected": "Give me five minutes."}
+{"id": "hnun03", "option": "numbers", "cat": "control", "input": "It's a thousand times better.", "expected": "It's a thousand times better."}
+{"id": "hnun04", "option": "numbers", "cat": "control", "input": "Thanks a million for your help.", "expected": "Thanks a million for your help."}
+{"id": "hnun05", "option": "numbers", "cat": "control", "input": "That's the second time this week.", "expected": "That's the second time this week."}
+{"id": "hnun06", "option": "numbers", "cat": "control", "input": "We're all on cloud nine.", "expected": "We're all on cloud nine."}
+{"id": "hnun07", "option": "numbers", "cat": "control", "input": "He's in his early forties.", "expected": "He's in his early forties."}
+{"id": "hnun08", "option": "numbers", "cat": "control", "input": "Ten minutes later she called back.", "expected": "Ten minutes later she called back."}
+{"id": "hcm01", "option": "commands", "cat": "command", "input": "Hey team. New paragraph. The launch is moved to Friday.", "expected": "Hey team.\n\nThe launch is moved to Friday.", "segments": ["Hey team.", "New paragraph.", "The launch is moved to Friday."]}
+{"id": "hcm02", "option": "commands", "cat": "command", "input": "Can you call me back question mark", "expected": "Can you call me back?", "segments": ["Can you call me back question mark"]}
+{"id": "hcm03", "option": "commands", "cat": "command", "input": "Thanks so much exclamation point", "expected": "Thanks so much!", "segments": ["Thanks so much exclamation point"]}
+{"id": "hcm04", "option": "commands", "cat": "command", "input": "I'm on my way. Scratch that. I'm running late.", "expected": "I'm running late.", "segments": ["I'm on my way.", "Scratch that.", "I'm running late."]}
+{"id": "hcm05", "option": "commands", "cat": "command", "input": "Shopping list. New line. Apples. New line. Bread.", "expected": "Shopping list.\nApples.\nBread.", "segments": ["Shopping list.", "New line.", "Apples.", "New line.", "Bread."]}
+{"id": "hcm06", "option": "commands", "cat": "command", "input": "Yes comma that works", "expected": "Yes, that works", "segments": ["Yes comma", "that works"]}
+{"id": "hcmn01", "option": "commands", "cat": "control", "input": "The question mark at the end is wrong.", "expected": "The question mark at the end is wrong.", "segments": ["The question mark at the end is wrong."]}
+{"id": "hcmn02", "option": "commands", "cat": "control", "input": "Is it a comma or a period?", "expected": "Is it a comma or a period?", "segments": ["Is it a comma", "or a period?"]}
+{"id": "hcmn03", "option": "commands", "cat": "control", "input": "They added a new line to the contract.", "expected": "They added a new line to the contract.", "segments": ["They added a new line", "to the contract."]}
+{"id": "hcmn04", "option": "commands", "cat": "control", "input": "That was the coldest period on record.", "expected": "That was the coldest period on record.", "segments": ["That was the coldest period on record."]}
+{"id": "hcmn05", "option": "commands", "cat": "control", "input": "Please delete that message.", "expected": "Please delete that message.", "segments": ["Please delete that message."]}
+{"id": "hcmn06", "option": "commands", "cat": "control", "input": "I can't scratch that off my bucket list yet.", "expected": "I can't scratch that off my bucket list yet.", "segments": ["I can't scratch that off my bucket list yet."]}
+{"id": "hfi01", "option": "fillers", "cat": "filler", "input": "Uh, can you hear me?", "expected": "Can you hear me?"}
+{"id": "hfi02", "option": "fillers", "cat": "filler", "input": "I think, um, we should wait.", "expected": "I think we should wait.", "alts": ["I think, we should wait."]}
+{"id": "hfi03", "option": "fillers", "cat": "filler", "input": "We we need more chairs.", "expected": "We need more chairs."}
+{"id": "hfi04", "option": "fillers", "cat": "filler", "input": "It's in the, uh, top drawer.", "expected": "It's in the top drawer.", "alts": ["It's in the, top drawer."]}
+{"id": "hfi05", "option": "fillers", "cat": "filler", "input": "Let's go to to the store.", "expected": "Let's go to the store."}
+{"id": "hfi06", "option": "fillers", "cat": "filler", "input": "Erm, what was I saying?", "expected": "What was I saying?"}
+{"id": "hfin01", "option": "fillers", "cat": "control", "input": "That that is true doesn't help.", "expected": "That that is true doesn't help."}
+{"id": "hfin02", "option": "fillers", "cat": "control", "input": "Go go go, we're late!", "expected": "Go go go, we're late!"}
+{"id": "hfin03", "option": "fillers", "cat": "control", "input": "Night night, sleep tight.", "expected": "Night night, sleep tight."}
+{"id": "hfin04", "option": "fillers", "cat": "control", "input": "Far far away there was a castle.", "expected": "Far far away there was a castle."}
+{"id": "hfin05", "option": "fillers", "cat": "control", "input": "I think, I really think, we can win.", "expected": "I think, I really think, we can win."}
+{"id": "hfin06", "option": "fillers", "cat": "control", "input": "He said it again and again.", "expected": "He said it again and again."}
+{"id": "hsc01", "option": "selfcorrections", "cat": "selfcorrection", "input": "Put it in the garage, I mean, the basement.", "expected": "Put it in the basement."}
+{"id": "hsc02", "option": "selfcorrections", "cat": "selfcorrection", "input": "We need three, no wait, four chairs.", "expected": "We need four chairs."}
+{"id": "hsc03", "option": "selfcorrections", "cat": "selfcorrection", "input": "Text Sam, sorry, Alex about the meeting.", "expected": "Text Alex about the meeting."}
+{"id": "hsc04", "option": "selfcorrections", "cat": "selfcorrection", "input": "The party starts at eight, actually, nine.", "expected": "The party starts at nine."}
+{"id": "hsc05", "option": "selfcorrections", "cat": "selfcorrection", "input": "Get the large, or rather, the medium pizza.", "expected": "Get the medium pizza."}
+{"id": "hsc06", "option": "selfcorrections", "cat": "selfcorrection", "input": "I'll be there Thursday, I mean, Friday.", "expected": "I'll be there Friday."}
+{"id": "hscn01", "option": "selfcorrections", "cat": "control", "input": "Sorry, I didn't catch that.", "expected": "Sorry, I didn't catch that."}
+{"id": "hscn02", "option": "selfcorrections", "cat": "control", "input": "I actually liked the ending.", "expected": "I actually liked the ending."}
+{"id": "hscn03", "option": "selfcorrections", "cat": "control", "input": "I'd rather not talk about it.", "expected": "I'd rather not talk about it."}
+{"id": "hscn04", "option": "selfcorrections", "cat": "control", "input": "That's not what I meant at all.", "expected": "That's not what I meant at all."}
+{"id": "hscn05", "option": "selfcorrections", "cat": "control", "input": "We said sorry to the neighbors.", "expected": "We said sorry to the neighbors."}
+{"id": "hscn06", "option": "selfcorrections", "cat": "control", "input": "It's fine, actually, don't worry.", "expected": "It's fine, actually, don't worry."}
+{"id": "hscn07", "option": "selfcorrections", "cat": "control", "input": "I was going to say sorry, but she left.", "expected": "I was going to say sorry, but she left."}

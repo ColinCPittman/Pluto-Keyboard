@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pluto Keyboard brand palette, sampled from the app icon artwork
+     (see tools/branding/make_icons.py, PALETTE). -->
+<resources>
+    <!-- Icon tile background: top / bottom of the navy gradient, and the blue glow behind the ring -->
+    <color name="pluto_navy">#0E1550</color>
+    <color name="pluto_navy_dark">#08092B</color>
+    <color name="pluto_glow">#0F2771</color>
+    <!-- Ring gradient: lavender (left) to sky blue (right) -->
+    <color name="pluto_ring_lavender">#9475FC</color>
+    <color name="pluto_ring_sky">#89CDFD</color>
+    <!-- Sparkle stars -->
+    <color name="pluto_star">#A0B6FD</color>
+    <!-- Keyboard keys: periwinkle, and the lighter top-row tint -->
+    <color name="pluto_key">#CBD7FE</color>
+    <color name="pluto_key_light">#E6EAFD</color>
+    <!-- Planet surface: cream, rust, and the shadowed rust -->
+    <color name="pluto_cream">#F9E6D2</color>
+    <color name="pluto_rust">#89313E</color>
+    <color name="pluto_rust_dark">#642036</color>
+</resources>

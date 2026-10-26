@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pluto Keyboard: the app name is the same in every language. The translations of these
+         strings (which name FUTO Keyboard) are filtered out of the merged resources in
+         build.gradle (translationsWithoutEngValues), so every locale falls back to these values. -->
+
+    <!-- Application name for the keyboard. -->
+    <string name="english_ime_name" translatable="false">Pluto Keyboard</string>
+
+    <!-- Name of Android spell checker service. -->
+    <string name="spell_checker_service_name" translatable="false">Pluto Spell Checker</string>
+
+    <!-- Title for Android Keyboard settings screen. -->
+    <string name="english_ime_settings" translatable="false">Pluto Keyboard Settings</string>
+
+    <!-- Title for the spell checking service settings screen. -->
+    <string name="android_spell_checker_settings" translatable="false">Pluto Spell Checker Settings</string>
+</resources>

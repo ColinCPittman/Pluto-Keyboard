@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Feature tips: shown once, the first time you meet a feature (Help → Show feature tips) -->
+    <string name="tip_got_it">Got it</string>
+    <string name="tip_turn_off">Turn off tips</string>
+
+    <string name="tip_typing_fix_title">Smart corrections fixed a typo</string>
+    <string name="tip_typing_fix_text">“<xliff:g name="old" example="an">%1$s</xliff:g>” became “<xliff:g name="new" example="and">%2$s</xliff:g>” because the words around it made it clear. If you disagree, tap the undo button above the keyboard to change it back.</string>
+
+    <string name="tip_missed_typo_fix_title">Smart corrections caught a missed typo</string>
+    <string name="tip_missed_typo_fix_text">“<xliff:g name="old" example="ststy">%1$s</xliff:g>” isn’t a word, so it worked out “<xliff:g name="new" example="start">%2$s</xliff:g>” from the letters you typed and the sentence around them. If you disagree, tap the undo button above the keyboard to change it back.</string>
+
+    <string name="tip_typing_fix_undone_title">It will be more careful here</string>
+    <string name="tip_typing_fix_undone_text">Undoing a fix teaches Smart corrections to be more cautious about that change in this context in the future. To stop that fix everywhere, tap Stop while it shows.</string>
+
+    <string name="tip_typing_miss_learned_title">Thanks, that teaches it</string>
+    <string name="tip_typing_miss_learned_text">“<xliff:g name="old" example="pour">%1$s</xliff:g>” wasn’t fixed, so you changed it to “<xliff:g name="new" example="pout">%2$s</xliff:g>” yourself. That makes Smart corrections more ready to make this fix in this context in the future.</string>
+
+    <string name="tip_add_correction_title">Teach it your typos</string>
+    <string name="tip_add_correction_text">With one word selected, tap Add correction above the keyboard to tell Smart corrections what you meant. Next time you mistype it that way, it can fix it for you, like “pour” → “pout”.</string>
+
+    <string name="tip_voice_smart_corrections_title">Smart corrections tidied your dictation</string>
+    <string name="tip_voice_smart_corrections_text">It fixes things like misheard words, numbers, filler words and spoken commands. Choose what it changes, and how readily, under Settings → Voice input → Smart corrections.</string>
+
+    <!-- Help settings -->
+    <string name="feature_tips_setting">Show feature tips</string>
+    <string name="feature_tips_setting_subtitle">A short tip the first time you meet a feature, like your first typing fix or the Add correction button.</string>
+    <string name="feature_tips_reset">Show tips again</string>
+    <string name="feature_tips_reset_subtitle">Tips you’ve seen will show again when you next meet their feature.</string>
+    <string name="feature_tips_reset_done">Tips will show again.</string>
+    <string name="tip_adaptive_swipe_title">Swiping learns too</string>
+    <string name="tip_adaptive_swipe_text">Pluto learns where your swipes start, end and turn over each key, and adjusts new swipes to match, so it gets better the more you swipe. You can change how strongly it adapts, or reset it, under Swipe Typing.</string>
+</resources>

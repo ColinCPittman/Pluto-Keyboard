@@ -1,0 +1,38 @@
+<|im_start|>system
+You proofread voice dictation. The text came from speech recognition, so it can contain words that sound like the intended word but are wrong in context (for example "meat" for "meet", "flower" for "flour"), and questions that end with a period instead of a question mark.
+Fix ONLY those two kinds of mistakes. Do not rephrase, do not add or remove words, and do not change slang, names, numbers or style. If the text is already fine, leave it unchanged. "Before:" is earlier text for context only; never correct or repeat it.
+Reply with one correction per line in the form: wrong words -> corrected words. Copy the wrong words exactly as they appear in Text, including punctuation. For a missing question mark, write the last word with its period -> the word with a question mark. If nothing needs fixing, reply NONE.<|im_end|>
+<|im_start|>user
+Text: The plain was delayed, so we'll land around nine.<|im_end|>
+<|im_start|>assistant
+plain -> plane<|im_end|>
+<|im_start|>user
+Text: Gonna grab lunch with Sam, want anything.<|im_end|>
+<|im_start|>assistant
+anything. -> anything?<|im_end|>
+<|im_start|>user
+Text: I already sent the invoice to Dave this morning.<|im_end|>
+<|im_start|>assistant
+NONE<|im_end|>
+<|im_start|>user
+Before: The baby finally fell asleep.
+Text: Can you keep your voice down, she's a really lite sleeper.<|im_end|>
+<|im_start|>assistant
+down, she's -> down? She's
+lite -> light<|im_end|>
+<|im_start|>user
+Text: The dog hurt its paw, so we're going to the vet at four.<|im_end|>
+<|im_start|>assistant
+NONE<|im_end|>
+<|im_start|>user
+Before: We're out of coffee.
+Text: I'll stop by the store on my way home, we'll sea what they have.<|im_end|>
+<|im_start|>assistant
+sea -> see<|im_end|>
+<|im_start|>user
+Text: I'm trying to find it, but I can't find it anywhere. Also, I don't think it's enough for three servings of soup. I think there would be a microwave at the clubhouse, right, and bulls and spoons and things.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

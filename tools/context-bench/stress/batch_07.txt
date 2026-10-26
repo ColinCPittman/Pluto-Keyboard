@@ -1,0 +1,506 @@
+# batch 07: work chat, tech, kids, errands, opinions; fresh look-alikes
+c Can you take a look at my pull request?
+c The build is failing on main.
+c I pushed a fix for the login bug.
+c Let's sync after standup.
+c The demo is at two.
+c I'm blocked on the API change.
+c Did anyone deploy today?
+c The tests pass on my machine.
+c I'll write up the notes.
+c Can we move the retro to Thursday?
+c The client wants a new logo.
+c The font looks off on mobile.
+c I'm working remotely today.
+c My internet is spotty, I might drop off.
+c Can you hear me now?
+c You're on mute.
+c I'll share my screen.
+c Let me pull up the doc.
+c We're over capacity this sprint.
+c Let's punt that to next week.
+c I owe you a review.
+c Ship it!
+c That's out of scope.
+c The database is running slow.
+c I rebooted the server and it's fine now.
+c The logs are full of warnings.
+c Who's on call this weekend?
+c I'm taking a long lunch.
+c The coffee machine is broken again.
+c Our team offsite is in April.
+c I'm presenting the roadmap tomorrow.
+c Can you send the invoice to accounting?
+c The contract renews in March.
+c I need your signature on the form.
+c The badge reader isn't working.
+c The elevator is out, take the stairs.
+c Parking is free after six.
+c The new hire seems sharp.
+c Let's grab lunch with the team.
+c Happy Friday, everyone!
+c My kid has a fever, I'm staying home.
+c The school called, she's fine.
+c Picture day is on Tuesday.
+c Don't forget the permission slip.
+c He wants to be an astronaut.
+c She lost her first tooth.
+c The tooth fairy forgot again.
+c We're doing a lemonade stand.
+c Bedtime is at eight.
+c Bath, books, bed.
+c They're playing in the backyard.
+c He scraped his knee at recess.
+c She's obsessed with dinosaurs.
+c We read the same book every night.
+c The playdate went great.
+c Soccer practice is canceled.
+c He made the team!
+c The science project is due Friday.
+c She aced her spelling test.
+c We need glue sticks and markers.
+c The class pet is a hamster named Gus.
+c Snack day is my turn.
+c I'm picking up the dry cleaning.
+c The post office closes at five.
+c I need stamps.
+c I'm returning the library books.
+c The car needs an oil change.
+c The mechanic said it's the battery.
+c I'm getting my hair cut Saturday.
+c I need to pick up a prescription.
+c The hardware store has the paint we need.
+c I'm stopping by the bank.
+c The line at the coffee shop was huge.
+c I got gas on the way.
+c Gas is so expensive right now.
+c I found a parking spot right out front.
+c Honestly, I think it's overrated.
+c That show is so good.
+c I didn't love the ending.
+c I'm not a fan of horror movies.
+c Pineapple on pizza is fine, fight me.
+c Cats are better than dogs.
+c Winter is my favorite season.
+c I could eat tacos every day.
+c That's a hot take.
+c I see both sides.
+c I'm on the fence.
+c It depends on the price.
+c Fair point.
+c You might be right.
+c I disagree, but okay.
+c Let's agree to disagree.
+# tricky words
+c He sees the sea from his window.
+c I see what you did there.
+c The seas were rough.
+c We want to seize the moment.
+c The cereal aisle was empty.
+c I'll steal home plate.
+c The steel door was heavy.
+c It's a stake in the ground.
+p:number Bake the scones for twenty minutes. => Bake the scones for 20 minutes. ;; Bake the scones for twenty minutes.
+c The prince was charming.
+c Fingerprints were everywhere.
+c Her prints are hanging in the hall.
+c The patients waited.
+c Have some patience.
+c The presents are under the tree.
+c Your presence is requested.
+c I missed the bus.
+c We had a lot of mist this morning.
+p:number The war ended in nineteen forty five. => The war ended in 1945.
+c Wear something warm.
+c Where's the remote?
+c We're almost there.
+c The whole team showed up.
+c There's a hole in my sock.
+c I won the raffle!
+c One more time.
+c I ate too much.
+c Eight o'clock works.
+c Not a bad idea.
+c Tie a knot.
+c The bee stung me.
+c Be careful.
+c The bean dip is gone.
+c Where have you been?
+c The doe and her fawn.
+c The dough needs to rise.
+c Raise your hand.
+c The sun rays were warm.
+c The plums are ripe.
+c Call a plumber.
+c The flea market is open.
+c Flee the scene.
+c The cell tower is down.
+c The sale is today.
+c I'll sell it online.
+c The hay bales are stacked.
+c Hey, how's it going?
+c The dew on the grass.
+c Do your homework.
+c Due to the rain, it's canceled.
+c I need a new pair of boots.
+c Pare down the list.
+c The pear tree is blooming.
+c Let's pray it works.
+c The hawk caught its prey.
+c The ark in the story.
+c The arc of the ball.
+c I'm a bit hoarse.
+c The horse neighed.
+c The mussels were delicious.
+c Big muscles.
+c She's a nun.
+c None of them came.
+c I passed the ball.
+c In the past.
+c The aunt from Texas.
+c The ant hill.
+c The colonel retired.
+c The kernel of corn.
+c The bolder choice.
+c The boulder rolled down.
+c The bridal shower is Saturday.
+c Hold the bridle.
+c Let's bury the hatchet.
+c The berry pie was amazing.
+c Cash or credit?
+c Cache the files.
+c The chili was spicy.
+c It's chilly outside.
+c The council met.
+c Counsel from a lawyer.
+c The duel at dawn.
+c Dual screens.
+c Faint praise.
+c A clever feint.
+c The fir trees.
+c The fur coat.
+c The flair for drama.
+c The flare lit the sky.
+c A grate on the drain.
+c A great day.
+c The guessed answer.
+c The guest room.
+# commands, as words
+c That's the period I hate most.
+c Second period is my favorite class.
+c Is it the fifth period yet?
+c No comma needed there.
+c Put the quote in italics.
+c What's the quote for that?
+c Draw a dash.
+c Tap the hashtag.
+c The line to get in was long.
+c What's the next line?
+c Our line was busy.
+c The new lines are on sale.
+c Stop it.
+c Full stop.
+c A question mark tattoo.
+c The plus side.
+c Minus the tip.
+c Equal opportunity.
+c Open up.
+c Close up shop.
+c Close call.
+c Scratch my back.
+c Delete it.
+c My bad, delete that.
+c Smiley faces everywhere.
+c Exclamation points are my weakness.
+# fillers, repeats, self-corrections, quotes: look-alikes
+c Ah, gotcha.
+c Ah, I forgot.
+c Eh, it's fine.
+p:filler Um, okay. => Okay. ;; Um, okay.
+p:filler Uh, no thanks. => No thanks. ;; Uh, no thanks.
+p:filler Hmm, okay. => Okay. ;; Hmm, okay.
+c Uh-huh.
+c Mm-hmm.
+c Ha ha ha.
+c Bye bye bye.
+c Blah blah blah.
+c La la la, I can't hear you.
+c Yada yada yada.
+c Choo choo, all aboard.
+c Night night.
+c Knock knock.
+c Tsk tsk.
+c Woof woof.
+c Meow.
+c Beep beep.
+c Chop chop!
+c Tick tock.
+c Ding dong.
+c Same old, same old.
+c Step by step.
+c Little by little.
+c One by one.
+c Side by side.
+c Back to back.
+c Face to face.
+c Over and over.
+c Again and again.
+c Bit by bit.
+c Day by day.
+c It's a dog eat dog world.
+c Sorry not sorry.
+c I said what I said.
+c It is what it is.
+c You do you.
+c That's that.
+c Sorry, Dave.
+c Sorry, wrong button.
+c Sorry, I'm in a meeting.
+c Sorry, can't talk.
+c Sorry to hear that.
+c Actually, yes.
+c Actually, that's mine.
+c Actually, I'll pass.
+c I actually agree.
+c I mean, sure.
+c I mean, maybe.
+c I meant tomorrow, not today.
+c Rather not.
+c I'd rather walk.
+c Correction, it's on Friday.
+c Make that a double.
+c No, wait, don't go.
+c Wait, no way!
+c Oh wait, nevermind.
+c She said yes.
+c He said maybe.
+c They said no.
+c I asked nicely.
+c He asked me out!
+c She told me everything.
+c He went home.
+c She goes to my gym.
+c It's like a sauna in here.
+c He's like my brother.
+c I'm like, really tired.
+c She texted back.
+c He yelled at the TV.
+c She screamed with joy.
+c They whispered in the back.
+# positives
+p:filler We should, um, call it a day. => We should call it a day.
+p:filler The build is, uh, still failing. => The build is still failing.
+p:filler Um, can you share your screen? => Can you share your screen?
+p:filler It's, uh, in the shared folder. => It's in the shared folder.
+p:filler My kid is, um, home sick. => My kid is home sick.
+p:filler Hmm, let me look into it. => Let me look into it.
+p:filler I, um, forgot the permission slip. => I forgot the permission slip.
+p:filler The mechanic said, uh, it's the brakes. => The mechanic said it's the brakes.
+p:repeat The the demo went well. => The demo went well.
+p:repeat Can can you review it? => Can you review it?
+p:repeat It's on on the desk. => It's on the desk.
+p:selfcorrection The demo is at two, I mean, three. => The demo is at three.
+p:selfcorrection Send it to Tom, sorry, Tim. => Send it to Tim.
+p:selfcorrection It's in the blue folder, no wait, the green folder. => It's in the green folder.
+p:selfcorrection Practice is on Monday, actually, Wednesday. => Practice is on Wednesday.
+p:selfcorrection We need four, I mean, five volunteers. => We need five volunteers.
+p:selfcorrection Pick up the dry cleaning, sorry, the groceries. => Pick up the groceries.
+p:quote My manager was like, um, can we talk? => My manager was like "Um, can we talk?"
+p:quote The client asked, when can you start? => The client asked "When can you start?"
+p:quote My kid goes, why is the sky dark? => My kid goes "Why is the sky dark?"
+p:quote I was like, wow, that was fast. => I was like "Wow, that was fast."
+p:quote He said, hey, good job today. => He said "Hey, good job today."
+p:quote She asked, is this seat taken? => She asked "Is this seat taken?"
+p:command Hi team comma | the build is green period => Hi team, the build is green.
+p:command Action items colon | review, test, ship. => Action items: review, test, ship.
+p:command We shipped it exclamation point => We shipped it!
+p:command Can you review this question mark => Can you review this?
+p:command Thanks. | New paragraph. | Alex. => Thanks.\n\nAlex.
+p:command The demo is at two. | Scratch that. | The demo is at three. => The demo is at three.
+p:command He said. | Open quote. | It works. | Close quote. => He said "It works."
+p:command Q ampersand A => Q & A
+p:command See you Monday period => See you Monday.
+p:command Notes. | New line. | Call the client. => Notes.\nCall the client.
+p:number The invoice is two thousand five hundred dollars. => The invoice is $2,500.
+p:number The meeting is at ten thirty am. => The meeting is at 10:30 AM.
+p:number Traffic is up thirty percent. => Traffic is up 30%.
+p:number We hired nineteen people. => We hired 19 people.
+p:number The deadline is the fifteenth. => The deadline is the 15th. ;; The deadline is the fifteenth.
+p:number The repair was three hundred and fifty dollars. => The repair was $350.
+p:number The company started in nineteen ninety eight. => The company started in 1998.
+p:number Gas is four dollars a gallon. => Gas is $4 a gallon.
+p:soundalike I'll right the report tonight. => I'll write the report tonight.
+p:soundalike Can you here me now? => Can you hear me now?
+p:soundalike Their in a meeting. => They're in a meeting.
+p:soundalike I need to by stamps. => I need to buy stamps.
+p:soundalike I'm going to the jim later. => I'm going to the gym later.
+p:soundalike It's do tomorrow. => It's due tomorrow.
+p:soundalike The kids were so board at the meeting. => The kids were so bored at the meeting.
+p:soundalike I'll be their in an our. => I'll be there in an hour.
+p:question Is the build green. => Is the build green?
+p:question Did you deploy. => Did you deploy?
+p:question Can you send the invoice. => Can you send the invoice?
+p:question When is the demo. => When is the demo?
+p:question Who is on call. => Who is on call?
+p:question Are the kids asleep. => Are the kids asleep?
+p:question Do we have school tomorrow. => Do we have school tomorrow?
+p:question Where did you park. => Where did you park?
+p:mixed Um, is the meeting at, uh, two thirty pm. => Is the meeting at 2:30 PM?
+p:mixed I'll right it, um, tonight. => I'll write it tonight.
+p:name Can Shivon present? => Can Siobhan present? @@ Siobhan
+p:name Tell Eefa the build is fixed. => Tell Aoife the build is fixed. @@ Aoife
+c Tim is on call. @@ Timm
+c The bill is late. @@ Billie
+c Grace period is over. @@ Grayce
+c I'll ask Jack. @@ Jaq
+c The car is in the shop. @@ Kar
+c Let's take a break. @@ Breck
+c The team is great. @@ Teem
+c We need more time. @@ Tim
+c I love this song. @@ Sang
+c The bus is late. @@ Buss
+# batch 07, part 2
+c The groceries are in the trunk.
+c My aunt sent us cookies.
+c I'll call the insurance company tomorrow.
+c Our anniversary is next month.
+c The flowers you sent were beautiful.
+c I'm stuck in a meeting until three.
+c The kids want pancakes for dinner.
+c We're getting a new roof next week.
+c The neighbors have a new cat.
+c I put the laundry in the dryer.
+c The printer is out of ink.
+c We should plan a trip for the summer.
+c I booked the campsite.
+c My phone screen is cracked.
+c The movie theater was empty.
+c He's learning to drive.
+c She's applying to colleges.
+c We're having a garage sale on Saturday.
+c Can you help me move the couch?
+c The fridge is full of leftovers.
+c I need to pay the water bill.
+c The dog got into the trash again.
+c I'm so tired of this rain.
+c It's finally sunny.
+c Let's go for a bike ride.
+c The trail was muddy.
+c We saw a deer in the backyard.
+c My coffee is cold.
+c I forgot to set my alarm.
+c I overslept.
+c The bus left without me.
+c I'll walk to work today.
+c The elevator is broken.
+c The stairs are a good workout.
+c I found my keys in the freezer.
+c Don't ask how they got there.
+c The baby is teething.
+c She hasn't slept all night.
+c We need more diapers.
+c The daycare is closed tomorrow.
+c My mom can watch the kids.
+c I'm making a grocery run.
+c Do we need eggs?
+c The store was out of bread.
+c I got the last carton of milk.
+c The checkout line was so slow.
+c Self checkout was broken.
+c I used my coupon.
+p:number We saved ten bucks. => We saved 10 bucks. ;; We saved ten bucks.
+c My sister is moving to Denver.
+c We're helping her pack this weekend.
+c The moving truck is huge.
+c We need more boxes.
+c The tape ran out.
+c I'll grab more on the way.
+c The new apartment is really nice.
+c It has a balcony.
+c The view is amazing.
+c The kitchen is tiny though.
+c Rent is a lot higher there.
+c She got a great job offer.
+c We're so proud of her.
+c Let's have a going away party.
+c I'll make a cake.
+c Chocolate or vanilla?
+c Both, obviously.
+c The party is a surprise.
+c Don't tell her.
+c My lips are sealed.
+c She's going to cry.
+c I already bought the decorations.
+c The balloons are in the closet.
+c We need a banner.
+c I'll print one at work.
+c The guest list keeps growing.
+c We might need a bigger place.
+c Let's do it at the park.
+c Hope it doesn't rain.
+c I'll check the forecast.
+c Looks clear so far.
+c Fingers crossed.
+c See, I knew you'd like it.
+c See, it wasn't that bad.
+c So, what's the verdict?
+c Well, here we go.
+c Now, about that favor.
+c Look, I'm trying my best.
+c Listen to me for a second.
+c Okay, last one, I promise.
+c Wait, I have an idea.
+c Hold on, let me grab a pen.
+c Hang on, my phone is ringing.
+c Just a sec.
+c One second, please.
+c Give me five minutes.
+c Be right there.
+c Almost done.
+c All set.
+c Good to go.
+c Done and done.
+c Mission accomplished.
+c We made it.
+c Phew, that was a close one.
+c That's a relief.
+c Thank goodness.
+c Oh thank god.
+c What a day.
+c What a week.
+c I need a drink.
+c Make it a double.
+c Cheers to that.
+c Here's to us.
+c To new beginnings.
+c Happy new year!
+c Merry Christmas, everyone.
+c Happy Thanksgiving!
+c Have a great holiday.
+c Enjoy your vacation.
+c Safe travels.
+c Welcome home.
+c Long time no see.
+c It's been forever.
+c How have you been?
+c What's new with you?
+c Not much, same old.
+c Busy as always.
+c Can't complain.
+c Living the dream.
+c Hanging in there.
+c One day at a time.
+p:filler The kids are, um, finally asleep. => The kids are finally asleep.
+p:filler I'll, uh, grab more boxes. => I'll grab more boxes.
+p:filler Uh, did you see that? => Did you see that?
+p:selfcorrection The party is Saturday, I mean, Sunday. => The party is Sunday.
+p:selfcorrection We need ten, I mean, twelve chairs. => We need twelve chairs. ;; We need 12 chairs.
+p:quote My sister was like, um, are you serious? => My sister was like "Um, are you serious?"
+p:command Packing list colon | tape, boxes, markers. => Packing list: tape, boxes, markers.
+p:command Surprise exclamation point => Surprise!
+p:number The truck rental was one hundred and fifty dollars. => The truck rental was $150.
+p:number We need twenty four cupcakes. => We need 24 cupcakes.
+p:question Did you get the boxes. => Did you get the boxes?
+p:question Is she coming tonight. => Is she coming tonight?
+p:soundalike We should by more tape. => We should buy more tape.
+p:soundalike Their moving on Saturday. => They're moving on Saturday.

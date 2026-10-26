@@ -1,0 +1,204 @@
+{"id": "a001", "cat": "control", "input": "C.. I tried to tell you this would happen", "expected": "C.. I tried to tell you this would happen", "source": "See, I tried to tell you this would happen.", "segments": ["C..", "I tried to tell you this would happen"]}
+{"id": "a002", "cat": "control", "input": "So I tried calling but nobody picked up.", "expected": "So I tried calling but nobody picked up.", "source": "So I tried calling but nobody picked up."}
+{"id": "a003", "cat": "control", "input": "Well, I guess we'll find out tomorrow.", "expected": "Well, I guess we'll find out tomorrow.", "source": "Well, I guess we'll find out tomorrow.", "segments": ["Well,", "I guess we'll find out tomorrow."]}
+{"id": "a004", "cat": "control", "input": "Now i'm not saying you're wrong", "expected": "Now i'm not saying you're wrong", "source": "Now I'm not saying you're wrong."}
+{"id": "a005", "cat": "control", "input": "Okay. I'll grab the groceries on the way home", "expected": "Okay. I'll grab the groceries on the way home", "source": "Okay, I'll grab the groceries on the way home.", "segments": ["Okay.", "I'll grab the groceries on the way home"]}
+{"id": "a006", "cat": "control", "input": "Look, I know you're busy. But this is important.", "expected": "Look, I know you're busy. But this is important.", "source": "Look, I know you're busy, but this is important.", "segments": ["Look,", "I know you're busy.", "But this is important."]}
+{"id": "a007", "cat": "control", "input": "I was waiting in line but then a new line formed and started moving faster", "expected": "I was waiting in line but then a new line formed and started moving faster", "source": "I was waiting in line but then a new line formed and started moving faster."}
+{"id": "a008", "cat": "control", "input": "The class period ended early because of the fire drill.", "expected": "The class period ended early because of the fire drill.", "source": "The class period ended early because of the fire drill."}
+{"id": "a009", "cat": "control", "input": "We're still in the trial period for the new software.", "expected": "We're still in the trial period for the new software.", "source": "We're still in the trial period for the new software."}
+{"id": "a010", "cat": "control", "input": "She forgot to put a comma after the greeting", "expected": "She forgot to put a comma after the greeting", "source": "She forgot to put a comma after the greeting."}
+{"id": "a011", "cat": "control", "input": "I love that quote from the movie.", "expected": "I love that quote from the movie.", "source": "I love that quote from the movie."}
+{"id": "a012", "cat": "control", "input": "Can you send me a quote for the kitchen remodel?", "expected": "Can you send me a quote for the kitchen remodel?", "source": "Can you send me a quote for the kitchen remodel?"}
+{"id": "a013", "cat": "control", "input": "I'll make a quick dash to the store.", "expected": "I'll make a quick dash to the store.", "source": "I'll make a quick dash to the store."}
+{"id": "a014", "cat": "control", "input": "Did you see the hashtag they used for the wedding?", "expected": "Did you see the hashtag they used for the wedding?", "source": "Did you see the hashtag they used for the wedding?"}
+{"id": "a015", "cat": "control", "input": "Write your name on the next line", "expected": "Write your name on the next line", "source": "Write your name on the next line."}
+{"id": "a016", "cat": "control", "input": "The car came to a full stop at the light.", "expected": "The car came to a full stop at the light.", "source": "The car came to a full stop at the light."}
+{"id": "a017", "cat": "control", "input": "You're not borrowing my car Period.", "expected": "You're not borrowing my car Period.", "source": "You're not borrowing my car, period.", "segments": ["You're not borrowing my car", "Period."]}
+{"id": "a018", "cat": "control", "input": "He told me to wait by the car.", "expected": "He told me to wait by the car.", "source": "He told me to wait by the car."}
+{"id": "a019", "cat": "control", "input": "She said she loved the gift.", "expected": "She said she loved the gift.", "source": "She said she loved the gift."}
+{"id": "a020", "cat": "control", "input": "He asked what was wrong.", "expected": "He asked what was wrong.", "source": "He asked what was wrong."}
+{"id": "a021", "cat": "control", "input": "She asked who was coming to the party", "expected": "She asked who was coming to the party", "source": "She asked who was coming to the party."}
+{"id": "a022", "cat": "control", "input": "He was like ten feet tall.", "expected": "He was like ten feet tall.", "source": "He was like ten feet tall."}
+{"id": "a023", "cat": "control", "input": "He fired back with a shotgun.", "expected": "He fired back with a shotgun.", "source": "He fired back with a shotgun."}
+{"id": "a024", "cat": "control", "input": "She said no to the offer.", "expected": "She said no to the offer.", "source": "She said no to the offer."}
+{"id": "a025", "cat": "control", "input": "I'm sorry I can't make it tonight", "expected": "I'm sorry I can't make it tonight", "source": "I'm sorry, I can't make it tonight.", "segments": ["I'm sorry", "I can't make it tonight"]}
+{"id": "a026", "cat": "control", "input": "It was actually pretty fun.", "expected": "It was actually pretty fun.", "source": "It was actually pretty fun."}
+{"id": "a027", "cat": "control", "input": "I'd rather stay in tonight.", "expected": "I'd rather stay in tonight.", "source": "I'd rather stay in tonight."}
+{"id": "a028", "cat": "control", "input": "I mean it. You did a great job.", "expected": "I mean it. You did a great job.", "source": "I mean it, you did a great job.", "segments": ["I mean it.", "You did a great job."]}
+{"id": "a029", "cat": "control", "input": "No. Wait for me.", "expected": "No. Wait for me.", "source": "No, wait for me!", "segments": ["No.", "Wait for me."]}
+{"id": "a030", "cat": "control", "input": "Can you make that call for me?", "expected": "Can you make that call for me?", "source": "Can you make that call for me?"}
+{"id": "a031", "cat": "control", "input": "I see what you mean.", "expected": "I see what you mean.", "source": "Ah, I see what you mean."}
+{"id": "a032", "cat": "control", "input": "Thank you. Thank you. You're too kind.", "expected": "Thank you. Thank you. You're too kind.", "source": "Thank you, thank you, you're too kind.", "segments": ["Thank you.", "Thank you.", "You're too kind."]}
+{"id": "a033", "cat": "control", "input": "I know. I know. I should have called.", "expected": "I know. I know. I should have called.", "source": "I know, I know, I should have called.", "segments": ["I know.", "I know.", "I should have called."]}
+{"id": "a034", "cat": "control", "input": "Come on. We're going to be late.", "expected": "Come on. We're going to be late.", "source": "Come on, we're going to be late.", "segments": ["Come on.", "We're going to be late."]}
+{"id": "a035", "cat": "control", "input": "I hope so.", "expected": "I hope so.", "source": "I hope so."}
+{"id": "a036", "cat": "control", "input": "To be frank, I didn't like it.", "expected": "To be frank, I didn't like it.", "source": "To be frank, I didn't like it.", "segments": ["To be frank,", "I didn't like it."]}
+{"id": "a037", "cat": "control", "input": "I bought the shoes at Target.", "expected": "I bought the shoes at Target.", "source": "I bought the shoes at Target."}
+{"id": "a038", "cat": "control", "input": "I wonder if she's home yet", "expected": "I wonder if she's home yet", "source": "I wonder if she's home yet."}
+{"id": "a039", "cat": "control", "input": "I was wondering if you are free tonight", "expected": "I was wondering if you are free tonight", "source": "I was wondering if you're free tonight."}
+{"id": "a040", "cat": "control", "input": "Let me know if you need anything.", "expected": "Let me know if you need anything.", "source": "Let me know if you need anything."}
+{"id": "a041", "cat": "control", "input": "Did you hear that noise?", "expected": "Did you hear that noise?", "source": "Did you hear that noise?"}
+{"id": "a042", "cat": "control", "input": "Is the pool open yet?", "expected": "Is the pool open yet?", "source": "Is the pool open yet?"}
+{"id": "a043", "cat": "control", "input": "The fair went up again,", "expected": "The fair went up again,", "source": "The fare went up again."}
+{"id": "a044", "cat": "control", "input": "I need to break earlier on this hill", "expected": "I need to break earlier on this hill", "source": "I need to brake earlier on this hill."}
+{"id": "a045", "cat": "control", "input": "The tail of the kite got stuck in a tree.", "expected": "The tail of the kite got stuck in a tree.", "source": "The tail of the kite got stuck in a tree."}
+{"id": "a046", "cat": "control", "input": "It's a minus for me.", "expected": "It's a minus for me.", "source": "It's a minus for me."}
+{"id": "a047", "cat": "control", "input": "I finally beat that video game last night.", "expected": "I finally beat that video game last night.", "source": "I finally beat that video game last night."}
+{"id": "a048", "cat": "control", "input": "Pour the batter into the pan.", "expected": "Pour the batter into the pan.", "source": "Pour the batter into the pan."}
+{"id": "a049", "cat": "control", "input": "Did you lock the car?", "expected": "Did you lock the car?", "source": "Did you lock the car?"}
+{"id": "a050", "cat": "control", "input": "Serve with rice or bread.", "expected": "Serve with rice or bread.", "source": "Serve with rice or bread."}
+{"id": "a051", "cat": "control", "input": "How nice of you!", "expected": "How nice of you!", "source": "How nice of you."}
+{"id": "a052", "cat": "control", "input": "That party was lit.", "expected": "That party was lit.", "source": "That party was lit."}
+{"id": "a053", "cat": "control", "input": "Preheat the oven to 350", "expected": "Preheat the oven to 350", "source": "Preheat the oven to three fifty."}
+{"id": "a054", "cat": "control", "input": "The principal called my mom.", "expected": "The principal called my mom.", "source": "The principal called my mom."}
+{"id": "a055", "cat": "control", "input": "I just need some peace and quiet.", "expected": "I just need some peace and quiet.", "source": "I just need some peace and quiet."}
+{"id": "a056", "cat": "control", "input": "The night in the story saves the village.", "expected": "The night in the story saves the village.", "source": "The knight in the story saves the village."}
+{"id": "a057", "cat": "control", "input": "We set in the aisle seats.", "expected": "We set in the aisle seats.", "source": "We sat in the aisle seats."}
+{"id": "a058", "cat": "control", "input": "They're over there by the fountain.", "expected": "They're over there by the fountain.", "source": "They're over there by the fountain."}
+{"id": "a059", "cat": "control", "input": "Their dog is so cute.", "expected": "Their dog is so cute.", "source": "Their dog is so cute."}
+{"id": "a060", "cat": "control", "input": "I'll be there in an hour.", "expected": "I'll be there in an hour.", "source": "I'll be there in an hour."}
+{"id": "a061", "cat": "control", "input": "My son plays soccer.", "expected": "My son plays soccer.", "source": "My son plays soccer."}
+{"id": "a062", "cat": "control", "input": "I ate the whole thing.", "expected": "I ate the whole thing.", "source": "I ate the whole thing."}
+{"id": "a063", "cat": "control", "input": "There are eight of us.", "expected": "There are eight of us.", "source": "There are eight of us."}
+{"id": "a064", "cat": "control", "input": "The weather is nice. So let's eat outside", "expected": "The weather is nice. So let's eat outside", "source": "The weather is nice, so let's eat outside.", "segments": ["The weather is nice.", "So let's eat outside"]}
+{"id": "a065", "cat": "control", "input": "I need two cups of flour.", "expected": "I need two cups of flour.", "source": "I need two cups of flour."}
+{"id": "a066", "cat": "control", "input": "The meat was cooked perfectly.", "expected": "The meat was cooked perfectly.", "source": "The meat was cooked perfectly."}
+{"id": "a067", "cat": "control", "input": "Let's meet at the pier.", "expected": "Let's meet at the pier.", "source": "Let's meet at the pier."}
+{"id": "a068", "cat": "control", "input": "The steak was perfect.", "expected": "The steak was perfect.", "source": "The steak was perfect."}
+{"id": "a069", "cat": "control", "input": "I'm so bored.", "expected": "I'm so bored.", "source": "I'm so bored."}
+{"id": "a070", "cat": "control", "input": "The board meeting got postponed.", "expected": "The board meeting got postponed.", "source": "The board meeting got postponed."}
+{"id": "a071", "cat": "control", "input": "Please wait in the lobby", "expected": "Please wait in the lobby", "source": "Please wait in the lobby."}
+{"id": "a072", "cat": "control", "input": "The weight limit is 50 pounds.", "expected": "The weight limit is 50 pounds.", "source": "The weight limit is fifty pounds."}
+{"id": "a073", "cat": "control", "input": "The sale ends on Sunday.", "expected": "The sale ends on Sunday.", "source": "The sale ends on Sunday."}
+{"id": "a074", "cat": "control", "input": "We went sailing on the lake.", "expected": "We went sailing on the lake.", "source": "We went sailing on the lake."}
+{"id": "a075", "cat": "control", "input": "I need a new pair of socks", "expected": "I need a new pair of socks", "source": "I need a new pair of socks."}
+{"id": "a076", "cat": "control", "input": "Can you peel the potatoes", "expected": "Can you peel the potatoes", "source": "Can you peel the potatoes?"}
+{"id": "a077", "cat": "control", "input": "The plane was delayed.", "expected": "The plane was delayed.", "source": "The plane was delayed."}
+{"id": "a078", "cat": "control", "input": "I can hear the ocean.", "expected": "I can hear the ocean.", "source": "I can hear the ocean."}
+{"id": "a079", "cat": "control", "input": "Come over here.", "expected": "Come over here.", "source": "Come over here."}
+{"id": "a080", "cat": "control", "input": "The deer ran across the road.", "expected": "The deer ran across the road.", "source": "The deer ran across the road."}
+{"id": "a081", "cat": "control", "input": "I'll bear that in mind.", "expected": "I'll bear that in mind.", "source": "I'll bear that in mind."}
+{"id": "a082", "cat": "control", "input": "We saw a bear on the trail.", "expected": "We saw a bear on the trail.", "source": "We saw a bear on the trail."}
+{"id": "a083", "cat": "control", "input": "My bike has a flat tire.", "expected": "My bike has a flat tire.", "source": "My bike has a flat tire."}
+{"id": "a084", "cat": "control", "input": "I'm reading a good book.", "expected": "I'm reading a good book.", "source": "I'm reading a good book."}
+{"id": "a085", "cat": "control", "input": "I bet you can't do it.", "expected": "I bet you can't do it.", "source": "I bet you can't do it."}
+{"id": "a086", "cat": "control", "input": "It's the same as last time.", "expected": "It's the same as last time.", "source": "It's the same as last time."}
+{"id": "a087", "cat": "control", "input": "Sam is coming with us.", "expected": "Sam is coming with us.", "source": "Sam is coming with us."}
+{"id": "a088", "cat": "control", "input": "I can't believe it's already October", "expected": "I can't believe it's already October", "source": "I can't believe it's already October."}
+{"id": "a089", "cat": "control", "input": "The kids are watching cartoons", "expected": "The kids are watching cartoons", "source": "The kids are watching cartoons."}
+{"id": "a090", "cat": "control", "input": "I left my umbrella at the restaurant", "expected": "I left my umbrella at the restaurant", "source": "I left my umbrella at the restaurant."}
+{"id": "a091", "cat": "control", "input": "My phone is about to die", "expected": "My phone is about to die", "source": "My phone is about to die."}
+{"id": "a092", "cat": "control", "input": "The Wi-Fi is down again.", "expected": "The Wi-Fi is down again.", "source": "The wifi is down again."}
+{"id": "a093", "cat": "control", "input": "Running late. Be there in ten.", "expected": "Running late. Be there in ten.", "source": "Running late, be there in ten.", "segments": ["Running late.", "Be there in ten."]}
+{"id": "a094", "cat": "control", "input": "Happy birthday! Hope you have a great day.", "expected": "Happy birthday! Hope you have a great day.", "source": "Happy birthday! Hope you have a great day.", "segments": ["Happy birthday!", "Hope you have a great day."]}
+{"id": "a095", "cat": "control", "input": "Thanks for dinner last night.", "expected": "Thanks for dinner last night.", "source": "Thanks for dinner last night."}
+{"id": "a096", "cat": "control", "input": "That restaurant is always packed", "expected": "That restaurant is always packed", "source": "That restaurant is always packed."}
+{"id": "a097", "cat": "control", "input": "We should try that new tie place.", "expected": "We should try that new tie place.", "source": "We should try that new Thai place."}
+{"id": "a098", "cat": "control", "input": "My grandpa used to tell the best stories", "expected": "My grandpa used to tell the best stories", "source": "My grandpa used to tell the best stories."}
+{"id": "a099", "cat": "control", "input": "The baby finally fell asleep.", "expected": "The baby finally fell asleep.", "source": "The baby finally fell asleep."}
+{"id": "a100", "cat": "control", "input": "The dog ate my sandwich.", "expected": "The dog ate my sandwich.", "source": "The dog ate my sandwich."}
+{"id": "a101", "cat": "control", "input": "Turn left at the second light.", "expected": "Turn left at the second light.", "source": "Turn left at the second light."}
+{"id": "a102", "cat": "control", "input": "It's the blue house on the right.", "expected": "It's the blue house on the right.", "source": "It's the blue house on the right."}
+{"id": "a103", "cat": "control", "input": "Unplug it and plug it back in.", "expected": "Unplug it and plug it back in.", "source": "Unplug it and plug it back in."}
+{"id": "a104", "cat": "control", "input": "Feed the fish a tiny pinch.", "expected": "Feed the fish a tiny pinch.", "source": "Feed the fish a tiny pinch."}
+{"id": "a105", "cat": "control", "input": "The trash goes out on Tuesday night.", "expected": "The trash goes out on Tuesday night.", "source": "The trash goes out on Tuesday night."}
+{"id": "a106", "cat": "control", "input": "I'm meeting Sarah for lunch.", "expected": "I'm meeting Sarah for lunch.", "source": "I'm meeting Sarah for lunch."}
+{"id": "a107", "cat": "control", "input": "Tell Jordan I said thanks.", "expected": "Tell Jordan I said thanks.", "source": "Tell Jordan I said thanks."}
+{"id": "a108", "cat": "control", "input": "Mike and I are going fishing.", "expected": "Mike and I are going fishing.", "source": "Mike and I are going fishing."}
+{"id": "a109", "cat": "control", "input": "Will you pick up some milk?", "expected": "Will you pick up some milk?", "source": "Will you pick up some milk?"}
+{"id": "a110", "cat": "control", "input": "I may be a little late.", "expected": "I may be a little late.", "source": "I may be a little late."}
+{"id": "a111", "cat": "control", "input": "Mark my words It's going to rain", "expected": "Mark my words It's going to rain", "source": "Mark my words, it's going to rain.", "segments": ["Mark my words", "It's going to rain"]}
+{"id": "a112", "cat": "control", "input": "Hi mom comma I will call you later period", "expected": "Hi mom comma I will call you later period", "source": "Hi Mom comma | I will call you later period", "segments": ["Hi mom comma", "I will call you later period"]}
+{"id": "a113", "cat": "control", "input": "Thanks for everything. New line See you soon.", "expected": "Thanks for everything. New line See you soon.", "source": "Thanks for everything. | New line. | See you soon.", "segments": ["Thanks for everything.", "New line", "See you soon."]}
+{"id": "a114", "cat": "control", "input": "Are you coming tonight question mark", "expected": "Are you coming tonight question mark", "source": "Are you coming tonight question mark"}
+{"id": "a115", "cat": "control", "input": "That's amazing! Exclamation point!", "expected": "That's amazing! Exclamation point!", "source": "That's amazing exclamation point"}
+{"id": "a116", "cat": "control", "input": "Dear Sarah, comma, new paragraph, I hope you are doing well.", "expected": "Dear Sarah, comma, new paragraph, I hope you are doing well.", "source": "Dear Sarah comma | new paragraph | I hope you are doing well.", "segments": ["Dear Sarah, comma,", "New paragraph,", "I hope you are doing well."]}
+{"id": "a117", "cat": "control", "input": "Groceries colon. Eggs, milk Bread.", "expected": "Groceries colon. Eggs, milk Bread.", "source": "Groceries colon | eggs, milk, bread.", "segments": ["Groceries colon.", "Eggs,", "Milk", "Bread."]}
+{"id": "a118", "cat": "control", "input": "I'll be there at five. Scratch that. I'll be there at six.", "expected": "I'll be there at five. Scratch that. I'll be there at six.", "source": "I'll be there at five. | Scratch that. | I'll be there at six.", "segments": ["I'll be there at five.", "Scratch that.", "I'll be there at six."]}
+{"id": "a119", "cat": "control", "input": "She said, open quote. I'm on my way. Close quote.", "expected": "She said, open quote. I'm on my way. Close quote.", "source": "She said | open quote | I'm on my way | close quote", "segments": ["She said,", "Open quote.", "I'm on my way.", "Close quote."]}
+{"id": "a120", "cat": "control", "input": "He called himself, open quote, x-ray Close quote. For some reason,", "expected": "He called himself, open quote, x-ray Close quote. For some reason,", "source": "He called himself | open quote | x-ray | close quote | for some reason.", "segments": ["He called himself,", "Open quote,", "X-ray", "Close quote.", "For some reason,"]}
+{"id": "a121", "cat": "control", "input": "Rock ampersand roll", "expected": "Rock ampersand roll", "source": "Rock ampersand roll"}
+{"id": "a122", "cat": "control", "input": "Follow us at, hashtag travel", "expected": "Follow us at, hashtag travel", "source": "Follow us at | hashtag travel", "segments": ["Follow us at,", "Hashtag travel"]}
+{"id": "a123", "cat": "control", "input": "Once upon a time, comma. There was a princess period.", "expected": "Once upon a time, comma. There was a princess period.", "source": "Once upon a time comma | there was a princess period", "segments": ["Once upon a time, comma.", "There was a princess period."]}
+{"id": "a124", "cat": "control", "input": "The end exclamation point.", "expected": "The end exclamation point.", "source": "The end exclamation point"}
+{"id": "a125", "cat": "control", "input": "Step one. New line Preheat the oven.", "expected": "Step one. New line Preheat the oven.", "source": "Step one | new line | preheat the oven.", "segments": ["Step one.", "New line", "Preheat the oven."]}
+{"id": "a126", "cat": "control", "input": "Love you, comma. Mom.", "expected": "Love you, comma. Mom.", "source": "Love you comma | Mom", "segments": ["Love you, comma.", "Mom."]}
+{"id": "a127", "cat": "control", "input": "Best regards, comma. New line Tom,", "expected": "Best regards, comma. New line Tom,", "source": "Best regards comma | new line | Tom", "segments": ["Best regards, comma.", "New line", "Tom,"]}
+{"id": "a128", "cat": "control", "input": "See you soon smiley face", "expected": "See you soon smiley face", "source": "See you soon smiley face"}
+{"id": "a129", "cat": "control", "input": "Call me at five. Scratch that. Call me at six.", "expected": "Call me at five. Scratch that. Call me at six.", "source": "Call me at five | scratch that | call me at six", "segments": ["Call me at five.", "Scratch that.", "Call me at six."]}
+{"id": "a130", "cat": "control", "input": "I want the red. Delete last word Blue car", "expected": "I want the red. Delete last word Blue car", "source": "I want the red | delete last word | blue car", "segments": ["I want the red.", "Delete last word", "Blue car"]}
+{"id": "a131", "cat": "control", "input": "Research ampersand development", "expected": "Research ampersand development", "source": "Research ampersand development"}
+{"id": "a132", "cat": "control", "input": "The total was $25. New line Thanks again.", "expected": "The total was $25. New line Thanks again.", "source": "The total was twenty five dollars | new line | thanks again", "segments": ["The total was $25.", "New line", "Thanks again."]}
+{"id": "a133", "cat": "control", "input": "Meet me at 5. I mean, six.", "expected": "Meet me at 5. I mean, six.", "source": "Meet me at five, I mean, six.", "segments": ["Meet me at 5.", "I mean,", "Six."]}
+{"id": "a134", "cat": "control", "input": "The party is on Friday No wait. Saturday.", "expected": "The party is on Friday No wait. Saturday.", "source": "The party is on Friday, no wait, Saturday.", "segments": ["The party is on Friday", "No wait.", "Saturday."]}
+{"id": "a135", "cat": "control", "input": "Grab some apples Sorry. Oranges from the store", "expected": "Grab some apples Sorry. Oranges from the store", "source": "Grab some apples, sorry, oranges from the store.", "segments": ["Grab some apples", "Sorry.", "Oranges from the store"]}
+{"id": "a136", "cat": "control", "input": "Texts sam. I mean, alex about dinner.", "expected": "Texts sam. I mean, alex about dinner.", "source": "Text Sam, I mean, Alex about dinner.", "segments": ["Texts sam.", "I mean,", "Alex about dinner."]}
+{"id": "a137", "cat": "control", "input": "We need three. Actually, four chairs.", "expected": "We need three. Actually, four chairs.", "source": "We need three, actually, four chairs.", "segments": ["We need three.", "Actually,", "Four chairs."]}
+{"id": "a138", "cat": "control", "input": "Call me at noon. Or rather,, 1.", "expected": "Call me at noon. Or rather,, 1.", "source": "Call me at noon, or rather, one.", "segments": ["Call me at noon.", "Or rather,,", "1."]}
+{"id": "a139", "cat": "control", "input": "Pick me up at six. No, wait, seven.", "expected": "Pick me up at six. No, wait, seven.", "source": "Pick me up at six, no wait, seven.", "segments": ["Pick me up at six.", "No, wait,", "Seven."]}
+{"id": "a140", "cat": "control", "input": "Get the red one Sorry. The blue one.", "expected": "Get the red one Sorry. The blue one.", "source": "Get the red one, sorry, the blue one.", "segments": ["Get the red one", "Sorry.", "The blue one."]}
+{"id": "a141", "cat": "control", "input": "The meeting is in room four. I mean, room 5.", "expected": "The meeting is in room four. I mean, room 5.", "source": "The meeting is in room four, I mean, room five.", "segments": ["The meeting is in room four.", "I mean,", "Room 5."]}
+{"id": "a142", "cat": "control", "input": "Send it to Mike. I mean, kevin.", "expected": "Send it to Mike. I mean, kevin.", "source": "Send it to Mike, I mean, Kevin.", "segments": ["Send it to Mike.", "I mean,", "Kevin."]}
+{"id": "a143", "cat": "control", "input": "And then she was like, um. What are you doing here?", "expected": "And then she was like, um. What are you doing here?", "source": "And then she was like, um, what are you doing here?", "segments": ["And then she was like,", "Um.", "What are you doing here?"]}
+{"id": "a144", "cat": "control", "input": "He asked. Can you help me with the boxes?", "expected": "He asked. Can you help me with the boxes?", "source": "He asked, can you help me with the boxes?", "segments": ["He asked.", "Can you help me with the boxes?"]}
+{"id": "a145", "cat": "control", "input": "I was like, oh my god!", "expected": "I was like, oh my god!", "source": "I was like, oh my God.", "segments": ["I was like,", "Oh my god!"]}
+{"id": "a146", "cat": "control", "input": "She goes, what are you doing?", "expected": "She goes, what are you doing?", "source": "She goes, what are you doing?", "segments": ["She goes,", "What are you doing?"]}
+{"id": "a147", "cat": "control", "input": "My boss was like, hey! Can you stay late?", "expected": "My boss was like, hey! Can you stay late?", "source": "My boss was like, hey, can you stay late?", "segments": ["My boss was like,", "Hey!", "Can you stay late?"]}
+{"id": "a148", "cat": "control", "input": "I said, no. I can't do that.", "expected": "I said, no. I can't do that.", "source": "I said, no, I can't do that.", "segments": ["I said,", "No.", "I can't do that."]}
+{"id": "a149", "cat": "control", "input": "So I was like, um. No thanks.", "expected": "So I was like, um. No thanks.", "source": "So I was like, um, no thanks.", "segments": ["So I was like,", "Um.", "No thanks."]}
+{"id": "a150", "cat": "control", "input": "The kid goes, why is the sky blue?", "expected": "The kid goes, why is the sky blue?", "source": "The kid goes, why is the sky blue?", "segments": ["The kid goes,", "Why is the sky blue?"]}
+{"id": "a151", "cat": "control", "input": "My mom asked, are you eating enough?", "expected": "My mom asked, are you eating enough?", "source": "My mom asked, are you eating enough?", "segments": ["My mom asked,", "Are you eating enough?"]}
+{"id": "a152", "cat": "control", "input": "She texted, hey. Are you coming?", "expected": "She texted, hey. Are you coming?", "source": "She texted, hey, are you coming?", "segments": ["She texted,", "Hey.", "Are you coming?"]}
+{"id": "a153", "cat": "control", "input": "The tickets were twenty-five dollars each.", "expected": "The tickets were twenty-five dollars each.", "source": "The tickets were twenty five dollars each."}
+{"id": "a154", "cat": "control", "input": "Let's meet at 3:30 p.m..", "expected": "Let's meet at 3:30 p.m..", "source": "Let's meet at three thirty p.m."}
+{"id": "a155", "cat": "control", "input": "Everything is 50% off.", "expected": "Everything is 50% off.", "source": "Everything is fifty percent off."}
+{"id": "a156", "cat": "control", "input": "We have thirty-seven people coming.", "expected": "We have thirty-seven people coming.", "source": "We have thirty seven people coming."}
+{"id": "a157", "cat": "control", "input": "It cost $450 to fix.", "expected": "It cost $450 to fix.", "source": "It cost four hundred and fifty dollars to fix."}
+{"id": "a158", "cat": "control", "input": "The flight leaves at 6:45 tomorrow.", "expected": "The flight leaves at 6:45 tomorrow.", "source": "The flight leaves at six forty five tomorrow."}
+{"id": "a159", "cat": "control", "input": "My parents got married in 1989", "expected": "My parents got married in 1989", "source": "My parents got married in nineteen eighty nine."}
+{"id": "a160", "cat": "control", "input": "Rent is $2,000 a month.", "expected": "Rent is $2,000 a month.", "source": "Rent is two thousand dollars a month."}
+{"id": "a161", "cat": "control", "input": "The budget is $50,000.", "expected": "The budget is $50,000.", "source": "The budget is fifty thousand dollars."}
+{"id": "a162", "cat": "control", "input": "Sales went up 12 percent.", "expected": "Sales went up 12 percent.", "source": "Sales went up twelve percent."}
+{"id": "a163", "cat": "control", "input": "I was. Um. Thinking we could go tomorrow.", "expected": "I was. Um. Thinking we could go tomorrow.", "source": "I was, um, thinking we could go tomorrow.", "segments": ["I was.", "Um.", "Thinking we could go tomorrow."]}
+{"id": "a164", "cat": "control", "input": "So, uh... What do you want for dinner?", "expected": "So, uh... What do you want for dinner?", "source": "So, uh, what do you want for dinner?", "segments": ["So,", "Uh...", "What do you want for dinner?"]}
+{"id": "a165", "cat": "control", "input": "It's Um. About two miles from here.", "expected": "It's Um. About two miles from here.", "source": "It's, um, about two miles from here.", "segments": ["It's", "Um.", "About two miles from here."]}
+{"id": "a166", "cat": "control", "input": "Let me check my calendar", "expected": "Let me check my calendar", "source": "Hmm, let me check my calendar."}
+{"id": "a167", "cat": "control", "input": "Um. Can you call me back?", "expected": "Um. Can you call me back?", "source": "Um, can you call me back?", "segments": ["Um.", "Can you call me back?"]}
+{"id": "a168", "cat": "control", "input": "We could. Huh. Try the other place", "expected": "We could. Huh. Try the other place", "source": "We could, uh, try the other place.", "segments": ["We could.", "Huh.", "Try the other place"]}
+{"id": "a169", "cat": "control", "input": "I think. Um. I left it at work.", "expected": "I think. Um. I left it at work.", "source": "I think, um, I left it at work.", "segments": ["I think.", "Um.", "I left it at work."]}
+{"id": "a170", "cat": "control", "input": "The meeting is, um... At 2.", "expected": "The meeting is, um... At 2.", "source": "The meeting is, um, at two.", "segments": ["The meeting is,", "Um...", "At 2."]}
+{"id": "a171", "cat": "control", "input": "I think we should leave now.", "expected": "I think we should leave now.", "source": "I I think we should leave now."}
+{"id": "a172", "cat": "control", "input": "Can you pass the assault?", "expected": "Can you pass the assault?", "source": "Can you pass the the salt?"}
+{"id": "a173", "cat": "control", "input": "We need bowls and spoons for the picnic.", "expected": "We need bowls and spoons for the picnic.", "source": "We need bowls and spoons for the picnic."}
+{"id": "a174", "cat": "control", "input": "I need to buy some milk on the way home.", "expected": "I need to buy some milk on the way home.", "source": "I need to buy some milk on the way home."}
+{"id": "a175", "cat": "control", "input": "Did you check the weather for tomorrow?", "expected": "Did you check the weather for tomorrow?", "source": "Did you check the weather for tomorrow?"}
+{"id": "a176", "cat": "control", "input": "I'll be there in five minutes.", "expected": "I'll be there in five minutes.", "source": "I'll be there in five minutes."}
+{"id": "a177", "cat": "control", "input": "The kids want to go to the beach.", "expected": "The kids want to go to the beach.", "source": "The kids want to go to the beach."}
+{"id": "a178", "cat": "control", "input": "Can you write that down for me?", "expected": "Can you write that down for me?", "source": "Can you write that down for me?"}
+{"id": "a179", "cat": "control", "input": "She threw the ball to the dog.", "expected": "She threw the ball to the dog.", "source": "She threw the ball to the dog."}
+{"id": "a180", "cat": "control", "input": "We ate a whole pizza.", "expected": "We ate a whole pizza.", "source": "We ate a whole pizza."}
+{"id": "a181", "cat": "control", "input": "I'm going to the gym after work.", "expected": "I'm going to the gym after work.", "source": "I'm going to the gym after work."}
+{"id": "a182", "cat": "control", "input": "The report is due on Friday.", "expected": "The report is due on Friday.", "source": "The report is due on Friday."}
+{"id": "a183", "cat": "control", "input": "Are you coming to dinner tonight?", "expected": "Are you coming to dinner tonight?", "source": "Are you coming to dinner tonight?"}
+{"id": "a184", "cat": "control", "input": "Did you get my message?", "expected": "Did you get my message?", "source": "Did you get my message?"}
+{"id": "a185", "cat": "control", "input": "Where did you put the remote?", "expected": "Where did you put the remote?", "source": "Where did you put the remote?"}
+{"id": "a186", "cat": "control", "input": "What time does the game start?", "expected": "What time does the game start?", "source": "What time does the game start?"}
+{"id": "a187", "cat": "control", "input": "Have you seen my glasses anywhere?", "expected": "Have you seen my glasses anywhere?", "source": "Have you seen my glasses anywhere?"}
+{"id": "a188", "cat": "control", "input": "Do you want anything from the store?", "expected": "Do you want anything from the store?", "source": "Do you want anything from the store?"}
+{"id": "a189", "cat": "control", "input": "Is the office open on Monday?", "expected": "Is the office open on Monday?", "source": "Is the office open on Monday?"}
+{"id": "a190", "cat": "control", "input": "Why did the meeting get cancelled?", "expected": "Why did the meeting get cancelled?", "source": "Why did the meeting get canceled?"}
+{"id": "a191", "cat": "control", "input": "Should I bring my laptop?", "expected": "Should I bring my laptop?", "source": "Should I bring my laptop?"}
+{"id": "a192", "cat": "control", "input": "Who is presenting tomorrow?", "expected": "Who is presenting tomorrow?", "source": "Who is presenting tomorrow?"}
+{"id": "a193", "cat": "control", "input": "Could you send me the file?", "expected": "Could you send me the file?", "source": "Could you send me the file?"}
+{"id": "a194", "cat": "control", "input": "How long is the drive?", "expected": "How long is the drive?", "source": "How long is the drive?"}
+{"id": "a195", "cat": "control", "input": "You're coming. Right?", "expected": "You're coming. Right?", "source": "You're coming, right?", "segments": ["You're coming.", "Right?"]}
+{"id": "a196", "cat": "control", "input": "It's tomorrow. Right?", "expected": "It's tomorrow. Right?", "source": "It's tomorrow, right?", "segments": ["It's tomorrow.", "Right?"]}
+{"id": "a197", "cat": "control", "input": "Wait. So you already paid for the tickets?", "expected": "Wait. So you already paid for the tickets?", "source": "Wait, so you already paid for the tickets?", "segments": ["Wait.", "So you already paid for the tickets?"]}
+{"id": "a198", "cat": "control", "input": "Guess who I ran into today?", "expected": "Guess who I ran into today?", "source": "Guess who I ran into today."}
+{"id": "a199", "cat": "control", "input": "I don't know where she lives.", "expected": "I don't know where she lives.", "source": "I don't know where she lives."}
+{"id": "a200", "cat": "control", "input": "Ask your dad if he wants to come", "expected": "Ask your dad if he wants to come", "source": "Ask your dad if he wants to come."}
+{"id": "a201", "cat": "control", "input": "Who's bringing the drinks?", "expected": "Who's bringing the drinks?", "source": "Who's bringing the drinks?"}
+{"id": "a202", "cat": "control", "input": "Whose turn is it?", "expected": "Whose turn is it?", "source": "Whose turn is it?"}
+{"id": "a203", "cat": "control", "input": "It's going to be fine.", "expected": "It's going to be fine.", "source": "It's going to be fine."}
+{"id": "a204", "cat": "control", "input": "The dog chased its tail.", "expected": "The dog chased its tail.", "source": "The dog chased its tail."}

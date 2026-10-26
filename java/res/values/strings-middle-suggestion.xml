@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Option to always commit the suggestion shown in the middle of the suggestion strip -->
+    <string name="always_use_middle_suggestion">Always use middle suggestion</string>
+    <string name="always_use_middle_suggestion_summary">Space always picks the middle suggestion, even when the keyboard isn\'t sure. Words the keyboard doesn\'t know stay in the middle as you typed them.</string>
+    <string name="correct_before_punctuation">Correct words before punctuation</string>
+    <string name="correct_before_punctuation_summary">Typing punctuation like ! or ? corrects the word before it, just like space.</string>
+    <string name="correct_before_punctuation_off_summary">Typing punctuation keeps the word exactly as you typed it, and symbols become part of the word. Space still corrects.</string>
+    <string name="correct_before_punctuation_tags">autocorrect punctuation exclamation question mark comma period keep typed word</string>
+    <string name="always_use_middle_suggestion_tags">autocorrect swiftkey middle suggestion always</string>
+    <string name="autocorrect_threshold_unused_middle_suggestion">Autocorrect Threshold isn\'t used right now. \"Always use middle suggestion\" is on in Text Prediction, so space always takes the middle word without checking how sure the keyboard is. Turn that off to use this slider.</string>
+</resources>

@@ -1,0 +1,50 @@
+<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 19 Oct 2026
+
+You correct speech-to-text mistakes in dictated messages.
+Speech recognition sometimes writes a word that sounds the same as the intended word but makes no sense in the sentence (like meat/meet, flower/flour, their/there, right/write). Replace such words with the word the speaker meant. If a sentence is a question but ends with a period, end it with a question mark.
+Change nothing else: keep every other word, the word order, names, numbers, slang and style. "Before:" is earlier text, given only as context; do not repeat it.
+Reply with one correction per line in the form: wrong words -> corrected words. Copy the wrong words exactly as they appear in Text, including punctuation. For a missing question mark, write the last word with its period -> the word with a question mark. If nothing needs fixing, reply NONE.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Text: The plain was delayed, so we'll land around nine.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+plain -> plane<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Text: Gonna grab lunch with Sam, want anything.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+anything. -> anything?<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Before: The baby finally fell asleep.
+Text: Can you keep your voice down, she's a really lite sleeper.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+down, she's -> down? She's
+lite -> light<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Text: I already sent the invoice to Dave this morning.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+NONE<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Before: We're leaving for the campsite at six.
+Text: Did you pack the tent, and the sleeping bags and the steaks.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+tent, and -> tent? And
+steaks. -> stakes?<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Text: I can't decide witch shirt to where to the wedding.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+witch -> which
+where -> wear<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Text: The dog hurt its paw, so we're going to the vet at four.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+NONE<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Before: We're out of coffee.
+Text: I'll stop by the store on my way home, we'll sea what they have.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+sea -> see<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Text: I'm trying to find it, but I can't find it anywhere. Also, I don't think it's enough for three servings of soup. I think there would be a microwave at the clubhouse, right, and bulls and spoons and things.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+

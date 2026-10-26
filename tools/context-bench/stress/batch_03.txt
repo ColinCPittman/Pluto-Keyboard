@@ -1,0 +1,421 @@
+# batch 03: storytelling, quoting people, instructions, slang, look-alikes
+c So yesterday I was at the grocery store and this guy cuts in front of me.
+c And then he just walks away like nothing happened.
+c I couldn't believe it, honestly.
+c So I'm standing there with my cart, totally confused.
+c The cashier just shrugged.
+c Anyway, I got home and the power was out.
+c We ended up eating cereal by candlelight.
+c It was kind of fun, actually.
+c My little brother thought it was an adventure.
+c Then the lights came back on around nine.
+c The next morning, the fridge was making this weird noise.
+c We called the repair guy and he came out the same day.
+c He said the compressor was shot.
+c So now we need a new fridge.
+c Of course this happens the week before Thanksgiving.
+c Last summer we drove all the way to the coast.
+c The car broke down halfway there.
+c We waited three hours for a tow truck.
+c A nice old couple stopped and gave us water.
+c We still send them a card every Christmas.
+c When I was a kid, we had a dog named Biscuit.
+c He used to steal socks from the laundry basket.
+c My mom would find them buried in the backyard.
+c I miss that dog so much.
+c My grandpa used to tell the best stories.
+c He grew up on a farm in Iowa.
+c He said they had to walk two miles to school.
+c I always thought he was exaggerating.
+c Turns out he wasn't.
+c The first time I tried skiing, I fell about twenty times.
+c By the end of the day I could make it down the bunny hill.
+c My friend was already doing the black diamonds.
+c I've never been so sore in my life.
+c We got lost on the way to the wedding.
+c The GPS sent us down a dirt road.
+c We showed up just as the ceremony started.
+c Nobody noticed, thankfully.
+c The food at the reception was incredible.
+c My cousin gave a really emotional toast.
+c Half the room was crying.
+c Then the DJ played the chicken dance.
+c It was chaos, but in a good way.
+c My roommate locked himself out again.
+c He had to climb through the kitchen window.
+c The neighbors thought he was a burglar.
+c They almost called the cops.
+c We laughed about it for weeks.
+c I finally beat that video game last night.
+c It took me like three months.
+c The final boss was brutal.
+c I was so tired I fell asleep on the couch.
+c Our flight was delayed six hours.
+c They gave us meal vouchers for ten bucks.
+c Ten bucks doesn't buy anything at an airport.
+c We finally boarded at midnight.
+c The baby behind us cried the whole flight.
+c I don't blame the baby, honestly.
+# quoting people: should stay as said
+c She said she'd be here by eight.
+c He told me he was quitting his job.
+c My mom said I could borrow the car.
+c The teacher said the test was easy.
+c My boss said the project was a success.
+c They told us the restaurant was closed.
+c He asked me to help him move.
+c She asked if I wanted to come along.
+c I asked him how he was doing.
+c He asked where the bathroom was.
+c She asked what time the movie started.
+c He asked who was in charge.
+c I told her I'd think about it.
+c He said yes right away.
+c She said no without even thinking.
+c They said maybe next time.
+c My dad said absolutely not.
+c He goes to the gym every morning.
+c She went home after the party.
+c We went out for ice cream.
+c I went back to sleep.
+c He was like a kid in a candy store.
+c It was like nothing I'd ever seen.
+c She's like the best teacher ever.
+c I'm like super tired right now.
+c They were like twenty minutes late.
+c He was like, totally fine with it.
+c My sister texted me a picture of her cat.
+c He whispered the answer to me.
+c The coach yelled at the referee.
+c She screamed when she saw the spider.
+c He replied with a thumbs up.
+c He came back with coffee for everyone.
+c She shot back with a smile.
+c He fired back with a long email.
+c My friend says hi.
+c Everyone says the pizza there is the best.
+c My boss says we can leave early on Friday.
+c The sign says no parking.
+c The weather app says it's going to rain.
+c She said what she had to say and left.
+c He said what was on his mind.
+c I said what I meant.
+c She told me what happened.
+c He told me where to go.
+c I asked what the problem was.
+c She asked why we were late.
+c He asked how much it cost.
+c They asked when we were leaving.
+c My kid asked if dogs can see colors.
+c My son asked why the sky is blue.
+c She told the kids to clean their rooms.
+c He told everyone to calm down.
+# quoting people: positives
+p:quote And she goes, are you kidding me? => And she goes "Are you kidding me?"
+p:quote So I was like, um, no thanks. => So I was like "Um, no thanks."
+p:quote He was like, dude, what are you doing? => He was like "Dude, what are you doing?"
+p:quote My mom asked are you eating enough. => My mom asked "Are you eating enough?"
+p:quote I said, hey, wait for me! => I said "Hey, wait for me!"
+p:quote She was like, oh no, not again. => She was like "Oh no, not again."
+p:quote The kid goes, why is the sky blue? => The kid goes "Why is the sky blue?"
+p:quote I'm like, seriously, again? => I'm like "Seriously, again?"
+p:quote My dad was like, uh, who are you? => My dad was like "Uh, who are you?"
+p:quote He texted, yo, are you up? => He texted "Yo, are you up?" ;; He texted, yo, are you up?
+p:quote And then he said, wow, that's huge. => And then he said "Wow, that's huge."
+p:quote She asked, can you help me with this? => She asked "Can you help me with this?"
+# instructions and recipes
+c Preheat the oven to three fifty.
+c Mix the flour and sugar in a large bowl.
+c Add the eggs one at a time.
+c Stir until it's smooth.
+c Pour the batter into the pan.
+c Bake for about half an hour.
+c Let it cool before you cut it.
+c Chop the onions and garlic.
+c Heat the oil in a pan over medium heat.
+c Add a pinch of salt and pepper.
+c Simmer for ten minutes.
+c Serve with rice or bread.
+c Turn left at the second light.
+c Go straight for about a mile.
+c It's the blue house on the right.
+c Park on the street, not in the driveway.
+c The code for the gate is on the sticky note.
+c Ring the doorbell twice.
+c Take the elevator to the fifth floor.
+c Unplug it and plug it back in.
+c Hold the power button for ten seconds.
+c Make sure the light is green before you start.
+c Water the tomatoes every other day.
+c Feed the fish a tiny pinch, not the whole can.
+c Put the leftovers in the fridge.
+c Lock the back door when you leave.
+c Don't let the cat out.
+c The trash goes out on Tuesday night.
+c Recycling is every other week.
+c Bring a jacket, it gets cold at night.
+c Wear comfortable shoes.
+c Sign here and here.
+c Press the red button to stop it.
+c Fold the towels in thirds.
+c Wash the dark clothes in cold water.
+c Hang the shirts so they don't wrinkle.
+c Call the vet if he stops eating.
+c Give him half a pill with his dinner.
+c Walk him around the block twice a day.
+c His leash is by the door.
+# questions
+c Do you think it'll rain?
+c What should we do this weekend?
+c Have you ever been to Japan?
+c How long does it take to get there?
+c Is it too late to call?
+c Did you finish your homework?
+c Who's coming to the barbecue?
+c Can I bring my dog?
+c Should I wear a tie?
+c What do you want for your birthday?
+c Where's the best place to get tacos around here?
+c Why is it so expensive?
+c How do you make that sauce?
+c Are we there yet?
+c Did you lock the car?
+c Is that your phone ringing?
+c What's the Wi-Fi password?
+c Can you hear me now?
+c Would you like some tea?
+c How was the concert?
+c Isn't it beautiful?
+c You're coming, right?
+c That's the one, isn't it?
+c It's tomorrow, right?
+c You saw that, didn't you?
+c I wonder where they went.
+c I wonder why he said that.
+c I was wondering if you could help me move.
+c I'm not sure if they're open.
+c I don't know where she lives.
+c I can't remember what I came in here for.
+c I have no idea what he's talking about.
+c Ask your dad if he wants to come.
+c Tell her what time the party starts.
+c Find out where they're staying.
+c Let me know what you decide.
+c Check if the store has it in stock.
+c See if he's awake.
+c Figure out who's driving.
+c Guess what happened today.
+c Imagine how that felt.
+p:question Who knows what they'll do next. => Who knows what they'll do next? ;; Who knows what they'll do next.
+c Whatever you want is fine.
+c Whoever gets there first should save seats.
+c However you do it, just be careful.
+c Wherever you go, I'll follow.
+c What a beautiful day.
+p:question How cool is that. => How cool is that? ;; How cool is that.
+c What a mess.
+c How nice of you.
+p:question Do you think it'll rain tomorrow. => Do you think it'll rain tomorrow?
+p:question How long is the drive. => How long is the drive?
+p:question Can I bring a friend. => Can I bring a friend?
+p:question What's the address. => What's the address?
+p:question Did you lock the door. => Did you lock the door?
+p:question Where are the car keys. => Where are the car keys?
+p:question Have you eaten yet. => Have you eaten yet?
+p:question Would you like to come with us. => Would you like to come with us?
+p:question Is everything okay. => Is everything okay?
+p:question Why are you still awake. => Why are you still awake?
+# slang and casual
+c Bro, that was insane.
+c No cap, that's the best burger I've ever had.
+c That party was lit.
+c I'm lowkey jealous.
+c She's highkey obsessed with that show.
+c That's sus.
+c It's giving main character energy.
+c I can't even.
+c Vibes were immaculate.
+c He ghosted me.
+c We're just chilling at my place.
+c That movie slaps.
+c I'm so done with this week.
+c Ugh, I'm so hungover.
+c Dude, where's my car?
+c Yo, what's up?
+c Sup, how's it going?
+c Ayy, we did it!
+c Nah, I'm good.
+c Yep, already on it.
+c Nope, not happening.
+c Meh, it was okay.
+c Oof, that hurts.
+c Yikes, that's not good.
+c Welp, there goes my weekend.
+c Bet, see you at eight.
+c Say less.
+c It is what it is.
+c My bad, I totally forgot.
+c Same, honestly.
+c For real though, thank you.
+c That's on me.
+c I'm dead.
+c Big mood.
+c Facts.
+c Totally.
+c Literally me.
+c Hard pass.
+c Let's goooo!
+c Wait, what?
+c Hold up, say that again.
+c Hang on a sec.
+c Gimme a minute.
+c Gonna be late, sorry!
+c Wanna grab food later?
+c Gotta go, talk later.
+c Kinda tired, might skip the gym.
+c Lemme check.
+c Dunno, maybe.
+# command words inside stories
+c We had to wait through a long grace period before the loan kicked in.
+c The teacher made us write the period at the end of every sentence.
+c He's the kind of guy who uses way too many commas.
+c My cousin had colon surgery last year.
+c The quote on the poster was from Gandhi.
+c She dashed across the street.
+c I put a hashtag on my post.
+c They opened a new line at the checkout.
+c We stood in line for an hour.
+c There was a question mark over whether he'd come.
+c The bank charged me an extra fee.
+c I learned to code with Python.
+c He wears a bracelet with a smiley face on it.
+c She has an asterisk tattoo.
+c The equal sign on my calculator is stuck.
+c The plus side is we save money.
+c The dash cam caught the whole thing.
+c I'll be there in a dash.
+c That's a quotation from Shakespeare.
+c My teacher always said never end a sentence with a preposition.
+c Close the door, please.
+c Open the box carefully.
+c Open the door for the delivery guy.
+c Close your eyes and make a wish.
+c Quote me on that.
+c Don't quote me on that.
+c I'd love a quote for painting the fence.
+c The new paragraph should start with the date.
+c He wrote a whole new paragraph about me.
+c Start a new paragraph for each idea.
+c Put each name on a new line.
+c I need to delete that old photo.
+c Scratch that idea, it won't work.
+# self-corrections in stories (positives) and look-alikes
+p:selfcorrection We drove to Denver, I mean, Boulder. => We drove to Boulder.
+p:selfcorrection He was there for two, no wait, three weeks. => He was there for three weeks.
+p:selfcorrection The dog's name was Max, sorry, Buddy. => The dog's name was Buddy.
+p:selfcorrection We got there at nine, actually, ten. => We got there at ten. ;; We got there at 10.
+p:selfcorrection She lives on Oak Street, I mean, Elm Street. => She lives on Elm Street.
+p:selfcorrection Add two cups of sugar, sorry, one cup. => Add one cup of sugar. ;; Add one cup. ;; Add two cups of sugar, sorry, one cup.
+p:selfcorrection Turn left, I mean, right at the light. => Turn right at the light.
+c The trip was long, but actually pretty relaxing.
+c I was sorry to hear that.
+c He said sorry, but it didn't help.
+c No, I mean it, thank you so much.
+c Actually, never mind.
+c Actually, yeah, that sounds good.
+c Sorry, did you say something?
+c Sorry about earlier.
+c Sorry for being so late.
+c I'm sorry, I can't hear you.
+c Rather, I should say thank you.
+c Or rather than that, we could just stay.
+c No, wait, don't hang up.
+c No wait, I see it now.
+c Oh wait, never mind, found it.
+c Wait, actually, I think you're right.
+c I mean, sure, if you want.
+c What did you mean by that?
+c Which one did you mean?
+# fillers and repeats
+p:filler Um, so I was thinking about the trip. => So I was thinking about the trip.
+p:filler It was, uh, kind of a disaster. => It was kind of a disaster.
+p:filler The guy was, um, really tall. => The guy was really tall.
+p:filler We got to the, uh, hotel around midnight. => We got to the hotel around midnight.
+p:filler And then, um, the car broke down. => And then the car broke down.
+p:filler My grandma, uh, makes the best pie. => My grandma makes the best pie.
+p:filler Hmm, I don't remember. => I don't remember.
+p:filler Uh, where was I? => Where was I?
+p:repeat We we went to the beach. => We went to the beach.
+p:repeat She she didn't say anything. => She didn't say anything.
+p:repeat And and then it started raining. => And then it started raining.
+c Ah, that makes sense.
+c Ah, I love this song.
+c Eh, I'm not a fan.
+p:filler Er, the ER was full. => The ER was full.
+c She said "um" like a hundred times in her speech.
+c He's always saying uh huh when he's not listening.
+c Mm-hmm, that's right.
+c Uh-huh, sure.
+c Uh oh, the milk is expired.
+c Hmm.
+c Um.
+c Wow, wow, wow.
+c Run, run, run!
+c Ha ha, very funny.
+c Knock knock, who's there?
+c Tick tock, we're running out of time.
+c It was a long, long time ago.
+c We walked and walked for hours.
+c They talked and talked all night.
+c The dog barked and barked.
+c Again and again, he made the same mistake.
+c Over and over, the same song.
+c Day after day, nothing changed.
+c It's a so-so movie.
+c The tuk tuk ride was wild.
+c We went to Walla Walla for wine tasting.
+c The cha cha is my favorite dance.
+c My niece calls her blanket a blankie.
+# commands (positives)
+p:command Once upon a time comma | there was a princess period => Once upon a time, there was a princess.
+p:command The end exclamation point => The end!
+p:command Shopping list colon | apples, bananas, milk. => Shopping list: apples, bananas, milk.
+p:command Step one. | New line. | Preheat the oven. => Step one.\nPreheat the oven.
+p:command We left at noon. | Scratch that. | We left at one. => We left at one.
+p:command He said. | Open quote. | I'll be right back. | Close quote. => He said "I'll be right back."
+p:command What time is it question mark => What time is it?
+p:command Love you comma | Mom => Love you, Mom
+p:command Salt ampersand pepper => Salt & pepper
+p:command Chapter two. | New paragraph. | It was raining. => Chapter two.\n\nIt was raining.
+# numbers
+p:number We drove for three hundred miles. => We drove for 300 miles.
+p:number It was ninety five degrees outside. => It was 95 degrees outside.
+p:number The tickets cost sixty dollars. => The tickets cost $60.
+p:number He was born in nineteen seventy two. => He was born in 1972.
+p:number We waited forty five minutes. => We waited 45 minutes.
+p:number The party starts at seven thirty pm. => The party starts at 7:30 PM.
+p:number Only twenty percent of people finished. => Only 20% of people finished.
+p:number We have twenty one days left. => We have 21 days left.
+c We stayed for a week or two.
+c I've been there a few times.
+c It's been ages.
+c Only one person showed up.
+c I have two kids and a dog.
+c There were three of us.
+c It happened in the nineteen sixties.
+c My dad was born in the fifties.
+c She's in her thirties.
+c We won the game by a mile.
+c It weighs a ton.
+c I've got a million things to do.
+# soundalike positives
+p:soundalike We walked along the beech at sunset. => We walked along the beach at sunset.
+p:soundalike He through the frisbee too far. => He threw the frisbee too far.
+p:soundalike I could here the waves from our room. => I could hear the waves from our room.
+p:soundalike The dog wagged it's tail. => The dog wagged its tail. ;; The dog wagged it's tail.
+p:soundalike We stayed their for a week. => We stayed there for a week.
+p:soundalike She new all the words. => She knew all the words.
+p:soundalike I'm going to by a new bike. => I'm going to buy a new bike.
+p:soundalike It took about an our to get there. => It took about an hour to get there.
+p:mixed Um, did you guys see the game last night. => Did you guys see the game last night?
+p:mixed So I was like, um, what is going on? => So I was like "Um, what is going on?"

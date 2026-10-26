@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Voice typing setup help
+    url: https://github.com/ColinCPittman/Pluto-Keyboard#set-up-voice-typing
+    about: Which model file to download and how to import it.
+  - name: Want a new keyboard layout?
+    url: https://github.com/futo-org/futo-keyboard-layouts/issues
+    about: Layouts live in a separate repository, shared with FUTO Keyboard.

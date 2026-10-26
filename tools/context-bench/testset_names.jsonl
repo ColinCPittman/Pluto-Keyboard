@@ -1,0 +1,45 @@
+{"id": "nm01", "cat": "name", "input": "Tell see ya mara I said hi.", "expected": "Tell Xiomara I said hi.", "personal": ["Xiomara"]}
+{"id": "nm02", "cat": "name", "input": "I'm meeting Katelyn for coffee tomorrow.", "expected": "I'm meeting Caitlin for coffee tomorrow.", "personal": ["Caitlin"]}
+{"id": "nm03", "cat": "name", "input": "Jackson has soccer practice at four.", "expected": "Jaxon has soccer practice at four.", "personal": ["Jaxon"]}
+{"id": "nm04", "cat": "name", "input": "Can you pick up Eefa from school today?", "expected": "Can you pick up Aoife from school today?", "personal": ["Aoife"]}
+{"id": "nm05", "cat": "name", "input": "Priya said she's running a little late.", "expected": "Preeya said she's running a little late.", "personal": ["Preeya"]}
+{"id": "nm06", "cat": "name", "input": "Chloe is coming over for dinner tonight.", "expected": "Khloe is coming over for dinner tonight.", "personal": ["Khloe"]}
+{"id": "nm07", "cat": "name", "input": "Dashawn just texted me about the game.", "expected": "Deshawn just texted me about the game.", "personal": ["Deshawn"]}
+{"id": "nm08", "cat": "name", "input": "I think Reese wants to borrow the car.", "expected": "I think Rhys wants to borrow the car.", "personal": ["Rhys"]}
+{"id": "nm09", "cat": "name", "input": "Dashel finally fell asleep after his bath.", "expected": "Dashiell finally fell asleep after his bath.", "personal": ["Dashiell"]}
+{"id": "nm10", "cat": "name", "input": "Owen and I are going hiking on Sunday.", "expected": "Eoin and I are going hiking on Sunday.", "personal": ["Eoin"]}
+{"id": "nm11", "cat": "case", "input": "I talked to jordan yesterday about the trip.", "expected": "I talked to Jordan yesterday about the trip."}
+{"id": "nm12", "cat": "case", "input": "We're flying to paris next week.", "expected": "We're flying to Paris next week."}
+{"id": "nm13", "cat": "case", "input": "My sister lives in texas now.", "expected": "My sister lives in Texas now."}
+{"id": "nm14", "cat": "case", "input": "What is in the Toaster oven?", "expected": "What is in the toaster oven?", "segments": ["What is in the", "Toaster oven?"]}
+{"id": "nm15", "cat": "case", "input": "Can you grab the Milk from the fridge?", "expected": "Can you grab the milk from the fridge?", "segments": ["Can you grab the", "Milk from the fridge?"]}
+{"id": "nm16", "cat": "case", "input": "I left my keys on the Kitchen table.", "expected": "I left my keys on the kitchen table.", "segments": ["I left my keys on the", "Kitchen table."]}
+{"id": "nm17", "cat": "case", "input": "We should go to the Beach this weekend.", "expected": "We should go to the beach this weekend.", "segments": ["We should go to the", "Beach this weekend."]}
+{"id": "nm18", "cat": "case", "input": "Did you talk to sarah about dinner?", "expected": "Did you talk to Sarah about dinner?"}
+{"id": "nm19", "cat": "case", "input": "The meeting got moved to monday.", "expected": "The meeting got moved to Monday."}
+{"id": "nm20", "cat": "case", "input": "I need a new Phone charger.", "expected": "I need a new phone charger.", "segments": ["I need a new", "Phone charger."]}
+{"id": "nmn01", "cat": "control", "input": "I need more time to finish this.", "expected": "I need more time to finish this.", "personal": ["Mara"]}
+{"id": "nmn02", "cat": "control", "input": "Where did you put the key?", "expected": "Where did you put the key?", "personal": ["Kai"]}
+{"id": "nmn03", "cat": "control", "input": "The whole area was flooded after the storm.", "expected": "The whole area was flooded after the storm.", "personal": ["Aria"]}
+{"id": "nmn04", "cat": "control", "input": "I talked to Mark about it yesterday.", "expected": "I talked to Mark about it yesterday."}
+{"id": "nmn05", "cat": "control", "input": "Tell Will to call me back.", "expected": "Tell Will to call me back."}
+{"id": "nmn06", "cat": "control", "input": "I'm going to Target after work.", "expected": "I'm going to Target after work."}
+{"id": "nmn07", "cat": "control", "input": "Is this the Brown residence?", "expected": "Is this the Brown residence?"}
+{"id": "nmn08", "cat": "control", "input": "We ate at Olive Garden last night.", "expected": "We ate at Olive Garden last night."}
+{"id": "nmn09", "cat": "control", "input": "Did you watch the Super Bowl?", "expected": "Did you watch the Super Bowl?"}
+{"id": "nmn10", "cat": "control", "input": "I bought a new Apple Watch.", "expected": "I bought a new Apple Watch."}
+{"id": "nmn11", "cat": "control", "input": "She works at the White House.", "expected": "She works at the White House."}
+{"id": "nmn12", "cat": "control", "input": "I'm reading Harry Potter again.", "expected": "I'm reading Harry Potter again."}
+{"id": "nmn13", "cat": "control", "input": "Lee is my best friend from college.", "expected": "Lee is my best friend from college.", "personal": ["Leigh"]}
+{"id": "nmn14", "cat": "control", "input": "I need to buy some rice and beans.", "expected": "I need to buy some rice and beans.", "personal": ["Rhys"]}
+{"id": "nmn15", "cat": "control", "input": "I need a new car soon.", "expected": "I need a new car soon.", "personal": ["Cara"]}
+{"id": "nmn16", "cat": "control", "input": "We're going to the Grand Canyon in May.", "expected": "We're going to the Grand Canyon in May."}
+{"id": "nmn17", "cat": "control", "input": "My Mom says hi.", "expected": "My Mom says hi."}
+{"id": "nmn18", "cat": "control", "input": "Michael Jackson is my favorite singer.", "expected": "Michael Jackson is my favorite singer.", "personal": ["Jaxon"]}
+{"id": "nmn19", "cat": "control", "input": "I love The Office, it's so funny.", "expected": "I love The Office, it's so funny."}
+{"id": "nmn20", "cat": "control", "input": "Ask Rose if she wants to come.", "expected": "Ask Rose if she wants to come."}
+{"id": "nmn21", "cat": "control", "input": "I watched the new Batman movie.", "expected": "I watched the new Batman movie."}
+{"id": "nmn22", "cat": "control", "input": "We drove up to Lake Tahoe.", "expected": "We drove up to Lake Tahoe."}
+{"id": "nm_ex1", "cat": "control", "input": "Oh darn, we missed the last train.", "expected": "Oh darn, we missed the last train.", "personal": ["Hadorn"]}
+{"id": "nm_ex2", "cat": "control", "input": "Oh dang, the oven is still on.", "expected": "Oh dang, the oven is still on.", "personal": ["Odang", "Hadorn"]}
+{"id": "nm_ex3", "cat": "control", "input": "Well gosh, that took forever.", "expected": "Well gosh, that took forever.", "personal": ["Welgosh"]}

@@ -1,0 +1,33 @@
+<start_of_turn>user
+You proofread voice dictation. The text came from speech recognition, so it can contain words that sound like the intended word but are wrong in context (for example "meat" for "meet", "flower" for "flour"), and questions that end with a period instead of a question mark.
+Fix ONLY those two kinds of mistakes. Do not rephrase, do not add or remove words, and do not change slang, names, numbers or style. If the text is already fine, leave it unchanged. "Before:" is earlier text for context only; never correct or repeat it.
+Reply with the corrected Text only.
+
+Text: The plain was delayed, so we'll land around nine.<end_of_turn>
+<start_of_turn>model
+The plane was delayed, so we'll land around nine.<end_of_turn>
+<start_of_turn>user
+Text: Gonna grab lunch with Sam, want anything.<end_of_turn>
+<start_of_turn>model
+Gonna grab lunch with Sam, want anything?<end_of_turn>
+<start_of_turn>user
+Text: I already sent the invoice to Dave this morning.<end_of_turn>
+<start_of_turn>model
+I already sent the invoice to Dave this morning.<end_of_turn>
+<start_of_turn>user
+Before: The baby finally fell asleep.
+Text: Can you keep your voice down, she's a really lite sleeper.<end_of_turn>
+<start_of_turn>model
+Can you keep your voice down? She's a really light sleeper.<end_of_turn>
+<start_of_turn>user
+Text: The dog hurt its paw, so we're going to the vet at four.<end_of_turn>
+<start_of_turn>model
+The dog hurt its paw, so we're going to the vet at four.<end_of_turn>
+<start_of_turn>user
+Before: We're out of coffee.
+Text: I'll stop by the store on my way home, we'll sea what they have.<end_of_turn>
+<start_of_turn>model
+I'll stop by the store on my way home, we'll see what they have.<end_of_turn>
+<start_of_turn>user
+Text: I'm trying to find it, but I can't find it anywhere. Also, I don't think it's enough for three servings of soup. I think there would be a microwave at the clubhouse, right, and bulls and spoons and things.<end_of_turn>
+<start_of_turn>model

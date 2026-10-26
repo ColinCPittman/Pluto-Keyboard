@@ -1,0 +1,18 @@
+# Builds ctxrun against an upstream llama.cpp checkout (not the app's vendored ggml).
+#   cmake -B build -DLLAMA_SRC=/path/to/llama.cpp [android toolchain flags...]
+cmake_minimum_required(VERSION 3.14)
+project(ctxrun CXX C)
+set(CMAKE_CXX_STANDARD 17)
+set(LLAMA_SRC "" CACHE PATH "Path to a llama.cpp source tree")
+if (NOT LLAMA_SRC)
+    message(FATAL_ERROR "Set -DLLAMA_SRC=<llama.cpp checkout>")
+endif()
+set(LLAMA_BUILD_COMMON OFF CACHE BOOL "" FORCE)
+set(LLAMA_BUILD_TOOLS OFF CACHE BOOL "" FORCE)
+set(LLAMA_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(LLAMA_BUILD_SERVER OFF CACHE BOOL "" FORCE)
+set(LLAMA_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+add_subdirectory(${LLAMA_SRC} llama EXCLUDE_FROM_ALL)
+add_executable(ctxrun ctxrun.cpp)
+target_link_libraries(ctxrun PRIVATE llama ggml)
+target_include_directories(ctxrun PRIVATE ${LLAMA_SRC}/vendor ${LLAMA_SRC}/ggml/include)

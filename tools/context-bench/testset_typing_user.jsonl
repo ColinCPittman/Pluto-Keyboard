@@ -1,0 +1,18 @@
+{"id": "u0", "cat": "typo", "input": "I think we do what we mist.", "expected": "I think we do what we must."}
+{"id": "u1", "cat": "typo", "input": "You are the nest person.", "expected": "You are the best person."}
+{"id": "u2", "cat": "typo", "input": "This is a good magic truck to perform to the children.", "expected": "This is a good magic trick to perform to the children."}
+{"id": "u3", "cat": "typo", "input": "We should leave earlier then the others.", "expected": "We should leave earlier than the others."}
+{"id": "u4", "cat": "typo", "input": "She is taller then her brother.", "expected": "She is taller than her brother."}
+{"id": "u5", "cat": "typo", "input": "This pizza is better then the last one.", "expected": "This pizza is better than the last one."}
+{"id": "u6", "cat": "typo", "input": "He runs faster then anyone I know.", "expected": "He runs faster than anyone I know."}
+{"id": "u7", "cat": "typo", "input": "It was more expensive then I expected.", "expected": "It was more expensive than I expected."}
+{"id": "u8", "cat": "typo", "input": "We should leave early then the others.", "expected": "We should leave early than the others."}
+{"id": "c0", "cat": "control", "input": "We ate dinner and then the others arrived.", "expected": "We ate dinner and then the others arrived."}
+{"id": "c1", "cat": "control", "input": "If it rains then the game is off.", "expected": "If it rains then the game is off."}
+{"id": "c2", "cat": "control", "input": "First we left earlier, then the others followed.", "expected": "First we left earlier, then the others followed."}
+{"id": "c3", "cat": "control", "input": "He was taller then, but not now.", "expected": "He was taller then, but not now."}
+{"id": "c4", "cat": "control", "input": "The truck was parked outside the house.", "expected": "The truck was parked outside the house."}
+{"id": "c5", "cat": "control", "input": "That was a good trick for the children.", "expected": "That was a good trick for the children."}
+{"id": "c6", "cat": "control", "input": "We left earlier then went home.", "expected": "We left earlier then went home."}
+{"id": "c7", "cat": "control", "input": "She is the best person for the job.", "expected": "She is the best person for the job."}
+{"id": "c8", "cat": "control", "input": "We must go now before it rains.", "expected": "We must go now before it rains."}

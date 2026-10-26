@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pluto: the setup tutorial that walks you through getting the models -->
+    <string name="tour_skip_step">Skip step</string>
+    <string name="tour_skip_tutorial">Skip tutorial</string>
+    <string name="tour_next">Next</string>
+    <string name="tour_continue">Continue</string>
+    <string name="tour_paused">The setup tutorial is waiting for you</string>
+    <string name="tour_finished">Setup tutorial finished. You can run it again from Help.</string>
+
+    <string name="tour_voice_row_title">Let\'s set up voice typing</string>
+    <string name="tour_voice_row_text">Voice typing, punctuation fixes and Smart corrections each need a model file (English only for now, because Moonshine only understands English). Pluto has no internet access, so you download the files yourself and import them here. Tap Voice Input Model to start.</string>
+    <string name="tour_voice_download_title">Download a voice model</string>
+    <string name="tour_voice_download_text">Tap here to open Pluto\'s release page in your browser. Download Moonshine Small (or Tiny for an older phone), then come back here. Don\'t unzip it.</string>
+    <string name="tour_import_title">Now import it</string>
+    <string name="tour_voice_import_text">Tap here and pick the voice model file you downloaded. Pluto starts using it right away.</string>
+
+    <string name="tour_punctuation_row_title">Next, punctuation</string>
+    <string name="tour_punctuation_row_text">Moonshine puts a period at almost every pause. This model takes those out and punctuates what you said again, with real sentences, commas and capital letters. Tap Punctuation Model.</string>
+    <string name="tour_punctuation_download_title">Download the punctuation model</string>
+    <string name="tour_punctuation_download_text">Tap here to open the release page and download the English punctuation file, then come back here.</string>
+    <string name="tour_punctuation_import_text">Tap here and pick the punctuation file you downloaded.</string>
+    <string name="tour_punctuation_setting_title">Fix punctuation</string>
+    <string name="tour_punctuation_setting_text">Importing the punctuation model switches this on. You can turn it on or off here any time.</string>
+
+    <string name="tour_smart_corrections_row_title">Last, Smart corrections</string>
+    <string name="tour_smart_corrections_row_text">This bigger model fixes words that sound alike, spells names your way and more, for voice typing and for typing. Tap Smart Corrections.</string>
+    <string name="tour_smart_corrections_download_title">Download Smart corrections</string>
+    <string name="tour_smart_corrections_download_text">Tap here to open the release page and download the Smart corrections file (about 470 MB), then come back here.</string>
+    <string name="tour_smart_corrections_import_text">Tap here and pick the Smart corrections file you downloaded.</string>
+    <string name="tour_smart_corrections_voice_title">Smart corrections for voice</string>
+    <string name="tour_smart_corrections_voice_text">Importing the model switches it on for voice typing. The options below choose what it may fix.</string>
+    <string name="tour_smart_corrections_typing_title">Smart corrections for typing</string>
+    <string name="tour_smart_corrections_typing_text">It can also fix typos that slip past autocorrect while you type. Tap the switch to turn it on, or tap Next to leave it off.</string>
+
+    <!-- when the Moonshine step was skipped (voice typing uses Whisper) -->
+    <string name="tour_set_up_moonshine">Set up Moonshine</string>
+    <string name="tour_punctuation_whisper_title">Punctuation is for Moonshine</string>
+    <string name="tour_punctuation_whisper_text">You skipped the Moonshine voice model, so voice typing uses Whisper, which adds its own punctuation. The punctuation model only works with Moonshine, so there\'s nothing to set up here for now. If you add Moonshine later, you can import it from this row.</string>
+    <string name="tour_smart_corrections_whisper_text">You skipped the Moonshine voice model, so voice typing uses Whisper, which already reads your whole dictation for context. After Whisper, Smart corrections mostly adds a short wait. It still catches typos while you type, so you can set it up anyway. Tap Smart Corrections.</string>
+    <string name="tour_smart_corrections_voice_whisper_text">It\'s on, but with Whisper as your voice model it changes little. It does much more once you switch to Moonshine.</string>
+
+    <string name="tour_smart_corrections_explore_title">More to explore here</string>
+    <string name="tour_smart_corrections_explore_text">Each switch on this page turns one kind of voice fix on or off, like numbers as digits, voice commands, filler words or emoji by name. Look through them and set them the way you like. Smart corrections for typing has its own page under Text Prediction.</string>
+    <string name="tour_finish">Finish tutorial</string>
+
+    <string name="tour_restart">Show the setup tutorial again</string>
+    <string name="tour_restart_subtitle">Walks you through getting the voice, punctuation and Smart corrections models</string>
+</resources>

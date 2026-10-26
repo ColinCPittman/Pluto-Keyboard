@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="crashed_text_email">Pluto Keyboard has crashed! You can report the problem at github.com/ColinCPittman/Pluto-Keyboard/issues</string>
+    <string name="crashed_text">Pluto Keyboard has crashed! Please send a report to help us fix this.</string>
+    <string name="crashed_title">Crash Reporter</string>
+
+    <string name="crash_report_accept">Send Report</string>
+    <string name="crash_report_reject">Ignore</string>
+</resources>

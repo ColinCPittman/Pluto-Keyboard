@@ -1,0 +1,425 @@
+# batch 02: work and email, numbers, names, homophones used correctly, look-alikes
+c Hi team, just a quick update on the project.
+c Please find the report attached.
+c Let me know if you have any questions.
+c I'll circle back after the meeting.
+c Can we push the deadline to Friday?
+c The client approved the budget this morning.
+c We need to finalize the slides by noon.
+c Thanks for your patience while we sort this out.
+c I'm out of the office until Monday.
+c Could you review the draft when you get a chance?
+c The server went down around midnight.
+c I've added you to the calendar invite.
+c Our quarterly review is next Tuesday.
+c Please submit your timesheets by the end of the day.
+p:number The new hire starts on the fifteenth. => The new hire starts on the 15th. ;; The new hire starts on the fifteenth.
+c I'll send over the contract this afternoon.
+c We're still waiting on legal to sign off.
+c The vendor raised their prices again.
+c Sales were up compared to last quarter.
+c Let's set up a call to discuss the details.
+c I think we should loop in the design team.
+c The launch is scheduled for next month.
+c The product launch went really well.
+c We missed the launch window because of the weather.
+c They're going to launch the rocket at dawn.
+c Can you forward me that thread?
+c I'll be working from home tomorrow.
+c Our office is closed for the holiday.
+c My manager wants the numbers by Thursday.
+c The presentation is on the shared drive.
+c Please don't reply all to this email.
+c We hit our target for the month.
+c The meeting ran over by twenty minutes.
+c I need to step away for a few minutes.
+c Can you cover my shift on Saturday?
+c The printer on the third floor is jammed again.
+c Let's grab coffee and talk it through.
+c I appreciate you staying late to help.
+c The deadline is tight, but we can make it.
+c We should document this process.
+c I'll update the spreadsheet tonight.
+c The interview went better than I expected.
+c They offered me the position!
+c I'm putting in my two weeks notice.
+c HR sent out the new policy yesterday.
+c The conference is in Denver this year.
+c Our flight to Chicago got canceled.
+c I booked a hotel near the convention center.
+c Please keep this confidential.
+c We're short staffed this week.
+c The training session is mandatory.
+c I'm swamped today, can we talk tomorrow?
+c The board meeting got postponed.
+c Let's table this for now.
+c I'll take the lead on this one.
+c She's the point person for the account.
+c The proposal needs a stronger summary.
+c Can you proofread my cover letter?
+c I accidentally deleted the file.
+c The backup should have a copy.
+c IT is looking into the problem.
+c I need to reset my password.
+c The new software is a lot faster.
+c Our team won the award for best project.
+c Let's celebrate on Friday.
+c I'm grateful for the opportunity.
+c The principal of the loan is still pretty high.
+c Honesty is a principle I live by.
+c The council voted against the new park.
+c My lawyer gave me some good counsel.
+c Please don't lose your badge.
+c The knot came loose overnight.
+c I'm not sure about that.
+c The plane landed safely.
+c Keep it plain and simple.
+c We need to buy more paper towels.
+c Stop by my desk when you're free.
+c I'll be by around four.
+c Bye, have a good weekend.
+c The weight limit is fifty pounds.
+c Please wait in the lobby.
+c The waste bin is full.
+c She has a tiny waist.
+c The cereal is in the cupboard.
+c We binge watched the whole serial killer series.
+c The site is down for maintenance.
+c I got a ticket for parking at the meter.
+c Can you meet me at the train station?
+c The ferry leaves every half hour.
+c The fairy tale ended happily.
+c I'll steal a few minutes from lunch.
+c The bridge is made of steel.
+c He's the heir to the family business.
+c The air conditioning is broken.
+c We sold the house last spring.
+c The sole of my shoe came off.
+c Music is good for the soul.
+c They held a vigil for the victims.
+c The groom looked so nervous.
+c I'll groom the dog this weekend.
+c My throat is really sore.
+c The roses are in full bloom.
+c She rows on the river every morning.
+c We sat in the third row.
+c The cellar is full of old wine.
+c The seller accepted our offer.
+c I need to pause for a second.
+c The cat licked its paws.
+c Our pastor gave a great sermon.
+c The cows are in the pasture.
+c The minor league game was fun.
+c The miner found a huge crystal.
+c Turn the volume down a little.
+c We stayed at a really nice inn.
+c I'm all in on this plan.
+c The tail of the kite got stuck in a tree.
+c That's a tall tale.
+c I need a new pair of socks.
+c Can you peel the potatoes?
+c The church bells peal every Sunday.
+c He's a real pain in the neck.
+c The window pane is cracked.
+c The patience of a saint.
+c The patients are waiting in the lobby.
+c I'm wearing my lucky socks.
+c Where are we meeting?
+c We were going to call you.
+c The boy ran down the street.
+c The buoy marks the channel.
+c The gate is locked.
+c He has a funny gait.
+c The die is cast.
+c I'd die for some pizza right now.
+c Please dye my hair blue.
+c I'm hoarse from cheering.
+c The marshal arrived on horseback.
+c They declared martial law.
+c Whose turn is it?
+c The coarse sand hurt my feet.
+c Of course I'll come.
+c The golf course is beautiful.
+c The guest list is finalized.
+c I guessed the right answer.
+c The hall was packed.
+c We have to haul all this stuff upstairs.
+c I'd love to hear your thoughts.
+c A herd of cows blocked the road.
+c Have you heard the news?
+c I need to mow the lawn.
+c Turn left at the light.
+c The rental car was surprisingly nice.
+c I have a lot of fun memories here.
+c I'll check the mail later.
+c That's the main reason.
+c The horse's mane was braided.
+c Maine is beautiful in the fall.
+c I sent a letter to my grandma.
+c I paid a cent less for it somehow.
+c The candle has a lovely scent.
+c We need to sow the seeds this week.
+c So what's the plan?
+c Sew the button back on.
+c The ring is too big for my finger.
+c Please wring out the towel.
+c The rest of the day is free.
+c I need some rest.
+c The wrist brace is helping.
+c I found a nice spot by the water.
+c My aunt lives in Ohio.
+c An ant crawled across the table.
+c I'm allowed to stay up late tonight.
+c Read the passage aloud.
+c We watched the duel scene twice.
+c The car has dual airbags.
+c It's due tomorrow.
+c The morning dew was everywhere.
+c Do you have a minute?
+c It's a minute detail, don't worry about it.
+c The flu is going around.
+c The bird flew away.
+c The chimney flue was blocked.
+c The eye doctor said my vision is fine.
+c Aye aye, captain.
+c I'll call you tonight.
+c The capital of France is Paris.
+c We need more capital to expand.
+c The Capitol building was lit up.
+c It's a matter of principle.
+c Let's meet in the lobby at noon.
+c The meeting starts at noon sharp.
+c We'll need a bigger room.
+# names and capitalized words
+c I'm meeting Sarah for lunch.
+c Tell Jordan I said thanks.
+c Mike and I are going fishing.
+c Aunt Linda is coming for Thanksgiving.
+c Dr. Patel will see you now.
+c I sent it to Kevin yesterday.
+c Grace is the new team lead.
+c Hope and Faith are twins.
+c Will is picking us up.
+c Mark said he'd be late.
+c Rose made the cake.
+c Frank is my neighbor.
+c We had dinner with Jack and Jill.
+c Bill's car is in the shop.
+c Sue called while you were out.
+c Ray fixed my bike.
+c Dawn starts her new job Monday.
+c April is my favorite month.
+c June is going to be busy.
+c August was so hot this year.
+c We drove to Phoenix last weekend.
+c My cousin lives in Reading, Pennsylvania.
+c I grew up in Bath, England.
+c We went to Nice on vacation.
+c The Giants lost again.
+c I'm reading a book by Stephen King.
+c We watched Frozen with the kids.
+c I love the song Yesterday by the Beatles.
+c We ate at Olive Garden.
+c Let's get Chipotle tonight.
+c I bought a Ford last year.
+c She drives a Jeep.
+c I'm switching to Verizon.
+c The Times had a great article on it.
+c We're flying Delta this time.
+c I ordered it on eBay.
+c Can you Google that for me?
+c I'll Venmo you for dinner.
+c Christmas is in two weeks.
+c Easter is early this year.
+c The Fourth of July fireworks were amazing.
+c Happy Valentine's Day!
+# numbers that stay words
+c I'll be there in a second.
+c On second thought, let's stay in.
+c First of all, thanks for coming.
+c She's one in a million.
+c I've told you a million times.
+c We're on cloud nine.
+c It's a nine to five job.
+c The store is open twenty four seven.
+c Ten four, I'm on my way.
+c That song was huge in the nineteen eighties.
+c My grandpa is in his nineties.
+c He's in his early twenties.
+c Hundreds of people showed up.
+c Thousands of fans waited outside.
+c One of them is broken.
+c Two or three people said the same thing.
+c Give me a couple of minutes.
+c I'm going to grab forty winks.
+c He finished at the eleventh hour.
+c It was a once in a lifetime trip.
+c They're a one-trick pony.
+c We watched Ocean's Eleven again.
+c Take five, everyone.
+c It's a two-way street.
+c I'll have a number two with a Coke.
+c She came in first place.
+c He's second in line.
+c I'm the third person to ask about this.
+c Three's a crowd.
+# command-ish words used as words
+c We're in the middle of the second period.
+c The trial period ends next week.
+c He scored in the third period.
+c Her period started this morning.
+c The Victorian period is fascinating.
+c Is there a grace period for the payment?
+c We're in a cooling off period.
+c The comma goes before the quote.
+c I put a comma in the wrong place.
+c The colon is part of the digestive system.
+c I need to get a colonoscopy.
+c Can you give me a quote on the repair?
+c That's my favorite quote.
+c She quoted the whole poem from memory.
+c In quotes, the word sounds sarcastic.
+c Make a quick dash to the car.
+c Add a dash of salt.
+c The dashboard light is on.
+c They made a hashtag for the event.
+c That's the new line of phones.
+c He's next in line.
+c I'll get in line.
+c Draw a line under the title.
+c The line was out the door.
+c We took the next train.
+c I dropped my phone at the bus stop.
+c Please come to a full stop at the sign.
+c The question mark on his face said it all.
+c It's still a big question mark.
+c That's a plus for us.
+c It's a minus for me.
+c Two plus two is four.
+c The equal sign is missing.
+c The bracket broke off the shelf.
+c We're in a higher tax bracket now.
+c Open the window, it's hot.
+c Close the door behind you.
+c The store is closed on Sundays.
+c That was a close call.
+c The hyphen key is broken.
+c Slash the prices by half.
+c The underscore is between the words.
+c Did you see that smiley face cookie?
+c Delete that app, it's spyware.
+c Scratch that ticket and see if you win.
+c I want to delete my account.
+# self-correction and quote look-alikes
+c I mean, who does that?
+c I mean it this time.
+c Do you know what I mean?
+c That's not what I meant.
+c I meant to text you earlier.
+c I meant every word of it.
+c No, actually, that's fine.
+c Actually, can you grab some milk?
+c It's actually not that far.
+c I'm actually really excited about it.
+c Sorry to bother you.
+c Sorry, I didn't catch that.
+c I'm sorry, but I can't make it.
+c Sorry, wrong chat.
+c Oh, sorry, I thought you were someone else.
+c Wait, no, that's not right.
+c No wait, I have a better idea.
+c Wait, I think I know the answer.
+c Rather than complain, let's fix it.
+c I would rather walk.
+c She's rather tall for her age.
+c The correction was minor.
+c Make that two coffees, please.
+c Can you make that happen?
+c Make that left turn up ahead.
+c She said she'd call later.
+c He said that it was fine.
+c They said we could park here.
+c She asked me to dinner.
+c He asked about the schedule.
+c I asked for a window seat.
+c She told him to be quiet.
+c He told me a secret.
+c I told her the truth.
+c My friend says the food there is great.
+c She goes to the gym every day.
+c He went to the store for milk.
+c I went with the blue one.
+c She was like a mother to him.
+c It's like a maze in here.
+c I'm like five minutes away.
+c He's like the nicest guy ever.
+c They were like best friends growing up.
+c She whispered that she was scared.
+c He yelled for the dog to come back.
+c I replied that I'd think about it.
+c She texted that she was running late.
+c He came back with a great idea.
+c She fired back with a sharp reply.
+# positives
+p:soundalike I'm going to the jim after work. => I'm going to the gym after work.
+p:soundalike The report is do on Friday. => The report is due on Friday.
+p:soundalike Can you here me okay? => Can you hear me okay?
+p:soundalike I'll be there in an our. => I'll be there in an hour.
+p:soundalike We should bring a bottle of whine. => We should bring a bottle of wine.
+p:soundalike The store is having a big sail this weekend. => The store is having a big sale this weekend.
+p:soundalike I new she would say that. => I knew she would say that.
+p:soundalike The kids were so board today. => The kids were so bored today.
+p:soundalike Please don't waist the food. => Please don't waste the food.
+p:soundalike Can I have a peace of cake? => Can I have a piece of cake?
+p:question Are we still meeting at noon. => Are we still meeting at noon?
+p:question Could you send me the file. => Could you send me the file?
+p:question Did the client sign the contract. => Did the client sign the contract?
+p:question When is the deadline. => When is the deadline?
+p:question Who is presenting tomorrow. => Who is presenting tomorrow?
+p:question Should I bring my laptop. => Should I bring my laptop?
+p:question Is the office open on Monday. => Is the office open on Monday?
+p:question Why did the meeting get canceled. => Why did the meeting get canceled?
+p:filler The meeting is, um, at two. => The meeting is at two.
+p:filler I'll send it, uh, by tonight. => I'll send it by tonight.
+p:filler We should, um, probably reschedule. => We should probably reschedule.
+p:filler Uh, I think the file is corrupted. => I think the file is corrupted.
+p:filler Can you, um, review this for me? => Can you review this for me?
+p:filler The budget is, uh, a little tight. => The budget is a little tight.
+p:filler So the plan is, um, to launch in May. => So the plan is to launch in May.
+p:filler Hmm, I'm not sure about that. => I'm not sure about that.
+p:repeat The the report is ready. => The report is ready.
+p:repeat I need to to finish this first. => I need to finish this first.
+p:repeat It's on the the shared drive. => It's on the shared drive.
+p:selfcorrection The call is at two, sorry, three. => The call is at three.
+p:selfcorrection Send it to Mike, I mean, Kevin. => Send it to Kevin.
+p:selfcorrection We need it by Tuesday, no wait, Wednesday. => We need it by Wednesday.
+p:selfcorrection Book the room for ten, actually, twelve people. => Book the room for twelve people.
+p:selfcorrection Put it in the blue folder, sorry, the red folder. => Put it in the red folder.
+p:selfcorrection The meeting is in room four, I mean, room five. => The meeting is in room five.
+p:command Hi everyone comma | quick update period => Hi everyone, quick update.
+p:command Thanks, Sarah. | New paragraph. | The numbers look good. => Thanks, Sarah.\n\nThe numbers look good.
+p:command Agenda colon | budget, hiring, timeline. => Agenda: budget, hiring, timeline.
+p:command Can you send it today question mark => Can you send it today?
+p:command We did it exclamation mark => We did it!
+p:command Best regards comma | new line | Tom. => Best regards,\nTom.
+p:command The meeting is at two. | Scratch that. | The meeting is at three. => The meeting is at three.
+p:command Research ampersand development => Research & development
+p:quote My boss was like, um, can you stay late? => My boss was like "Um, can you stay late?"
+p:quote The client asked can we move the call. => The client asked "Can we move the call?"
+p:quote She texted, hey, are you coming? => She texted "Hey, are you coming?"
+p:quote He goes, why is the server down? => He goes "Why is the server down?"
+p:quote I was like, wow, that's a lot of money. => I was like "Wow, that's a lot of money."
+p:number The budget is fifty thousand dollars. => The budget is $50,000.
+p:number The call is at two thirty pm. => The call is at 2:30 PM.
+p:number Sales went up twelve percent. => Sales went up 12%.
+p:number We have forty five employees. => We have 45 employees.
+p:number The invoice was three hundred and twenty dollars. => The invoice was $320.
+p:number The office opened in two thousand nineteen. => The office opened in 2019.
+p:number The meeting is on the twenty second. => The meeting is on the 22nd.
+p:number It costs nine dollars and ninety nine cents. => It costs $9.99.
+p:name Can you ask Shivon to join the call? => Can you ask Siobhan to join the call? @@ Siobhan
+p:name Send the file to Katelyn. => Send the file to Caitlin. @@ Caitlin
+p:name I'll meet with Eefa tomorrow. => I'll meet with Aoife tomorrow. @@ Aoife
+p:name Tell Reese the meeting moved. => Tell Rhys the meeting moved. @@ Rhys
+p:mixed Um, can we push the meeting to three thirty pm. => Can we push the meeting to 3:30 PM?
+p:mixed The report is do, uh, tomorrow morning. => The report is due tomorrow morning.

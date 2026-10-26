@@ -1,0 +1,4 @@
+build/
+.gradle/
+.kotlin/
+hs_err_pid*.log

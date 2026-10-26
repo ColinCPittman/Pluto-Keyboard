@@ -1,0 +1,800 @@
+{"id": "sc000", "cat": "control", "input": "Can you send me the file when you get a chance?", "expected": "Can you send me the file when you get a chance?"}
+{"id": "sp000", "cat": "typo", "input": "Can you send med the file when you get a chance?", "expected": "Can you send me the file when you get a chance?", "slip": "me>med"}
+{"id": "sc001", "cat": "control", "input": "She works at the White House.", "expected": "She works at the White House."}
+{"id": "sp001", "cat": "typo", "input": "She worms at the White House.", "expected": "She works at the White House.", "slip": "works>worms"}
+{"id": "sc002", "cat": "control", "input": "She asked him for money!", "expected": "She asked him for money!"}
+{"id": "sp002", "cat": "typo", "input": "She asked hum for money!", "expected": "She asked him for money!", "slip": "him>hum"}
+{"id": "sc003", "cat": "control", "input": "Call me, my bad, tomorrow works better.", "expected": "Call me, my bad, tomorrow works better."}
+{"id": "sp003", "cat": "typo", "input": "Fall me, my bad, tomorrow works better.", "expected": "Call me, my bad, tomorrow works better.", "slip": "call>fall"}
+{"id": "sc004", "cat": "control", "input": "They talked and talked for hours.", "expected": "They talked and talked for hours."}
+{"id": "sp004", "cat": "typo", "input": "They talked and talked or hours.", "expected": "They talked and talked for hours.", "slip": "for>or"}
+{"id": "sc005", "cat": "control", "input": "I really mean it this time.", "expected": "I really mean it this time."}
+{"id": "sp005", "cat": "typo", "input": "I really mean it this tie.", "expected": "I really mean it this time.", "slip": "time>tie"}
+{"id": "sc006", "cat": "control", "input": "Michael Jackson is my favorite singer.", "expected": "Michael Jackson is my favorite singer."}
+{"id": "sp006", "cat": "typo", "input": "Michael Jackson id my favorite singer.", "expected": "Michael Jackson is my favorite singer.", "slip": "is>id"}
+{"id": "sc007", "cat": "control", "input": "Preeya said she's running a little late.", "expected": "Preeya said she's running a little late."}
+{"id": "sp007", "cat": "typo", "input": "Preeya sad she's running a little late.", "expected": "Preeya said she's running a little late.", "slip": "said>sad"}
+{"id": "sc008", "cat": "control", "input": "He's like the best teacher ever.", "expected": "He's like the best teacher ever."}
+{"id": "sp008", "cat": "typo", "input": "He's like thee best teacher ever.", "expected": "He's like the best teacher ever.", "slip": "the>thee"}
+{"id": "sc009", "cat": "control", "input": "We said we'd be there by noon.", "expected": "We said we'd be there by noon."}
+{"id": "sp009", "cat": "typo", "input": "We said we'd be thee by noon.", "expected": "We said we'd be there by noon.", "slip": "there>thee"}
+{"id": "sc010", "cat": "control", "input": "He finished the report at the eleventh hour.", "expected": "He finished the report at the eleventh hour."}
+{"id": "sp010", "cat": "typo", "input": "He finishes the report at the eleventh hour.", "expected": "He finished the report at the eleventh hour.", "slip": "finished>finishes"}
+{"id": "sc011", "cat": "control", "input": "On second thought, let's stay home.", "expected": "On second thought, let's stay home."}
+{"id": "sp011", "cat": "typo", "input": "On second thought, left's stay home.", "expected": "On second thought, let's stay home.", "slip": "let>left"}
+{"id": "sc012", "cat": "control", "input": "Hey, are we still on for lunch?", "expected": "Hey, are we still on for lunch?"}
+{"id": "sp012", "cat": "typo", "input": "Hey, are we till on for lunch?", "expected": "Hey, are we still on for lunch?", "slip": "still>till"}
+{"id": "sc013", "cat": "control", "input": "You know, I never liked him.", "expected": "You know, I never liked him."}
+{"id": "sp013", "cat": "typo", "input": "Yo know, I never liked him.", "expected": "You know, I never liked him.", "slip": "you>yo"}
+{"id": "sc014", "cat": "control", "input": "I snapped, is that bad?", "expected": "I snapped, is that bad?"}
+{"id": "sp014", "cat": "typo", "input": "I snapped, is that bard?", "expected": "I snapped, is that bad?", "slip": "bad>bard"}
+{"id": "sc015", "cat": "control", "input": "I'm sorry, no, that's wrong.", "expected": "I'm sorry, no, that's wrong."}
+{"id": "sp015", "cat": "typo", "input": "I'm sorry, on, that's wrong.", "expected": "I'm sorry, no, that's wrong.", "slip": "no>on"}
+{"id": "sc016", "cat": "control", "input": "Anyway, so yeah, we left.", "expected": "Anyway, so yeah, we left."}
+{"id": "sp016", "cat": "typo", "input": "Anyway, so yeah, awe left.", "expected": "Anyway, so yeah, we left.", "slip": "we>awe"}
+{"id": "sc017", "cat": "control", "input": "That's the deal. Question mark or not, I'm going.", "expected": "That's the deal. Question mark or not, I'm going."}
+{"id": "sp017", "cat": "typo", "input": "That's the deal. Question ark or not, I'm going.", "expected": "That's the deal. Question mark or not, I'm going.", "slip": "mark>ark"}
+{"id": "sc018", "cat": "control", "input": "It was actually pretty good.", "expected": "It was actually pretty good."}
+{"id": "sp018", "cat": "typo", "input": "It was actually pretty gold.", "expected": "It was actually pretty good.", "slip": "good>gold"}
+{"id": "sc019", "cat": "control", "input": "It's, I guess, about done.", "expected": "It's, I guess, about done."}
+{"id": "sp019", "cat": "typo", "input": "It's, I guess, bout done.", "expected": "It's, I guess, about done.", "slip": "about>bout"}
+{"id": "sc020", "cat": "control", "input": "Hit save, oops, too late.", "expected": "Hit save, oops, too late."}
+{"id": "sp020", "cat": "typo", "input": "Hit save, oops, too later.", "expected": "Hit save, oops, too late.", "slip": "late>later"}
+{"id": "sc021", "cat": "control", "input": "We'll split it fifty fifty.", "expected": "We'll split it fifty fifty."}
+{"id": "sp021", "cat": "typo", "input": "We'll split if fifty fifty.", "expected": "We'll split it fifty fifty.", "slip": "it>if"}
+{"id": "sc022", "cat": "control", "input": "He goes to the gym every day.", "expected": "He goes to the gym every day."}
+{"id": "sp022", "cat": "typo", "input": "Hue goes to the gym every day.", "expected": "He goes to the gym every day.", "slip": "he>hue"}
+{"id": "sc023", "cat": "control", "input": "Hi Mom, I'll call you later.", "expected": "Hi Mom, I'll call you later."}
+{"id": "sp023", "cat": "typo", "input": "Hi Mom, I'll call yo later.", "expected": "Hi Mom, I'll call you later.", "slip": "you>yo"}
+{"id": "sc024", "cat": "control", "input": "He was saying it was fine.", "expected": "He was saying it was fine."}
+{"id": "sp024", "cat": "typo", "input": "He was saying it as fine.", "expected": "He was saying it was fine.", "slip": "was>as"}
+{"id": "sc025", "cat": "control", "input": "My boss messaged me late?", "expected": "My boss messaged me late?"}
+{"id": "sp025", "cat": "typo", "input": "My bows messaged me late?", "expected": "My boss messaged me late?", "slip": "boss>bows"}
+{"id": "sc026", "cat": "control", "input": "The build failed again because of a null pointer exception in the Kotlin code.", "expected": "The build failed again because of a null pointer exception in the Kotlin code."}
+{"id": "sp026", "cat": "typo", "input": "The builds failed again because of a null pointer exception in the Kotlin code.", "expected": "The build failed again because of a null pointer exception in the Kotlin code.", "slip": "build>builds"}
+{"id": "sc027", "cat": "control", "input": "My colon has been bothering me.", "expected": "My colon has been bothering me."}
+{"id": "sp027", "cat": "typo", "input": "My colon has been bothering med.", "expected": "My colon has been bothering me.", "slip": "me>med"}
+{"id": "sc028", "cat": "control", "input": "When you go, can you lock up?", "expected": "When you go, can you lock up?"}
+{"id": "sp028", "cat": "typo", "input": "When you to, can you lock up?", "expected": "When you go, can you lock up?", "slip": "go>to"}
+{"id": "sc029", "cat": "control", "input": "How was your trip to Chicago?", "expected": "How was your trip to Chicago?"}
+{"id": "sp029", "cat": "typo", "input": "How was your trip top Chicago?", "expected": "How was your trip to Chicago?", "slip": "to>top"}
+{"id": "sc030", "cat": "control", "input": "The tickets were twenty five dollars each.", "expected": "The tickets were twenty five dollars each."}
+{"id": "sp030", "cat": "typo", "input": "Thee tickets were twenty five dollars each.", "expected": "The tickets were twenty five dollars each.", "slip": "the>thee"}
+{"id": "sc031", "cat": "control", "input": "He asked me what time it was.", "expected": "He asked me what time it was."}
+{"id": "sp031", "cat": "typo", "input": "He asked med what time it was.", "expected": "He asked me what time it was.", "slip": "me>med"}
+{"id": "sc032", "cat": "control", "input": "Tell Anjali I'll be late.", "expected": "Tell Anjali I'll be late."}
+{"id": "sp032", "cat": "typo", "input": "Tell Anjali I'll bed late.", "expected": "Tell Anjali I'll be late.", "slip": "be>bed"}
+{"id": "sc033", "cat": "control", "input": "I want the blue car.", "expected": "I want the blue car."}
+{"id": "sp033", "cat": "typo", "input": "I ant the blue car.", "expected": "I want the blue car.", "slip": "want>ant"}
+{"id": "sc034", "cat": "control", "input": "The party starts at nine.", "expected": "The party starts at nine."}
+{"id": "sp034", "cat": "typo", "input": "Thee party starts at nine.", "expected": "The party starts at nine.", "slip": "the>thee"}
+{"id": "sc035", "cat": "control", "input": "Ah, I see what you mean.", "expected": "Ah, I see what you mean."}
+{"id": "sp035", "cat": "typo", "input": "Ah, I see what you man.", "expected": "Ah, I see what you mean.", "slip": "mean>man"}
+{"id": "sc036", "cat": "control", "input": "What a beautiful day it is.", "expected": "What a beautiful day it is."}
+{"id": "sp036", "cat": "typo", "input": "What a beautiful day kit is.", "expected": "What a beautiful day it is.", "slip": "it>kit"}
+{"id": "sc037", "cat": "control", "input": "He told you, didn't he?", "expected": "He told you, didn't he?"}
+{"id": "sp037", "cat": "typo", "input": "He gold you, didn't he?", "expected": "He told you, didn't he?", "slip": "told>gold"}
+{"id": "sc038", "cat": "control", "input": "Hold on, let me rephrase that.", "expected": "Hold on, let me rephrase that."}
+{"id": "sp038", "cat": "typo", "input": "Hold on, lest me rephrase that.", "expected": "Hold on, let me rephrase that.", "slip": "let>lest"}
+{"id": "sc039", "cat": "control", "input": "Hold on, I'll be there in a second.", "expected": "Hold on, I'll be there in a second."}
+{"id": "sp039", "cat": "typo", "input": "Hold on, I'll he there in a second.", "expected": "Hold on, I'll be there in a second.", "slip": "be>he"}
+{"id": "sc040", "cat": "control", "input": "My car's brake pedal feels really soft, so I'm taking it to the mechanic.", "expected": "My car's brake pedal feels really soft, so I'm taking it to the mechanic."}
+{"id": "sp040", "cat": "typo", "input": "My car's brake pedal feels really soft, so I'm taking is to the mechanic.", "expected": "My car's brake pedal feels really soft, so I'm taking it to the mechanic.", "slip": "it>is"}
+{"id": "sc041", "cat": "control", "input": "So yeah? What happened next?", "expected": "So yeah? What happened next?"}
+{"id": "sp041", "cat": "typo", "input": "So yeah? Hat happened next?", "expected": "So yeah? What happened next?", "slip": "what>hat"}
+{"id": "sc042", "cat": "control", "input": "Khloe is coming over for dinner tonight.", "expected": "Khloe is coming over for dinner tonight."}
+{"id": "sp042", "cat": "typo", "input": "Khloe is coming lover for dinner tonight.", "expected": "Khloe is coming over for dinner tonight.", "slip": "over>lover"}
+{"id": "sc043", "cat": "control", "input": "The question mark at the end is wrong.", "expected": "The question mark at the end is wrong."}
+{"id": "sp043", "cat": "typo", "input": "The question ark at the end is wrong.", "expected": "The question mark at the end is wrong.", "slip": "mark>ark"}
+{"id": "sc044", "cat": "control", "input": "Or I should say nothing at all.", "expected": "Or I should say nothing at all."}
+{"id": "sp044", "cat": "typo", "input": "Or I should say noting at all.", "expected": "Or I should say nothing at all.", "slip": "nothing>noting"}
+{"id": "sc045", "cat": "control", "input": "We get a free period on Fridays.", "expected": "We get a free period on Fridays."}
+{"id": "sp045", "cat": "typo", "input": "We get a tree period on Fridays.", "expected": "We get a free period on Fridays.", "slip": "free>tree"}
+{"id": "sc046", "cat": "control", "input": "I want to go to the store before it closes.", "expected": "I want to go to the store before it closes."}
+{"id": "sp046", "cat": "typo", "input": "I want to go yo the store before it closes.", "expected": "I want to go to the store before it closes.", "slip": "to>yo"}
+{"id": "sc047", "cat": "control", "input": "I liked it. Oh wait, you mean the movie?", "expected": "I liked it. Oh wait, you mean the movie?"}
+{"id": "sp047", "cat": "typo", "input": "I liked it. Oh wait, you mean he movie?", "expected": "I liked it. Oh wait, you mean the movie?", "slip": "the>he"}
+{"id": "sc048", "cat": "control", "input": "I walk to work every day.", "expected": "I walk to work every day."}
+{"id": "sp048", "cat": "typo", "input": "I walk to worm every day.", "expected": "I walk to work every day.", "slip": "work>worm"}
+{"id": "sc049", "cat": "control", "input": "It's a long, long road ahead.", "expected": "It's a long, long road ahead."}
+{"id": "sp049", "cat": "typo", "input": "It's a long, log road ahead.", "expected": "It's a long, long road ahead.", "slip": "long>log"}
+{"id": "sc050", "cat": "control", "input": "He cried at the movie!", "expected": "He cried at the movie!"}
+{"id": "sp050", "cat": "typo", "input": "He cried at he movie!", "expected": "He cried at the movie!", "slip": "the>he"}
+{"id": "sc051", "cat": "control", "input": "I need to renew my Costco membership.", "expected": "I need to renew my Costco membership."}
+{"id": "sp051", "cat": "typo", "input": "I nee to renew my Costco membership.", "expected": "I need to renew my Costco membership.", "slip": "need>nee"}
+{"id": "sc052", "cat": "control", "input": "It's kind of you to help.", "expected": "It's kind of you to help."}
+{"id": "sp052", "cat": "typo", "input": "It's kind if you to help.", "expected": "It's kind of you to help.", "slip": "of>if"}
+{"id": "sc053", "cat": "control", "input": "No no no, that's not what I meant.", "expected": "No no no, that's not what I meant."}
+{"id": "sp053", "cat": "typo", "input": "No on no, that's not what I meant.", "expected": "No no no, that's not what I meant.", "slip": "no>on"}
+{"id": "sc054", "cat": "control", "input": "Yeah, that works for me.", "expected": "Yeah, that works for me."}
+{"id": "sp054", "cat": "typo", "input": "Yeah, that works for med.", "expected": "Yeah, that works for me.", "slip": "me>med"}
+{"id": "sc055", "cat": "control", "input": "I explained, is that okay?", "expected": "I explained, is that okay?"}
+{"id": "sp055", "cat": "typo", "input": "I explained, us that okay?", "expected": "I explained, is that okay?", "slip": "is>us"}
+{"id": "sc056", "cat": "control", "input": "We could get pizza, or something.", "expected": "We could get pizza, or something."}
+{"id": "sp056", "cat": "typo", "input": "We could get pizza, of something.", "expected": "We could get pizza, or something.", "slip": "or>of"}
+{"id": "sc057", "cat": "control", "input": "Wait, so you already paid for the tickets? I thought we were splitting it.", "expected": "Wait, so you already paid for the tickets? I thought we were splitting it."}
+{"id": "sp057", "cat": "typo", "input": "Wait, so you already paid for the tickets? I though we were splitting it.", "expected": "Wait, so you already paid for the tickets? I thought we were splitting it.", "slip": "thought>though"}
+{"id": "sc058", "cat": "control", "input": "Ask Rose if she wants to come.", "expected": "Ask Rose if she wants to come."}
+{"id": "sp058", "cat": "typo", "input": "Ask Rose if she wants go come.", "expected": "Ask Rose if she wants to come.", "slip": "to>go"}
+{"id": "sc059", "cat": "control", "input": "What I said to him was true.", "expected": "What I said to him was true."}
+{"id": "sp059", "cat": "typo", "input": "Hat I said to him was true.", "expected": "What I said to him was true.", "slip": "what>hat"}
+{"id": "sc060", "cat": "control", "input": "They ran out of milk.", "expected": "They ran out of milk."}
+{"id": "sp060", "cat": "typo", "input": "They ran out if milk.", "expected": "They ran out of milk.", "slip": "of>if"}
+{"id": "sc061", "cat": "control", "input": "She explained how to do it?", "expected": "She explained how to do it?"}
+{"id": "sp061", "cat": "typo", "input": "She explained how yo do it?", "expected": "She explained how to do it?", "slip": "to>yo"}
+{"id": "sc062", "cat": "control", "input": "It's fine, no no, really.", "expected": "It's fine, no no, really."}
+{"id": "sp062", "cat": "typo", "input": "Kit's fine, no no, really.", "expected": "It's fine, no no, really.", "slip": "it>kit"}
+{"id": "sc063", "cat": "control", "input": "What's the question mark for?", "expected": "What's the question mark for?"}
+{"id": "sp063", "cat": "typo", "input": "What's he question mark for?", "expected": "What's the question mark for?", "slip": "the>he"}
+{"id": "sc064", "cat": "control", "input": "She is a kind of genius.", "expected": "She is a kind of genius."}
+{"id": "sp064", "cat": "typo", "input": "She is a kind oft genius.", "expected": "She is a kind of genius.", "slip": "of>oft"}
+{"id": "sc065", "cat": "control", "input": "We'll meet you there at noon, the reservation is under Kowalski.", "expected": "We'll meet you there at noon, the reservation is under Kowalski."}
+{"id": "sp065", "cat": "typo", "input": "We'll meet yo there at noon, the reservation is under Kowalski.", "expected": "We'll meet you there at noon, the reservation is under Kowalski.", "slip": "you>yo"}
+{"id": "sc066", "cat": "control", "input": "Everyone was at the party last night.", "expected": "Everyone was at the party last night."}
+{"id": "sp066", "cat": "typo", "input": "Everyone was at thee party last night.", "expected": "Everyone was at the party last night.", "slip": "the>thee"}
+{"id": "sc067", "cat": "control", "input": "The meeting starts at 10 AM tomorrow.", "expected": "The meeting starts at 10 AM tomorrow."}
+{"id": "sp067", "cat": "typo", "input": "The meeting starts ta 10 AM tomorrow.", "expected": "The meeting starts at 10 AM tomorrow.", "slip": "at>ta"}
+{"id": "sc068", "cat": "control", "input": "He said to her that he was sorry.", "expected": "He said to her that he was sorry."}
+{"id": "sp068", "cat": "typo", "input": "He said to here that he was sorry.", "expected": "He said to her that he was sorry.", "slip": "her>here"}
+{"id": "sc069", "cat": "control", "input": "Oops, I dropped my phone.", "expected": "Oops, I dropped my phone."}
+{"id": "sp069", "cat": "typo", "input": "Oops, I dropped my hone.", "expected": "Oops, I dropped my phone.", "slip": "phone>hone"}
+{"id": "sc070", "cat": "control", "input": "Let me know whether you want pizza or tacos.", "expected": "Let me know whether you want pizza or tacos."}
+{"id": "sp070", "cat": "typo", "input": "Let me know whether you want pizza of tacos.", "expected": "Let me know whether you want pizza or tacos.", "slip": "or>of"}
+{"id": "sc071", "cat": "control", "input": "She texted back right away.", "expected": "She texted back right away."}
+{"id": "sp071", "cat": "typo", "input": "He texted back right away.", "expected": "She texted back right away.", "slip": "she>he"}
+{"id": "sc072", "cat": "control", "input": "She was all smiles at the wedding!", "expected": "She was all smiles at the wedding!"}
+{"id": "sp072", "cat": "typo", "input": "She as all smiles at the wedding!", "expected": "She was all smiles at the wedding!", "slip": "was>as"}
+{"id": "sc073", "cat": "control", "input": "Can you call me back later?", "expected": "Can you call me back later?"}
+{"id": "sp073", "cat": "typo", "input": "Can yo call me back later?", "expected": "Can you call me back later?", "slip": "you>yo"}
+{"id": "sc074", "cat": "control", "input": "They texted us the address.", "expected": "They texted us the address."}
+{"id": "sp074", "cat": "typo", "input": "They texted us he address.", "expected": "They texted us the address.", "slip": "the>he"}
+{"id": "sc075", "cat": "control", "input": "He mumbled something about work.", "expected": "He mumbled something about work."}
+{"id": "sp075", "cat": "typo", "input": "He mumbled something bout work.", "expected": "He mumbled something about work.", "slip": "about>bout"}
+{"id": "sc076", "cat": "control", "input": "Or I should say no.", "expected": "Or I should say no."}
+{"id": "sp076", "cat": "typo", "input": "Or I should sway no.", "expected": "Or I should say no.", "slip": "say>sway"}
+{"id": "sc077", "cat": "control", "input": "Is Brian coming to the barbecue?", "expected": "Is Brian coming to the barbecue?"}
+{"id": "sp077", "cat": "typo", "input": "Id Brian coming to the barbecue?", "expected": "Is Brian coming to the barbecue?", "slip": "is>id"}
+{"id": "sc078", "cat": "control", "input": "I'll call you back in a few minutes, I'm driving ahead.", "expected": "I'll call you back in a few minutes, I'm driving ahead."}
+{"id": "sp078", "cat": "typo", "input": "I'll call you back ion a few minutes, I'm driving ahead.", "expected": "I'll call you back in a few minutes, I'm driving ahead.", "slip": "in>ion"}
+{"id": "sc079", "cat": "control", "input": "He asked us about it?", "expected": "He asked us about it?"}
+{"id": "sp079", "cat": "typo", "input": "Her asked us about it?", "expected": "He asked us about it?", "slip": "he>her"}
+{"id": "sc080", "cat": "control", "input": "He's a nine to five kind of guy.", "expected": "He's a nine to five kind of guy."}
+{"id": "sp080", "cat": "typo", "input": "He's a nine go five kind of guy.", "expected": "He's a nine to five kind of guy.", "slip": "to>go"}
+{"id": "sc081", "cat": "control", "input": "I go to the gym!", "expected": "I go to the gym!"}
+{"id": "sp081", "cat": "typo", "input": "I go too the gym!", "expected": "I go to the gym!", "slip": "to>too"}
+{"id": "sc082", "cat": "control", "input": "Can you grab a pair of socks from the drawer for me?", "expected": "Can you grab a pair of socks from the drawer for me?"}
+{"id": "sp082", "cat": "typo", "input": "Can you grab a pair of socks from thee drawer for me?", "expected": "Can you grab a pair of socks from the drawer for me?", "slip": "the>thee"}
+{"id": "sc083", "cat": "control", "input": "Read the next line out loud.", "expected": "Read the next line out loud."}
+{"id": "sp083", "cat": "typo", "input": "Read the next line our loud.", "expected": "Read the next line out loud.", "slip": "out>our"}
+{"id": "sc084", "cat": "control", "input": "Let me know if you need anything.", "expected": "Let me know if you need anything."}
+{"id": "sp084", "cat": "typo", "input": "Lest me know if you need anything.", "expected": "Let me know if you need anything.", "slip": "let>lest"}
+{"id": "sc085", "cat": "control", "input": "I can't make it tonight.", "expected": "I can't make it tonight."}
+{"id": "sp085", "cat": "typo", "input": "I can't male it tonight.", "expected": "I can't make it tonight.", "slip": "make>male"}
+{"id": "sc086", "cat": "control", "input": "The store is just across the street.", "expected": "The store is just across the street."}
+{"id": "sp086", "cat": "typo", "input": "The store is just across he street.", "expected": "The store is just across the street.", "slip": "the>he"}
+{"id": "sc087", "cat": "control", "input": "Can you help me out?", "expected": "Can you help me out?"}
+{"id": "sp087", "cat": "typo", "input": "Can you help med out?", "expected": "Can you help me out?", "slip": "me>med"}
+{"id": "sc088", "cat": "control", "input": "We stayed at the Hilton downtown.", "expected": "We stayed at the Hilton downtown."}
+{"id": "sp088", "cat": "typo", "input": "We stayed art the Hilton downtown.", "expected": "We stayed at the Hilton downtown.", "slip": "at>art"}
+{"id": "sc089", "cat": "control", "input": "How long does it take to get to the airport from here?", "expected": "How long does it take to get to the airport from here?"}
+{"id": "sp089", "cat": "typo", "input": "How long does it take to get top the airport from here?", "expected": "How long does it take to get to the airport from here?", "slip": "to>top"}
+{"id": "sc090", "cat": "control", "input": "One of them is broken.", "expected": "One of them is broken."}
+{"id": "sp090", "cat": "typo", "input": "One of them is broke.", "expected": "One of them is broken.", "slip": "broken>broke"}
+{"id": "sc091", "cat": "control", "input": "The bus leaves at one.", "expected": "The bus leaves at one."}
+{"id": "sp091", "cat": "typo", "input": "The buys leaves at one.", "expected": "The bus leaves at one.", "slip": "bus>buys"}
+{"id": "sc092", "cat": "control", "input": "Can you add a line break here?", "expected": "Can you add a line break here?"}
+{"id": "sp092", "cat": "typo", "input": "Fan you add a line break here?", "expected": "Can you add a line break here?", "slip": "can>fan"}
+{"id": "sc093", "cat": "control", "input": "I'm going to buy a new phone charger at the mall.", "expected": "I'm going to buy a new phone charger at the mall."}
+{"id": "sp093", "cat": "typo", "input": "I'm going to buy a nee phone charger at the mall.", "expected": "I'm going to buy a new phone charger at the mall.", "slip": "new>nee"}
+{"id": "sc094", "cat": "control", "input": "I said what I said.", "expected": "I said what I said."}
+{"id": "sp094", "cat": "typo", "input": "I said hat I said.", "expected": "I said what I said.", "slip": "what>hat"}
+{"id": "sc095", "cat": "control", "input": "He's actually a doctor now.", "expected": "He's actually a doctor now."}
+{"id": "sp095", "cat": "typo", "input": "He's actually a doctor how.", "expected": "He's actually a doctor now.", "slip": "now>how"}
+{"id": "sc096", "cat": "control", "input": "Add an asterisk next to your name.", "expected": "Add an asterisk next to your name."}
+{"id": "sp096", "cat": "typo", "input": "Adds an asterisk next to your name.", "expected": "Add an asterisk next to your name.", "slip": "add>adds"}
+{"id": "sc097", "cat": "control", "input": "It's fine, actually, don't worry.", "expected": "It's fine, actually, don't worry."}
+{"id": "sp097", "cat": "typo", "input": "If's fine, actually, don't worry.", "expected": "It's fine, actually, don't worry.", "slip": "it>if"}
+{"id": "sc098", "cat": "control", "input": "He went. What a day!", "expected": "He went. What a day!"}
+{"id": "sp098", "cat": "typo", "input": "He went. What a ray!", "expected": "He went. What a day!", "slip": "day>ray"}
+{"id": "sc099", "cat": "control", "input": "Turn the lights off on your way out.", "expected": "Turn the lights off on your way out."}
+{"id": "sp099", "cat": "typo", "input": "Urn the lights off on your way out.", "expected": "Turn the lights off on your way out.", "slip": "turn>urn"}
+{"id": "sc100", "cat": "control", "input": "The flight is on Tuesday.", "expected": "The flight is on Tuesday."}
+{"id": "sp100", "cat": "typo", "input": "The flight is oh Tuesday.", "expected": "The flight is on Tuesday.", "slip": "on>oh"}
+{"id": "sc101", "cat": "control", "input": "The new hire starts on Monday, so please set up her laptop and email account.", "expected": "The new hire starts on Monday, so please set up her laptop and email account."}
+{"id": "sp101", "cat": "typo", "input": "The new hire starts on Monday, so please set up he laptop and email account.", "expected": "The new hire starts on Monday, so please set up her laptop and email account.", "slip": "her>he"}
+{"id": "sc102", "cat": "control", "input": "Should I call the landlord about the leak?", "expected": "Should I call the landlord about the leak?"}
+{"id": "sp102", "cat": "typo", "input": "Should I all the landlord about the leak?", "expected": "Should I call the landlord about the leak?", "slip": "call>all"}
+{"id": "sc103", "cat": "control", "input": "I hear the band is playing at eight.", "expected": "I hear the band is playing at eight."}
+{"id": "sp103", "cat": "typo", "input": "I hear he band is playing at eight.", "expected": "I hear the band is playing at eight.", "slip": "the>he"}
+{"id": "sc104", "cat": "control", "input": "The weather was great, so we ate outside.", "expected": "The weather was great, so we ate outside."}
+{"id": "sp104", "cat": "typo", "input": "The weather was great, so wee ate outside.", "expected": "The weather was great, so we ate outside.", "slip": "we>wee"}
+{"id": "sc105", "cat": "control", "input": "She said to them that it was late.", "expected": "She said to them that it was late."}
+{"id": "sp105", "cat": "typo", "input": "She sad to them that it was late.", "expected": "She said to them that it was late.", "slip": "said>sad"}
+{"id": "sc106", "cat": "control", "input": "I literally ran all the way.", "expected": "I literally ran all the way."}
+{"id": "sp106", "cat": "typo", "input": "I literally an all the way.", "expected": "I literally ran all the way.", "slip": "ran>an"}
+{"id": "sc107", "cat": "control", "input": "We should go to the beach this weekend.", "expected": "We should go to the beach this weekend."}
+{"id": "sp107", "cat": "typo", "input": "Wed should go to the beach this weekend.", "expected": "We should go to the beach this weekend.", "slip": "we>wed"}
+{"id": "sc108", "cat": "control", "input": "Ask her what she wants for her birthday.", "expected": "Ask her what she wants for her birthday."}
+{"id": "sp108", "cat": "typo", "input": "Ask herd what she wants for her birthday.", "expected": "Ask her what she wants for her birthday.", "slip": "her>herd"}
+{"id": "sc109", "cat": "control", "input": "He trailed off with an ellipsis.", "expected": "He trailed off with an ellipsis."}
+{"id": "sp109", "cat": "typo", "input": "Hue trailed off with an ellipsis.", "expected": "He trailed off with an ellipsis.", "slip": "he>hue"}
+{"id": "sc110", "cat": "control", "input": "That was the whole trip.", "expected": "That was the whole trip."}
+{"id": "sp110", "cat": "typo", "input": "That was he whole trip.", "expected": "That was the whole trip.", "slip": "the>he"}
+{"id": "sc111", "cat": "control", "input": "Get the milk on your way home.", "expected": "Get the milk on your way home."}
+{"id": "sp111", "cat": "typo", "input": "Get the milk on your say home.", "expected": "Get the milk on your way home.", "slip": "way>say"}
+{"id": "sc112", "cat": "control", "input": "Do you want pizza or tacos for dinner?", "expected": "Do you want pizza or tacos for dinner?"}
+{"id": "sp112", "cat": "typo", "input": "Do you want pizza or tacos foe dinner?", "expected": "Do you want pizza or tacos for dinner?", "slip": "for>foe"}
+{"id": "sc113", "cat": "control", "input": "He was the best player.", "expected": "He was the best player."}
+{"id": "sp113", "cat": "typo", "input": "Her was the best player.", "expected": "He was the best player.", "slip": "he>her"}
+{"id": "sc114", "cat": "control", "input": "Actually no, I can't come.", "expected": "Actually no, I can't come."}
+{"id": "sp114", "cat": "typo", "input": "Actually on, I can't come.", "expected": "Actually no, I can't come.", "slip": "no>on"}
+{"id": "sc115", "cat": "control", "input": "I need some time to think.", "expected": "I need some time to think."}
+{"id": "sp115", "cat": "typo", "input": "I need some time to thin.", "expected": "I need some time to think.", "slip": "think>thin"}
+{"id": "sc116", "cat": "control", "input": "My comma key is broken.", "expected": "My comma key is broken."}
+{"id": "sp116", "cat": "typo", "input": "My comma key is broke.", "expected": "My comma key is broken.", "slip": "broken>broke"}
+{"id": "sc117", "cat": "control", "input": "Add an exclamation point after hello.", "expected": "Add an exclamation point after hello."}
+{"id": "sp117", "cat": "typo", "input": "Add am exclamation point after hello.", "expected": "Add an exclamation point after hello.", "slip": "an>am"}
+{"id": "sc118", "cat": "control", "input": "My friend asked where you were.", "expected": "My friend asked where you were."}
+{"id": "sp118", "cat": "typo", "input": "My fried asked where you were.", "expected": "My friend asked where you were.", "slip": "friend>fried"}
+{"id": "sc119", "cat": "control", "input": "Hey, just landed in Denver. I'll text you when I get to the hotel.", "expected": "Hey, just landed in Denver. I'll text you when I get to the hotel."}
+{"id": "sp119", "cat": "typo", "input": "Hey, just landed in Denver. I'll text you when I bet to the hotel.", "expected": "Hey, just landed in Denver. I'll text you when I get to the hotel.", "slip": "get>bet"}
+{"id": "sc120", "cat": "control", "input": "Ten four, I'm on my way.", "expected": "Ten four, I'm on my way."}
+{"id": "sp120", "cat": "typo", "input": "Ten four, I'm no my way.", "expected": "Ten four, I'm on my way.", "slip": "on>no"}
+{"id": "sc121", "cat": "control", "input": "We need bowls and spoons for the soup tonight.", "expected": "We need bowls and spoons for the soup tonight."}
+{"id": "sp121", "cat": "typo", "input": "We need bowls and spoons ford the soup tonight.", "expected": "We need bowls and spoons for the soup tonight.", "slip": "for>ford"}
+{"id": "sc122", "cat": "control", "input": "I'm meeting Caitlin for coffee tomorrow.", "expected": "I'm meeting Caitlin for coffee tomorrow."}
+{"id": "sp122", "cat": "typo", "input": "I'm meeting Caitlin ford coffee tomorrow.", "expected": "I'm meeting Caitlin for coffee tomorrow.", "slip": "for>ford"}
+{"id": "sc123", "cat": "control", "input": "Excuse me, where is it?", "expected": "Excuse me, where is it?"}
+{"id": "sp123", "cat": "typo", "input": "Excuse me, were is it?", "expected": "Excuse me, where is it?", "slip": "where>were"}
+{"id": "sc124", "cat": "control", "input": "Start a new paragraph after the quote.", "expected": "Start a new paragraph after the quote."}
+{"id": "sp124", "cat": "typo", "input": "Start a nee paragraph after the quote.", "expected": "Start a new paragraph after the quote.", "slip": "new>nee"}
+{"id": "sc125", "cat": "control", "input": "Where did they go? Nobody knows.", "expected": "Where did they go? Nobody knows."}
+{"id": "sp125", "cat": "typo", "input": "Were did they go? Nobody knows.", "expected": "Where did they go? Nobody knows.", "slip": "where>were"}
+{"id": "sc126", "cat": "control", "input": "Book a table for six.", "expected": "Book a table for six."}
+{"id": "sp126", "cat": "typo", "input": "Book a fable for six.", "expected": "Book a table for six.", "slip": "table>fable"}
+{"id": "sc127", "cat": "control", "input": "My favorite hashtag is trending.", "expected": "My favorite hashtag is trending."}
+{"id": "sp127", "cat": "typo", "input": "My favorite hashtag it trending.", "expected": "My favorite hashtag is trending.", "slip": "is>it"}
+{"id": "sc128", "cat": "control", "input": "It's one of a kind, of course.", "expected": "It's one of a kind, of course."}
+{"id": "sp128", "cat": "typo", "input": "It's one if a kind, of course.", "expected": "It's one of a kind, of course.", "slip": "of>if"}
+{"id": "sc129", "cat": "control", "input": "The kids were like, so excited.", "expected": "The kids were like, so excited."}
+{"id": "sp129", "cat": "typo", "input": "The kids were like, do excited.", "expected": "The kids were like, so excited.", "slip": "so>do"}
+{"id": "sc130", "cat": "control", "input": "Hey hey, slow down a little.", "expected": "Hey hey, slow down a little."}
+{"id": "sp130", "cat": "typo", "input": "Hey he, slow down a little.", "expected": "Hey hey, slow down a little.", "slip": "hey>he"}
+{"id": "sc131", "cat": "control", "input": "He was late again. I mean, seriously.", "expected": "He was late again. I mean, seriously."}
+{"id": "sp131", "cat": "typo", "input": "Hue was late again. I mean, seriously.", "expected": "He was late again. I mean, seriously.", "slip": "he>hue"}
+{"id": "sc132", "cat": "control", "input": "She said hi to everyone at the party.", "expected": "She said hi to everyone at the party."}
+{"id": "sp132", "cat": "typo", "input": "She said hi yo everyone at the party.", "expected": "She said hi to everyone at the party.", "slip": "to>yo"}
+{"id": "sc133", "cat": "control", "input": "The baby cried, can you check?", "expected": "The baby cried, can you check?"}
+{"id": "sp133", "cat": "typo", "input": "The baby cried, cab you check?", "expected": "The baby cried, can you check?", "slip": "can>cab"}
+{"id": "sc134", "cat": "control", "input": "Rather than drive, we took the train.", "expected": "Rather than drive, we took the train."}
+{"id": "sp134", "cat": "typo", "input": "Rather then drive, we took the train.", "expected": "Rather than drive, we took the train.", "slip": "than>then"}
+{"id": "sc135", "cat": "control", "input": "Call me at 5 PM if you can.", "expected": "Call me at 5 PM if you can."}
+{"id": "sp135", "cat": "typo", "input": "Call me art 5 PM if you can.", "expected": "Call me at 5 PM if you can.", "slip": "at>art"}
+{"id": "sc136", "cat": "control", "input": "She told you about it?", "expected": "She told you about it?"}
+{"id": "sp136", "cat": "typo", "input": "She gold you about it?", "expected": "She told you about it?", "slip": "told>gold"}
+{"id": "sc137", "cat": "control", "input": "It was my mistake, not yours.", "expected": "It was my mistake, not yours."}
+{"id": "sp137", "cat": "typo", "input": "If was my mistake, not yours.", "expected": "It was my mistake, not yours.", "slip": "it>if"}
+{"id": "sc138", "cat": "control", "input": "He knew the whole time and never said a word.", "expected": "He knew the whole time and never said a word."}
+{"id": "sp138", "cat": "typo", "input": "He knew the while time and never said a word.", "expected": "He knew the whole time and never said a word.", "slip": "whole>while"}
+{"id": "sc139", "cat": "control", "input": "I knew he would be late, he always is.", "expected": "I knew he would be late, he always is."}
+{"id": "sp139", "cat": "typo", "input": "I knew he would be later, he always is.", "expected": "I knew he would be late, he always is.", "slip": "late>later"}
+{"id": "sc140", "cat": "control", "input": "Can you pick up milk on the way home, and maybe some eggs and bread?", "expected": "Can you pick up milk on the way home, and maybe some eggs and bread?"}
+{"id": "sp140", "cat": "typo", "input": "Can you pick up milk ion the way home, and maybe some eggs and bread?", "expected": "Can you pick up milk on the way home, and maybe some eggs and bread?", "slip": "on>ion"}
+{"id": "sc141", "cat": "control", "input": "Hurry up, make it quick.", "expected": "Hurry up, make it quick."}
+{"id": "sp141", "cat": "typo", "input": "Hurry up, maker it quick.", "expected": "Hurry up, make it quick.", "slip": "make>maker"}
+{"id": "sc142", "cat": "control", "input": "She responded well to the treatment!", "expected": "She responded well to the treatment!"}
+{"id": "sp142", "cat": "typo", "input": "She responded well to he treatment!", "expected": "She responded well to the treatment!", "slip": "the>he"}
+{"id": "sc143", "cat": "control", "input": "What I do do is cook dinner every night.", "expected": "What I do do is cook dinner every night."}
+{"id": "sp143", "cat": "typo", "input": "What I so do is cook dinner every night.", "expected": "What I do do is cook dinner every night.", "slip": "do>so"}
+{"id": "sc144", "cat": "control", "input": "Actually, I'd rather stay in.", "expected": "Actually, I'd rather stay in."}
+{"id": "sp144", "cat": "typo", "input": "Actually, I'd rather stag in.", "expected": "Actually, I'd rather stay in.", "slip": "stay>stag"}
+{"id": "sc145", "cat": "control", "input": "Or I meant to, anyway.", "expected": "Or I meant to, anyway."}
+{"id": "sp145", "cat": "typo", "input": "Of I meant to, anyway.", "expected": "Or I meant to, anyway.", "slip": "or>of"}
+{"id": "sc146", "cat": "control", "input": "We went to the ER last night.", "expected": "We went to the ER last night."}
+{"id": "sp146", "cat": "typo", "input": "We went to he ER last night.", "expected": "We went to the ER last night.", "slip": "the>he"}
+{"id": "sc147", "cat": "control", "input": "I said to him that it was fine.", "expected": "I said to him that it was fine."}
+{"id": "sp147", "cat": "typo", "input": "I said go him that it was fine.", "expected": "I said to him that it was fine.", "slip": "to>go"}
+{"id": "sc148", "cat": "control", "input": "Maybe we should leave a little earlier.", "expected": "Maybe we should leave a little earlier."}
+{"id": "sp148", "cat": "typo", "input": "Maybe awe should leave a little earlier.", "expected": "Maybe we should leave a little earlier.", "slip": "we>awe"}
+{"id": "sc149", "cat": "control", "input": "I like it, I mean, it's not bad.", "expected": "I like it, I mean, it's not bad."}
+{"id": "sp149", "cat": "typo", "input": "I lie it, I mean, it's not bad.", "expected": "I like it, I mean, it's not bad.", "slip": "like>lie"}
+{"id": "sc150", "cat": "control", "input": "Can you pass the salt?", "expected": "Can you pass the salt?"}
+{"id": "sp150", "cat": "typo", "input": "Can yo pass the salt?", "expected": "Can you pass the salt?", "slip": "you>yo"}
+{"id": "sc151", "cat": "control", "input": "Lee is my best friend from college.", "expected": "Lee is my best friend from college."}
+{"id": "sp151", "cat": "typo", "input": "Lee is my best friend form college.", "expected": "Lee is my best friend from college.", "slip": "from>form"}
+{"id": "sc152", "cat": "control", "input": "She likes art, and stuff.", "expected": "She likes art, and stuff."}
+{"id": "sp152", "cat": "typo", "input": "She likes art, an stuff.", "expected": "She likes art, and stuff.", "slip": "and>an"}
+{"id": "sc153", "cat": "control", "input": "Maybe, or I should say probably.", "expected": "Maybe, or I should say probably."}
+{"id": "sp153", "cat": "typo", "input": "Maybe, of I should say probably.", "expected": "Maybe, or I should say probably.", "slip": "or>of"}
+{"id": "sc154", "cat": "control", "input": "Let's go outside and play catch.", "expected": "Let's go outside and play catch."}
+{"id": "sp154", "cat": "typo", "input": "Let's go outsider and play catch.", "expected": "Let's go outside and play catch.", "slip": "outside>outsider"}
+{"id": "sc155", "cat": "control", "input": "Someone left their umbrella in my car.", "expected": "Someone left their umbrella in my car."}
+{"id": "sp155", "cat": "typo", "input": "Someone left heir umbrella in my car.", "expected": "Someone left their umbrella in my car.", "slip": "their>heir"}
+{"id": "sc156", "cat": "control", "input": "Do you know where my keys are?", "expected": "Do you know where my keys are?"}
+{"id": "sp156", "cat": "typo", "input": "So you know where my keys are?", "expected": "Do you know where my keys are?", "slip": "do>so"}
+{"id": "sc157", "cat": "control", "input": "I'm like so tired today.", "expected": "I'm like so tired today."}
+{"id": "sp157", "cat": "typo", "input": "I'm like do tired today.", "expected": "I'm like so tired today.", "slip": "so>do"}
+{"id": "sc158", "cat": "control", "input": "That was a really long period.", "expected": "That was a really long period."}
+{"id": "sp158", "cat": "typo", "input": "That was a rally long period.", "expected": "That was a really long period.", "slip": "really>rally"}
+{"id": "sc159", "cat": "control", "input": "I didn't mean to, sorry.", "expected": "I didn't mean to, sorry."}
+{"id": "sp159", "cat": "typo", "input": "I didn't men to, sorry.", "expected": "I didn't mean to, sorry.", "slip": "mean>men"}
+{"id": "sc160", "cat": "control", "input": "The new line of phones looks great.", "expected": "The new line of phones looks great."}
+{"id": "sp160", "cat": "typo", "input": "He new line of phones looks great.", "expected": "The new line of phones looks great.", "slip": "the>he"}
+{"id": "sc161", "cat": "control", "input": "I don't know where they put the keys.", "expected": "I don't know where they put the keys."}
+{"id": "sp161", "cat": "typo", "input": "I don't know where the put the keys.", "expected": "I don't know where they put the keys.", "slip": "they>the"}
+{"id": "sc162", "cat": "control", "input": "She asked me for help!", "expected": "She asked me for help!"}
+{"id": "sp162", "cat": "typo", "input": "She asked me foe help!", "expected": "She asked me for help!", "slip": "for>foe"}
+{"id": "sc163", "cat": "control", "input": "I need more time to finish this.", "expected": "I need more time to finish this."}
+{"id": "sp163", "cat": "typo", "input": "I nee more time to finish this.", "expected": "I need more time to finish this.", "slip": "need>nee"}
+{"id": "sc164", "cat": "control", "input": "Is there an exclamation point at the end?", "expected": "Is there an exclamation point at the end?"}
+{"id": "sp164", "cat": "typo", "input": "Is there an exclamation point at the ends?", "expected": "Is there an exclamation point at the end?", "slip": "end>ends"}
+{"id": "sc165", "cat": "control", "input": "He texted me a photo!", "expected": "He texted me a photo!"}
+{"id": "sp165", "cat": "typo", "input": "He texted med a photo!", "expected": "He texted me a photo!", "slip": "me>med"}
+{"id": "sc166", "cat": "control", "input": "We should bring a bottle of wine to the dinner party.", "expected": "We should bring a bottle of wine to the dinner party."}
+{"id": "sp166", "cat": "typo", "input": "We should bring a bottle of wine to the dinner part.", "expected": "We should bring a bottle of wine to the dinner party.", "slip": "party>part"}
+{"id": "sc167", "cat": "control", "input": "I left my phone somewhere in the car.", "expected": "I left my phone somewhere in the car."}
+{"id": "sp167", "cat": "typo", "input": "I left my phone somewhere in he car.", "expected": "I left my phone somewhere in the car.", "slip": "the>he"}
+{"id": "sc168", "cat": "control", "input": "I need to finish this first.", "expected": "I need to finish this first."}
+{"id": "sp168", "cat": "typo", "input": "I nee to finish this first.", "expected": "I need to finish this first.", "slip": "need>nee"}
+{"id": "sc169", "cat": "control", "input": "She's a Senior Engineer now.", "expected": "She's a Senior Engineer now."}
+{"id": "sp169", "cat": "typo", "input": "She's a Senior Engineer no.", "expected": "She's a Senior Engineer now.", "slip": "now>no"}
+{"id": "sc170", "cat": "control", "input": "Thanks, well actually, never mind.", "expected": "Thanks, well actually, never mind."}
+{"id": "sp170", "cat": "typo", "input": "Thanks, well actually, ever mind.", "expected": "Thanks, well actually, never mind.", "slip": "never>ever"}
+{"id": "sc171", "cat": "control", "input": "The kids were bored all afternoon because it rained.", "expected": "The kids were bored all afternoon because it rained."}
+{"id": "sp171", "cat": "typo", "input": "The kids wee bored all afternoon because it rained.", "expected": "The kids were bored all afternoon because it rained.", "slip": "were>wee"}
+{"id": "sc172", "cat": "control", "input": "That was my bad, sorry.", "expected": "That was my bad, sorry."}
+{"id": "sp172", "cat": "typo", "input": "That was my bard, sorry.", "expected": "That was my bad, sorry.", "slip": "bad>bard"}
+{"id": "sc173", "cat": "control", "input": "We're going to the Grand Canyon in May.", "expected": "We're going to the Grand Canyon in May."}
+{"id": "sp173", "cat": "typo", "input": "Wee're going to the Grand Canyon in May.", "expected": "We're going to the Grand Canyon in May.", "slip": "we>wee"}
+{"id": "sc174", "cat": "control", "input": "They added a new line to the contract.", "expected": "They added a new line to the contract."}
+{"id": "sp174", "cat": "typo", "input": "They added a new line too the contract.", "expected": "They added a new line to the contract.", "slip": "to>too"}
+{"id": "sc175", "cat": "control", "input": "Tell me when you get there.", "expected": "Tell me when you get there."}
+{"id": "sp175", "cat": "typo", "input": "Tell me when you get three.", "expected": "Tell me when you get there.", "slip": "there>three"}
+{"id": "sc176", "cat": "control", "input": "I loved the movie. I mean, the ending was a little weird.", "expected": "I loved the movie. I mean, the ending was a little weird."}
+{"id": "sp176", "cat": "typo", "input": "I loves the movie. I mean, the ending was a little weird.", "expected": "I loved the movie. I mean, the ending was a little weird.", "slip": "loved>loves"}
+{"id": "sc177", "cat": "control", "input": "Are you coming to the party tonight?", "expected": "Are you coming to the party tonight?"}
+{"id": "sp177", "cat": "typo", "input": "Ware you coming to the party tonight?", "expected": "Are you coming to the party tonight?", "slip": "are>ware"}
+{"id": "sc178", "cat": "control", "input": "We said sorry to the neighbors.", "expected": "We said sorry to the neighbors."}
+{"id": "sp178", "cat": "typo", "input": "Wed said sorry to the neighbors.", "expected": "We said sorry to the neighbors.", "slip": "we>wed"}
+{"id": "sc179", "cat": "control", "input": "Is all of it here?", "expected": "Is all of it here?"}
+{"id": "sp179", "cat": "typo", "input": "Is all if it here?", "expected": "Is all of it here?", "slip": "of>if"}
+{"id": "sc180", "cat": "control", "input": "I mean it this time.", "expected": "I mean it this time."}
+{"id": "sp180", "cat": "typo", "input": "I man it this time.", "expected": "I mean it this time.", "slip": "mean>man"}
+{"id": "sc181", "cat": "control", "input": "The line was really long.", "expected": "The line was really long."}
+{"id": "sp181", "cat": "typo", "input": "The line wax really long.", "expected": "The line was really long.", "slip": "was>wax"}
+{"id": "sc182", "cat": "control", "input": "Thanks for your help. I really appreciate it.", "expected": "Thanks for your help. I really appreciate it."}
+{"id": "sp182", "cat": "typo", "input": "Thanks for you help. I really appreciate it.", "expected": "Thanks for your help. I really appreciate it.", "slip": "your>you"}
+{"id": "sc183", "cat": "control", "input": "Hi Sam, I'll see you at noon.", "expected": "Hi Sam, I'll see you at noon."}
+{"id": "sp183", "cat": "typo", "input": "Hi Sam, I'll see yo at noon.", "expected": "Hi Sam, I'll see you at noon.", "slip": "you>yo"}
+{"id": "sc184", "cat": "control", "input": "I put the leftovers in the fridge.", "expected": "I put the leftovers in the fridge."}
+{"id": "sp184", "cat": "typo", "input": "I put the leftovers inn the fridge.", "expected": "I put the leftovers in the fridge.", "slip": "in>inn"}
+{"id": "sc185", "cat": "control", "input": "The apartment is on the 21st floor.", "expected": "The apartment is on the 21st floor."}
+{"id": "sp185", "cat": "typo", "input": "He apartment is on the 21st floor.", "expected": "The apartment is on the 21st floor.", "slip": "the>he"}
+{"id": "sc186", "cat": "control", "input": "As I was saying, can we start?", "expected": "As I was saying, can we start?"}
+{"id": "sp186", "cat": "typo", "input": "Was I was saying, can we start?", "expected": "As I was saying, can we start?", "slip": "as>was"}
+{"id": "sc187", "cat": "control", "input": "I left my keys over there on the counter.", "expected": "I left my keys over there on the counter."}
+{"id": "sp187", "cat": "typo", "input": "I let my keys over there on the counter.", "expected": "I left my keys over there on the counter.", "slip": "left>let"}
+{"id": "sc188", "cat": "control", "input": "I like the new design.", "expected": "I like the new design."}
+{"id": "sp188", "cat": "typo", "input": "I like the new resign.", "expected": "I like the new design.", "slip": "design>resign"}
+{"id": "sc189", "cat": "control", "input": "We stayed for a period of two weeks.", "expected": "We stayed for a period of two weeks."}
+{"id": "sp189", "cat": "typo", "input": "We stayed for a period of two seeks.", "expected": "We stayed for a period of two weeks.", "slip": "weeks>seeks"}
+{"id": "sc190", "cat": "control", "input": "We bought chips, and stuff.", "expected": "We bought chips, and stuff."}
+{"id": "sp190", "cat": "typo", "input": "We ought chips, and stuff.", "expected": "We bought chips, and stuff.", "slip": "bought>ought"}
+{"id": "sc191", "cat": "control", "input": "Let me rephrase the question.", "expected": "Let me rephrase the question."}
+{"id": "sp191", "cat": "typo", "input": "Lest me rephrase the question.", "expected": "Let me rephrase the question.", "slip": "let>lest"}
+{"id": "sc192", "cat": "control", "input": "Basically, we need more time.", "expected": "Basically, we need more time."}
+{"id": "sp192", "cat": "typo", "input": "Basically, we needs more time.", "expected": "Basically, we need more time.", "slip": "need>needs"}
+{"id": "sc193", "cat": "control", "input": "We need milk from the store.", "expected": "We need milk from the store."}
+{"id": "sp193", "cat": "typo", "input": "We need milk from the tore.", "expected": "We need milk from the store.", "slip": "store>tore"}
+{"id": "sc194", "cat": "control", "input": "Lol that's wild, I can't believe he actually said that.", "expected": "Lol that's wild, I can't believe he actually said that."}
+{"id": "sp194", "cat": "typo", "input": "Lol that's wild, I can't believe he actually said hat.", "expected": "Lol that's wild, I can't believe he actually said that.", "slip": "that>hat"}
+{"id": "sc195", "cat": "control", "input": "Okay, let me rephrase, I think we need help.", "expected": "Okay, let me rephrase, I think we need help."}
+{"id": "sp195", "cat": "typo", "input": "Okay, let me rephrase, I think we needs help.", "expected": "Okay, let me rephrase, I think we need help.", "slip": "need>needs"}
+{"id": "sc196", "cat": "control", "input": "He was the last one there.", "expected": "He was the last one there."}
+{"id": "sp196", "cat": "typo", "input": "He was thee last one there.", "expected": "He was the last one there.", "slip": "the>thee"}
+{"id": "sc197", "cat": "control", "input": "I need to back up my phone tonight.", "expected": "I need to back up my phone tonight."}
+{"id": "sp197", "cat": "typo", "input": "I need to back up my phoned tonight.", "expected": "I need to back up my phone tonight.", "slip": "phone>phoned"}
+{"id": "sc198", "cat": "control", "input": "He told us to wait!", "expected": "He told us to wait!"}
+{"id": "sp198", "cat": "typo", "input": "He told us to wit!", "expected": "He told us to wait!", "slip": "wait>wit"}
+{"id": "sc199", "cat": "control", "input": "Who's driving to the game on Saturday?", "expected": "Who's driving to the game on Saturday?"}
+{"id": "sp199", "cat": "typo", "input": "Who's driving to the game no Saturday?", "expected": "Who's driving to the game on Saturday?", "slip": "on>no"}
+{"id": "sc200", "cat": "control", "input": "I was thinking about it.", "expected": "I was thinking about it."}
+{"id": "sp200", "cat": "typo", "input": "I was thinking bout it.", "expected": "I was thinking about it.", "slip": "about>bout"}
+{"id": "sc201", "cat": "control", "input": "Text Alex about the meeting.", "expected": "Text Alex about the meeting."}
+{"id": "sp201", "cat": "typo", "input": "Test Alex about the meeting.", "expected": "Text Alex about the meeting.", "slip": "text>test"}
+{"id": "sc202", "cat": "control", "input": "I asked her to wait.", "expected": "I asked her to wait."}
+{"id": "sp202", "cat": "typo", "input": "I asked herd to wait.", "expected": "I asked her to wait.", "slip": "her>herd"}
+{"id": "sc203", "cat": "control", "input": "I'll be there in a couple of days.", "expected": "I'll be there in a couple of days."}
+{"id": "sp203", "cat": "typo", "input": "I'll bed there in a couple of days.", "expected": "I'll be there in a couple of days.", "slip": "be>bed"}
+{"id": "sc204", "cat": "control", "input": "Can we sit near the window?", "expected": "Can we sit near the window?"}
+{"id": "sp204", "cat": "typo", "input": "Can we sit near thee window?", "expected": "Can we sit near the window?", "slip": "the>thee"}
+{"id": "sc205", "cat": "control", "input": "I found a way to fix the leak.", "expected": "I found a way to fix the leak."}
+{"id": "sp205", "cat": "typo", "input": "I found a say to fix the leak.", "expected": "I found a way to fix the leak.", "slip": "way>say"}
+{"id": "sc206", "cat": "control", "input": "We waited in line for an hour.", "expected": "We waited in line for an hour."}
+{"id": "sp206", "cat": "typo", "input": "Wed waited in line for an hour.", "expected": "We waited in line for an hour.", "slip": "we>wed"}
+{"id": "sc207", "cat": "control", "input": "The UMMM sign was huge.", "expected": "The UMMM sign was huge."}
+{"id": "sp207", "cat": "typo", "input": "The UMMM sign as huge.", "expected": "The UMMM sign was huge.", "slip": "was>as"}
+{"id": "sc208", "cat": "control", "input": "I knew you'd say that, you always do.", "expected": "I knew you'd say that, you always do."}
+{"id": "sp208", "cat": "typo", "input": "I knew yo'd say that, you always do.", "expected": "I knew you'd say that, you always do.", "slip": "you>yo"}
+{"id": "sc209", "cat": "control", "input": "Let's meet at the coffee shop around noon.", "expected": "Let's meet at the coffee shop around noon."}
+{"id": "sp209", "cat": "typo", "input": "Let's meet at thee coffee shop around noon.", "expected": "Let's meet at the coffee shop around noon.", "slip": "the>thee"}
+{"id": "sc210", "cat": "control", "input": "Did you finish your homework yet?", "expected": "Did you finish your homework yet?"}
+{"id": "sp210", "cat": "typo", "input": "Did you finish your homework get?", "expected": "Did you finish your homework yet?", "slip": "yet>get"}
+{"id": "sc211", "cat": "control", "input": "We drove home after that.", "expected": "We drove home after that."}
+{"id": "sp211", "cat": "typo", "input": "We drive home after that.", "expected": "We drove home after that.", "slip": "drove>drive"}
+{"id": "sc212", "cat": "control", "input": "What I mean is we need more time.", "expected": "What I mean is we need more time."}
+{"id": "sp212", "cat": "typo", "input": "What I mean is awe need more time.", "expected": "What I mean is we need more time.", "slip": "we>awe"}
+{"id": "sc213", "cat": "control", "input": "That's not what I meant at all.", "expected": "That's not what I meant at all."}
+{"id": "sp213", "cat": "typo", "input": "That's not what I meant at wall.", "expected": "That's not what I meant at all.", "slip": "all>wall"}
+{"id": "sc214", "cat": "control", "input": "Comma splices drive me crazy.", "expected": "Comma splices drive me crazy."}
+{"id": "sp214", "cat": "typo", "input": "Comma splices drives me crazy.", "expected": "Comma splices drive me crazy.", "slip": "drive>drives"}
+{"id": "sc215", "cat": "control", "input": "I know you know the way.", "expected": "I know you know the way."}
+{"id": "sp215", "cat": "typo", "input": "I know you knows the way.", "expected": "I know you know the way.", "slip": "know>knows"}
+{"id": "sc216", "cat": "control", "input": "Call me at 6 PM.", "expected": "Call me at 6 PM."}
+{"id": "sp216", "cat": "typo", "input": "Call me aft 6 PM.", "expected": "Call me at 6 PM.", "slip": "at>aft"}
+{"id": "sc217", "cat": "control", "input": "Are you coming to dinner?", "expected": "Are you coming to dinner?"}
+{"id": "sp217", "cat": "typo", "input": "Are yo coming to dinner?", "expected": "Are you coming to dinner?", "slip": "you>yo"}
+{"id": "sc218", "cat": "control", "input": "Paint it red, make it bright.", "expected": "Paint it red, make it bright."}
+{"id": "sp218", "cat": "typo", "input": "Paint it red, make it right.", "expected": "Paint it red, make it bright.", "slip": "bright>right"}
+{"id": "sc219", "cat": "control", "input": "She yelled at us again!", "expected": "She yelled at us again!"}
+{"id": "sp219", "cat": "typo", "input": "She yelled ta us again!", "expected": "She yelled at us again!", "slip": "at>ta"}
+{"id": "sc220", "cat": "control", "input": "Sorry, I meant to call you back.", "expected": "Sorry, I meant to call you back."}
+{"id": "sp220", "cat": "typo", "input": "Sorry, I meant too call you back.", "expected": "Sorry, I meant to call you back.", "slip": "to>too"}
+{"id": "sc221", "cat": "control", "input": "We watched Ocean's Eleven last night.", "expected": "We watched Ocean's Eleven last night."}
+{"id": "sp221", "cat": "typo", "input": "We watched Ocean's Elven last night.", "expected": "We watched Ocean's Eleven last night.", "slip": "eleven>elven"}
+{"id": "sc222", "cat": "control", "input": "The period of time was too long.", "expected": "The period of time was too long."}
+{"id": "sp222", "cat": "typo", "input": "The periods of time was too long.", "expected": "The period of time was too long.", "slip": "period>periods"}
+{"id": "sc223", "cat": "control", "input": "Gonna be late, traffic on I-95 is a nightmare.", "expected": "Gonna be late, traffic on I-95 is a nightmare."}
+{"id": "sp223", "cat": "typo", "input": "Gonna be plate, traffic on I-95 is a nightmare.", "expected": "Gonna be late, traffic on I-95 is a nightmare.", "slip": "late>plate"}
+{"id": "sc224", "cat": "control", "input": "I said nope, and left.", "expected": "I said nope, and left."}
+{"id": "sp224", "cat": "typo", "input": "I sad nope, and left.", "expected": "I said nope, and left.", "slip": "said>sad"}
+{"id": "sc225", "cat": "control", "input": "It was a really long day.", "expected": "It was a really long day."}
+{"id": "sp225", "cat": "typo", "input": "It was a rally long day.", "expected": "It was a really long day.", "slip": "really>rally"}
+{"id": "sc226", "cat": "control", "input": "Pick me up at the library.", "expected": "Pick me up at the library."}
+{"id": "sp226", "cat": "typo", "input": "Pick med up at the library.", "expected": "Pick me up at the library.", "slip": "me>med"}
+{"id": "sc227", "cat": "control", "input": "He gave me a dollar.", "expected": "He gave me a dollar."}
+{"id": "sp227", "cat": "typo", "input": "He gave me a collar.", "expected": "He gave me a dollar.", "slip": "dollar>collar"}
+{"id": "sc228", "cat": "control", "input": "Is it a big deal?", "expected": "Is it a big deal?"}
+{"id": "sp228", "cat": "typo", "input": "It it a big deal?", "expected": "Is it a big deal?", "slip": "is>it"}
+{"id": "sc229", "cat": "control", "input": "Sorry I'm late, the traffic was awful.", "expected": "Sorry I'm late, the traffic was awful."}
+{"id": "sp229", "cat": "typo", "input": "Sorry I'm late, the traffic as awful.", "expected": "Sorry I'm late, the traffic was awful.", "slip": "was>as"}
+{"id": "sc230", "cat": "control", "input": "The meeting is on Tuesday.", "expected": "The meeting is on Tuesday."}
+{"id": "sp230", "cat": "typo", "input": "The meeting us on Tuesday.", "expected": "The meeting is on Tuesday.", "slip": "is>us"}
+{"id": "sc231", "cat": "control", "input": "We're flying to Paris next week.", "expected": "We're flying to Paris next week."}
+{"id": "sp231", "cat": "typo", "input": "Awe're flying to Paris next week.", "expected": "We're flying to Paris next week.", "slip": "we>awe"}
+{"id": "sc232", "cat": "control", "input": "We need to buy flour, eggs, and two sticks of butter.", "expected": "We need to buy flour, eggs, and two sticks of butter."}
+{"id": "sp232", "cat": "typo", "input": "We need to by flour, eggs, and two sticks of butter.", "expected": "We need to buy flour, eggs, and two sticks of butter.", "slip": "buy>by"}
+{"id": "sc233", "cat": "control", "input": "Two or three people said the same thing.", "expected": "Two or three people said the same thing."}
+{"id": "sp233", "cat": "typo", "input": "To or three people said the same thing.", "expected": "Two or three people said the same thing.", "slip": "two>to"}
+{"id": "sc234", "cat": "control", "input": "What kind of car do you drive?", "expected": "What kind of car do you drive?"}
+{"id": "sp234", "cat": "typo", "input": "What kind of car so you drive?", "expected": "What kind of car do you drive?", "slip": "do>so"}
+{"id": "sc235", "cat": "control", "input": "My mom said yes, so we're going.", "expected": "My mom said yes, so we're going."}
+{"id": "sp235", "cat": "typo", "input": "My mom sad yes, so we're going.", "expected": "My mom said yes, so we're going.", "slip": "said>sad"}
+{"id": "sc236", "cat": "control", "input": "I've been feeling really weak since I got the flu.", "expected": "I've been feeling really weak since I got the flu."}
+{"id": "sp236", "cat": "typo", "input": "I've been feeling really weak since I got he flu.", "expected": "I've been feeling really weak since I got the flu.", "slip": "the>he"}
+{"id": "sc237", "cat": "control", "input": "He asked for the check.", "expected": "He asked for the check."}
+{"id": "sp237", "cat": "typo", "input": "He asked ford the check.", "expected": "He asked for the check.", "slip": "for>ford"}
+{"id": "sc238", "cat": "control", "input": "Every day is a new adventure.", "expected": "Every day is a new adventure."}
+{"id": "sp238", "cat": "typo", "input": "Every day id a new adventure.", "expected": "Every day is a new adventure.", "slip": "is>id"}
+{"id": "sc239", "cat": "control", "input": "I'll try, no no, you go ahead.", "expected": "I'll try, no no, you go ahead."}
+{"id": "sp239", "cat": "typo", "input": "I'll fry, no no, you go ahead.", "expected": "I'll try, no no, you go ahead.", "slip": "try>fry"}
+{"id": "sc240", "cat": "control", "input": "He said to me it was late!", "expected": "He said to me it was late!"}
+{"id": "sp240", "cat": "typo", "input": "He said to me it wax late!", "expected": "He said to me it was late!", "slip": "was>wax"}
+{"id": "sc241", "cat": "control", "input": "He asked them about it?", "expected": "He asked them about it?"}
+{"id": "sp241", "cat": "typo", "input": "He asked the about it?", "expected": "He asked them about it?", "slip": "them>the"}
+{"id": "sc242", "cat": "control", "input": "The period ended at three.", "expected": "The period ended at three."}
+{"id": "sp242", "cat": "typo", "input": "The period ended aft three.", "expected": "The period ended at three.", "slip": "at>aft"}
+{"id": "sc243", "cat": "control", "input": "Is it Tuesday, nope, it's Wednesday.", "expected": "Is it Tuesday, nope, it's Wednesday."}
+{"id": "sp243", "cat": "typo", "input": "It it Tuesday, nope, it's Wednesday.", "expected": "Is it Tuesday, nope, it's Wednesday.", "slip": "is>it"}
+{"id": "sc244", "cat": "control", "input": "Can't wait to see you this weekend.", "expected": "Can't wait to see you this weekend."}
+{"id": "sp244", "cat": "typo", "input": "Can't await to see you this weekend.", "expected": "Can't wait to see you this weekend.", "slip": "wait>await"}
+{"id": "sc245", "cat": "control", "input": "It's a part of the plan.", "expected": "It's a part of the plan."}
+{"id": "sp245", "cat": "typo", "input": "Kit's a part of the plan.", "expected": "It's a part of the plan.", "slip": "it>kit"}
+{"id": "sc246", "cat": "control", "input": "My grandmother is visiting this weekend.", "expected": "My grandmother is visiting this weekend."}
+{"id": "sp246", "cat": "typo", "input": "My grandmother is visiting this weekends.", "expected": "My grandmother is visiting this weekend.", "slip": "weekend>weekends"}
+{"id": "sc247", "cat": "control", "input": "She texted me about the party.", "expected": "She texted me about the party."}
+{"id": "sp247", "cat": "typo", "input": "Shed texted me about the party.", "expected": "She texted me about the party.", "slip": "she>shed"}
+{"id": "sc248", "cat": "control", "input": "He mumbled something about dinner.", "expected": "He mumbled something about dinner."}
+{"id": "sp248", "cat": "typo", "input": "He mumbled something bout dinner.", "expected": "He mumbled something about dinner.", "slip": "about>bout"}
+{"id": "sc249", "cat": "control", "input": "We asked them to help.", "expected": "We asked them to help."}
+{"id": "sp249", "cat": "typo", "input": "We asked then to help.", "expected": "We asked them to help.", "slip": "them>then"}
+{"id": "sc250", "cat": "control", "input": "Grab me a Coke from the fridge.", "expected": "Grab me a Coke from the fridge."}
+{"id": "sp250", "cat": "typo", "input": "Grab med a Coke from the fridge.", "expected": "Grab me a Coke from the fridge.", "slip": "me>med"}
+{"id": "sc251", "cat": "control", "input": "Book a table for six people.", "expected": "Book a table for six people."}
+{"id": "sp251", "cat": "typo", "input": "Hook a table for six people.", "expected": "Book a table for six people.", "slip": "book>hook"}
+{"id": "sc252", "cat": "control", "input": "I think we should wait.", "expected": "I think we should wait."}
+{"id": "sp252", "cat": "typo", "input": "I think we should await.", "expected": "I think we should wait.", "slip": "wait>await"}
+{"id": "sc253", "cat": "control", "input": "I feel like, maybe we should wait.", "expected": "I feel like, maybe we should wait."}
+{"id": "sp253", "cat": "typo", "input": "I reel like, maybe we should wait.", "expected": "I feel like, maybe we should wait.", "slip": "feel>reel"}
+{"id": "sc254", "cat": "control", "input": "That's the second time this week.", "expected": "That's the second time this week."}
+{"id": "sp254", "cat": "typo", "input": "Hat's the second time this week.", "expected": "That's the second time this week.", "slip": "that>hat"}
+{"id": "sc255", "cat": "control", "input": "I think Rhys wants to borrow the car.", "expected": "I think Rhys wants to borrow the car."}
+{"id": "sp255", "cat": "typo", "input": "I think Rhys wants to borrow the care.", "expected": "I think Rhys wants to borrow the car.", "slip": "car>care"}
+{"id": "sc256", "cat": "control", "input": "I'm going to the gym after work to lift some weights.", "expected": "I'm going to the gym after work to lift some weights."}
+{"id": "sp256", "cat": "typo", "input": "I'm going to the gym after work to loft some weights.", "expected": "I'm going to the gym after work to lift some weights.", "slip": "lift>loft"}
+{"id": "sc257", "cat": "control", "input": "Ten minutes later she called back.", "expected": "Ten minutes later she called back."}
+{"id": "sp257", "cat": "typo", "input": "Ten minutes later she called hack.", "expected": "Ten minutes later she called back.", "slip": "back>hack"}
+{"id": "sc258", "cat": "control", "input": "Sorry, I didn't catch that.", "expected": "Sorry, I didn't catch that."}
+{"id": "sp258", "cat": "typo", "input": "Sorry, I didn't catchy that.", "expected": "Sorry, I didn't catch that.", "slip": "catch>catchy"}
+{"id": "sc259", "cat": "control", "input": "She said to us it was late!", "expected": "She said to us it was late!"}
+{"id": "sp259", "cat": "typo", "input": "She said to use it was late!", "expected": "She said to us it was late!", "slip": "us>use"}
+{"id": "sc260", "cat": "control", "input": "She texted us a picture!", "expected": "She texted us a picture!"}
+{"id": "sp260", "cat": "typo", "input": "She texted us a pictured!", "expected": "She texted us a picture!", "slip": "picture>pictured"}
+{"id": "sc261", "cat": "control", "input": "Make that the last one, okay?", "expected": "Make that the last one, okay?"}
+{"id": "sp261", "cat": "typo", "input": "Make that the past one, okay?", "expected": "Make that the last one, okay?", "slip": "last>past"}
+{"id": "sc262", "cat": "control", "input": "What is in the air fryer?", "expected": "What is in the air fryer?"}
+{"id": "sp262", "cat": "typo", "input": "What is jin the air fryer?", "expected": "What is in the air fryer?", "slip": "in>jin"}
+{"id": "sc263", "cat": "control", "input": "Leave the light on for me.", "expected": "Leave the light on for me."}
+{"id": "sp263", "cat": "typo", "input": "Leave the plight on for me.", "expected": "Leave the light on for me.", "slip": "light>plight"}
+{"id": "sc264", "cat": "control", "input": "You know the answer already.", "expected": "You know the answer already."}
+{"id": "sp264", "cat": "typo", "input": "You now the answer already.", "expected": "You know the answer already.", "slip": "know>now"}
+{"id": "sc265", "cat": "control", "input": "Whoever finishes first gets to pick the movie.", "expected": "Whoever finishes first gets to pick the movie."}
+{"id": "sp265", "cat": "typo", "input": "Whoever finishes first gets too pick the movie.", "expected": "Whoever finishes first gets to pick the movie.", "slip": "to>too"}
+{"id": "sc266", "cat": "control", "input": "No wait, I have a better idea.", "expected": "No wait, I have a better idea."}
+{"id": "sp266", "cat": "typo", "input": "No wait, I have a better ideas.", "expected": "No wait, I have a better idea.", "slip": "idea>ideas"}
+{"id": "sc267", "cat": "control", "input": "Can you check out this video I sent you?", "expected": "Can you check out this video I sent you?"}
+{"id": "sp267", "cat": "typo", "input": "Can yo check out this video I sent you?", "expected": "Can you check out this video I sent you?", "slip": "you>yo"}
+{"id": "sc268", "cat": "control", "input": "Hi Mom, how are you", "expected": "Hi Mom, how are you"}
+{"id": "sp268", "cat": "typo", "input": "Hi Mom, how ate you", "expected": "Hi Mom, how are you", "slip": "are>ate"}
+{"id": "sc269", "cat": "control", "input": "I'm sorry I meant to text back.", "expected": "I'm sorry I meant to text back."}
+{"id": "sp269", "cat": "typo", "input": "I'm sorry I meant to text hack.", "expected": "I'm sorry I meant to text back.", "slip": "back>hack"}
+{"id": "sc270", "cat": "control", "input": "I know what you mean, you know?", "expected": "I know what you mean, you know?"}
+{"id": "sp270", "cat": "typo", "input": "I knows what you mean, you know?", "expected": "I know what you mean, you know?", "slip": "know>knows"}
+{"id": "sc271", "cat": "control", "input": "Tell Priya and Marcus that dinner is at eight at the Thai place on Fifth Street.", "expected": "Tell Priya and Marcus that dinner is at eight at the Thai place on Fifth Street."}
+{"id": "sp271", "cat": "typo", "input": "Tell Priya and Marcus that dinner is at eight at the Thai place ion Fifth Street.", "expected": "Tell Priya and Marcus that dinner is at eight at the Thai place on Fifth Street.", "slip": "on>ion"}
+{"id": "sc272", "cat": "control", "input": "The air fryer is hot.", "expected": "The air fryer is hot."}
+{"id": "sp272", "cat": "typo", "input": "The air fryer is got.", "expected": "The air fryer is hot.", "slip": "hot>got"}
+{"id": "sc273", "cat": "control", "input": "What sort of thing is that?", "expected": "What sort of thing is that?"}
+{"id": "sp273", "cat": "typo", "input": "What sport of thing is that?", "expected": "What sort of thing is that?", "slip": "sort>sport"}
+{"id": "sc274", "cat": "control", "input": "I said no, I meant it.", "expected": "I said no, I meant it."}
+{"id": "sp274", "cat": "typo", "input": "I aid no, I meant it.", "expected": "I said no, I meant it.", "slip": "said>aid"}
+{"id": "sc275", "cat": "control", "input": "HMMM was printed on the mug.", "expected": "HMMM was printed on the mug."}
+{"id": "sp275", "cat": "typo", "input": "HMMM was printed on he mug.", "expected": "HMMM was printed on the mug.", "slip": "the>he"}
+{"id": "sc276", "cat": "control", "input": "Turn right at the light.", "expected": "Turn right at the light."}
+{"id": "sp276", "cat": "typo", "input": "Turn right at the plight.", "expected": "Turn right at the light.", "slip": "light>plight"}
+{"id": "sc277", "cat": "control", "input": "I'll come, actually no, wait.", "expected": "I'll come, actually no, wait."}
+{"id": "sp277", "cat": "typo", "input": "I'll come, actually no, wit.", "expected": "I'll come, actually no, wait.", "slip": "wait>wit"}
+{"id": "sc278", "cat": "control", "input": "What sort of person does that?", "expected": "What sort of person does that?"}
+{"id": "sp278", "cat": "typo", "input": "What soft of person does that?", "expected": "What sort of person does that?", "slip": "sort>soft"}
+{"id": "sc279", "cat": "control", "input": "We went to the park yesterday.", "expected": "We went to the park yesterday."}
+{"id": "sp279", "cat": "typo", "input": "We went too the park yesterday.", "expected": "We went to the park yesterday.", "slip": "to>too"}
+{"id": "sc280", "cat": "control", "input": "We were all together at the beach.", "expected": "We were all together at the beach."}
+{"id": "sp280", "cat": "typo", "input": "We were all together at he beach.", "expected": "We were all together at the beach.", "slip": "the>he"}
+{"id": "sc281", "cat": "control", "input": "I'll take one of each.", "expected": "I'll take one of each."}
+{"id": "sp281", "cat": "typo", "input": "I'll takes one of each.", "expected": "I'll take one of each.", "slip": "take>takes"}
+{"id": "sc282", "cat": "control", "input": "I'd rather not talk about it.", "expected": "I'd rather not talk about it."}
+{"id": "sp282", "cat": "typo", "input": "I'd rather not talk bout it.", "expected": "I'd rather not talk about it.", "slip": "about>bout"}
+{"id": "sc283", "cat": "control", "input": "I'm sorry, the store is closed.", "expected": "I'm sorry, the store is closed."}
+{"id": "sp283", "cat": "typo", "input": "I'm sorry, thee store is closed.", "expected": "I'm sorry, the store is closed.", "slip": "the>thee"}
+{"id": "sc284", "cat": "control", "input": "If I go, will you come?", "expected": "If I go, will you come?"}
+{"id": "sp284", "cat": "typo", "input": "If I to, will you come?", "expected": "If I go, will you come?", "slip": "go>to"}
+{"id": "sc285", "cat": "control", "input": "My period was late this month.", "expected": "My period was late this month."}
+{"id": "sp285", "cat": "typo", "input": "My period was late thus month.", "expected": "My period was late this month.", "slip": "this>thus"}
+{"id": "sc286", "cat": "control", "input": "I'll be there at six.", "expected": "I'll be there at six."}
+{"id": "sp286", "cat": "typo", "input": "I'll bee there at six.", "expected": "I'll be there at six.", "slip": "be>bee"}
+{"id": "sc287", "cat": "control", "input": "I watched the new Batman movie.", "expected": "I watched the new Batman movie."}
+{"id": "sp287", "cat": "typo", "input": "I watched the new Batman movies.", "expected": "I watched the new Batman movie.", "slip": "movie>movies"}
+{"id": "sc288", "cat": "control", "input": "There's a way out of this mess.", "expected": "There's a way out of this mess."}
+{"id": "sp288", "cat": "typo", "input": "Thee's a way out of this mess.", "expected": "There's a way out of this mess.", "slip": "there>thee"}
+{"id": "sc289", "cat": "control", "input": "What do you see out there?", "expected": "What do you see out there?"}
+{"id": "sp289", "cat": "typo", "input": "What do you see our there?", "expected": "What do you see out there?", "slip": "out>our"}
+{"id": "sc290", "cat": "control", "input": "Can somebody help me with this box?", "expected": "Can somebody help me with this box?"}
+{"id": "sp290", "cat": "typo", "input": "Can somebody help me with this ox?", "expected": "Can somebody help me with this box?", "slip": "box>ox"}
+{"id": "sc291", "cat": "control", "input": "Left, right, left, right, go.", "expected": "Left, right, left, right, go."}
+{"id": "sp291", "cat": "typo", "input": "Left, right, left, right, yo.", "expected": "Left, right, left, right, go.", "slip": "go>yo"}
+{"id": "sc292", "cat": "control", "input": "I'm reading Harry Potter again.", "expected": "I'm reading Harry Potter again."}
+{"id": "sp292", "cat": "typo", "input": "I'm rearing Harry Potter again.", "expected": "I'm reading Harry Potter again.", "slip": "reading>rearing"}
+{"id": "sc293", "cat": "control", "input": "I said to her it was fine!", "expected": "I said to her it was fine!"}
+{"id": "sp293", "cat": "typo", "input": "I said too her it was fine!", "expected": "I said to her it was fine!", "slip": "to>too"}
+{"id": "sc294", "cat": "control", "input": "I wonder what time the store closes.", "expected": "I wonder what time the store closes."}
+{"id": "sp294", "cat": "typo", "input": "I wonder hat time the store closes.", "expected": "I wonder what time the store closes.", "slip": "what>hat"}
+{"id": "sc295", "cat": "control", "input": "What do you see, Sam?", "expected": "What do you see, Sam?"}
+{"id": "sp295", "cat": "typo", "input": "What so you see, Sam?", "expected": "What do you see, Sam?", "slip": "do>so"}
+{"id": "sc296", "cat": "control", "input": "Ask him where he parked the car.", "expected": "Ask him where he parked the car."}
+{"id": "sp296", "cat": "typo", "input": "Ask him were he parked the car.", "expected": "Ask him where he parked the car.", "slip": "where>were"}
+{"id": "sc297", "cat": "control", "input": "He was all over the place!", "expected": "He was all over the place!"}
+{"id": "sp297", "cat": "typo", "input": "He as all over the place!", "expected": "He was all over the place!", "slip": "was>as"}
+{"id": "sc298", "cat": "control", "input": "Go go go, we're late!", "expected": "Go go go, we're late!"}
+{"id": "sp298", "cat": "typo", "input": "Go to go, we're late!", "expected": "Go go go, we're late!", "slip": "go>to"}
+{"id": "sc299", "cat": "control", "input": "He said he'd be here at nine.", "expected": "He said he'd be here at nine."}
+{"id": "sp299", "cat": "typo", "input": "He said he'd be hers at nine.", "expected": "He said he'd be here at nine.", "slip": "here>hers"}
+{"id": "sc300", "cat": "control", "input": "Call me when you land.", "expected": "Call me when you land."}
+{"id": "sp300", "cat": "typo", "input": "Cal me when you land.", "expected": "Call me when you land.", "slip": "call>cal"}
+{"id": "sc301", "cat": "control", "input": "I'm not sure, or should I say it later?", "expected": "I'm not sure, or should I say it later?"}
+{"id": "sp301", "cat": "typo", "input": "I'm not sure, of should I say it later?", "expected": "I'm not sure, or should I say it later?", "slip": "or>of"}
+{"id": "sc302", "cat": "control", "input": "Can you turn the lights on? I can't see anything.", "expected": "Can you turn the lights on? I can't see anything."}
+{"id": "sp302", "cat": "typo", "input": "Can you turn the lights on? I cam't see anything.", "expected": "Can you turn the lights on? I can't see anything.", "slip": "can>cam"}
+{"id": "sc303", "cat": "control", "input": "She said to him it was over!", "expected": "She said to him it was over!"}
+{"id": "sp303", "cat": "typo", "input": "She said to hum it was over!", "expected": "She said to him it was over!", "slip": "him>hum"}
+{"id": "sc304", "cat": "control", "input": "Put it in the basement.", "expected": "Put it in the basement."}
+{"id": "sp304", "cat": "typo", "input": "Put it in thee basement.", "expected": "Put it in the basement.", "slip": "the>thee"}
+{"id": "sc305", "cat": "control", "input": "I'll meet you by the side door at noon.", "expected": "I'll meet you by the side door at noon."}
+{"id": "sp305", "cat": "typo", "input": "I'll meet you by the sides door at noon.", "expected": "I'll meet you by the side door at noon.", "slip": "side>sides"}
+{"id": "sc306", "cat": "control", "input": "She asked them for a ride!", "expected": "She asked them for a ride!"}
+{"id": "sp306", "cat": "typo", "input": "She asked them for a rid!", "expected": "She asked them for a ride!", "slip": "ride>rid"}
+{"id": "sc307", "cat": "control", "input": "We asked him about it?", "expected": "We asked him about it?"}
+{"id": "sp307", "cat": "typo", "input": "We asked him bout it?", "expected": "We asked him about it?", "slip": "about>bout"}
+{"id": "sc308", "cat": "control", "input": "You're not going to that party, period.", "expected": "You're not going to that party, period."}
+{"id": "sp308", "cat": "typo", "input": "You're not going to hat party, period.", "expected": "You're not going to that party, period.", "slip": "that>hat"}
+{"id": "sc309", "cat": "control", "input": "The whole area was flooded after the storm.", "expected": "The whole area was flooded after the storm."}
+{"id": "sp309", "cat": "typo", "input": "The while area was flooded after the storm.", "expected": "The whole area was flooded after the storm.", "slip": "whole>while"}
+{"id": "sc310", "cat": "control", "input": "No wait, I can't make it tonight.", "expected": "No wait, I can't make it tonight."}
+{"id": "sp310", "cat": "typo", "input": "On wait, I can't make it tonight.", "expected": "No wait, I can't make it tonight.", "slip": "no>on"}
+{"id": "sc311", "cat": "control", "input": "Make that sandwich for me, please.", "expected": "Make that sandwich for me, please."}
+{"id": "sp311", "cat": "typo", "input": "Make that sandwich for med, please.", "expected": "Make that sandwich for me, please.", "slip": "me>med"}
+{"id": "sc312", "cat": "control", "input": "Did you remember to lock the front door?", "expected": "Did you remember to lock the front door?"}
+{"id": "sp312", "cat": "typo", "input": "Did you remember to lock thee front door?", "expected": "Did you remember to lock the front door?", "slip": "the>thee"}
+{"id": "sc313", "cat": "control", "input": "Who knew it would rain today?", "expected": "Who knew it would rain today?"}
+{"id": "sp313", "cat": "typo", "input": "Who knee it would rain today?", "expected": "Who knew it would rain today?", "slip": "knew>knee"}
+{"id": "sc314", "cat": "control", "input": "Thanks a million for your help.", "expected": "Thanks a million for your help."}
+{"id": "sp314", "cat": "typo", "input": "Thanks a million for your hell.", "expected": "Thanks a million for your help.", "slip": "help>hell"}
+{"id": "sc315", "cat": "control", "input": "Actually, I think it's fine.", "expected": "Actually, I think it's fine."}
+{"id": "sp315", "cat": "typo", "input": "Actually, I thin it's fine.", "expected": "Actually, I think it's fine.", "slip": "think>thin"}
+{"id": "sc316", "cat": "control", "input": "Is this the Brown residence?", "expected": "Is this the Brown residence?"}
+{"id": "sp316", "cat": "typo", "input": "Is this thee Brown residence?", "expected": "Is this the Brown residence?", "slip": "the>thee"}
+{"id": "sc317", "cat": "control", "input": "Five dollars, make it snappy.", "expected": "Five dollars, make it snappy."}
+{"id": "sp317", "cat": "typo", "input": "Five dollars, makes it snappy.", "expected": "Five dollars, make it snappy.", "slip": "make>makes"}
+{"id": "sc318", "cat": "control", "input": "I put the leftovers into the fridge.", "expected": "I put the leftovers into the fridge."}
+{"id": "sp318", "cat": "typo", "input": "I put the leftovers into he fridge.", "expected": "I put the leftovers into the fridge.", "slip": "the>he"}
+{"id": "sc319", "cat": "control", "input": "Ah, that makes sense now.", "expected": "Ah, that makes sense now."}
+{"id": "sp319", "cat": "typo", "input": "Ah, hat makes sense now.", "expected": "Ah, that makes sense now.", "slip": "that>hat"}
+{"id": "sc320", "cat": "control", "input": "I'd rather stay home tonight.", "expected": "I'd rather stay home tonight."}
+{"id": "sp320", "cat": "typo", "input": "I'd father stay home tonight.", "expected": "I'd rather stay home tonight.", "slip": "rather>father"}
+{"id": "sc321", "cat": "control", "input": "I'll have two coffees and a bagel, please.", "expected": "I'll have two coffees and a bagel, please."}
+{"id": "sp321", "cat": "typo", "input": "I'll gave two coffees and a bagel, please.", "expected": "I'll have two coffees and a bagel, please.", "slip": "have>gave"}
+{"id": "sc322", "cat": "control", "input": "Mom texted me the address?", "expected": "Mom texted me the address?"}
+{"id": "sp322", "cat": "typo", "input": "Mom texted me he address?", "expected": "Mom texted me the address?", "slip": "the>he"}
+{"id": "sc323", "cat": "control", "input": "She said that she would come.", "expected": "She said that she would come."}
+{"id": "sp323", "cat": "typo", "input": "He said that she would come.", "expected": "She said that she would come.", "slip": "she>he"}
+{"id": "sc324", "cat": "control", "input": "Wait for me at the front door.", "expected": "Wait for me at the front door."}
+{"id": "sp324", "cat": "typo", "input": "Wait for me at he front door.", "expected": "Wait for me at the front door.", "slip": "the>he"}
+{"id": "sc325", "cat": "control", "input": "Just do what you like, okay?", "expected": "Just do what you like, okay?"}
+{"id": "sp325", "cat": "typo", "input": "Just so what you like, okay?", "expected": "Just do what you like, okay?", "slip": "do>so"}
+{"id": "sc326", "cat": "control", "input": "I need a new phone charger.", "expected": "I need a new phone charger."}
+{"id": "sp326", "cat": "typo", "input": "I need a nee phone charger.", "expected": "I need a new phone charger.", "slip": "new>nee"}
+{"id": "sc327", "cat": "control", "input": "So yeah, that's the plan.", "expected": "So yeah, that's the plan."}
+{"id": "sp327", "cat": "typo", "input": "So yeah, hat's the plan.", "expected": "So yeah, that's the plan.", "slip": "that>hat"}
+{"id": "sc328", "cat": "control", "input": "If you like, we can go.", "expected": "If you like, we can go."}
+{"id": "sp328", "cat": "typo", "input": "It you like, we can go.", "expected": "If you like, we can go.", "slip": "if>it"}
+{"id": "sc329", "cat": "control", "input": "I sent you a weird photo by mistake. Delete that.", "expected": "I sent you a weird photo by mistake. Delete that."}
+{"id": "sp329", "cat": "typo", "input": "I sent you a weird photo buy mistake. Delete that.", "expected": "I sent you a weird photo by mistake. Delete that.", "slip": "by>buy"}
+{"id": "sc330", "cat": "control", "input": "I can't come tonight. No wait, I can.", "expected": "I can't come tonight. No wait, I can."}
+{"id": "sp330", "cat": "typo", "input": "I can't come tonight. On wait, I can.", "expected": "I can't come tonight. No wait, I can.", "slip": "no>on"}
+{"id": "sc331", "cat": "control", "input": "Can I have a piece of that chocolate cake?", "expected": "Can I have a piece of that chocolate cake?"}
+{"id": "sp331", "cat": "typo", "input": "Can I have a piece if that chocolate cake?", "expected": "Can I have a piece of that chocolate cake?", "slip": "of>if"}
+{"id": "sc332", "cat": "control", "input": "Their new place is right next to the park.", "expected": "Their new place is right next to the park."}
+{"id": "sp332", "cat": "typo", "input": "Their new place is fright next to the park.", "expected": "Their new place is right next to the park.", "slip": "right>fright"}
+{"id": "sc333", "cat": "control", "input": "I need a new car soon.", "expected": "I need a new car soon."}
+{"id": "sp333", "cat": "typo", "input": "I need a nee car soon.", "expected": "I need a new car soon.", "slip": "new>nee"}
+{"id": "sc334", "cat": "control", "input": "She wrote a letter to her mom.", "expected": "She wrote a letter to her mom."}
+{"id": "sp334", "cat": "typo", "input": "She write a letter to her mom.", "expected": "She wrote a letter to her mom.", "slip": "wrote>write"}
+{"id": "sc335", "cat": "control", "input": "The meeting is at three o'clock.", "expected": "The meeting is at three o'clock."}
+{"id": "sp335", "cat": "typo", "input": "The meeting is art three o'clock.", "expected": "The meeting is at three o'clock.", "slip": "at>art"}
+{"id": "sc336", "cat": "control", "input": "That's why I called you yesterday.", "expected": "That's why I called you yesterday."}
+{"id": "sp336", "cat": "typo", "input": "That's shy I called you yesterday.", "expected": "That's why I called you yesterday.", "slip": "why>shy"}
+{"id": "sc337", "cat": "control", "input": "Is Brynn coming to the barbecue?", "expected": "Is Brynn coming to the barbecue?"}
+{"id": "sp337", "cat": "typo", "input": "Is Brynn coming too the barbecue?", "expected": "Is Brynn coming to the barbecue?", "slip": "to>too"}
+{"id": "sc338", "cat": "control", "input": "He messaged me a link!", "expected": "He messaged me a link!"}
+{"id": "sp338", "cat": "typo", "input": "He messaged me a ink!", "expected": "He messaged me a link!", "slip": "link>ink"}
+{"id": "sc339", "cat": "control", "input": "I was thinking about moving.", "expected": "I was thinking about moving."}
+{"id": "sp339", "cat": "typo", "input": "I was thinking bout moving.", "expected": "I was thinking about moving.", "slip": "about>bout"}
+{"id": "sc340", "cat": "control", "input": "The meeting is on Tuesday morning.", "expected": "The meeting is on Tuesday morning."}
+{"id": "sp340", "cat": "typo", "input": "Thee meeting is on Tuesday morning.", "expected": "The meeting is on Tuesday morning.", "slip": "the>thee"}
+{"id": "sc341", "cat": "control", "input": "Let me know if you like it.", "expected": "Let me know if you like it."}
+{"id": "sp341", "cat": "typo", "input": "Left me know if you like it.", "expected": "Let me know if you like it.", "slip": "let>left"}
+{"id": "sc342", "cat": "control", "input": "The line break was in the wrong place.", "expected": "The line break was in the wrong place."}
+{"id": "sp342", "cat": "typo", "input": "The line break was in thee wrong place.", "expected": "The line break was in the wrong place.", "slip": "the>thee"}
+{"id": "sc343", "cat": "control", "input": "The soup was too hot to eat right away, so I let it cool.", "expected": "The soup was too hot to eat right away, so I let it cool."}
+{"id": "sp343", "cat": "typo", "input": "The soup was too hot to eat right way, so I let it cool.", "expected": "The soup was too hot to eat right away, so I let it cool.", "slip": "away>way"}
+{"id": "sc344", "cat": "control", "input": "He asked me to wait for him.", "expected": "He asked me to wait for him."}
+{"id": "sp344", "cat": "typo", "input": "He asked me yo wait for him.", "expected": "He asked me to wait for him.", "slip": "to>yo"}
+{"id": "sc345", "cat": "control", "input": "Some sort of mistake happened.", "expected": "Some sort of mistake happened."}
+{"id": "sp345", "cat": "typo", "input": "Some sort off mistake happened.", "expected": "Some sort of mistake happened.", "slip": "of>off"}
+{"id": "sc346", "cat": "control", "input": "Sometimes I forget to eat lunch.", "expected": "Sometimes I forget to eat lunch."}
+{"id": "sp346", "cat": "typo", "input": "Sometimes I forget to sat lunch.", "expected": "Sometimes I forget to eat lunch.", "slip": "eat>sat"}
+{"id": "sc347", "cat": "control", "input": "Where did you park the car?", "expected": "Where did you park the car?"}
+{"id": "sp347", "cat": "typo", "input": "Where did yo park the car?", "expected": "Where did you park the car?", "slip": "you>yo"}
+{"id": "sc348", "cat": "control", "input": "The more I think about it, the better it sounds.", "expected": "The more I think about it, the better it sounds."}
+{"id": "sp348", "cat": "typo", "input": "The more I think about it, thee better it sounds.", "expected": "The more I think about it, the better it sounds.", "slip": "the>thee"}
+{"id": "sc349", "cat": "control", "input": "The kids were fighting, so I had to pull them apart.", "expected": "The kids were fighting, so I had to pull them apart."}
+{"id": "sp349", "cat": "typo", "input": "The kids were fighting, so I had to pull them part.", "expected": "The kids were fighting, so I had to pull them apart.", "slip": "apart>part"}
+{"id": "sc350", "cat": "control", "input": "It's on the third floor.", "expected": "It's on the third floor."}
+{"id": "sp350", "cat": "typo", "input": "It's on the thirds floor.", "expected": "It's on the third floor.", "slip": "third>thirds"}
+{"id": "sc351", "cat": "control", "input": "Ah ha, I found it.", "expected": "Ah ha, I found it."}
+{"id": "sp351", "cat": "typo", "input": "Ah ha, I fond it.", "expected": "Ah ha, I found it.", "slip": "found>fond"}
+{"id": "sc352", "cat": "control", "input": "And so yeah, we left.", "expected": "And so yeah, we left."}
+{"id": "sp352", "cat": "typo", "input": "Ad so yeah, we left.", "expected": "And so yeah, we left.", "slip": "and>ad"}
+{"id": "sc353", "cat": "control", "input": "Did you check the weather before the hike?", "expected": "Did you check the weather before the hike?"}
+{"id": "sp353", "cat": "typo", "input": "Did you check thee weather before the hike?", "expected": "Did you check the weather before the hike?", "slip": "the>thee"}
+{"id": "sc354", "cat": "control", "input": "UHHH is the band's name.", "expected": "UHHH is the band's name."}
+{"id": "sp354", "cat": "typo", "input": "UHHH is the bans's name.", "expected": "UHHH is the band's name.", "slip": "band>bans"}
+{"id": "sc355", "cat": "control", "input": "I'm going to grab forty winks before dinner.", "expected": "I'm going to grab forty winks before dinner."}
+{"id": "sp355", "cat": "typo", "input": "I'm gong to grab forty winks before dinner.", "expected": "I'm going to grab forty winks before dinner.", "slip": "going>gong"}
+{"id": "sc356", "cat": "control", "input": "We can still do it anyway.", "expected": "We can still do it anyway."}
+{"id": "sp356", "cat": "typo", "input": "We van still do it anyway.", "expected": "We can still do it anyway.", "slip": "can>van"}
+{"id": "sc357", "cat": "control", "input": "I can make it work.", "expected": "I can make it work."}
+{"id": "sp357", "cat": "typo", "input": "I can make kit work.", "expected": "I can make it work.", "slip": "it>kit"}
+{"id": "sc358", "cat": "control", "input": "It's very very cold outside.", "expected": "It's very very cold outside."}
+{"id": "sp358", "cat": "typo", "input": "It's very very cold outsider.", "expected": "It's very very cold outside.", "slip": "outside>outsider"}
+{"id": "sc359", "cat": "control", "input": "We don't have any more milk.", "expected": "We don't have any more milk."}
+{"id": "sp359", "cat": "typo", "input": "We don't have any mores milk.", "expected": "We don't have any more milk.", "slip": "more>mores"}
+{"id": "sc360", "cat": "control", "input": "Is it a comma or a period?", "expected": "Is it a comma or a period?"}
+{"id": "sp360", "cat": "typo", "input": "It it a comma or a period?", "expected": "Is it a comma or a period?", "slip": "is>it"}
+{"id": "sc361", "cat": "control", "input": "Stay there, hold on, please.", "expected": "Stay there, hold on, please."}
+{"id": "sp361", "cat": "typo", "input": "Stay there, hold no, please.", "expected": "Stay there, hold on, please.", "slip": "on>no"}
+{"id": "sc362", "cat": "control", "input": "What it is is a total mess.", "expected": "What it is is a total mess."}
+{"id": "sp362", "cat": "typo", "input": "Hat it is is a total mess.", "expected": "What it is is a total mess.", "slip": "what>hat"}
+{"id": "sc363", "cat": "control", "input": "It's sort of, a blue color.", "expected": "It's sort of, a blue color."}
+{"id": "sp363", "cat": "typo", "input": "Is's sort of, a blue color.", "expected": "It's sort of, a blue color.", "slip": "it>is"}
+{"id": "sc364", "cat": "control", "input": "Sorry, my bad, I'll fix it.", "expected": "Sorry, my bad, I'll fix it."}
+{"id": "sp364", "cat": "typo", "input": "Sorry, my bad, I'll fix if.", "expected": "Sorry, my bad, I'll fix it.", "slip": "it>if"}
+{"id": "sc365", "cat": "control", "input": "Is he sick, or something?", "expected": "Is he sick, or something?"}
+{"id": "sp365", "cat": "typo", "input": "Is her sick, or something?", "expected": "Is he sick, or something?", "slip": "he>her"}
+{"id": "sc366", "cat": "control", "input": "That was the coldest period on record.", "expected": "That was the coldest period on record."}
+{"id": "sp366", "cat": "typo", "input": "That was the coldest period ion record.", "expected": "That was the coldest period on record.", "slip": "on>ion"}
+{"id": "sc367", "cat": "control", "input": "Scratch that off the shopping list.", "expected": "Scratch that off the shopping list."}
+{"id": "sp367", "cat": "typo", "input": "Scratch that off the shopping lost.", "expected": "Scratch that off the shopping list.", "slip": "list>lost"}
+{"id": "sc368", "cat": "control", "input": "Did you call Michael back?", "expected": "Did you call Michael back?"}
+{"id": "sp368", "cat": "typo", "input": "Did you call Michael hack?", "expected": "Did you call Michael back?", "slip": "back>hack"}
+{"id": "sc369", "cat": "control", "input": "Every one of these cookies is burnt.", "expected": "Every one of these cookies is burnt."}
+{"id": "sp369", "cat": "typo", "input": "Every one of these cookies it burnt.", "expected": "Every one of these cookies is burnt.", "slip": "is>it"}
+{"id": "sc370", "cat": "control", "input": "Do you want to come along?", "expected": "Do you want to come along?"}
+{"id": "sp370", "cat": "typo", "input": "Do yo want to come along?", "expected": "Do you want to come along?", "slip": "you>yo"}
+{"id": "sc371", "cat": "control", "input": "No, I meant what I said.", "expected": "No, I meant what I said."}
+{"id": "sp371", "cat": "typo", "input": "No, I meant what I sad.", "expected": "No, I meant what I said.", "slip": "said>sad"}
+{"id": "sc372", "cat": "control", "input": "She drew a smiley face on the card.", "expected": "She drew a smiley face on the card."}
+{"id": "sp372", "cat": "typo", "input": "She crew a smiley face on the card.", "expected": "She drew a smiley face on the card.", "slip": "drew>crew"}
+{"id": "sc373", "cat": "control", "input": "The new place is small.", "expected": "The new place is small."}
+{"id": "sp373", "cat": "typo", "input": "He new place is small.", "expected": "The new place is small.", "slip": "the>he"}
+{"id": "sc374", "cat": "control", "input": "I left my keys on the kitchen table.", "expected": "I left my keys on the kitchen table."}
+{"id": "sp374", "cat": "typo", "input": "I left my keys oh the kitchen table.", "expected": "I left my keys on the kitchen table.", "slip": "on>oh"}
+{"id": "sc375", "cat": "control", "input": "My boss said the meeting is at noon.", "expected": "My boss said the meeting is at noon."}
+{"id": "sp375", "cat": "typo", "input": "My bows said the meeting is at noon.", "expected": "My boss said the meeting is at noon.", "slip": "boss>bows"}
+{"id": "sc376", "cat": "control", "input": "Can you make that call for me?", "expected": "Can you make that call for me?"}
+{"id": "sp376", "cat": "typo", "input": "Can you make that call fort me?", "expected": "Can you make that call for me?", "slip": "for>fort"}
+{"id": "sc377", "cat": "control", "input": "Well, actually, it was fun.", "expected": "Well, actually, it was fun."}
+{"id": "sp377", "cat": "typo", "input": "Well, actually, it wax fun.", "expected": "Well, actually, it was fun.", "slip": "was>wax"}
+{"id": "sc378", "cat": "control", "input": "She lives alone with her two cats.", "expected": "She lives alone with her two cats."}
+{"id": "sp378", "cat": "typo", "input": "She lives lone with her two cats.", "expected": "She lives alone with her two cats.", "slip": "alone>lone"}
+{"id": "sc379", "cat": "control", "input": "I need to work out more often.", "expected": "I need to work out more often."}
+{"id": "sp379", "cat": "typo", "input": "I nee to work out more often.", "expected": "I need to work out more often.", "slip": "need>nee"}
+{"id": "sc380", "cat": "control", "input": "Far far away there was a castle.", "expected": "Far far away there was a castle."}
+{"id": "sp380", "cat": "typo", "input": "Far far away there wax a castle.", "expected": "Far far away there was a castle.", "slip": "was>wax"}
+{"id": "sc381", "cat": "control", "input": "I think, I really think, we can win.", "expected": "I think, I really think, we can win."}
+{"id": "sp381", "cat": "typo", "input": "I think, I really think, we cam win.", "expected": "I think, I really think, we can win.", "slip": "can>cam"}
+{"id": "sc382", "cat": "control", "input": "She asked us to leave.", "expected": "She asked us to leave."}
+{"id": "sp382", "cat": "typo", "input": "She asked us to leaved.", "expected": "She asked us to leave.", "slip": "leave>leaved"}
+{"id": "sc383", "cat": "control", "input": "Meet me at the seven eleven on Main Street.", "expected": "Meet me at the seven eleven on Main Street."}
+{"id": "sp383", "cat": "typo", "input": "Meet me at he seven eleven on Main Street.", "expected": "Meet me at the seven eleven on Main Street.", "slip": "the>he"}
+{"id": "sc384", "cat": "control", "input": "I knew that that was a mistake.", "expected": "I knew that that was a mistake."}
+{"id": "sp384", "cat": "typo", "input": "I new that that was a mistake.", "expected": "I knew that that was a mistake.", "slip": "knew>new"}
+{"id": "sc385", "cat": "control", "input": "We waited, like, ten minutes.", "expected": "We waited, like, ten minutes."}
+{"id": "sp385", "cat": "typo", "input": "Wee waited, like, ten minutes.", "expected": "We waited, like, ten minutes.", "slip": "we>wee"}
+{"id": "sc386", "cat": "control", "input": "Jaxon has soccer practice at four.", "expected": "Jaxon has soccer practice at four."}
+{"id": "sp386", "cat": "typo", "input": "Jaxon had soccer practice at four.", "expected": "Jaxon has soccer practice at four.", "slip": "has>had"}
+{"id": "sc387", "cat": "control", "input": "We should leave way earlier next time.", "expected": "We should leave way earlier next time."}
+{"id": "sp387", "cat": "typo", "input": "We should leaves way earlier next time.", "expected": "We should leave way earlier next time.", "slip": "leave>leaves"}
+{"id": "sc388", "cat": "control", "input": "She told us the news.", "expected": "She told us the news."}
+{"id": "sp388", "cat": "typo", "input": "She old us the news.", "expected": "She told us the news.", "slip": "told>old"}
+{"id": "sc389", "cat": "control", "input": "The kids are all ready for school.", "expected": "The kids are all ready for school."}
+{"id": "sp389", "cat": "typo", "input": "He kids are all ready for school.", "expected": "The kids are all ready for school.", "slip": "the>he"}
+{"id": "sc390", "cat": "control", "input": "It's really far from here.", "expected": "It's really far from here."}
+{"id": "sp390", "cat": "typo", "input": "It's really far from hers.", "expected": "It's really far from here.", "slip": "here>hers"}
+{"id": "sc391", "cat": "control", "input": "Some times are better than others.", "expected": "Some times are better than others."}
+{"id": "sp391", "cat": "typo", "input": "Some ties are better than others.", "expected": "Some times are better than others.", "slip": "times>ties"}
+{"id": "sc392", "cat": "control", "input": "They told us about it?", "expected": "They told us about it?"}
+{"id": "sp392", "cat": "typo", "input": "They told us bout it?", "expected": "They told us about it?", "slip": "about>bout"}
+{"id": "sc393", "cat": "control", "input": "Is this the new line for tickets?", "expected": "Is this the new line for tickets?"}
+{"id": "sp393", "cat": "typo", "input": "Is this the new lime for tickets?", "expected": "Is this the new line for tickets?", "slip": "line>lime"}
+{"id": "sc394", "cat": "control", "input": "It was like, so cool.", "expected": "It was like, so cool."}
+{"id": "sp394", "cat": "typo", "input": "It wax like, so cool.", "expected": "It was like, so cool.", "slip": "was>wax"}
+{"id": "sc395", "cat": "control", "input": "Sorry, I meant to call you.", "expected": "Sorry, I meant to call you."}
+{"id": "sp395", "cat": "typo", "input": "Worry, I meant to call you.", "expected": "Sorry, I meant to call you.", "slip": "sorry>worry"}
+{"id": "sc396", "cat": "control", "input": "Hang on, wait, a minute.", "expected": "Hang on, wait, a minute."}
+{"id": "sp396", "cat": "typo", "input": "Hang on, wait, a minutes.", "expected": "Hang on, wait, a minute.", "slip": "minute>minutes"}
+{"id": "sc397", "cat": "control", "input": "Turn it up, make it louder.", "expected": "Turn it up, make it louder."}
+{"id": "sp397", "cat": "typo", "input": "Turn it up, make kit louder.", "expected": "Turn it up, make it louder.", "slip": "it>kit"}
+{"id": "sc398", "cat": "control", "input": "Grab a tea for me.", "expected": "Grab a tea for me."}
+{"id": "sp398", "cat": "typo", "input": "Grab a tea for med.", "expected": "Grab a tea for me.", "slip": "me>med"}
+{"id": "sc399", "cat": "control", "input": "I think the meeting got moved.", "expected": "I think the meeting got moved."}
+{"id": "sp399", "cat": "typo", "input": "I think the meeting got moves.", "expected": "I think the meeting got moved.", "slip": "moved>moves"}

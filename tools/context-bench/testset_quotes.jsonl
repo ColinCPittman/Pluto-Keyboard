@@ -1,0 +1,54 @@
+{"id": "qp01", "cat": "quote", "input": "And she was all, what are you doing here?", "expected": "And she was all \"What are you doing here?\""}
+{"id": "qp02", "cat": "quote", "input": "He goes like, are you serious?", "expected": "He goes like \"Are you serious?\""}
+{"id": "qp03", "cat": "quote", "input": "She texted me, are you coming tonight?", "expected": "She texted me \"Are you coming tonight?\""}
+{"id": "qp04", "cat": "quote", "input": "He asked me, can you help with the boxes?", "expected": "He asked me \"Can you help with the boxes?\""}
+{"id": "qp05", "cat": "quote", "input": "My boss shouted, where is the report?", "expected": "My boss shouted \"Where is the report?\""}
+{"id": "qp06", "cat": "quote", "input": "She wrote, can you call me later?", "expected": "She wrote \"Can you call me later?\""}
+{"id": "qp07", "cat": "quote", "input": "He kept saying, are we there yet?", "expected": "He kept saying \"Are we there yet?\""}
+{"id": "qp08", "cat": "quote", "input": "Then she added, oh, and bring snacks.", "expected": "Then she added \"Oh, and bring snacks.\""}
+{"id": "qp09", "cat": "quote", "input": "He answered, why do you ask?", "expected": "He answered \"Why do you ask?\""}
+{"id": "qp10", "cat": "quote", "input": "I told them, hey, slow down.", "expected": "I told them \"Hey, slow down.\""}
+{"id": "qp11", "cat": "quote", "input": "And I was like um what are you doing", "expected": "And I was like \"Um, what are you doing?\""}
+{"id": "qp12", "cat": "quote", "input": "She said, can you pick me up?", "expected": "She said \"Can you pick me up?\""}
+{"id": "qpn01", "cat": "control", "input": "She was all smiles at the wedding!", "expected": "She was all smiles at the wedding!"}
+{"id": "qpn02", "cat": "control", "input": "They were all there!", "expected": "They were all there!"}
+{"id": "qpn03", "cat": "control", "input": "He yelled at me!", "expected": "He yelled at me!"}
+{"id": "qpn04", "cat": "control", "input": "She shouted at the dog!", "expected": "She shouted at the dog!"}
+{"id": "qpn05", "cat": "control", "input": "He asked me what time it was.", "expected": "He asked me what time it was."}
+{"id": "qpn06", "cat": "control", "input": "She texted me about the party.", "expected": "She texted me about the party."}
+{"id": "qpn07", "cat": "control", "input": "I wrote that down.", "expected": "I wrote that down."}
+{"id": "qpn08", "cat": "control", "input": "She added it to the list!", "expected": "She added it to the list!"}
+{"id": "qpn09", "cat": "control", "input": "He kept saying sorry to everyone.", "expected": "He kept saying sorry to everyone."}
+{"id": "qpn10", "cat": "control", "input": "We were all so tired!", "expected": "We were all so tired!"}
+{"id": "qpn11", "cat": "control", "input": "He answered the phone!", "expected": "He answered the phone!"}
+{"id": "qpn12", "cat": "control", "input": "Did they go? What time?", "expected": "Did they go? What time?"}
+{"id": "qpn13", "cat": "control", "input": "He went. What a day!", "expected": "He went. What a day!"}
+{"id": "qpn14", "cat": "control", "input": "She wrote a letter to her mom.", "expected": "She wrote a letter to her mom."}
+{"id": "qpn15", "cat": "control", "input": "I was all over the place!", "expected": "I was all over the place!"}
+{"id": "qpn16", "cat": "control", "input": "He shouted for help!", "expected": "He shouted for help!"}
+{"id": "qpn17", "cat": "control", "input": "They were all, like, twenty years old.", "expected": "They were all, like, twenty years old."}
+{"id": "qpn18", "cat": "control", "input": "My mom asked about you.", "expected": "My mom asked about you."}
+{"id": "qpn19", "cat": "control", "input": "She said that!", "expected": "She said that!"}
+{"id": "qpn20", "cat": "control", "input": "He told me it was fine.", "expected": "He told me it was fine."}
+{"id": "qpn21", "cat": "control", "input": "I asked if they were coming.", "expected": "I asked if they were coming."}
+{"id": "qpn22", "cat": "control", "input": "She answered all the questions!", "expected": "She answered all the questions!"}
+{"id": "qpn23", "cat": "control", "input": "He added two more chairs.", "expected": "He added two more chairs."}
+{"id": "qpn24", "cat": "control", "input": "We kept saying no.", "expected": "We kept saying no."}
+{"id": "qpn25", "cat": "control", "input": "They texted us the address.", "expected": "They texted us the address."}
+{"id": "qpn26", "cat": "control", "input": "She is all set!", "expected": "She is all set!"}
+{"id": "qpn27", "cat": "control", "input": "He was all in!", "expected": "He was all in!"}
+{"id": "qp13", "cat": "quote", "input": "My dad asked me, are you okay?", "expected": "My dad asked me \"Are you okay?\""}
+{"id": "qp14", "cat": "quote", "input": "She said to me, what are you doing?", "expected": "She said to me \"What are you doing?\""}
+{"id": "qp15", "cat": "quote", "input": "She was all, um, what is this?", "expected": "She was all \"Um, what is this?\""}
+{"id": "qpn28", "cat": "control", "input": "He added, that's all.", "expected": "He added, that's all."}
+{"id": "qpn29", "cat": "control", "input": "He wrote back, thanks!", "expected": "He wrote back, thanks!"}
+{"id": "qpn30", "cat": "control", "input": "I said to him that it was fine.", "expected": "I said to him that it was fine."}
+{"id": "qpn31", "cat": "control", "input": "He mumbled something about dinner.", "expected": "He mumbled something about dinner."}
+{"id": "qpn32", "cat": "control", "input": "He told you, didn't he?", "expected": "He told you, didn't he?"}
+{"id": "qpn33", "cat": "control", "input": "He said that?", "expected": "He said that?"}
+{"id": "qpn34", "cat": "control", "input": "She yelled at us again!", "expected": "She yelled at us again!"}
+{"id": "qpn35", "cat": "control", "input": "They asked us for directions!", "expected": "They asked us for directions!"}
+{"id": "qpn36", "cat": "control", "input": "She goes to school here.", "expected": "She goes to school here."}
+{"id": "qpn37", "cat": "control", "input": "He wrote it on the board!", "expected": "He wrote it on the board!"}
+{"id": "qpn38", "cat": "control", "input": "I answered him honestly.", "expected": "I answered him honestly."}
+{"id": "qpn39", "cat": "control", "input": "She responded well to the treatment!", "expected": "She responded well to the treatment!"}

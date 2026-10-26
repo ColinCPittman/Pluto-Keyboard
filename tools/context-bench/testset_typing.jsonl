@@ -1,0 +1,146 @@
+{"id": "ty01", "cat": "typo", "input": "I needed new salt and pepper shakers so I bought some new salt an pepper shakers.", "expected": "I needed new salt and pepper shakers so I bought some new salt and pepper shakers."}
+{"id": "ty02", "cat": "typo", "input": "He is the king or the hill at work.", "expected": "He is the king of the hill at work."}
+{"id": "ty03", "cat": "typo", "input": "I got an email form my boss this morning.", "expected": "I got an email from my boss this morning."}
+{"id": "ty04", "cat": "typo", "input": "She is taller then her brother.", "expected": "She is taller than her brother."}
+{"id": "ty05", "cat": "typo", "input": "Put the box in the table please.", "expected": "Put the box on the table please."}
+{"id": "ty06", "cat": "typo", "input": "I think it is going to rain an we should stay inside.", "expected": "I think it is going to rain and we should stay inside."}
+{"id": "ty07", "cat": "typo", "input": "Can you pick up some milk an bread on the way home?", "expected": "Can you pick up some milk and bread on the way home?"}
+{"id": "ty08", "cat": "typo", "input": "One or the best movies I have seen this year.", "expected": "One of the best movies I have seen this year."}
+{"id": "ty09", "cat": "typo", "input": "I would rather walk then drive.", "expected": "I would rather walk than drive."}
+{"id": "ty10", "cat": "typo", "input": "The package came form Amazon yesterday.", "expected": "The package came from Amazon yesterday."}
+{"id": "ty11", "cat": "typo", "input": "Most or my friends live nearby.", "expected": "Most of my friends live nearby."}
+{"id": "ty12", "cat": "typo", "input": "I need to fill out this from before Friday.", "expected": "I need to fill out this form before Friday."}
+{"id": "ty13", "cat": "typo", "input": "It's a lot more fun then I expected.", "expected": "It's a lot more fun than I expected."}
+{"id": "ty14", "cat": "typo", "input": "He was born on 1990.", "expected": "He was born in 1990."}
+{"id": "ty15", "cat": "typo", "input": "Let me know it you need anything.", "expected": "Let me know if you need anything."}
+{"id": "ty16", "cat": "typo", "input": "There were five or them at the party.", "expected": "There were five of them at the party."}
+{"id": "ty17", "cat": "typo", "input": "My mom an dad are coming over for dinner.", "expected": "My mom and dad are coming over for dinner."}
+{"id": "ty18", "cat": "typo", "input": "Thanks for all or your help today.", "expected": "Thanks for all of your help today."}
+{"id": "ty19", "cat": "typo", "input": "That is way to expensive for me.", "expected": "That is way too expensive for me."}
+{"id": "ty20", "cat": "typo", "input": "I was to tired to go out last night.", "expected": "I was too tired to go out last night."}
+{"id": "ty21", "cat": "typo", "input": "We went to the park an played soccer.", "expected": "We went to the park and played soccer."}
+{"id": "ty22", "cat": "typo", "input": "I'm waiting for the bus an it is late again.", "expected": "I'm waiting for the bus and it is late again."}
+{"id": "ty23", "cat": "typo", "input": "Can you send me a copy or the report?", "expected": "Can you send me a copy of the report?"}
+{"id": "ty24", "cat": "typo", "input": "I'm on my way home form work.", "expected": "I'm on my way home from work."}
+{"id": "ty25", "cat": "typo", "input": "Do you know were the keys are?", "expected": "Do you know where the keys are?"}
+{"id": "ty26", "cat": "typo", "input": "I have no idea were he went.", "expected": "I have no idea where he went."}
+{"id": "ty27", "cat": "typo", "input": "We had a great time at the beach an the weather was perfect.", "expected": "We had a great time at the beach and the weather was perfect."}
+{"id": "ty28", "cat": "typo", "input": "I'll call you when I get home an we can talk then.", "expected": "I'll call you when I get home and we can talk then."}
+{"id": "ty29", "cat": "typo", "input": "This is one or my favorite songs.", "expected": "This is one of my favorite songs."}
+{"id": "ty30", "cat": "typo", "input": "He has been working there for years an years.", "expected": "He has been working there for years and years."}
+{"id": "ty31", "cat": "typo", "input": "Give me a call it you have time.", "expected": "Give me a call if you have time."}
+{"id": "ty32", "cat": "typo", "input": "I bought a new pair or shoes.", "expected": "I bought a new pair of shoes."}
+{"id": "ty33", "cat": "typo", "input": "The rest or the day was quiet.", "expected": "The rest of the day was quiet."}
+{"id": "ty34", "cat": "typo", "input": "It was better then I thought it would be.", "expected": "It was better than I thought it would be."}
+{"id": "ty35", "cat": "typo", "input": "I'd rather stay home then go out tonight.", "expected": "I'd rather stay home than go out tonight."}
+{"id": "ty36", "cat": "typo", "input": "What time does the store open in Sunday?", "expected": "What time does the store open on Sunday?"}
+{"id": "ty37", "cat": "typo", "input": "My birthday is in June an I want a cake.", "expected": "My birthday is in June and I want a cake."}
+{"id": "ty38", "cat": "typo", "input": "Did you get my message form earlier?", "expected": "Did you get my message from earlier?"}
+{"id": "ty39", "cat": "typo", "input": "I just got back form the gym.", "expected": "I just got back from the gym."}
+{"id": "ty40", "cat": "typo", "input": "The kids were tired an hungry after school.", "expected": "The kids were tired and hungry after school."}
+{"id": "ty41", "cat": "typo", "input": "There is a lot or traffic on the highway.", "expected": "There is a lot of traffic on the highway."}
+{"id": "ty42", "cat": "typo", "input": "We ran out or coffee this morning.", "expected": "We ran out of coffee this morning."}
+{"id": "ty43", "cat": "typo", "input": "Is it okay it I bring a friend?", "expected": "Is it okay if I bring a friend?"}
+{"id": "ty44", "cat": "typo", "input": "He is much faster then me.", "expected": "He is much faster than me."}
+{"id": "ty45", "cat": "typo", "input": "I saw a movie an it was really good.", "expected": "I saw a movie and it was really good."}
+{"id": "ty46", "cat": "typo", "input": "Thank you for the flowers an the card.", "expected": "Thank you for the flowers and the card."}
+{"id": "ty47", "cat": "typo", "input": "Most people would rather text then call.", "expected": "Most people would rather text than call."}
+{"id": "ty48", "cat": "typo", "input": "I fell asleep in the couch last night.", "expected": "I fell asleep on the couch last night."}
+{"id": "ty49", "cat": "typo", "input": "Can you remind me were we parked?", "expected": "Can you remind me where we parked?"}
+{"id": "ty50", "cat": "typo", "input": "My sister an I went shopping.", "expected": "My sister and I went shopping."}
+{"id": "ty51", "cat": "typo", "input": "He told me it was the best day or his life.", "expected": "He told me it was the best day of his life."}
+{"id": "ty52", "cat": "typo", "input": "A cup or coffee sounds great right now.", "expected": "A cup of coffee sounds great right now."}
+{"id": "ty53", "cat": "typo", "input": "We need eggs, milk, an butter.", "expected": "We need eggs, milk, and butter."}
+{"id": "ty54", "cat": "typo", "input": "Let's meet at noon it that works for you.", "expected": "Let's meet at noon if that works for you."}
+{"id": "ty55", "cat": "typo", "input": "I'm out of milk. Could you buy some milk an eggs on your way home?", "expected": "I'm out of milk. Could you buy some milk and eggs on your way home?"}
+{"id": "ty56", "cat": "typo", "input": "Work was long today. I'm so tired an I just want to sleep.", "expected": "Work was long today. I'm so tired and I just want to sleep."}
+{"id": "ty57", "cat": "typo", "input": "I'm not sure it he is coming.", "expected": "I'm not sure if he is coming."}
+{"id": "ty58", "cat": "typo", "input": "Turn left at the end or the street.", "expected": "Turn left at the end of the street."}
+{"id": "ty59", "cat": "typo", "input": "Which one or these do you like best?", "expected": "Which one of these do you like best?"}
+{"id": "ty60", "cat": "typo", "input": "I left my keys in the car an my phone too.", "expected": "I left my keys in the car and my phone too."}
+{"id": "ty61", "cat": "typo", "input": "It was nice to see you an your family.", "expected": "It was nice to see you and your family."}
+{"id": "ty62", "cat": "typo", "input": "I have more time then I thought.", "expected": "I have more time than I thought."}
+{"id": "ty63", "cat": "typo", "input": "The flight was delayed for two hours an we missed the connection.", "expected": "The flight was delayed for two hours and we missed the connection."}
+{"id": "ty64", "cat": "typo", "input": "Did you hear back form the landlord?", "expected": "Did you hear back from the landlord?"}
+{"id": "ty65", "cat": "typo", "input": "All or us are going to the game.", "expected": "All of us are going to the game."}
+{"id": "tc01", "cat": "control", "input": "I ate an apple for lunch.", "expected": "I ate an apple for lunch."}
+{"id": "tc02", "cat": "control", "input": "She is an honest person.", "expected": "She is an honest person."}
+{"id": "tc03", "cat": "control", "input": "It took an hour to get there.", "expected": "It took an hour to get there."}
+{"id": "tc04", "cat": "control", "input": "Do you want one or two?", "expected": "Do you want one or two?"}
+{"id": "tc05", "cat": "control", "input": "Who will be king or queen this year?", "expected": "Who will be king or queen this year?"}
+{"id": "tc06", "cat": "control", "input": "We can meet in the morning or in the afternoon.", "expected": "We can meet in the morning or in the afternoon."}
+{"id": "tc07", "cat": "control", "input": "Then we left for the airport.", "expected": "Then we left for the airport."}
+{"id": "tc08", "cat": "control", "input": "Form a line by the door.", "expected": "Form a line by the door."}
+{"id": "tc09", "cat": "control", "input": "Please fill out the form and send it back.", "expected": "Please fill out the form and send it back."}
+{"id": "tc10", "cat": "control", "input": "He is taller than her, but not by much.", "expected": "He is taller than her, but not by much."}
+{"id": "tc11", "cat": "control", "input": "I'll call you then.", "expected": "I'll call you then."}
+{"id": "tc12", "cat": "control", "input": "Put it in the box.", "expected": "Put it in the box."}
+{"id": "tc13", "cat": "control", "input": "I'll be there in an hour.", "expected": "I'll be there in an hour."}
+{"id": "tc14", "cat": "control", "input": "Is it raining outside?", "expected": "Is it raining outside?"}
+{"id": "tc15", "cat": "control", "input": "If it rains we'll stay home.", "expected": "If it rains we'll stay home."}
+{"id": "tc16", "cat": "control", "input": "It is what it is.", "expected": "It is what it is."}
+{"id": "tc17", "cat": "control", "input": "I want to go too.", "expected": "I want to go too."}
+{"id": "tc18", "cat": "control", "input": "Is this the right one?", "expected": "Is this the right one?"}
+{"id": "tc19", "cat": "control", "input": "I have an idea.", "expected": "I have an idea."}
+{"id": "tc20", "cat": "control", "input": "Were you at the meeting?", "expected": "Were you at the meeting?"}
+{"id": "tc21", "cat": "control", "input": "Where were you last night?", "expected": "Where were you last night?"}
+{"id": "tc22", "cat": "control", "input": "Tea or coffee?", "expected": "Tea or coffee?"}
+{"id": "tc23", "cat": "control", "input": "Do you want pizza or pasta?", "expected": "Do you want pizza or pasta?"}
+{"id": "tc24", "cat": "control", "input": "Pick a number from one to ten.", "expected": "Pick a number from one to ten."}
+{"id": "tc25", "cat": "control", "input": "Is it on or off?", "expected": "Is it on or off?"}
+{"id": "tc26", "cat": "control", "input": "Turn it off and on again.", "expected": "Turn it off and on again."}
+{"id": "tc27", "cat": "control", "input": "I'm on the train.", "expected": "I'm on the train."}
+{"id": "tc28", "cat": "control", "input": "We were in the car for hours.", "expected": "We were in the car for hours."}
+{"id": "tc29", "cat": "control", "input": "Whether or not you come, I'll be there.", "expected": "Whether or not you come, I'll be there."}
+{"id": "tc30", "cat": "control", "input": "I'll do it sooner or later.", "expected": "I'll do it sooner or later."}
+{"id": "tc31", "cat": "control", "input": "More or less.", "expected": "More or less."}
+{"id": "tc32", "cat": "control", "input": "He was born in 1990.", "expected": "He was born in 1990."}
+{"id": "tc33", "cat": "control", "input": "She lives in an old house.", "expected": "She lives in an old house."}
+{"id": "tc34", "cat": "control", "input": "It's an easy fix.", "expected": "It's an easy fix."}
+{"id": "tc35", "cat": "control", "input": "That was an amazing game.", "expected": "That was an amazing game."}
+{"id": "tc36", "cat": "control", "input": "I need an answer by Friday.", "expected": "I need an answer by Friday."}
+{"id": "tc37", "cat": "control", "input": "Of course I'll help.", "expected": "Of course I'll help."}
+{"id": "tc38", "cat": "control", "input": "Some of them are here.", "expected": "Some of them are here."}
+{"id": "tc39", "cat": "control", "input": "I'm not sure if it is open.", "expected": "I'm not sure if it is open."}
+{"id": "tc40", "cat": "control", "input": "We went out for dinner.", "expected": "We went out for dinner."}
+{"id": "tc41", "cat": "control", "input": "Is that your car?", "expected": "Is that your car?"}
+{"id": "tc42", "cat": "control", "input": "Give me a minute or two.", "expected": "Give me a minute or two."}
+{"id": "tc43", "cat": "control", "input": "Text me when you're on your way.", "expected": "Text me when you're on your way."}
+{"id": "tc44", "cat": "control", "input": "The form is on the table.", "expected": "The form is on the table."}
+{"id": "tc45", "cat": "control", "input": "I'm going on vacation in July.", "expected": "I'm going on vacation in July."}
+{"id": "tc46", "cat": "control", "input": "This is more of a question than a statement.", "expected": "This is more of a question than a statement."}
+{"id": "tc47", "cat": "control", "input": "He has had a long day.", "expected": "He has had a long day."}
+{"id": "tc48", "cat": "control", "input": "I was there for an hour or so.", "expected": "I was there for an hour or so."}
+{"id": "tc49", "cat": "control", "input": "It was then that I knew.", "expected": "It was then that I knew."}
+{"id": "tc50", "cat": "control", "input": "Now and then we go hiking.", "expected": "Now and then we go hiking."}
+{"id": "tc51", "cat": "control", "input": "Bring an umbrella just in case.", "expected": "Bring an umbrella just in case."}
+{"id": "tc52", "cat": "control", "input": "Then again, maybe not.", "expected": "Then again, maybe not."}
+{"id": "tc53", "cat": "control", "input": "I'd rather not, if that's okay.", "expected": "I'd rather not, if that's okay."}
+{"id": "tc54", "cat": "control", "input": "Either you or me.", "expected": "Either you or me."}
+{"id": "tc55", "cat": "control", "input": "Is it in or out?", "expected": "Is it in or out?"}
+{"id": "tc56", "cat": "control", "input": "One of us is wrong.", "expected": "One of us is wrong."}
+{"id": "tc57", "cat": "control", "input": "I think so too.", "expected": "I think so too."}
+{"id": "tc58", "cat": "control", "input": "Are you in?", "expected": "Are you in?"}
+{"id": "tc59", "cat": "control", "input": "It's in the bag.", "expected": "It's in the bag."}
+{"id": "tc60", "cat": "control", "input": "Count me in.", "expected": "Count me in."}
+{"id": "tc61", "cat": "control", "input": "Log in to your account.", "expected": "Log in to your account."}
+{"id": "tc62", "cat": "control", "input": "Turn on the TV.", "expected": "Turn on the TV."}
+{"id": "tc63", "cat": "control", "input": "I'll get there in an hour or two.", "expected": "I'll get there in an hour or two."}
+{"id": "tc64", "cat": "control", "input": "We need to form a plan.", "expected": "We need to form a plan."}
+{"id": "tc65", "cat": "control", "input": "He came in first.", "expected": "He came in first."}
+{"id": "tc66", "cat": "control", "input": "It is on sale this week.", "expected": "It is on sale this week."}
+{"id": "tc67", "cat": "control", "input": "Did you get an invite?", "expected": "Did you get an invite?"}
+{"id": "tc68", "cat": "control", "input": "I bought an old car from a friend.", "expected": "I bought an old car from a friend."}
+{"id": "tc69", "cat": "control", "input": "Stop by if you're in the area.", "expected": "Stop by if you're in the area."}
+{"id": "tc70", "cat": "control", "input": "It's on me.", "expected": "It's on me."}
+{"id": "tc71", "cat": "control", "input": "We were there an hour early.", "expected": "We were there an hour early."}
+{"id": "tc72", "cat": "control", "input": "Should I bring red or white wine?", "expected": "Should I bring red or white wine?"}
+{"id": "tc73", "cat": "control", "input": "Is it hot or cold out?", "expected": "Is it hot or cold out?"}
+{"id": "tc74", "cat": "control", "input": "Then what happened?", "expected": "Then what happened?"}
+{"id": "tc75", "cat": "control", "input": "Black or white, it doesn't matter.", "expected": "Black or white, it doesn't matter."}
+{"id": "tc76", "cat": "control", "input": "Are you sure it is safe?", "expected": "Are you sure it is safe?"}
+{"id": "tc77", "cat": "control", "input": "Put it on the list.", "expected": "Put it on the list."}
+{"id": "tc78", "cat": "control", "input": "He lives in Ohio.", "expected": "He lives in Ohio."}
+{"id": "tc79", "cat": "control", "input": "An hour later we were home.", "expected": "An hour later we were home."}
+{"id": "tc80", "cat": "control", "input": "Or we could just stay in.", "expected": "Or we could just stay in."}
+{"id": "tc81", "cat": "control", "input": "If anything changes, let me know.", "expected": "If anything changes, let me know."}

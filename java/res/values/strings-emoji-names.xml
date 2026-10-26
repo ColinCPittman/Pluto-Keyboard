@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Smart corrections → Emoji page: the list of every built-in name -->
+<resources>
+    <string name="emoji_names_builtin_count">%1$s built-in names for %2$s emoji. Turn this off and only names you add give emoji.</string>
+    <string name="emoji_names_see_all">See all built-in names</string>
+    <string name="emoji_names_see_all_subtitle">Every name by emoji, each with its own switch</string>
+    <string name="emoji_names_all_title">Built-in names</string>
+    <string name="emoji_names_all_off">Built-in names are off, so none of these give emoji. Switch them on to use them.</string>
+    <string name="emoji_names_filter_all">All built-in</string>
+    <string name="emoji_names_filter_off">Switched off</string>
+    <string name="emoji_names_loading">Loading emoji names…</string>
+    <string name="emoji_names_none_off">No built-in names are switched off.</string>
+</resources>

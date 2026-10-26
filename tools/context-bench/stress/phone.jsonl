@@ -1,0 +1,20 @@
+{"id": "ph01", "cat": "command", "input": "He called himself open-quote x-ray, close-quote, for some reason.", "expected": "He called himself \"X-ray\" for some reason.", "alts": ["He called himself \"x-ray\" for some reason."], "learned": ["Sarah"]}
+{"id": "ph02", "cat": "command", "input": "He called himself, Open quote. X-ray Close quote. For some reason,", "expected": "He called himself \"X-ray\" for some reason.", "segments": ["He called himself,", "Open quote.", "X-ray", "Close quote.", "For some reason,"], "learned": ["Sarah"]}
+{"id": "ph03", "cat": "command", "input": "He called himself open-quote x-ray, close-quote, for some reason.", "expected": "He called himself \"X-ray\" for some reason.", "alts": ["He called himself \"x-ray\" for some reason."]}
+{"id": "ph04", "cat": "command", "input": "Thanks for coming, new-line, see you soon.", "expected": "Thanks for coming,\nSee you soon.", "segments": ["Thanks for coming,", "new-line,", "see you soon."]}
+{"id": "ph05", "cat": "command", "input": "That's all for today full-stop", "expected": "That's all for today."}
+{"id": "ph06", "cat": "control", "input": "I need an x-ray of my wrist.", "expected": "I need an x-ray of my wrist.", "learned": ["Sarah"]}
+{"id": "ph07", "cat": "control", "input": "The x-ray showed a small fracture.", "expected": "The x-ray showed a small fracture.", "learned": ["Sarah"], "personal": ["Sarah"]}
+{"id": "ph08", "cat": "control", "input": "Sorry, I missed your call.", "expected": "Sorry, I missed your call.", "learned": ["Sari"]}
+{"id": "ph09", "cat": "control", "input": "Will you be home for dinner?", "expected": "Will you be home for dinner?", "personal": ["Wil"]}
+{"id": "ph10", "cat": "control", "input": "We had a great time at the lake.", "expected": "We had a great time at the lake.", "personal": ["Blake"]}
+{"id": "ph11", "cat": "control", "input": "I left my jacket in the car.", "expected": "I left my jacket in the car.", "learned": ["Jackett", "Carr"]}
+{"id": "ph12", "cat": "control", "input": "The kids want to make pancakes.", "expected": "The kids want to make pancakes.", "personal": ["Mak"]}
+{"id": "ph13", "cat": "control", "input": "Can you grab the mail on your way in?", "expected": "Can you grab the mail on your way in?", "personal": ["Mael", "Mayle"]}
+{"id": "ph14", "cat": "control", "input": "She's a well-known author.", "expected": "She's a well-known author.", "personal": ["Wellnon"]}
+{"id": "ph15", "cat": "control", "input": "I'll ask Gary about the tickets.", "expected": "I'll ask Gary about the tickets.", "personal": ["Gary"]}
+{"id": "ph16", "cat": "control", "input": "My sister got a new kitten.", "expected": "My sister got a new kitten.", "learned": ["Kitten", "Sista"]}
+{"id": "ph17", "cat": "control", "input": "The doctor said it's just a sprain.", "expected": "The doctor said it's just a sprain.", "learned": ["Spraine", "Dokter"]}
+{"id": "ph18", "cat": "control", "input": "We're going to the mall tomorrow.", "expected": "We're going to the mall tomorrow.", "personal": ["Moll", "Tomorow"]}
+{"id": "ph19", "cat": "name", "input": "I think Reese wants to come too.", "expected": "I think Rhys wants to come too.", "learned": ["Rhys"]}
+{"id": "ph20", "cat": "control", "input": "I sure hope it doesn't rain.", "expected": "I sure hope it doesn't rain.", "personal": ["Shura", "Hoap"]}

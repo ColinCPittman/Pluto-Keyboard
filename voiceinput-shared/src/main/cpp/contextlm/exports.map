@@ -1,0 +1,8 @@
+/* Only the JNI entry points of libfutoctxlm are exported; ggml/llama.cpp stay local
+   so they cannot clash with the older ggml inside libjni_latinime.so. */
+{
+  global:
+    Java_org_futo_voiceinput_shared_context_LlamaNative_*;
+  local:
+    *;
+};

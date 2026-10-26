@@ -1,0 +1,12 @@
+{"id": "x01", "cat": "control", "input": "I wonder what time the store closes.", "expected": "I wonder what time the store closes."}
+{"id": "x02", "cat": "control", "input": "Tell me when you get there.", "expected": "Tell me when you get there."}
+{"id": "x03", "cat": "control", "input": "I asked him if he was coming to the party.", "expected": "I asked him if he was coming to the party."}
+{"id": "x04", "cat": "control", "input": "Let me know whether you want pizza or tacos.", "expected": "Let me know whether you want pizza or tacos."}
+{"id": "x05", "cat": "control", "input": "I don't know where they put the keys.", "expected": "I don't know where they put the keys."}
+{"id": "x06", "cat": "control", "input": "The weather was great, so we ate outside.", "expected": "The weather was great, so we ate outside."}
+{"id": "x07", "cat": "control", "input": "I'll meet you by the side door at noon.", "expected": "I'll meet you by the side door at noon."}
+{"id": "x08", "cat": "control", "input": "We need to buy flour, eggs, and two sticks of butter.", "expected": "We need to buy flour, eggs, and two sticks of butter."}
+{"id": "x09", "cat": "control", "input": "Their new place is right next to the park.", "expected": "Their new place is right next to the park."}
+{"id": "x10", "cat": "control", "input": "He knew the whole time and never said a word.", "expected": "He knew the whole time and never said a word."}
+{"id": "x11", "cat": "control", "input": "I hear the band is playing at eight.", "expected": "I hear the band is playing at eight."}
+{"id": "x12", "cat": "control", "input": "The soup was too hot to eat right away, so I let it cool.", "expected": "The soup was too hot to eat right away, so I let it cool."}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Solid fallback for the launcher background; the adaptive icon itself uses
+         @drawable/ic_launcher_pluto_background (navy gradient). -->
+    <color name="ic_launcher_background">@color/pluto_navy</color>
+</resources>

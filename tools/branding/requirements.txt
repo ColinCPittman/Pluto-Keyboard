@@ -1,0 +1,5 @@
+pillow>=10
+numpy>=1.24
+scipy>=1.10
+potracer>=0.0.4
+resvg-py>=0.5

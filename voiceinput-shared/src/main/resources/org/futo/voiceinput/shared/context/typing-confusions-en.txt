@@ -1,0 +1,7834 @@
+# typed word, then the words it may be a one-key slip of (tools/context-bench/build_typing_confusions.py)
+the he they then them thee
+to two go too top tho ton yo
+of or if off oft
+and an band land hand sand ad wand
+in on win ion inn kin jin
+was as ways wars wax
+is his us its id it
+this his thus
+as was has gas ask ad ads
+for or four form fort fore foe ford
+on in one won no own non son ton ion oh
+with wit
+by bye boy buy bay
+that hat
+from form
+at art act eat cat hat sat aft ta
+his this is hits hid hi
+an and any can man ran van am fan ban ah
+he the her be she hey hue
+are area care rare ate ware
+were where wee
+it if its hit bit fit sit kit is
+or of for our nor
+had has head hand hard bad ad
+has as had gas
+one on once gone done ones zone none tone bone lone
+but bit buy bug hut nut gut butt
+first fist
+very every
+we web wet wed awe wee
+not no note nor hot
+their heir
+any an many ant
+have gave nave
+who whom
+been bee
+her he here hear hero heir herd
+two to tow
+get yet gets bet vet
+other others mother
+into onto intro unto info
+they the hey thy
+time times tie timed timer
+all call fall ball wall hall tall mall
+be he bye bed bee
+me men met med
+more mode mores
+must just mist
+when hen
+years year ears hears tears gears
+most moist moat mist
+over cover lover overt
+used use uses user sued
+you your yo
+can an van fan clan cab cam
+during curing
+going gong
+good food gold goods god hood
+him hi hum
+new news knew nee
+out our put
+she he shed sue
+where were here
+made mad mare jade mace
+many any may man
+some dome
+then the them ten hen than
+there three here thee
+year years hear gear ear tear
+about bout
+back black hack
+later late latter layer alter lager
+part party art parts apart par
+well sell swell
+being bring
+them the then theme
+through though trough
+area are areas arena
+both booth goth
+make makes male maker
+name named names
+called caller
+could cold
+fine find fined fins fines vine finer dine
+people peoples
+second seconds
+while whole
+will ill
+age page aged ages wage ate sage
+go to got ago god yo
+may many my mat ma
+number numbers
+population populations
+season seasons
+team teams steam tea tram teak
+these thee theses
+work works worm
+born horn
+early nearly earl dearly
+film films
+now no how know snow bow
+same sake sane
+so do son
+use used us uses user sue
+what hat
+album albums alum
+based base bases
+four for tour our fur flour
+life live lie lice
+released release releases
+since sine
+state states stage stated estate statue stats stare
+began bean vegan
+each reach beach teach
+end ends send tend
+found round fund fond
+game games fame tame
+located locate locates
+town own towns ton tow gown
+around round
+come comes com dome cone coke
+day days say ray
+did died die rid id
+government governments
+group groups
+here her where there herd hers
+home homes homer hone
+large larger
+like lie liked likes lime pike
+love live loved lover loves lobe
+my may
+named name names naked
+no on not now non nor
+system systems
+three there thee tree threw
+too to took top tool
+up cup
+us is use bus
+won on own son win worn
+yes eyes
+along long
+built guilt
+former formed
+if of it id
+include included includes
+left let
+line lines lie lined pine liner lone lime lien
+long along log pong
+off of oft
+own on town won down owns
+place placed places palace pace lace
+small mall
+still till
+those hose
+took too tool rook
+band and hand bands brand bad ban bans
+due die dye sue cue dues rue
+form for from forms firm fork dorm
+its is it hits sits kits
+last least past las
+major manor
+member members
+members member
+set sent seat sets wet
+show how shows shown snow shoe sow
+single singles singled
+station stations
+than tan then
+death deaths
+down own drown sown
+even event seven eve
+five give dive
+main man min
+published publisher publishes
+received receive receives receiver deceived
+served serve serves server
+again gain
+become becomes
+best beat nest bet beast bets vest beset beet
+died did die dies dried
+included include includes
+just must
+late later plate ate
+led lead fled pled
+near hear bear ear neat
+old sold told hold gold cold olds
+order border orders
+play plays pay lay ply plat
+power lower powers powder
+said aid sad
+service services serviced
+side wide sides aside sided aide sire
+students student
+third thirds
+water waters wafer eater wager
+way away say ways sway
+your you tour our hour
+average averaged averages
+book books boom hook
+building buildings
+came fame cake cane cam
+do so dog duo
+every very ever
+few fee flew dew
+final finals
+given give
+got go hot
+land and lands lane lad
+moved move moves mover
+nice ice mice
+non on no none noon
+period periods
+son on so won soon sons song
+using sing suing
+village villages
+wait wit await
+went sent wet
+country county
+created create creates crested
+established establishes
+example examples
+games game gamers
+law laws las paw
+living loving
+next net nest
+point points pint
+popular poplar
+present presents preset resent
+produced produce producer produces
+record records
+six sic
+started stated starred starter
+support supports
+take taken takes tale fake taker tame rake
+title titles titled tile
+top to too stop tip
+version versions
+club clubs cub
+continued continue continues
+development developments
+district districts
+father rather gather farther
+general genera
+level levels
+married marries marred
+player players layer played
+production productions
+returned returner
+right eight rights fight bright tight fright
+run runs fun ruin rum urn rub
+short shot sort shirt
+term terms germ
+though through thought tough
+times time ties timed timers
+amount amounts mount
+areas area
+class claws
+control controls
+days day says rays
+east least easy eat eats
+election elections selection
+formed former forked
+founded founder funded rounded
+great treat
+half halt
+head had hear heard heads ahead bead
+house houses housed hose
+income incomes
+language languages
+making masking
+men me mean
+never ever
+others other
+position positions
+program programs
+region regions
+result results
+see seen sees seek seem seed wee seer
+thou tho
+west wet
+works work worms
+wrote write
+character characters
+developed developer
+does dies dose doses foes
+elected selected
+field fields filed
+live life love lived lives alive lie liver olive lice
+lost post list lot lots
+man an many main mean ma
+once one
+opened opener
+party part partly
+playing paying laying plating plying
+recorded recorder
+seen see seven seem sewn
+size sized sizes seize
+story storey
+worked worker
+air aid pair hair fair sir
+away way sway
+design designs resign
+either neither ether
+free tree fee freed frees
+meet meets met
+release released releases
+schools school
+services service serviced
+sorry worry
+style styles styled
+sure sue sire
+taken take
+throughout throughput
+wife wide wire
+across cross
+announced announcer announce announces
+described describes describe
+designed resigned designer
+events event vents
+featured features feature
+features featured feature
+followed follower
+forces force forced
+groups group
+help helps hell
+how now show bow
+includes include included
+lead led leads leaf plead lad
+median media
+months month moths
+office officer offices
+open pen
+process profess
+race races face trace raced ace racer rave
+radio radii
+range ranges orange ranged rage ranger rang
+return returns
+road roads broad rod toad roar
+sold old solid sole sod
+songs sons song sings
+video videos
+win in won wing wins wind wine twin
+appointed appointee
+art at part arts rat aft
+black back lack
+brother brothers bother
+close closed closer lose closes
+completed complete competed completes
+countries counties
+daughter daughters
+especially specially
+event even events vent
+females female
+gave have grave
+human humans
+involved involves involve
+killed killer milled
+leading leasing pleading
+light flight lights plight
+low flow slow lows plow
+match march math
+move moved movie moves mover
+official officials
+performed performer
+players player layers
+points point
+project projects
+rather father
+replaced replace replaces
+round found around ground rounds
+sent set went spent
+shows show shoes
+signed signer
+sometimes sometime
+square squares squared
+states state stated stages estates stats
+track tracks rack tack
+training raining
+units unit unite unites
+white whites
+action actions
+attack attacks
+below blow
+brought bought
+car far care cars card cat cart
+center enter centers
+central ventral
+change changed changes
+changed change changes hanged chanted
+county country count
+decided decides decide decider decoded
+episode episodes
+ever every never eve sever
+fact act fat
+far car farm fear fair fat fare tar fad
+fire fired fires tire fore dire ire fide
+force forces forced fore
+hand and had band hands
+households household
+introduced introduce introduces
+least last east lest
+mid mind mix mud kid id mod
+model models mode
+mother other
+outside outsider
+parts part arts
+performance performances
+post lost poet posts pot pots
+professional professionals
+provide provided provides provider
+provided provide provides provider
+rock rocks dock
+saw saws
+seven even seen
+soon son spoon
+space spaces pace spaced spade
+stage state stages staged sage stave stag
+study stud sturdy
+systems system
+teams team trams teas
+thus this
+type types typed
+whose hose
+women omen
+base based bass bases vase
+battle battles battled
+books book hooks booms
+college colleges
+court courts
+debut debt debit
+degree degrees
+director directors
+eight right weight height eighth sight eighty
+female females
+find fine finds fund fined fins fond
+front font
+ground round grounds
+interest interests
+island islands
+league leagues
+lived live lives loved liver lied
+market markets marker
+movement movements
+night might
+owned owner owed
+person persons
+placed place places paced laced
+president resident
+previous precious
+reached reaches
+real deal reap
+related relates relate relayed
+reported reporter deported
+river driver rivers diver rover
+runs run ruins runes rune urns
+standard standards
+strong string
+winning inning
+army arm
+buildings building
+campaign campaigns
+capital capita
+care are car cars card fare acre cafe cared cares dare cadre
+characters character
+films film
+finished finishes finisher
+future futures
+gone one tone bone hone
+leader leaders
+list lost lists lust
+lower power loser
+network networks
+novel novels
+operations operation
+past last pas
+practice practices practiced
+referred preferred deferred refereed
+required require requires
+rest test reset fest
+rights right fights eights
+route routes routed router
+section sections
+start star starts
+stated state started states stayed staged
+stop top stops atop
+student students
+summer summed
+taking talking faking
+ten then tend teen yen
+terms term terns
+text test texts
+told old gold fold
+via visa viz
+whom who whim
+wide side wife wider wire wise aide
+word world words sword wore
+world word worlds
+writing writings
+appearance appearances
+appears appear
+associated associate associates
+caused cause causes
+changes changed change
+closed close closer closes
+complete completed compete completes
+contains contain
+contract contact contracts
+course courses curse
+cover over covers covert cove clover
+culture cultures cultured
+date rate dates dated fate ate dare
+division divisions
+economic economics
+food good flood foods fold
+forced forces force
+fourth forth
+give five given gives hive giver
+goal goals gal foal
+individuals individual
+issue issues issued tissue issuer
+issues issue issued
+known know
+larger large lager
+length lengthy
+lines line lies lined liners pines
+location locations
+longer longed
+miles mile mules moles
+movie move movies
+names name named
+organization organizations
+particular articular
+programs program
+races race faces traces raced racers aces
+rate date rare rates rated fate rats rage rat ate
+recent decent
+remains remain
+role roles rope roe
+seat set sea seats eat sat sweat
+self elf
+shown show sown
+spent sent
+structure structures structured
+thought though
+tour four your our tours
+towards toward
+uses used use users buses
+want wants ant
+week weeks seek wee
+attempt attempts
+believed believe believes believer
+board aboard boards boar hoard bard
+cases case causes vases
+collection collections
+competition competitions
+create created creates crate
+effect effects
+entered centered
+feature featured features
+forms form firms forks dorms
+health healthy heath
+hence whence thence
+hours hour ours yours
+household households
+husband husbands
+increased increase increases
+individual individuals
+magazine magazines
+males makes male
+material materials
+media median
+might night mighty
+mile miles mild mole mule mil
+nearly early neatly
+need needs heed nee
+noted notes note
+operated operates operate
+park parks par ark
+passed passes passer
+personal persona
+plays play pays lays
+problems problem
+provides provided provide providers
+ran an rank fan rain ram tan
+red read fed ref reed reds
+relationship relationships
+room rooms doom rook
+science sciences
+scored score scores scorer
+sea seat seas
+separate separated separates
+sound sounds wound
+source sources sourced
+speed seed speeds sped
+stations station
+status statue statues stats
+takes take tales takers fakes
+trade grade traded trace trades trader
+turn turns urn
+turned tuned
+unit units unity
+view views vie
+allow allows
+alone lone
+anti ant
+appear appears
+artists artist artistes
+author authors
+call all fall calls cal
+carried carrier carries
+cause caused case causes
+cities cites
+command commands
+consists consist
+cost coast costs coat
+decision decisions
+done one dome cone drone dine dons
+eastern astern
+evidence evidenced evidences
+failed filed tailed
+friend friends fried
+helped helper
+hold old holds gold hole bold hood holed
+increase increased increases
+influence influenced influences
+launched launches launcher
+loss lose loses lows
+makes make males makers
+manager managed manage
+mean men man means
+month months moth
+news new
+numbers number
+plan plans plant plane plain pan
+recording recordings
+results result
+shot short hot shoot shots
+sports sport ports spots sorts
+spread spreads
+studies studied
+studio studios
+subject subjects
+supported supporter
+surface surfaces surfaced
+troops troop
+value values valued
+victory victor
+weeks week seeks
+whole while hole
+words word swords
+writer write writers
+act at fact acts cat aft
+arrived arrive arrives
+artist artists
+award awards aware ward
+bridge bridges ridge bride bridged
+broadcast broadcasts
+campus camps
+computer computers computed compute
+conditions condition
+covered coveted
+cut cult cuts
+deal real ideal deals seal
+despite respite
+discovered discoverer
+edition editions sedition
+elements element
+experience experienced experiences
+face race faced faces ace fade
+fall all call falls tall gall
+fight right flight tight fright
+friends friend
+function functions
+goals goal foals
+houses house housed hoses
+idea ideas ideal
+king kings kin kung
+leave leaves leaved
+levels level
+managed manager manage manages
+medical medial
+meeting meetings
+minutes minute
+native natives naive
+nature mature natured natures
+nine none mine
+notable notables
+operation operations
+our or out four your tour hour pour
+parents parent patents
+plans plan plants plane planes pans
+plant plan plants planet plat
+presented presenter resented
+produce produced producer produces
+products product
+raised raise praised raises raided raiser
+residents resident
+retired retire retires
+rule rules ruled ruler rue
+scene scenes
+school schools
+seasons season
+ships ship shops hips whips
+singer singers winger signer
+sister sisters
+studied studies
+tracks track racks
+train trains rain grain
+widely wisely
+yet get
+ability agility
+basis bass
+border order borders
+bye by be byte
+cast coast fast vast cat cats
+chief chef
+coast cost cast coat coats
+comes come cones domes
+composed composer compose composes
+continue continued continues
+cross across crows criss
+destroyed destroyer
+divided divide divides divider
+double doubles doubled
+earned learned warned eared
+effects effect
+engine engines engined
+era ear eras
+except excerpt
+hear her year near head heart heard heat bear gear ear
+hit it bit hits hot hut hi
+issued issues issue issuer
+keep keel jeep
+languages language
+latter later platter
+lives live lived lies loves olives livres
+male make males maple ale
+marriage marriages
+method methods
+mission missions
+offers offer
+officer office officers
+oil soil
+please lease pleased pleas
+pressure pressures pressured
+problem problems
+proposed proposes propose
+province provinces
+quality qualify
+records record
+report reports
+response responses
+selected elected
+serve served serves server
+simply imply
+site sites sit sits spite suite sited sire
+star start stars tar tsar stare
+starting starring stating staring
+stories stores storied
+thee the there these three theme tee
+true rue
+types type typed
+vote votes voted voter
+wanted waned
+war wear warm wars ward ear ware
+acquired acquire acquires
+actor factor actors
+albums album
+article articles
+becomes become
+build builds guild
+cars car care card cards cats cares carts
+case cases cause vase
+championship championships
+channel channels
+charge charged charges
+concept concepts
+continues continued continue
+defined define defines refined defied
+difficult difficulty
+distance distances distanced
+efforts effort
+feet fleet fee fret fest
+flight light fight flights
+follows follow
+full fully fill dull gull
+grew brew
+hard had heard yard hare bard
+host hot hosts ghost hoist
+inside insider
+lack black pack
+letter letters
+lies lines lives lie likes lied pies
+metal mental meal
+models model modes
+multiple multiples
+newspaper newspapers
+officers officer offices
+paper papers paler
+pass pads pas paws
+places place placed
+producer produced produce producers
+product products
+projects project
+pub pun
+purpose purposes
+remain remains
+removed remove removes
+score scored core scores scorer sore
+serves served serve servers
+soldiers soldier
+tournament tournaments
+versions version
+voice vice voiced voices
+account accounts
+agreed agree agrees greed
+allows allow
+appearances appearance
+arms arm farms rams
+begins begin
+blue blues glue blur
+branch ranch
+candidate candidates
+captured capture captures
+claims claim clams
+classes classed
+code core codes coded cod ode
+color colors
+combined combine combines
+crew drew crews
+dance dancer dances danced
+declared declare declares
+dedicated dedicate dedicates
+department departments
+elections election selections
+episodes episode
+fans fan cans vans
+fell cell tell
+fifth fifty
+figure figures figured
+gas as has
+gives give hives
+graduated graduate graduates
+growing rowing
+heart hear heat
+image images mage imaged
+job jobs mob
+join joint joins jin
+know now known knows
+leaders leader
+let left leg pet lest
+mass masse
+matches matched marches
+meat met eat mat neat
+offer offers
+pay play lay pa
+planned panned planner
+purchased purchase purchases purchaser
+put out pit putt
+reach each teach
+reason reasons treason
+recognized recognize recognizes
+renamed rename
+rules rule ruled rulers
+says days say ways
+scale sale scales scaled
+sources source sourced
+street streets
+tells tell yells fells
+things thing
+titles title titled tiles
+tradition traditions
+tried tries tied tired fried
+wing win wings sing swing wig
+workers worker
+applied applies
+attacks attack
+ball all hall balls gall
+bank banks ban
+big bit gig bug bog
+birth girth
+break breaks beak
+claim claims clam
+clubs club cubs
+compared compare compares
+damage damaged damages
+dead read deaf dad dear dread
+designated designate designates
+drive driver driven drove drives dive derive
+effort efforts
+estate state estates
+estimated estimate estimates
+existing exiting
+fellow fellows
+floor flood
+follow follows
+forward forwards
+founder founded founders rounder
+fully full filly
+goes gods toes foes goers
+hands hand bands
+hospital hospitals
+hour your hours our
+ice nice vice rice iced
+leaves leave leaved
+machine machines machined
+occupied occupies
+occur occurs
+organizations organization
+organized organize organizer organizes
+owner owned owners
+paid aid laid pair pad
+piece pieces pierce
+portion portions potion
+powers power lowers powders
+promoted promote prompted promotes promoter
+quite quiet quit quote quits
+read red dead rear ready reads tread dread
+receive received receives receiver deceive
+reduced reduce reduces deduced
+reference references referenced reverence deference
+refers refer
+refused refuses refuse reused
+say day way says stay sat sway
+sense dense senses sensed
+settled settle settler settles
+settlement settlements
+share shared shares shade snare hare
+simple simpler
+situation situations
+solo silo
+split slit spit
+spring sprint sprung
+stars star starts stats stare
+stone tone stones stoned
+store stores stored tore sore
+theme them thee themes themed
+titled title titles tilted tiled
+towns town tons owns gowns
+trains train trans grains rains
+travel travels gravel
+trial trail trials
+website websites
+achieved achieve achieves
+advanced advance advances
+animals animal
+arts art parts rats
+attempts attempt
+audience audiences
+awards award wards
+bands band hands bans
+believe believed believes believer
+bought brought ought
+bring being ring brings brig
+broke broken broker
+bus us busy buys buds bud
+camp camps cap damp cam amp
+cell fell cells cello
+cells cell fells
+chart charts chat cart char
+chosen chose
+concert concerts convert
+covers cover coverts
+derived derives derive
+disease diseases diseased
+dropped cropped
+employed employee employer
+executive executives
+exist exists exit exits
+fields field
+figures figure figured
+fish dish
+fought ought
+functions function
+generation generations veneration
+gun guns fun gum gin bun
+headquarters headquarter
+holds hold holes olds golds hoods
+hosted hoisted
+identified identifies identifier
+kind mind kinds kid kin
+laws law las paws
+letters letter
+look looks loom
+losing closing posing
+marked marker
+materials material
+matter matters mater matte
+methods method
+mixed mixes mixer
+mountain mountains
+opposed oppose opposes
+origin origins
+perform performs
+performances performance
+plants plans plant pants
+port poet sport ports pot
+positions position
+positive positives
+programming programing
+proved prove proves
+question questions
+racial facial radial
+ranked raked
+regions region
+roles role ropes
+sales sale
+semi demi
+showed shower
+sides side sided aides sixes
+sign signs sing
+singles single singled
+sites site sits suites sited
+stand stands sand strand
+tax fax ta
+teacher teachers
+teaching reaching
+tree three free trees tee
+visit visits
+ways was way says
+winter inter winger
+yards yard
+actions action
+acts act cats
+alternative alternatives
+application applications
+attacked attacker
+background backgrounds
+begin begins begun
+birds bird bids
+box ox
+brothers brother
+choice choices
+citizens citizen
+comic comics conic
+condition conditions
+conflict conflicts
+contact contract
+contained container
+dark ark
+defense defenses
+drug drugs dug rug
+ending sending
+ends end sends eds
+exchange exchanged exchanges exchanger
+festival festivals
+fiction friction diction
+firm form
+fleet feet flee
+fuel duel
+guest guests gust
+heard head hear hard hears herd beard
+hey he they
+hope hole hop hoped hopes hops
+incorporated incorporate incorporates
+influenced influence influences
+inspired inspire inspires
+interview interviews
+knew new knee
+lake lakes lame
+lunch launch punch
+medal medals meal
+nation nations
+needs need
+nominated nominate
+nuclear unclear
+officials official
+online inline
+onto into
+participated participate participates
+peace pace
+platform platforms
+politician politicians
+professor processor
+rank ran tank ranks drank frank
+reasons reason
+regarded retarded
+reports report
+rise raise rose ride rises ruse
+risk disk
+seats seat sets seas eats
+seems sees seem seeks deems
+selling swelling
+sets set seats
+sex ex sec
+slightly lightly
+sons son songs sins dons
+table able stable tale tables fable gable tabled
+temperature temperatures
+test rest text tests fest
+toward towards
+tower towers towed rower
+trees tree frees
+union unions
+vehicle vehicles
+vehicles vehicle
+villages village villagers
+volume volumes
+votes vote voted voters
+wall all walls walk
+weapons weapon
+weight eight weigh wright
+winner inner winners
+write wrote writer writes rite writ writs
+agent agents
+aid said air paid laid acid ad raid aide aids id
+aired aided wired sired
+applications application
+avoid void avid avoids
+bar bad bear bars bat bare bard
+block blocks lock bloc
+brand band grand brands
+calls call falls
+card car care cars cards cared
+castle caste castles
+com come con
+commander commanded
+commissioned commissioner
+conference conferences
+connection connections
+contain contains
+contributed contribute contributes
+converted converter concerted converged
+copies copied
+core score code cord fore cores
+decades decade
+determined determine determines
+display displays
+districts district
+doing doping dong
+drama dramas
+engines engine engined
+escape escaped escapes
+failure failures
+finds find funds fins fines
+foot root
+forest forests
+girl girls
+girls girl
+grade trade grades grace garde graded
+honor honors
+horse horses hose horde
+ideas idea
+identity identify
+inhabitants inhabitant
+institutions institution
+kill mill skill kills ill
+learning earning leaning
+lot lost plot log pot loft loot
+lyrics lyric
+minister ministers
+minute minutes
+notes noted note
+occurs occur
+offices office officers
+orders order borders
+page age pages pave
+passes passed passers
+pieces piece
+price prices prince rice pride priced
+publication publications
+quarter quarters quartet
+rail tail trail fail frail
+rare are rate fare dare rarer
+refer refers defer
+relations relation
+represent represents
+resources resource
+review reviews
+ring bring rig rung
+shape shaped shapes shale
+shared share shares shaded
+signal signals
+sought ought
+speaking peaking
+standards standard
+stay say stray stag
+stores stories store stored
+temple temples
+tropical topical
+trying tying frying
+values value valued
+adult adults
+animal animals
+approved approve approves
+architecture architectures
+argued argues argue
+armed warmed
+articles article particles
+bass base basis bases
+beat best heat bear eat bat beta bet beast neat
+billion bullion
+bit it but hit big
+boat boats bat goat boar boast
+brief grief
+cancer dancer
+capita capital
+causes caused cases cause
+causing casing
+chain chin
+champion champions
+committee committed committees
+competed completed compete competes
+confirmed conformed
+courses course curses
+critics critic
+degrees degree
+describes described describe
+device devices
+door doors odor
+drawn draw dawn
+edge edges edged wedge
+educated educate educates
+enter center enters
+ethnic ethic
+examples example
+expressed expresses
+farm far arm farms
+fast cast vast fat fats
+flat flag fat float
+flow low flows glow
+founding funding rounding
+gain again grain vain gin
+genus genius
+getting betting
+graduate graduated graduates
+guns gun gums
+hall all ball shall halo gall
+headed header
+height eight
+homes home homers
+hoping hopping
+humans human humane
+hundred hundreds
+improved improve improves
+islands island
+joint join
+killing milling
+laid paid aid lid lair lad
+lands land lanes
+launch lunch
+locations location
+looking looming
+maintain maintains
+merged emerged merger merge merges
+mind mid kind mine minds mined min mins
+motion notion
+note not noted notes
+nothing noting
+object objects
+operate operated operates
+operates operated operate
+opposite opposites
+painting paintings
+pair air paid pairs par lair
+partner partners
+passenger passengers
+patients patient patents
+peak speak leak pea
+phase phrase phases phased
+pilot plot pilots
+racing facing tracing
+reaching teaching
+really rally
+rear read fear ear tear dear
+require required requires
+roads road rods toads
+routes route routed routers
+ruled rule rules ruler
+scenes scene
+showing sowing
+singing signing swinging
+sixth sixty
+skills skill kills skulls
+stands stand strands sands
+starred started
+starring starting staring
+steel steep stele
+stock stick sock
+structures structure structured
+target targets
+techniques technique
+think thin
+try fry
+valley alley galley
+views view
+writers writer writes
+yard hard yards
+advantage advantages
+aged age ages waged
+assumed assume assumes
+attend attends
+bodies bodied
+boy by boys body bog
+boys boy bogs
+broken broke
+chance chances
+climate climates
+composer composed composers compose
+costs cost coasts coats
+dates date rates dated fates
+decade decades
+demand demands
+designs design resigns
+details detail
+difference differences
+draw drawn raw draws
+dry cry fry
+engaged engage engages
+entrance entrances
+entry sentry
+extra extras
+eye eyes dye eyed rye
+factory factor
+filled filed filler
+flag flat lag
+flying lying fling
+focused focuses
+funding founding finding
+funds finds fund
+gets get bets
+gold good old told hold golf god bold fold golds
+grounds ground rounds
+heat hear heart beat eat hat neat
+hired hire hires
+hits his its hit bits huts
+huge hue hug
+improve improved improves
+instance instances
+interests interest
+invited invites invite incited
+iron ion
+items item
+leads lead pleads
+link links pink ink
+master mater masted
+musicians musician
+negative negatives
+nor or not no noir nod
+novels novel
+ones one
+opera operas
+persons person persona
+plane plan plans planet lane planes pane
+plot lot pilot pot ploy
+poet post port pet pot
+promote promoted promotes promoter
+purposes purpose
+reading rearing
+reduce reduced reduces deduce
+reign resign rein
+requires required require
+resigned designed reigned
+sale scale sales sake ale
+save wave safe saved slave saves sage
+scheduled schedule schedules
+sections section
+selection election
+sell well shell spell swell
+send end spend sends
+sequence sequences sequenced sequencer
+starts start stars stats
+statement statements
+step steps steep
+survived survive survives
+thousands thousand
+trained trainer trainee grained rained
+turns turn urns
+user used use users
+users uses user
+voted vote votes voter
+walls wall walks
+why shy
+able table cable ale sable
+accused accuses accuse
+acid aid acids avid
+advance advanced advances
+ago go
+aspects aspect
+attached attaches
+bill hill ill bull gill
+busy bus buy bush bust buys bushy
+candidates candidate
+capture captured captures
+cards cars card cares
+charged charge charges charted
+charges charge charged
+chose chosen choose hose
+committed committee
+corner cornet
+cycle cycles
+describe described describes
+determine determined determines
+devices device
+differences difference
+distributed distribute distributes
+driver river drive drivers diver drier
+driving diving deriving
+element elements
+employees employee employers
+eyes yes eye eyed dyes
+faced face faces raced faded
+factor actor factory factors facto
+factors factor actors
+fired fire fires tired fried
+fixed fixes
+goods good gods foods golds hoods
+grown grow brown gown
+heads head hears beads
+hockey jockey
+hot not got shot hit host hog
+images image imaged
+instruments instrument
+judge judges judged
+learned earned learner leaned
+linked liked lined inked
+manner manned
+map maps ma amp
+measure measures measured
+neighborhood neighborhoods
+observed observe observer observes
+owners owner
+passengers passenger
+path oath
+pattern patterns
+picture pictures pictured
+prepared prepare prepares
+protein proteins
+purchase purchased purchases purchaser
+rejected ejected
+relative relatives
+replace replaced replaces
+represents represent
+residence residences
+residential presidential
+retained regained detained retainer
+reviews review
+rooms room
+separated separate separates
+severe severed sever
+shaped shape shapes
+solution solutions
+sport sports port spot sort sporty
+spot sport spots slot pot spit soot
+stopped topped
+streets street
+strike stroke strikes striker
+sub sun dub
+subjects subject
+talk tall talks
+technique techniques
+tho to thou
+translated translates translate
+vocals vocal
+wins win wind wine wings winds wines sins
+wood woods woo
+accompanied accompanies
+achieve achieved achieves
+arm army arms farm am warm ram ark
+bad had band bar ad bard
+banks bank bans
+body boy
+brain rain grain
+cable able cables fable
+calling falling
+celebrated celebrate celebrates
+charts chart carts
+coal foal cal cola
+communication communications
+compete complete competed competes
+components component
+composition compositions
+context contest
+courts court
+credit credits
+damaged damage damages
+debate debates debated rebate
+divisions division
+documents document
+driven drive
+email mail
+ensure ensured ensures endure ensue
+equipped quipped
+ex sex
+existed exited
+exists exist exits
+experienced experience experiences
+faculty faulty
+falls fall calls
+file filed files tile vile
+finals final finale
+forests forest
+grow grown row grows brow
+hair air chair
+hill bill hills hull ill gill
+hosts host ghosts
+injured injure injures
+institution institutions
+interior inferior
+limit limits
+links link inks
+loved love lived lover loves lobed
+mark marks ark
+markets market markers
+meets meet
+message messages
+meters meter
+mode more model modes node mod ode mods
+modified modifies modifier
+mountains mountain
+movies movie moves
+nations nation
+participate participated participates
+poem poems
+presidential residential
+prime primes primer
+pro prop
+questions question
+railroad railroads
+recordings recording
+representative representatives
+requirements requirement
+restored restore restores
+returns return
+rival rivals
+rivers river drivers divers
+scheme schemes
+scholars scholar
+seconds second
+ship ships shop hip whip shi
+shop ship shops hop
+skin ski akin kin
+slow low slows sow
+song son songs sing dong
+speak peak speaks
+squad squads quad
+stages states stage staged sages
+stayed stated staged
+suggests suggest
+symbol symbols
+tank rank tanks tan
+task ask tasks
+teachers teacher teaches
+testing resting
+threat treat
+tries tried tribes ties tires fries
+trip tip trio grip rip
+van an can fan ban
+vice voice ice vie vices
+visitors visitor
+wave save waves wage weave waved
+web we
+wind win wins wine winds
+wounded sounded
+zone one zones zoned
+accounts account
+actors actor factors
+adapted adapter
+affairs affair
+ahead head
+am an arm ma
+arranged arrange arranger arranges
+authors author
+begun begin
+benefit benefits
+bird birds bid
+borders border orders
+bringing ringing
+broad road abroad
+brown grown brow
+camera cameras
+challenge challenged challenges challenger
+changing hanging chanting
+cold could old fold cod
+concerns concern
+concluded concludes conclude
+contributions contribution
+counties countries
+crisis criss
+criticized criticize criticizes
+dating rating eating daring
+decline declined declines
+declined decline declines
+die did due died dies diet dei dire dike
+distinguished distinguishes
+dog do dogs dot fog dig
+dominated dominate dominates
+earth earthy
+easy east
+edited exited
+engineer engineers
+fan an can ran fans van tan
+feel fee reel eel
+finding funding
+flows flow lows
+habitat habitats
+historian historians
+hundreds hundred
+jobs job mobs
+learn earn lean
+leg let legs peg
+measures measure measured
+medicine medicines
+missing kissing
+mouth moth
+movements movement
+musician musicians
+narrow arrow marrow narrows barrow
+none one non nine bone hone
+offensive offensives
+opinion pinion
+painted painter
+paintings painting
+planet plant plane
+powered lowered powdered
+practices practice practiced
+printed printer
+prisoners prisoner
+processes processed
+raise raised rise arise raises raiser
+rates rate dates rated rats fates
+reform reforms
+releases released release
+reserve preserve reserved reserves deserve
+session sessions
+seventh seventy
+soil oil soul spoil
+solid sold solids slid
+spoken spoke
+stating starting staying staging staring
+struck truck stuck
+tell fell tells yell
+theater heater
+waters water eaters wafers
+wear war ear swear
+wheel wheels heel
+wine win wins wind wines sine swine
+add ad adds ads dad
+afterwards afterward
+agents agent
+alleged alleges allege
+apart part
+appropriate appropriated
+beach each breach
+belief beliefs
+boats boat bats boasts goats boast oats
+bound bond bounds hound
+branches branched ranches
+breaking braking
+bronze bronzes
+centers center enters
+channels channel
+characteristics characteristic
+choose chose chooses
+cited cites cite
+classified classifies classifier
+column columns
+component components
+concerts concert converts
+conservative conservatives
+contest context
+counter counted
+denied denies
+discovery discover
+document documents
+draft craft raft
+drop crop drip
+emerged merged emerge emerges
+executed execute executes
+external eternal
+extreme extremes
+filmed filed
+fly flu
+garden gardens garde
+genre gene genres
+guard guards
+handed banded hander
+horses horse hordes hoses
+indicate indicated indicates
+indicated indicate indicates indicted
+inner winner
+instrument instruments
+lay play pay lazy lag
+legend legends
+loan loam
+losses loses
+means mean jeans
+mental metal
+missions mission
+motor moor
+moves moved move movies movers
+neither either
+newspapers newspaper
+occasions occasion
+option options potion
+periods period
+phone phones phoned hone
+pick puck lick
+preserved preserve reserved preserves
+principle principles
+principles principle
+print pint
+prize prizes prized
+processing professing
+produces produced produce producers
+publications publication
+ranks rank tanks
+rapid raid rapids
+ready read
+remainder reminder
+rescue rescued rescues
+restaurant restaurants
+roof root proof
+roots root riots roofs roost
+rose rise dose rode roses roe
+rugby ruby
+safe save safer sage
+satellite satellites
+secure secured secures
+sees see seems seed seeds
+settlers settler settles
+shares share shared shades hares shards
+shopping shipping hopping
+signs sign sings sins
+snow now show sow
+steam team stream stem seam steak
+string strong sting strung
+styles style styled
+suburb suburbs
+suicide suicides
+suit sit
+supplies supplied suppliers
+supporters supporter
+tail rail trail fail til
+tend end ten trend tends tens fend
+tests test texts rests
+thing things thin tying
+thousand thousands
+throne thrones
+tied tried tie ties tier tide tired toed
+tools tool tolls fools
+trading grading tracing
+traditions tradition
+tribes tries tribe
+turning tuning
+vast cast fast vat
+vessels vessel
+viewed viewer
+walk wall
+weapon weapons
+wearing swearing
+window windows widow
+worth worthy
+absence absences
+animated animate
+asks ask tasks
+attributed attributes attribute
+benefits benefit
+blocks block locks
+buy by but busy guy bug
+championships championship
+chapter chapters
+circumstances circumstance
+closer close closed closet loser
+colony colon
+colors color
+competitions competition
+concern concerns
+credits credit
+crowd crowds crow crows
+crown crow drown
+customers customer
+dated date dates rated fated dared
+daughters daughter
+departure departures
+desire desired desires
+detailed derailed
+drew crew dew
+drugs drug rugs
+drums drum
+eleven elven
+encouraged encourage encourages
+evil devil veil
+experiences experience experienced
+facing racing fading
+fighter fighters tighter
+fit it fig
+franchise franchises franchised
+generated generate generates venerated
+governments government
+grand brand grande
+infrastructure infrastructures
+integrated integrate integrates
+involves involved involve
+justice justices
+lawyer layer
+license licensed licenses licensee
+limits limit
+machines machine machined
+matters matter
+meetings meeting
+mine nine mind mines mined min miner mime mins
+networks network
+origins origin
+papers paper
+partly party
+passage passages
+percentage percentages
+perfect prefect
+phrase phase phrases
+picked pickled
+poems poem
+pool poll polo
+populations population
+priest priests
+producers producer produces
+profile profiles profiled
+provinces province
+qualified qualifier qualifies
+rating dating ratings eating raging rafting
+references reference referenced
+regime regimes
+regiment regimen
+relationships relationship
+relief relied
+resident president residents
+riding rising
+row grow rows tow roe
+scientists scientist
+seek see week seem
+seem see seen seems seek deem
+segment segments
+shore shores ashore shoe shire sore
+struggle struggled struggles
+supports support
+tall all fall talk gall
+themes theme themed
+toured touted
+traveled traveler
+tribe tribes
+understand understands
+universe universes
+usage sage usages
+victims victim
+vocal vocals focal
+volumes volume
+wants want ants
+wings wing wins sings swings wigs
+writes write writers rites writs
+abroad broad
+affiliated affiliate affiliates
+apartment apartments
+arrangement arrangements
+arrest rarest
+assist bassist assists
+baby bay
+balance balanced balances
+bear near hear bar beat gear bears ear beard bead
+bed be beds bred bee
+believes believed believe believers
+carrier carried
+ceased cease eased ceases
+chair hair char
+characterized characterize characterizes
+circle circles circled
+civilian civilians
+collections collection
+colleges college
+commanded commander
+communications communication
+contribution contributions
+copy cop
+crash cash rash
+critic critics
+deaths death
+decides decided decide
+designer designed
+devoted devote devotee devotes
+dispute disputed disputes
+diverse divers
+dollars dollar collars
+dual dial
+eighth eight eighty
+enzyme enzymes
+evolution revolution devolution
+evolved evolve revolved devolved evolves
+exposed expose exposes
+fair air far faire
+falling calling
+fear far rear gear ear feat tear dear
+feed fee fed fees freed feeds deed reed
+filed field failed filled file filmed fled files foiled tiled
+fled led filed fed flee flex
+flights flight lights fights
+fort for forty forth tort
+fund found find funds fun
+funded founded
+gene genre genes
+grades grade trades graded graders graces
+hearing bearing heading heating nearing gearing
+hero her
+hip ship hop hi
+hunting hinting
+identify identity
+immigrants immigrant
+increases increased increase
+injuries injures
+innings inning
+landed lander
+layer later player lawyer lager
+legs leg lets pegs
+linear liner
+lists list
+logo log
+lose close loss loose loses pose loser
+manufactured manufacturer manufacture manufactures
+mention mentions
+merger merged merge
+mill kill milk ill mil
+mix mid
+net next met jet nest bet
+occasion occasions
+operator operators
+originated originates originate
+pages page ages
+pain plain paint pin pan
+painter painted
+palace place palaces
+patterns pattern
+prices price priced prides
+productions production
+ranging raging
+relation relations
+remove removed removes
+repeated repeater
+representatives representative
+retail detail
+ride rise rice rider rides tide rode rid rude fide rife
+schedule scheduled schedules
+seeing seeking sewing seeding
+seeking seeing seeming
+seemed deemed
+sentence sentenced sentences
+settlements settlement
+shall hall
+shops ships shop hops
+signing singing
+slowly lowly
+soft sort oft
+soul soil soup
+spending sending pending
+spoke spoken spike spokes poke
+stable table stables sable
+statue state status statues stature
+steps step
+stream steam streak
+submarine submarines
+suggest suggests
+supposed suppose
+survive survived survives
+tanks tank ranks thanks
+texts text tests
+thereafter hereafter
+tie time tied ties tier tide tire toe
+traded trade traced trades trader graded
+treaty treat
+vessel vessels
+violent violet
+winners winner sinners
+worn won sworn worm
+writings writing
+zero aero
+adults adult
+alive live
+alliance alliances
+alternate alternated alternates
+amounts amount mounts
+angle angles angel angled
+assets asset asserts
+atmosphere atmospheres
+bases based base bass gases basses vases
+battles battle battled
+bid bird bids hid id bud
+broadcasts broadcast
+buses uses
+campaigns campaign
+champions champion
+characteristic characteristics
+charter charted
+closing losing
+coat cost coast cat
+competing completing
+computers computer computes
+confused confuse
+connections connection
+count county
+crossed crosses
+decisions decision
+deck deco
+demonstrated demonstrate demonstrates
+descent decent
+directors director
+discussed discusses
+donated donate donates
+doors door
+drafted crafted
+editions edition
+eggs egg
+eliminated eliminate eliminates
+empire empires
+enters enter centers renters
+escaped escape escapes
+exercise exercises exercised
+exposure exposures
+fairly fairy
+fame game came famed fake frame tame
+farmers farmer
+farming framing arming
+favorite favorites
+flowers flower lowers
+formula formulas
+golf gold
+guilty guilt
+historians historian
+hole hold whole hope holes holed
+indicates indicated indicate
+influences influence influenced
+initiated initiate initiates
+landscape landscapes landscaped
+licensed license licenses licensee
+looks look looms
+magazines magazine
+mail email jail nail mil
+missed misses kissed
+moral oral mortal modal
+nickname nicknamed nicknames
+objects object
+opponent opponents
+opponents opponent
+panel pane
+parent parents patent
+parks park
+participants participant
+patient patients patent
+peaked leaked
+pitched pitcher pitches
+plate late plates plated plat
+platforms platform
+played player plated
+pointed pointer
+posted posed poster
+praised raised praise praises
+preferred referred
+protest protests
+prove proved probe proves
+publisher published
+punk pink pun
+pursue pursued purse pursues
+rain ran train brain grain drain
+rated rate rates dated fated raged
+reaches reached teaches
+reduction deduction
+restaurants restaurant
+reveals reveal
+revolution evolution devolution
+rising riding raising risking
+roll toll doll troll
+root foot roof roots riot rot
+rounds round grounds
+saved save saves waved
+sentenced sentence sentences
+sessions session
+shift shirt
+sized size seized sizes
+soldier soldiers solder
+sole sold soles
+sort short sport soft
+sounds sound wounds
+sum sun um
+tape tale tapes tap taped ape taps taper
+temperatures temperature
+tenure tenured
+tone one gone stone tons ton tones toe toned
+tourist tourists
+trail trial rail tail frail
+tunnel funnel
+twin win tin
+uncle uncles
+venue venues
+videos video
+walking waking
+wealthy wealth
+weekend weekends
+windows window widows
+aboard board
+abuse abused abuses
+affair affairs
+affiliate affiliated affiliates
+airline airlines airliner
+altitude latitude altitudes aptitude
+approached approaches
+aspect aspects
+banned banner
+beating bearing eating heating
+belongs belong
+burned burner
+camps campus camp caps amps
+carries carried carriers
+cash crash ash dash
+clan can clean clam
+clean clan lean
+coaching caching
+coins coin
+collapse collapsed collapses
+concepts concept
+consist consists
+controls control
+convinced convince convinces
+crimes crime cries
+crosses crossed
+debt debut
+decide decided decides decider decode
+defend defends
+delivery deliver
+demands demand
+departments department
+descendants descendant
+designation resignation
+developments development
+difficulty difficult
+dismissed dismisses
+dogs dog dots digs
+drivers driver rivers drives divers
+earning learning warning
+expand expands
+experiments experiment
+explain explains
+explains explain
+extend extends
+faster raster
+fee few free feet feel feed fed fees tee
+festivals festival
+files file filed flies tiles
+fill full till ill gill
+flew few flee flea
+gauge gauges
+genetic generic
+god good go gold gods
+guests guest guess gusts
+helps help
+hills hill bills hulls gills ills
+hop hope shop hip hoop bop
+housed house houses
+ideal deal idea
+inches niches
+interviews interview
+isolated isolate isolates
+judges judge judged
+legislature legislatures
+liquid liquids
+load loads lad loaf
+locomotives locomotive
+manage manager managed manages
+manufacturer manufactured manufacturers manufacture
+maps map amps
+marks mark
+measured measure measures
+met me meet meat net jet
+mines mine miners minds mined mins
+missile missiles
+negotiations negotiation
+options option
+orchestra orchestras
+partners partner
+peoples people
+pictures picture pictured
+premiered premiere premieres
+promoting prompting
+pronounced pronounce
+pure lure purse pyre
+radical radial
+raising rising arising raiding
+ratings rating
+receives received receive receivers
+reception deception
+regard regards
+regulations regulation
+relocated relocate
+repair repaid
+researchers researcher researches
+resumed resume resumes
+revenue revenues
+ruler rule ruled
+sample samples sampled ample sampler
+scholar scholars
+scores scored score cores scorers
+secured secure secures
+signals signal
+slaves slave saves
+spaces space spaced spades
+speakers speaker
+specialized specializes specialize
+spend send spends sped
+spin pin spun
+studios studio
+sun sub sum sung
+sung sun sing swung suing
+switched switches
+symptoms symptom
+taxes axes taxed
+telephone telephones telephoned
+telling yelling
+thick tick
+ties times tries tied tie tires toes tides tiers
+tons towns tone ton tones
+tool too took tools toll fool
+tours tour fours ours yours
+trials trial trails
+tribute tributes
+variable variables
+variation variations
+variations variation
+viewers viewer
+voters votes voter
+waiting awaiting
+wealth wealthy
+wider wide
+agree agreed agrees
+allies allied
+approaches approached
+arrive arrived arrives
+associate associated associates
+aware award ware
+bars bar bears bats bare bard
+bearing hearing beating nearing gearing
+belt bet
+catch catchy
+clock lock click flock cock
+comics comic
+commenced commence commended commences
+completing competing
+compound compounds
+comprises comprised comprise
+connect connects
+consumer consumed consume
+controlled controller
+coup cup cop
+crops corps crop drops cops
+cultures culture cultured vultures
+cup up coup
+depression repression
+detail details retail
+drink drunk rink
+drum drums rum
+eat at east seat meat beat heat sat ear rat
+economics economic
+exile exiled exiles
+experiment experiments
+expert experts exert
+feeling feelings
+fifty fifth
+firing tiring
+focuses focused
+followers follower
+forty fort forth
+gang hang gag bang yang
+gardens garden
+gender tender fender
+guide guided guides guise
+handle handled handles handler
+honors honor
+improvements improvement
+inducted induced indicted inductee
+informed informer
+instruction instructions
+interface interfaces
+lakes lake
+lane land plane lanes lame pane
+maintains maintain
+manufacturers manufacturer manufactures
+marine marines
+martial marital
+medals medal meals
+mixture mixtures
+moderate moderated moderates
+murdered murderer
+noise nose noises
+objective objectives
+owns own towns
+perceived perceive perceives
+perspective perspectives
+pilots pilot plots
+placing pacing
+plain plan pain
+playoffs playoff layoffs
+portions portion
+procedure procedures
+proof roof
+pupils pupil
+pushed pushes pusher
+putting pitting
+quoted quote quotes
+ranges range ranged rangers
+readers reader
+realized realizes realize
+recovery recover
+reflect deflect
+reforms reform
+reporter reported
+reverse reversed reverses
+revolutionary evolutionary
+rocks rock docks
+salt sat salty
+sand and stand sad sands sans wand sane
+seed see speed sees seeds deed weed seer
+serial aerial
+sharing shading
+shell sell hell
+shoot shot soot
+siege sieges sieve
+sing using wing sign song sung swing suing
+sisters sister
+situations situation
+slave save slaves
+solutions solution
+statements statement
+stops stop tops
+stored store stores
+supplied supplies supplier
+switch witch
+targets target
+teach each reach tech
+tested rested
+thereby hereby
+thin think thing tin
+ticket ticker
+topics topic tropics
+travels travel
+truck struck trick
+trust rust
+tube tune tubes tub
+undergraduate undergraduates
+valuable valuables
+variant variants
+venture ventures ventured
+verse verses versed
+visits visit
+volunteers volunteer
+warm war arm warn swarm
+wars was war ward wears wards ears ware wares
+waste wasted wastes
+waves wave wages saves waved weaves
+winds wins wind wines
+accommodate accommodated accommodates
+addressed addresses
+arena area arenas
+argues argued argue
+arrives arrived arrive
+ask as task asks
+backed baked hacked backer
+backing baking hacking
+battery batter
+bay by baby bat bag hay
+beliefs belief
+bone one gone none bond bones hone
+breaks break beaks
+breed breeds bred reed greed brewed
+bridges bridge ridges bridged brides
+cap camp capo cal
+centered entered
+cinema cinemas
+citizen citizens
+closest closes closet
+closure closures
+columns column
+comments comment
+concentrated concentrate concentrates
+connects connect
+contested congested
+contracts contract contacts
+cult cut
+danger anger ranger
+database databases
+dealing sealing
+deemed seemed
+defended defender
+define defined defines refine
+diseases disease diseased
+displays display
+dissolved dissolve dissolves
+doctrine doctrines
+dream cream
+drove drive dove
+dubbed rubbed
+duo do
+earn learn ear warn
+elevated elevate
+exit exist edit
+extends extend
+faces races face faced fades aces
+feelings feeling
+fighters fighter
+filming filing
+finance financed finances fiance
+fluid fluids
+gap tap gal
+gate fate gates hate ate gated
+gathered fathered gatherer
+generations generation
+graphics graphic
+grave gave grace graves brave rave
+handling handing
+heir their her
+improvement improvements
+initiative initiatives
+interchange interchanges
+jump hump
+kilometers kilometer
+kings king
+leagues league
+lie life like line live lies pie lid lied
+lifetime lifetimes
+lights light flights
+lying flying plying
+milk mill mil
+nephew nephews
+operators operator
+orange range oranges
+package packages packaged
+pairs pair airs
+particles articles particle
+patent parent patient latent
+photographs photograph
+playoff playoffs payoff
+politicians politician
+ports sports port poets pots
+prepare prepared prepares
+presents present
+prince price princes
+promised promise promises
+proteins protein
+prototype prototypes
+random ransom fandom
+reflected deflected
+requirement requirements
+resignation designation
+revised devised revise
+rice ice price ride dice rife
+sending ending spending sensing
+shipping shopping whipping
+shut hut
+sight eight
+signature signatures
+skill kill skills skull
+speaker speakers
+spell sell
+statistics statistic
+stroke strike strokes
+suburbs suburb
+surprise surprised surprises
+sword word swords swore
+thanks tanks thank
+threw three
+till still fill toll ill gill til trill
+transformed transformer
+trouble troubled troubles
+varied varies
+varies varied
+victim victims
+voiced voice voices voided
+warning earning warming waning
+wheels wheel heels
+whence hence
+wickets wicket
+wire wife wide wore wires wired sire ire
+ad and as had aid bad add ads sad
+adventure adventures adventurer
+ages age aged pages wages sages
+argue argued argues
+attitude attitudes
+audiences audience
+authorized authorize authorizes
+ban an band bank van
+beam beak bean
+bears bear bars ears beats hears beard gears beads beards
+beaten eaten
+beer beef bee beet
+belong belongs
+binding bonding
+blues blue
+boards board
+bond bound bone bonds bind blond
+boss bows
+bright right
+brings bring beings rings
+cave caves cage cafe
+challenged challenge challenges challenger
+challenges challenge challenged challengers
+client clients
+clients client
+codes code coded cores codex
+compiled compiler compile complied compiles
+compositions composition
+conflicts conflict
+consequence consequences
+craft draft raft
+creates created create crates
+cuts cut cute
+deals deal seals
+decorated decorate
+delayed relayed
+demanded remanded
+depends depend
+desert dessert
+desired desire desires
+dies died does die dues dikes dries
+discontinued discontinue
+discover discovery discovers
+discovers discover
+discuss discus
+divorce divorced divorces
+divorced divorce divorces
+dying drying
+eating dating rating beating seating
+elite elites
+enabled enable enables
+encourage encouraged encourages
+engineers engineer
+failing filing ailing railing
+fate rate date gate fat fare ate fated fats fates
+flood food floor floods
+forth fourth fort forty
+freight fright
+gear year hear bear fear ear tear
+generate generated generates
+gods goes goods god golds
+habitats habitat
+heading hearing
+hoped hope hopes holed
+hopes hope hoped holes hops
+illustrated illustrate illustrates
+involve involved involves
+jet net met
+kinds kind kids minds
+knows know
+lift loft
+locomotive locomotives
+mall all small
+manages managed manage managers
+mentions mention
+messages message
+muscle muscles
+narrative narratives
+nicknamed nickname nicknames
+notice noticed notices
+paint pain pint
+pitcher pitched
+pole poles pope pile poke
+pounds pound ponds
+prayer prayed
+premiere premiered premier premieres premiers
+preserve reserve preserved preserves
+priests priest
+prisoner prisoners
+procedures procedure
+professionals professional
+qualify quality
+quarters quarter quartets
+ray day rat tray rag fray
+receiver received receive
+recognize recognized recognizes
+relating relaying
+restrictions restriction
+retain regain detain
+rifle rifles rifled rife
+rivals rival
+rocket rocker
+samples sample sampled
+sciences science
+scientist scientists
+sculpture sculptures
+segments segment
+select elect
+server served serve sever
+sharp harp
+shifted shifter
+shots shot shoots shorts
+sit it site suit sits wit skit sir
+sleep asleep
+soap sap slap
+specified specifies
+spots sports spot slots pots
+stolen stole
+stones stone tones stoned
+substitute substituted substitutes
+surname surnames
+symbols symbol
+talking taking
+talks talk
+tasks task asks
+tea team ta teas
+thence hence
+tip top trip rip til
+tissue issue tissues
+tourists tourist
+tournaments tournament
+venues venue
+voltage voltages
+wore word wire worse swore sore
+absorbed absorber
+acknowledged acknowledge acknowledges
+acres acre cares aces
+alien lien
+apartments apartment
+arrangements arrangement
+assembled assemble assembler assembles
+assists assist
+balls ball halls
+bassist assist
+cat at car act cast coat fat cart vat
+celebrate celebrated celebrates
+chapters chapter
+civilians civilian
+coached coaches
+coaches coached caches
+collaborated collaborate collaborates
+colleagues colleague
+commune communes
+composers composer composes
+compounds compound
+contribute contributed contributes
+couple couples coupled coupe coupler
+curve curves cure curved
+customer customers
+delay relay
+deliver delivery
+diet die duet dirt
+discipline disciplines disciplined
+disk risk dusk
+diversity diversify
+dollar dollars collar
+drives drive drivers derives dives dries
+earthquake earthquakes
+employee employed employees employer
+enable enabled enables
+engage engaged engages
+experts expert exerts
+farms arms farm
+founders founder
+fun run gun fund
+gallery galley
+girlfriend girlfriends
+grain train gain brain rain
+grass brass
+hat that at what heat bat hay
+hello hell
+hospitals hospital
+imposed impose imposes
+insects insect
+instructions instruction
+inter winter infer
+intermediate intermediates
+interpreted interpreter
+investigate investigated investigates
+jail mail nail hail
+joins join
+kick lick
+kills kill skills mills ills
+layout payout
+manufacture manufactured manufacturer manufactures
+meter meters
+mini min mink
+ministers minister
+moist most mist
+moon noon mono
+neutral neural
+noble nobles
+nose noise node hose nosed noses
+notion motion
+onwards onward inwards
+paying playing laying
+performers performer
+performs perform
+photography photograph
+planes plans plane lanes panes
+plates plate plated
+poll pool polo pill
+populated populate
+posts post poets pots
+practiced practice practices
+protests protest
+provisions provision
+pursued pursue pursues
+push lush plush
+raid aid rapid raids arid rid
+refugees refugee
+regulation regulations
+relatives relative
+relegated delegated
+resource resources
+restore restored restores
+reveal reveals
+revived revive revives
+ruins runs ruin
+sacred scared
+sat at seat say eat salt
+seeds sees seed deeds weeds
+seized sized seize seizes
+settle settled settler settles
+shock sock
+singers singer signers wingers
+sits its site sites sit suits skits wits
+sky soy sly
+span pan spa spam spawn
+speaks speak peaks
+spite site spire spit
+sporting sorting spotting porting
+stem steam
+storyline storylines
+super supper
+supporter supported supporters
+survivors survivor
+syndrome syndromes
+tale take table tape tales ale gale
+temples temple
+tenth tent
+throw thrown throws
+thrown throw
+ton to on town tone tons tin
+towers tower rowers
+transported transporter
+treat great threat treaty
+trend tend trends
+unions union
+united unite unites
+upgraded upgrade upgrades
+variants variant
+vital viral vial
+volunteer volunteers
+wet we set went west
+widow window widows
+worker worked workers
+allied allies
+aside side
+beings brings
+bills hills
+bonds bond
+cameras camera
+carriers carries
+circles circle
+coin coins
+collapsed collapse
+consequences consequence
+convert concert
+corps crops
+destroyer destroyed
+doubles double
+estates states estate
+estimate estimated
+estimates estimated
+exercises exercise
+fed red feed fled fee
+fees feed fee
+firms forms
+gates gate
+graphic graphics
+grows grow
+guided guide
+holes holds hole hopes
+introduce introduced
+item items
+knee knew
+layers players
+lock block clock
+march match
+oral moral
+praise praised
+promise promised
+prompted promoted
+provision provisions
+raw draw
+recover recovery
+refuses refused
+ridge bridge
+rulers rules
+seal deal
+sequences sequence
+speeds speed
+staged stage stated stayed stages
+strikes strike
+surfaces surface
+toll roll tool till
+trio trip
+tune tube
+unclear nuclear
+variables variable
+zones zone
+acquire acquired
+aerial serial
+agrees agreed agree
+assume assumed
+blow below
+bones bone
+conferences conference
+defender defended
+dense sense
+derives derived drives
+disputed dispute
+draws draw
+fights rights flights
+fires fire fired
+flower flowers
+genes gene
+genres genre
+graduates graduated graduate
+guards guard
+handled handle
+healthy health
+hull hill
+kids kinds
+lanes lands lane planes
+leaf lead
+loose lose
+lover over love loved
+mature nature
+missiles missile
+particle particles
+poets ports posts
+quiet quite
+raids raid
+reader readers
+reads read
+rescued rescue
+reserved reserve preserved
+reserves reserve
+rings brings
+rises rise
+sixty sixth
+sizes size sized
+ski skin
+slot spot
+steep steel step
+struggled struggle
+tables table
+tends tend
+tight right fight
+topic topics
+trails trials
+voices voice voiced
+walks walls
+ward award war wars
+adventures adventure
+applies applied
+bat bar beat boat bay hat
+bats boats bars
+bits hits
+boom book
+bow now how
+brands brand
+caps camps
+comment comments
+contacts contracts
+cream dream
+defines defined define
+demonstrate demonstrated
+developer developed
+edges edge
+egg eggs
+eliminate eliminated
+fail rail tail
+flee fleet fled flew
+foods food goods
+induced inducted
+killer killed
+lots lost
+managers manages
+mills kills
+modes models mode
+neighborhoods neighborhood
+nest best next net
+organize organized
+pace place space peace
+pack lack
+performer performed performers
+pink link punk
+pit put
+premier premiere
+presenter presented
+quit quite
+realizes realized
+schemes scheme
+seating eating
+seeks weeks seems
+sends ends send
+shirt short shift
+specially especially
+stick stock
+topped stopped
+trace race trade
+trick truck
+unity unit
+worse wore
+wound sound
+addresses addressed
+adds add
+advances advanced advance
+aided aired
+attributes attributed
+combine combined
+commands command
+committees committee
+comprised comprises
+convince convinced
+counted counter
+crews crew
+crop drop crops
+dancer dance cancer
+disputes dispute
+distances distance
+diving driving
+farmer farmers
+fat far fact flat fast fate cat
+finale finals
+fur four
+gather father
+ghost host
+heating hearing beating
+instances instance
+investigated investigate
+lease please
+liked like linked
+likes like lies
+log long lot logo
+manor major
+mild mile
+noticed notice
+noting nothing
+objectives objective
+photograph photographs photography
+relay delay
+retire retired
+rounded founded
+scales scale
+sided side sides
+staying stating
+streak stream
+swing wing sing
+teaches teachers reaches
+tier tied tie
+tough though
+traced traded
+traces races
+upgrade upgraded
+valued value values
+wicket wickets
+acids acid
+advantages advantage
+beta beat
+crime crimes
+dances dance
+descendant descendants
+disciplines discipline
+dish fish
+dome some come done
+ear year near war hear era rear wear bear fear eat earn gear
+eaten beaten
+employer employed employee
+freed free feed
+generic genetic
+halls balls
+hanging changing
+immigrant immigrants
+incorporate incorporated
+lengthy length
+lined line lines linked
+liver live lived
+loses loss losses lose
+loves love lives loved
+maker make
+makers makes
+phases phase
+pin pain spin
+powder power
+provider provided provide
+publishes published
+pupil pupils
+rally really
+realize realized
+reduces reduced reduce
+regained retained
+resign design reign
+reversed reverse
+shoes shows
+skull skill
+sometime sometimes
+submarines submarine
+surprised surprise
+tales takes tale
+themed theme themes
+tubes tube
+verses verse
+warned earned
+websites website
+woods wood
+alter later
+anger danger
+bag bay
+brass grass
+choices choice
+concentrate concentrated
+consumed consumer
+depend depends
+divide divided
+drops crops
+elect select
+employers employees
+enables enabled enable
+facto factor
+famed fame
+genera general
+initiatives initiative
+inning winning innings
+legends legend
+miners mines
+mount amount
+natives native
+observe observed
+peaking speaking
+peaks speaks
+pen open
+pound pounds
+pride price
+prizes prize
+processor professor
+providers provides
+rays days
+responses response
+revenues revenue
+rider ride
+rifles rifle
+rope role
+scorer scored score
+sculptures sculpture
+sentences sentence sentenced
+shapes shape shaped
+shed she
+sings songs signs wings
+starter started
+striker strike
+struggles struggle
+sued used
+thirds third
+wage age wave
+wears wars
+worlds world
+wounds sounds
+afterward afterwards
+airs pairs
+angles angle
+arise raise
+associates associated associate
+averaged average
+banner banned
+beds bed
+bold hold gold
+cats cast cars acts
+caves cave
+colleague colleagues
+combines combined
+commissioner commissioned
+comprise comprises
+controller controlled
+curves curve
+cycles cycle
+damages damage damaged
+doubled double
+escapes escape escaped
+evolutionary revolutionary
+executives executive
+exiled exile
+finishes finished
+flies files
+horn born
+incorporates incorporated
+ion in on iron
+kit it
+meal metal medal
+merge merged merger
+mud mid
+node mode nose
+occupies occupied
+operas opera
+passages passage
+pet let poet
+pine line
+regards regard
+relates related
+relied relief
+rows row
+shoots shots
+statues status statue
+stuck struck
+styled style styles
+suite site
+survives survived survive
+tender gender
+throws throw
+trainer trained
+trends trend
+wages waves ages
+wards awards wars
+airlines airline
+announcer announced
+asset assets
+atop stop
+balanced balance
+breeds breed
+cease ceased
+chances chance
+charted charged charter
+container contained
+crowds crowd
+cure curve
+curved curve
+debates debate
+declare declared
+devised revised
+dried died
+drunk drink
+duet diet
+ears years wars bears
+emerge emerged
+fake take fame
+fare far care rare fate
+feat fear
+financed finance
+frame fame
+gases bases
+guy buy
+hire hired
+ill will kill bill hill mill fill till
+inferior interior
+introduces introduced
+laying playing paying
+locate located
+locks blocks
+marker market marked
+marriages marriage
+matched matches
+muscles muscle
+nobles noble
+oath path
+phones phone
+pressures pressure
+promises promised
+promotes promoted promote
+raced race races faced
+railroads railroad
+referenced reference references
+regain retain
+researcher researchers
+residences residence
+rides ride
+riots roots
+satellites satellite
+saves save saved slaves waves
+servers serves
+shores shore
+shorts shots
+suits sits
+sworn worn
+tide tied ride tie
+tram team
+troop troops
+villagers villages
+visitor visitors
+wines wins wine winds
+attitudes attitude
+backgrounds background
+beats bears
+breach beach
+caste castle
+collar dollar
+compare compared
+concludes concluded
+dawn drawn
+defenses defense
+determines determined determine
+dive five drive
+dock rock
+dominate dominated
+dose does rose
+failures failure
+feeds feed
+fold told food gold cold
+halt half
+identifies identified
+judged judge judges
+liner line linear
+lowered powered
+mice nice
+minds mind mines kinds
+mob job
+naked named
+observer observed
+oppose opposed
+originates originated
+packages package
+participant participants
+participates participated participate
+patents parents patients
+phrases phrase
+plots pilots
+posed posted
+princes prince
+processed processes
+recognizes recognized recognize
+refuse refused
+squares square
+structured structure structures
+tapes tape
+teen ten
+translates translated
+weekends weekend
+assumes assumed
+bare bar bars
+beef beer
+boasts boats
+bout about
+bred bed breed
+bull bill
+cables cable
+competes competed compete
+copied copies
+couples couple
+debated debate
+derive drive derived
+dirt diet
+distribute distributed
+encourages encouraged encourage
+enzymes enzyme
+exchanged exchange
+facial racial
+fairy fairly
+floods flood
+flour four
+focal vocal
+friction fiction
+genius genus
+grace grade grave
+grip trip
+guides guide
+guilt built guilty
+hate gate
+latitude altitude
+manned manner
+olive live
+pan plan pain span
+pending spending
+pot post port lot plot poet spot
+quote quite quoted
+quotes quoted
+ranch branch
+ranged range ranges
+refined defined
+relate related
+resting testing
+resume resumed
+riot root
+rod road
+rode rose ride
+seventy seventh
+switches switched
+tailed failed
+tens tend
+treason reason
+troubled trouble
+voter vote voted voters
+whites white
+wise wide
+worry sorry
+worthy worth
+acre care acres
+ads as add ad
+affiliates affiliated affiliate
+arrow narrow
+ash cash
+ashore shore
+chooses choose
+cone come done
+contributes contributed contribute
+cord core
+discusses discussed
+drain rain
+dramas drama
+duel fuel
+ensured ensure
+exchanges exchange
+execute executed
+exercised exercise
+expresses expressed
+farther father
+graves grave
+hook book
+ink link
+landscapes landscape
+licenses license licensed
+loads load
+math match
+meals medals
+pays plays
+pleased please
+poles pole
+pope pole
+pose lose
+precious previous
+prompting promoting
+quartet quarter
+rats rate arts rates
+restriction restrictions
+sake same sale
+seas sea seats
+seize size seized
+shoe show shore
+simpler simple
+spends spend
+stole stolen
+tech teach
+tiles titles files
+tin twin thin ton
+tissues tissue
+tones tone tons stones
+trans trains
+troubles trouble
+viewer viewed viewers
+warming warning
+alternatives alternative
+arid raid
+attribute attributed
+bind bond
+bride bridge
+builds build
+cab can
+castles castle
+cites cities cited
+conclude concluded
+curse course
+detained retained
+dot dog
+dug drug
+eternal external
+exits exist exists
+fined fine find
+fog dog
+font front
+garde grade garden
+gig big
+gravel travel
+handles handle
+hang gang
+hanged changed
+hears years heard heads bears
+hell help shell hello
+imply simply
+insect insects
+integrate integrated
+loving living
+mad made
+markers markets
+nave have
+noon non moon
+notices notice
+owed owned
+pitches pitched
+poster posted
+probe prove
+promoter promoted promote
+proposes proposed
+proves proved prove
+raises raised raise
+receivers receives
+refugee refugees
+revive revived
+rid did ride raid
+routed route routes
+sorts sports
+spun spin
+staging stating
+substituted substitute
+tears years
+tired tried fired tied
+tuned turned
+tuning turning
+ventures venture
+wires wire
+witch switch
+acknowledge acknowledged
+aide side wide aid
+angel angle
+announce announced
+approve approved
+arising raising
+arrange arranged
+asserts assets
+averages average
+battled battle battles
+cage cave
+cake came
+cane came
+converts concerts
+databases database
+deed feed seed
+demonstrates demonstrated
+deported reported
+desires desire desired
+divides divided
+edit exit
+educate educated
+eighty eight eighth
+finances finance
+fins fine find finds
+generates generated generate
+grains trains
+illustrate illustrated
+impose imposed
+interfaces interface
+kits its
+lone one line alone
+persona personal persons
+ponds pounds
+printer printed
+prototypes prototype
+radial racial radical
+ruin run ruins
+seals deals
+senses sense
+separates separate separated
+specializes specialized
+supplier supplied
+tear year rear fear gear
+tent tenth
+tires tries ties
+trades trade grades traded
+tying trying thing
+upgrades upgraded
+viral vital
+void avoid
+avid avoid acid
+bet get best beat net belt
+bush busy
+compose composed composer
+consume consumer
+convinces convinced
+cry dry
+declares declared
+deeds seeds
+dial dual
+emerges emerged
+evidenced evidence
+expose exposed
+filing filming failing
+float flat
+fried friend tried fired
+lets legs
+lyric lyrics
+murderer murdered
+neural neutral
+onward onwards
+orchestras orchestra
+originate originated
+phased phase
+pile pole
+prepares prepared prepare
+priced price prices
+punch lunch
+rage range rate
+rat art rate eat ray
+ridges bridges
+rites writes
+rowing growing
+sampled sample samples
+shade share
+shy why
+signatures signature
+soup soul
+surfaced surface
+survivor survivors
+swords words sword
+tire fire tie
+toes goes ties
+towed tower
+translate translated
+unite units united
+warn warm earn
+wax was
+abused abuse
+aft at art act
+aids aid
+akin skin
+awaiting waiting
+axes taxes
+brave grave
+bust busy
+chat chart
+chef chief
+coasts costs
+compiler compiled
+con com
+deaf dead
+devil evil
+docks rocks
+doctrines doctrine
+doses does
+engined engine engines
+evolve evolved
+fond found find
+franchises franchise
+grief brief
+heel wheel
+hood good hold
+initiate initiated
+interpreter interpreted
+invites invited
+jockey hockey
+leaked peaked
+lightly slightly
+lime like line
+mined mind mine mines
+oh on
+opener opened
+ought bought fought sought
+packaged package
+pad paid
+profiles profile
+propose proposed
+purchases purchased purchase
+raided raised
+rains trains
+replaces replaced replace
+rests tests
+rods roads
+roofs roots
+sad said sand ad
+selections elections
+severed severe
+slots spots
+tap tape gap
+trams teams
+visa via
+weigh weight
+winger singer winter
+abuses abuse
+ace race face
+alliances alliance
+altitudes altitude
+announces announced
+asleep sleep
+cafe care cave
+captures captured capture
+celebrates celebrated celebrate
+cello cell
+communes commune
+conservatives conservative
+denies denied
+dig dog
+divers rivers diverse drivers
+doll roll
+dull full
+dye due eye
+earthquakes earthquake
+ensures ensure
+entrances entrance
+establishes established
+eve even ever
+faded faced
+fore for fire force core
+header headed
+indicted indicated inducted
+inn in
+kid mid kind
+launches launched
+marries married
+mater matter master
+min main mind mine mini
+mixes mixed
+mortal moral
+pants plants
+polo pool poll
+recorder recorded
+reigned resigned
+relocate relocated
+removes removed remove
+safer safe
+scaled scale
+schedules scheduled schedule
+serviced service services
+sins sons wins signs
+sounded wounded
+sprint spring
+storylines storyline
+strokes stroke
+suppliers supplies
+taped tape
+tile title file
+toe tie tone
+tow two town row
+beast best beat
+bids birds bid
+booth both
+bounds bound
+climates climate
+closes close closed closest
+coats coast costs
+decent recent descent
+designate designated
+drying dying
+dub sub
+edged edge
+fluids fluid
+fork form
+formulas formula
+forwards forward
+goat boat
+goats boats
+guess guests
+herd her here heard
+inspire inspired
+invite invited
+kilometer kilometers
+leak peak
+leaning learning
+lure pure
+manufactures manufactured manufacturers manufacture
+marches matches
+mounts amounts
+negotiation negotiations
+organizer organized
+perspectives perspective
+pictured picture pictures
+posing losing
+pour our
+preserves preserved preserve
+racer race
+repression depression
+rink drink
+settler settled settlers settle
+sic six
+stature statue
+tops stops
+trader trade traded
+vain gain
+whip ship
+wit with wait sit
+ants wants
+arranger arranged
+assemble assembled
+ate are age late date rate gate fate
+attends attend
+baked backed
+bee been be bed beer
+believers believes
+bodied bodies
+bonding binding
+braking breaking
+broker broke
+bug but big buy
+byte bye
+cared care card
+cart car chart cat
+cite cited
+classed classes
+click clock
+coded code codes
+collaborate collaborated
+compares compared
+computed computer
+cones comes
+covert cover
+danced dance
+daring dating
+devote devoted
+dice rice
+ejected rejected
+eyed eye eyes
+fines fine finds
+follower followed followers
+ghosts hosts
+graded grade traded grades
+gum gun
+harp sharp
+hid his bid
+hut but hit shut
+illustrates illustrated
+las last law laws
+lays plays
+lean learn clean
+maple male
+organizes organized
+pads pass
+palaces palace
+rack track
+raiding raising
+reel feel
+ref red
+rite write
+ropes roles
+shower showed
+spa span
+specifies specified
+squads squad
+strand stand
+suites sites
+surnames surname
+vine fine
+worms works
+alley valley
+ample sample
+attacker attacked
+batter battery
+beak break beam
+beard heard bear bears
+branched branches
+challenger challenge challenged
+cinemas cinema
+claws class
+crafted drafted
+dash cash
+deception reception
+dissolve dissolved
+distinguishes distinguished
+dominates dominated
+donate donated
+dots dogs
+engages engaged engage
+expands expand
+fated dated rated fate
+gag gang
+gears years bears
+improves improved improve
+interchanges interchange
+intro into
+keel keep
+medial medical
+mighty might
+noir nor
+nominate nominated
+observes observed
+perceive perceived
+pie lie
+prized prize
+pushes pushed
+qualifier qualified
+ransom random
+regimes regime
+sealing dealing
+sensing sending
+spaced space spaces
+wedge edge
+worm work worn
+avoids avoid
+beads heads bears
+betting getting
+bloc block
+buys bus busy
+commence commenced
+compute computer
+cop copy coup
+cores core scores codes
+coupled couple
+coveted covered
+dad dead add
+declines declined decline
+eats east seats
+favorites favorite
+figured figure figures
+guise guide
+inline online
+justices justice
+launcher launched
+marital martial
+medicines medicine
+nail mail jail
+narratives narrative
+nut but
+olds old holds
+par part park pair
+pointer pointed
+pressured pressure
+prop pro
+purse pursue pure
+rescues rescue
+rested tested
+reused refused
+shades shares
+solids solid
+spreads spread
+storey story
+stud study
+sue she use due sure
+thank thanks
+timed time times
+topical tropical
+unto into
+ventral central
+accompanies accompanied
+acknowledges acknowledged
+cans fans
+characterize characterized
+chin chain
+collapses collapse
+cue due
+dei die
+diver river driver
+eras era
+fade face
+foe for
+fool tool
+framing farming
+futures future
+hail jail
+handing handling
+hay bay hat
+hooks books
+husbands husband
+huts hits
+id is did if mid aid bid
+isolate isolated
+lid laid lie
+liquids liquid
+lobe love
+lush push
+mod mid mode
+mono moon
+nicknames nickname nicknamed
+opposes opposed
+paced placed
+plight light
+pun pub punk
+ram ran arm
+reed red feed breed
+rig ring
+sage age stage save safe usage
+scared sacred
+shale shape
+sited site sites
+spike spoke
+spire spite
+strands stands
+suppose supposed
+swinging singing
+tan than ran tank fan
+tore store
+undergraduates undergraduate
+vent event
+widows windows widow
+wired aired wire
+accuses accused
+appropriated appropriate
+arranges arranged
+bean began beam
+bows boss
+colon colony
+compile compiled
+converter converted
+coupe couple
+cries crimes
+criticize criticized
+dear dead rear fear
+deduction reduction
+distributes distributed
+domes comes
+empires empire
+endure ensure
+exiting existing
+extras extra
+extremes extreme
+fist first
+flock clock
+flu fly
+funnel tunnel
+grading trading
+guild build
+heels wheels
+hires hired
+identifier identified
+incomes income
+lied lived lies lie
+marines marine
+marred married
+modal moral
+mole mile
+naive native
+pots post ports spots posts
+primes prime
+racers races
+rave race grave
+reminder remainder
+singled single singles
+sourced source sources
+spam span
+specialize specialized
+stables stable
+summed summer
+swear wear
+swelling selling
+tar far star
+tides ties
+tolls tools
+trainee trained
+trough through
+understands understand
+violet violent
+writ write
+accommodated accommodate
+agility ability
+baking backing
+caller called
+cares care cars cards acres
+closet closer closest
+completes completed complete
+damp camp
+dire fire die
+disciplined discipline
+doom room
+doping doing
+drank rank
+exited existed edited
+fading facing
+fathered gathered
+faulty faculty
+foes does goes
+glow flow
+gown town grown
+graders grades
+gut but
+hers here
+hi his him hit hip
+kin in king kind skin
+latent patent
+legislatures legislature
+mare made
+marrow narrow
+mat may meat
+merges merged
+misses missed
+moth month mouth
+overt over
+prayed prayer
+prefect perfect
+quad squad
+ringing bringing
+sands stands sand
+shire shore
+squared square
+sway way away say
+swore sword wore
+thy they
+tracing racing trading
+vans fans
+venerated generated
+ventured venture
+wasted waste
+wed we
+weed seed
+yen ten
+achieves achieved achieve
+airliner airline
+ant any want anti
+architectures architecture
+arenas arena
+bog big boy
+cam can came camp
+carts cars charts
+casing causing
+chanting changing
+circumstance circumstances
+commended commenced
+concentrates concentrated
+confuse confused
+defends defend
+deferred referred
+delegated relegated
+departures departure
+deriving driving
+deserve reserve
+dessert desert
+dusk disk
+dyes eyes
+elites elite
+exert expert
+exiles exile
+fellows fellow
+forks forms
+glue blue
+hose those house whose horse chose nose
+investigates investigate
+lazy lay
+leasing leading
+milling killing
+miner mine
+moat most
+moths months
+noises noise
+odor door
+praises praised
+raft draft craft
+resented presented
+reset rest
+roses rose
+sewing seeing
+sire side sure site wire
+skulls skills
+sorting sporting
+soy sky
+sprung spring
+substitutes substitute
+symptom symptoms
+timer time
+touted toured
+transformer transformed
+traveler traveled
+veil evil
+waged aged
+zoned zone
+adapter adapted
+adventurer adventure
+ailing failing
+alternated alternate
+angled angle
+await wait
+believer believed believe
+blond bond
+boar board boat
+cod code cold
+deduced reduced
+dove drove
+drone done
+earl early
+eliminates eliminated
+ether either
+ethic ethnic
+finer fine
+ford for
+greed agreed breed
+info into
+jeans means
+lace place
+liners lines
+loser lower closer lose
+ma may man map am
+mixtures mixture
+mule mile
+nephews nephew
+plated played plate plates
+pleas please
+puck pick
+pursues pursue pursued
+rapids rapid
+researches researchers
+rot root
+rude ride
+rum run drum
+scorers scores
+spawn span
+statistic statistics
+stats state states status stars starts
+stray stay
+swings wings
+taxed taxes
+telephones telephone
+throughput throughout
+tropics topics
+vents events
+viz via
+voltages voltage
+waned wanted
+accuse accused
+acquires acquired
+ale male sale able tale
+banded handed
+bans band bands banks
+boast boat boats
+brewed breed
+butt but
+closures closure
+complied compiled
+criticizes criticized
+cultured culture cultures
+dare care date rare
+decorate decorated
+dedicate dedicated
+drier driver
+dues due dies
+excerpt except
+fours tours
+gamers games
+gated gate
+gauges gauge
+hulls hills
+landscaped landscape
+lust list
+nearing hearing bearing
+nod nor
+outsider outside
+paler paper
+percentages percentage
+plead lead
+pleading leading
+profiled profile
+pronounce pronounced
+rash crash
+rename renamed
+revolved evolved
+rocker rocket
+rue due rule true
+rust trust
+seam steam
+seeming seeking
+shaded shared
+sine since wine
+slit split
+spoon soon
+spotting sporting
+swearing wearing
+sweat seat
+swung sung
+tiers ties
+tributes tribute
+typed type types
+uncles uncle
+universes universe
+vase base case
+ware are war wars aware
+aides sides
+aptitude altitude
+balances balance
+bets best gets
+buds bus
+cadre care
+congested contested
+cops crops
+devolved evolved
+dives drives
+dong doing song
+eaters waters
+exposes exposed
+fats fast fate
+filler filled
+foiled filed
+frees free trees
+hack back
+heater theater
+hue he huge
+humane humans
+initiates initiated
+integrates integrated
+loft lot lift
+mist must most moist
+niches inches
+notables notable
+panned planned
+pike like
+pill poll
+planner planned
+premieres premiered premiere
+racks tracks
+relayed related delayed
+renters enters
+resumes resumed
+rounding founding
+router route
+sans sand
+spit split spot spite
+sting string
+strung string
+sturdy study
+veneration generation
+vest best
+victor victory
+waking walking
+wares wars
+wastes waste
+yo to you go
+beaks breaks
+brig bring
+catchy catch
+characterizes characterized
+concerted converted
+crow crowd crown
+curing during
+cute cuts
+devotee devoted
+dismisses dismissed
+distanced distance
+exposures exposure
+fades faces
+fend tend
+gills hills
+handler handle
+hips ships
+lag flag lay
+lowers powers flowers
+masse mass
+mixer mixed
+moderated moderate
+ox box
+pas past pass
+powdered powered
+qualifies qualified
+raging rating ranging
+rarer rare
+reverence reference
+revise revised
+rip trip tip
+sewn seen
+skits sits
+snare share
+surprises surprise
+tighter fighter
+tilted titled
+transporter transported
+tray ray
+weeds seeds
+wig wing
+accommodates accommodate
+alleges alleged
+ape tape
+attaches attached
+authorize authorized
+defied defined
+derailed detailed
+designates designated
+discoverer discovered
+discus discuss
+dorm form
+drown down crown
+eased ceased
+elevate elevated
+fax tax
+fixes fixed
+gale tale
+germ term
+gin gun gain
+grained trained
+hacking backing
+heath health
+hive give
+hops hope shops hopes
+kissed missed
+laced placed
+lair pair laid
+loot lot
+lows low loss flows
+mules miles
+multiples multiple
+neat near meat beat heat
+negatives negative
+oranges orange
+pa pay
+pans plans
+plating playing
+pleads leads
+potion portion option
+primer prime
+raged rated
+refine define
+repeater repeated
+rounder founder
+ruse rise
+sap soap
+skit sit
+slid solid
+storied stories
+swarm warm
+swell well sell
+toad road
+tort fort
+weave wave
+yelling telling
+aces races faces acres
+alternates alternate
+awe we
+bang gang
+basses bases
+bogs boys
+bother brother
+challengers challenges
+chanted changed
+coke come
+dared dated
+debit debut
+decider decided decide
+discontinue discontinued
+elf self
+evolves evolved
+flex fled
+forked formed
+gill bill hill fill till
+goers goes
+hare hard share
+helper helped
+hoisted hosted
+homer home
+infer inter
+insider inside
+lest least let
+mover moved move
+nosed nose
+offensives offensive
+olives lives
+pines lines
+premiers premiere
+quartets quarters
+quits quite
+ranches branches
+ranger range danger
+rearing reading
+regimen regiment
+repaid repair
+reverses reverse
+rook took room
+routers routes
+runes runs
+rye eye
+sec sex
+sired aired
+slows slow
+sore score store shore wore
+steak steam
+tick thick
+toed tied
+toned tone
+tub tube
+urn run turn
+vases cases bases
+waning warning
+amp camp map
+bead head bear
+beset best
+burner burned
+ceases ceased
+classifies classified
+codex codes
+collars dollars
+crested created
+crows cross crowd
+curses courses
+deceived received
+deflected reflected
+devolution evolution revolution
+diversify diversity
+eds ends
+executes executed
+fable table cable
+fandom random
+fig fit
+finisher finished
+flea flew
+halo hall
+hander handed
+homers homes
+hopping hoping shopping
+imposes imposed
+inhabitant inhabitants
+injure injured
+inks links
+ire fire wire
+jade made
+licensee license licensed
+lowly slowly
+moles miles
+narrows narrow
+neatly nearly
+oft of off soft
+passer passed
+pies lies
+pled led
+ply play
+rang range
+rarest arrest
+rover river
+rower tower
+sable able stable
+salty salt
+sensed sense
+settles settled settlers settle
+shading sharing
+sped speed spend
+ta at tax tea
+taker take
+tame game take fame
+theses these
+tsar star
+versed verse
+vie view vice
+vultures cultures
+allege alleged
+animate animated
+caches coaches
+cock clock
+collaborates collaborated
+commences commenced
+digs dogs
+dissolves dissolved
+educates educated
+eel feel
+frail rail trail
+frank rank
+fry try dry
+frying trying
+gable table
+galley valley gallery
+gowns towns
+gusts guests
+headquarter headquarters
+hen when then
+inductee inducted
+inked linked
+learner learned
+lobed loved
+locates located
+loom look
+natured nature
+oats boats
+ode code mode
+ours hours tours
+pea peak
+peg leg
+perceives perceived
+ploy plot
+purchaser purchased purchase
+rafting rating
+rangers ranges
+refereed referred
+rein reign
+restores restored restore
+retarded regarded
+sages stages ages
+seeding seeing
+sixes sides
+slap soap
+spoil soil
+staring starting starring stating
+stave stage
+supper super
+swine wine
+ticker ticket
+til tail till tip
+usages usage
+wafer water
+warmed armed
+woo wood
+yells tells
+arming farming
+beet best beer
+blur blue
+brew grew
+bud bus bid
+bullion billion
+cove cover
+cubs clubs
+deceive receive
+deduce reduce
+deference reference
+deflect reflect
+dike die
+eared earned
+eater water
+faire fair
+fries tries
+gong going
+hinting hunting
+hog hot
+hoist host
+hug huge
+jeep keep
+leaved leave leaves
+looming looking
+looms looks
+mace made
+moor motor
+pacing placing
+payoff playoff
+pitting putting
+respite despite
+rifled rifle
+risking rising
+ruby rugby
+rung ring
+sampler sample
+sequenced sequence
+suicides suicide
+suing using sung sing
+taps tape
+tee thee tree fee
+tenured tenure
+wand and sand
+waved wave saved waves
+approves approved
+bridged bridge bridges
+bronzes bronze
+bun gun
+capo cap
+clams claims
+converged converted
+cropped dropped
+deco deck
+decode decide
+devotes devoted
+dikes dies
+fide fire ride
+gearing hearing bearing
+girlfriends girlfriend
+goth both
+hacked backed
+hoard board
+hoop hop
+hordes horses
+inspires inspired
+intermediates intermediate
+kung king
+lame lake lane
+masking making
+matte matter
+mime mine
+mobs jobs
+noses nose
+pave page
+populate populated
+rake take
+rams arms
+resigns designs
+retainer retained
+rune runs
+sedition edition
+sever ever severe server
+syndromes syndrome
+takers takes
+teas teams tea
+tiled titled filed
+unites units united
+valuables valuable
+vegan began
+wager water
+yell tell
+yours hours tours
+aero zero
+alum album
+amps camps maps
+atmospheres atmosphere
+circled circle
+clam claim clan
+coverts covers
+crates creates
+cub club
+deems seems
+dew few drew
+diction fiction
+exchanger exchange
+fad far
+fates dates rates fate
+fiance finance
+filly fully
+gal goal gap
+golds holds gold goods gods
+hares shares
+hound bound
+incited invited
+infrastructures infrastructure
+inwards onwards
+lad land lead laid load
+lager later larger layer
+leaned learned
+moderates moderate
+modifies modified
+payout layout
+pickled picked
+plush push
+powders powers
+radii radio
+rag ray
+rebate debate
+retires retired
+rife ride rice rifle
+roar road
+roost roots
+rub run
+rubbed dubbed
+rugs drugs
+saws saw
+sieges siege
+sieve siege
+sir air sit
+stag stage stay
+stare state star stars
+tack track
+taper tape
+timers times
+tread read
+troll roll
+wee were we see week
+wright weight
+yang gang
+ah an
+appointee appointed
+barrow narrow
+bop hop
+brides bridges
+brow grow brown
+char chart chair
+clover cover
+composes composed composers
+crate create
+deem seem
+detain retain
+diseased disease diseases
+dorms forms
+evidences evidence
+exerts experts
+faking taking
+franchised franchise
+fray ray
+fret feet
+hoods holds goods
+horde horse
+isolates isolated
+lice life live
+lien line alien
+loaf load
+mage image
+med me
+opposites opposite
+pegs legs
+phoned phone
+pint point print paint
+prides prices
+rained trained
+raiser raised raise
+raster faster
+remanded demanded
+returner returned
+rowers towers
+rug drug
+solder soldier
+soles sole
+soot spot shoot
+spade space
+sporty sport
+stele steel
+tabled table
+teak team
+toads roads
+um sum
+whipping shipping
+wisely widely
+wits sits
+writs write writes
+ark park dark arm mark
+astern eastern
+bard board hard bar bad bars
+booms books
+decoded decided
+defer refer
+demi semi
+dine fine done
+drip drop
+fakes takes
+fender gender
+foal goal coal
+fools tools
+gall fall ball hall tall
+heed need
+holed hold hole hoped
+hoses houses horses
+lander landed
+layoffs playoffs
+lifetimes lifetime
+machined machine machines
+masted master
+milled killed
+mink mini
+modifier modified
+mods mode
+mores more
+omen women
+plow low
+poplar popular
+preset present
+profess process
+programing programming
+pusher pushed
+railing failing
+sane same sand
+seer see seed
+shards shares
+shi ship
+shifter shifted
+silo solo
+sinners winners
+sow show slow snow
+sown down shown
+spokes spoke
+vet get
+vices vice
+whips ships
+wigs wings
+absences absence
+articular particular
+assembler assembled
+assembles assembled
+backer backed
+beards bears
+compiles compiled
+conformed confirmed
+conic comic
+cornet corner
+dearly early
+divorces divorced divorce
+donates donated
+dread read dead
+dries dies drives
+elven eleven
+ensue ensure
+fells tells cells
+fest rest feet test
+fling flying
+foals goals
+gatherer gathered
+girth birth
+gust guest
+hump jump
+imaged image images
+issuer issue issued
+loam loan
+mins mind mine mines
+natures nature
+pane plane panel lane
+passers passes
+paw law
+pierce piece
+pong long
+porting sporting
+positives positive
+quipped equipped
+raining training
+sequencer sequence
+signer signed singer
+sock stock shock
+stoned stone stones
+thrones throne
+urns runs turns
+vile file
+whim whom
+absorber absorbed
+artistes artists
+bushy busy
+cal call coal cap
+computes computers
+coupler couple
+divider divided
+dons done sons
+earthy earth
+fright right fight freight
+graces grades
+gull full
+gums guns
+hereafter thereafter
+hives gives
+hone home gone none phone bone
+hum him
+iced ice
+ills hills kills
+lick pick kick
+livres lives
+longed longer
+mil mile mill mail milk
+movers moves
+panes planes
+paws pass laws
+plying playing lying
+poke spoke pole
+putt put
+reap real
+reds red
+relaying relating
+resent present
+revives revived
+secures secure secured
+seizes seized
+sentry entry
+sly sky
+sod sold
+sowing showing
+spades spaces
+telephoned telephone
+terns terms
+trill till
+vat vast cat
+vial vital
+wafers waters
+weaves waves
+authorizes authorized
+caching coaching
+classifier classified
+cola coal
+criss cross crisis
+dedicates dedicated
+eights rights
+giver give
+grande grand
+hereby thereby
+informer informed
+injures injured injuries
+jin in join
+kissing missing
+nee new need
+pinion opinion
+plat play plant plate
+platter latter
+professing processing
+pyre pure
+raked ranked
+roe role rose row
+signers singers
+tiring firing
+voided voiced
+wingers singers
+aaren't aren't
+aasn't wasn't
+acn't can't
+aden't aren't
+adn't hadn't
+adren't aren't
+ae'd we'd
+ae'll we'll
+ae're we're
+ae've we've
+aeen't aren't
+aen't aren't
+aeren't aren't weren't
+aern't aren't
+afen't aren't
+afren't aren't
+ahat's what's
+ahdn't hadn't
+ahe'd she'd
+ahe'll she'll
+ahe's she's
+aho's who's
+ahouldn't shouldn't
+ahsn't hasn't
+ahven't haven't
+an't can't
+aon't won't
+aouldn't wouldn't
+aqren't aren't
+arden't aren't
+ardn't aren't
+are't aren't
+areb't aren't
+arebn't aren't
+aredn't aren't
+areen't aren't
+areh't aren't
+arehn't aren't
+arej't aren't
+arejn't aren't
+arem't aren't
+aremn't aren't
+aren'f aren't
+aren'ft aren't
+aren'g aren't
+aren'gt aren't
+aren'r aren't
+aren'rt aren't
+aren'tf aren't
+aren'tg aren't
+aren'tr aren't
+aren'tt aren't
+aren'ty aren't
+aren'y aren't
+aren'yt aren't
+arenb't aren't
+arenh't aren't
+arenj't aren't
+arenm't aren't
+arenn't aren't
+arern't aren't
+aresn't aren't
+arewn't aren't
+arfen't aren't
+arn't aren't
+arne't aren't
+arren't aren't
+arrn't aren't
+arsen't aren't
+arsn't aren't
+arten't aren't
+arwen't aren't
+arwn't aren't
+ashe'd she'd
+ashe'll she'll
+ashe's she's
+ashouldn't shouldn't
+asn't wasn't hasn't
+asren't aren't
+aten't aren't
+atren't aren't
+aven't haven't
+awasn't wasn't
+awe'd we'd
+awe'll we'll
+awe're we're
+awe've we've
+aweren't weren't
+awhat's what's
+awho's who's
+awon't won't
+awouldn't wouldn't
+awren't aren't
+awsn't wasn't
+azren't aren't
+badn't hadn't
+basn't hasn't
+baven't haven't
+be'd he'd
+be'll he'll
+be's he's
+bere's here's
+bhadn't hadn't
+bhasn't hasn't
+bhaven't haven't
+bhe'd he'd
+bhe'll he'll
+bhe's he's
+bhere's here's
+ca't can't
+caan't can't
+cab't can't
+cabn't can't
+cah't can't
+cahn't can't
+caj't can't
+cajn't can't
+cam't can't
+camn't can't
+can'f can't
+can'ft can't
+can'g can't
+can'gt can't
+can'r can't
+can'rt can't
+can'tf can't
+can'tg can't
+can'tr can't
+can'tt can't
+can'ty can't
+can'y can't
+can'yt can't
+canb't can't
+canh't can't
+canj't can't
+canm't can't
+cann't can't
+caqn't can't
+casn't can't
+cawn't can't
+cazn't can't
+ccan't can't
+ccouldn't couldn't
+cdan't can't
+cdidn't didn't
+cdoesn't doesn't
+cdon't don't
+cdouldn't couldn't
+cfan't can't
+cfouldn't couldn't
+cidn't didn't
+ciouldn't couldn't
+ciuldn't couldn't
+ckouldn't couldn't
+ckuldn't couldn't
+clouldn't couldn't
+cluldn't couldn't
+cn't can't
+cna't can't
+coesn't doesn't
+cohldn't couldn't
+cohuldn't couldn't
+coildn't couldn't
+coiuldn't couldn't
+cojldn't couldn't
+cojuldn't couldn't
+cokuldn't couldn't
+coldn't couldn't
+coludn't couldn't
+coluldn't couldn't
+con't don't
+coouldn't couldn't
+copuldn't couldn't
+coudln't couldn't
+coudn't couldn't
+couhldn't couldn't
+couildn't couldn't
+coujldn't couldn't
+coukdn't couldn't
+coukldn't couldn't
+coulcdn't couldn't
+coulcn't couldn't
+could't couldn't
+couldb't couldn't
+couldbn't couldn't
+couldcn't couldn't
+coulddn't couldn't
+coulden't couldn't
+couldfn't couldn't
+couldh't couldn't
+couldhn't couldn't
+couldj't couldn't
+couldjn't couldn't
+couldm't couldn't
+couldmn't couldn't
+couldn'f couldn't
+couldn'ft couldn't
+couldn'g couldn't
+couldn'gt couldn't
+couldn'r couldn't
+couldn'rt couldn't
+couldn'tf couldn't
+couldn'tg couldn't
+couldn'tr couldn't
+couldn'tt couldn't
+couldn'ty couldn't
+couldn'y couldn't
+couldn'yt couldn't
+couldnb't couldn't
+couldnh't couldn't
+couldnj't couldn't
+couldnm't couldn't
+couldnn't couldn't
+couldrn't couldn't
+couldsn't couldn't
+couldxn't couldn't
+couledn't couldn't
+coulen't couldn't
+coulfdn't couldn't
+coulfn't couldn't
+coulkdn't couldn't
+coulldn't couldn't
+couln't couldn't
+coulnd't couldn't
+coulodn't couldn't
+coulpdn't couldn't
+coulrdn't couldn't
+coulrn't couldn't
+coulsdn't couldn't
+coulsn't couldn't
+coulxdn't couldn't
+coulxn't couldn't
+couodn't couldn't
+couoldn't couldn't
+coupdn't couldn't
+coupldn't couldn't
+couuldn't couldn't
+couyldn't couldn't
+coyldn't couldn't
+coyuldn't couldn't
+cpouldn't couldn't
+cpuldn't couldn't
+cqan't can't
+cqn't can't
+csan't can't
+csn't can't
+culdn't couldn't
+cuoldn't couldn't
+cvan't can't
+cvouldn't couldn't
+cwan't can't
+cwn't can't
+cxan't can't
+cxouldn't couldn't
+czan't can't
+czn't can't
+dan't can't
+dcan't can't
+dcidn't didn't
+dcoesn't doesn't
+dcon't don't
+dcouldn't couldn't
+ddidn't didn't
+ddin't didn't
+ddn't didn't
+ddoesn't doesn't
+ddon't don't
+deidn't didn't
+deoesn't doesn't
+deon't don't
+deosn't doesn't
+desn't doesn't
+dfidn't didn't
+dfoesn't doesn't
+dfon't don't
+dhe'd she'd
+dhe'll she'll
+dhe's she's
+dhouldn't shouldn't
+dicdn't didn't
+dicn't didn't
+did't didn't
+didb't didn't
+didbn't didn't
+didcn't didn't
+diddn't didn't
+diden't didn't
+didfn't didn't
+didh't didn't
+didhn't didn't
+didj't didn't
+didjn't didn't
+didm't didn't
+didmn't didn't
+didn'f didn't
+didn'ft didn't
+didn'g didn't
+didn'gt didn't
+didn'r didn't
+didn'rt didn't
+didn'tf didn't
+didn'tg didn't
+didn'tr didn't
+didn'tt didn't
+didn'ty didn't
+didn'y didn't
+didn'yt didn't
+didnb't didn't
+didnh't didn't
+didnj't didn't
+didnm't didn't
+didnn't didn't
+didrn't didn't
+didsn't didn't
+didxn't didn't
+diedn't didn't
+dien't didn't
+diesn't doesn't
+difdn't didn't
+difn't didn't
+diidn't didn't
+dijdn't didn't
+dikdn't didn't
+din't don't didn't
+dind't didn't
+diodn't didn't
+dioesn't doesn't
+dion't don't
+dirdn't didn't
+dirn't didn't
+disdn't didn't
+disn't didn't
+diudn't didn't
+dixdn't didn't
+dixn't didn't
+djdn't didn't
+djidn't didn't
+dkdn't didn't
+dkesn't doesn't
+dkidn't didn't
+dkn't don't
+dkoesn't doesn't
+dkon't don't
+dlesn't doesn't
+dln't don't
+dloesn't doesn't
+dlon't don't
+dn't don't
+dno't don't
+do't don't
+dob't don't
+dobn't don't
+dodesn't doesn't
+dodn't didn't
+dodsn't doesn't
+doean't doesn't
+doeasn't doesn't
+doedn't doesn't
+doedsn't doesn't
+doeen't doesn't
+doeesn't doesn't
+doen't doesn't
+doens't doesn't
+doersn't doesn't
+does't doesn't
+doesan't doesn't
+doesb't doesn't
+doesbn't doesn't
+doesdn't doesn't
+doesen't doesn't
+doesh't doesn't
+doeshn't doesn't
+doesj't doesn't
+doesjn't doesn't
+doesm't doesn't
+doesmn't doesn't
+doesn'f doesn't
+doesn'ft doesn't
+doesn'g doesn't
+doesn'gt doesn't
+doesn'r doesn't
+doesn'rt doesn't
+doesn'tf doesn't
+doesn'tg doesn't
+doesn'tr doesn't
+doesn'tt doesn't
+doesn'ty doesn't
+doesn'y doesn't
+doesn'yt doesn't
+doesnb't doesn't
+doesnh't doesn't
+doesnj't doesn't
+doesnm't doesn't
+doesnn't doesn't
+doessn't doesn't
+doeswn't doesn't
+doesxn't doesn't
+doeszn't doesn't
+doewn't doesn't
+doewsn't doesn't
+doexn't doesn't
+doexsn't doesn't
+doezn't doesn't
+doezsn't doesn't
+doh't don't
+dohn't don't
+doidn't didn't
+doiesn't doesn't
+doin't don't
+doj't don't
+dojn't don't
+dokesn't doesn't
+dokn't don't
+dolesn't doesn't
+doln't don't
+dom't don't
+domn't don't
+don'f don't
+don'ft don't
+don'g don't
+don'gt don't
+don'r don't
+don'rt don't
+don'tf don't
+don'tg don't
+don'tr don't
+don'tt don't
+don'ty don't
+don'y don't
+don'yt don't
+donb't don't
+donh't don't
+donj't don't
+donm't don't
+donn't don't
+dooesn't doesn't
+doon't don't
+dopesn't doesn't
+dopn't don't
+doresn't doesn't
+dorsn't doesn't
+dosen't doesn't
+dosesn't doesn't
+dosn't doesn't
+dossn't doesn't
+douldn't couldn't
+dowesn't doesn't
+dowsn't doesn't
+dpesn't doesn't
+dpn't don't
+dpoesn't doesn't
+dpon't don't
+dridn't didn't
+droesn't doesn't
+dron't don't
+dshe'd she'd
+dshe'll she'll
+dshe's she's
+dshouldn't shouldn't
+dsidn't didn't
+dsoesn't doesn't
+dson't don't
+dudn't didn't
+duidn't didn't
+dxidn't didn't
+dxoesn't doesn't
+dxon't don't
+e'll we'll he'll
+e're we're
+e've we've
+easn't wasn't
+edidn't didn't
+edoesn't doesn't
+edon't don't
+ee'd we'd
+ee'll we'll
+ee're we're
+ee've we've
+eeren't weren't
+eh'd he'd
+eh'll he'll
+eh's he's
+ehat's what's
+ehe'd she'd
+ehe'll she'll
+ehe's she's
+eho's who's
+ehouldn't shouldn't
+ehre's here's
+eidn't didn't
+elt's let's
+eoesn't doesn't
+eon't won't don't
+eouldn't wouldn't
+ere's here's
+eren't weren't
+eshe'd she'd
+eshe'll she'll
+eshe's she's
+eshouldn't shouldn't
+et's let's
+ew'd we'd
+ew'll we'll
+ew're we're
+ew've we've
+ewasn't wasn't
+ewe'd we'd
+ewe'll we'll
+ewe're we're
+ewe've we've
+eweren't weren't
+ewhat's what's
+ewho's who's
+ewon't won't
+ewouldn't wouldn't
+ewren't weren't
+fan't can't
+fcan't can't
+fcouldn't couldn't
+fdidn't didn't
+fdoesn't doesn't
+fdon't don't
+fhat's that's
+fhere's there's
+fhey'd they'd
+fhey'll they'll
+fhey're they're
+fhey've they've
+fidn't didn't
+foesn't doesn't
+fon't don't
+fouldn't couldn't
+fthat's that's
+fthere's there's
+fthey'd they'd
+fthey'll they'll
+fthey're they're
+fthey've they've
+gadn't hadn't
+gasn't hasn't
+gaven't haven't
+ge'd he'd
+ge'll he'll
+ge's he's
+gere's here's
+ghadn't hadn't
+ghasn't hasn't
+ghat's that's
+ghaven't haven't
+ghe'd he'd
+ghe'll he'll
+ghe's he's
+ghere's there's here's
+ghey'd they'd
+ghey'll they'll
+ghey're they're
+ghey've they've
+gou'd you'd
+gou'll you'll
+gou're you're
+gou've you've
+gthat's that's
+gthere's there's
+gthey'd they'd
+gthey'll they'll
+gthey're they're
+gthey've they've
+gyou'd you'd
+gyou'll you'll
+gyou're you're
+gyou've you've
+h'll he'll
+haadn't hadn't
+haan't hasn't
+haasn't hasn't
+haaven't haven't
+haben't haven't
+habven't haven't
+hacdn't hadn't
+hacen't haven't
+hacn't hadn't
+hacven't haven't
+had't hadn't
+hadb't hadn't
+hadbn't hadn't
+hadcn't hadn't
+haddn't hadn't
+haden't hadn't
+hadfn't hadn't
+hadh't hadn't
+hadhn't hadn't
+hadj't hadn't
+hadjn't hadn't
+hadm't hadn't
+hadmn't hadn't
+hadn'f hadn't
+hadn'ft hadn't
+hadn'g hadn't
+hadn'gt hadn't
+hadn'r hadn't
+hadn'rt hadn't
+hadn'tf hadn't
+hadn'tg hadn't
+hadn'tr hadn't
+hadn'tt hadn't
+hadn'ty hadn't
+hadn'y hadn't
+hadn'yt hadn't
+hadnb't hadn't
+hadnh't hadn't
+hadnj't hadn't
+hadnm't hadn't
+hadnn't hadn't
+hadrn't hadn't
+hadsn't hasn't hadn't
+hadxn't hadn't
+haedn't hadn't
+haen't hasn't haven't hadn't
+haesn't hasn't
+haevn't haven't
+hafdn't hadn't
+hafen't haven't
+hafn't hadn't
+hafven't haven't
+hagen't haven't
+hagven't haven't
+han't hasn't hadn't
+hand't hadn't
+hans't hasn't
+haqdn't hadn't
+haqsn't hasn't
+haqven't haven't
+hardn't hadn't
+harn't hadn't
+has't hasn't
+hasan't hasn't
+hasb't hasn't
+hasbn't hasn't
+hasdn't hasn't hadn't
+hasen't hasn't
+hash't hasn't
+hashn't hasn't
+hasj't hasn't
+hasjn't hasn't
+hasm't hasn't
+hasmn't hasn't
+hasn'f hasn't
+hasn'ft hasn't
+hasn'g hasn't
+hasn'gt hasn't
+hasn'r hasn't
+hasn'rt hasn't
+hasn'tf hasn't
+hasn'tg hasn't
+hasn'tr hasn't
+hasn'tt hasn't
+hasn'ty hasn't
+hasn'y hasn't
+hasn'yt hasn't
+hasnb't hasn't
+hasnh't hasn't
+hasnj't hasn't
+hasnm't hasn't
+hasnn't hasn't
+hassn't hasn't
+hasven't haven't
+haswn't hasn't
+hasxn't hasn't
+haszn't hasn't
+hat's that's what's
+havben't haven't
+havcen't haven't
+havden't haven't
+havdn't haven't
+have't haven't
+haveb't haven't
+havebn't haven't
+havedn't haven't
+haveen't haven't
+haveh't haven't
+havehn't haven't
+havej't haven't
+havejn't haven't
+havem't haven't
+havemn't haven't
+haven'f haven't
+haven'ft haven't
+haven'g haven't
+haven'gt haven't
+haven'r haven't
+haven'rt haven't
+haven'tf haven't
+haven'tg haven't
+haven'tr haven't
+haven'tt haven't
+haven'ty haven't
+haven'y haven't
+haven'yt haven't
+havenb't haven't
+havenh't haven't
+havenj't haven't
+havenm't haven't
+havenn't haven't
+havern't haven't
+havesn't haven't
+havewn't haven't
+havfen't haven't
+havgen't haven't
+havn't haven't
+havne't haven't
+havren't haven't
+havrn't haven't
+havsen't haven't
+havsn't haven't
+havven't haven't
+havwen't haven't
+havwn't haven't
+hawdn't hadn't
+hawn't hasn't
+hawsn't hasn't
+hawven't haven't
+haxdn't hadn't
+haxn't hasn't hadn't
+haxsn't hasn't
+hazdn't hadn't
+hazn't hasn't
+hazsn't hasn't
+hazven't haven't
+hbadn't hadn't
+hbasn't hasn't
+hbaven't haven't
+hbe'd he'd
+hbe'll he'll
+hbe's he's
+hbere's here's
+hd'd he'd
+hd'll he'll
+hd's he's
+hdan't hadn't
+hde'd he'd
+hde'll he'll
+hde's he's
+hdere's here's
+hdn't hadn't
+hdre's here's
+he'a he's
+he'as he's
+he'c he'd
+he'cd he'd
+he'dc he'd
+he'dd he'd
+he'de he'd
+he'df he'd
+he'dr he'd
+he'ds he's he'd
+he'dx he'd
+he'e he's he'd
+he'ed he'd
+he'es he's
+he'f he'd
+he'fd he'd
+he'kl he'll
+he'kll he'll
+he'l he'll
+he'lk he'll
+he'lkl he'll
+he'llk he'll
+he'lll he'll
+he'llo he'll
+he'llp he'll
+he'lo he'll
+he'lol he'll
+he'lp he'll
+he'lpl he'll
+he'ol he'll
+he'oll he'll
+he'pl he'll
+he'pll he'll
+he'r he'd
+he'rd he'd
+he'sa he's
+he'sd he's he'd
+he'se he's
+he'ss he's
+he'sw he's
+he'sx he's
+he'sz he's
+he'w he's
+he'ws he's
+he'x he's he'd
+he'xd he'd
+he'xs he's
+he'z he's
+he'zs he's
+hed'd he'd
+hed'll he'll
+hed's he's
+hede's here's
+hedre's here's
+hee'd he'd
+hee'll he'll
+hee's here's he's
+heee's here's
+heer's here's
+heere's here's
+hefe's here's
+hefre's here's
+her'd he'd
+her'll he'll
+her's here's he's
+herd's here's
+herde's here's
+here'a here's
+here'as here's
+here'd here's
+here'ds here's
+here'e here's
+here'es here's
+here'sa here's
+here'sd here's
+here'se here's
+here'ss here's
+here'sw here's
+here'sx here's
+here'sz here's
+here'w here's
+here'ws here's
+here'x here's
+here'xs here's
+here'z here's
+here'zs here's
+hered's here's
+heree's here's
+herer's here's
+heres's here's
+herew's here's
+herfe's here's
+herr's here's
+herre's here's
+hers's here's
+herse's here's
+herte's here's
+herw's here's
+herwe's here's
+hes'd he'd
+hes'll he'll
+hes's he's
+hesre's here's
+hete's here's
+hetre's here's
+hew'd he'd
+hew'll he'll
+hew's he's
+hewre's here's
+hey'd they'd
+hey'll they'll
+hey're they're
+hey've they've
+hgadn't hadn't
+hgasn't hasn't
+hgaven't haven't
+hge'd he'd
+hge'll he'll
+hge's he's
+hgere's here's
+hhadn't hadn't
+hhasn't hasn't
+hhaven't haven't
+hhe'd he'd
+hhe'll he'll
+hhe's he's
+hhere's here's
+hjadn't hadn't
+hjasn't hasn't
+hjaven't haven't
+hje'd he'd
+hje'll he'll
+hje's he's
+hjere's here's
+hnadn't hadn't
+hnasn't hasn't
+hnaven't haven't
+hne'd he'd
+hne'll he'll
+hne's he's
+hnere's here's
+ho's who's
+hou'd you'd
+hou'll you'll
+hou're you're
+hou've you've
+houldn't shouldn't
+hqadn't hadn't
+hqasn't hasn't
+hqaven't haven't
+hqdn't hadn't
+hqsn't hasn't
+hqven't haven't
+hr'd he'd
+hr'll he'll
+hr's he's
+hre'd he'd
+hre'll he'll
+hre's here's he's
+hree's here's
+hrere's here's
+hrre's here's
+hs'd he'd
+hs'll he'll
+hs's he's
+hsadn't hadn't
+hsan't hasn't
+hsasn't hasn't
+hsaven't haven't
+hsdn't hadn't
+hse'd he'd she'd
+hse'll he'll she'll
+hse's he's she's
+hsere's here's
+hsn't hasn't
+hsouldn't shouldn't
+hsre's here's
+hssn't hasn't
+hsven't haven't
+htat's that's
+htere's there's
+htey'd they'd
+htey'll they'll
+htey're they're
+htey've they've
+huadn't hadn't
+huasn't hasn't
+huaven't haven't
+hue'd he'd
+hue'll he'll
+hue's he's
+huere's here's
+hvaen't haven't
+hven't haven't
+hw'd he'd
+hw'll he'll
+hw's he's
+hwadn't hadn't
+hwasn't hasn't
+hwat's what's
+hwaven't haven't
+hwdn't hadn't
+hwe'd he'd
+hwe'll he'll
+hwe's he's
+hwere's here's
+hwo's who's
+hwre's here's
+hwsn't hasn't
+hwven't haven't
+hyadn't hadn't
+hyasn't hasn't
+hyaven't haven't
+hye'd he'd
+hye'll he'll
+hye's he's
+hyere's here's
+hyou'd you'd
+hyou'll you'll
+hyou're you're
+hyou've you've
+hzadn't hadn't
+hzasn't hasn't
+hzaven't haven't
+hzdn't hadn't
+hzsn't hasn't
+hzven't haven't
+i'be i've
+i'bve i've
+i'cd i'd
+i'ce i've
+i'cve i've
+i'dc i'd
+i'dd i'd
+i'de i'd
+i'df i'd
+i'dr i'd
+i'ds i'd
+i'dx i'd
+i'ed i'd
+i'ev i've
+i'fd i'd
+i'fe i've
+i'fve i've
+i'ge i've
+i'gve i've
+i'jm i'm
+i'kl i'll
+i'kll i'll
+i'km i'm
+i'lk i'll
+i'lkl i'll
+i'llk i'll
+i'lll i'll
+i'llo i'll
+i'llp i'll
+i'lo i'll
+i'lol i'll
+i'lp i'll
+i'lpl i'll
+i'mj i'm
+i'mk i'm
+i'mm i'm
+i'mn i'm
+i'nm i'm
+i'ol i'll
+i'oll i'll
+i'pl i'll
+i'pll i'll
+i'rd i'd
+i'sd i'd
+i'vbe i've
+i'vce i've
+i'vd i've
+i'vde i've
+i'ved i've
+i'vee i've
+i'ver i've
+i'ves i've
+i'vew i've
+i'vfe i've
+i'vge i've
+i'vr i've
+i'vre i've
+i'vs i've
+i'vse i've
+i'vve i've
+i'vw i've
+i'vwe i've
+i'xd i'd
+ian't isn't
+iasn't isn't
+iddn't didn't
+idn't didn't isn't
+idsn't isn't
+ien't isn't
+iesn't isn't
+if'll it'll
+if's it's
+ift'll it'll
+ift's it's
+ig'll it'll
+ig's it's
+igt'll it'll
+igt's it's
+ii'd i'd
+ii'll i'll
+ii'm i'm
+ii've i've
+iisn't isn't
+iit'll it'll
+iit's it's
+ij'd i'd
+ij'll i'll
+ij'm i'm
+ij've i've
+ijsn't isn't
+ijt'll it'll
+ijt's it's
+ik'd i'd
+ik'll i'll
+ik'm i'm
+ik've i've
+iksn't isn't
+ikt'll it'll
+ikt's it's
+in't isn't
+ins't isn't
+io'd i'd
+io'll i'll
+io'm i'm
+io've i've
+iosn't isn't
+iot'll it'll
+iot's it's
+ir'll it'll
+ir's it's
+irt'll it'll
+irt's it's
+is't isn't
+isan't isn't
+isb't isn't
+isbn't isn't
+isdn't isn't
+isen't isn't
+ish't isn't
+ishn't isn't
+isj't isn't
+isjn't isn't
+ism't isn't
+ismn't isn't
+isn'f isn't
+isn'ft isn't
+isn'g isn't
+isn'gt isn't
+isn'r isn't
+isn'rt isn't
+isn'tf isn't
+isn'tg isn't
+isn'tr isn't
+isn'tt isn't
+isn'ty isn't
+isn'y isn't
+isn'yt isn't
+isnb't isn't
+isnh't isn't
+isnj't isn't
+isnm't isn't
+isnn't isn't
+issn't isn't
+iswn't isn't
+isxn't isn't
+iszn't isn't
+it'a it's
+it'as it's
+it'd it's
+it'ds it's
+it'e it's
+it'es it's
+it'kl it'll
+it'kll it'll
+it'l it'll
+it'lk it'll
+it'lkl it'll
+it'llk it'll
+it'lll it'll
+it'llo it'll
+it'llp it'll
+it'lo it'll
+it'lol it'll
+it'lp it'll
+it'lpl it'll
+it'ol it'll
+it'oll it'll
+it'pl it'll
+it'pll it'll
+it'sa it's
+it'sd it's
+it'se it's
+it'ss it's
+it'sw it's
+it'sx it's
+it'sz it's
+it'w it's
+it'ws it's
+it'x it's
+it'xs it's
+it'z it's
+it'zs it's
+itf'll it'll
+itf's it's
+itg'll it'll
+itg's it's
+itr'll it'll
+itr's it's
+itt'll it'll
+itt's it's
+ity'll it'll
+ity's it's
+iu'd i'd
+iu'll i'll
+iu'm i'm
+iu've i've
+iusn't isn't
+iut'll it'll
+iut's it's
+iwn't isn't
+iwsn't isn't
+ixn't isn't
+ixsn't isn't
+iy'll it'll
+iy's it's
+iyt'll it'll
+iyt's it's
+izn't isn't
+izsn't isn't
+j'll i'll
+j've i've
+jadn't hadn't
+jasn't hasn't
+javen't haven't
+je'd he'd
+je'll he'll
+je's he's
+jere's here's
+jhadn't hadn't
+jhasn't hasn't
+jhaven't haven't
+jhe'd he'd
+jhe'll he'll
+jhe's he's
+jhere's here's
+ji'd i'd
+ji'll i'll
+ji'm i'm
+ji've i've
+jisn't isn't
+jit'll it'll
+jit's it's
+jsn't isn't
+jt'll it'll
+jt's it's
+k'll i'll
+k've i've
+ket's let's
+ki'd i'd
+ki'll i'll
+ki'm i'm
+ki've i've
+kisn't isn't
+kit'll it'll
+kit's it's
+klet's let's
+ksn't isn't
+kt'll it'll
+kt's it's
+ldet's let's
+ldt's let's
+le's let's
+ledt's let's
+leet's let's
+lef's let's
+left's let's
+leg's let's
+legt's let's
+ler's let's
+lert's let's
+lest's let's
+let'a let's
+let'as let's
+let'd let's
+let'ds let's
+let'e let's
+let'es let's
+let'sa let's
+let'sd let's
+let'se let's
+let'ss let's
+let'sw let's
+let'sx let's
+let'sz let's
+let'w let's
+let'ws let's
+let'x let's
+let'xs let's
+let'z let's
+let'zs let's
+letf's let's
+letg's let's
+letr's let's
+lett's let's
+lety's let's
+lewt's let's
+ley's let's
+leyt's let's
+lket's let's
+llet's let's
+loet's let's
+lpet's let's
+lret's let's
+lrt's let's
+lset's let's
+lst's let's
+lt's let's
+lte's let's
+lwet's let's
+lwt's let's
+nadn't hadn't
+nasn't hasn't
+naven't haven't
+ne'd he'd
+ne'll he'll
+ne's he's
+nere's here's
+nhadn't hadn't
+nhasn't hasn't
+nhaven't haven't
+nhe'd he'd
+nhe'll he'll
+nhe's he's
+nhere's here's
+o'll i'll
+o've i've
+oculdn't couldn't
+odesn't doesn't
+odn't don't
+oesn't doesn't
+oet's let's
+oi'd i'd
+oi'll i'll
+oi'm i'm
+oi've i've
+oisn't isn't
+oit'll it'll
+oit's it's
+olet's let's
+on't won't don't
+osn't isn't
+ot'll it'll
+ot's it's
+ou'd you'd
+ou'll you'll
+ou're you're
+ou've you've
+ouldn't couldn't wouldn't
+own't won't
+owuldn't wouldn't
+oyu'd you'd
+oyu'll you'll
+oyu're you're
+oyu've you've
+pet's let's
+plet's let's
+qaren't aren't
+qasn't wasn't
+qe'd we'd
+qe'll we'll
+qe're we're
+qe've we've
+qeren't weren't
+qhat's what's
+qho's who's
+qon't won't
+qouldn't wouldn't
+qren't aren't
+qwasn't wasn't
+qwe'd we'd
+qwe'll we'll
+qwe're we're
+qwe've we've
+qweren't weren't
+qwhat's what's
+qwho's who's
+qwon't won't
+qwouldn't wouldn't
+raen't aren't
+rdidn't didn't
+rdoesn't doesn't
+rdon't don't
+ren't aren't
+rhat's that's
+rhere's there's
+rhey'd they'd
+rhey'll they'll
+rhey're they're
+rhey've they've
+ridn't didn't
+roesn't doesn't
+ron't don't
+rthat's that's
+rthere's there's
+rthey'd they'd
+rthey'll they'll
+rthey're they're
+rthey've they've
+sahe'd she'd
+sahe'll she'll
+sahe's she's
+sahouldn't shouldn't
+saren't aren't
+sasn't wasn't
+sbe'd she'd
+sbe'll she'll
+sbe's she's
+sbhe'd she'd
+sbhe'll she'll
+sbhe's she's
+sbhouldn't shouldn't
+sbouldn't shouldn't
+sdhe'd she'd
+sdhe'll she'll
+sdhe's she's
+sdhouldn't shouldn't
+sdidn't didn't
+sdoesn't doesn't
+sdon't don't
+se'd she'd we'd
+se'll we'll she'll
+se're we're
+se's she's
+se've we've
+seh'd she'd
+seh'll she'll
+seh's she's
+sehe'd she'd
+sehe'll she'll
+sehe's she's
+sehouldn't shouldn't
+seren't weren't
+sge'd she'd
+sge'll she'll
+sge's she's
+sghe'd she'd
+sghe'll she'll
+sghe's she's
+sghouldn't shouldn't
+sgouldn't shouldn't
+sh'd she'd
+sh'll she'll
+sh's she's
+shat's what's
+shbe'd she'd
+shbe'll she'll
+shbe's she's
+shbouldn't shouldn't
+shd'd she'd
+shd'll she'll
+shd's she's
+shde'd she'd
+shde'll she'll
+shde's she's
+she'a she's
+she'as she's
+she'c she'd
+she'cd she'd
+she'dc she'd
+she'dd she'd
+she'de she'd
+she'df she'd
+she'dr she'd
+she'ds she's she'd
+she'dx she'd
+she'e she's she'd
+she'ed she'd
+she'es she's
+she'f she'd
+she'fd she'd
+she'kl she'll
+she'kll she'll
+she'l she'll
+she'lk she'll
+she'lkl she'll
+she'llk she'll
+she'lll she'll
+she'llo she'll
+she'llp she'll
+she'lo she'll
+she'lol she'll
+she'lp she'll
+she'lpl she'll
+she'ol she'll
+she'oll she'll
+she'pl she'll
+she'pll she'll
+she'r she'd
+she'rd she'd
+she'sa she's
+she'sd she's she'd
+she'se she's
+she'ss she's
+she'sw she's
+she'sx she's
+she'sz she's
+she'w she's
+she'ws she's
+she'x she's she'd
+she'xd she'd
+she'xs she's
+she'z she's
+she'zs she's
+shed'd she'd
+shed'll she'll
+shed's she's
+shee'd she'd
+shee'll she'll
+shee's she's
+sher'd she'd
+sher'll she'll
+sher's she's
+shes'd she'd
+shes'll she'll
+shes's she's
+shew'd she'd
+shew'll she'll
+shew's she's
+shge'd she'd
+shge'll she'll
+shge's she's
+shgouldn't shouldn't
+shhe'd she'd
+shhe'll she'll
+shhe's she's
+shhouldn't shouldn't
+shiouldn't shouldn't
+shiuldn't shouldn't
+shje'd she'd
+shje'll she'll
+shje's she's
+shjouldn't shouldn't
+shkouldn't shouldn't
+shkuldn't shouldn't
+shlouldn't shouldn't
+shluldn't shouldn't
+shne'd she'd
+shne'll she'll
+shne's she's
+shnouldn't shouldn't
+sho's who's
+shohldn't shouldn't
+shohuldn't shouldn't
+shoildn't shouldn't
+shoiuldn't shouldn't
+shojldn't shouldn't
+shojuldn't shouldn't
+shokuldn't shouldn't
+sholdn't shouldn't
+sholudn't shouldn't
+sholuldn't shouldn't
+shoouldn't shouldn't
+shopuldn't shouldn't
+shoudln't shouldn't
+shoudn't shouldn't
+shouhldn't shouldn't
+shouildn't shouldn't
+shoujldn't shouldn't
+shoukdn't shouldn't
+shoukldn't shouldn't
+shoulcdn't shouldn't
+shoulcn't shouldn't
+should't shouldn't
+shouldb't shouldn't
+shouldbn't shouldn't
+shouldcn't shouldn't
+shoulddn't shouldn't
+shoulden't shouldn't
+shouldfn't shouldn't
+shouldh't shouldn't
+shouldhn't shouldn't
+shouldj't shouldn't
+shouldjn't shouldn't
+shouldm't shouldn't
+shouldmn't shouldn't
+shouldn'f shouldn't
+shouldn'ft shouldn't
+shouldn'g shouldn't
+shouldn'gt shouldn't
+shouldn'r shouldn't
+shouldn'rt shouldn't
+shouldn'tf shouldn't
+shouldn'tg shouldn't
+shouldn'tr shouldn't
+shouldn'tt shouldn't
+shouldn'ty shouldn't
+shouldn'y shouldn't
+shouldn'yt shouldn't
+shouldnb't shouldn't
+shouldnh't shouldn't
+shouldnj't shouldn't
+shouldnm't shouldn't
+shouldnn't shouldn't
+shouldrn't shouldn't
+shouldsn't shouldn't
+shouldxn't shouldn't
+shouledn't shouldn't
+shoulen't shouldn't
+shoulfdn't shouldn't
+shoulfn't shouldn't
+shoulkdn't shouldn't
+shoulldn't shouldn't
+shouln't shouldn't
+shoulnd't shouldn't
+shoulodn't shouldn't
+shoulpdn't shouldn't
+shoulrdn't shouldn't
+shoulrn't shouldn't
+shoulsdn't shouldn't
+shoulsn't shouldn't
+shoulxdn't shouldn't
+shoulxn't shouldn't
+shouodn't shouldn't
+shouoldn't shouldn't
+shoupdn't shouldn't
+shoupldn't shouldn't
+shouuldn't shouldn't
+shouyldn't shouldn't
+shoyldn't shouldn't
+shoyuldn't shouldn't
+shpouldn't shouldn't
+shpuldn't shouldn't
+shr'd she'd
+shr'll she'll
+shr's she's
+shre'd she'd
+shre'll she'll
+shre's she's
+shs'd she'd
+shs'll she'll
+shs's she's
+shse'd she'd
+shse'll she'll
+shse's she's
+shue'd she'd
+shue'll she'll
+shue's she's
+shuldn't shouldn't
+shuoldn't shouldn't
+shuouldn't shouldn't
+shw'd she'd
+shw'll she'll
+shw's she's
+shwe'd she'd
+shwe'll she'll
+shwe's she's
+shye'd she'd
+shye'll she'll
+shye's she's
+shyouldn't shouldn't
+sidn't didn't
+sin't isn't
+sje'd she'd
+sje'll she'll
+sje's she's
+sjhe'd she'd
+sjhe'll she'll
+sjhe's she's
+sjhouldn't shouldn't
+sjouldn't shouldn't
+sn't isn't
+sne'd she'd
+sne'll she'll
+sne's she's
+snhe'd she'd
+snhe'll she'll
+snhe's she's
+snhouldn't shouldn't
+snouldn't shouldn't
+soesn't doesn't
+sohuldn't shouldn't
+son't won't don't
+souldn't wouldn't shouldn't
+sren't aren't
+sshe'd she'd
+sshe'll she'll
+sshe's she's
+sshouldn't shouldn't
+sue'd she'd
+sue'll she'll
+sue's she's
+suhe'd she'd
+suhe'll she'll
+suhe's she's
+suhouldn't shouldn't
+suouldn't shouldn't
+swasn't wasn't
+swe'd we'd
+swe'll we'll
+swe're we're
+swe've we've
+sweren't weren't
+swhat's what's
+swhe'd she'd
+swhe'll she'll
+swhe's she's
+swho's who's
+swhouldn't shouldn't
+swon't won't
+swouldn't wouldn't
+sxhe'd she'd
+sxhe'll she'll
+sxhe's she's
+sxhouldn't shouldn't
+sye'd she'd
+sye'll she'll
+sye's she's
+syhe'd she'd
+syhe'll she'll
+syhe's she's
+syhouldn't shouldn't
+syouldn't shouldn't
+szhe'd she'd
+szhe'll she'll
+szhe's she's
+szhouldn't shouldn't
+t'll it'll
+taht's that's
+tat's that's
+tbat's that's
+tbere's there's
+tbey'd they'd
+tbey'll they'll
+tbey're they're
+tbey've they've
+tbhat's that's
+tbhere's there's
+tbhey'd they'd
+tbhey'll they'll
+tbhey're they're
+tbhey've they've
+tehre's there's
+tehy'd they'd
+tehy'll they'll
+tehy're they're
+tehy've they've
+tere's there's
+tey'd they'd
+tey'll they'll
+tey're they're
+tey've they've
+tfhat's that's
+tfhere's there's
+tfhey'd they'd
+tfhey'll they'll
+tfhey're they're
+tfhey've they've
+tgat's that's
+tgere's there's
+tgey'd they'd
+tgey'll they'll
+tgey're they're
+tgey've they've
+tghat's that's
+tghere's there's
+tghey'd they'd
+tghey'll they'll
+tghey're they're
+tghey've they've
+tha's that's
+thaat's that's
+thaf's that's
+thaft's that's
+thag's that's
+thagt's that's
+thaqt's that's
+thar's that's
+thart's that's
+thast's that's
+that'a that's
+that'as that's
+that'd that's
+that'ds that's
+that'e that's
+that'es that's
+that'sa that's
+that'sd that's
+that'se that's
+that'ss that's
+that'sw that's
+that'sx that's
+that'sz that's
+that'w that's
+that'ws that's
+that'x that's
+that'xs that's
+that'z that's
+that'zs that's
+thatf's that's
+thatg's that's
+thatr's that's
+thatt's that's
+thaty's that's
+thawt's that's
+thay's that's
+thayt's that's
+thazt's that's
+thbat's that's
+thbere's there's
+thbey'd they'd
+thbey'll they'll
+thbey're they're
+thbey've they've
+thdere's there's
+thdey'd they'd
+thdey'll they'll
+thdey're they're
+thdey've they've
+thdre's there's
+thdy'd they'd
+thdy'll they'll
+thdy're they're
+thdy've they've
+the'd they'd
+the'll they'll
+the're they're
+the've they've
+thede's there's
+thedre's there's
+thedy'd they'd
+thedy'll they'll
+thedy're they're
+thedy've they've
+thee's there's
+theee's there's
+theer's there's
+theere's there's
+theey'd they'd
+theey'll they'll
+theey're they're
+theey've they've
+thefe's there's
+thefre's there's
+theg'd they'd
+theg'll they'll
+theg're they're
+theg've they've
+thegy'd they'd
+thegy'll they'll
+thegy're they're
+thegy've they've
+theh'd they'd
+theh'll they'll
+theh're they're
+theh've they've
+thehy'd they'd
+thehy'll they'll
+thehy're they're
+thehy've they've
+ther's there's
+therd's there's
+therde's there's
+there'a there's
+there'as there's
+there'd there's
+there'ds there's
+there'e there's
+there'es there's
+there'sa there's
+there'sd there's
+there'se there's
+there'ss there's
+there'sw there's
+there'sx there's
+there'sz there's
+there'w there's
+there'ws there's
+there'x there's
+there'xs there's
+there'z there's
+there'zs there's
+thered's there's
+theree's there's
+therer's there's
+theres's there's
+therew's there's
+therfe's there's
+therr's there's
+therre's there's
+thers's there's
+therse's there's
+therte's there's
+therw's there's
+therwe's there's
+thery'd they'd
+thery'll they'll
+thery're they're
+thery've they've
+thesre's there's
+thesy'd they'd
+thesy'll they'll
+thesy're they're
+thesy've they've
+thet'd they'd
+thet'll they'll
+thet're they're
+thet've they've
+thete's there's
+thetre's there's
+thety'd they'd
+thety'll they'll
+thety're they're
+thety've they've
+theu'd they'd
+theu'll they'll
+theu're they're
+theu've they've
+theuy'd they'd
+theuy'll they'll
+theuy're they're
+theuy've they've
+thewre's there's
+thewy'd they'd
+thewy'll they'll
+thewy're they're
+thewy've they've
+they'be they've
+they'bve they've
+they'c they'd
+they'cd they'd
+they'ce they've
+they'cve they've
+they'dc they'd
+they'dd they'd
+they'de they're they'd
+they'df they'd
+they'dr they'd
+they'dre they're
+they'ds they'd
+they'dx they'd
+they'e they're they've they'd
+they'ed they'd
+they'ee they're
+they'er they're
+they'ere they're
+they'ev they've
+they'f they'd
+they'fd they'd
+they'fe they're they've
+they'fre they're
+they'fve they've
+they'ge they've
+they'gve they've
+they'kl they'll
+they'kll they'll
+they'l they'll
+they'lk they'll
+they'lkl they'll
+they'llk they'll
+they'lll they'll
+they'llo they'll
+they'llp they'll
+they'lo they'll
+they'lol they'll
+they'lp they'll
+they'lpl they'll
+they'ol they'll
+they'oll they'll
+they'pl they'll
+they'pll they'll
+they'r they're they'd
+they'rd they're they'd
+they'rde they're
+they'red they're
+they'ree they're
+they'rer they're
+they'res they're
+they'rew they're
+they'rfe they're
+they'rr they're
+they'rre they're
+they'rs they're
+they'rse they're
+they'rte they're
+they'rw they're
+they'rwe they're
+they's they'd
+they'sd they'd
+they'te they're
+they'tre they're
+they'v they've
+they'vbe they've
+they'vce they've
+they'vd they've
+they'vde they've
+they'ved they've
+they'vee they've
+they'ver they've
+they'ves they've
+they'vew they've
+they'vfe they've
+they'vge they've
+they'vr they've
+they'vre they've
+they'vs they've
+they'vse they've
+they'vve they've
+they'vw they've
+they'vwe they've
+they'x they'd
+they'xd they'd
+theyg'd they'd
+theyg'll they'll
+theyg're they're
+theyg've they've
+theyh'd they'd
+theyh'll they'll
+theyh're they're
+theyh've they've
+theyt'd they'd
+theyt'll they'll
+theyt're they're
+theyt've they've
+theyu'd they'd
+theyu'll they'll
+theyu're they're
+theyu've they've
+theyy'd they'd
+theyy'll they'll
+theyy're they're
+theyy've they've
+thgat's that's
+thgere's there's
+thgey'd they'd
+thgey'll they'll
+thgey're they're
+thgey've they've
+thhat's that's
+thhere's there's
+thhey'd they'd
+thhey'll they'll
+thhey're they're
+thhey've they've
+thjat's that's
+thjere's there's
+thjey'd they'd
+thjey'll they'll
+thjey're they're
+thjey've they've
+thnat's that's
+thnere's there's
+thney'd they'd
+thney'll they'll
+thney're they're
+thney've they've
+thqat's that's
+thqt's that's
+thre's there's
+three's there's
+threre's there's
+threy'd they'd
+threy'll they'll
+threy're they're
+threy've they've
+thrre's there's
+thry'd they'd
+thry'll they'll
+thry're they're
+thry've they've
+thsat's that's
+thsere's there's
+thsey'd they'd
+thsey'll they'll
+thsey're they're
+thsey've they've
+thsre's there's
+thst's that's
+thsy'd they'd
+thsy'll they'll
+thsy're they're
+thsy've they've
+tht's that's
+thta's that's
+thuat's that's
+thuere's there's
+thuey'd they'd
+thuey'll they'll
+thuey're they're
+thuey've they've
+thwat's that's
+thwere's there's
+thwey'd they'd
+thwey'll they'll
+thwey're they're
+thwey've they've
+thwre's there's
+thwt's that's
+thwy'd they'd
+thwy'll they'll
+thwy're they're
+thwy've they've
+thy'd they'd
+thy'll they'll
+thy're they're
+thy've they've
+thyat's that's
+thye'd they'd
+thye'll they'll
+thye're they're
+thye've they've
+thyere's there's
+thyey'd they'd
+thyey'll they'll
+thyey're they're
+thyey've they've
+thzat's that's
+thzt's that's
+ti'll it'll
+ti's it's
+tjat's that's
+tjere's there's
+tjey'd they'd
+tjey'll they'll
+tjey're they're
+tjey've they've
+tjhat's that's
+tjhere's there's
+tjhey'd they'd
+tjhey'll they'll
+tjhey're they're
+tjhey've they've
+tnat's that's
+tnere's there's
+tney'd they'd
+tney'll they'll
+tney're they're
+tney've they've
+tnhat's that's
+tnhere's there's
+tnhey'd they'd
+tnhey'll they'll
+tnhey're they're
+tnhey've they've
+tou'd you'd
+tou'll you'll
+tou're you're
+tou've you've
+trhat's that's
+trhere's there's
+trhey'd they'd
+trhey'll they'll
+trhey're they're
+trhey've they've
+tthat's that's
+tthere's there's
+tthey'd they'd
+tthey'll they'll
+tthey're they're
+tthey've they've
+tuat's that's
+tuere's there's
+tuey'd they'd
+tuey'll they'll
+tuey're they're
+tuey've they've
+tuhat's that's
+tuhere's there's
+tuhey'd they'd
+tuhey'll they'll
+tuhey're they're
+tuhey've they've
+tyat's that's
+tyere's there's
+tyey'd they'd
+tyey'll they'll
+tyey're they're
+tyey've they've
+tyhat's that's
+tyhere's there's
+tyhey'd they'd
+tyhey'll they'll
+tyhey're they're
+tyhey've they've
+tyou'd you'd
+tyou'll you'll
+tyou're you're
+tyou've you've
+u'll i'll
+u've i've
+uadn't hadn't
+uasn't hasn't
+uaven't haven't
+ue'd he'd
+ue'll he'll
+ue's he's
+uere's here's
+uhadn't hadn't
+uhasn't hasn't
+uhaven't haven't
+uhe'd he'd
+uhe'll he'll
+uhe's he's
+uhere's here's
+ui'd i'd
+ui'll i'll
+ui'm i'm
+ui've i've
+uisn't isn't
+uit'll it'll
+uit's it's
+uou'd you'd
+uou'll you'll
+uou're you're
+uou've you've
+usn't isn't
+ut'll it'll
+ut's it's
+uyou'd you'd
+uyou'll you'll
+uyou're you're
+uyou've you've
+van't can't
+vcan't can't
+vcouldn't couldn't
+vouldn't couldn't
+w'll we'll
+w're we're
+w've we've
+waan't wasn't
+waasn't wasn't
+wadn't wasn't
+wadsn't wasn't
+wae'd we'd
+wae'll we'll
+wae're we're
+wae've we've
+waen't wasn't
+waeren't weren't
+waesn't wasn't
+wahat's what's
+waho's who's
+waht's what's
+wan't wasn't
+wans't wasn't
+waon't won't
+waouldn't wouldn't
+waqsn't wasn't
+waren't aren't
+was't wasn't
+wasan't wasn't
+wasb't wasn't
+wasbn't wasn't
+wasdn't wasn't
+wasen't wasn't
+wash't wasn't
+washn't wasn't
+wasj't wasn't
+wasjn't wasn't
+wasm't wasn't
+wasmn't wasn't
+wasn'f wasn't
+wasn'ft wasn't
+wasn'g wasn't
+wasn'gt wasn't
+wasn'r wasn't
+wasn'rt wasn't
+wasn'tf wasn't
+wasn'tg wasn't
+wasn'tr wasn't
+wasn'tt wasn't
+wasn'ty wasn't
+wasn'y wasn't
+wasn'yt wasn't
+wasnb't wasn't
+wasnh't wasn't
+wasnj't wasn't
+wasnm't wasn't
+wasnn't wasn't
+wassn't wasn't
+waswn't wasn't
+wasxn't wasn't
+waszn't wasn't
+wat's what's
+wawn't wasn't
+wawsn't wasn't
+waxn't wasn't
+waxsn't wasn't
+wazn't wasn't
+wazsn't wasn't
+wbat's what's
+wbhat's what's
+wbho's who's
+wbo's who's
+wd'd we'd
+wd'll we'll
+wd're we're
+wd've we've
+wde'd we'd
+wde'll we'll
+wde're we're
+wde've we've
+wderen't weren't
+wdren't weren't
+we'be we've
+we'bve we've
+we'c we'd
+we'cd we'd
+we'ce we've
+we'cve we've
+we'dc we'd
+we'dd we'd
+we'de we're we'd
+we'df we'd
+we'dr we'd
+we'dre we're
+we'ds we'd
+we'dx we'd
+we'e we're we've we'd
+we'ed we'd
+we'ee we're
+we'er we're
+we'ere we're
+we'ev we've
+we'f we'd
+we'fd we'd
+we'fe we're we've
+we'fre we're
+we'fve we've
+we'ge we've
+we'gve we've
+we'kl we'll
+we'kll we'll
+we'l we'll
+we'lk we'll
+we'lkl we'll
+we'llk we'll
+we'lll we'll
+we'llo we'll
+we'llp we'll
+we'lo we'll
+we'lol we'll
+we'lp we'll
+we'lpl we'll
+we'ol we'll
+we'oll we'll
+we'pl we'll
+we'pll we'll
+we'r we're we'd
+we'rd we're we'd
+we'rde we're
+we'red we're
+we'ree we're
+we'rer we're
+we'res we're
+we'rew we're
+we'rfe we're
+we'rr we're
+we'rre we're
+we'rs we're
+we'rse we're
+we'rte we're
+we'rw we're
+we'rwe we're
+we's we'd
+we'sd we'd
+we'te we're
+we'tre we're
+we'v we've
+we'vbe we've
+we'vce we've
+we'vd we've
+we'vde we've
+we'ved we've
+we'vee we've
+we'ver we've
+we'ves we've
+we'vew we've
+we'vfe we've
+we'vge we've
+we'vr we've
+we'vre we've
+we'vs we've
+we'vse we've
+we'vve we've
+we'vw we've
+we'vwe we've
+we'x we'd
+we'xd we'd
+weasn't wasn't
+wed'd we'd
+wed'll we'll
+wed're we're
+wed've we've
+weden't weren't
+wedren't weren't
+wee'd we'd
+wee'll we'll
+wee're we're
+wee've we've
+weeen't weren't
+ween't weren't
+weeren't weren't
+weern't weren't
+wefen't weren't
+wefren't weren't
+wehat's what's
+weho's who's
+weon't won't
+weouldn't wouldn't
+wer'd we'd
+wer'll we'll
+wer're we're
+wer've we've
+werden't weren't
+werdn't weren't
+were't weren't
+wereb't weren't
+werebn't weren't
+weredn't weren't
+wereen't weren't
+wereh't weren't
+werehn't weren't
+werej't weren't
+werejn't weren't
+werem't weren't
+weremn't weren't
+weren'f weren't
+weren'ft weren't
+weren'g weren't
+weren'gt weren't
+weren'r weren't
+weren'rt weren't
+weren'tf weren't
+weren'tg weren't
+weren'tr weren't
+weren'tt weren't
+weren'ty weren't
+weren'y weren't
+weren'yt weren't
+werenb't weren't
+werenh't weren't
+werenj't weren't
+werenm't weren't
+werenn't weren't
+werern't weren't
+weresn't weren't
+werewn't weren't
+werfen't weren't
+wern't weren't
+werne't weren't
+werren't weren't
+werrn't weren't
+wersen't weren't
+wersn't weren't
+werten't weren't
+werwen't weren't
+werwn't weren't
+wes'd we'd
+wes'll we'll
+wes're we're
+wes've we've
+wesren't weren't
+weten't weren't
+wetren't weren't
+wew'd we'd
+wew'll we'll
+wew're we're
+wew've we've
+wewren't weren't
+wgat's what's
+wghat's what's
+wgho's who's
+wgo's who's
+wh's who's
+wha's what's
+whaat's what's
+whaf's what's
+whaft's what's
+whag's what's
+whagt's what's
+whaqt's what's
+whar's what's
+whart's what's
+whast's what's
+what'a what's
+what'as what's
+what'd what's
+what'ds what's
+what'e what's
+what'es what's
+what'sa what's
+what'sd what's
+what'se what's
+what'ss what's
+what'sw what's
+what'sx what's
+what'sz what's
+what'w what's
+what'ws what's
+what'x what's
+what'xs what's
+what'z what's
+what'zs what's
+whatf's what's
+whatg's what's
+whatr's what's
+whatt's what's
+whaty's what's
+whawt's what's
+whay's what's
+whayt's what's
+whazt's what's
+whbat's what's
+whbo's who's
+whe'd she'd
+whe'll she'll
+whe's she's
+whgat's what's
+whgo's who's
+whhat's what's
+whho's who's
+whi's who's
+whio's who's
+whjat's what's
+whjo's who's
+whk's who's
+whko's who's
+whl's who's
+whlo's who's
+whnat's what's
+whno's who's
+who'a who's
+who'as who's
+who'd who's
+who'ds who's
+who'e who's
+who'es who's
+who'sa who's
+who'sd who's
+who'se who's
+who'ss who's
+who'sw who's
+who'sx who's
+who'sz who's
+who'w who's
+who'ws who's
+who'x who's
+who'xs who's
+who'z who's
+who'zs who's
+whoi's who's
+whok's who's
+whol's who's
+whoo's who's
+whop's who's
+whouldn't shouldn't
+whp's who's
+whpo's who's
+whqat's what's
+whqt's what's
+whsat's what's
+whst's what's
+wht's what's
+whta's what's
+whuat's what's
+whuo's who's
+whwat's what's
+whwt's what's
+whyat's what's
+whyo's who's
+whzat's what's
+whzt's what's
+win't won't
+wion't won't
+wiouldn't wouldn't
+wiuldn't wouldn't
+wjat's what's
+wjhat's what's
+wjho's who's
+wjo's who's
+wkn't won't
+wkon't won't
+wkouldn't wouldn't
+wkuldn't wouldn't
+wln't won't
+wlon't won't
+wlouldn't wouldn't
+wluldn't wouldn't
+wn't won't
+wnat's what's
+wnhat's what's
+wnho's who's
+wno's who's
+wno't won't
+wo's who's
+wo't won't
+wob't won't
+wobn't won't
+woh's who's
+woh't won't
+wohldn't wouldn't
+wohn't won't
+wohuldn't wouldn't
+woildn't wouldn't
+woin't won't
+woiuldn't wouldn't
+woj't won't
+wojldn't wouldn't
+wojn't won't
+wojuldn't wouldn't
+wokn't won't
+wokuldn't wouldn't
+woldn't wouldn't
+woln't won't
+woludn't wouldn't
+woluldn't wouldn't
+wom't won't
+womn't won't
+won'f won't
+won'ft won't
+won'g won't
+won'gt won't
+won'r won't
+won'rt won't
+won'tf won't
+won'tg won't
+won'tr won't
+won'tt won't
+won'ty won't
+won'y won't
+won'yt won't
+wonb't won't
+wonh't won't
+wonj't won't
+wonm't won't
+wonn't won't
+woon't won't
+woouldn't wouldn't
+wopn't won't
+wopuldn't wouldn't
+woudln't wouldn't
+woudn't wouldn't
+wouhldn't wouldn't
+wouildn't wouldn't
+woujldn't wouldn't
+woukdn't wouldn't
+woukldn't wouldn't
+woulcdn't wouldn't
+woulcn't wouldn't
+would't wouldn't
+wouldb't wouldn't
+wouldbn't wouldn't
+wouldcn't wouldn't
+woulddn't wouldn't
+woulden't wouldn't
+wouldfn't wouldn't
+wouldh't wouldn't
+wouldhn't wouldn't
+wouldj't wouldn't
+wouldjn't wouldn't
+wouldm't wouldn't
+wouldmn't wouldn't
+wouldn'f wouldn't
+wouldn'ft wouldn't
+wouldn'g wouldn't
+wouldn'gt wouldn't
+wouldn'r wouldn't
+wouldn'rt wouldn't
+wouldn'tf wouldn't
+wouldn'tg wouldn't
+wouldn'tr wouldn't
+wouldn'tt wouldn't
+wouldn'ty wouldn't
+wouldn'y wouldn't
+wouldn'yt wouldn't
+wouldnb't wouldn't
+wouldnh't wouldn't
+wouldnj't wouldn't
+wouldnm't wouldn't
+wouldnn't wouldn't
+wouldrn't wouldn't
+wouldsn't wouldn't
+wouldxn't wouldn't
+wouledn't wouldn't
+woulen't wouldn't
+woulfdn't wouldn't
+woulfn't wouldn't
+woulkdn't wouldn't
+woulldn't wouldn't
+wouln't wouldn't
+woulnd't wouldn't
+woulodn't wouldn't
+woulpdn't wouldn't
+woulrdn't wouldn't
+woulrn't wouldn't
+woulsdn't wouldn't
+woulsn't wouldn't
+woulxdn't wouldn't
+woulxn't wouldn't
+wouodn't wouldn't
+wouoldn't wouldn't
+woupdn't wouldn't
+woupldn't wouldn't
+wouuldn't wouldn't
+wouyldn't wouldn't
+woyldn't wouldn't
+woyuldn't wouldn't
+wpn't won't
+wpon't won't
+wpouldn't wouldn't
+wpuldn't wouldn't
+wqasn't wasn't
+wqe'd we'd
+wqe'll we'll
+wqe're we're
+wqe've we've
+wqeren't weren't
+wqhat's what's
+wqho's who's
+wqon't won't
+wqouldn't wouldn't
+wqsn't wasn't
+wr'd we'd
+wr'll we'll
+wr're we're
+wr've we've
+wre'd we'd
+wre'll we'll
+wre're we're
+wre've we've
+wreen't weren't
+wren't aren't weren't
+wreren't weren't
+wrren't weren't
+ws'd we'd
+ws'll we'll
+ws're we're
+ws've we've
+wsan't wasn't
+wsasn't wasn't
+wse'd we'd
+wse'll we'll
+wse're we're
+wse've we've
+wseren't weren't
+wshat's what's
+wshe'd she'd
+wshe'll she'll
+wshe's she's
+wsho's who's
+wshouldn't shouldn't
+wsn't wasn't
+wson't won't
+wsouldn't wouldn't
+wsren't weren't
+wssn't wasn't
+wuat's what's
+wuhat's what's
+wuho's who's
+wuldn't wouldn't
+wuo's who's
+wuoldn't wouldn't
+ww'd we'd
+ww'll we'll
+ww're we're
+ww've we've
+wwasn't wasn't
+wwe'd we'd
+wwe'll we'll
+wwe're we're
+wwe've we've
+wweren't weren't
+wwhat's what's
+wwho's who's
+wwon't won't
+wwouldn't wouldn't
+wwren't weren't
+wwsn't wasn't
+wyat's what's
+wyhat's what's
+wyho's who's
+wyo's who's
+wzasn't wasn't
+wzsn't wasn't
+xan't can't
+xcan't can't
+xcouldn't couldn't
+xdidn't didn't
+xdoesn't doesn't
+xdon't don't
+xhe'd she'd
+xhe'll she'll
+xhe's she's
+xhouldn't shouldn't
+xidn't didn't
+xoesn't doesn't
+xon't don't
+xouldn't couldn't
+xshe'd she'd
+xshe'll she'll
+xshe's she's
+xshouldn't shouldn't
+yadn't hadn't
+yasn't hasn't
+yaven't haven't
+ye'd he'd
+ye'll he'll
+ye's he's
+yere's here's
+ygou'd you'd
+ygou'll you'll
+ygou're you're
+ygou've you've
+yhadn't hadn't
+yhasn't hasn't
+yhat's that's
+yhaven't haven't
+yhe'd he'd
+yhe'll he'll
+yhe's he's
+yhere's there's here's
+yhey'd they'd
+yhey'll they'll
+yhey're they're
+yhey've they've
+yhou'd you'd
+yhou'll you'll
+yhou're you're
+yhou've you've
+yiou'd you'd
+yiou'll you'll
+yiou're you're
+yiou've you've
+yiu'd you'd
+yiu'll you'll
+yiu're you're
+yiu've you've
+ykou'd you'd
+ykou'll you'll
+ykou're you're
+ykou've you've
+yku'd you'd
+yku'll you'll
+yku're you're
+yku've you've
+ylou'd you'd
+ylou'll you'll
+ylou're you're
+ylou've you've
+ylu'd you'd
+ylu'll you'll
+ylu're you're
+ylu've you've
+yo'd you'd
+yo'll you'll
+yo're you're
+yo've you've
+yoh'd you'd
+yoh'll you'll
+yoh're you're
+yoh've you've
+yohu'd you'd
+yohu'll you'll
+yohu're you're
+yohu've you've
+yoi'd you'd
+yoi'll you'll
+yoi're you're
+yoi've you've
+yoiu'd you'd
+yoiu'll you'll
+yoiu're you're
+yoiu've you've
+yoj'd you'd
+yoj'll you'll
+yoj're you're
+yoj've you've
+yoju'd you'd
+yoju'll you'll
+yoju're you're
+yoju've you've
+yoku'd you'd
+yoku'll you'll
+yoku're you're
+yoku've you've
+yolu'd you'd
+yolu'll you'll
+yolu're you're
+yolu've you've
+yoou'd you'd
+yoou'll you'll
+yoou're you're
+yoou've you've
+yopu'd you'd
+yopu'll you'll
+yopu're you're
+yopu've you've
+you'be you've
+you'bve you've
+you'c you'd
+you'cd you'd
+you'ce you've
+you'cve you've
+you'dc you'd
+you'dd you'd
+you'de you're you'd
+you'df you'd
+you'dr you'd
+you'dre you're
+you'ds you'd
+you'dx you'd
+you'e you're you've you'd
+you'ed you'd
+you'ee you're
+you'er you're
+you'ere you're
+you'ev you've
+you'f you'd
+you'fd you'd
+you'fe you're you've
+you'fre you're
+you'fve you've
+you'ge you've
+you'gve you've
+you'kl you'll
+you'kll you'll
+you'l you'll
+you'lk you'll
+you'lkl you'll
+you'llk you'll
+you'lll you'll
+you'llo you'll
+you'llp you'll
+you'lo you'll
+you'lol you'll
+you'lp you'll
+you'lpl you'll
+you'ol you'll
+you'oll you'll
+you'pl you'll
+you'pll you'll
+you'r you're you'd
+you'rd you're you'd
+you'rde you're
+you'red you're
+you'ree you're
+you'rer you're
+you'res you're
+you'rew you're
+you'rfe you're
+you'rr you're
+you'rre you're
+you'rs you're
+you'rse you're
+you'rte you're
+you'rw you're
+you'rwe you're
+you's you'd
+you'sd you'd
+you'te you're
+you'tre you're
+you'v you've
+you'vbe you've
+you'vce you've
+you'vd you've
+you'vde you've
+you'ved you've
+you'vee you've
+you'ver you've
+you'ves you've
+you'vew you've
+you'vfe you've
+you'vge you've
+you'vr you've
+you'vre you've
+you'vs you've
+you'vse you've
+you'vve you've
+you'vw you've
+you'vwe you've
+you'x you'd
+you'xd you'd
+youh'd you'd
+youh'll you'll
+youh're you're
+youh've you've
+youi'd you'd
+youi'll you'll
+youi're you're
+youi've you've
+youj'd you'd
+youj'll you'll
+youj're you're
+youj've you've
+youu'd you'd
+youu'll you'll
+youu're you're
+youu've you've
+youy'd you'd
+youy'll you'll
+youy're you're
+youy've you've
+yoy'd you'd
+yoy'll you'll
+yoy're you're
+yoy've you've
+yoyu'd you'd
+yoyu'll you'll
+yoyu're you're
+yoyu've you've
+ypou'd you'd
+ypou'll you'll
+ypou're you're
+ypou've you've
+ypu'd you'd
+ypu'll you'll
+ypu're you're
+ypu've you've
+ythat's that's
+ythere's there's
+ythey'd they'd
+ythey'll they'll
+ythey're they're
+ythey've they've
+ytou'd you'd
+ytou'll you'll
+ytou're you're
+ytou've you've
+yu'd you'd
+yu'll you'll
+yu're you're
+yu've you've
+yuo'd you'd
+yuo'll you'll
+yuo're you're
+yuo've you've
+yuou'd you'd
+yuou'll you'll
+yuou're you're
+yuou've you've
+yyou'd you'd
+yyou'll you'll
+yyou're you're
+yyou've you've
+zaren't aren't
+zhe'd she'd
+zhe'll she'll
+zhe's she's
+zhouldn't shouldn't
+zren't aren't
+zshe'd she'd
+zshe'll she'll
+zshe's she's
+zshouldn't shouldn't

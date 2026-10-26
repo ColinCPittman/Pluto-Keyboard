@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Typing corrections list: the same pair saved twice -->
+    <string name="typing_pairs_duplicate">Already in your list: %1$s → %2$s</string>
+
+    <!-- "Add correction": the strip's chip while one word is selected, and its window -->
+    <string name="typing_add_correction_chip">Add correction</string>
+    <string name="typing_add_correction_description">Add a typing correction for “%1$s”</string>
+    <string name="typing_add_correction_title">Add correction</string>
+    <string name="typing_add_correction_prompt">When I type “%1$s”, I mean…</string>
+    <string name="typing_add_correction_hint">Word you meant</string>
+    <string name="typing_add_correction_save">Save</string>
+
+    <!-- After undoing a typing fix: the chip offers to stop that fix everywhere -->
+    <string name="typing_fix_stop_chip">Stop</string>
+    <string name="typing_fix_stop_description">Stop fixing %1$s to %2$s. Undoing already teaches it to be more cautious in this context, and this stops the fix everywhere.</string>
+    <string name="typing_fix_stopped">Won’t fix %1$s → %2$s again. Turn it back on in the Typing corrections list.</string>
+</resources>

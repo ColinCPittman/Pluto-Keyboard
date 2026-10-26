@@ -1,0 +1,105 @@
+{"id": "af-you_know-L1", "cat": "control", "input": "Do you know where my keys are?", "expected": "Do you know where my keys are?", "cand": "you know"}
+{"id": "af-you_know-L2", "cat": "control", "input": "You know the answer already.", "expected": "You know the answer already.", "cand": "you know"}
+{"id": "af-you_know-L3", "cat": "control", "input": "I know you know the way.", "expected": "I know you know the way.", "cand": "you know"}
+{"id": "af-you_know-P1", "cat": "control", "input": "We were, you know, pretty tired.", "expected": "We were, you know, pretty tired.", "cand": "you know"}
+{"id": "af-you_know-P2", "cat": "control", "input": "Can you, you know, help me out?", "expected": "Can you, you know, help me out?", "cand": "you know"}
+{"id": "af-like-L1", "cat": "control", "input": "I like the new design.", "expected": "I like the new design.", "cand": "like"}
+{"id": "af-like-L2", "cat": "control", "input": "It looks like rain today.", "expected": "It looks like rain today.", "cand": "like"}
+{"id": "af-like-L3", "cat": "control", "input": "Would you like some tea?", "expected": "Would you like some tea?", "cand": "like"}
+{"id": "af-like-P1", "cat": "filler", "input": "The line was, like, really long.", "expected": "The line was really long.", "cand": "like", "alts": ["The line was, really long."]}
+{"id": "af-like-P2", "cat": "filler", "input": "She seemed, like, totally fine.", "expected": "She seemed totally fine.", "cand": "like", "alts": ["She seemed, totally fine."]}
+{"id": "af-kind_of-L1", "cat": "control", "input": "What kind of music do you like?", "expected": "What kind of music do you like?", "cand": "kind of"}
+{"id": "af-kind_of-L2", "cat": "control", "input": "She is a kind of genius.", "expected": "She is a kind of genius.", "cand": "kind of"}
+{"id": "af-kind_of-L3", "cat": "control", "input": "He's one of a kind, of course.", "expected": "He's one of a kind, of course.", "cand": "kind of"}
+{"id": "af-kind_of-P1", "cat": "filler", "input": "The movie was, kind of, boring.", "expected": "The movie was boring.", "cand": "kind of", "alts": ["The movie was, boring."]}
+{"id": "af-kind_of-P2", "cat": "filler", "input": "I'm, kind of, worried about it.", "expected": "I'm worried about it.", "cand": "kind of", "alts": ["I'm, worried about it."]}
+{"id": "af-sort_of-L1", "cat": "control", "input": "What sort of person does that?", "expected": "What sort of person does that?", "cand": "sort of"}
+{"id": "af-sort_of-L2", "cat": "control", "input": "It's a sort of soup.", "expected": "It's a sort of soup.", "cand": "sort of"}
+{"id": "af-sort_of-L3", "cat": "control", "input": "Some sort of mistake happened.", "expected": "Some sort of mistake happened.", "cand": "sort of"}
+{"id": "af-sort_of-P1", "cat": "filler", "input": "We're, sort of, done here.", "expected": "We're done here.", "cand": "sort of", "alts": ["We're, done here."]}
+{"id": "af-sort_of-P2", "cat": "filler", "input": "He was, sort of, upset.", "expected": "He was upset.", "cand": "sort of", "alts": ["He was, upset."]}
+{"id": "af-kinda-L1", "cat": "control", "input": "He kinda likes her.", "expected": "He kinda likes her.", "cand": "kinda"}
+{"id": "af-kinda-L2", "cat": "control", "input": "It's kinda late now.", "expected": "It's kinda late now.", "cand": "kinda"}
+{"id": "af-kinda-L3", "cat": "control", "input": "I kinda want pizza.", "expected": "I kinda want pizza.", "cand": "kinda"}
+{"id": "af-kinda-P1", "cat": "filler", "input": "The room was, kinda, messy.", "expected": "The room was messy.", "cand": "kinda", "alts": ["The room was, messy."]}
+{"id": "af-kinda-P2", "cat": "filler", "input": "It's, kinda, weird.", "expected": "It's weird.", "cand": "kinda", "alts": ["It's, weird."]}
+{"id": "af-sorta-L1", "cat": "control", "input": "I sorta remember that.", "expected": "I sorta remember that.", "cand": "sorta"}
+{"id": "af-sorta-L2", "cat": "control", "input": "It's sorta blue.", "expected": "It's sorta blue.", "cand": "sorta"}
+{"id": "af-sorta-L3", "cat": "control", "input": "We sorta agreed.", "expected": "We sorta agreed.", "cand": "sorta"}
+{"id": "af-sorta-P1", "cat": "filler", "input": "It was, sorta, fun.", "expected": "It was fun.", "cand": "sorta", "alts": ["It was, fun."]}
+{"id": "af-sorta-P2", "cat": "filler", "input": "She was, sorta, quiet.", "expected": "She was quiet.", "cand": "sorta", "alts": ["She was, quiet."]}
+{"id": "af-basically-L1", "cat": "control", "input": "They basically live here.", "expected": "They basically live here.", "cand": "basically"}
+{"id": "af-basically-L2", "cat": "control", "input": "Basically, we need more time.", "expected": "Basically, we need more time.", "cand": "basically"}
+{"id": "af-basically-L3", "cat": "control", "input": "It was basically free.", "expected": "It was basically free.", "cand": "basically"}
+{"id": "af-basically-P1", "cat": "filler", "input": "The plan is, basically, finished.", "expected": "The plan is finished.", "cand": "basically", "alts": ["The plan is, finished."]}
+{"id": "af-basically-P2", "cat": "filler", "input": "We are, basically, ready to go.", "expected": "We are ready to go.", "cand": "basically", "alts": ["We are, ready to go."]}
+{"id": "af-literally-L1", "cat": "control", "input": "I literally ran home.", "expected": "I literally ran home.", "cand": "literally"}
+{"id": "af-literally-L2", "cat": "control", "input": "Translate it literally, please.", "expected": "Translate it literally, please.", "cand": "literally"}
+{"id": "af-literally-L3", "cat": "control", "input": "Don't take it literally.", "expected": "Don't take it literally.", "cand": "literally"}
+{"id": "af-literally-P1", "cat": "filler", "input": "He was, literally, the best player.", "expected": "He was the best player.", "cand": "literally", "alts": ["He was, the best player."]}
+{"id": "af-literally-P2", "cat": "filler", "input": "It was, literally, freezing outside.", "expected": "It was freezing outside.", "cand": "literally", "alts": ["It was, freezing outside."]}
+{"id": "af-you_see-L1", "cat": "control", "input": "Do you see the bird?", "expected": "Do you see the bird?", "cand": "you see"}
+{"id": "af-you_see-L2", "cat": "control", "input": "You see, the thing is broken.", "expected": "You see, the thing is broken.", "cand": "you see"}
+{"id": "af-you_see-L3", "cat": "control", "input": "What do you see out there?", "expected": "What do you see out there?", "cand": "you see"}
+{"id": "af-you_see-P1", "cat": "filler", "input": "The problem is, you see, the battery.", "expected": "The problem is the battery.", "cand": "you see", "alts": ["The problem is, the battery."]}
+{"id": "af-you_see-P2", "cat": "filler", "input": "It's, you see, a long story.", "expected": "It's a long story.", "cand": "you see", "alts": ["It's, a long story."]}
+{"id": "af-so_yeah-L1", "cat": "control", "input": "So yeah, that's the plan.", "expected": "So yeah, that's the plan.", "cand": "so yeah"}
+{"id": "af-so_yeah-L2", "cat": "control", "input": "She said so, yeah.", "expected": "She said so, yeah.", "cand": "so yeah"}
+{"id": "af-so_yeah-L3", "cat": "control", "input": "So yeah? What happened next?", "expected": "So yeah? What happened next?", "cand": "so yeah"}
+{"id": "af-so_yeah-P1", "cat": "filler", "input": "We left after dinner, so yeah.", "expected": "We left after dinner.", "cand": "so yeah"}
+{"id": "af-so_yeah-P2", "cat": "filler", "input": "That was the whole trip. So yeah.", "expected": "That was the whole trip.", "cand": "so yeah"}
+{"id": "af-ummm-L1", "cat": "control", "input": "She said \"ummm\" and froze.", "expected": "She said \"ummm\" and froze.", "cand": "ummm"}
+{"id": "af-ummm-L2", "cat": "control", "input": "He typed \"ummm, no\" in the chat.", "expected": "He typed \"ummm, no\" in the chat.", "cand": "ummm"}
+{"id": "af-ummm-L3", "cat": "control", "input": "The UMMM sign was huge.", "expected": "The UMMM sign was huge.", "cand": "ummm"}
+{"id": "af-ummm-P1", "cat": "filler", "input": "I think, ummm, we should go.", "expected": "I think we should go.", "cand": "ummm", "alts": ["I think, we should go."]}
+{"id": "af-ummm-P2", "cat": "filler", "input": "It's, ummm, in the car.", "expected": "It's in the car.", "cand": "ummm", "alts": ["It's, in the car."]}
+{"id": "af-uhhh-L1", "cat": "control", "input": "He just said \"uhhh\" and left.", "expected": "He just said \"uhhh\" and left.", "cand": "uhhh"}
+{"id": "af-uhhh-L2", "cat": "control", "input": "The text said \"uhhh, what\".", "expected": "The text said \"uhhh, what\".", "cand": "uhhh"}
+{"id": "af-uhhh-L3", "cat": "control", "input": "UHHH is the band's name.", "expected": "UHHH is the band's name.", "cand": "uhhh"}
+{"id": "af-uhhh-P1", "cat": "filler", "input": "The keys are, uhhh, on the table.", "expected": "The keys are on the table.", "cand": "uhhh", "alts": ["The keys are, on the table."]}
+{"id": "af-uhhh-P2", "cat": "filler", "input": "We need, uhhh, more chairs.", "expected": "We need more chairs.", "cand": "uhhh", "alts": ["We need, more chairs."]}
+{"id": "af-hmmm-L1", "cat": "control", "input": "He wrote \"hmmm\" in the margin.", "expected": "He wrote \"hmmm\" in the margin.", "cand": "hmmm"}
+{"id": "af-hmmm-L2", "cat": "control", "input": "She replied \"hmmm, maybe\".", "expected": "She replied \"hmmm, maybe\".", "cand": "hmmm"}
+{"id": "af-hmmm-L3", "cat": "control", "input": "HMMM was printed on the mug.", "expected": "HMMM was printed on the mug.", "cand": "hmmm"}
+{"id": "af-hmmm-P1", "cat": "filler", "input": "That's, hmmm, a good question.", "expected": "That's a good question.", "cand": "hmmm", "alts": ["That's, a good question."]}
+{"id": "af-hmmm-P2", "cat": "filler", "input": "Let's go, hmmm, tomorrow.", "expected": "Let's go tomorrow.", "cand": "hmmm", "alts": ["Let's go, tomorrow."]}
+{"id": "af-i_mean-L1", "cat": "control", "input": "I mean it this time.", "expected": "I mean it this time.", "cand": "I mean"}
+{"id": "af-i_mean-L2", "cat": "control", "input": "That's not what I mean.", "expected": "That's not what I mean.", "cand": "I mean"}
+{"id": "af-i_mean-L3", "cat": "selfcorrection", "input": "The toaster oven, I mean, air fryer is hot.", "expected": "The air fryer is hot.", "cand": "I mean"}
+{"id": "af-i_mean-P1", "cat": "filler", "input": "It was, I mean, pretty good.", "expected": "It was pretty good.", "cand": "I mean", "alts": ["It was, pretty good."]}
+{"id": "af-i_mean-P2", "cat": "filler", "input": "He's, I mean, fine.", "expected": "He's fine.", "cand": "I mean", "alts": ["He's, fine."]}
+{"id": "af-actually-L1", "cat": "control", "input": "It was actually fun.", "expected": "It was actually fun.", "cand": "actually"}
+{"id": "af-actually-L2", "cat": "control", "input": "He actually came.", "expected": "He actually came.", "cand": "actually"}
+{"id": "af-actually-L3", "cat": "selfcorrection", "input": "Book it for Monday, actually, Tuesday.", "expected": "Book it for Tuesday.", "cand": "actually"}
+{"id": "af-actually-P1", "cat": "filler", "input": "It's, actually, pretty cheap.", "expected": "It's pretty cheap.", "cand": "actually", "alts": ["It's, pretty cheap."]}
+{"id": "af-actually-P2", "cat": "filler", "input": "She was, actually, right.", "expected": "She was right.", "cand": "actually", "alts": ["She was, right."]}
+{"id": "af-well-L1", "cat": "control", "input": "She sings well.", "expected": "She sings well.", "cand": "well"}
+{"id": "af-well-L2", "cat": "control", "input": "It went really well, thanks.", "expected": "It went really well, thanks.", "cand": "well"}
+{"id": "af-well-L3", "cat": "control", "input": "Oh, well, never mind.", "expected": "Oh, well, never mind.", "cand": "well"}
+{"id": "af-well-P1", "cat": "filler", "input": "It was, well, a disaster.", "expected": "It was a disaster.", "cand": "well", "alts": ["It was, a disaster."]}
+{"id": "af-well-P2", "cat": "filler", "input": "He is, well, different.", "expected": "He is different.", "cand": "well", "alts": ["He is, different."]}
+{"id": "af-right-L1", "cat": "control", "input": "Turn right at the light.", "expected": "Turn right at the light.", "cand": "right"}
+{"id": "af-right-L2", "cat": "control", "input": "It's right there.", "expected": "It's right there.", "cand": "right"}
+{"id": "af-right-L3", "cat": "control", "input": "Left, right, left, right, go.", "expected": "Left, right, left, right, go.", "cand": "right"}
+{"id": "af-right-P1", "cat": "filler", "input": "So we went, right, to the store.", "expected": "So we went to the store.", "cand": "right", "alts": ["So we went, to the store."]}
+{"id": "af-right-P2", "cat": "filler", "input": "She was, right, really angry.", "expected": "She was really angry.", "cand": "right", "alts": ["She was, really angry."]}
+{"id": "af-honestly-L1", "cat": "control", "input": "Honestly, I don't care.", "expected": "Honestly, I don't care.", "cand": "honestly"}
+{"id": "af-honestly-L2", "cat": "control", "input": "He answered honestly.", "expected": "He answered honestly.", "cand": "honestly"}
+{"id": "af-honestly-L3", "cat": "control", "input": "I think, honestly, it's too expensive.", "expected": "I think, honestly, it's too expensive.", "cand": "honestly"}
+{"id": "af-honestly-P1", "cat": "filler", "input": "It's, honestly, fine.", "expected": "It's fine.", "cand": "honestly", "alts": ["It's, fine."]}
+{"id": "af-honestly-P2", "cat": "filler", "input": "We were, honestly, lost.", "expected": "We were lost.", "cand": "honestly", "alts": ["We were, lost."]}
+{"id": "af-i_guess-L1", "cat": "control", "input": "I guess you're right.", "expected": "I guess you're right.", "cand": "I guess"}
+{"id": "af-i_guess-L2", "cat": "control", "input": "I guess so.", "expected": "I guess so.", "cand": "I guess"}
+{"id": "af-i_guess-L3", "cat": "control", "input": "It's, I guess, about done.", "expected": "It's, I guess, about done.", "cand": "I guess"}
+{"id": "af-i_guess-P1", "cat": "filler", "input": "It was, I guess, okay.", "expected": "It was okay.", "cand": "I guess", "alts": ["It was, okay."]}
+{"id": "af-i_guess-P2", "cat": "filler", "input": "We could, I guess, wait.", "expected": "We could wait.", "cand": "I guess", "alts": ["We could, wait."]}
+{"id": "af-or_something-L1", "cat": "control", "input": "We could get pizza, or something.", "expected": "We could get pizza, or something.", "cand": "or something"}
+{"id": "af-or_something-L2", "cat": "control", "input": "Is he sick, or something?", "expected": "Is he sick, or something?", "cand": "or something"}
+{"id": "af-or_something-L3", "cat": "control", "input": "Grab a coat, or something.", "expected": "Grab a coat, or something.", "cand": "or something"}
+{"id": "af-or_something-P1", "cat": "filler", "input": "Let's watch a movie, or something.", "expected": "Let's watch a movie.", "cand": "or something"}
+{"id": "af-or_something-P2", "cat": "filler", "input": "Bring snacks, or something.", "expected": "Bring snacks.", "cand": "or something"}
+{"id": "af-and_stuff-L1", "cat": "control", "input": "We bought chips, and stuff.", "expected": "We bought chips, and stuff.", "cand": "and stuff"}
+{"id": "af-and_stuff-L2", "cat": "control", "input": "Pack clothes, and stuff.", "expected": "Pack clothes, and stuff.", "cand": "and stuff"}
+{"id": "af-and_stuff-L3", "cat": "control", "input": "She likes art, and stuff.", "expected": "She likes art, and stuff.", "cand": "and stuff"}
+{"id": "af-and_stuff-P1", "cat": "filler", "input": "We talked about work, and stuff.", "expected": "We talked about work.", "cand": "and stuff"}
+{"id": "af-and_stuff-P2", "cat": "filler", "input": "It was school, and stuff.", "expected": "It was school.", "cand": "and stuff"}

@@ -1,0 +1,110 @@
+{"id": "sc01", "cat": "selfcorrection", "input": "What is in the toaster oven, I mean, air fryer?", "expected": "What is in the air fryer?"}
+{"id": "sc02", "cat": "selfcorrection", "input": "Let's meet on Tuesday, no wait, Wednesday.", "expected": "Let's meet on Wednesday."}
+{"id": "sc03", "cat": "selfcorrection", "input": "I'll take the red one, sorry, the blue one.", "expected": "I'll take the blue one."}
+{"id": "sc04", "cat": "selfcorrection", "input": "Turn left, I mean, right at the light.", "expected": "Turn right at the light."}
+{"id": "sc05", "cat": "selfcorrection", "input": "Call me at five, actually, six.", "expected": "Call me at six."}
+{"id": "sc06", "cat": "selfcorrection", "input": "Bring the chips, or rather, the pretzels.", "expected": "Bring the pretzels."}
+{"id": "sc07", "cat": "selfcorrection", "input": "We need eggs, I mean, milk from the store.", "expected": "We need milk from the store."}
+{"id": "sc08", "cat": "selfcorrection", "input": "She lives in Boston, sorry, Chicago.", "expected": "She lives in Chicago."}
+{"id": "sc09", "cat": "selfcorrection", "input": "Book a table for four, no wait, six people.", "expected": "Book a table for six people."}
+{"id": "sc10", "cat": "selfcorrection", "input": "The meeting is on Monday, I mean, Tuesday morning.", "expected": "The meeting is on Tuesday morning."}
+{"id": "sc11", "cat": "selfcorrection", "input": "I'll have the chicken, actually, the salmon.", "expected": "I'll have the salmon."}
+{"id": "sc12", "cat": "selfcorrection", "input": "Send it to John, I mean, Jane.", "expected": "Send it to Jane."}
+{"id": "sc13", "cat": "selfcorrection", "input": "Grab a coffee, no sorry, a tea for me.", "expected": "Grab a tea for me."}
+{"id": "sc14", "cat": "selfcorrection", "input": "It's on the second floor, I meant, the third floor.", "expected": "It's on the third floor."}
+{"id": "sc15", "cat": "selfcorrection", "input": "Pick me up at the mall, scratch that, at the library.", "expected": "Pick me up at the library."}
+{"id": "sc16", "cat": "selfcorrection", "input": "We're leaving at noon, wait no, at one.", "expected": "We're leaving at one."}
+{"id": "scn01", "cat": "control", "input": "I mean it, you did a great job.", "expected": "I mean it, you did a great job."}
+{"id": "scn02", "cat": "control", "input": "What I mean is that we need more time.", "expected": "What I mean is that we need more time."}
+{"id": "scn03", "cat": "control", "input": "Actually, I think it's fine.", "expected": "Actually, I think it's fine."}
+{"id": "scn04", "cat": "control", "input": "Sorry I'm late, the traffic was awful.", "expected": "Sorry I'm late, the traffic was awful."}
+{"id": "scn05", "cat": "control", "input": "I'm sorry for your loss.", "expected": "I'm sorry for your loss."}
+{"id": "scn06", "cat": "control", "input": "I'd rather stay home tonight.", "expected": "I'd rather stay home tonight."}
+{"id": "scn07", "cat": "control", "input": "It was actually pretty good.", "expected": "It was actually pretty good."}
+{"id": "scn08", "cat": "control", "input": "I really mean it this time.", "expected": "I really mean it this time."}
+{"id": "scn09", "cat": "control", "input": "I'm so sorry, I didn't see you there.", "expected": "I'm so sorry, I didn't see you there."}
+{"id": "scn10", "cat": "control", "input": "He's actually a doctor now.", "expected": "He's actually a doctor now."}
+{"id": "scn11", "cat": "control", "input": "No wait, I have a better idea.", "expected": "No wait, I have a better idea."}
+{"id": "scn12", "cat": "control", "input": "You know what I mean?", "expected": "You know what I mean?"}
+{"id": "scn13", "cat": "control", "input": "It's rather cold today.", "expected": "It's rather cold today."}
+{"id": "scn14", "cat": "control", "input": "Sorry, wrong number.", "expected": "Sorry, wrong number."}
+{"id": "scn15", "cat": "control", "input": "I didn't mean to, sorry.", "expected": "I didn't mean to, sorry."}
+{"id": "scn16", "cat": "control", "input": "The movie was good, actually.", "expected": "The movie was good, actually."}
+{"id": "scn17", "cat": "control", "input": "I like it, I mean, it's not bad.", "expected": "I like it, I mean, it's not bad."}
+{"id": "scn18", "cat": "control", "input": "Thanks, sorry about the delay.", "expected": "Thanks, sorry about the delay."}
+{"id": "scn19", "cat": "control", "input": "It's not the red one, actually, it's blue.", "expected": "It's not the red one, actually, it's blue."}
+{"id": "scn20", "cat": "control", "input": "We could stay, or rather than driving, we could take the train.", "expected": "We could stay, or rather than driving, we could take the train."}
+{"id": "scq1", "cat": "selfcorrection", "input": "Can you put that in the toaster oven? I mean, air fryer?", "expected": "Can you put that in the air fryer?"}
+{"id": "scq2", "cat": "selfcorrection", "input": "Can you put that in the toaster oven? I mean air fryer?", "segments": ["Can you put that in the toaster oven?", "I mean air fryer?"], "expected": "Can you put that in the air fryer?"}
+{"id": "scq3", "cat": "selfcorrection", "input": "Let's meet on Tuesday. No wait, Wednesday.", "expected": "Let's meet on Wednesday."}
+{"id": "scq4", "cat": "selfcorrection", "input": "Text Mom at five. I mean, at six.", "expected": "Text Mom at six."}
+{"id": "scqn1", "cat": "control", "input": "I loved the movie. I mean, the ending was a little weird.", "expected": "I loved the movie. I mean, the ending was a little weird."}
+{"id": "scqn2", "cat": "control", "input": "That was a great dinner. I mean, it really was.", "expected": "That was a great dinner. I mean, it really was."}
+{"id": "scqn3", "cat": "control", "input": "I can't come tonight. No wait, I can.", "expected": "I can't come tonight. No wait, I can."}
+{"id": "scqn4", "cat": "control", "input": "He was late again. I mean, seriously.", "expected": "He was late again. I mean, seriously."}
+{"id": "scqn5", "cat": "control", "input": "She said the book was boring. I mean, the first half was.", "expected": "She said the book was boring. I mean, the first half was."}
+{"id": "scw1", "cat": "selfcorrection", "input": "He comes from the same town. Or wait, city as me.", "expected": "He comes from the same city as me."}
+{"id": "scw2", "cat": "selfcorrection", "input": "He comes from the same town, or wait, city as me.", "expected": "He comes from the same city as me."}
+{"id": "scw3", "cat": "selfcorrection", "input": "Bring the blue folder, oh wait, the red folder.", "expected": "Bring the red folder."}
+{"id": "scw4", "cat": "selfcorrection", "input": "Book a table for four, make that five.", "expected": "Book a table for five."}
+{"id": "scw5", "cat": "selfcorrection", "input": "The meeting is on Monday, no actually, Tuesday.", "expected": "The meeting is on Tuesday."}
+{"id": "scw6", "cat": "selfcorrection", "input": "Send it to Mark, I meant to say Mike.", "expected": "Send it to Mike."}
+{"id": "scwn1", "cat": "control", "input": "Wait for me at the door.", "expected": "Wait for me at the door."}
+{"id": "scwn2", "cat": "control", "input": "Can you make that call for me?", "expected": "Can you make that call for me?"}
+{"id": "scwn3", "cat": "control", "input": "Correction fluid is in the drawer.", "expected": "Correction fluid is in the drawer."}
+{"id": "scwn4", "cat": "control", "input": "I liked it. Oh wait, you mean the movie?", "expected": "I liked it. Oh wait, you mean the movie?"}
+{"id": "scwn5", "cat": "control", "input": "Actually, the store closes at nine.", "expected": "Actually, the store closes at nine."}
+{"id": "scwn6", "cat": "control", "input": "I can't decide. No actually, I can.", "expected": "I can't decide. No actually, I can."}
+{"id": "sp01", "cat": "selfcorrection", "input": "Call me at five, sorry, I meant six.", "expected": "Call me at six."}
+{"id": "sp02", "cat": "selfcorrection", "input": "Meet me at the cafe, let me rephrase, at the library.", "expected": "Meet me at the library."}
+{"id": "sp03", "cat": "selfcorrection", "input": "Book a table for four, make it five.", "expected": "Book a table for five."}
+{"id": "sp04", "cat": "selfcorrection", "input": "It costs ten dollars, my bad, twelve dollars.", "expected": "It costs twelve dollars.", "alts": ["It costs $12."]}
+{"id": "sp06", "cat": "selfcorrection", "input": "The flight is on Monday, actually no, Tuesday.", "expected": "The flight is on Tuesday."}
+{"id": "sp07", "cat": "selfcorrection", "input": "Grab the red folder, no no, the blue folder.", "expected": "Grab the blue folder."}
+{"id": "sp08", "cat": "selfcorrection", "input": "It starts at seven, nope, eight.", "expected": "It starts at eight."}
+{"id": "sp09", "cat": "selfcorrection", "input": "Send it to Mark, my mistake, Mike.", "expected": "Send it to Mike."}
+{"id": "sp10", "cat": "selfcorrection", "input": "We need three, well actually, four chairs.", "expected": "We need four chairs."}
+{"id": "sp11", "cat": "selfcorrection", "input": "Call Sam, or should I say, Alex.", "expected": "Call Alex."}
+{"id": "sp12", "cat": "selfcorrection", "input": "The bus leaves at noon, no, I meant one.", "expected": "The bus leaves at one."}
+{"id": "spn01", "cat": "control", "input": "Can you make it to the party?", "expected": "Can you make it to the party?"}
+{"id": "spn02", "cat": "control", "input": "I can't make it tonight.", "expected": "I can't make it tonight."}
+{"id": "spn03", "cat": "control", "input": "We'll make it, I promise.", "expected": "We'll make it, I promise."}
+{"id": "spn04", "cat": "control", "input": "Hurry up, make it quick.", "expected": "Hurry up, make it quick."}
+{"id": "spn05", "cat": "control", "input": "That was my bad, sorry.", "expected": "That was my bad, sorry."}
+{"id": "spn06", "cat": "control", "input": "My bad, I forgot.", "expected": "My bad, I forgot."}
+{"id": "spn07", "cat": "control", "input": "Oops, I dropped my phone.", "expected": "Oops, I dropped my phone."}
+{"id": "spn08", "cat": "control", "input": "No no, that's fine.", "expected": "No no, that's fine."}
+{"id": "spn09", "cat": "control", "input": "Nope, not today.", "expected": "Nope, not today."}
+{"id": "spn10", "cat": "control", "input": "Let me rephrase that.", "expected": "Let me rephrase that."}
+{"id": "spn11", "cat": "control", "input": "It was my mistake, not yours.", "expected": "It was my mistake, not yours."}
+{"id": "spn12", "cat": "control", "input": "Well actually, I think you're right.", "expected": "Well actually, I think you're right."}
+{"id": "spn13", "cat": "control", "input": "Actually no, I can't come.", "expected": "Actually no, I can't come."}
+{"id": "spn14", "cat": "control", "input": "Make it a double, please.", "expected": "Make it a double, please."}
+{"id": "spn15", "cat": "control", "input": "Draw a circle, make it big.", "expected": "Draw a circle, make it big."}
+{"id": "spn16", "cat": "control", "input": "Paint the wall, make it blue.", "expected": "Paint the wall, make it blue."}
+{"id": "spn17", "cat": "control", "input": "I said nope, and left.", "expected": "I said nope, and left."}
+{"id": "spn18", "cat": "control", "input": "Sorry, I meant to call you back.", "expected": "Sorry, I meant to call you back."}
+{"id": "spn19", "cat": "control", "input": "Well, actually, it was fun.", "expected": "Well, actually, it was fun."}
+{"id": "spn20", "cat": "control", "input": "Oops, sorry about that.", "expected": "Oops, sorry about that."}
+{"id": "spn21", "cat": "control", "input": "I'll try, no no, you go ahead.", "expected": "I'll try, no no, you go ahead."}
+{"id": "spn22", "cat": "control", "input": "Turn it up, make it louder.", "expected": "Turn it up, make it louder."}
+{"id": "spn23", "cat": "control", "input": "Give me two, make it quick.", "expected": "Give me two, make it quick."}
+{"id": "sp13", "cat": "selfcorrection", "input": "Give me two, make it three.", "expected": "Give me three."}
+{"id": "sp14", "cat": "selfcorrection", "input": "Pick the blue one, sorry no, the green one.", "expected": "Pick the green one."}
+{"id": "spn24", "cat": "control", "input": "It's fine, no no, really.", "expected": "It's fine, no no, really."}
+{"id": "spn25", "cat": "control", "input": "We lost, my bad, guys.", "expected": "We lost, my bad, guys."}
+{"id": "spn26", "cat": "control", "input": "I forgot the keys, my bad.", "expected": "I forgot the keys, my bad."}
+{"id": "spn27", "cat": "control", "input": "I spilled it, oops, sorry.", "expected": "I spilled it, oops, sorry."}
+{"id": "spn28", "cat": "control", "input": "Hit save, oops, too late.", "expected": "Hit save, oops, too late."}
+{"id": "spn29", "cat": "control", "input": "Five bucks, make it snappy.", "expected": "Five bucks, make it snappy."}
+{"id": "spn30", "cat": "control", "input": "Is it Tuesday, nope, it's Wednesday.", "expected": "Is it Tuesday, nope, it's Wednesday."}
+{"id": "spn31", "cat": "control", "input": "Thanks, well actually, never mind.", "expected": "Thanks, well actually, never mind."}
+{"id": "spn32", "cat": "control", "input": "I'll come, actually no, wait.", "expected": "I'll come, actually no, wait."}
+{"id": "spn33", "cat": "control", "input": "Oops, my mistake.", "expected": "Oops, my mistake."}
+{"id": "spn34", "cat": "control", "input": "Call me, my bad, tomorrow works better.", "expected": "Call me, my bad, tomorrow works better."}
+{"id": "spn35", "cat": "control", "input": "Nope, nope, nope.", "expected": "Nope, nope, nope."}
+{"id": "spn_open1", "cat": "control", "input": "No, I mean the blue folder on the desk.", "expected": "No, I mean the blue folder on the desk."}
+{"id": "spn_open2", "cat": "control", "input": "Sorry, I meant Thursday not Friday.", "expected": "Sorry, I meant Thursday not Friday."}
+{"id": "spn_open3", "cat": "control", "input": "Oh, no wait, the other door.", "expected": "Oh, no wait, the other door."}
+{"id": "spn_open4", "cat": "control", "input": "I mean the small box.", "expected": "I mean the small box."}
+{"id": "spn_open5", "cat": "selfcorrection", "input": "No, I mean the blue folder. The red one, sorry, the green one.", "expected": "No, I mean the blue folder. The green one."}

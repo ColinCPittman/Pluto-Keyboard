@@ -1,0 +1,98 @@
+{"id": "fi01", "cat": "filler", "input": "Um, I think we should go.", "expected": "I think we should go."}
+{"id": "fi02", "cat": "filler", "input": "I was, uh, thinking about it.", "expected": "I was thinking about it.", "alts": ["I was, thinking about it."]}
+{"id": "fi03", "cat": "filler", "input": "So, um, what time is it?", "expected": "So, what time is it?", "alts": ["So what time is it?"]}
+{"id": "fi04", "cat": "filler", "input": "I I think it's fine.", "expected": "I think it's fine."}
+{"id": "fi05", "cat": "filler", "input": "Can you pass the the salt?", "expected": "Can you pass the salt?"}
+{"id": "fi06", "cat": "filler", "input": "We should, er, probably leave soon.", "expected": "We should probably leave soon.", "alts": ["We should, probably leave soon."]}
+{"id": "fi07", "cat": "filler", "input": "Hmm, let me think about it.", "expected": "Let me think about it."}
+{"id": "fi08", "cat": "filler", "input": "I think I think we're lost.", "expected": "I think we're lost."}
+{"id": "fi09", "cat": "filler", "input": "Umm, can you call me back later?", "expected": "Can you call me back later?"}
+{"id": "fi10", "cat": "filler", "input": "The meeting is at, um, three o'clock.", "expected": "The meeting is at three o'clock.", "alts": ["The meeting is at, three o'clock."]}
+{"id": "fi11", "cat": "filler", "input": "We went to the to the park yesterday.", "expected": "We went to the park yesterday."}
+{"id": "fi12", "cat": "filler", "input": "Uh, yeah, that works for me.", "expected": "Yeah, that works for me."}
+{"id": "fi13", "cat": "filler", "input": "I need to, um, finish this first.", "expected": "I need to finish this first.", "alts": ["I need to, finish this first."]}
+{"id": "fi14", "cat": "filler", "input": "She said that she she would come.", "expected": "She said that she would come."}
+{"id": "fi15", "cat": "filler", "input": "And and then we left the restaurant.", "expected": "And then we left the restaurant."}
+{"id": "fi16", "cat": "filler", "input": "Erm, I'm not really sure.", "expected": "I'm not really sure."}
+{"id": "fi17", "cat": "filler", "input": "My car is, uh, in the shop again.", "expected": "My car is in the shop again.", "alts": ["My car is, in the shop again."]}
+{"id": "fi18", "cat": "filler", "input": "It was a really, um, long day.", "expected": "It was a really long day.", "alts": ["It was a really, long day."]}
+{"id": "fin01", "cat": "control", "input": "I knew that that was a mistake.", "expected": "I knew that that was a mistake."}
+{"id": "fin02", "cat": "control", "input": "He had had enough of the noise.", "expected": "He had had enough of the noise."}
+{"id": "fin03", "cat": "control", "input": "It's very very cold outside.", "expected": "It's very very cold outside."}
+{"id": "fin04", "cat": "control", "input": "What it is is a total mess.", "expected": "What it is is a total mess."}
+{"id": "fin05", "cat": "control", "input": "Bye bye, see you later.", "expected": "Bye bye, see you later."}
+{"id": "fin06", "cat": "control", "input": "No no no, that's not what I meant.", "expected": "No no no, that's not what I meant."}
+{"id": "fin07", "cat": "control", "input": "We went to the ER last night.", "expected": "We went to the ER last night."}
+{"id": "fin08", "cat": "control", "input": "Knock knock, who's there?", "expected": "Knock knock, who's there?"}
+{"id": "fin09", "cat": "control", "input": "I really really want that job.", "expected": "I really really want that job."}
+{"id": "fin10", "cat": "control", "input": "Yeah yeah, I get it.", "expected": "Yeah yeah, I get it."}
+{"id": "fin11", "cat": "control", "input": "We'll see, we'll see.", "expected": "We'll see, we'll see."}
+{"id": "fin12", "cat": "control", "input": "It's a long, long road ahead.", "expected": "It's a long, long road ahead."}
+{"id": "fin13", "cat": "control", "input": "Ha ha, very funny.", "expected": "Ha ha, very funny."}
+{"id": "fin14", "cat": "control", "input": "Uh-oh, I forgot my keys.", "expected": "Uh-oh, I forgot my keys."}
+{"id": "fin15", "cat": "control", "input": "Please please come to the party.", "expected": "Please please come to the party."}
+{"id": "fin16", "cat": "control", "input": "What I do do is cook dinner every night.", "expected": "What I do do is cook dinner every night."}
+{"id": "fin17", "cat": "control", "input": "Hey hey, slow down a little.", "expected": "Hey hey, slow down a little."}
+{"id": "fin18", "cat": "control", "input": "Wait, wait, I have an idea.", "expected": "Wait, wait, I have an idea."}
+{"id": "fin19", "cat": "control", "input": "She is is not the word I wanted.", "expected": "She is is not the word I wanted."}
+{"id": "fin20", "cat": "control", "input": "They talked and talked for hours.", "expected": "They talked and talked for hours."}
+{"id": "flq1", "cat": "filler", "input": "The tickets were, ah, twenty five dollars each.", "expected": "The tickets were twenty five dollars each.", "alts": ["The tickets were $25 each."]}
+{"id": "flq2", "cat": "filler", "input": "I think, eh, we should go.", "expected": "I think we should go."}
+{"id": "flqn1", "cat": "control", "input": "Ah, I see what you mean.", "expected": "Ah, I see what you mean."}
+{"id": "flqn2", "cat": "control", "input": "Ah, that makes sense.", "expected": "Ah, that makes sense."}
+{"id": "flqn3", "cat": "control", "input": "Eh, it's fine.", "expected": "Eh, it's fine."}
+{"id": "flqn4", "cat": "control", "input": "Ah ha, I found it.", "expected": "Ah ha, I found it."}
+{"id": "fp01", "cat": "control", "input": "I was, you know, thinking about moving.", "expected": "I was, you know, thinking about moving."}
+{"id": "fp02", "cat": "filler", "input": "It's, like, really far from here.", "expected": "It's really far from here.", "alts": ["It's, really far from here."]}
+{"id": "fp03", "cat": "filler", "input": "The food was, kind of, cold.", "expected": "The food was cold.", "alts": ["The food was, cold."]}
+{"id": "fp04", "cat": "filler", "input": "We're, sort of, running late.", "expected": "We're running late.", "alts": ["We're, running late."]}
+{"id": "fp05", "cat": "filler", "input": "It's, basically, finished.", "expected": "It's finished.", "alts": ["It's, finished."]}
+{"id": "fp06", "cat": "filler", "input": "He was, literally, the last one there.", "expected": "He was the last one there.", "alts": ["He was, the last one there."]}
+{"id": "fp07", "cat": "filler", "input": "We drove home after that, so yeah.", "expected": "We drove home after that."}
+{"id": "fp08", "cat": "filler", "input": "The party ended early. So yeah.", "expected": "The party ended early."}
+{"id": "fp09", "cat": "filler", "input": "It's, you see, a bit complicated.", "expected": "It's a bit complicated.", "alts": ["It's, a bit complicated."]}
+{"id": "fp10", "cat": "filler", "input": "I was, like, you know, totally lost.", "expected": "I was, you know, totally lost.", "alts": ["I was, like, you know, totally lost."]}
+{"id": "fp11", "cat": "filler", "input": "Is it, like, a big deal?", "expected": "Is it a big deal?", "alts": ["Is it, a big deal?"]}
+{"id": "fp12", "cat": "filler", "input": "The new place is, kinda, small.", "expected": "The new place is small.", "alts": ["The new place is, small."]}
+{"id": "fpn01", "cat": "control", "input": "I like it a lot.", "expected": "I like it a lot."}
+{"id": "fpn02", "cat": "control", "input": "It's like a dream.", "expected": "It's like a dream."}
+{"id": "fpn03", "cat": "control", "input": "What kind of car do you drive?", "expected": "What kind of car do you drive?"}
+{"id": "fpn04", "cat": "control", "input": "It's one of a kind, of course.", "expected": "It's one of a kind, of course."}
+{"id": "fpn05", "cat": "control", "input": "What sort of thing is that?", "expected": "What sort of thing is that?"}
+{"id": "fpn06", "cat": "control", "input": "You know, I never liked him.", "expected": "You know, I never liked him."}
+{"id": "fpn07", "cat": "control", "input": "Do you know where it is?", "expected": "Do you know where it is?"}
+{"id": "fpn08", "cat": "control", "input": "It's basically done.", "expected": "It's basically done."}
+{"id": "fpn09", "cat": "control", "input": "I literally ran all the way.", "expected": "I literally ran all the way."}
+{"id": "fpn10", "cat": "control", "input": "She said so, yeah.", "expected": "She said so, yeah."}
+{"id": "fpn11", "cat": "control", "input": "So yeah, that's the plan.", "expected": "So yeah, that's the plan."}
+{"id": "fpn12", "cat": "control", "input": "It was like, so cool.", "expected": "It was like, so cool."}
+{"id": "fpn13", "cat": "control", "input": "You see, the thing is, it's broken.", "expected": "You see, the thing is, it's broken."}
+{"id": "fpn14", "cat": "control", "input": "It tastes like chicken.", "expected": "It tastes like chicken."}
+{"id": "fpn15", "cat": "control", "input": "Kind of, yeah.", "expected": "Kind of, yeah."}
+{"id": "fpn16", "cat": "control", "input": "It's sort of, a blue color.", "expected": "It's sort of, a blue color."}
+{"id": "fpn17", "cat": "control", "input": "Did you like, the movie?", "expected": "Did you like, the movie?"}
+{"id": "fpn18", "cat": "control", "input": "Whatever you like, really.", "expected": "Whatever you like, really."}
+{"id": "fpn19", "cat": "control", "input": "If you like, we can go.", "expected": "If you like, we can go."}
+{"id": "fpn20", "cat": "control", "input": "Sort of, I guess.", "expected": "Sort of, I guess."}
+{"id": "fpn21", "cat": "control", "input": "And so yeah, we left.", "expected": "And so yeah, we left."}
+{"id": "fpn22", "cat": "control", "input": "I know what you mean, you know?", "expected": "I know what you mean, you know?"}
+{"id": "fpn23", "cat": "control", "input": "Let me know if you like it.", "expected": "Let me know if you like it."}
+{"id": "fpn24", "cat": "control", "input": "It's kind of you to help.", "expected": "It's kind of you to help."}
+{"id": "fpn25", "cat": "control", "input": "They look like, twins.", "expected": "They look like, twins."}
+{"id": "fpn26", "cat": "control", "input": "I feel like, maybe we should wait.", "expected": "I feel like, maybe we should wait."}
+{"id": "fpn27", "cat": "control", "input": "Is that so? Yeah.", "expected": "Is that so? Yeah."}
+{"id": "fpn28", "cat": "control", "input": "What do you see, Sam?", "expected": "What do you see, Sam?"}
+{"id": "fpn29", "cat": "control", "input": "I'm sort of a night owl.", "expected": "I'm sort of a night owl."}
+{"id": "fpn30", "cat": "control", "input": "He kinda likes her.", "expected": "He kinda likes her."}
+{"id": "fp13", "cat": "control", "input": "Do you, you know, want to come along?", "expected": "Do you, you know, want to come along?"}
+{"id": "fpn31", "cat": "control", "input": "It took, like, 5 minutes.", "expected": "It took, like, 5 minutes."}
+{"id": "fpn32", "cat": "control", "input": "We waited, like, ten minutes.", "expected": "We waited, like, ten minutes."}
+{"id": "fpn33", "cat": "control", "input": "Is it the kind of thing, you know?", "expected": "Is it the kind of thing, you know?"}
+{"id": "fpn34", "cat": "control", "input": "Basically, it's done.", "expected": "Basically, it's done."}
+{"id": "fpn35", "cat": "control", "input": "That's literally, the best.", "expected": "That's literally, the best."}
+{"id": "fpn36", "cat": "control", "input": "Anyway, so yeah, we left.", "expected": "Anyway, so yeah, we left."}
+{"id": "fpn37", "cat": "control", "input": "So, yeah.", "expected": "So, yeah."}
+{"id": "fpn38", "cat": "control", "input": "We left, so, yeah.", "expected": "We left, so, yeah."}
+{"id": "fpn39", "cat": "control", "input": "And then, so yeah, that's it.", "expected": "And then, so yeah, that's it."}
+{"id": "fpn40", "cat": "control", "input": "I told him so, yeah.", "expected": "I told him so, yeah."}
+{"id": "fpn42", "cat": "control", "input": "Just do what you like, okay?", "expected": "Just do what you like, okay?"}

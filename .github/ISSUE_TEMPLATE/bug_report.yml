@@ -1,0 +1,100 @@
+name: Bug report
+description: Something in Pluto Keyboard is broken or behaves unexpectedly.
+labels: ["bug"]
+title: "Bug: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. The more detail you can give, the easier it is for me to fix.
+
+        Please report one problem per issue. Pluto Keyboard is a separate app from FUTO Keyboard, so please report Pluto problems here and not to FUTO.
+
+        Please do not paste passwords or private text into this form or its attachments.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Tell me what you saw. A screenshot or short screen recording helps a lot.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to make it happen again
+      description: Which app were you typing in, and what did you do?
+      placeholder: |
+        1. Open Messages and tap a text box
+        2. Tap the microphone and say "..."
+        3. ...
+    validations:
+      required: true
+
+  - type: input
+    id: app-version
+    attributes:
+      label: Pluto Keyboard version
+      description: Shown at the bottom of Pluto Keyboard's settings, or on the release page you installed it from.
+      placeholder: "0.5.0"
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Phone model
+      placeholder: "Google Pixel 8"
+    validations:
+      required: true
+
+  - type: input
+    id: android-version
+    attributes:
+      label: Android version
+      placeholder: "Android 15"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: voice-model
+    attributes:
+      label: Voice model in use
+      description: Languages & Models, then Voice Input Model.
+      options:
+        - I do not use voice typing
+        - Moonshine Small
+        - Moonshine Medium
+        - Moonshine Tiny
+        - Whisper
+        - Not sure
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: features
+    attributes:
+      label: Features that are turned on
+      description: Tick everything you have enabled. This helps me tell which part is involved.
+      options:
+        - label: Punctuation fix for voice typing
+        - label: Smart corrections (Context Model) for voice typing
+        - label: Adaptive typing heatmap
+        - label: Adaptive swipe learning
+        - label: Always use middle suggestion
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Related issues, whether it also happened in FUTO Keyboard, whether you imported a configuration from it, or anything else you noticed.
+    validations:
+      required: false

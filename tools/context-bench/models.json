@@ -1,0 +1,102 @@
+{
+ "qwen2.5-0.5b": {
+  "file": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "kwargs": {}
+ },
+ "qwen2.5-1.5b": {
+  "file": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+  "kwargs": {}
+ },
+ "qwen3-0.6b": {
+  "file": "Qwen_Qwen3-0.6B-Q4_K_M.gguf",
+  "kwargs": {
+   "enable_thinking": false
+  }
+ },
+ "qwen3-1.7b": {
+  "file": "Qwen_Qwen3-1.7B-Q4_K_M.gguf",
+  "kwargs": {
+   "enable_thinking": false
+  }
+ },
+ "qwen3.5-0.8b": {
+  "file": "Qwen_Qwen3.5-0.8B-Q4_K_M.gguf",
+  "kwargs": {
+   "enable_thinking": false
+  }
+ },
+ "qwen3.5-2b": {
+  "file": "Qwen_Qwen3.5-2B-Q4_K_M.gguf",
+  "kwargs": {
+   "enable_thinking": false
+  }
+ },
+ "gemma3-270m": {
+  "file": "gemma-3-270m-it-Q4_K_M.gguf",
+  "kwargs": {}
+ },
+ "gemma3-1b": {
+  "file": "google_gemma-3-1b-it-Q4_K_M.gguf",
+  "kwargs": {}
+ },
+ "gemma4-e2b": {
+  "file": "gemma-4-E2B-it-Q4_K_M.gguf",
+  "kwargs": {}
+ },
+ "llama3.2-1b": {
+  "file": "Llama-3.2-1B-Instruct-Q4_K_M.gguf",
+  "kwargs": {}
+ },
+ "lfm2.5-230m": {
+  "file": "LFM2.5-230M-Q4_K_M.gguf",
+  "kwargs": {}
+ },
+ "lfm2.5-350m": {
+  "file": "LFM2.5-350M-Q4_K_M.gguf",
+  "kwargs": {}
+ },
+ "lfm2-700m": {
+  "file": "LFM2-700M-Q4_K_M.gguf",
+  "kwargs": {}
+ },
+ "lfm2.5-1.2b": {
+  "file": "LFM2.5-1.2B-Instruct-Q4_K_M.gguf",
+  "kwargs": {}
+ },
+ "granite4-h-1b": {
+  "file": "granite-4.0-h-1b-Q4_K_M.gguf",
+  "kwargs": {}
+ },
+ "llama3.2-1b-q40": {
+  "file": "Llama-3.2-1B-Instruct-Q4_0.gguf",
+  "kwargs": {}
+ },
+ "qwen3-0.6b-q40": {
+  "file": "Qwen_Qwen3-0.6B-Q4_0.gguf",
+  "kwargs": {
+   "enable_thinking": false
+  }
+ },
+ "gemma3-1b-q40": {
+  "file": "google_gemma-3-1b-it-Q4_0.gguf",
+  "kwargs": {}
+ },
+ "lfm2.5-1.2b-q40": {
+  "file": "LFM2.5-1.2B-Instruct-Q4_0.gguf",
+  "kwargs": {}
+ },
+ "qwen2.5-0.5b-q40": {
+  "file": "qwen2.5-0.5b-instruct-q4_0.gguf",
+  "kwargs": {}
+ },
+ "qwen3.5-0.8b-q40": {
+  "file": "Qwen_Qwen3.5-0.8B-Q4_0.gguf",
+  "kwargs": {
+   "enable_thinking": false
+  }
+ },
+ "granite4-h-1b-q40": {
+  "file": "granite-4.0-h-1b-Q4_0.gguf",
+  "kwargs": {}
+ }
+}

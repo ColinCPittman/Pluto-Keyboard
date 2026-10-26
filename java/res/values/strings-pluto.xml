@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Pluto Keyboard's own strings (not part of FUTO Keyboard's translations). -->
+
+    <!-- Attribution shown wherever the app introduces itself. Keep the wording exact. -->
+    <string name="pluto_attribution" translatable="false">Pluto Keyboard is based on FUTO Keyboard by FUTO. It is not affiliated with or endorsed by FUTO.</string>
+
+    <!-- About section at the top of the Credits page -->
+    <string name="pluto_about_title">About Pluto Keyboard</string>
+    <string name="pluto_about_credits_menu_title">About &amp; credits</string>
+    <string name="pluto_about_description">Pluto Keyboard is a private keyboard that works without an internet connection. On top of FUTO Keyboard, it adds live voice typing, automatic punctuation, Smart corrections for dictation, and keys that adapt to how you type.</string>
+    <string name="pluto_about_modified_notice">This is a modified version of FUTO Keyboard. FUTO\'s copyright and license (FUTO Source First License 1.1) still apply to the FUTO Keyboard code.</string>
+    <string name="pluto_about_version">Version <xliff:g name="version" example="0.5.0">%1$s</xliff:g></string>
+    <string name="pluto_about_project_page">Pluto Keyboard on GitHub</string>
+    <string name="pluto_about_original_project">FUTO Keyboard (the original app)</string>
+    <string name="pluto_credits_futo_heading">FUTO Keyboard credits</string>
+
+    <!-- Long-press on a suggestion -->
+    <string name="pluto_suggestion_menu_title">“<xliff:g name="word" example="McKenna">%1$s</xliff:g>”</string>
+    <string name="pluto_suggestion_menu_add">Add to dictionary</string>
+    <string name="pluto_suggestion_menu_forget">Forget</string>
+    <string name="pluto_suggestion_menu_add_sensitive_warning">“<xliff:g name="word" example="Tr0ub4dor">%1$s</xliff:g>” looks like a password or key. Your personal dictionary is shared with other apps and keyboards on this phone, which can read it. Add it anyway?</string>
+    <string name="pluto_suggestion_menu_add_anyway">Add anyway</string>
+    <string name="pluto_suggestion_added_to_dictionary">Added “<xliff:g name="word" example="McKenna">%1$s</xliff:g>” to your personal dictionary</string>
+    <string name="pluto_suggestion_already_in_dictionary">“<xliff:g name="word" example="McKenna">%1$s</xliff:g>” is already in your personal dictionary</string>
+    <string name="pluto_suggestion_add_failed">Couldn\'t add “<xliff:g name="word" example="McKenna">%1$s</xliff:g>” to your personal dictionary</string>
+    <string name="pluto_suggestion_forgotten">Won\'t suggest “<xliff:g name="word" example="McKenna">%1$s</xliff:g>” again</string>
+
+    <!-- Password-like words: not learned while typing (Predictive text setting + strip notice) -->
+    <string name="pluto_protect_password_like_words">Protect password-like words</string>
+    <string name="pluto_protect_password_like_words_subtitle">Don\'t learn words that look like passwords, keys or email addresses.</string>
+    <string name="pluto_sensitive_word_headline">Looks like a password</string>
+    <string name="pluto_sensitive_word_not_remembered">“<xliff:g name="word" example="Tr0ub4dor">%1$s</xliff:g>” wasn\'t learned</string>
+    <string name="pluto_sensitive_word_learn_anyway">Learn anyway</string>
+    <string name="pluto_sensitive_word_remembered">Learned “<xliff:g name="word" example="Tr0ub4dor">%1$s</xliff:g>”</string>
+
+    <!-- Personal dictionary → Copy learned words to dictionary -->
+    <string name="pluto_copy_learned_words">Copy learned words to dictionary</string>
+    <string name="pluto_copy_learned_words_subtitle">Add names and other new words the keyboard learned from your typing</string>
+    <plurals name="pluto_copy_learned_words_title">
+        <item quantity="one">Copy <xliff:g name="count" example="1">%d</xliff:g> learned word to your personal dictionary?</item>
+        <item quantity="other">Copy <xliff:g name="count" example="12">%d</xliff:g> learned words to your personal dictionary?</item>
+    </plurals>
+    <string name="pluto_copy_learned_words_explanation">Android\'s personal dictionary is shared with other apps and keyboards on this phone, which can read and use these words. Words already in it are skipped. You can remove words later on the Personal dictionary page.</string>
+    <string name="pluto_copy_learned_words_loading">Looking for learned words…</string>
+    <string name="pluto_copy_learned_words_none">No new learned words to copy. When the keyboard learns names or other new words from your typing, they\'ll show up here.</string>
+    <string name="pluto_copy_learned_words_sensitive_header">⚠ Looks sensitive</string>
+    <string name="pluto_copy_learned_words_sensitive_explanation">These look like passwords or keys. Don\'t copy them, because other apps could read them.</string>
+    <string name="pluto_copy_learned_words_words_header">Learned words</string>
+    <string name="pluto_copy_learned_words_forget">Forget from keyboard</string>
+    <string name="pluto_copy_learned_words_never">Never suggest</string>
+    <string name="pluto_copy_learned_words_hidden_link">Hidden words (<xliff:g name="count" example="3">%1$d</xliff:g>)</string>
+    <plurals name="pluto_copy_learned_words_copy_button">
+        <item quantity="one">Copy <xliff:g name="count" example="1">%d</xliff:g> word</item>
+        <item quantity="other">Copy <xliff:g name="count" example="12">%d</xliff:g> words</item>
+    </plurals>
+    <plurals name="pluto_copy_learned_words_done">
+        <item quantity="one">Copied <xliff:g name="count" example="1">%d</xliff:g> word to your personal dictionary</item>
+        <item quantity="other">Copied <xliff:g name="count" example="12">%d</xliff:g> words to your personal dictionary</item>
+    </plurals>
+    <string name="pluto_copy_learned_words_forgotten">The keyboard forgot “<xliff:g name="word" example="Tr0ub4dor">%1$s</xliff:g>”</string>
+    <string name="pluto_copy_learned_words_failed">Couldn\'t copy the words. Make sure Pluto Keyboard is your current keyboard, then try again.</string>
+    <string name="pluto_hidden_learned_words_title">Hidden words</string>
+    <string name="pluto_hidden_learned_words_explanation">These learned words won\'t be offered for copying to your personal dictionary. They still work as typing suggestions.</string>
+    <string name="pluto_hidden_learned_words_unhide">Show again</string>
+    <string name="pluto_hidden_learned_words_none">No hidden words.</string>
+
+    <!-- Voice Input → Set up voice typing -->
+    <string name="pluto_voice_setup_title">Set up voice typing</string>
+    <string name="pluto_voice_setup_subtitle">Get the voice typing model, plus optional punctuation and Smart corrections</string>
+    <string name="pluto_voice_setup_intro">These models are English only for now, because Moonshine only understands English. Pluto has no internet access, so it can\'t download models by itself. Tap Download to get a file in your browser, then come back here, tap Import and choose the file you downloaded.</string>
+    <string name="pluto_voice_setup_step_voice_title">1. Voice typing (Moonshine Small, English, 124 MB)</string>
+    <string name="pluto_voice_setup_step_voice_body">Recommended. Turns your speech into text as you talk. Other sizes are on the voice model page (Languages &amp; Models → English → Voice Input Model).</string>
+    <string name="pluto_voice_setup_step_punctuation_title">2. Punctuation (optional, 67 MB)</string>
+    <string name="pluto_voice_setup_step_punctuation_body">Moonshine puts a period at almost every pause. This model replaces its punctuation with real sentences, commas and capital letters after you stop speaking.</string>
+    <string name="pluto_voice_setup_step_context_title">3. Smart corrections (optional, 470 MB, English)</string>
+    <string name="pluto_voice_setup_step_context_body">Reads each finished dictation with a small language model and fixes what only the whole sentence can tell, like misheard words (“bulls” → “bowls”, “their” → “there”) and names and words from your personal dictionary. You can also turn on numbers as digits, voice commands like “new paragraph”, filler word removal, self-correction fixes, quotation marks and emoji by name. It never rephrases what you said and adds up to about two seconds after you stop speaking.</string>
+    <string name="pluto_voice_setup_other_sizes">See other sizes</string>
+    <string name="pluto_voice_setup_download">Download</string>
+    <string name="pluto_voice_setup_import">Import</string>
+    <string name="pluto_voice_setup_installed">✓ Installed</string>
+    <string name="pluto_voice_setup_release_page">Download from the Pluto release page</string>
+    <string name="pluto_voice_setup_release_page_subtitle">Voice typing, punctuation and Smart corrections models (opens your browser)</string>
+    <string name="pluto_explore_whisper_models">Explore Whisper voice models (FUTO)</string>
+
+    <!-- Help & Feedback -->
+    <string name="help_menu_pluto_project_page">Project page (GitHub)</string>
+    <string name="help_menu_pluto_project_page_subtitle">News, downloads and source code for Pluto Keyboard</string>
+    <string name="help_menu_pluto_report_issue">Report a problem or suggest a feature</string>
+    <string name="help_menu_pluto_report_issue_subtitle">Opens the Pluto Keyboard issue tracker on GitHub</string>
+    <string name="help_menu_pluto_report_issue_tags">bug, issue, problem, crash, error, broken, feedback, feature, request, support, help, contact, question</string>
+    <string name="help_menu_pluto_upstream_docs">FUTO Keyboard guide</string>
+    <string name="help_menu_pluto_upstream_docs_subtitle">FUTO\'s guide to the features Pluto Keyboard shares with FUTO Keyboard. Please report Pluto Keyboard problems on GitHub, not to FUTO.</string>
+
+    <!-- Voice Input: which app the microphone button uses -->
+    <string name="voice_input_settings_backend_system_hint">Choose which app the microphone button uses. Pluto\'s built-in voice typing works offline, but other apps may not.</string>
+    <string name="voice_input_settings_open_android_keyboards">Open Android keyboard settings</string>
+    <string name="voice_input_settings_open_android_keyboards_subtitle">Turn on other voice typing apps, such as Google voice typing</string>
+    <string name="voice_input_cancel_discard">Cancel</string>
+
+    <!-- Smart corrections for typing (Text prediction setting, strip chip, review list) -->
+    <string name="typing_smart_corrections">Smart corrections for typing</string>
+    <string name="typing_smart_corrections_nav_subtitle">Catches typos that slip past autocorrect, using the words around them.</string>
+    <string name="typing_smart_corrections_enable">Use Smart corrections for typing</string>
+    <string name="typing_smart_corrections_subtitle">Rereads each sentence you finish and fixes the typos that slipped through, using the words around them. Choose which kinds below. Tap the undo button above the keyboard to change a fix back. Undoing teaches it to be more careful there, and fixing a miss yourself builds its confidence. English only.</string>
+    <string name="typing_fix_real_words">Fix typos that are real words</string>
+    <string name="typing_fix_real_words_subtitle">Catches slips that spell another word, like “salt an pepper” or “an email form my boss”, once the rest of the sentence makes it clear. Uses the typing corrections list.</string>
+    <string name="typing_fix_missed_typos">Attempt to fix missed typos</string>
+    <string name="typing_fix_missed_typos_subtitle">When a misspelled word slips through, say because it was the middle suggestion so the space bar kept it, this works out the word you meant from the letters you typed and the sentence around them, like “ststy the game” → “start the game”. It only steps in when one word is the clear answer. Your own words, names and abbreviations are left alone.</string>
+    <string name="typing_smart_corrections_tags">typo real word fix sentence context autocorrect smart corrections</string>
+    <string name="typing_fix_revert_description">Changed to <xliff:g name="new" example="and">%1$s</xliff:g>. Tap to change back to <xliff:g name="old" example="an">%2$s</xliff:g>.</string>
+    <string name="typing_fix_more_description">Review all <xliff:g name="count" example="3">%1$d</xliff:g> fixes</string>
+    <string name="typing_fix_stale_description">%1$s to %2$s (the text there changed, so it can\'t be undone here).</string>
+    <string name="typing_fix_list_title">Typing fixes</string>
+    <string name="typing_fix_chip_on_right">Typing fix buttons on the right</string>
+    <string name="typing_fix_chip_on_right_subtitle">The undo button for a typing fix, and the close button of the fix list, sit on the right near your thumb. Turn off to put them on the left.</string>
+    <string name="typing_pairs_title">Typing corrections list</string>
+    <string name="typing_pairs_nav_subtitle">Which words can be fixed into which. Add your own, or switch some off.</string>
+    <string name="typing_pairs_tags">typing corrections list pairs words typo never change built-in</string>
+    <string name="typing_pairs_header">Typing corrections</string>
+    <string name="typing_pairs_explanation">A word you typed is only fixed into a word in its pairs, and only when the sentence around it makes the fix clear.</string>
+    <string name="typing_pairs_builtin">Built-in pairs</string>
+    <string name="typing_pairs_builtin_count">%1$s typed words, %2$s pairs. Turn this off and only your own pairs are used.</string>
+    <string name="typing_pairs_builtin_off_note">Built-in pairs are off, so these are not used. Turn them on to use them.</string>
+    <string name="typing_pairs_search">Search a typed word</string>
+    <string name="typing_pairs_search_prompt">Type a word to see what it can be fixed into.</string>
+    <string name="typing_pairs_no_matches">No built-in pair for that word. Add it as your own below.</string>
+    <string name="typing_pairs_more">Showing the first %1$d. Type more to narrow it down.</string>
+    <string name="typing_pairs_pairs_of">Pairs of “%1$s”</string>
+    <string name="typing_pairs_all_off"><xliff:g name="word" example="form">%1$s</xliff:g> → all switched off</string>
+    <string name="typing_pairs_never_result"><xliff:g name="word" example="form">%1$s</xliff:g> → never changed</string>
+    <string name="typing_pairs_row_yours">Yours: <xliff:g name="words" example="ent">%1$s</xliff:g></string>
+    <string name="typing_pairs_row_yours_pair"><xliff:g name="pair" example="ant → ent">%1$s</xliff:g> (yours)</string>
+    <string name="typing_pairs_yours">Your pairs</string>
+    <string name="typing_pairs_none">None yet. Add a word you often mistype and the word you meant.</string>
+    <string name="typing_pairs_add">Add a pair</string>
+    <string name="typing_pairs_edit">Change a pair</string>
+    <string name="typing_pairs_typed_label">Typed word</string>
+    <string name="typing_pairs_typed_hint">One word, like teh</string>
+    <string name="typing_pairs_intended_label">Meant</string>
+    <string name="typing_pairs_intended_hint">One or more words, separated by commas</string>
+    <string name="typing_pairs_never_header">Never change</string>
+    <string name="typing_pairs_never_explanation">Words that are never fixed into another word when you type them.</string>
+    <string name="typing_pairs_never_add">Add a word</string>
+    <string name="typing_pairs_never_hint">One word</string>
+    <string name="typing_pairs_never_remove">Remove</string>
+    <string name="typing_pairs_never_row">Never change “%1$s”</string>
+    <string name="typing_pairs_reset">Undo your changes</string>
+    <string name="typing_pairs_reset_confirm">This removes your own pairs and never-change words and switches the built-in pairs back on.</string>
+    <string name="typing_smart_corrections_sensitivity_subtitle">Slide left and it holds back, changing your words only when it’s sure. Slide right and it steps in more readily.</string>
+    <string name="typing_fix_chip_on_left_subtitle">The undo button for a typing fix, and the close button of the fix list, sit on the left. Turn on to put them on the right.</string>
+    <!-- Smart corrections for typing pauses while the suggestion bar is hidden -->
+    <string name="hide_bar_typing_fixes_title">Hide the suggestion bar?</string>
+    <string name="hide_bar_typing_fixes_text">Smart corrections for typing needs the suggestion bar to show and undo its fixes, so it pauses while the bar is hidden. It starts again when you show the bar.</string>
+    <string name="hide_bar_typing_fixes_hide">Hide anyway</string>
+    <string name="hide_bar_typing_fixes_cancel">Cancel</string>
+    <string name="typing_smart_corrections_paused_no_bar">Paused while the suggestion bar is hidden, because that\'s where you see and undo its fixes.</string>
+    <string name="typing_smart_corrections_show_bar">Show the suggestion bar</string>
+    <!-- the settings page with Export and Import configuration (FUTO's "Miscellaneous") -->
+    <string name="pluto_backup_restore_title">Backup and restore</string>
+</resources>

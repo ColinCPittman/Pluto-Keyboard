@@ -1,0 +1,494 @@
+{"id": "b14_001", "cat": "control", "input": "I'm going to the farmers market this morning.", "expected": "I'm going to the farmers market this morning."}
+{"id": "b14_002", "cat": "control", "input": "Do you want anything?", "expected": "Do you want anything?"}
+{"id": "b14_003", "cat": "control", "input": "They have fresh strawberries this week.", "expected": "They have fresh strawberries this week."}
+{"id": "b14_004", "cat": "control", "input": "Get two baskets.", "expected": "Get two baskets."}
+{"id": "b14_005", "cat": "control", "input": "I'm making jam this weekend.", "expected": "I'm making jam this weekend."}
+{"id": "b14_006", "cat": "control", "input": "My grandma taught me how.", "expected": "My grandma taught me how."}
+{"id": "b14_007", "cat": "control", "input": "It's easier than it looks.", "expected": "It's easier than it looks."}
+{"id": "b14_008", "cat": "control", "input": "You just need a lot of sugar.", "expected": "You just need a lot of sugar."}
+{"id": "b14_009", "cat": "control", "input": "And patience.", "expected": "And patience."}
+{"id": "b14_010", "cat": "control", "input": "I'll save you a jar.", "expected": "I'll save you a jar."}
+{"id": "b14_011", "cat": "control", "input": "The power company is doing work on our street.", "expected": "The power company is doing work on our street."}
+{"id": "b14_012", "cat": "control", "input": "We'll lose power from nine to noon.", "expected": "We'll lose power from nine to noon."}
+{"id": "b14_013", "cat": "control", "input": "I'll work at the coffee shop.", "expected": "I'll work at the coffee shop."}
+{"id": "b14_014", "cat": "control", "input": "Bring your charger.", "expected": "Bring your charger."}
+{"id": "b14_015", "cat": "control", "input": "And headphones.", "expected": "And headphones."}
+{"id": "b14_016", "cat": "control", "input": "It gets loud in there.", "expected": "It gets loud in there."}
+{"id": "b14_017", "cat": "control", "input": "I'll sit in the back.", "expected": "I'll sit in the back."}
+{"id": "b14_018", "cat": "control", "input": "Good luck finding a seat.", "expected": "Good luck finding a seat."}
+{"id": "b14_019", "cat": "control", "input": "I'll get there early.", "expected": "I'll get there early."}
+{"id": "b14_020", "cat": "control", "input": "Smart.", "expected": "Smart."}
+{"id": "b14_021", "cat": "control", "input": "My nephew starts kindergarten tomorrow.", "expected": "My nephew starts kindergarten tomorrow."}
+{"id": "b14_022", "cat": "control", "input": "He picked out his own backpack.", "expected": "He picked out his own backpack."}
+{"id": "b14_023", "cat": "control", "input": "It has dinosaurs on it.", "expected": "It has dinosaurs on it."}
+{"id": "b14_024", "cat": "control", "input": "He's so excited.", "expected": "He's so excited."}
+{"id": "b14_025", "cat": "control", "input": "My sister is a wreck.", "expected": "My sister is a wreck."}
+{"id": "b14_026", "cat": "control", "input": "First day jitters, for the parents.", "expected": "First day jitters, for the parents."}
+{"id": "b14_027", "cat": "control", "input": "Send her a text.", "expected": "Send her a text."}
+{"id": "b14_028", "cat": "control", "input": "I already did.", "expected": "I already did."}
+{"id": "b14_029", "cat": "control", "input": "She sent back a crying emoji.", "expected": "She sent back a crying emoji."}
+{"id": "b14_030", "cat": "control", "input": "Classic.", "expected": "Classic."}
+{"id": "b14_031", "cat": "control", "input": "The car rental place lost our reservation.", "expected": "The car rental place lost our reservation."}
+{"id": "b14_032", "cat": "control", "input": "We waited an hour.", "expected": "We waited an hour."}
+{"id": "b14_033", "cat": "control", "input": "They gave us an upgrade.", "expected": "They gave us an upgrade."}
+{"id": "b14_034", "cat": "control", "input": "A convertible!", "expected": "A convertible!"}
+{"id": "b14_035", "cat": "control", "input": "It's raining though.", "expected": "It's raining though."}
+{"id": "b14_036", "cat": "control", "input": "Of course it is.", "expected": "Of course it is."}
+{"id": "b14_037", "cat": "control", "input": "The top doesn't go up all the way.", "expected": "The top doesn't go up all the way."}
+{"id": "b14_038", "cat": "control", "input": "We're getting wet.", "expected": "We're getting wet."}
+{"id": "b14_039", "cat": "control", "input": "Worst upgrade ever.", "expected": "Worst upgrade ever."}
+{"id": "b14_040", "cat": "control", "input": "Great story though.", "expected": "Great story though."}
+{"id": "b14_041", "cat": "control", "input": "I need a new winter coat.", "expected": "I need a new winter coat."}
+{"id": "b14_042", "cat": "control", "input": "Mine has a hole in the pocket.", "expected": "Mine has a hole in the pocket."}
+{"id": "b14_043", "cat": "control", "input": "My keys keep falling through.", "expected": "My keys keep falling through."}
+{"id": "b14_044", "cat": "control", "input": "Sew it up.", "expected": "Sew it up."}
+{"id": "b14_045", "cat": "control", "input": "I don't know how to sew.", "expected": "I don't know how to sew."}
+{"id": "b14_046", "cat": "control", "input": "I'll show you.", "expected": "I'll show you."}
+{"id": "b14_047", "cat": "control", "input": "It takes five minutes.", "expected": "It takes five minutes."}
+{"id": "b14_048", "cat": "control", "input": "You're a lifesaver.", "expected": "You're a lifesaver."}
+{"id": "b14_049", "cat": "control", "input": "Bring it over tonight.", "expected": "Bring it over tonight."}
+{"id": "b14_050", "cat": "control", "input": "I'll bring wine too.", "expected": "I'll bring wine too."}
+{"id": "b14_051", "cat": "control", "input": "The new episode drops tonight.", "expected": "The new episode drops tonight."}
+{"id": "b14_052", "cat": "control", "input": "No spoilers tomorrow.", "expected": "No spoilers tomorrow."}
+{"id": "b14_053", "cat": "control", "input": "I'm watching it at midnight.", "expected": "I'm watching it at midnight."}
+{"id": "b14_054", "cat": "control", "input": "You're dedicated.", "expected": "You're dedicated."}
+{"id": "b14_055", "cat": "control", "input": "I've waited a year for this.", "expected": "I've waited a year for this."}
+{"id": "b14_056", "cat": "control", "input": "Let's text during it.", "expected": "Let's text during it."}
+{"id": "b14_057", "cat": "control", "input": "Deal.", "expected": "Deal."}
+{"id": "b14_058", "cat": "control", "input": "I'll make popcorn.", "expected": "I'll make popcorn."}
+{"id": "b14_059", "cat": "control", "input": "Extra butter.", "expected": "Extra butter."}
+{"id": "b14_060", "cat": "control", "input": "Obviously.", "expected": "Obviously."}
+{"id": "b14_061", "cat": "control", "input": "My dog learned a new trick.", "expected": "My dog learned a new trick."}
+{"id": "b14_062", "cat": "control", "input": "He can roll over now.", "expected": "He can roll over now."}
+{"id": "b14_063", "cat": "control", "input": "Only for cheese.", "expected": "Only for cheese."}
+{"id": "b14_064", "cat": "control", "input": "Smart dog.", "expected": "Smart dog."}
+{"id": "b14_065", "cat": "control", "input": "He's food motivated.", "expected": "He's food motivated."}
+{"id": "b14_066", "cat": "control", "input": "Like his owner.", "expected": "Like his owner."}
+{"id": "b14_067", "cat": "control", "input": "Rude.", "expected": "Rude."}
+{"id": "b14_068", "cat": "control", "input": "But true.", "expected": "But true."}
+{"id": "b14_069", "cat": "control", "input": "I'm sending you a video.", "expected": "I'm sending you a video."}
+{"id": "b14_070", "cat": "control", "input": "He's adorable.", "expected": "He's adorable."}
+{"id": "b14_071", "cat": "control", "input": "Our neighbor's tree is leaning on our fence.", "expected": "Our neighbor's tree is leaning on our fence."}
+{"id": "b14_072", "cat": "control", "input": "It might fall in the next storm.", "expected": "It might fall in the next storm."}
+{"id": "b14_073", "cat": "control", "input": "Talk to them about it.", "expected": "Talk to them about it."}
+{"id": "b14_074", "cat": "control", "input": "I left a note.", "expected": "I left a note."}
+{"id": "b14_075", "cat": "control", "input": "They haven't responded.", "expected": "They haven't responded."}
+{"id": "b14_076", "cat": "control", "input": "Knock on their door.", "expected": "Knock on their door."}
+{"id": "b14_077", "cat": "control", "input": "I'm shy.", "expected": "I'm shy."}
+{"id": "b14_078", "cat": "control", "input": "Want me to do it?", "expected": "Want me to do it?"}
+{"id": "b14_079", "cat": "control", "input": "Yes, please.", "expected": "Yes, please."}
+{"id": "b14_080", "cat": "control", "input": "I'll go after dinner.", "expected": "I'll go after dinner."}
+{"id": "b14_081", "cat": "control", "input": "The baby took her first steps!", "expected": "The baby took her first steps!"}
+{"id": "b14_082", "cat": "control", "input": "Three whole steps.", "expected": "Three whole steps."}
+{"id": "b14_083", "cat": "control", "input": "Then she sat down and laughed.", "expected": "Then she sat down and laughed."}
+{"id": "b14_084", "cat": "control", "input": "I got it on video.", "expected": "I got it on video."}
+{"id": "b14_085", "cat": "control", "input": "Send it to everyone.", "expected": "Send it to everyone."}
+{"id": "b14_086", "cat": "control", "input": "Grandma is going to cry.", "expected": "Grandma is going to cry."}
+{"id": "b14_087", "cat": "control", "input": "She already did.", "expected": "She already did."}
+{"id": "b14_088", "cat": "control", "input": "I called her first.", "expected": "I called her first."}
+{"id": "b14_089", "cat": "control", "input": "Of course you did.", "expected": "Of course you did."}
+{"id": "b14_090", "cat": "control", "input": "Best day ever.", "expected": "Best day ever."}
+{"id": "b14_091", "cat": "control", "input": "Sew the hem.", "expected": "Sew the hem."}
+{"id": "b14_092", "cat": "control", "input": "So far, so good.", "expected": "So far, so good."}
+{"id": "b14_093", "cat": "control", "input": "Sow the seeds in spring.", "expected": "Sow the seeds in spring."}
+{"id": "b14_094", "cat": "control", "input": "I'll knead the bread dough.", "expected": "I'll knead the bread dough."}
+{"id": "b14_095", "cat": "control", "input": "I need more time.", "expected": "I need more time."}
+{"id": "b14_096", "cat": "control", "input": "The night was cold.", "expected": "The night was cold."}
+{"id": "b14_097", "cat": "control", "input": "The knight's horse.", "expected": "The knight's horse."}
+{"id": "b14_098", "cat": "control", "input": "Write a note.", "expected": "Write a note."}
+{"id": "b14_099", "cat": "control", "input": "Turn right here.", "expected": "Turn right here."}
+{"id": "b14_100", "cat": "control", "input": "The weight is too much.", "expected": "The weight is too much."}
+{"id": "b14_101", "cat": "control", "input": "I'll wait outside.", "expected": "I'll wait outside."}
+{"id": "b14_102", "cat": "control", "input": "The peace and quiet.", "expected": "The peace and quiet."}
+{"id": "b14_103", "cat": "control", "input": "A piece of toast.", "expected": "A piece of toast."}
+{"id": "b14_104", "cat": "control", "input": "The meat sauce.", "expected": "The meat sauce."}
+{"id": "b14_105", "cat": "control", "input": "Meet you at noon.", "expected": "Meet you at noon."}
+{"id": "b14_106", "cat": "control", "input": "Our dog.", "expected": "Our dog."}
+{"id": "b14_107", "cat": "control", "input": "In an hour.", "expected": "In an hour."}
+{"id": "b14_108", "cat": "control", "input": "The tail feathers.", "expected": "The tail feathers."}
+{"id": "b14_109", "cat": "control", "input": "The tale of the lost dog.", "expected": "The tale of the lost dog."}
+{"id": "b14_110", "cat": "control", "input": "The waist of the dress.", "expected": "The waist of the dress."}
+{"id": "b14_111", "cat": "control", "input": "Don't waste water.", "expected": "Don't waste water."}
+{"id": "b14_112", "cat": "control", "input": "The sun is shining.", "expected": "The sun is shining."}
+{"id": "b14_113", "cat": "control", "input": "Their son is here.", "expected": "Their son is here."}
+{"id": "b14_114", "cat": "control", "input": "The sea is blue.", "expected": "The sea is blue."}
+{"id": "b14_115", "cat": "control", "input": "See the sea.", "expected": "See the sea."}
+{"id": "b14_116", "cat": "control", "input": "I'll buy lunch.", "expected": "I'll buy lunch."}
+{"id": "b14_117", "cat": "control", "input": "Bye now.", "expected": "Bye now."}
+{"id": "b14_118", "cat": "control", "input": "By the door.", "expected": "By the door."}
+{"id": "b14_119", "cat": "control", "input": "The flour bin.", "expected": "The flour bin."}
+{"id": "b14_120", "cat": "control", "input": "A flower crown.", "expected": "A flower crown."}
+{"id": "b14_121", "cat": "control", "input": "Their dog is loud.", "expected": "Their dog is loud."}
+{"id": "b14_122", "cat": "control", "input": "There's the dog.", "expected": "There's the dog."}
+{"id": "b14_123", "cat": "control", "input": "They're walking the dog.", "expected": "They're walking the dog."}
+{"id": "b14_124", "cat": "control", "input": "It's late.", "expected": "It's late."}
+{"id": "b14_125", "cat": "control", "input": "Its leash broke.", "expected": "Its leash broke."}
+{"id": "b14_126", "cat": "control", "input": "You're funny.", "expected": "You're funny."}
+{"id": "b14_127", "cat": "control", "input": "Your hat.", "expected": "Your hat."}
+{"id": "b14_128", "cat": "control", "input": "Two dogs.", "expected": "Two dogs."}
+{"id": "b14_129", "cat": "control", "input": "Too loud.", "expected": "Too loud."}
+{"id": "b14_130", "cat": "control", "input": "To the park.", "expected": "To the park."}
+{"id": "b14_131", "cat": "control", "input": "The whole pie.", "expected": "The whole pie."}
+{"id": "b14_132", "cat": "control", "input": "A hole in my shoe.", "expected": "A hole in my shoe."}
+{"id": "b14_133", "cat": "control", "input": "The plain truth.", "expected": "The plain truth."}
+{"id": "b14_134", "cat": "control", "input": "The plane is boarding.", "expected": "The plane is boarding."}
+{"id": "b14_135", "cat": "control", "input": "The bear went away.", "expected": "The bear went away."}
+{"id": "b14_136", "cat": "control", "input": "Bare feet.", "expected": "Bare feet."}
+{"id": "b14_137", "cat": "control", "input": "The pair of gloves.", "expected": "The pair of gloves."}
+{"id": "b14_138", "cat": "control", "input": "The pear is sweet.", "expected": "The pear is sweet."}
+{"id": "b14_139", "cat": "control", "input": "The mail is late.", "expected": "The mail is late."}
+{"id": "b14_140", "cat": "control", "input": "A male cat.", "expected": "A male cat."}
+{"id": "b14_141", "cat": "control", "input": "The steak is done.", "expected": "The steak is done."}
+{"id": "b14_142", "cat": "control", "input": "The stake is in the ground.", "expected": "The stake is in the ground."}
+{"id": "b14_143", "cat": "control", "input": "The brake is squeaky.", "expected": "The brake is squeaky."}
+{"id": "b14_144", "cat": "control", "input": "Coffee break.", "expected": "Coffee break."}
+{"id": "b14_145", "cat": "control", "input": "The deer jumped.", "expected": "The deer jumped."}
+{"id": "b14_146", "cat": "control", "input": "Oh dear.", "expected": "Oh dear."}
+{"id": "b14_147", "cat": "control", "input": "The doe and her fawn.", "expected": "The doe and her fawn."}
+{"id": "b14_148", "cat": "control", "input": "The dough is rising.", "expected": "The dough is rising."}
+{"id": "b14_149", "cat": "control", "input": "The hare escaped.", "expected": "The hare escaped."}
+{"id": "b14_150", "cat": "control", "input": "My hair is wet.", "expected": "My hair is wet."}
+{"id": "b14_151", "cat": "control", "input": "The heel of the shoe.", "expected": "The heel of the shoe."}
+{"id": "b14_152", "cat": "control", "input": "It'll heal.", "expected": "It'll heal."}
+{"id": "b14_153", "cat": "control", "input": "The sole is thin.", "expected": "The sole is thin."}
+{"id": "b14_154", "cat": "control", "input": "My soul is tired.", "expected": "My soul is tired."}
+{"id": "b14_155", "cat": "control", "input": "The roll of paper.", "expected": "The roll of paper."}
+{"id": "b14_156", "cat": "control", "input": "Her role in the play.", "expected": "Her role in the play."}
+{"id": "b14_157", "cat": "control", "input": "The pole vault.", "expected": "The pole vault."}
+{"id": "b14_158", "cat": "control", "input": "The poll is open.", "expected": "The poll is open."}
+{"id": "b14_159", "cat": "control", "input": "The board is broken.", "expected": "The board is broken."}
+{"id": "b14_160", "cat": "control", "input": "The kids are bored.", "expected": "The kids are bored."}
+{"id": "b14_161", "cat": "control", "input": "Some people.", "expected": "Some people."}
+{"id": "b14_162", "cat": "control", "input": "The sum is ten.", "expected": "The sum is ten."}
+{"id": "b14_163", "cat": "control", "input": "The scent of coffee.", "expected": "The scent of coffee."}
+{"id": "b14_164", "cat": "control", "input": "I sent it.", "expected": "I sent it."}
+{"id": "b14_165", "cat": "control", "input": "One cent.", "expected": "One cent."}
+{"id": "b14_166", "cat": "control", "input": "The site is live.", "expected": "The site is live."}
+{"id": "b14_167", "cat": "control", "input": "Out of sight.", "expected": "Out of sight."}
+{"id": "b14_168", "cat": "control", "input": "The fair is fun.", "expected": "The fair is fun."}
+{"id": "b14_169", "cat": "control", "input": "The bus fare.", "expected": "The bus fare."}
+{"id": "b14_170", "cat": "control", "input": "The fan is loud.", "expected": "The fan is loud."}
+{"id": "b14_171", "cat": "control", "input": "The van is blue.", "expected": "The van is blue."}
+{"id": "b14_172", "cat": "control", "input": "The pool is cold.", "expected": "The pool is cold."}
+{"id": "b14_173", "cat": "control", "input": "Pull the door.", "expected": "Pull the door."}
+{"id": "b14_174", "cat": "control", "input": "The pill is small.", "expected": "The pill is small."}
+{"id": "b14_175", "cat": "control", "input": "The peel is bitter.", "expected": "The peel is bitter."}
+{"id": "b14_176", "cat": "control", "input": "The mist is thick.", "expected": "The mist is thick."}
+{"id": "b14_177", "cat": "control", "input": "I missed it.", "expected": "I missed it."}
+{"id": "b14_178", "cat": "control", "input": "The kite is red.", "expected": "The kite is red."}
+{"id": "b14_179", "cat": "control", "input": "The cat is gray.", "expected": "The cat is gray."}
+{"id": "b14_180", "cat": "control", "input": "The period of the pendulum.", "expected": "The period of the pendulum."}
+{"id": "b14_181", "cat": "control", "input": "I hate the period key on my phone.", "expected": "I hate the period key on my phone."}
+{"id": "b14_182", "cat": "control", "input": "A comma is a pause.", "expected": "A comma is a pause."}
+{"id": "b14_183", "cat": "control", "input": "The colon is long.", "expected": "The colon is long."}
+{"id": "b14_184", "cat": "control", "input": "That quote is famous.", "expected": "That quote is famous."}
+{"id": "b14_185", "cat": "control", "input": "The quote was too high.", "expected": "The quote was too high."}
+{"id": "b14_186", "cat": "control", "input": "A dash of pepper.", "expected": "A dash of pepper."}
+{"id": "b14_187", "cat": "control", "input": "The hashtag is trending.", "expected": "The hashtag is trending."}
+{"id": "b14_188", "cat": "control", "input": "The line is moving.", "expected": "The line is moving."}
+{"id": "b14_189", "cat": "control", "input": "Hold the line.", "expected": "Hold the line."}
+{"id": "b14_190", "cat": "control", "input": "A new line of credit.", "expected": "A new line of credit."}
+{"id": "b14_191", "cat": "control", "input": "The next line, please.", "expected": "The next line, please."}
+{"id": "b14_192", "cat": "control", "input": "Stop right there.", "expected": "Stop right there."}
+{"id": "b14_193", "cat": "control", "input": "A question mark appeared.", "expected": "A question mark appeared."}
+{"id": "b14_194", "cat": "control", "input": "The exclamation point key.", "expected": "The exclamation point key."}
+{"id": "b14_195", "cat": "control", "input": "The at sign is annoying to type.", "expected": "The at sign is annoying to type."}
+{"id": "b14_196", "cat": "control", "input": "A dollar sign tattoo.", "expected": "A dollar sign tattoo."}
+{"id": "b14_197", "cat": "control", "input": "The plus side is huge.", "expected": "The plus side is huge."}
+{"id": "b14_198", "cat": "control", "input": "Open the gate.", "expected": "Open the gate."}
+{"id": "b14_199", "cat": "control", "input": "Close the gate.", "expected": "Close the gate."}
+{"id": "b14_200", "cat": "control", "input": "Scratch the itch.", "expected": "Scratch the itch."}
+{"id": "b14_201", "cat": "control", "input": "Delete my number.", "expected": "Delete my number."}
+{"id": "b14_202", "cat": "control", "input": "A smiley face cookie.", "expected": "A smiley face cookie."}
+{"id": "b14_203", "cat": "control", "input": "A frowny face.", "expected": "A frowny face."}
+{"id": "b14_204", "cat": "control", "input": "Ah, that's it.", "expected": "Ah, that's it."}
+{"id": "b14_205", "cat": "control", "input": "Eh, I'm not sure.", "expected": "Eh, I'm not sure."}
+{"id": "b14_206", "cat": "control", "input": "Uh oh, I spilled.", "expected": "Uh oh, I spilled."}
+{"id": "b14_207", "cat": "control", "input": "Uh huh, yeah.", "expected": "Uh huh, yeah."}
+{"id": "b14_208", "cat": "control", "input": "Sorry, I'm driving.", "expected": "Sorry, I'm driving."}
+{"id": "b14_209", "cat": "control", "input": "Sorry, I'm busy right now.", "expected": "Sorry, I'm busy right now."}
+{"id": "b14_210", "cat": "control", "input": "Sorry about that.", "expected": "Sorry about that."}
+{"id": "b14_211", "cat": "control", "input": "Actually, that's perfect.", "expected": "Actually, that's perfect."}
+{"id": "b14_212", "cat": "control", "input": "It actually works.", "expected": "It actually works."}
+{"id": "b14_213", "cat": "control", "input": "I mean, whatever works.", "expected": "I mean, whatever works."}
+{"id": "b14_214", "cat": "control", "input": "I meant that.", "expected": "I meant that."}
+{"id": "b14_215", "cat": "control", "input": "I'd rather not say.", "expected": "I'd rather not say."}
+{"id": "b14_216", "cat": "control", "input": "No, actually, that's mine.", "expected": "No, actually, that's mine."}
+{"id": "b14_217", "cat": "control", "input": "No wait, it's here.", "expected": "No wait, it's here."}
+{"id": "b14_218", "cat": "control", "input": "Oh wait, I see it.", "expected": "Oh wait, I see it."}
+{"id": "b14_219", "cat": "control", "input": "Make that a large.", "expected": "Make that a large."}
+{"id": "b14_220", "cat": "control", "input": "She said she's coming.", "expected": "She said she's coming."}
+{"id": "b14_221", "cat": "control", "input": "He said it's fine.", "expected": "He said it's fine."}
+{"id": "b14_222", "cat": "control", "input": "They said no.", "expected": "They said no."}
+{"id": "b14_223", "cat": "control", "input": "I asked twice.", "expected": "I asked twice."}
+{"id": "b14_224", "cat": "control", "input": "She asked me out.", "expected": "She asked me out."}
+{"id": "b14_225", "cat": "control", "input": "He told me later.", "expected": "He told me later."}
+{"id": "b14_226", "cat": "control", "input": "She went to bed early.", "expected": "She went to bed early."}
+{"id": "b14_227", "cat": "control", "input": "He goes to the gym.", "expected": "He goes to the gym."}
+{"id": "b14_228", "cat": "control", "input": "It's like a movie.", "expected": "It's like a movie."}
+{"id": "b14_229", "cat": "control", "input": "She's like family.", "expected": "She's like family."}
+{"id": "b14_230", "cat": "control", "input": "I'm like, okay.", "expected": "I'm like, okay."}
+{"id": "b14_231", "cat": "control", "input": "He texted me.", "expected": "He texted me."}
+{"id": "b14_232", "cat": "control", "input": "She yelled at me.", "expected": "She yelled at me."}
+{"id": "b14_233", "cat": "control", "input": "I know, I know.", "expected": "I know, I know."}
+{"id": "b14_234", "cat": "control", "input": "Okay, okay.", "expected": "Okay, okay."}
+{"id": "b14_235", "cat": "control", "input": "Thank you, thank you.", "expected": "Thank you, thank you."}
+{"id": "b14_236", "cat": "control", "input": "Come on, come on.", "expected": "Come on, come on."}
+{"id": "b14_237", "cat": "control", "input": "No, no.", "expected": "No, no."}
+{"id": "b14_238", "cat": "control", "input": "Yes, yes.", "expected": "Yes, yes."}
+{"id": "b14_239", "cat": "filler", "input": "We should, um, get going.", "expected": "We should get going."}
+{"id": "b14_240", "cat": "filler", "input": "The strawberries are, uh, amazing.", "expected": "The strawberries are amazing."}
+{"id": "b14_241", "cat": "filler", "input": "Um, do you want anything?", "expected": "Do you want anything?"}
+{"id": "b14_242", "cat": "filler", "input": "It's, um, raining again.", "expected": "It's raining again."}
+{"id": "b14_243", "cat": "filler", "input": "I, uh, need a new coat.", "expected": "I need a new coat."}
+{"id": "b14_244", "cat": "filler", "input": "The baby is, um, walking.", "expected": "The baby is walking."}
+{"id": "b14_245", "cat": "filler", "input": "My nephew, uh, starts tomorrow.", "expected": "My nephew starts tomorrow."}
+{"id": "b14_246", "cat": "filler", "input": "We're, um, getting wet.", "expected": "We're getting wet."}
+{"id": "b14_247", "cat": "repeat", "input": "I I need a coat.", "expected": "I need a coat."}
+{"id": "b14_248", "cat": "repeat", "input": "The the power is out.", "expected": "The power is out."}
+{"id": "b14_249", "cat": "repeat", "input": "Can can you sew?", "expected": "Can you sew?"}
+{"id": "b14_250", "cat": "selfcorrection", "input": "The power is out until noon, I mean, one.", "expected": "The power is out until one."}
+{"id": "b14_251", "cat": "selfcorrection", "input": "Get two baskets, sorry, three baskets.", "expected": "Get three baskets."}
+{"id": "b14_252", "cat": "selfcorrection", "input": "The episode drops Friday, no wait, Thursday.", "expected": "The episode drops Thursday."}
+{"id": "b14_253", "cat": "selfcorrection", "input": "Call Maya, I mean, Mia.", "expected": "Call Mia."}
+{"id": "b14_254", "cat": "selfcorrection", "input": "We need two, actually, three jars.", "expected": "We need three jars."}
+{"id": "b14_255", "cat": "selfcorrection", "input": "It's on the left, sorry, the right.", "expected": "It's on the right."}
+{"id": "b14_256", "cat": "quote", "input": "My nephew was like, um, can I bring my dinosaur?", "expected": "My nephew was like \"Um, can I bring my dinosaur?\""}
+{"id": "b14_257", "cat": "quote", "input": "The rental guy asked, did you book online?", "expected": "The rental guy asked \"Did you book online?\""}
+{"id": "b14_258", "cat": "quote", "input": "My kid goes, why is it raining?", "expected": "My kid goes \"Why is it raining?\""}
+{"id": "b14_259", "cat": "quote", "input": "I was like, oh no, the convertible.", "expected": "I was like \"Oh no, the convertible.\""}
+{"id": "b14_260", "cat": "quote", "input": "She said, wow, she's walking.", "expected": "She said \"Wow, she's walking.\""}
+{"id": "b14_261", "cat": "quote", "input": "He asked, can I see the video?", "expected": "He asked \"Can I see the video?\""}
+{"id": "b14_262", "cat": "command", "input": "Hi Grandma comma she walked period", "expected": "Hi Grandma, she walked.", "segments": ["Hi Grandma comma", "she walked period"]}
+{"id": "b14_263", "cat": "command", "input": "Market list colon strawberries, honey, bread.", "expected": "Market list: strawberries, honey, bread.", "segments": ["Market list colon", "strawberries, honey, bread."]}
+{"id": "b14_264", "cat": "command", "input": "She took her first steps exclamation point", "expected": "She took her first steps!"}
+{"id": "b14_265", "cat": "command", "input": "Are you watching question mark", "expected": "Are you watching?"}
+{"id": "b14_266", "cat": "command", "input": "Thanks. New line. Love, Kim.", "expected": "Thanks.\nLove, Kim.", "segments": ["Thanks.", "New line.", "Love, Kim."]}
+{"id": "b14_267", "cat": "command", "input": "Power out at nine. Scratch that. Power out at ten.", "expected": "Power out at ten.", "alts": ["Power out at 10."], "segments": ["Power out at nine.", "Scratch that.", "Power out at ten."]}
+{"id": "b14_268", "cat": "command", "input": "She said. Open quote. Best day ever. Close quote.", "expected": "She said \"Best day ever.\"", "segments": ["She said.", "Open quote.", "Best day ever.", "Close quote."]}
+{"id": "b14_269", "cat": "command", "input": "Salt ampersand vinegar", "expected": "Salt & vinegar"}
+{"id": "b14_270", "cat": "command", "input": "See you tonight period", "expected": "See you tonight."}
+{"id": "b14_271", "cat": "command", "input": "Dear Ms. Lopez comma new paragraph Thank you for your time.", "expected": "Dear Ms. Lopez,\n\nThank you for your time.", "segments": ["Dear Ms. Lopez comma", "new paragraph", "Thank you for your time."]}
+{"id": "b14_272", "cat": "number", "input": "The coat was one hundred and twenty dollars.", "expected": "The coat was $120."}
+{"id": "b14_273", "cat": "number", "input": "The episode is at nine thirty pm.", "expected": "The episode is at 9:30 PM."}
+{"id": "b14_274", "cat": "number", "input": "It's thirty percent off.", "expected": "It's 30% off."}
+{"id": "b14_275", "cat": "number", "input": "They moved in two thousand fourteen.", "expected": "They moved in 2014."}
+{"id": "b14_276", "cat": "number", "input": "The rental was ninety dollars.", "expected": "The rental was $90."}
+{"id": "b14_277", "cat": "number", "input": "We picked forty two strawberries.", "expected": "We picked 42 strawberries."}
+{"id": "b14_278", "cat": "number", "input": "The party is on the nineteenth.", "expected": "The party is on the 19th.", "alts": ["The party is on the nineteenth."]}
+{"id": "b14_279", "cat": "number", "input": "It cost six dollars and twenty five cents.", "expected": "It cost $6.25."}
+{"id": "b14_280", "cat": "soundalike", "input": "I need to by strawberries.", "expected": "I need to buy strawberries."}
+{"id": "b14_281", "cat": "soundalike", "input": "Did you here the storm?", "expected": "Did you hear the storm?"}
+{"id": "b14_282", "cat": "soundalike", "input": "I'll be their in a bit.", "expected": "I'll be there in a bit."}
+{"id": "b14_283", "cat": "soundalike", "input": "The kids are board again.", "expected": "The kids are bored again."}
+{"id": "b14_284", "cat": "soundalike", "input": "Let's meat at the market.", "expected": "Let's meet at the market."}
+{"id": "b14_285", "cat": "soundalike", "input": "It took an our to get there.", "expected": "It took an hour to get there."}
+{"id": "b14_286", "cat": "soundalike", "input": "I new you'd say that.", "expected": "I knew you'd say that."}
+{"id": "b14_287", "cat": "soundalike", "input": "It's to cold outside.", "expected": "It's too cold outside."}
+{"id": "b14_288", "cat": "question", "input": "Are you awake.", "expected": "Are you awake?"}
+{"id": "b14_289", "cat": "question", "input": "Did you get the strawberries.", "expected": "Did you get the strawberries?"}
+{"id": "b14_290", "cat": "question", "input": "Can you sew this.", "expected": "Can you sew this?"}
+{"id": "b14_291", "cat": "question", "input": "When does the episode drop.", "expected": "When does the episode drop?"}
+{"id": "b14_292", "cat": "question", "input": "Where is the market.", "expected": "Where is the market?"}
+{"id": "b14_293", "cat": "question", "input": "Is the power back.", "expected": "Is the power back?"}
+{"id": "b14_294", "cat": "question", "input": "Do you want jam.", "expected": "Do you want jam?"}
+{"id": "b14_295", "cat": "question", "input": "Have you seen the video.", "expected": "Have you seen the video?"}
+{"id": "b14_296", "cat": "mixed", "input": "Um, did you, uh, get the coat.", "expected": "Did you get the coat?"}
+{"id": "b14_297", "cat": "mixed", "input": "I need to by, um, more sugar.", "expected": "I need to buy more sugar."}
+{"id": "b14_298", "cat": "name", "input": "Did Shivon see the video?", "expected": "Did Siobhan see the video?", "personal": ["Siobhan"]}
+{"id": "b14_299", "cat": "name", "input": "Tell Brin the power is out.", "expected": "Tell Brynn the power is out.", "personal": ["Brynn"]}
+{"id": "b14_300", "cat": "control", "input": "Grace sent a photo.", "expected": "Grace sent a photo.", "personal": ["Grayce"]}
+{"id": "b14_301", "cat": "control", "input": "Will is coming.", "expected": "Will is coming.", "personal": ["Wil"]}
+{"id": "b14_302", "cat": "control", "input": "Mark is here.", "expected": "Mark is here.", "personal": ["Marc"]}
+{"id": "b14_303", "cat": "control", "input": "The bill is due.", "expected": "The bill is due.", "personal": ["Bil"]}
+{"id": "b14_304", "cat": "control", "input": "The dog is happy.", "expected": "The dog is happy.", "personal": ["Dawg"]}
+{"id": "b14_305", "cat": "control", "input": "The lake is calm.", "expected": "The lake is calm.", "personal": ["Blake"]}
+{"id": "b14_306", "cat": "control", "input": "Hey, just wanted to say thanks for yesterday. You really helped me out. I owe you dinner.", "expected": "Hey, just wanted to say thanks for yesterday. You really helped me out. I owe you dinner."}
+{"id": "b14_307", "cat": "control", "input": "The furnace is making a weird noise again. I called the repair company. They can come Thursday.", "expected": "The furnace is making a weird noise again. I called the repair company. They can come Thursday."}
+{"id": "b14_308", "cat": "control", "input": "I just got off the phone with the bank. They reversed the charge. Finally.", "expected": "I just got off the phone with the bank. They reversed the charge. Finally."}
+{"id": "b14_309", "cat": "control", "input": "We're having a small get together on Saturday. Nothing fancy. Just snacks and games.", "expected": "We're having a small get together on Saturday. Nothing fancy. Just snacks and games."}
+{"id": "b14_310", "cat": "control", "input": "My flight was delayed two hours. I'm stuck at the gate. At least there's coffee.", "expected": "My flight was delayed two hours. I'm stuck at the gate. At least there's coffee."}
+{"id": "b14_311", "cat": "control", "input": "The kids made a fort in the living room. It's taking over the whole house. I don't have the heart to take it down.", "expected": "The kids made a fort in the living room. It's taking over the whole house. I don't have the heart to take it down."}
+{"id": "b14_312", "cat": "control", "input": "I tried that new yoga studio. The instructor was great. I'm going back next week.", "expected": "I tried that new yoga studio. The instructor was great. I'm going back next week."}
+{"id": "b14_313", "cat": "control", "input": "Our wifi went out during my presentation. I had to finish on my phone. Mortifying.", "expected": "Our wifi went out during my presentation. I had to finish on my phone. Mortifying."}
+{"id": "b14_314", "cat": "control", "input": "I just realized I double booked myself tonight. Can we do Friday instead? So sorry.", "expected": "I just realized I double booked myself tonight. Can we do Friday instead? So sorry."}
+{"id": "b14_315", "cat": "control", "input": "The garden is overflowing with zucchini. Please take some. I'm begging.", "expected": "The garden is overflowing with zucchini. Please take some. I'm begging."}
+{"id": "b14_316", "cat": "control", "input": "My son lost his first tooth at school. The nurse put it in a little envelope. He's so proud.", "expected": "My son lost his first tooth at school. The nurse put it in a little envelope. He's so proud."}
+{"id": "b14_317", "cat": "number", "input": "I'm finally learning to swim. At thirty five. Better late than never.", "expected": "I'm finally learning to swim. At 35. Better late than never.", "alts": ["I'm finally learning to swim. At thirty five. Better late than never."]}
+{"id": "b14_318", "cat": "control", "input": "The dog figured out how to open the back door. We need a new lock. Or a smarter door.", "expected": "The dog figured out how to open the back door. We need a new lock. Or a smarter door."}
+{"id": "b14_319", "cat": "control", "input": "I can't believe the year is almost over. So much happened. Next year will be better.", "expected": "I can't believe the year is almost over. So much happened. Next year will be better."}
+{"id": "b14_320", "cat": "control", "input": "My mom sent me a care package. Cookies, socks, and a note. I cried a little.", "expected": "My mom sent me a care package. Cookies, socks, and a note. I cried a little."}
+{"id": "b14_321", "cat": "control", "input": "The parking lot was completely full. I parked three blocks away. Good exercise, I guess.", "expected": "The parking lot was completely full. I parked three blocks away. Good exercise, I guess."}
+{"id": "b14_322", "cat": "control", "input": "I'm thinking about adopting a cat. My landlord said it's okay. Want to come to the shelter with me?", "expected": "I'm thinking about adopting a cat. My landlord said it's okay. Want to come to the shelter with me?"}
+{"id": "b14_323", "cat": "control", "input": "We finally hung the pictures in the hallway. It took all afternoon. They're slightly crooked.", "expected": "We finally hung the pictures in the hallway. It took all afternoon. They're slightly crooked."}
+{"id": "b14_324", "cat": "control", "input": "The grocery store rearranged everything. I couldn't find anything. Took me twice as long.", "expected": "The grocery store rearranged everything. I couldn't find anything. Took me twice as long."}
+{"id": "b14_325", "cat": "control", "input": "I signed up for a pottery class with my sister. It's every Tuesday. We're terrible and it's great.", "expected": "I signed up for a pottery class with my sister. It's every Tuesday. We're terrible and it's great."}
+{"id": "b14_326", "cat": "control", "input": "See, I knew you'd love it.", "expected": "See, I knew you'd love it."}
+{"id": "b14_327", "cat": "control", "input": "See you in the morning.", "expected": "See you in the morning."}
+{"id": "b14_328", "cat": "control", "input": "So, what did the doctor say?", "expected": "So, what did the doctor say?"}
+{"id": "b14_329", "cat": "control", "input": "So that's why.", "expected": "So that's why."}
+{"id": "b14_330", "cat": "control", "input": "Well, that settles it.", "expected": "Well, that settles it."}
+{"id": "b14_331", "cat": "control", "input": "Well, good luck.", "expected": "Well, good luck."}
+{"id": "b14_332", "cat": "control", "input": "Now we're even.", "expected": "Now we're even."}
+{"id": "b14_333", "cat": "control", "input": "Now I'm hungry.", "expected": "Now I'm hungry."}
+{"id": "b14_334", "cat": "control", "input": "Okay, see you soon.", "expected": "Okay, see you soon."}
+{"id": "b14_335", "cat": "control", "input": "Okay, last call.", "expected": "Okay, last call."}
+{"id": "b14_336", "cat": "control", "input": "Like, what even is that?", "expected": "Like, what even is that?"}
+{"id": "b14_337", "cat": "control", "input": "Look, I tried.", "expected": "Look, I tried."}
+{"id": "b14_338", "cat": "control", "input": "Listen, I'm sorry.", "expected": "Listen, I'm sorry."}
+{"id": "b14_339", "cat": "control", "input": "Right, the tickets.", "expected": "Right, the tickets."}
+{"id": "b14_340", "cat": "control", "input": "Anyway, call me.", "expected": "Anyway, call me."}
+{"id": "b14_341", "cat": "control", "input": "Also, I miss you.", "expected": "Also, I miss you."}
+{"id": "b14_342", "cat": "control", "input": "Plus, it's free.", "expected": "Plus, it's free."}
+{"id": "b14_343", "cat": "control", "input": "Then that's the plan.", "expected": "Then that's the plan."}
+{"id": "b14_344", "cat": "control", "input": "Still, thank you.", "expected": "Still, thank you."}
+{"id": "b14_345", "cat": "control", "input": "Sure, why not.", "expected": "Sure, why not."}
+{"id": "b14_346", "cat": "control", "input": "Yeah, totally.", "expected": "Yeah, totally."}
+{"id": "b14_347", "cat": "control", "input": "No, it's fine.", "expected": "No, it's fine."}
+{"id": "b14_348", "cat": "control", "input": "Oh, nice.", "expected": "Oh, nice."}
+{"id": "b14_349", "cat": "control", "input": "Wow, congrats.", "expected": "Wow, congrats."}
+{"id": "b14_350", "cat": "control", "input": "Hey, what's up?", "expected": "Hey, what's up?"}
+{"id": "b14_351", "cat": "control", "input": "Oops, wrong chat.", "expected": "Oops, wrong chat."}
+{"id": "b14_352", "cat": "control", "input": "Aw, cute.", "expected": "Aw, cute."}
+{"id": "b14_353", "cat": "control", "input": "Huh, weird.", "expected": "Huh, weird."}
+{"id": "b14_354", "cat": "control", "input": "Ha, nice.", "expected": "Ha, nice."}
+{"id": "b14_355", "cat": "control", "input": "Phew, done.", "expected": "Phew, done."}
+{"id": "b14_356", "cat": "control", "input": "Yay, finally!", "expected": "Yay, finally!"}
+{"id": "b14_357", "cat": "control", "input": "Darn, missed it.", "expected": "Darn, missed it."}
+{"id": "b14_358", "cat": "control", "input": "Ouch, careful.", "expected": "Ouch, careful."}
+{"id": "b14_359", "cat": "control", "input": "Shoot, I'm late.", "expected": "Shoot, I'm late."}
+{"id": "b14_360", "cat": "control", "input": "Gosh, sorry.", "expected": "Gosh, sorry."}
+{"id": "b14_361", "cat": "control", "input": "Alright, I'm in.", "expected": "Alright, I'm in."}
+{"id": "b14_362", "cat": "control", "input": "Cool, thanks.", "expected": "Cool, thanks."}
+{"id": "b14_363", "cat": "control", "input": "Nice one.", "expected": "Nice one."}
+{"id": "b14_364", "cat": "control", "input": "Great, perfect.", "expected": "Great, perfect."}
+{"id": "b14_365", "cat": "control", "input": "Awesome, thanks.", "expected": "Awesome, thanks."}
+{"id": "b14_366", "cat": "control", "input": "I wonder what time it is.", "expected": "I wonder what time it is."}
+{"id": "b14_367", "cat": "control", "input": "I'm not sure where he went.", "expected": "I'm not sure where he went."}
+{"id": "b14_368", "cat": "control", "input": "I don't know when it starts.", "expected": "I don't know when it starts."}
+{"id": "b14_369", "cat": "control", "input": "I can't remember her number.", "expected": "I can't remember her number."}
+{"id": "b14_370", "cat": "control", "input": "I was wondering if you want to come.", "expected": "I was wondering if you want to come."}
+{"id": "b14_371", "cat": "control", "input": "Ask her if she wants tea.", "expected": "Ask her if she wants tea."}
+{"id": "b14_372", "cat": "control", "input": "Tell him I'm here.", "expected": "Tell him I'm here."}
+{"id": "b14_373", "cat": "control", "input": "Let me know what you think.", "expected": "Let me know what you think."}
+{"id": "b14_374", "cat": "control", "input": "Find out where it is.", "expected": "Find out where it is."}
+{"id": "b14_375", "cat": "control", "input": "Check if they have it.", "expected": "Check if they have it."}
+{"id": "b14_376", "cat": "control", "input": "Guess who's back.", "expected": "Guess who's back."}
+{"id": "b14_377", "cat": "control", "input": "Imagine that.", "expected": "Imagine that."}
+{"id": "b14_378", "cat": "control", "input": "What a weekend.", "expected": "What a weekend."}
+{"id": "b14_379", "cat": "control", "input": "How fun.", "expected": "How fun."}
+{"id": "b14_380", "cat": "control", "input": "What a sweetheart.", "expected": "What a sweetheart."}
+{"id": "b14_381", "cat": "control", "input": "Do you need anything?", "expected": "Do you need anything?"}
+{"id": "b14_382", "cat": "control", "input": "Can I borrow this?", "expected": "Can I borrow this?"}
+{"id": "b14_383", "cat": "control", "input": "Is it ready?", "expected": "Is it ready?"}
+{"id": "b14_384", "cat": "control", "input": "What do you think?", "expected": "What do you think?"}
+{"id": "b14_385", "cat": "control", "input": "Where is everyone?", "expected": "Where is everyone?"}
+{"id": "b14_386", "cat": "control", "input": "Why not?", "expected": "Why not?"}
+{"id": "b14_387", "cat": "control", "input": "How are you?", "expected": "How are you?"}
+{"id": "b14_388", "cat": "control", "input": "Who's coming?", "expected": "Who's coming?"}
+{"id": "b14_389", "cat": "control", "input": "Should I wait?", "expected": "Should I wait?"}
+{"id": "b14_390", "cat": "control", "input": "Would you like some?", "expected": "Would you like some?"}
+{"id": "b14_391", "cat": "control", "input": "You're okay, right?", "expected": "You're okay, right?"}
+{"id": "b14_392", "cat": "control", "input": "It's open, isn't it?", "expected": "It's open, isn't it?"}
+{"id": "b14_393", "cat": "control", "input": "We're done, aren't we?", "expected": "We're done, aren't we?"}
+{"id": "b14_394", "cat": "control", "input": "Two more weeks.", "expected": "Two more weeks."}
+{"id": "b14_395", "cat": "control", "input": "Three cheers.", "expected": "Three cheers."}
+{"id": "b14_396", "cat": "control", "input": "Five more minutes.", "expected": "Five more minutes."}
+{"id": "b14_397", "cat": "control", "input": "Four seasons.", "expected": "Four seasons."}
+{"id": "b14_398", "cat": "control", "input": "One last thing.", "expected": "One last thing."}
+{"id": "b14_399", "cat": "control", "input": "First things first.", "expected": "First things first."}
+{"id": "b14_400", "cat": "control", "input": "Second chance.", "expected": "Second chance."}
+{"id": "b14_401", "cat": "control", "input": "Six of one, half a dozen of the other.", "expected": "Six of one, half a dozen of the other."}
+{"id": "b14_402", "cat": "control", "input": "Eight days a week.", "expected": "Eight days a week."}
+{"id": "b14_403", "cat": "number", "input": "Nine times out of ten.", "expected": "Nine times out of 10.", "alts": ["Nine times out of ten."]}
+{"id": "b14_404", "cat": "filler", "input": "So, um, the doctor said I'm fine.", "expected": "So, the doctor said I'm fine.", "alts": ["So the doctor said I'm fine."]}
+{"id": "b14_405", "cat": "filler", "input": "The parking lot was, uh, full.", "expected": "The parking lot was full."}
+{"id": "b14_406", "cat": "question", "input": "Did you adopt the cat.", "expected": "Did you adopt the cat?"}
+{"id": "b14_407", "cat": "number", "input": "The class is twenty five dollars.", "expected": "The class is $25."}
+{"id": "b14_408", "cat": "command", "input": "Party list colon chips, games, music.", "expected": "Party list: chips, games, music.", "segments": ["Party list colon", "chips, games, music."]}
+{"id": "b14_409", "cat": "soundalike", "input": "I'll by the snacks.", "expected": "I'll buy the snacks."}
+{"id": "b14_410", "cat": "control", "input": "I left my water bottle in your car.", "expected": "I left my water bottle in your car."}
+{"id": "b14_411", "cat": "control", "input": "I'll grab it tomorrow.", "expected": "I'll grab it tomorrow."}
+{"id": "b14_412", "cat": "control", "input": "No rush.", "expected": "No rush."}
+{"id": "b14_413", "cat": "control", "input": "It's the blue one with stickers.", "expected": "It's the blue one with stickers."}
+{"id": "b14_414", "cat": "control", "input": "I'll keep it safe.", "expected": "I'll keep it safe."}
+{"id": "b14_415", "cat": "control", "input": "The shelter had so many cats.", "expected": "The shelter had so many cats."}
+{"id": "b14_416", "cat": "control", "input": "We met a gray one named Smokey.", "expected": "We met a gray one named Smokey."}
+{"id": "b14_417", "cat": "control", "input": "He purred the whole time.", "expected": "He purred the whole time."}
+{"id": "b14_418", "cat": "control", "input": "I think he's the one.", "expected": "I think he's the one."}
+{"id": "b14_419", "cat": "control", "input": "We're going back Saturday to adopt him.", "expected": "We're going back Saturday to adopt him."}
+{"id": "b14_420", "cat": "control", "input": "I need to buy a litter box.", "expected": "I need to buy a litter box."}
+{"id": "b14_421", "cat": "control", "input": "And a scratching post.", "expected": "And a scratching post."}
+{"id": "b14_422", "cat": "control", "input": "And so many toys.", "expected": "And so many toys."}
+{"id": "b14_423", "cat": "control", "input": "He's going to be spoiled.", "expected": "He's going to be spoiled."}
+{"id": "b14_424", "cat": "control", "input": "That's the plan.", "expected": "That's the plan."}
+{"id": "b14_425", "cat": "number", "input": "My coworker is retiring after thirty years.", "expected": "My coworker is retiring after 30 years.", "alts": ["My coworker is retiring after thirty years."]}
+{"id": "b14_426", "cat": "control", "input": "We're throwing her a party.", "expected": "We're throwing her a party."}
+{"id": "b14_427", "cat": "control", "input": "I'm in charge of the cake.", "expected": "I'm in charge of the cake."}
+{"id": "b14_428", "cat": "control", "input": "Chocolate with raspberry filling.", "expected": "Chocolate with raspberry filling."}
+{"id": "b14_429", "cat": "control", "input": "She's going to love it.", "expected": "She's going to love it."}
+{"id": "b14_430", "cat": "control", "input": "I wrote her a card.", "expected": "I wrote her a card."}
+{"id": "b14_431", "cat": "control", "input": "Everyone signed it.", "expected": "Everyone signed it."}
+{"id": "b14_432", "cat": "control", "input": "She's been here longer than the building.", "expected": "She's been here longer than the building."}
+{"id": "b14_433", "cat": "control", "input": "We'll miss her.", "expected": "We'll miss her."}
+{"id": "b14_434", "cat": "control", "input": "She deserves a break.", "expected": "She deserves a break."}
+{"id": "b14_435", "cat": "control", "input": "The heat wave is finally over.", "expected": "The heat wave is finally over."}
+{"id": "b14_436", "cat": "number", "input": "It's only eighty today.", "expected": "It's only 80 today.", "alts": ["It's only eighty today."]}
+{"id": "b14_437", "cat": "control", "input": "That feels cold now.", "expected": "That feels cold now."}
+{"id": "b14_438", "cat": "control", "input": "I turned off the air conditioning.", "expected": "I turned off the air conditioning."}
+{"id": "b14_439", "cat": "control", "input": "Opened all the windows.", "expected": "Opened all the windows."}
+{"id": "b14_440", "cat": "control", "input": "The breeze is perfect.", "expected": "The breeze is perfect."}
+{"id": "b14_441", "cat": "control", "input": "Let's eat on the patio tonight.", "expected": "Let's eat on the patio tonight."}
+{"id": "b14_442", "cat": "control", "input": "I'll light the candles.", "expected": "I'll light the candles."}
+{"id": "b14_443", "cat": "control", "input": "Bring the bug spray.", "expected": "Bring the bug spray."}
+{"id": "b14_444", "cat": "control", "input": "Good thinking.", "expected": "Good thinking."}
+{"id": "b14_445", "cat": "control", "input": "My phone is acting weird.", "expected": "My phone is acting weird."}
+{"id": "b14_446", "cat": "control", "input": "It keeps restarting.", "expected": "It keeps restarting."}
+{"id": "b14_447", "cat": "control", "input": "Did you update it?", "expected": "Did you update it?"}
+{"id": "b14_448", "cat": "control", "input": "Last night.", "expected": "Last night."}
+{"id": "b14_449", "cat": "control", "input": "That's probably it.", "expected": "That's probably it."}
+{"id": "b14_450", "cat": "control", "input": "Try restarting it.", "expected": "Try restarting it."}
+{"id": "b14_451", "cat": "control", "input": "It restarts itself.", "expected": "It restarts itself."}
+{"id": "b14_452", "cat": "control", "input": "Okay, try turning it off.", "expected": "Okay, try turning it off."}
+{"id": "b14_453", "cat": "control", "input": "That worked.", "expected": "That worked."}
+{"id": "b14_454", "cat": "control", "input": "See, I'm a genius.", "expected": "See, I'm a genius."}
+{"id": "b14_455", "cat": "control", "input": "We're repainting the bedroom.", "expected": "We're repainting the bedroom."}
+{"id": "b14_456", "cat": "control", "input": "Light gray this time.", "expected": "Light gray this time."}
+{"id": "b14_457", "cat": "control", "input": "The old color was too dark.", "expected": "The old color was too dark."}
+{"id": "b14_458", "cat": "control", "input": "It felt like a cave.", "expected": "It felt like a cave."}
+{"id": "b14_459", "cat": "control", "input": "This weekend?", "expected": "This weekend?"}
+{"id": "b14_460", "cat": "control", "input": "If it doesn't rain.", "expected": "If it doesn't rain."}
+{"id": "b14_461", "cat": "control", "input": "Paint doesn't care about rain.", "expected": "Paint doesn't care about rain."}
+{"id": "b14_462", "cat": "control", "input": "The windows do.", "expected": "The windows do."}
+{"id": "b14_463", "cat": "control", "input": "Fair point.", "expected": "Fair point."}
+{"id": "b14_464", "cat": "control", "input": "I'll buy the paint tomorrow.", "expected": "I'll buy the paint tomorrow."}
+{"id": "b14_465", "cat": "control", "input": "My daughter wants a sleepover.", "expected": "My daughter wants a sleepover."}
+{"id": "b14_466", "cat": "control", "input": "Six girls.", "expected": "Six girls."}
+{"id": "b14_467", "cat": "control", "input": "On a school night.", "expected": "On a school night."}
+{"id": "b14_468", "cat": "control", "input": "Absolutely not.", "expected": "Absolutely not."}
+{"id": "b14_469", "cat": "control", "input": "Friday then.", "expected": "Friday then."}
+{"id": "b14_470", "cat": "control", "input": "Fine, Friday.", "expected": "Fine, Friday."}
+{"id": "b14_471", "cat": "control", "input": "Pizza and a movie.", "expected": "Pizza and a movie."}
+{"id": "b14_472", "cat": "control", "input": "And no sleep for anyone.", "expected": "And no sleep for anyone."}
+{"id": "b14_473", "cat": "control", "input": "That's how sleepovers work.", "expected": "That's how sleepovers work."}
+{"id": "b14_474", "cat": "control", "input": "Pray for me.", "expected": "Pray for me."}
+{"id": "b14_475", "cat": "control", "input": "I'm making a photo book of our trip.", "expected": "I'm making a photo book of our trip."}
+{"id": "b14_476", "cat": "control", "input": "I can't choose.", "expected": "I can't choose."}
+{"id": "b14_477", "cat": "number", "input": "Pick the best fifty.", "expected": "Pick the best 50.", "alts": ["Pick the best fifty."]}
+{"id": "b14_478", "cat": "control", "input": "That's impossible.", "expected": "That's impossible."}
+{"id": "b14_479", "cat": "control", "input": "That's still a lot.", "expected": "That's still a lot."}
+{"id": "b14_480", "cat": "control", "input": "It's a big book.", "expected": "It's a big book."}
+{"id": "b14_481", "cat": "control", "input": "It'll be beautiful.", "expected": "It'll be beautiful."}
+{"id": "b14_482", "cat": "control", "input": "I'll order it tonight.", "expected": "I'll order it tonight."}
+{"id": "b14_483", "cat": "control", "input": "The ice cream truck is outside.", "expected": "The ice cream truck is outside."}
+{"id": "b14_484", "cat": "control", "input": "The kids heard it from a mile away.", "expected": "The kids heard it from a mile away."}
+{"id": "b14_485", "cat": "control", "input": "They're already at the door.", "expected": "They're already at the door."}
+{"id": "b14_486", "cat": "control", "input": "Do we have cash?", "expected": "Do we have cash?"}
+{"id": "b14_487", "cat": "control", "input": "Check my wallet.", "expected": "Check my wallet."}
+{"id": "b14_488", "cat": "control", "input": "Five bucks.", "expected": "Five bucks."}
+{"id": "b14_489", "cat": "control", "input": "That's enough for two cones.", "expected": "That's enough for two cones."}
+{"id": "b14_490", "cat": "control", "input": "They'll share.", "expected": "They'll share."}
+{"id": "b14_491", "cat": "control", "input": "That's optimistic.", "expected": "That's optimistic."}
+{"id": "b14_492", "cat": "control", "input": "We'll see.", "expected": "We'll see."}
+{"id": "b14_493", "cat": "number", "input": "It has over two hundred pictures.", "expected": "It has over 200 pictures.", "alts": ["It has over two hundred pictures."]}
+{"id": "b14_494", "cat": "number", "input": "Fine, one hundred.", "expected": "Fine, 100.", "alts": ["Fine, one hundred."]}

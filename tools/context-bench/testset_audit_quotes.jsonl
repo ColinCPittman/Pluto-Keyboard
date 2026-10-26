@@ -1,0 +1,195 @@
+{"id": "aq-was_all-L1", "cat": "control", "input": "She was all smiles at the wedding!", "expected": "She was all smiles at the wedding!", "cand": "was all"}
+{"id": "aq-was_all-L2", "cat": "control", "input": "He was all over the place!", "expected": "He was all over the place!", "cand": "was all"}
+{"id": "aq-was_all-L3", "cat": "control", "input": "It was all fine?", "expected": "It was all fine?", "cand": "was all"}
+{"id": "aq-was_all-P1", "cat": "quote", "input": "And she was all, what are you doing here?", "expected": "And she was all \"What are you doing here?\"", "cand": "was all"}
+{"id": "aq-was_all-P2", "cat": "quote", "input": "He was all, are you kidding me?", "expected": "He was all \"Are you kidding me?\"", "cand": "was all"}
+{"id": "aq-were_all-L1", "cat": "control", "input": "They were all there!", "expected": "They were all there!", "cand": "were all"}
+{"id": "aq-were_all-L2", "cat": "control", "input": "We were all so tired!", "expected": "We were all so tired!", "cand": "were all"}
+{"id": "aq-were_all-L3", "cat": "control", "input": "They were all here?", "expected": "They were all here?", "cand": "were all"}
+{"id": "aq-were_all-P1", "cat": "quote", "input": "They were all, where have you been?", "expected": "They were all \"Where have you been?\"", "cand": "were all"}
+{"id": "aq-were_all-P2", "cat": "quote", "input": "We were all, are you serious?", "expected": "We were all \"Are you serious?\"", "cand": "were all"}
+{"id": "aq-is_all-L1", "cat": "control", "input": "She is all set!", "expected": "She is all set!", "cand": "is all"}
+{"id": "aq-is_all-L2", "cat": "control", "input": "He is all in!", "expected": "He is all in!", "cand": "is all"}
+{"id": "aq-is_all-L3", "cat": "control", "input": "Is all of it here?", "expected": "Is all of it here?", "cand": "is all"}
+{"id": "aq-is_all-P1", "cat": "quote", "input": "She is all, why are you late?", "expected": "She is all \"Why are you late?\"", "cand": "is all"}
+{"id": "aq-is_all-P2", "cat": "quote", "input": "He is all, can we go now?", "expected": "He is all \"Can we go now?\"", "cand": "is all"}
+{"id": "aq-goes_like-L1", "cat": "control", "input": "He goes like that!", "expected": "He goes like that!", "cand": "goes like"}
+{"id": "aq-goes_like-L2", "cat": "control", "input": "She goes like the wind!", "expected": "She goes like the wind!", "cand": "goes like"}
+{"id": "aq-goes_like-L3", "cat": "control", "input": "It goes like this?", "expected": "It goes like this?", "cand": "goes like"}
+{"id": "aq-goes_like-P1", "cat": "quote", "input": "He goes like, are you serious?", "expected": "He goes like \"Are you serious?\"", "cand": "goes like"}
+{"id": "aq-goes_like-P2", "cat": "quote", "input": "She goes like, what is that?", "expected": "She goes like \"What is that?\"", "cand": "goes like"}
+{"id": "aq-asked_me-L1", "cat": "control", "input": "He asked me what time it was.", "expected": "He asked me what time it was.", "cand": "asked me"}
+{"id": "aq-asked_me-L2", "cat": "control", "input": "She asked me for help!", "expected": "She asked me for help!", "cand": "asked me"}
+{"id": "aq-asked_me-L3", "cat": "control", "input": "My mom asked me about you?", "expected": "My mom asked me about you?", "cand": "asked me"}
+{"id": "aq-asked_me-P1", "cat": "quote", "input": "He asked me, can you help with the boxes?", "expected": "He asked me \"Can you help with the boxes?\"", "cand": "asked me"}
+{"id": "aq-asked_me-P2", "cat": "quote", "input": "My dad asked me, are you okay?", "expected": "My dad asked me \"Are you okay?\"", "cand": "asked me"}
+{"id": "aq-asked_us-L1", "cat": "control", "input": "They asked us for directions!", "expected": "They asked us for directions!", "cand": "asked us"}
+{"id": "aq-asked_us-L2", "cat": "control", "input": "She asked us to leave.", "expected": "She asked us to leave.", "cand": "asked us"}
+{"id": "aq-asked_us-L3", "cat": "control", "input": "He asked us about it?", "expected": "He asked us about it?", "cand": "asked us"}
+{"id": "aq-asked_us-P1", "cat": "quote", "input": "She asked us, are you lost?", "expected": "She asked us \"Are you lost?\"", "cand": "asked us"}
+{"id": "aq-asked_us-P2", "cat": "quote", "input": "The waiter asked us, can I take your plates?", "expected": "The waiter asked us \"Can I take your plates?\"", "cand": "asked us"}
+{"id": "aq-asked_him-L1", "cat": "control", "input": "I asked him to stay.", "expected": "I asked him to stay.", "cand": "asked him"}
+{"id": "aq-asked_him-L2", "cat": "control", "input": "She asked him for money!", "expected": "She asked him for money!", "cand": "asked him"}
+{"id": "aq-asked_him-L3", "cat": "control", "input": "We asked him about it?", "expected": "We asked him about it?", "cand": "asked him"}
+{"id": "aq-asked_him-P1", "cat": "quote", "input": "I asked him, where are you going?", "expected": "I asked him \"Where are you going?\"", "cand": "asked him"}
+{"id": "aq-asked_him-P2", "cat": "quote", "input": "She asked him, do you want coffee?", "expected": "She asked him \"Do you want coffee?\"", "cand": "asked him"}
+{"id": "aq-asked_her-L1", "cat": "control", "input": "He asked her out!", "expected": "He asked her out!", "cand": "asked her"}
+{"id": "aq-asked_her-L2", "cat": "control", "input": "I asked her to wait.", "expected": "I asked her to wait.", "cand": "asked her"}
+{"id": "aq-asked_her-L3", "cat": "control", "input": "We asked her about the trip?", "expected": "We asked her about the trip?", "cand": "asked her"}
+{"id": "aq-asked_her-P1", "cat": "quote", "input": "He asked her, will you marry me?", "expected": "He asked her \"Will you marry me?\"", "cand": "asked her"}
+{"id": "aq-asked_her-P2", "cat": "quote", "input": "I asked her, are you okay?", "expected": "I asked her \"Are you okay?\"", "cand": "asked her"}
+{"id": "aq-asked_them-L1", "cat": "control", "input": "We asked them to help.", "expected": "We asked them to help.", "cand": "asked them"}
+{"id": "aq-asked_them-L2", "cat": "control", "input": "She asked them for a ride!", "expected": "She asked them for a ride!", "cand": "asked them"}
+{"id": "aq-asked_them-L3", "cat": "control", "input": "He asked them about it?", "expected": "He asked them about it?", "cand": "asked them"}
+{"id": "aq-asked_them-P1", "cat": "quote", "input": "I asked them, can you keep it down?", "expected": "I asked them \"Can you keep it down?\"", "cand": "asked them"}
+{"id": "aq-asked_them-P2", "cat": "quote", "input": "She asked them, where did you park?", "expected": "She asked them \"Where did you park?\"", "cand": "asked them"}
+{"id": "aq-told_us-L1", "cat": "control", "input": "She told us the news.", "expected": "She told us the news.", "cand": "told us"}
+{"id": "aq-told_us-L2", "cat": "control", "input": "He told us to wait!", "expected": "He told us to wait!", "cand": "told us"}
+{"id": "aq-told_us-L3", "cat": "control", "input": "They told us about it?", "expected": "They told us about it?", "cand": "told us"}
+{"id": "aq-told_us-P1", "cat": "quote", "input": "The guide told us, hey, stay together.", "expected": "The guide told us \"Hey, stay together.\"", "cand": "told us"}
+{"id": "aq-told_us-P2", "cat": "quote", "input": "My boss told us, why is this late?", "expected": "My boss told us \"Why is this late?\"", "cand": "told us"}
+{"id": "aq-told_you-L1", "cat": "control", "input": "I told you so!", "expected": "I told you so!", "cand": "told you"}
+{"id": "aq-told_you-L2", "cat": "control", "input": "He told you, didn't he?", "expected": "He told you, didn't he?", "cand": "told you"}
+{"id": "aq-told_you-L3", "cat": "control", "input": "She told you about it?", "expected": "She told you about it?", "cand": "told you"}
+{"id": "aq-told_you-P1", "cat": "quote", "input": "He told you, are you crazy?", "expected": "He told you \"Are you crazy?\"", "cand": "told you"}
+{"id": "aq-told_you-P2", "cat": "quote", "input": "I told you, hey, slow down.", "expected": "I told you \"Hey, slow down.\"", "cand": "told you"}
+{"id": "aq-said_to_me-L1", "cat": "control", "input": "She said to me that it was fine.", "expected": "She said to me that it was fine.", "cand": "said to me"}
+{"id": "aq-said_to_me-L2", "cat": "control", "input": "He said to me it was late!", "expected": "He said to me it was late!", "cand": "said to me"}
+{"id": "aq-said_to_me-L3", "cat": "control", "input": "What she said to me was nice.", "expected": "What she said to me was nice.", "cand": "said to me"}
+{"id": "aq-said_to_me-P1", "cat": "quote", "input": "She said to me, what are you doing?", "expected": "She said to me \"What are you doing?\"", "cand": "said to me"}
+{"id": "aq-said_to_me-P2", "cat": "quote", "input": "He said to me, can you help?", "expected": "He said to me \"Can you help?\"", "cand": "said to me"}
+{"id": "aq-said_to_him-L1", "cat": "control", "input": "I said to him that it was fine.", "expected": "I said to him that it was fine.", "cand": "said to him"}
+{"id": "aq-said_to_him-L2", "cat": "control", "input": "She said to him it was over!", "expected": "She said to him it was over!", "cand": "said to him"}
+{"id": "aq-said_to_him-L3", "cat": "control", "input": "What I said to him was true.", "expected": "What I said to him was true.", "cand": "said to him"}
+{"id": "aq-said_to_him-P1", "cat": "quote", "input": "I said to him, are you sure?", "expected": "I said to him \"Are you sure?\"", "cand": "said to him"}
+{"id": "aq-said_to_him-P2", "cat": "quote", "input": "She said to him, why not?", "expected": "She said to him \"Why not?\"", "cand": "said to him"}
+{"id": "aq-said_to_her-L1", "cat": "control", "input": "He said to her that he was sorry.", "expected": "He said to her that he was sorry.", "cand": "said to her"}
+{"id": "aq-said_to_her-L2", "cat": "control", "input": "I said to her it was fine!", "expected": "I said to her it was fine!", "cand": "said to her"}
+{"id": "aq-said_to_her-L3", "cat": "control", "input": "What he said to her was mean.", "expected": "What he said to her was mean.", "cand": "said to her"}
+{"id": "aq-said_to_her-P1", "cat": "quote", "input": "He said to her, do you trust me?", "expected": "He said to her \"Do you trust me?\"", "cand": "said to her"}
+{"id": "aq-said_to_her-P2", "cat": "quote", "input": "I said to her, where were you?", "expected": "I said to her \"Where were you?\"", "cand": "said to her"}
+{"id": "aq-said_to_them-L1", "cat": "control", "input": "She said to them that it was late.", "expected": "She said to them that it was late.", "cand": "said to them"}
+{"id": "aq-said_to_them-L2", "cat": "control", "input": "He said to them it was over!", "expected": "He said to them it was over!", "cand": "said to them"}
+{"id": "aq-said_to_them-L3", "cat": "control", "input": "What I said to them was true.", "expected": "What I said to them was true.", "cand": "said to them"}
+{"id": "aq-said_to_them-P1", "cat": "quote", "input": "She said to them, can you be quiet?", "expected": "She said to them \"Can you be quiet?\"", "cand": "said to them"}
+{"id": "aq-said_to_them-P2", "cat": "quote", "input": "He said to them, are you ready?", "expected": "He said to them \"Are you ready?\"", "cand": "said to them"}
+{"id": "aq-said_to_us-L1", "cat": "control", "input": "He said to us that it was fine.", "expected": "He said to us that it was fine.", "cand": "said to us"}
+{"id": "aq-said_to_us-L2", "cat": "control", "input": "She said to us it was late!", "expected": "She said to us it was late!", "cand": "said to us"}
+{"id": "aq-said_to_us-L3", "cat": "control", "input": "What he said to us was odd.", "expected": "What he said to us was odd.", "cand": "said to us"}
+{"id": "aq-said_to_us-P1", "cat": "quote", "input": "He said to us, are you hungry?", "expected": "He said to us \"Are you hungry?\"", "cand": "said to us"}
+{"id": "aq-said_to_us-P2", "cat": "quote", "input": "The teacher said to us, why are you late?", "expected": "The teacher said to us \"Why are you late?\"", "cand": "said to us"}
+{"id": "aq-texted_me-L1", "cat": "control", "input": "She texted me about the party.", "expected": "She texted me about the party.", "cand": "texted me"}
+{"id": "aq-texted_me-L2", "cat": "control", "input": "He texted me a photo!", "expected": "He texted me a photo!", "cand": "texted me"}
+{"id": "aq-texted_me-L3", "cat": "control", "input": "Mom texted me the address?", "expected": "Mom texted me the address?", "cand": "texted me"}
+{"id": "aq-texted_me-P1", "cat": "quote", "input": "She texted me, are you coming tonight?", "expected": "She texted me \"Are you coming tonight?\"", "cand": "texted me"}
+{"id": "aq-texted_me-P2", "cat": "quote", "input": "He texted me, where are you?", "expected": "He texted me \"Where are you?\"", "cand": "texted me"}
+{"id": "aq-texted_us-L1", "cat": "control", "input": "They texted us the address.", "expected": "They texted us the address.", "cand": "texted us"}
+{"id": "aq-texted_us-L2", "cat": "control", "input": "She texted us a picture!", "expected": "She texted us a picture!", "cand": "texted us"}
+{"id": "aq-texted_us-L3", "cat": "control", "input": "He texted us about it?", "expected": "He texted us about it?", "cand": "texted us"}
+{"id": "aq-texted_us-P1", "cat": "quote", "input": "Mom texted us, are you home yet?", "expected": "Mom texted us \"Are you home yet?\"", "cand": "texted us"}
+{"id": "aq-texted_us-P2", "cat": "quote", "input": "She texted us, can you pick me up?", "expected": "She texted us \"Can you pick me up?\"", "cand": "texted us"}
+{"id": "aq-texted_back-L1", "cat": "control", "input": "She texted back right away.", "expected": "She texted back right away.", "cand": "texted back"}
+{"id": "aq-texted_back-L2", "cat": "control", "input": "He texted back later!", "expected": "He texted back later!", "cand": "texted back"}
+{"id": "aq-texted_back-L3", "cat": "control", "input": "Mom texted back fast?", "expected": "Mom texted back fast?", "cand": "texted back"}
+{"id": "aq-texted_back-P1", "cat": "quote", "input": "She texted back, are you serious?", "expected": "She texted back \"Are you serious?\"", "cand": "texted back"}
+{"id": "aq-texted_back-P2", "cat": "quote", "input": "He texted back, why not?", "expected": "He texted back \"Why not?\"", "cand": "texted back"}
+{"id": "aq-messaged_me-L1", "cat": "control", "input": "She messaged me about work.", "expected": "She messaged me about work.", "cand": "messaged me"}
+{"id": "aq-messaged_me-L2", "cat": "control", "input": "He messaged me a link!", "expected": "He messaged me a link!", "cand": "messaged me"}
+{"id": "aq-messaged_me-L3", "cat": "control", "input": "My boss messaged me late?", "expected": "My boss messaged me late?", "cand": "messaged me"}
+{"id": "aq-messaged_me-P1", "cat": "quote", "input": "She messaged me, are you free?", "expected": "She messaged me \"Are you free?\"", "cand": "messaged me"}
+{"id": "aq-messaged_me-P2", "cat": "quote", "input": "He messaged me, can we talk?", "expected": "He messaged me \"Can we talk?\"", "cand": "messaged me"}
+{"id": "aq-wrote-L1", "cat": "control", "input": "I wrote that down.", "expected": "I wrote that down.", "cand": "wrote"}
+{"id": "aq-wrote-L2", "cat": "control", "input": "She wrote a letter to her mom.", "expected": "She wrote a letter to her mom.", "cand": "wrote"}
+{"id": "aq-wrote-L3", "cat": "control", "input": "He wrote it on the board!", "expected": "He wrote it on the board!", "cand": "wrote"}
+{"id": "aq-wrote-P1", "cat": "quote", "input": "She wrote, can you call me later?", "expected": "She wrote \"Can you call me later?\"", "cand": "wrote"}
+{"id": "aq-wrote-P2", "cat": "quote", "input": "He wrote, where should we meet?", "expected": "He wrote \"Where should we meet?\"", "cand": "wrote"}
+{"id": "aq-wrote_back-L1", "cat": "control", "input": "She wrote back the next day.", "expected": "She wrote back the next day.", "cand": "wrote back"}
+{"id": "aq-wrote_back-L2", "cat": "control", "input": "He wrote back quickly!", "expected": "He wrote back quickly!", "cand": "wrote back"}
+{"id": "aq-wrote_back-L3", "cat": "control", "input": "My aunt wrote back?", "expected": "My aunt wrote back?", "cand": "wrote back"}
+{"id": "aq-wrote_back-P1", "cat": "quote", "input": "She wrote back, are you sure?", "expected": "She wrote back \"Are you sure?\"", "cand": "wrote back"}
+{"id": "aq-wrote_back-P2", "cat": "quote", "input": "He wrote back, why do you ask?", "expected": "He wrote back \"Why do you ask?\"", "cand": "wrote back"}
+{"id": "aq-shouted-L1", "cat": "control", "input": "He shouted at me!", "expected": "He shouted at me!", "cand": "shouted"}
+{"id": "aq-shouted-L2", "cat": "control", "input": "She shouted for help!", "expected": "She shouted for help!", "cand": "shouted"}
+{"id": "aq-shouted-L3", "cat": "control", "input": "They shouted all night?", "expected": "They shouted all night?", "cand": "shouted"}
+{"id": "aq-shouted-P1", "cat": "quote", "input": "My boss shouted, where is the report?", "expected": "My boss shouted \"Where is the report?\"", "cand": "shouted"}
+{"id": "aq-shouted-P2", "cat": "quote", "input": "She shouted, are you okay?", "expected": "She shouted \"Are you okay?\"", "cand": "shouted"}
+{"id": "aq-added-L1", "cat": "control", "input": "She added it to the list!", "expected": "She added it to the list!", "cand": "added"}
+{"id": "aq-added-L2", "cat": "control", "input": "He added two more chairs.", "expected": "He added two more chairs.", "cand": "added"}
+{"id": "aq-added-L3", "cat": "control", "input": "I added salt?", "expected": "I added salt?", "cand": "added"}
+{"id": "aq-added-P1", "cat": "quote", "input": "Then she added, oh, and bring snacks.", "expected": "Then she added \"Oh, and bring snacks.\"", "cand": "added"}
+{"id": "aq-added-P2", "cat": "quote", "input": "He added, can you hurry?", "expected": "He added \"Can you hurry?\"", "cand": "added"}
+{"id": "aq-answered-L1", "cat": "control", "input": "He answered the phone!", "expected": "He answered the phone!", "cand": "answered"}
+{"id": "aq-answered-L2", "cat": "control", "input": "I answered him honestly.", "expected": "I answered him honestly.", "cand": "answered"}
+{"id": "aq-answered-L3", "cat": "control", "input": "She answered all the questions!", "expected": "She answered all the questions!", "cand": "answered"}
+{"id": "aq-answered-P1", "cat": "quote", "input": "He answered, why do you ask?", "expected": "He answered \"Why do you ask?\"", "cand": "answered"}
+{"id": "aq-answered-P2", "cat": "quote", "input": "She answered, are you serious?", "expected": "She answered \"Are you serious?\"", "cand": "answered"}
+{"id": "aq-responded-L1", "cat": "control", "input": "She responded well to the treatment!", "expected": "She responded well to the treatment!", "cand": "responded"}
+{"id": "aq-responded-L2", "cat": "control", "input": "He responded quickly.", "expected": "He responded quickly.", "cand": "responded"}
+{"id": "aq-responded-L3", "cat": "control", "input": "They responded to the email?", "expected": "They responded to the email?", "cand": "responded"}
+{"id": "aq-responded-P1", "cat": "quote", "input": "She responded, what do you mean?", "expected": "She responded \"What do you mean?\"", "cand": "responded"}
+{"id": "aq-responded-P2", "cat": "quote", "input": "He responded, are you kidding?", "expected": "He responded \"Are you kidding?\"", "cand": "responded"}
+{"id": "aq-kept_saying-L1", "cat": "control", "input": "He kept saying sorry to everyone.", "expected": "He kept saying sorry to everyone.", "cand": "kept saying"}
+{"id": "aq-kept_saying-L2", "cat": "control", "input": "We kept saying no.", "expected": "We kept saying no.", "cand": "kept saying"}
+{"id": "aq-kept_saying-L3", "cat": "control", "input": "She kept saying it!", "expected": "She kept saying it!", "cand": "kept saying"}
+{"id": "aq-kept_saying-P1", "cat": "quote", "input": "He kept saying, are we there yet?", "expected": "He kept saying \"Are we there yet?\"", "cand": "kept saying"}
+{"id": "aq-kept_saying-P2", "cat": "quote", "input": "She kept saying, why me?", "expected": "She kept saying \"Why me?\"", "cand": "kept saying"}
+{"id": "aq-keeps_saying-L1", "cat": "control", "input": "She keeps saying that!", "expected": "She keeps saying that!", "cand": "keeps saying"}
+{"id": "aq-keeps_saying-L2", "cat": "control", "input": "He keeps saying no.", "expected": "He keeps saying no.", "cand": "keeps saying"}
+{"id": "aq-keeps_saying-L3", "cat": "control", "input": "Mom keeps saying it?", "expected": "Mom keeps saying it?", "cand": "keeps saying"}
+{"id": "aq-keeps_saying-P1", "cat": "quote", "input": "He keeps saying, can we go home?", "expected": "He keeps saying \"Can we go home?\"", "cand": "keeps saying"}
+{"id": "aq-keeps_saying-P2", "cat": "quote", "input": "She keeps saying, where is my phone?", "expected": "She keeps saying \"Where is my phone?\"", "cand": "keeps saying"}
+{"id": "aq-muttered-L1", "cat": "control", "input": "He muttered something about dinner.", "expected": "He muttered something about dinner.", "cand": "muttered"}
+{"id": "aq-muttered-L2", "cat": "control", "input": "She muttered to herself!", "expected": "She muttered to herself!", "cand": "muttered"}
+{"id": "aq-muttered-L3", "cat": "control", "input": "They muttered all day?", "expected": "They muttered all day?", "cand": "muttered"}
+{"id": "aq-muttered-P1", "cat": "quote", "input": "He muttered, why is it so cold?", "expected": "He muttered \"Why is it so cold?\"", "cand": "muttered"}
+{"id": "aq-muttered-P2", "cat": "quote", "input": "She muttered, are we done yet?", "expected": "She muttered \"Are we done yet?\"", "cand": "muttered"}
+{"id": "aq-mumbled-L1", "cat": "control", "input": "He mumbled something about work.", "expected": "He mumbled something about work.", "cand": "mumbled"}
+{"id": "aq-mumbled-L2", "cat": "control", "input": "She mumbled to herself!", "expected": "She mumbled to herself!", "cand": "mumbled"}
+{"id": "aq-mumbled-L3", "cat": "control", "input": "He mumbled again?", "expected": "He mumbled again?", "cand": "mumbled"}
+{"id": "aq-mumbled-P1", "cat": "quote", "input": "She mumbled, where are my keys?", "expected": "She mumbled \"Where are my keys?\"", "cand": "mumbled"}
+{"id": "aq-mumbled-P2", "cat": "quote", "input": "He mumbled, can I sleep now?", "expected": "He mumbled \"Can I sleep now?\"", "cand": "mumbled"}
+{"id": "aq-go-L1", "cat": "control", "input": "Did they go? What time?", "expected": "Did they go? What time?", "cand": "go"}
+{"id": "aq-go-L2", "cat": "control", "input": "Where do they go? Who knows!", "expected": "Where do they go? Who knows!", "cand": "go"}
+{"id": "aq-go-L3", "cat": "control", "input": "We go to school here.", "expected": "We go to school here.", "cand": "go"}
+{"id": "aq-go-P1", "cat": "quote", "input": "Then they go, what are you doing?", "expected": "Then they go \"What are you doing?\"", "cand": "go"}
+{"id": "aq-go-P2", "cat": "quote", "input": "And I go, are you serious?", "expected": "And I go \"Are you serious?\"", "cand": "go"}
+{"id": "aq-was_saying-L1", "cat": "control", "input": "I was saying that!", "expected": "I was saying that!", "cand": "was saying"}
+{"id": "aq-was_saying-L2", "cat": "control", "input": "She was saying goodbye!", "expected": "She was saying goodbye!", "cand": "was saying"}
+{"id": "aq-was_saying-L3", "cat": "control", "input": "He was saying it was fine.", "expected": "He was saying it was fine.", "cand": "was saying"}
+{"id": "aq-was_saying-P1", "cat": "quote", "input": "She was saying, why are you late?", "expected": "She was saying \"Why are you late?\"", "cand": "was saying"}
+{"id": "aq-was_saying-P2", "cat": "quote", "input": "He was saying, can we go?", "expected": "He was saying \"Can we go?\"", "cand": "was saying"}
+{"id": "aq-cried-L1", "cat": "control", "input": "She cried all night!", "expected": "She cried all night!", "cand": "cried"}
+{"id": "aq-cried-L2", "cat": "control", "input": "He cried at the movie!", "expected": "He cried at the movie!", "cand": "cried"}
+{"id": "aq-cried-L3", "cat": "control", "input": "The baby cried again?", "expected": "The baby cried again?", "cand": "cried"}
+{"id": "aq-cried-P1", "cat": "quote", "input": "She cried, why did you do that?", "expected": "She cried \"Why did you do that?\"", "cand": "cried"}
+{"id": "aq-cried-P2", "cat": "quote", "input": "He cried, where is my dog?", "expected": "He cried \"Where is my dog?\"", "cand": "cried"}
+{"id": "aq-snapped-L1", "cat": "control", "input": "He snapped at me!", "expected": "He snapped at me!", "cand": "snapped"}
+{"id": "aq-snapped-L2", "cat": "control", "input": "The rope snapped!", "expected": "The rope snapped!", "cand": "snapped"}
+{"id": "aq-snapped-L3", "cat": "control", "input": "She snapped a photo?", "expected": "She snapped a photo?", "cand": "snapped"}
+{"id": "aq-snapped-P1", "cat": "quote", "input": "He snapped, what do you want?", "expected": "He snapped \"What do you want?\"", "cand": "snapped"}
+{"id": "aq-snapped-P2", "cat": "quote", "input": "She snapped, can you stop?", "expected": "She snapped \"Can you stop?\"", "cand": "snapped"}
+{"id": "aq-explained-L1", "cat": "control", "input": "She explained the rules.", "expected": "She explained the rules.", "cand": "explained"}
+{"id": "aq-explained-L2", "cat": "control", "input": "He explained it twice!", "expected": "He explained it twice!", "cand": "explained"}
+{"id": "aq-explained-L3", "cat": "control", "input": "They explained why?", "expected": "They explained why?", "cand": "explained"}
+{"id": "aq-explained-P1", "cat": "quote", "input": "She explained, can you see the problem?", "expected": "She explained \"Can you see the problem?\"", "cand": "explained"}
+{"id": "aq-explained-P2", "cat": "quote", "input": "He explained, do you get it now?", "expected": "He explained \"Do you get it now?\"", "cand": "explained"}
+{"id": "aq2-go-L1", "cat": "control", "input": "When you go, can you lock up?", "expected": "When you go, can you lock up?", "cand": "go"}
+{"id": "aq2-go-L2", "cat": "control", "input": "If I go, will you come?", "expected": "If I go, will you come?", "cand": "go"}
+{"id": "aq2-go-L3", "cat": "control", "input": "Where did they go? Nobody knows.", "expected": "Where did they go? Nobody knows.", "cand": "go"}
+{"id": "aq2-go-L4", "cat": "control", "input": "I go to the gym!", "expected": "I go to the gym!", "cand": "go"}
+{"id": "aq2-was_saying-L1", "cat": "control", "input": "As I was saying, can we start?", "expected": "As I was saying, can we start?", "cand": "was saying"}
+{"id": "aq2-was_saying-L2", "cat": "control", "input": "I was saying hi!", "expected": "I was saying hi!", "cand": "was saying"}
+{"id": "aq2-was_saying-L3", "cat": "control", "input": "What was I saying? Oh right.", "expected": "What was I saying? Oh right.", "cand": "was saying"}
+{"id": "aq2-was_saying-L4", "cat": "control", "input": "She was saying no!", "expected": "She was saying no!", "cand": "was saying"}
+{"id": "aq2-cried-L1", "cat": "control", "input": "The baby cried, can you check?", "expected": "The baby cried, can you check?", "cand": "cried"}
+{"id": "aq2-cried-L2", "cat": "control", "input": "He cried, didn't he?", "expected": "He cried, didn't he?", "cand": "cried"}
+{"id": "aq2-cried-L3", "cat": "control", "input": "I cried at the end!", "expected": "I cried at the end!", "cand": "cried"}
+{"id": "aq2-cried-L4", "cat": "control", "input": "She cried out in pain!", "expected": "She cried out in pain!", "cand": "cried"}
+{"id": "aq2-snapped-L1", "cat": "control", "input": "I snapped, is that bad?", "expected": "I snapped, is that bad?", "cand": "snapped"}
+{"id": "aq2-snapped-L2", "cat": "control", "input": "He snapped, didn't he?", "expected": "He snapped, didn't he?", "cand": "snapped"}
+{"id": "aq2-snapped-L3", "cat": "control", "input": "She snapped her fingers!", "expected": "She snapped her fingers!", "cand": "snapped"}
+{"id": "aq2-snapped-L4", "cat": "control", "input": "My dad snapped, can you believe it?", "expected": "My dad snapped, can you believe it?", "cand": "snapped"}
+{"id": "aq2-explained-L1", "cat": "control", "input": "I explained, didn't I?", "expected": "I explained, didn't I?", "cand": "explained"}
+{"id": "aq2-explained-L2", "cat": "control", "input": "He explained everything!", "expected": "He explained everything!", "cand": "explained"}
+{"id": "aq2-explained-L3", "cat": "control", "input": "She explained how to do it?", "expected": "She explained how to do it?", "cand": "explained"}
+{"id": "aq2-explained-L4", "cat": "control", "input": "I explained, is that okay?", "expected": "I explained, is that okay?", "cand": "explained"}

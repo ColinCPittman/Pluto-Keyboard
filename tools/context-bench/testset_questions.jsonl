@@ -1,0 +1,30 @@
+{"id": "qq01", "cat": "question", "input": "Are you coming to the party tonight.", "expected": "Are you coming to the party tonight?"}
+{"id": "qq02", "cat": "question", "input": "Can you send me the file when you get a chance.", "expected": "Can you send me the file when you get a chance?"}
+{"id": "qq03", "cat": "question", "input": "What time does the movie start.", "expected": "What time does the movie start?"}
+{"id": "qq04", "cat": "question", "input": "You're coming tomorrow, right.", "expected": "You're coming tomorrow, right?"}
+{"id": "qq05", "cat": "question", "input": "Did you remember to lock the front door.", "expected": "Did you remember to lock the front door?"}
+{"id": "qq06", "cat": "question", "input": "Where did you park the car.", "expected": "Where did you park the car?"}
+{"id": "qq07", "cat": "question", "input": "How was your trip to Chicago.", "expected": "How was your trip to Chicago?"}
+{"id": "qq08", "cat": "question", "input": "Is it okay if I bring a friend.", "expected": "Is it okay if I bring a friend?"}
+{"id": "qq09", "cat": "question", "input": "Do you want pizza or tacos for dinner.", "expected": "Do you want pizza or tacos for dinner?"}
+{"id": "qq10", "cat": "question", "input": "Have you seen my blue jacket anywhere.", "expected": "Have you seen my blue jacket anywhere?"}
+{"id": "qq11", "cat": "question", "input": "Why is the printer making that noise.", "expected": "Why is the printer making that noise?"}
+{"id": "qq12", "cat": "question", "input": "Could you pick up some bread on your way home.", "expected": "Could you pick up some bread on your way home?"}
+{"id": "qq13", "cat": "question", "input": "We're still on for lunch, right. I'll book a table.", "expected": "We're still on for lunch, right? I'll book a table."}
+{"id": "qq14", "cat": "question", "input": "Who's driving to the game on Saturday.", "expected": "Who's driving to the game on Saturday?"}
+{"id": "qq15", "cat": "question", "input": "Should I call the landlord about the leak.", "expected": "Should I call the landlord about the leak?"}
+{"id": "qqn01", "cat": "control", "input": "I wonder what time the store closes.", "expected": "I wonder what time the store closes."}
+{"id": "qqn02", "cat": "control", "input": "Tell me when you get there.", "expected": "Tell me when you get there."}
+{"id": "qqn03", "cat": "control", "input": "I asked him if he was coming to the party.", "expected": "I asked him if he was coming to the party."}
+{"id": "qqn04", "cat": "control", "input": "I don't know where they put the keys.", "expected": "I don't know where they put the keys."}
+{"id": "qqn05", "cat": "control", "input": "Let me know if you need anything.", "expected": "Let me know if you need anything."}
+{"id": "qqn06", "cat": "control", "input": "I'm not sure who's driving on Saturday.", "expected": "I'm not sure who's driving on Saturday."}
+{"id": "qqn07", "cat": "control", "input": "Ask her what she wants for her birthday.", "expected": "Ask her what she wants for her birthday."}
+{"id": "qqn08", "cat": "control", "input": "That's why I called you yesterday.", "expected": "That's why I called you yesterday."}
+{"id": "qqn09", "cat": "control", "input": "Can't wait to see you this weekend.", "expected": "Can't wait to see you this weekend."}
+{"id": "qqn10", "cat": "control", "input": "I can pick you up after work.", "expected": "I can pick you up after work."}
+{"id": "qqn11", "cat": "control", "input": "Do not forget to water the plants.", "expected": "Do not forget to water the plants."}
+{"id": "qqn12", "cat": "control", "input": "How nice of you to remember.", "expected": "How nice of you to remember."}
+{"id": "qqn13", "cat": "control", "input": "What a beautiful day it is.", "expected": "What a beautiful day it is."}
+{"id": "qqn14", "cat": "control", "input": "Right, I'll call you when I land.", "expected": "Right, I'll call you when I land."}
+{"id": "qqn15", "cat": "control", "input": "Whoever finishes first gets to pick the movie.", "expected": "Whoever finishes first gets to pick the movie."}

@@ -1,0 +1,116 @@
+{"id": "as-sorry_i_meant-L1", "cat": "control", "input": "Sorry, I meant to call you.", "expected": "Sorry, I meant to call you.", "cand": "sorry, I meant"}
+{"id": "as-sorry_i_meant-L2", "cat": "control", "input": "I'm sorry I meant to text back.", "expected": "I'm sorry I meant to text back.", "cand": "sorry, I meant"}
+{"id": "as-sorry_i_meant-L3", "cat": "control", "input": "Sorry I meant no harm.", "expected": "Sorry I meant no harm.", "cand": "sorry, I meant"}
+{"id": "as-sorry_i_meant-P1", "cat": "selfcorrection", "input": "Meet me at the bank, sorry, I meant the library.", "expected": "Meet me at the library.", "cand": "sorry, I meant"}
+{"id": "as-sorry_i_meant-P2", "cat": "selfcorrection", "input": "Order the red shirt, sorry I meant the blue shirt.", "expected": "Order the blue shirt.", "cand": "sorry, I meant"}
+{"id": "as-no_i_meant-L1", "cat": "control", "input": "No, I meant it.", "expected": "No, I meant it.", "cand": "no, I meant"}
+{"id": "as-no_i_meant-L2", "cat": "control", "input": "No, I meant what I said.", "expected": "No, I meant what I said.", "cand": "no, I meant"}
+{"id": "as-no_i_meant-L3", "cat": "control", "input": "I said no, I meant it.", "expected": "I said no, I meant it.", "cand": "no, I meant"}
+{"id": "as-no_i_meant-P1", "cat": "selfcorrection", "input": "It's on Monday, no, I meant Tuesday.", "expected": "It's on Tuesday.", "cand": "no, I meant"}
+{"id": "as-no_i_meant-P2", "cat": "selfcorrection", "input": "Grab the hammer, no I meant the wrench.", "expected": "Grab the wrench.", "cand": "no, I meant"}
+{"id": "as-or_i_meant-L1", "cat": "control", "input": "Or I meant to, anyway.", "expected": "Or I meant to, anyway.", "cand": "or I meant"}
+{"id": "as-or_i_meant-L2", "cat": "control", "input": "I could call, or I meant to at least.", "expected": "I could call, or I meant to at least.", "cand": "or I meant"}
+{"id": "as-or_i_meant-L3", "cat": "control", "input": "Or I meant well, at least.", "expected": "Or I meant well, at least.", "cand": "or I meant"}
+{"id": "as-or_i_meant-P1", "cat": "selfcorrection", "input": "Send it Friday, or I meant Saturday.", "expected": "Send it Saturday.", "cand": "or I meant"}
+{"id": "as-or_i_meant-P2", "cat": "selfcorrection", "input": "Buy apples, or I meant pears.", "expected": "Buy pears.", "cand": "or I meant"}
+{"id": "as-let_me_rephrase-L1", "cat": "control", "input": "Let me rephrase the question.", "expected": "Let me rephrase the question.", "cand": "let me rephrase"}
+{"id": "as-let_me_rephrase-L2", "cat": "control", "input": "Let me rephrase.", "expected": "Let me rephrase.", "cand": "let me rephrase"}
+{"id": "as-let_me_rephrase-L3", "cat": "control", "input": "Okay, let me rephrase, I think we need help.", "expected": "Okay, let me rephrase, I think we need help.", "cand": "let me rephrase"}
+{"id": "as-let_me_rephrase-P1", "cat": "selfcorrection", "input": "Meet at the gym, let me rephrase, at the park.", "expected": "Meet at the park.", "cand": "let me rephrase"}
+{"id": "as-let_me_rephrase-P2", "cat": "selfcorrection", "input": "Bring the chairs, let me rephrase, the tables.", "expected": "Bring the tables.", "cand": "let me rephrase"}
+{"id": "as-let_me_rephrase_that-L1", "cat": "control", "input": "Let me rephrase that.", "expected": "Let me rephrase that.", "cand": "let me rephrase that"}
+{"id": "as-let_me_rephrase_that-L2", "cat": "control", "input": "Wait, let me rephrase that for you.", "expected": "Wait, let me rephrase that for you.", "cand": "let me rephrase that"}
+{"id": "as-let_me_rephrase_that-L3", "cat": "control", "input": "Hold on, let me rephrase that.", "expected": "Hold on, let me rephrase that.", "cand": "let me rephrase that"}
+{"id": "as-let_me_rephrase_that-P1", "cat": "selfcorrection", "input": "Bring the cups, let me rephrase that, the plates.", "expected": "Bring the plates.", "cand": "let me rephrase that"}
+{"id": "as-let_me_rephrase_that-P2", "cat": "selfcorrection", "input": "It's at the mall, let me rephrase that, at the airport.", "expected": "It's at the airport.", "cand": "let me rephrase that"}
+{"id": "as-or_should_i_say-L1", "cat": "control", "input": "Or should I say nothing?", "expected": "Or should I say nothing?", "cand": "or should I say"}
+{"id": "as-or_should_i_say-L2", "cat": "control", "input": "What should I say?", "expected": "What should I say?", "cand": "or should I say"}
+{"id": "as-or_should_i_say-L3", "cat": "control", "input": "I'm not sure, or should I say it later?", "expected": "I'm not sure, or should I say it later?", "cand": "or should I say"}
+{"id": "as-or_should_i_say-P1", "cat": "selfcorrection", "input": "Ask the manager, or should I say, the owner.", "expected": "Ask the owner.", "cand": "or should I say"}
+{"id": "as-or_should_i_say-P2", "cat": "selfcorrection", "input": "Text Jen, or should I say, Kate.", "expected": "Text Kate.", "cand": "or should I say"}
+{"id": "as-or_i_should_say-L1", "cat": "control", "input": "Or I should say no.", "expected": "Or I should say no.", "cand": "or I should say"}
+{"id": "as-or_i_should_say-L2", "cat": "control", "input": "Maybe, or I should say probably.", "expected": "Maybe, or I should say probably.", "cand": "or I should say"}
+{"id": "as-or_i_should_say-L3", "cat": "control", "input": "Or I should say nothing at all.", "expected": "Or I should say nothing at all.", "cand": "or I should say"}
+{"id": "as-or_i_should_say-P1", "cat": "selfcorrection", "input": "Talk to Sam, or I should say, Alex.", "expected": "Talk to Alex.", "cand": "or I should say"}
+{"id": "as-or_i_should_say-P2", "cat": "selfcorrection", "input": "We need milk, or I should say, cream.", "expected": "We need cream.", "cand": "or I should say"}
+{"id": "as-actually_no-L1", "cat": "control", "input": "Actually no, I can't.", "expected": "Actually no, I can't.", "cand": "actually no"}
+{"id": "as-actually_no-L2", "cat": "control", "input": "Actually no one came.", "expected": "Actually no one came.", "cand": "actually no"}
+{"id": "as-actually_no-L3", "cat": "control", "input": "It was actually no trouble.", "expected": "It was actually no trouble.", "cand": "actually no"}
+{"id": "as-actually_no-P1", "cat": "selfcorrection", "input": "Order pizza, actually no, tacos.", "expected": "Order tacos.", "cand": "actually no"}
+{"id": "as-actually_no-P2", "cat": "selfcorrection", "input": "Ask Mark, actually no, Mike.", "expected": "Ask Mike.", "cand": "actually no"}
+{"id": "as-well_actually-L1", "cat": "control", "input": "Well actually, I agree.", "expected": "Well actually, I agree.", "cand": "well actually"}
+{"id": "as-well_actually-L2", "cat": "control", "input": "It went well actually.", "expected": "It went well actually.", "cand": "well actually"}
+{"id": "as-well_actually-L3", "cat": "control", "input": "Well, actually, it was fun.", "expected": "Well, actually, it was fun.", "cand": "well actually"}
+{"id": "as-well_actually-P1", "cat": "selfcorrection", "input": "Take the bus, well actually, the train.", "expected": "Take the train.", "cand": "well actually"}
+{"id": "as-well_actually-P2", "cat": "selfcorrection", "input": "Ask Sam, well actually, Alex.", "expected": "Ask Alex.", "cand": "well actually"}
+{"id": "as-sorry_no-L1", "cat": "control", "input": "Sorry, no, I can't.", "expected": "Sorry, no, I can't.", "cand": "sorry no"}
+{"id": "as-sorry_no-L2", "cat": "control", "input": "Sorry no one answered.", "expected": "Sorry no one answered.", "cand": "sorry no"}
+{"id": "as-sorry_no-L3", "cat": "control", "input": "I'm sorry, no, that's wrong.", "expected": "I'm sorry, no, that's wrong.", "cand": "sorry no"}
+{"id": "as-sorry_no-P1", "cat": "selfcorrection", "input": "Use the red pen, sorry no, the black pen.", "expected": "Use the black pen.", "cand": "sorry no"}
+{"id": "as-sorry_no-P2", "cat": "selfcorrection", "input": "Call Dan, sorry no, Dave.", "expected": "Call Dave.", "cand": "sorry no"}
+{"id": "as-no_no-L1", "cat": "control", "input": "No no, it's fine.", "expected": "No no, it's fine.", "cand": "no no"}
+{"id": "as-no_no-L2", "cat": "control", "input": "Oh no no no.", "expected": "Oh no no no.", "cand": "no no"}
+{"id": "as-no_no-L3", "cat": "control", "input": "No no, don't worry.", "expected": "No no, don't worry.", "cand": "no no"}
+{"id": "as-no_no-P1", "cat": "selfcorrection", "input": "Turn left, no no, right.", "expected": "Turn right.", "cand": "no no"}
+{"id": "as-no_no-P2", "cat": "selfcorrection", "input": "Bring the salad, no no, the soup.", "expected": "Bring the soup.", "cand": "no no"}
+{"id": "as-nope-L1", "cat": "control", "input": "Nope, not today.", "expected": "Nope, not today.", "cand": "nope"}
+{"id": "as-nope-L2", "cat": "control", "input": "He said nope.", "expected": "He said nope.", "cand": "nope"}
+{"id": "as-nope-L3", "cat": "control", "input": "Nope, I'm good.", "expected": "Nope, I'm good.", "cand": "nope"}
+{"id": "as-nope-P1", "cat": "selfcorrection", "input": "Ask Mark, nope, Mike.", "expected": "Ask Mike.", "cand": "nope"}
+{"id": "as-nope-P2", "cat": "selfcorrection", "input": "Put it in the fridge, nope, the freezer.", "expected": "Put it in the freezer.", "cand": "nope"}
+{"id": "as-my_bad-L1", "cat": "control", "input": "My bad, I forgot.", "expected": "My bad, I forgot.", "cand": "my bad"}
+{"id": "as-my_bad-L2", "cat": "control", "input": "That was my bad.", "expected": "That was my bad.", "cand": "my bad"}
+{"id": "as-my_bad-L3", "cat": "control", "input": "Sorry, my bad, I'll fix it.", "expected": "Sorry, my bad, I'll fix it.", "cand": "my bad"}
+{"id": "as-my_bad-P1", "cat": "selfcorrection", "input": "Turn left, my bad, right.", "expected": "Turn right.", "cand": "my bad"}
+{"id": "as-my_bad-P2", "cat": "selfcorrection", "input": "Email Tom, my bad, Tim.", "expected": "Email Tim.", "cand": "my bad"}
+{"id": "as-my_mistake-L1", "cat": "control", "input": "It was my mistake.", "expected": "It was my mistake.", "cand": "my mistake"}
+{"id": "as-my_mistake-L2", "cat": "control", "input": "My mistake, sorry.", "expected": "My mistake, sorry.", "cand": "my mistake"}
+{"id": "as-my_mistake-L3", "cat": "control", "input": "That's my mistake, not yours.", "expected": "That's my mistake, not yours.", "cand": "my mistake"}
+{"id": "as-my_mistake-P1", "cat": "selfcorrection", "input": "It's in the kitchen, my mistake, the garage.", "expected": "It's in the garage.", "cand": "my mistake"}
+{"id": "as-my_mistake-P2", "cat": "selfcorrection", "input": "Call Anna, my mistake, Emma.", "expected": "Call Emma.", "cand": "my mistake"}
+{"id": "as-make_it-L1", "cat": "control", "input": "Let's make it a party.", "expected": "Let's make it a party.", "cand": "make it"}
+{"id": "as-make_it-L2", "cat": "control", "input": "Paint it red, make it bright.", "expected": "Paint it red, make it bright.", "cand": "make it"}
+{"id": "as-make_it-L3", "cat": "control", "input": "I can make it work.", "expected": "I can make it work.", "cand": "make it"}
+{"id": "as-make_it-P1", "cat": "selfcorrection", "input": "Book a table for four, make it six.", "expected": "Book a table for six.", "cand": "make it"}
+{"id": "as-make_it-P2", "cat": "selfcorrection", "input": "We need two boxes, make it three.", "expected": "We need three boxes.", "cand": "make it"}
+{"id": "as-oops-L1", "cat": "control", "input": "Hit save, oops, too late.", "expected": "Hit save, oops, too late.", "cand": "oops"}
+{"id": "as-oops-L2", "cat": "control", "input": "Oops, I dropped it.", "expected": "Oops, I dropped it.", "cand": "oops"}
+{"id": "as-oops-L3", "cat": "control", "input": "I tripped, oops, again.", "expected": "I tripped, oops, again.", "cand": "oops"}
+{"id": "as-oops-P1", "cat": "selfcorrection", "input": "Turn left, oops, right.", "expected": "Turn right.", "cand": "oops"}
+{"id": "as-oops-P2", "cat": "selfcorrection", "input": "Call Tom, oops, Tim.", "expected": "Call Tim.", "cand": "oops"}
+{"id": "as-wait-L1", "cat": "control", "input": "Stop, wait, listen.", "expected": "Stop, wait, listen.", "cand": "wait"}
+{"id": "as-wait-L2", "cat": "control", "input": "Wait for me.", "expected": "Wait for me.", "cand": "wait"}
+{"id": "as-wait-L3", "cat": "control", "input": "Hold the door, wait, please.", "expected": "Hold the door, wait, please.", "cand": "wait"}
+{"id": "as-wait-P1", "cat": "selfcorrection", "input": "Meet on Monday, wait, Tuesday.", "expected": "Meet on Tuesday.", "cand": "wait"}
+{"id": "as-wait-P2", "cat": "selfcorrection", "input": "Call Tom, wait, Tim.", "expected": "Call Tim.", "cand": "wait"}
+{"id": "as-hold_on-L1", "cat": "control", "input": "Hold on, I'm coming.", "expected": "Hold on, I'm coming.", "cand": "hold on"}
+{"id": "as-hold_on-L2", "cat": "control", "input": "Hold on tight.", "expected": "Hold on tight.", "cand": "hold on"}
+{"id": "as-hold_on-L3", "cat": "control", "input": "Stay there, hold on, please.", "expected": "Stay there, hold on, please.", "cand": "hold on"}
+{"id": "as-hold_on-P1", "cat": "selfcorrection", "input": "It's on Monday, hold on, Tuesday.", "expected": "It's on Tuesday.", "cand": "hold on"}
+{"id": "as-hold_on-P2", "cat": "selfcorrection", "input": "Ask Sam, hold on, Alex.", "expected": "Ask Alex.", "cand": "hold on"}
+{"id": "as-i_m_sorry-L1", "cat": "control", "input": "I'm sorry for your loss.", "expected": "I'm sorry for your loss.", "cand": "I'm sorry"}
+{"id": "as-i_m_sorry-L2", "cat": "control", "input": "Thanks, I'm sorry, really.", "expected": "Thanks, I'm sorry, really.", "cand": "I'm sorry"}
+{"id": "as-i_m_sorry-L3", "cat": "control", "input": "I'm sorry, the store is closed.", "expected": "I'm sorry, the store is closed.", "cand": "I'm sorry"}
+{"id": "as-i_m_sorry-P1", "cat": "selfcorrection", "input": "Call Sam, I'm sorry, Alex.", "expected": "Call Alex.", "cand": "I'm sorry"}
+{"id": "as-i_m_sorry-P2", "cat": "selfcorrection", "input": "Turn left, I'm sorry, right.", "expected": "Turn right.", "cand": "I'm sorry"}
+{"id": "as-excuse_me-L1", "cat": "control", "input": "Excuse me, sir.", "expected": "Excuse me, sir.", "cand": "excuse me"}
+{"id": "as-excuse_me-L2", "cat": "control", "input": "Move, excuse me, please.", "expected": "Move, excuse me, please.", "cand": "excuse me"}
+{"id": "as-excuse_me-L3", "cat": "control", "input": "Excuse me, where is it?", "expected": "Excuse me, where is it?", "cand": "excuse me"}
+{"id": "as-excuse_me-P1", "cat": "selfcorrection", "input": "Ask Sam, excuse me, Alex.", "expected": "Ask Alex.", "cand": "excuse me"}
+{"id": "as-excuse_me-P2", "cat": "selfcorrection", "input": "It's blue, excuse me, green.", "expected": "It's green.", "cand": "excuse me"}
+{"id": "as2-wait-L1", "cat": "control", "input": "Okay, wait, what happened?", "expected": "Okay, wait, what happened?", "cand": "wait"}
+{"id": "as2-wait-L2", "cat": "control", "input": "Sit down, wait, here.", "expected": "Sit down, wait, here.", "cand": "wait"}
+{"id": "as2-wait-L3", "cat": "control", "input": "Hang on, wait, a minute.", "expected": "Hang on, wait, a minute.", "cand": "wait"}
+{"id": "as2-wait-L4", "cat": "control", "input": "Please, wait, outside.", "expected": "Please, wait, outside.", "cand": "wait"}
+{"id": "as2-hold_on-L1", "cat": "control", "input": "Wait, hold on, a second.", "expected": "Wait, hold on, a second.", "cand": "hold on"}
+{"id": "as2-hold_on-L2", "cat": "control", "input": "Okay, hold on, let me check.", "expected": "Okay, hold on, let me check.", "cand": "hold on"}
+{"id": "as2-hold_on-L3", "cat": "control", "input": "Stop, hold on, please.", "expected": "Stop, hold on, please.", "cand": "hold on"}
+{"id": "as2-hold_on-L4", "cat": "control", "input": "Grab the rope, hold on, tight.", "expected": "Grab the rope, hold on, tight.", "cand": "hold on"}
+{"id": "as2-i_m_sorry-L1", "cat": "control", "input": "Thanks, I'm sorry, again.", "expected": "Thanks, I'm sorry, again.", "cand": "I'm sorry"}
+{"id": "as2-i_m_sorry-L2", "cat": "control", "input": "Oh, I'm sorry, Mrs. Lee.", "expected": "Oh, I'm sorry, Mrs. Lee.", "cand": "I'm sorry"}
+{"id": "as2-i_m_sorry-L3", "cat": "control", "input": "Hi Dan, I'm sorry, but no.", "expected": "Hi Dan, I'm sorry, but no.", "cand": "I'm sorry"}
+{"id": "as2-i_m_sorry-L4", "cat": "control", "input": "Wow, I'm sorry, really sorry.", "expected": "Wow, I'm sorry, really sorry.", "cand": "I'm sorry"}
+{"id": "as2-excuse_me-L1", "cat": "control", "input": "Hi, excuse me, ma'am.", "expected": "Hi, excuse me, ma'am.", "cand": "excuse me"}
+{"id": "as2-excuse_me-L2", "cat": "control", "input": "Sorry, excuse me, coming through.", "expected": "Sorry, excuse me, coming through.", "cand": "excuse me"}
+{"id": "as2-excuse_me-L3", "cat": "control", "input": "Hello, excuse me, Doctor Smith.", "expected": "Hello, excuse me, Doctor Smith.", "cand": "excuse me"}
+{"id": "as2-excuse_me-L4", "cat": "control", "input": "Oops, excuse me, sir.", "expected": "Oops, excuse me, sir.", "cand": "excuse me"}

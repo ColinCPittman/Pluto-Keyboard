@@ -1,0 +1,30 @@
+{"id": "mt01", "cat": "typo", "input": "Can you ststy the car while I grab my coat?", "expected": "Can you start the car while I grab my coat?"}
+{"id": "mt02", "cat": "typo", "input": "I'll meet you at the restaurnat at seven.", "expected": "I'll meet you at the restaurant at seven."}
+{"id": "mt03", "cat": "typo", "input": "She forgot her umbrella so she got completly soaked.", "expected": "She forgot her umbrella so she got completely soaked."}
+{"id": "mt04", "cat": "typo", "input": "Please send me the docuemnts before Friday.", "expected": "Please send me the documents before Friday."}
+{"id": "mt05", "cat": "typo", "input": "We should probably levae early to beat the traffic.", "expected": "We should probably leave early to beat the traffic."}
+{"id": "mt06", "cat": "typo", "input": "The meeting was moved to tomorow morning.", "expected": "The meeting was moved to tomorrow morning."}
+{"id": "mt07", "cat": "typo", "input": "I think the dog needs to go for a wslk.", "expected": "I think the dog needs to go for a walk."}
+{"id": "mt08", "cat": "typo", "input": "Can you pick up some milk on the wsy home?", "expected": "Can you pick up some milk on the way home?"}
+{"id": "mt09", "cat": "typo", "input": "He was too tirsd to finish the movie.", "expected": "He was too tired to finish the movie."}
+{"id": "mt10", "cat": "typo", "input": "Let me know if you need any hekp with the move.", "expected": "Let me know if you need any help with the move."}
+{"id": "mt11", "cat": "typo", "input": "Thanks so mych for the birthday card.", "expected": "Thanks so much for the birthday card."}
+{"id": "mt12", "cat": "typo", "input": "I'm going to the gym after wotk today.", "expected": "I'm going to the gym after work today."}
+{"id": "mt13", "cat": "typo", "input": "The kids are playing in the bsckyard all afternoon.", "expected": "The kids are playing in the backyard all afternoon."}
+{"id": "mt14", "cat": "typo", "input": "Don't forget to water the plsnts while I'm away.", "expected": "Don't forget to water the plants while I'm away."}
+{"id": "mt15", "cat": "typo", "input": "Our flight got delayed by two hoirs.", "expected": "Our flight got delayed by two hours."}
+{"id": "mt16", "cat": "typo", "input": "I really enjoyed the concrt last night.", "expected": "I really enjoyed the concert last night."}
+{"id": "mtc01", "cat": "control", "input": "lol that was the funniest thing I've seen all week.", "expected": "lol that was the funniest thing I've seen all week."}
+{"id": "mtc02", "cat": "control", "input": "I'm gonna grab lunch, brb.", "expected": "I'm gonna grab lunch, brb."}
+{"id": "mtc03", "cat": "control", "input": "Never run the exe directly, use the launcher.", "expected": "Never run the exe directly, use the launcher."}
+{"id": "mtc04", "cat": "control", "input": "Install it with kubectl apply and then check the pods.", "expected": "Install it with kubectl apply and then check the pods."}
+{"id": "mtc05", "cat": "control", "input": "We had pho for dinner and it was amazing.", "expected": "We had pho for dinner and it was amazing."}
+{"id": "mtc06", "cat": "control", "input": "That movie was kinda mid honestly.", "expected": "That movie was kinda mid honestly."}
+{"id": "mtc07", "cat": "control", "input": "omg I can't believe it actually worked.", "expected": "omg I can't believe it actually worked."}
+{"id": "mtc08", "cat": "control", "input": "Ttyl, I have to go now.", "expected": "Ttyl, I have to go now."}
+{"id": "mtc09", "cat": "control", "input": "He kept yapping about crypto all night.", "expected": "He kept yapping about crypto all night."}
+{"id": "mtc10", "cat": "control", "input": "Ugh, my phone died again today.", "expected": "Ugh, my phone died again today."}
+{"id": "mtc11", "cat": "control", "input": "Hmm, I'm not sure about that one.", "expected": "Hmm, I'm not sure about that one."}
+{"id": "mtc12", "cat": "control", "input": "The Zorblax team shipped the update today.", "expected": "The Zorblax team shipped the update today."}
+{"id": "mtc13", "cat": "control", "input": "We set it up with kubectl, argocd and kustomize yesterday.", "expected": "We set it up with kubectl, argocd and kustomize yesterday."}
+{"id": "mtc14", "cat": "control", "input": "Mi abuela dijo que vendria manana temprano.", "expected": "Mi abuela dijo que vendria manana temprano."}

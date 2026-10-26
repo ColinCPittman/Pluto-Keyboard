@@ -1,0 +1,40 @@
+{"id": "sa01", "cat": "boundary", "input": "I put the leftovers in to the fridge.", "expected": "I put the leftovers into the fridge."}
+{"id": "sa02", "cat": "boundary", "input": "I ran in to an old friend at the store.", "expected": "I ran into an old friend at the store."}
+{"id": "sa03", "cat": "boundary", "input": "May be we should leave a little earlier.", "expected": "Maybe we should leave a little earlier."}
+{"id": "sa04", "cat": "boundary", "input": "I'm all ready late for work.", "expected": "I'm already late for work."}
+{"id": "sa05", "cat": "boundary", "input": "That's not all together true.", "expected": "That's not altogether true."}
+{"id": "sa06", "cat": "boundary", "input": "The kids were fighting, so I had to pull them a part.", "expected": "The kids were fighting, so I had to pull them apart."}
+{"id": "sa07", "cat": "boundary", "input": "I found away to fix the leak.", "expected": "I found a way to fix the leak."}
+{"id": "sa08", "cat": "boundary", "input": "He lives a lone in a small cabin.", "expected": "He lives alone in a small cabin."}
+{"id": "sa09", "cat": "boundary", "input": "Every one was at the party last night.", "expected": "Everyone was at the party last night."}
+{"id": "sa10", "cat": "boundary", "input": "I can't see any thing without my glasses.", "expected": "I can't see anything without my glasses."}
+{"id": "sa11", "cat": "boundary", "input": "Some one left their umbrella in my car.", "expected": "Someone left their umbrella in my car."}
+{"id": "sa12", "cat": "boundary", "input": "Let's go out side and play catch.", "expected": "Let's go outside and play catch."}
+{"id": "sa13", "cat": "boundary", "input": "Did you finish your home work yet?", "expected": "Did you finish your homework yet?"}
+{"id": "sa14", "cat": "boundary", "input": "My grand mother is visiting this weekend.", "expected": "My grandmother is visiting this weekend."}
+{"id": "sa15", "cat": "boundary", "input": "I walk to work everyday.", "expected": "I walk to work every day."}
+{"id": "sa16", "cat": "boundary", "input": "Do you have anymore questions for me?", "expected": "Do you have any more questions for me?"}
+{"id": "sa17", "cat": "boundary", "input": "I'll wait for awhile and then call again.", "expected": "I'll wait for a while and then call again."}
+{"id": "sa18", "cat": "boundary", "input": "Any way, let's talk about the budget.", "expected": "Anyway, let's talk about the budget."}
+{"id": "sa19", "cat": "boundary", "input": "I'll pick you up to night after work.", "expected": "I'll pick you up tonight after work."}
+{"id": "sa20", "cat": "boundary", "input": "Can you turn the lights on? I can't see any thing.", "expected": "Can you turn the lights on? I can't see anything."}
+{"id": "san01", "cat": "control", "input": "I need to work out more often.", "expected": "I need to work out more often."}
+{"id": "san02", "cat": "control", "input": "Let's set up the tent before it gets dark.", "expected": "Let's set up the tent before it gets dark."}
+{"id": "san03", "cat": "control", "input": "Can you check out this video I sent you?", "expected": "Can you check out this video I sent you?"}
+{"id": "san04", "cat": "control", "input": "She cut the sandwich in two pieces.", "expected": "She cut the sandwich in two pieces."}
+{"id": "san05", "cat": "control", "input": "Every day is a new adventure.", "expected": "Every day is a new adventure."}
+{"id": "san06", "cat": "control", "input": "We don't have any more milk.", "expected": "We don't have any more milk."}
+{"id": "san07", "cat": "control", "input": "It may be too late to call him now.", "expected": "It may be too late to call him now."}
+{"id": "san08", "cat": "control", "input": "The kids are all ready for school.", "expected": "The kids are all ready for school."}
+{"id": "san09", "cat": "control", "input": "We were all together at the beach.", "expected": "We were all together at the beach."}
+{"id": "san10", "cat": "control", "input": "It's a part of the plan.", "expected": "It's a part of the plan."}
+{"id": "san11", "cat": "control", "input": "Give me a while to think about it.", "expected": "Give me a while to think about it."}
+{"id": "san12", "cat": "control", "input": "I need some time to think.", "expected": "I need some time to think."}
+{"id": "san13", "cat": "control", "input": "There's a way out of this mess.", "expected": "There's a way out of this mess."}
+{"id": "san14", "cat": "control", "input": "Every one of these cookies is burnt.", "expected": "Every one of these cookies is burnt."}
+{"id": "san15", "cat": "control", "input": "He turned in his homework late.", "expected": "He turned in his homework late."}
+{"id": "san16", "cat": "control", "input": "Log in to your account first.", "expected": "Log in to your account first."}
+{"id": "san17", "cat": "control", "input": "Any way you look at it, it's a good deal.", "expected": "Any way you look at it, it's a good deal."}
+{"id": "san18", "cat": "control", "input": "I walked into the room and sat down.", "expected": "I walked into the room and sat down."}
+{"id": "san19", "cat": "control", "input": "She lives alone with her two cats.", "expected": "She lives alone with her two cats."}
+{"id": "san20", "cat": "control", "input": "We can still do it anyway.", "expected": "We can still do it anyway."}

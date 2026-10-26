@@ -1,0 +1,35 @@
+// Desktop JVM harness for the punctuation engine in voiceinput-shared.
+// The engine sources are compiled directly from voiceinput-shared (no Android APIs involved).
+//
+//   ./gradlew -p tools/punctuation-harness run --args='restore --engine pcs --model-dir D:\FUTO-models\punctuation\pcs_en "send it to mom"'
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '2.1.0'
+    id 'application'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
+}
+
+sourceSets {
+    main {
+        kotlin {
+            srcDir '../../voiceinput-shared/src/main/java/org/futo/voiceinput/shared/punctuation'
+        }
+    }
+}
+
+dependencies {
+    // same version as voiceinput-shared's onnxruntime-android
+    implementation 'com.microsoft.onnxruntime:onnxruntime:1.31.0'
+}
+
+application {
+    mainClass = 'punctuation.harness.HarnessKt'
+}

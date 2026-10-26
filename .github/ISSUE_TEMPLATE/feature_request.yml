@@ -1,0 +1,48 @@
+name: Feature request
+description: Suggest an idea or an improvement for Pluto Keyboard.
+labels: ["enhancement"]
+title: "Feature: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. Pluto Keyboard is a personal project, so I cannot promise to build everything, but I do read every request.
+
+        Please suggest one thing per issue. Ideas for keyboard layouts are best sent to the [FUTO keyboard layouts repository](https://github.com/futo-org/futo-keyboard-layouts/issues).
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the situation or problem first, before the solution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like Pluto Keyboard to do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What do you do instead today?
+      description: Any workaround, or another keyboard that does this well.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part is this about?
+      options:
+        - Voice typing
+        - Punctuation or Smart corrections
+        - Typing heatmap or autocorrect
+        - Layouts, themes or settings
+        - Installing or updating
+        - Something else
+    validations:
+      required: false

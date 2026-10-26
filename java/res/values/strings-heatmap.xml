@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Adaptive typing heatmap -->
+    <string name="typing_heatmap_toggle_title">Adapt keys to my typing</string>
+    <string name="typing_heatmap_toggle_subtitle">Learns from the times you hit a neighboring key by mistake and slowly shifts each key\'s tap area toward where you actually tap. It improves the more you type, so you can type faster without aiming so carefully.</string>
+    <string name="typing_heatmap_screen_title">Adaptive typing heatmap</string>
+    <string name="typing_heatmap_explanation">Dots show where you recently tapped each letter, compared with the key. The marker and line show how far that key has shifted to match you. Only words you finish are used, never passwords or incognito typing. Only tap positions are saved, never what you type.</string>
+    <string name="typing_heatmap_no_data">Nothing learned yet. Type as usual for a while and your heatmap will show up here.</string>
+    <string name="typing_heatmap_disabled">\"Adapt keys to my typing\" is off. What it learned is kept, but not used or updated.</string>
+    <string name="typing_heatmap_total_taps">Taps learned: %1$d</string>
+    <string name="typing_heatmap_taps_per_key">Taps per key</string>
+    <string name="typing_heatmap_portrait">Portrait</string>
+    <string name="typing_heatmap_landscape">Landscape</string>
+    <string name="typing_heatmap_split">split</string>
+    <string name="typing_heatmap_reset">Reset what was learned</string>
+    <string name="typing_heatmap_reset_confirm_title">Reset adaptive typing heatmap?</string>
+    <string name="typing_heatmap_reset_confirm_body">This deletes everything Pluto has learned about where you tap, in portrait and landscape. It can\'t be undone. Keys work as normal until it learns again.</string>
+    <string name="typing_heatmap_nav_subtitle">Reduces typos by learning from where you really tap. Open to see your heatmap, switch it off or reset it.</string>
+    <string name="typing_heatmap_reset_confirm">Reset</string>
+</resources>

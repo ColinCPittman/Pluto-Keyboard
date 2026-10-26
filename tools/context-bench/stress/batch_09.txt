@@ -1,0 +1,507 @@
+# batch 09: fresh mix for the final check
+c The hotel room has a view of the ocean.
+c Breakfast is included.
+c The front desk was really helpful.
+c Our room isn't ready yet.
+c Can we store our bags here?
+c The pool opens at nine.
+c Checkout is at eleven.
+c We're extending our stay one more night.
+p:number The shuttle leaves every thirty minutes. => The shuttle leaves every 30 minutes. ;; The shuttle leaves every thirty minutes.
+c I left my sunglasses in the lobby.
+c The minibar prices are insane.
+c Housekeeping already came by.
+c The wifi in the room is slow.
+c The bed was so comfortable.
+c We should come back here next year.
+c My doctor wants me to cut back on salt.
+c I have a follow up appointment next month.
+c The nurse said my blood pressure is fine.
+c I need to get my eyes checked.
+c My new glasses are ready.
+c The pharmacy closes at nine.
+c I've been sleeping better lately.
+c I started taking vitamins.
+c My ankle is still swollen.
+c The physical therapy is helping.
+c I'm on antibiotics for a week.
+c The rash is going away.
+c I got my flu shot today.
+c My arm is sore from the shot.
+c I'm finally feeling like myself again.
+c We've been together for five years.
+c He proposed on the beach!
+c We're thinking about a fall wedding.
+c Her parents are so nice.
+c We had our first fight.
+c We made up, don't worry.
+c Date night is Friday.
+c He cooked me dinner.
+c She surprised me with tickets.
+c We're moving in together.
+p:number I finally beat level ten. => I finally beat level 10. ;; I finally beat level ten.
+c The boss fight took forever.
+c My controller is broken.
+c I'll play online later.
+c Want to join my party?
+c The new update is huge.
+c My character died again.
+c That game is so addictive.
+c I stayed up way too late playing.
+c We're doing a game night Friday.
+c I need to cancel my subscription.
+c The bank charged me a fee.
+c I'm saving for a down payment.
+c My credit score went up.
+c I paid off my credit card.
+c The budget app is really useful.
+c I'm trying not to eat out as much.
+c Groceries were cheaper this week.
+c I sold my old bike online.
+p:number I made fifty bucks. => I made 50 bucks. ;; I made fifty bucks.
+c My laptop won't turn on.
+c Did you try charging it?
+c The screen is black.
+c Hold the power button down.
+c It's working now.
+c The update broke my email.
+c I can't log in.
+c Reset your password.
+c I got locked out.
+c Call support.
+c They fixed it in five minutes.
+c My son said the funniest thing today.
+c He asked if clouds are made of cotton.
+c She wants to be a dinosaur when she grows up.
+c He told the teacher our dog can talk.
+c She named her stuffed animal Pancake.
+c He wore his costume to the grocery store.
+c She drew a picture of our family.
+c I'm in it, apparently with three arms.
+c He thinks the moon follows our car.
+c She asked why the sky is blue.
+c Chop the garlic finely.
+c Sear the steak for two minutes per side.
+c Let the dough rest for an hour.
+c Whisk the eggs and milk together.
+c Fold in the chocolate chips.
+c Season with salt and pepper.
+c Garnish with fresh parsley.
+c Bring the water to a boil.
+c Reduce the heat and simmer.
+c Serve warm.
+c Did you see that touchdown?
+c Our quarterback is on fire.
+c The defense looks shaky.
+c That was a clean hit.
+c He's injured again.
+c The trade was a mistake.
+c They need a new coach.
+c Season tickets are so expensive.
+c We're going to the playoffs!
+c What a season.
+c The neighbors are having a party.
+c Their music is so loud.
+c Someone keeps leaving trash by the curb.
+c The street lights are out.
+c They're repaving the road next week.
+c The park got new swings.
+c There's a farmers market on Saturdays.
+c The library is doing story time.
+c Our street is having a block party.
+c I met the new mail carrier.
+# homophones and near-homophones
+c I'll see you at the beach.
+c The beech tree is huge.
+c I need a new belt.
+c The bell rang.
+c That's the bill.
+c The bowl is full.
+c The ball is flat.
+c The bull charged.
+c The pull tab broke.
+c The pole fell.
+c The pool is warm.
+c I'll fill the tank.
+c The film was great.
+c I feel sick.
+c The field is muddy.
+c The feet are sore.
+c That's a neat trick.
+c The knit sweater.
+c I need a nap.
+c The knob is loose.
+c The pick is mine.
+c The peck on the cheek.
+c The pack is heavy.
+c The pocket is torn.
+c I'll wait for you.
+c The wet paint.
+c The white car.
+c What a view.
+c The wit was sharp.
+c We sit in front.
+c The seat is taken.
+c The set is ready.
+c The sat phone.
+c Ship it.
+c The sheep are out.
+c The shop is closed.
+c The chip is cracked.
+c The cheap one is fine.
+c The chop shop.
+c The cheese is moldy.
+c Choose one.
+c The shoes are muddy.
+c The chess club.
+c The chest is heavy.
+c Check the mail.
+c The chick is cute.
+c The cheek is red.
+c The deck is wet.
+c The dock is closed.
+c The duck swam away.
+c The dark room.
+c The dirt road.
+c The dart hit the board.
+c The deal is done.
+c The dial is broken.
+c The doll is old.
+c The dull knife.
+c The tall tree.
+c The toll road.
+c The tool box.
+c The tell is obvious.
+c The tile is cracked.
+c The tale of two cities.
+c The tail of the dog.
+c The towel is wet.
+c The tower is tall.
+c The tour starts at noon.
+c The tore paper.
+c The tear in my jeans.
+c The tier list.
+c The tire is flat.
+c The tar is hot.
+c The toy is broken.
+c The tie is blue.
+# commands as words
+c The time period is wrong.
+c During that period, we lived in Ohio.
+c That's a comma, not a period.
+c Commas are confusing.
+c The colon is a body part.
+c A quote from my favorite book.
+c We quoted the price.
+c Dash off a quick note.
+c A hashtag is just a pound sign.
+c The line at the bank.
+c Next in line.
+c Line up, kids.
+c New lines of clothes.
+c The stop button.
+c Stop and go traffic.
+c A big question mark.
+c The exclamation was loud.
+c Plus one more.
+c Minus that.
+c Equals sign.
+c Open season.
+c Closed for the day.
+c Close your eyes.
+c Scratch and sniff.
+c Delete the email.
+c My smiley face shirt.
+c The open quote is missing.
+c Close quotes on the second line.
+# look-alikes
+c Ah, okay.
+c Ah, right.
+c Eh, maybe.
+p:filler Hmm, I wonder. => I wonder. ;; Hmm, I wonder.
+p:filler Um, excuse me. => Excuse me. ;; Um, excuse me.
+p:filler Uh, hello? => Hello? ;; Uh, hello?
+c Uh oh, the power's out.
+c Uh huh, keep going.
+c Sorry, could you repeat that?
+c Sorry, I'm running late.
+c Sorry, the line was busy.
+c Sorry for the wait.
+c Actually, I'm busy that day.
+c Actually, I love it.
+c I mean, sure, why not.
+c I meant that as a joke.
+c What do you mean?
+c I would rather not.
+c No, actually, I'm okay.
+c No wait, that's not right.
+c Oh wait, here it is.
+c Make that three, please.
+c Correction, the meeting is canceled.
+c She said she's on her way.
+c He said the car is fixed.
+c My boss said great job.
+c My son asked for a puppy.
+c She asked how much it cost.
+c He told me a joke.
+c She went to bed.
+c He goes to college now.
+c It was like a dream come true.
+c She's like a celebrity here.
+c I'm like, totally lost.
+c He texted me good morning.
+c She replied with a heart.
+p:quote They yelled surprise! => They yelled "Surprise!" ;; They yelled surprise!
+c Yes, yes, I'm coming.
+c No, no, you go first.
+c Okay, okay, calm down.
+c Please, please, can we go?
+c Thank you, thank you, thank you.
+c Hurry, hurry!
+c Come on, come on, open!
+c Sorry, sorry, my fault.
+c I know, I know.
+c Got it, got it.
+c Right, right.
+c Bye, bye.
+# positives
+p:filler We should, um, check out early. => We should check out early.
+p:filler The doctor, uh, wants more tests. => The doctor wants more tests.
+p:filler Um, is breakfast included? => Is breakfast included?
+p:filler It's, um, a little expensive. => It's a little expensive.
+p:filler I, uh, forgot my password. => I forgot my password.
+p:filler Hmm, maybe next time. => Maybe next time.
+p:filler He's, um, really nice. => He's really nice.
+p:filler The game was, uh, amazing. => The game was amazing.
+p:filler Uh, where's the remote? => Where's the remote?
+p:repeat I I love this hotel. => I love this hotel.
+p:repeat The the pool is open. => The pool is open.
+p:repeat Can you you help me? => Can you help me?
+p:selfcorrection Checkout is at ten, I mean, eleven. => Checkout is at eleven.
+p:selfcorrection Book the room for Friday, no wait, Saturday. => Book the room for Saturday.
+p:selfcorrection Ask Mike, sorry, Matt. => Ask Matt.
+p:selfcorrection We need two, actually, three nights. => We need three nights.
+p:selfcorrection It's on the left, I mean, the right. => It's on the right.
+p:selfcorrection The appointment is Tuesday, I mean, Thursday. => The appointment is Thursday.
+p:quote My son was like, um, are clouds soft? => My son was like "Um, are clouds soft?"
+p:quote The nurse asked, how are you feeling? => The nurse asked "How are you feeling?"
+p:quote My daughter goes, why is the moon following us? => My daughter goes "Why is the moon following us?"
+p:quote I was like, wow, look at that view. => I was like "Wow, look at that view."
+p:quote He said, hey, welcome back. => He said "Hey, welcome back."
+p:quote She asked, can we stay another night? => She asked "Can we stay another night?"
+p:command Hi Jen comma | we checked in period => Hi Jen, we checked in.
+p:command Packing list colon | sunscreen, hats, towels. => Packing list: sunscreen, hats, towels.
+p:command We're here exclamation point => We're here!
+p:command Is breakfast included question mark => Is breakfast included?
+p:command See you soon. | New line. | Love, Mom. => See you soon.\nLove, Mom.
+p:command Checkout is at ten. | Scratch that. | Checkout is at eleven. => Checkout is at eleven.
+p:command He said. | Open quote. | I love it here. | Close quote. => He said "I love it here."
+p:command Fish ampersand chips => Fish & chips
+p:command Good night period => Good night.
+p:command Dear Sir comma | new paragraph | Thank you for your letter. => Dear Sir,\n\nThank you for your letter.
+p:number The room is two hundred dollars a night. => The room is $200 a night.
+p:number Checkout is at eleven thirty am. => Checkout is at 11:30 AM.
+p:number It's fifteen percent off. => It's 15% off.
+p:number We got married in two thousand fifteen. => We got married in 2015.
+p:number The flight was four hundred and fifty dollars. => The flight was $450.
+p:number We stayed twenty one nights. => We stayed 21 nights.
+p:number The tour is at two fifteen pm. => The tour is at 2:15 PM.
+p:number The bill was sixty two dollars and forty cents. => The bill was $62.40.
+p:soundalike The pool is to cold. => The pool is too cold.
+p:soundalike I need to by sunscreen. => I need to buy sunscreen.
+p:soundalike Did you here about the storm? => Did you hear about the storm?
+c Their pool is huge.
+p:soundalike I'll meat you in the lobby. => I'll meet you in the lobby.
+p:soundalike We walked along the beech. => We walked along the beach.
+p:soundalike I new it would be nice. => I knew it would be nice.
+p:soundalike It took an our to check in. => It took an hour to check in.
+p:question Is the pool open. => Is the pool open?
+p:question Did you pack the sunscreen. => Did you pack the sunscreen?
+p:question Can we check in early. => Can we check in early?
+p:question What time is breakfast. => What time is breakfast?
+p:question Where is the elevator. => Where is the elevator?
+p:question Are you feeling better. => Are you feeling better?
+p:question Do you need a ride. => Do you need a ride?
+p:question Have you seen my glasses. => Have you seen my glasses?
+p:mixed Um, is the pool, uh, heated. => Is the pool heated?
+p:mixed I need to by, um, more towels. => I need to buy more towels.
+p:name Did Shivon check in? => Did Siobhan check in? @@ Siobhan
+p:name Tell Eefa breakfast is ready. => Tell Aoife breakfast is ready. @@ Aoife
+c Grace is coming too. @@ Grayce
+c I'll text Mark. @@ Marq
+c The bill is paid. @@ Bil
+c The pool is warm. @@ Poole
+c The beach is crowded. @@ Beecher
+c My cousin is here. @@ Cuzin
+c The tour was great. @@ Tor
+c Can you call the front desk? @@ Desc
+c The towels are clean. @@ Tal
+# batch 09, part 2
+c We just checked in. The room is gorgeous. You have to see the balcony.
+c The kids are in the pool already. I'm sitting in the shade with a book. This is perfect.
+c Our flight home is at six. We'll leave the hotel around three. Traffic shouldn't be bad.
+c The doctor said it's just a sprain. I need to rest it for a week. No running.
+c I picked up your prescription. It's on the kitchen counter. Take it with food.
+c He asked me to marry him! I said yes! I'm still shaking.
+c We're looking at venues this weekend. My mom is coming with us. Wish us luck.
+c I finally finished that game. The ending was so good. I want to play it again.
+c My credit card got stolen. The bank already canceled it. A new one is coming in the mail.
+c The laptop is fixed. It was just a loose cable. I feel silly.
+c My daughter said she wants to be a vet. Last week it was an astronaut. Next week who knows.
+c The bread came out perfect this time. Crispy crust and soft inside. I'm so proud.
+c What a game! We won in the last second. The whole stadium went crazy.
+c The neighbors invited us to their barbecue. Should we bring something? Maybe a salad.
+c The library has a new reading program. The kids get prizes for every book. They're so motivated.
+c I'm going to the farmers market. Want anything? They have great peaches right now.
+c The block party is on Saturday. There's a bounce house for the kids. And a taco truck.
+c My mom is coming to stay for a week. She's flying in Tuesday. I need to clean.
+c Our anniversary dinner was perfect. The food was incredible. We're going back next year.
+c The game update finally dropped. It's huge. My internet is crying.
+c I put money in savings this month. First time in a while. Feels good.
+c My phone keeps restarting. I think it's the battery. Time for a new one.
+c Story time at the library was cute. The kids loved the puppet. We'll go again next week.
+c We saw a rainbow on the drive home. A double one. The kids lost their minds.
+c The power went out for an hour. We played cards by flashlight. It was actually fun.
+c I made soup for the week. Chicken noodle. Want some?
+c The game was rained out. It's rescheduled for Thursday. Same time.
+c My shoes are falling apart. I need new ones before the trip. Any suggestions?
+c The dog dug up my flowers again. I give up. He wins.
+c My sister is coming to visit. She's bringing the kids. The house will be chaos.
+c See, I told you the hotel would be nice.
+c See you at breakfast.
+c So, what do you want to do today?
+c So we're thinking about the aquarium.
+c Well, the view is worth it.
+c Well done, kiddo.
+c Now we're on vacation.
+c Now or never.
+c Okay, sunscreen first.
+c Okay, let's go.
+c Like, this is the best pizza ever.
+c Look at the size of that wave.
+c Listen to the ocean.
+c Right, we need to book the tour.
+c Anyway, back to work on Monday.
+c Also, we need more towels.
+c Plus, the pool is heated.
+c Then we'll get ice cream.
+c Still, it was worth it.
+c Sure, I'll ask the front desk.
+c Yeah, the room is great.
+c No, the pool is outside.
+c Oh, they have a hot tub.
+c Wow, look at that sunset.
+c Hey, where's the elevator?
+c Oops, I forgot the key card.
+c Aw, the kids are asleep.
+c Huh, the bar closes early.
+c Ha, you got sunburned.
+c Phew, we made it.
+c Yay, vacation!
+c Darn, it's raining.
+c Ouch, the sand is hot.
+c Shoot, I left my phone in the room.
+c Gosh, it's crowded.
+c Alright, dinner time.
+c Cool, the shuttle is here.
+c Nice, a free upgrade.
+c Great, the wifi works.
+c Perfect, thanks.
+c Awesome, see you there.
+c I wonder what time the pool closes.
+c I'm not sure where the gym is.
+c I don't know what to order.
+c I was wondering if they have room service.
+c Ask the front desk where the gym is.
+c Tell me when you're ready.
+c Let me know what time works.
+c Find out if they have a crib.
+c Guess what we saw today.
+c Imagine waking up to this view every day.
+p:question Who knows when we'll be back. => Who knows when we'll be back? ;; Who knows when we'll be back.
+c Whatever you want to do is fine.
+p:question How lucky are we. => How lucky are we? ;; How lucky are we.
+c What a view.
+c How sweet of them.
+c Do you want to go to the beach?
+c Can we get pizza tonight?
+c Is the gift shop open?
+c What time is checkout?
+c Where are the towels?
+c Why is the pool closed?
+c How far is the beach?
+c Who wants ice cream?
+c Should we take a cab?
+c Would you like a drink?
+c You're coming to dinner, right?
+c It's not raining, is it?
+c We have time, don't we?
+c That's the place, isn't it?
+c Two of the kids have colds.
+c We have three days left.
+c I'll be ready in five minutes.
+c There are four of us.
+c It's a one bedroom suite.
+c We stayed for a week.
+c It's our second time here.
+c This is the first trip in years.
+c We're on the third floor.
+c I've been here twice.
+c It's a million times better than last year.
+c Thanks a million.
+c We're on cloud nine.
+c I have a hundred photos already.
+c It was a once in a lifetime trip.
+c The kids are in their element.
+c My mom says hi.
+c My dad says the fishing is great.
+c The kids say this is the best trip ever.
+c She said the spa was amazing.
+c He said the golf course was hard.
+c They said dinner is at seven.
+c I told them we'd be late.
+c She told me about a great restaurant.
+c He asked if we wanted to join.
+c She asked what we were doing tomorrow.
+c He went fishing this morning.
+c She goes to the spa every day.
+c It's like paradise here.
+c He's like a fish in the water.
+c I'm like, never leaving.
+c Ah, this is the life.
+c Eh, the food is okay.
+p:filler Hmm, which beach? => Which beach? ;; Hmm, which beach?
+p:filler Um, is that a shark? => Is that a shark? ;; Um, is that a shark?
+c Uh oh, the kids are sunburned.
+c Uh huh, sure.
+c Sorry, we're running late for dinner.
+c Sorry about the noise next door.
+c Actually, the spa is closed today.
+c Actually, I'd love that.
+c I mean, it's vacation.
+c I meant tomorrow.
+c I'd rather stay by the pool.
+c No, actually, let's go to the beach.
+c No wait, I want to swim first.
+c Oh wait, the shuttle is here.
+c Make that a table for six.
+c Thank you, thank you, this is amazing.
+c I know, I know, I packed too much.
+c Come on, come on, the shuttle is leaving!
+c Hurry up, hurry up!
+c Wait, wait, I forgot my hat.
+c Yes, yes, I have the tickets.
+c No, no, the other way.
+c Okay, okay, I'm up.
+p:filler We're, um, almost at the beach. => We're almost at the beach.
+p:filler The spa was, uh, really relaxing. => The spa was really relaxing.
+p:filler Um, can we get more towels? => Can we get more towels?
+p:question Is the spa open. => Is the spa open?
+p:question Did you book the tour. => Did you book the tour?
+p:number The spa was one hundred and twenty dollars. => The spa was $120.
+p:number We leave at six forty five am. => We leave at 6:45 AM.
+p:command Day one colon | beach, pool, dinner. => Day one: beach, pool, dinner.
+p:command Best trip ever exclamation point => Best trip ever!
+p:selfcorrection Dinner is at seven, sorry, eight. => Dinner is at eight.
+p:quote My son was like, oh wow, a shark! => My son was like "Oh wow, a shark!"
+p:soundalike The kids want to go to the beech again. => The kids want to go to the beach again.

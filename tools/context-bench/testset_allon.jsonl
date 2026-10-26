@@ -1,0 +1,100 @@
+{"id": "al01", "cat": "mixed", "input": "We need bulls and spoons for the party, um, tonight.", "expected": "We need bowls and spoons for the party tonight."}
+{"id": "al02", "cat": "mixed", "input": "Let's meat at the coffee shop, uh, around noon.", "expected": "Let's meet at the coffee shop around noon."}
+{"id": "al03", "cat": "mixed", "input": "The total was twenty five dollars. New line. Thanks again.", "expected": "The total was $25.\nThanks again.", "segments": ["The total was twenty five dollars.", "New line.", "Thanks again."]}
+{"id": "al04", "cat": "mixed", "input": "We have twenty five people coming on Saturday.", "expected": "We have 25 people coming on Saturday."}
+{"id": "al05", "cat": "selfcorrection", "input": "Text Mom at five. I mean, at six.", "expected": "Text Mom at six."}
+{"id": "al06", "cat": "selfcorrection", "input": "The meeting is on Monday, I mean, Tuesday.", "expected": "The meeting is on Tuesday."}
+{"id": "al07", "cat": "filler", "input": "Hmm, let me think about it.", "expected": "Let me think about it."}
+{"id": "al08", "cat": "quote", "input": "And then she was like, um, what are you doing here?", "expected": "And then she was like \"Um, what are you doing here?\""}
+{"id": "al09", "cat": "quote", "input": "He asked can you help me with the boxes. Then he left.", "expected": "He asked \"Can you help me with the boxes?\" Then he left."}
+{"id": "al10", "cat": "name", "input": "Tell see ya mara I said hi.", "expected": "Tell Xiomara I said hi.", "personal": ["Xiomara"]}
+{"id": "al11", "cat": "mixed", "input": "I'm meeting Katelyn at seven thirty pm.", "expected": "I'm meeting Caitlin at 7:30 PM.", "personal": ["Caitlin"]}
+{"id": "al12", "cat": "command", "input": "Are you coming to dinner question mark", "expected": "Are you coming to dinner?", "segments": ["Are you coming to dinner question mark"]}
+{"id": "al13", "cat": "command", "input": "She said. Open quote. I'm on my way. Close quote.", "expected": "She said \"I'm on my way.\"", "segments": ["She said.", "Open quote.", "I'm on my way.", "Close quote."]}
+{"id": "al14", "cat": "command", "input": "I'll be there at five. Scratch that. I'll be there at six.", "expected": "I'll be there at six.", "segments": ["I'll be there at five.", "Scratch that.", "I'll be there at six."]}
+{"id": "al15", "cat": "filler", "input": "I I think, um, we should leave at noon.", "expected": "I think we should leave at noon."}
+{"id": "al16", "cat": "mixed", "input": "Everything is fifty percent off, uh, this weekend.", "expected": "Everything is 50% off this weekend."}
+{"id": "al17", "cat": "mixed", "input": "Did you check the whether before the hike.", "expected": "Did you check the weather before the hike?"}
+{"id": "al18", "cat": "command", "input": "Hi Mom comma I'll call you later period", "expected": "Hi Mom, I'll call you later.", "segments": ["Hi Mom comma", "I'll call you later period"]}
+{"id": "al19", "cat": "mixed", "input": "Dear team, new paragraph. Um, the launch moved to Friday.", "expected": "Dear team,\n\nThe launch moved to Friday.", "segments": ["Dear team,", "new paragraph.", "Um, the launch moved to Friday."]}
+{"id": "al20", "cat": "mixed", "input": "Bring the blue folder, uh, I mean, the red folder.", "expected": "Bring the red folder."}
+{"id": "al21", "cat": "quote", "input": "She texted, hey, are you coming to the party tonight?", "expected": "She texted \"Hey, are you coming to the party tonight?\""}
+{"id": "al22", "cat": "mixed", "input": "We moved here in two thousand nineteen, sorry, two thousand twenty.", "expected": "We moved here in 2020."}
+{"id": "al23", "cat": "selfcorrection", "input": "Turn left, I mean, right at the light.", "expected": "Turn right at the light."}
+{"id": "al24", "cat": "mixed", "input": "Thanks for dinner. Smiley face. See you at seven thirty pm.", "expected": "Thanks for dinner :) See you at 7:30 PM.", "segments": ["Thanks for dinner.", "Smiley face.", "See you at seven thirty pm."]}
+{"id": "al25", "cat": "command", "input": "I want the red. Delete last word. blue car.", "expected": "I want the blue car.", "segments": ["I want the red.", "Delete last word.", "blue car."]}
+{"id": "al26", "cat": "mixed", "input": "Call me at five pm, no wait, six pm.", "expected": "Call me at 6 PM."}
+{"id": "al27", "cat": "mixed", "input": "The tickets were, ah, twenty five dollars each.", "expected": "The tickets were $25 each."}
+{"id": "al28", "cat": "mixed", "input": "I'll take the red one, sorry, the blue one. New line. Thanks.", "expected": "I'll take the blue one.\nThanks.", "segments": ["I'll take the red one, sorry, the blue one.", "New line.", "Thanks."]}
+{"id": "al29", "cat": "quote", "input": "I was like, um, are you serious?", "expected": "I was like \"Um, are you serious?\""}
+{"id": "al30", "cat": "quote", "input": "So I said, no, I can't make it on Friday.", "expected": "So I said \"No, I can't make it on Friday.\""}
+{"id": "al31", "cat": "mixed", "input": "She asked, can we meet at four thirty pm?", "expected": "She asked \"Can we meet at 4:30 PM?\""}
+{"id": "al32", "cat": "mixed", "input": "We need, um, bulls and spoons and things. New line. See you soon.", "expected": "We need bowls and spoons and things.\nSee you soon.", "segments": ["We need, um, bulls and spoons and things.", "New line.", "See you soon."]}
+{"id": "al33", "cat": "filler", "input": "Uh, I'm not sure what time it starts.", "expected": "I'm not sure what time it starts."}
+{"id": "al34", "cat": "mixed", "input": "I'll call you at, uh, seven thirty pm.", "expected": "I'll call you at 7:30 PM."}
+{"id": "al35", "cat": "mixed", "input": "And then she said. Open quotes. Um, what are you doing? Close quotes.", "expected": "And then she said \"Um, what are you doing?\"", "segments": ["And then she said.", "Open quotes.", "Um, what are you doing?", "Close quotes."]}
+{"id": "al36", "cat": "quote", "input": "She goes, what are you doing here?", "expected": "She goes \"What are you doing here?\""}
+{"id": "al37", "cat": "quote", "input": "I'm like, wow, that's amazing.", "expected": "I'm like \"Wow, that's amazing.\""}
+{"id": "al38", "cat": "filler", "input": "Ask him, um, where he parked the car.", "expected": "Ask him where he parked the car.", "alts": ["Ask him, where he parked the car."]}
+{"id": "al39", "cat": "mixed", "input": "Let's meet on Monday at nine thirty.", "expected": "Let's meet on Monday at 9:30."}
+{"id": "al40", "cat": "mixed", "input": "Book a table for four, make that five. New line. Thanks.", "expected": "Book a table for five.\nThanks.", "segments": ["Book a table for four, make that five.", "New line.", "Thanks."]}
+{"id": "al41", "cat": "selfcorrection", "input": "Let's meet on Tuesday, no wait, Wednesday at noon.", "expected": "Let's meet on Wednesday at noon."}
+{"id": "al42", "cat": "mixed", "input": "The repair cost, um, four hundred and fifty dollars.", "expected": "The repair cost $450."}
+{"id": "al43", "cat": "command", "input": "Here is the list. Colon. Eggs, milk and bread.", "expected": "Here is the list: eggs, milk and bread.", "segments": ["Here is the list.", "Colon.", "Eggs, milk and bread."]}
+{"id": "al44", "cat": "mixed", "input": "Hey, um, are we still on for lunch.", "expected": "Hey, are we still on for lunch?", "alts": ["Hey are we still on for lunch?"]}
+{"id": "aln01", "cat": "control", "input": "A new line formed outside the store.", "expected": "A new line formed outside the store.", "segments": ["A new line formed", "outside the store."]}
+{"id": "aln02", "cat": "control", "input": "He fired back with a shotgun.", "expected": "He fired back with a shotgun."}
+{"id": "aln03", "cat": "control", "input": "He was like ten feet tall.", "expected": "He was like ten feet tall."}
+{"id": "aln04", "cat": "control", "input": "He said not to worry about it.", "expected": "He said not to worry about it."}
+{"id": "aln05", "cat": "control", "input": "We said sorry to the neighbors.", "expected": "We said sorry to the neighbors."}
+{"id": "aln06", "cat": "control", "input": "She had surgery on her colon last year.", "expected": "She had surgery on her colon last year."}
+{"id": "aln07", "cat": "control", "input": "I mean it, you did a great job.", "expected": "I mean it, you did a great job."}
+{"id": "aln08", "cat": "control", "input": "Wait for me at the front door.", "expected": "Wait for me at the front door."}
+{"id": "aln09", "cat": "control", "input": "Can you make that call for me?", "expected": "Can you make that call for me?"}
+{"id": "aln10", "cat": "control", "input": "Actually, the store closes at nine.", "expected": "Actually, the store closes at nine."}
+{"id": "aln11", "cat": "control", "input": "Get the milk on your way home.", "expected": "Get the milk on your way home."}
+{"id": "aln12", "cat": "control", "input": "I asked him if he was coming.", "expected": "I asked him if he was coming."}
+{"id": "aln13", "cat": "control", "input": "He goes to the gym every day.", "expected": "He goes to the gym every day."}
+{"id": "aln14", "cat": "control", "input": "She told me about her new job.", "expected": "She told me about her new job."}
+{"id": "aln15", "cat": "control", "input": "They said yes to the offer.", "expected": "They said yes to the offer."}
+{"id": "aln16", "cat": "control", "input": "I'm like so tired today.", "expected": "I'm like so tired today."}
+{"id": "aln17", "cat": "control", "input": "Sorry, I'm running late.", "expected": "Sorry, I'm running late."}
+{"id": "aln18", "cat": "control", "input": "I'll be there in a second.", "expected": "I'll be there in a second."}
+{"id": "aln19", "cat": "control", "input": "No wait, I can't make it tonight.", "expected": "No wait, I can't make it tonight."}
+{"id": "aln20", "cat": "control", "input": "The quote was too expensive, so we passed.", "expected": "The quote was too expensive, so we passed."}
+{"id": "aln21", "cat": "control", "input": "She said hi to everyone at the party.", "expected": "She said hi to everyone at the party."}
+{"id": "aln22", "cat": "control", "input": "He asked for the check.", "expected": "He asked for the check."}
+{"id": "aln23", "cat": "control", "input": "Can you scratch that itch for me?", "expected": "Can you scratch that itch for me?"}
+{"id": "aln24", "cat": "control", "input": "Is this the new line for tickets?", "expected": "Is this the new line for tickets?"}
+{"id": "aln25", "cat": "control", "input": "Uh-oh, I forgot my keys at home.", "expected": "Uh-oh, I forgot my keys at home."}
+{"id": "aln26", "cat": "control", "input": "Text Mom at five.", "expected": "Text Mom at five."}
+{"id": "aln27", "cat": "control", "input": "I said what I said.", "expected": "I said what I said."}
+{"id": "aln28", "cat": "control", "input": "What I mean is we need more time.", "expected": "What I mean is we need more time."}
+{"id": "aln29", "cat": "control", "input": "He's like the best teacher ever.", "expected": "He's like the best teacher ever."}
+{"id": "aln30", "cat": "control", "input": "She asked where the bathroom was.", "expected": "She asked where the bathroom was."}
+{"id": "aln31", "cat": "control", "input": "We said we'd be there by noon.", "expected": "We said we'd be there by noon."}
+{"id": "aln32", "cat": "control", "input": "I mean, it's fine.", "expected": "I mean, it's fine."}
+{"id": "aln33", "cat": "control", "input": "Make that sandwich for me, please.", "expected": "Make that sandwich for me, please."}
+{"id": "aln34", "cat": "control", "input": "Sorry about the mess, the kids made it.", "expected": "Sorry about the mess, the kids made it."}
+{"id": "aln35", "cat": "control", "input": "That colon cleanse was a bad idea.", "expected": "That colon cleanse was a bad idea."}
+{"id": "aln36", "cat": "control", "input": "Comma splices drive me crazy.", "expected": "Comma splices drive me crazy."}
+{"id": "aln37", "cat": "control", "input": "We stayed for a period of two weeks.", "expected": "We stayed for a period of two weeks."}
+{"id": "aln38", "cat": "control", "input": "We'll split it fifty fifty.", "expected": "We'll split it fifty fifty."}
+{"id": "aln39", "cat": "control", "input": "Give me five minutes.", "expected": "Give me five minutes."}
+{"id": "aln40", "cat": "control", "input": "Ah, that makes sense now.", "expected": "Ah, that makes sense now."}
+{"id": "aln41", "cat": "control", "input": "The period ended at three.", "expected": "The period ended at three.", "segments": ["The period ended", "at three."]}
+{"id": "aln42", "cat": "control", "input": "I sent you a weird photo by mistake. Delete that.", "expected": "I sent you a weird photo by mistake. Delete that.", "segments": ["I sent you a weird photo by mistake.", "Delete that."]}
+{"id": "aln43", "cat": "control", "input": "Can you delete the last word?", "expected": "Can you delete the last word?"}
+{"id": "aln44", "cat": "control", "input": "She was like, whatever.", "expected": "She was like, whatever."}
+{"id": "aln45", "cat": "control", "input": "The kids were like, so excited.", "expected": "The kids were like, so excited."}
+{"id": "aln46", "cat": "control", "input": "I told him to call me back.", "expected": "I told him to call me back."}
+{"id": "aln47", "cat": "control", "input": "One of them is broken.", "expected": "One of them is broken."}
+{"id": "aln48", "cat": "control", "input": "He said he'd be here at nine.", "expected": "He said he'd be here at nine."}
+{"id": "aln49", "cat": "control", "input": "Put the quote in parentheses.", "expected": "Put the quote in parentheses."}
+{"id": "aln50", "cat": "control", "input": "I was like, no way.", "expected": "I was like, no way."}
+{"id": "aln51", "cat": "control", "input": "My mom said yes, so we're going.", "expected": "My mom said yes, so we're going."}
+{"id": "aln52", "cat": "control", "input": "We need to add a comma here.", "expected": "We need to add a comma here."}
+{"id": "aln53", "cat": "control", "input": "Hi Sam, I'll see you at noon.", "expected": "Hi Sam, I'll see you at noon.", "personal": ["Xiomara"]}
+{"id": "aln54", "cat": "control", "input": "I'm sorry, I mean it.", "expected": "I'm sorry, I mean it."}
+{"id": "aln55", "cat": "control", "input": "He went to the store after work.", "expected": "He went to the store after work."}
+{"id": "aln56", "cat": "control", "input": "Rather than drive, we took the train.", "expected": "Rather than drive, we took the train."}

@@ -1,0 +1,60 @@
+{"id": "cm01", "cat": "command", "input": "Hi John. New line. How are you doing?", "expected": "Hi John.\nHow are you doing?", "segments": ["Hi John.", "New line.", "How are you doing?"]}
+{"id": "cm02", "cat": "command", "input": "Dear Sarah, new paragraph. Thank you for the lovely gift.", "expected": "Dear Sarah,\n\nThank you for the lovely gift.", "segments": ["Dear Sarah,", "New paragraph.", "Thank you for the lovely gift."]}
+{"id": "cm03", "cat": "command", "input": "I'll see you tomorrow period", "expected": "I'll see you tomorrow.", "segments": ["I'll see you tomorrow period"]}
+{"id": "cm04", "cat": "command", "input": "Are you coming to dinner question mark", "expected": "Are you coming to dinner?", "segments": ["Are you coming to dinner question mark"]}
+{"id": "cm05", "cat": "command", "input": "That's amazing news exclamation point", "expected": "That's amazing news!", "segments": ["That's amazing news exclamation point"]}
+{"id": "cm06", "cat": "command", "input": "Hi Mom comma How are you", "expected": "Hi Mom, how are you", "segments": ["Hi Mom comma", "How are you"]}
+{"id": "cm07", "cat": "command", "input": "I'll be there at five. Scratch that. I'll be there at six.", "expected": "I'll be there at six.", "segments": ["I'll be there at five.", "Scratch that.", "I'll be there at six."]}
+{"id": "cm08", "cat": "command", "input": "Let's meet on Monday. Delete that. Let's meet on Tuesday.", "expected": "Let's meet on Tuesday.", "segments": ["Let's meet on Monday.", "Delete that.", "Let's meet on Tuesday."]}
+{"id": "cm09", "cat": "command", "input": "Buy milk New line Buy eggs New line Buy bread", "expected": "Buy milk\nBuy eggs\nBuy bread", "segments": ["Buy milk", "New line", "Buy eggs", "New line", "Buy bread"]}
+{"id": "cm10", "cat": "command", "input": "Thanks for your help period I really appreciate it period", "expected": "Thanks for your help. I really appreciate it.", "segments": ["Thanks for your help period", "I really appreciate it period"]}
+{"id": "cm11", "cat": "command", "input": "The package arrived today. New paragraph. Can you check the invoice?", "expected": "The package arrived today.\n\nCan you check the invoice?", "segments": ["The package arrived today.", "New paragraph.", "Can you check the invoice?"]}
+{"id": "cm12", "cat": "command", "input": "Did you feed the dog question mark", "expected": "Did you feed the dog?", "segments": ["Did you feed the dog question mark"]}
+{"id": "cm13", "cat": "command", "input": "We won the game exclamation mark", "expected": "We won the game!", "segments": ["We won the game exclamation mark"]}
+{"id": "cm14", "cat": "command", "input": "The dinner is at seven. Scratch that, it's at eight.", "expected": "It's at eight.", "segments": ["The dinner is at seven.", "Scratch that, it's at eight."]}
+{"id": "cm15", "cat": "command", "input": "Okay comma sounds good", "expected": "Okay, sounds good", "segments": ["Okay comma", "sounds good"]}
+{"id": "cm16", "cat": "command", "input": "See you soon. New line. Love, Dad", "expected": "See you soon.\nLove, Dad", "segments": ["See you soon.", "New line.", "Love, Dad"]}
+{"id": "cmn01", "cat": "control", "input": "Put a comma here and a period at the end.", "expected": "Put a comma here and a period at the end.", "segments": ["Put a comma here and a period at the end."]}
+{"id": "cmn02", "cat": "control", "input": "The period of time was too long.", "expected": "The period of time was too long.", "segments": ["The period of time was too long."]}
+{"id": "cmn03", "cat": "control", "input": "That was a really long period.", "expected": "That was a really long period.", "segments": ["That was a really long period."]}
+{"id": "cmn04", "cat": "control", "input": "We need a new line of products.", "expected": "We need a new line of products.", "segments": ["We need a new line of products."]}
+{"id": "cmn05", "cat": "control", "input": "Start a new paragraph after the quote.", "expected": "Start a new paragraph after the quote.", "segments": ["Start a new paragraph after the quote."]}
+{"id": "cmn06", "cat": "control", "input": "You're not going to that party, period.", "expected": "You're not going to that party, period.", "segments": ["You're not going to that party,", "period."]}
+{"id": "cmn07", "cat": "control", "input": "Can you scratch that itch on my back?", "expected": "Can you scratch that itch on my back?", "segments": ["Can you scratch that itch on my back?"]}
+{"id": "cmn08", "cat": "control", "input": "Delete that file before you leave.", "expected": "Delete that file before you leave.", "segments": ["Delete that file before you leave."]}
+{"id": "cmn09", "cat": "control", "input": "I sent you a weird photo by mistake. Delete that.", "expected": "I sent you a weird photo by mistake. Delete that.", "segments": ["I sent you a weird photo by mistake.", "Delete that."]}
+{"id": "cmn10", "cat": "control", "input": "What's the question mark for?", "expected": "What's the question mark for?", "segments": ["What's the question mark for?"]}
+{"id": "cmn11", "cat": "control", "input": "Is there an exclamation point at the end?", "expected": "Is there an exclamation point at the end?", "segments": ["Is there an exclamation point at the end?"]}
+{"id": "cmn12", "cat": "control", "input": "My comma key is broken.", "expected": "My comma key is broken.", "segments": ["My comma key is broken."]}
+{"id": "cmn13", "cat": "control", "input": "During that period I lived in Ohio.", "expected": "During that period I lived in Ohio.", "segments": ["During that period", "I lived in Ohio."]}
+{"id": "cmn14", "cat": "control", "input": "The new line opens next week.", "expected": "The new line opens next week.", "segments": ["The new line opens next week."]}
+{"id": "cmn15", "cat": "control", "input": "Scratch that off the shopping list.", "expected": "Scratch that off the shopping list.", "segments": ["Scratch that off the shopping list."]}
+{"id": "cmn16", "cat": "control", "input": "Use a full stop, not a comma.", "expected": "Use a full stop, not a comma.", "segments": ["Use a full stop, not a comma."]}
+{"id": "cmn17", "cat": "control", "input": "The trial period ends on Friday.", "expected": "The trial period ends on Friday.", "segments": ["The trial", "period ends on Friday."]}
+{"id": "cmn18", "cat": "control", "input": "He drew a question mark on the board.", "expected": "He drew a question mark on the board.", "segments": ["He drew a question mark", "on the board."]}
+{"id": "cmq1", "cat": "command", "input": "He could get that for free. Exclamation point. When are you coming? New line. What do you need?", "segments": ["He could get that for free.", "Exclamation point.", "When are you coming?", "New line.", "What do you need?"], "expected": "He could get that for free! When are you coming?\nWhat do you need?"}
+{"id": "cmq2", "cat": "command", "input": "That's so interesting! Exclamation point When are you coming?", "expected": "That's so interesting! When are you coming?"}
+{"id": "cmq3", "cat": "command", "input": "Hi John. Line break. How are you?", "segments": ["Hi John.", "Line break.", "How are you?"], "expected": "Hi John.\nHow are you?"}
+{"id": "cmqn1", "cat": "control", "input": "Put an exclamation point at the end.", "expected": "Put an exclamation point at the end."}
+{"id": "cmqn2", "cat": "control", "input": "We get a free period on Fridays.", "expected": "We get a free period on Fridays."}
+{"id": "cmqn3", "cat": "control", "input": "Exclamation points are overused.", "expected": "Exclamation points are overused."}
+{"id": "cmqn4", "cat": "control", "input": "Can you add a line break here?", "expected": "Can you add a line break here?"}
+{"id": "cmqn5", "cat": "control", "input": "The line break was in the wrong place.", "expected": "The line break was in the wrong place."}
+{"id": "cmqn6", "cat": "control", "input": "That's the deal. Question mark or not, I'm going.", "expected": "That's the deal. Question mark or not, I'm going."}
+{"id": "cmq4", "cat": "command", "input": "He could get that for free exclamation point. When are you coming? Line break? What do you need?", "segments": ["He could get that for free exclamation point.", "When are you coming?", "Line break?", "What do you need?"], "expected": "He could get that for free! When are you coming?\nWhat do you need?"}
+{"id": "cmq5", "cat": "command", "input": "That was a long time exclamation point. See you soon.", "expected": "That was a long time! See you soon."}
+{"id": "cmqn7", "cat": "control", "input": "Add an exclamation point after hello.", "expected": "Add an exclamation point after hello."}
+{"id": "cmqn8", "cat": "control", "input": "Is there a question mark at the end?", "expected": "Is there a question mark at the end?"}
+{"id": "cmn1", "cat": "command", "input": "Dear Sam. Next line. Thanks for the gift.", "segments": ["Dear Sam.", "Next line.", "Thanks for the gift."], "expected": "Dear Sam.\nThanks for the gift."}
+{"id": "cmn2", "cat": "command", "input": "Here is the list. Colon. Eggs, milk and bread.", "segments": ["Here is the list.", "Colon.", "Eggs, milk and bread."], "expected": "Here is the list: eggs, milk and bread."}
+{"id": "cmnn1", "cat": "control", "input": "My colon has been bothering me.", "expected": "My colon has been bothering me."}
+{"id": "cmnn2", "cat": "control", "input": "Use a semicolon between the clauses.", "expected": "Use a semicolon between the clauses."}
+{"id": "cmnn3", "cat": "control", "input": "Read the next line out loud.", "expected": "Read the next line out loud."}
+{"id": "cms1", "cat": "command", "input": "Rock. Ampersand. roll music.", "segments": ["Rock.", "Ampersand.", "roll music."], "expected": "Rock & roll music."}
+{"id": "cms2", "cat": "command", "input": "Call me. Open parenthesis. Maybe. Close parenthesis. Thanks.", "segments": ["Call me.", "Open parenthesis.", "Maybe.", "Close parenthesis.", "Thanks."], "expected": "Call me. (Maybe) thanks.", "alts": ["Call me. (Maybe) Thanks."]}
+{"id": "cms3", "cat": "command", "input": "See you soon. Smiley face. Bye.", "segments": ["See you soon.", "Smiley face.", "Bye."], "expected": "See you soon :) Bye."}
+{"id": "cmsn1", "cat": "control", "input": "My favorite hashtag is trending.", "expected": "My favorite hashtag is trending."}
+{"id": "cmsn2", "cat": "control", "input": "Add an asterisk next to your name.", "expected": "Add an asterisk next to your name."}
+{"id": "cmsn3", "cat": "control", "input": "Put a hyphen between the words.", "expected": "Put a hyphen between the words."}
+{"id": "cmsn4", "cat": "control", "input": "He trailed off with an ellipsis.", "expected": "He trailed off with an ellipsis."}
+{"id": "cmsn5", "cat": "control", "input": "She drew a smiley face on the card.", "expected": "She drew a smiley face on the card."}

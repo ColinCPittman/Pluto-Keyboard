@@ -1,0 +1,34 @@
+{"id": "ap01", "cat": "mixed", "input": "Can you grab, um, three dozen eggs on your way home.", "expected": "Can you grab three dozen eggs on your way home?", "alts": ["Can you grab, three dozen eggs on your way home?"]}
+{"id": "ap02", "cat": "selfcorrection", "input": "Put it on the top shelf, I mean, the bottom shelf.", "expected": "Put it on the bottom shelf."}
+{"id": "ap03", "cat": "selfcorrection", "input": "We land at ten fifteen, no wait, ten forty five.", "expected": "We land at 10:45."}
+{"id": "ap04", "cat": "mixed", "input": "Hey Mom. New paragraph. Uh, dinner is at six thirty.", "expected": "Hey Mom.\n\nDinner is at 6:30.", "segments": ["Hey Mom.", "New paragraph.", "Uh, dinner is at six thirty."]}
+{"id": "ap05", "cat": "quote", "input": "My boss was like, hmm, can you stay late tonight?", "expected": "My boss was like \"Hmm, can you stay late tonight?\""}
+{"id": "ap06", "cat": "quote", "input": "And he said, hey, where are you going?", "expected": "And he said \"Hey, where are you going?\""}
+{"id": "ap07", "cat": "mixed", "input": "The rent is, uh, two thousand dollars a month.", "expected": "The rent is $2,000 a month."}
+{"id": "ap08", "cat": "selfcorrection", "input": "Send it to Mike, sorry, Mark.", "expected": "Send it to Mark."}
+{"id": "ap09", "cat": "filler", "input": "Erm, I think the, uh, meeting got moved.", "expected": "I think the meeting got moved."}
+{"id": "ap10", "cat": "command", "input": "Groceries. Colon. Milk, bread and apples.", "expected": "Groceries: milk, bread and apples.", "segments": ["Groceries.", "Colon.", "Milk, bread and apples."]}
+{"id": "apn01", "cat": "control", "input": "She said sorry, then left.", "expected": "She said sorry, then left."}
+{"id": "apn02", "cat": "control", "input": "I'm like halfway there.", "expected": "I'm like halfway there."}
+{"id": "apn03", "cat": "control", "input": "He asked me to wait for him.", "expected": "He asked me to wait for him."}
+{"id": "apn04", "cat": "control", "input": "Make that the last one, okay?", "expected": "Make that the last one, okay?"}
+{"id": "apn05", "cat": "control", "input": "Sorry, I mean to call you back.", "expected": "Sorry, I mean to call you back."}
+{"id": "apn06", "cat": "control", "input": "The new line of phones looks great.", "expected": "The new line of phones looks great."}
+{"id": "ap11", "cat": "mixed", "input": "Take the nine thirty train.", "expected": "Take the 9:30 train.", "alts": ["Take the nine thirty train."]}
+{"id": "apn08", "cat": "control", "input": "Leave the light on for me.", "expected": "Leave the light on for me."}
+{"id": "apn09", "cat": "control", "input": "We sat in the back row.", "expected": "We sat in the back row."}
+{"id": "apn10", "cat": "control", "input": "They ran out of milk.", "expected": "They ran out of milk."}
+{"id": "ap12", "cat": "question", "input": "Who knew it would rain today.", "expected": "Who knew it would rain today?", "alts": ["Who knew it would rain today."]}
+{"id": "apn21", "cat": "control", "input": "My boss said the meeting is at noon.", "expected": "My boss said the meeting is at noon."}
+{"id": "apn22", "cat": "control", "input": "My friend asked where you were.", "expected": "My friend asked where you were."}
+{"id": "apn23", "cat": "control", "input": "The kids were like, so excited about it.", "expected": "The kids were like, so excited about it."}
+{"id": "ap13", "cat": "quote", "input": "My friend goes, um, are you okay?", "expected": "My friend goes \"Um, are you okay?\""}
+{"id": "apn12", "cat": "control", "input": "Call me when you land.", "expected": "Call me when you land."}
+{"id": "apn13", "cat": "control", "input": "He told me it was fine.", "expected": "He told me it was fine."}
+{"id": "apn14", "cat": "control", "input": "My period was late this month.", "expected": "My period was late this month."}
+{"id": "apn15", "cat": "control", "input": "Is Owen coming tonight?", "expected": "Is Owen coming tonight?"}
+{"id": "apn16", "cat": "control", "input": "Actually, I'd rather stay in.", "expected": "Actually, I'd rather stay in."}
+{"id": "apn17", "cat": "control", "input": "We waited in line for an hour.", "expected": "We waited in line for an hour."}
+{"id": "apn18", "cat": "control", "input": "She goes running every morning.", "expected": "She goes running every morning."}
+{"id": "apn19", "cat": "control", "input": "Hmm.", "expected": "Hmm."}
+{"id": "apn20", "cat": "control", "input": "He gave me a dollar.", "expected": "He gave me a dollar."}

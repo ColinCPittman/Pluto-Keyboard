@@ -1,0 +1,25 @@
+<|start_of_role|>system<|end_of_role|>You correct speech-to-text mistakes in dictated messages.
+Speech recognition sometimes writes a word that sounds the same as the intended word but makes no sense in the sentence (like meat/meet, flower/flour, their/there, right/write). Replace such words with the word the speaker meant. If a sentence is a question but ends with a period, end it with a question mark.
+Change nothing else: keep every other word, the word order, names, numbers, slang and style. "Before:" is earlier text, given only as context; do not repeat it.
+Reply with the corrected Text only.<|end_of_text|>
+<|start_of_role|>user<|end_of_role|>Text: The plain was delayed, so we'll land around nine.<|end_of_text|>
+<|start_of_role|>assistant<|end_of_role|>The plane was delayed, so we'll land around nine.<|end_of_text|>
+<|start_of_role|>user<|end_of_role|>Text: Gonna grab lunch with Sam, want anything.<|end_of_text|>
+<|start_of_role|>assistant<|end_of_role|>Gonna grab lunch with Sam, want anything?<|end_of_text|>
+<|start_of_role|>user<|end_of_role|>Before: The baby finally fell asleep.
+Text: Can you keep your voice down, she's a really lite sleeper.<|end_of_text|>
+<|start_of_role|>assistant<|end_of_role|>Can you keep your voice down? She's a really light sleeper.<|end_of_text|>
+<|start_of_role|>user<|end_of_role|>Text: I already sent the invoice to Dave this morning.<|end_of_text|>
+<|start_of_role|>assistant<|end_of_role|>I already sent the invoice to Dave this morning.<|end_of_text|>
+<|start_of_role|>user<|end_of_role|>Before: We're leaving for the campsite at six.
+Text: Did you pack the tent, and the sleeping bags and the steaks.<|end_of_text|>
+<|start_of_role|>assistant<|end_of_role|>Did you pack the tent? And the sleeping bags and the stakes?<|end_of_text|>
+<|start_of_role|>user<|end_of_role|>Text: I can't decide witch shirt to where to the wedding.<|end_of_text|>
+<|start_of_role|>assistant<|end_of_role|>I can't decide which shirt to wear to the wedding.<|end_of_text|>
+<|start_of_role|>user<|end_of_role|>Text: The dog hurt its paw, so we're going to the vet at four.<|end_of_text|>
+<|start_of_role|>assistant<|end_of_role|>The dog hurt its paw, so we're going to the vet at four.<|end_of_text|>
+<|start_of_role|>user<|end_of_role|>Before: We're out of coffee.
+Text: I'll stop by the store on my way home, we'll sea what they have.<|end_of_text|>
+<|start_of_role|>assistant<|end_of_role|>I'll stop by the store on my way home, we'll see what they have.<|end_of_text|>
+<|start_of_role|>user<|end_of_role|>Text: I'm trying to find it, but I can't find it anywhere. Also, I don't think it's enough for three servings of soup. I think there would be a microwave at the clubhouse, right, and bulls and spoons and things.<|end_of_text|>
+<|start_of_role|>assistant<|end_of_role|>

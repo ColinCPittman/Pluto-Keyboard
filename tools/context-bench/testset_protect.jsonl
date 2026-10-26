@@ -1,0 +1,31 @@
+{"id": "ac01", "cat": "control", "input": "Her ETA, around six, was wrong.", "expected": "Her ETA, around six, was wrong."}
+{"id": "ac02", "cat": "control", "input": "Check the FAQ before you ask.", "expected": "Check the FAQ before you ask."}
+{"id": "ac03", "cat": "control", "input": "The CEO said yes to the plan.", "expected": "The CEO said yes to the plan."}
+{"id": "ac04", "cat": "control", "input": "He sent an RSVP to the host.", "expected": "He sent an RSVP to the host."}
+{"id": "ac05", "cat": "control", "input": "ETA, two thirty is what the app says.", "expected": "ETA, two thirty is what the app says."}
+{"id": "ac06", "cat": "control", "input": "Send the PDF to HR before lunch.", "expected": "Send the PDF to HR before lunch."}
+{"id": "ac07", "cat": "control", "input": "ASAP please, we are short on time.", "expected": "ASAP please, we are short on time."}
+{"id": "ac08", "cat": "control", "input": "My iPhone and iPad both need an update.", "expected": "My iPhone and iPad both need an update."}
+{"id": "ac09", "cat": "control", "input": "The NASA launch was moved up a day.", "expected": "The NASA launch was moved up a day."}
+{"id": "tm01", "cat": "time", "input": "Let's meet at two forty seven p m.", "expected": "Let's meet at 2:47 PM."}
+{"id": "tm02", "cat": "time", "input": "The bus leaves at six fifteen a m tomorrow.", "expected": "The bus leaves at 6:15 AM tomorrow."}
+{"id": "tm03", "cat": "time", "input": "Dinner is at seven p.m. sharp.", "expected": "Dinner is at 7 PM sharp."}
+{"id": "tm04", "cat": "time", "input": "Call me at nine thirty a.m. on Monday.", "expected": "Call me at 9:30 AM on Monday."}
+{"id": "tm05", "cat": "time", "input": "ETA, four ten p m at the station.", "expected": "ETA, 4:10 PM at the station."}
+{"id": "tm06", "cat": "control", "input": "She asked for a m&m cookie and a coffee.", "expected": "She asked for a m&m cookie and a coffee."}
+{"id": "lc01", "cat": "left", "left": "Wade is bringing the folding chairs.", "input": "I think weighed has the key to the shed.", "expected": "I think Wade has the key to the shed."}
+{"id": "lc02", "cat": "left", "left": "Dawn sent me the photos last night.", "input": "Ask don if she can send more.", "expected": "Ask Dawn if she can send more."}
+{"id": "lc03", "cat": "control", "left": "Mark joined us for lunch yesterday.", "input": "The farmers markets open early on Saturday.", "expected": "The farmers markets open early on Saturday."}
+{"id": "lc04", "cat": "control", "left": "Dennis wants us to come over on Saturday.", "input": "We could play tennis after lunch.", "expected": "We could play tennis after lunch."}
+{"id": "lc05", "cat": "control", "left": "The weather turned cold overnight.", "input": "Markets were slow today and prices fell.", "expected": "Markets were slow today and prices fell."}
+{"id": "lc06", "cat": "control", "left": "Dennis wants us to come over on Saturday", "input": "and we will bring some snacks for everyone.", "expected": "and we will bring some snacks for everyone."}
+{"id": "lc07", "cat": "control", "left": "Thanks for the update, I will read it tonight.", "input": "Let's meet at the usual place around noon.", "expected": "Let's meet at the usual place around noon."}
+{"id": "lc08", "cat": "control", "left": "Mark joined us for lunch yesterday. ", "input": "Then we went back to the office.", "expected": "Then we went back to the office."}
+{"id": "lc09", "cat": "left", "left": "Cole said the schedule changed again.", "input": "Did you ask coal about the schedule?", "expected": "Did you ask Cole about the schedule?"}
+{"id": "lc10", "cat": "control", "left": "Wade is bringing the folding chairs.", "input": "The boat will weigh more with the chairs.", "expected": "The boat will weigh more with the chairs."}
+{"id": "lc11", "cat": "control", "left": "Dawn sent me the photos last night.", "input": "We should not don the same jackets again.", "expected": "We should not don the same jackets again."}
+{"id": "ns01", "cat": "name", "left": "Mark waved at us from the dock.", "input": "Talking to Marcus easier than it looks.", "expected": "Talking to Mark is easier than it looks.", "alts": ["Talking to Mark's easier than it looks."]}
+{"id": "ns02", "cat": "name", "left": "Dan stopped by the shop this morning.", "input": "Working with Dennis a real challenge.", "expected": "Working with Dan is a real challenge.", "alts": ["Working with Dan's a real challenge."]}
+{"id": "ns03", "cat": "control", "input": "Marcus called me about the schedule.", "expected": "Marcus called me about the schedule."}
+{"id": "ns04", "cat": "control", "left": "Mark waved at us from the dock.", "input": "Marcus is here with the keys.", "expected": "Marcus is here with the keys."}
+{"id": "ns05", "cat": "control", "left": "Dan stopped by the shop this morning.", "input": "Dennis called to say he is late.", "expected": "Dennis called to say he is late."}

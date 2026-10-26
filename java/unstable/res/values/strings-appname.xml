@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pluto Keyboard dev build names; the same in every language (see java/res/values/strings-appname.xml). -->
+
+    <!-- Application name for the dev version of keyboard. -->
+    <string name="english_ime_name" translatable="false">Pluto Keyboard [Dev Build]</string>
+
+    <!-- Name of Android spell checker service. -->
+    <string name="spell_checker_service_name" translatable="false">Pluto Spell Checker [Dev Build]</string>
+
+    <!-- Title for Android Keyboard settings screen. -->
+    <string name="english_ime_settings" translatable="false">Pluto Keyboard Settings [Dev Build]</string>
+
+    <!-- Title for the spell checking service settings screen. -->
+    <string name="android_spell_checker_settings" translatable="false">Pluto Spell Checker Settings [Dev Build]</string>
+</resources>

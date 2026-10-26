@@ -1,0 +1,512 @@
+# batch 13: fresh (final check)
+c I'm going to try to leave work early today.
+c The traffic report says the bridge is jammed.
+c I'll take the back roads.
+p:number It adds ten minutes but at least I'm moving. => It adds 10 minutes but at least I'm moving. ;; It adds ten minutes but at least I'm moving.
+c Can you start the rice?
+c The chicken is marinating in the fridge.
+c I'll grill it when I get home.
+p:number Set the oven to four hundred. => Set the oven to 400. ;; Set the oven to four hundred.
+c Not yet, wait until I text you.
+c Okay, I'll wait.
+c My best friend is getting married next weekend.
+c I'm giving a speech.
+c I'm terrified.
+c You'll be great.
+c Just don't mention the camping trip.
+c I'll leave out the bear story.
+c Good call.
+c What are you wearing?
+c The blue suit.
+c Classic choice.
+c The landlord texted about the inspection.
+c It's on Tuesday morning.
+c We need to clean the oven.
+c And fix the closet door.
+c I'll buy a new hinge.
+c The hardware store opens at eight.
+c I'll go first thing.
+c Thanks for handling it.
+c That's what I'm here for.
+c You're the best roommate.
+c My phone keeps autocorrecting my name.
+c It's so annoying.
+c Add it to your dictionary.
+c I didn't know you could do that.
+c Settings, then keyboard.
+c Got it, thanks.
+c Life changing.
+c You're welcome.
+c Tech support at your service.
+c I'll pay you in cookies.
+c The kids want a trampoline.
+c I said absolutely not.
+c They're working on their dad.
+c He's going to cave.
+c He always caves.
+c At least get one with a net.
+c And a waiver.
+c Ha, true.
+c I'll research it.
+c Safety first.
+c We ran out of coffee filters.
+c I used a paper towel.
+c It kind of worked.
+c Desperate times.
+c I'll buy filters today.
+c Get the big pack.
+c And more coffee while you're there.
+c We're low on that too.
+c This house runs on coffee.
+c Truer words.
+c The team meeting moved to two.
+c I'll be there.
+c Bring the slides.
+c They're almost done.
+c Almost?
+c I'll finish by one.
+c Cutting it close.
+c I work best under pressure.
+c Famous last words.
+c Have a little faith.
+c The baby has a cold.
+c She's so stuffy.
+c We're running the humidifier.
+c And a lot of snuggles.
+c Poor thing.
+c I'll bring over some soup.
+c That would be amazing.
+c We're too tired to cook.
+c Leave it on the porch.
+c We'll grab it when she naps.
+c I signed up for a painting class.
+c It's every Thursday.
+c I've never painted before.
+c That's the point.
+c My first painting looks like a potato.
+c It was supposed to be a cat.
+c Abstract art.
+c I'm framing it.
+c It's going above the couch.
+c Bold choice.
+c The fireworks start at nine.
+c Let's get there early for a good spot.
+c Bring blankets.
+c And bug spray.
+c The mosquitoes are brutal by the lake.
+c I'll pack snacks.
+c Not too many.
+c There's no such thing.
+c Fair point.
+c See you at eight.
+c My grandpa is learning to use a smartphone.
+p:number He called me by accident twelve times. => He called me by accident 12 times. ;; He called me by accident twelve times.
+c Every time he says sorry.
+c It's adorable.
+c He sent me a selfie.
+c Half of his face.
+c Still adorable.
+c I'm teaching him to text.
+c Patience is key.
+c He's getting there.
+# homophones and near-homophones
+c I'll buy you lunch.
+c Stand by.
+c Goodbye for now.
+c Two hours left.
+c Too much sugar.
+c To be honest.
+c Their kids are sweet.
+c There's a catch.
+c They're right.
+c It's a deal.
+c Its tail was long.
+c You're kidding.
+c Your turn.
+c The weather app.
+c Whether it works or not.
+c I knew it.
+c A new start.
+c No way.
+c I know.
+c Right now.
+c Write it down.
+c The whole cake.
+c A hole in the fence.
+c Our team.
+c An hour ago.
+c Meet the parents.
+c Meat loaf.
+c A weak signal.
+c Next week.
+c The wait is over.
+c A heavy weight.
+c The bear trap.
+c Bare hands.
+c The peace offering.
+c A piece of the pie.
+c The plane ride.
+c A plain shirt.
+c The sale price.
+c The sail boat.
+c The tail end.
+c A fairy tale.
+c The main event.
+c The mane of a lion.
+c The male nurse.
+c The mail room.
+c The board game.
+c Bored stiff.
+c The flour sack.
+c The flower vase.
+c The sun is hot.
+c Their son is tall.
+c The sea breeze.
+c See you later.
+c The steak dinner.
+c At stake.
+c The brake pedal.
+c Lunch break.
+c Cereal for dinner.
+c Serial killer documentary.
+c The principal said no.
+c On principle.
+c The hare is fast.
+c My hair is long.
+c The deer park.
+c Dear Sir.
+c The pair of jeans.
+c A pear tart.
+c The aisle is clear.
+c I'll call later.
+c The sole of the shoe.
+c Rock and soul.
+c The roll call.
+c The leading role.
+c The poll numbers.
+c The fishing pole.
+c The pool party.
+c Pull harder.
+c The bell rang.
+c My belly hurts.
+c The bill arrived.
+c The ball dropped.
+c The bowl broke.
+c The fan is on.
+c The van is red.
+c The cat is out.
+c The kit is here.
+c The cut is deep.
+c The coat is warm.
+c The mist rolled in.
+c I missed you.
+c A cent is a penny.
+c The scent of rain.
+c I sent the email.
+# command words as words
+c It's that time of the month, my period started.
+c A brief period of calm.
+c The period after the title.
+c One comma too many.
+c Use commas sparingly.
+c A colon or a dash?
+c My favorite quote ever.
+c A quote for the roof.
+c A mad dash.
+c Too many hashtags.
+c Stand in line.
+c On the front line.
+c Drop me a line.
+c The bottom line.
+c A brand new line of shoes.
+c The next line of the song.
+c The bus stop.
+c The full stop key.
+c A question mark in the margin.
+c An exclamation point at the end.
+c The at sign on the keyboard.
+c The plus sign button.
+c The open door policy.
+c Close the window.
+c Scratch the paint.
+c Delete the app.
+c A smiley face.
+c An open bracket.
+# look-alikes
+c Ah, I see.
+c Ah, that's nice.
+c Eh, whatever.
+c Uh oh, the baby's awake.
+c Uh huh, go on.
+c Sorry, I'm on the phone.
+c Sorry, I didn't catch that.
+c Sorry, we're closed.
+c Sorry for the delay.
+c Actually, I'll come.
+c Actually, never mind.
+c It's actually great.
+c I mean, why not?
+c I mean, sure.
+c I meant to tell you.
+c I'd rather stay home.
+c No, actually, it's mine.
+c No wait, I found it.
+c Oh wait, I forgot.
+c Make that three.
+c She said she loves it.
+c He said it's done.
+c They said hi.
+c I asked for directions.
+c She asked about the job.
+c He told me to wait.
+c She went home.
+c He goes to work early.
+c It's like a sauna.
+c He's like a puppy.
+c I'm like, no.
+c She texted back.
+c He yelled for the kids.
+c I know, I know.
+c Thank you, thank you.
+c Okay, okay.
+c Come on, come on.
+c Yes, yes.
+c No, no.
+c Wait, wait.
+c Sorry, sorry.
+# positives
+p:filler We should, um, leave early. => We should leave early.
+p:filler The speech is, uh, on Saturday. => The speech is on Saturday.
+p:filler Um, can you start the rice? => Can you start the rice?
+p:filler It's, um, every Thursday. => It's every Thursday.
+p:filler I, uh, ran out of filters. => I ran out of filters.
+p:filler The baby is, um, really stuffy. => The baby is really stuffy.
+p:filler My grandpa, uh, sent a selfie. => My grandpa sent a selfie.
+p:filler We're, um, low on coffee. => We're low on coffee.
+p:repeat I I'm terrified. => I'm terrified.
+p:repeat The the meeting moved. => The meeting moved.
+p:repeat Can you you grab filters? => Can you grab filters?
+p:selfcorrection The meeting moved to two, I mean, three. => The meeting moved to three.
+p:selfcorrection Wear the blue suit, sorry, the gray suit. => Wear the gray suit.
+p:selfcorrection The inspection is Tuesday, no wait, Wednesday. => The inspection is Wednesday.
+p:selfcorrection Call Ben, I mean, Bill. => Call Bill.
+p:selfcorrection We need four, actually, five blankets. => We need five blankets.
+p:selfcorrection The fireworks start at nine, no wait, ten. => The fireworks start at ten. ;; The fireworks start at 10.
+p:quote My son was like, um, can we get a trampoline? => My son was like "Um, can we get a trampoline?"
+p:quote The landlord asked, when can I come by? => The landlord asked "When can I come by?"
+p:quote My daughter goes, why is the sky purple? => My daughter goes "Why is the sky purple?"
+p:quote I was like, oh no, the oven. => I was like "Oh no, the oven."
+p:quote She said, wow, that's beautiful. => She said "Wow, that's beautiful."
+p:quote He asked, is it ready yet? => He asked "Is it ready yet?"
+p:command Hi Dad comma | happy birthday period => Hi Dad, happy birthday.
+p:command To buy colon | filters, coffee, hinge. => To buy: filters, coffee, hinge.
+p:command The speech went great exclamation point => The speech went great!
+p:command Are you home yet question mark => Are you home yet?
+p:command Thanks. | New line. | Love, Sam. => Thanks.\nLove, Sam.
+p:command Meeting at two. | Scratch that. | Meeting at three. => Meeting at three.
+p:command She said. | Open quote. | You're the best. | Close quote. => She said "You're the best."
+p:command Rock ampersand roll => Rock & roll
+p:command See you at eight period => See you at eight.
+p:command Dear Mr. Park comma | new paragraph | Thank you for the opportunity. => Dear Mr. Park,\n\nThank you for the opportunity.
+p:number The trampoline is three hundred dollars. => The trampoline is $300.
+p:number The meeting is at two thirty pm. => The meeting is at 2:30 PM.
+p:number It's thirty five percent off. => It's 35% off.
+p:number They got married in two thousand nine. => They got married in 2009.
+p:number The class is forty dollars. => The class is $40.
+p:number He called seventeen times. => He called 17 times.
+p:number The wedding is on the twenty third. => The wedding is on the 23rd.
+p:number Filters were four dollars and fifty cents. => Filters were $4.50.
+p:soundalike I need to by coffee. => I need to buy coffee.
+p:soundalike Did you here me? => Did you hear me?
+p:soundalike I'll be their at two. => I'll be there at two.
+p:soundalike The kids are board. => The kids are bored.
+p:soundalike Let's meat after work. => Let's meet after work.
+p:soundalike It's been an our. => It's been an hour.
+p:soundalike I new it. => I knew it.
+p:soundalike It's to late. => It's too late.
+p:question Are you home. => Are you home?
+p:question Did you buy filters. => Did you buy filters?
+p:question Can you start the rice. => Can you start the rice?
+p:question When is the speech. => When is the speech?
+p:question Where is the hinge. => Where is the hinge?
+p:question Is the baby asleep. => Is the baby asleep?
+p:question Do you want soup. => Do you want soup?
+p:question Have you finished the slides. => Have you finished the slides?
+p:mixed Um, did you, uh, buy coffee. => Did you buy coffee?
+p:mixed I need to by, um, a hinge. => I need to buy a hinge.
+p:name Did Shivon RSVP? => Did Siobhan RSVP? @@ Siobhan
+p:name Tell Eefa the class is Thursday. => Tell Aoife the class is Thursday. @@ Aoife
+c Grace is here. @@ Grayce
+c Will called. @@ Wil
+c Mark is late. @@ Marc
+c The bill came. @@ Bil
+c The dog is asleep. @@ Dawg
+c The lake is warm. @@ Blake
+# batch 13, part 2
+c Hi Tom, just following up on the invoice. Let me know if you need anything else from me.
+c Good afternoon, the shipment is delayed by two days. We apologize for the inconvenience.
+c Hey, are we still on for tonight? I can pick up the wine.
+c I just finished the first draft. It's rough. Be gentle.
+c The kids are at grandma's this weekend. We have the house to ourselves. Movie marathon?
+c I called the insurance company. They're sending an adjuster. Probably next week.
+c My sister's flight lands at noon. I'll pick her up. Can you start lunch?
+c The puppy chewed the couch cushion. There's stuffing everywhere. I can't even be mad.
+c We got the last two tickets. Front row. I'm so excited.
+c The weather ruined our picnic. We ate in the car. Still fun.
+c My son wants to quit piano. I told him to finish the year. Then we'll see.
+c The new coffee place is amazing. Their pastries are huge. We have a new spot.
+c I fell asleep at my desk. Nobody noticed. I hope.
+c The tomatoes are finally ripe. I'll make sauce this weekend. Want a jar?
+c The wedding was beautiful. The bride cried. The groom cried more.
+c I locked myself out again. The spare key isn't under the mat. Did you move it?
+c The meeting was canceled. Again. I'm going home.
+c I just saw a fox in our yard. It was so pretty. The dog lost his mind.
+c We need a new fridge. This one is leaking. I'll look at sales this weekend.
+p:number The cake is in the oven. Twenty more minutes. Don't open the door. => The cake is in the oven. 20 more minutes. Don't open the door. ;; The cake is in the oven. Twenty more minutes. Don't open the door.
+c I'm finally done with my taxes. That was painful. Celebration time.
+c My kid got glasses today. He looks so grown up. He loves them.
+c The snow is coming down hard. Work from home tomorrow? Probably.
+c Thanks for the ride to the airport. I owe you one. Text me when you're home.
+c The water heater is broken. Cold showers for a few days. Fun.
+c My favorite show got canceled. I'm devastated. Why do they do this?
+c Our neighbor brought us tomatoes. We're drowning in them. Help.
+c I ran my first five K today. I didn't stop once. So proud.
+c The baby rolled over for the first time. We got it on video. Sending it now.
+c The car passed inspection. Finally. One less thing.
+c See, I told you it would fit.
+c See you tonight.
+c So, what's the plan?
+c So we're going after all.
+c Well, that's settled.
+c Well, I'm impressed.
+c Now what?
+c Now I get it.
+c Okay, see you there.
+c Okay, I'm on my way.
+c Like, why would he do that?
+c Look at this mess.
+c Listen to this.
+c Right, I'll call them.
+c Anyway, thanks again.
+c Also, the dog needs a bath.
+c Plus, it's cheaper.
+c Then we'll talk.
+c Still, it's a good deal.
+c Sure, I can do that.
+c Yeah, sounds good.
+c No, that's fine.
+c Oh, I see.
+c Wow, that's fast.
+c Hey, good morning.
+c Oops, wrong button.
+c Aw, that's so sweet.
+c Huh, I never noticed.
+c Ha, classic.
+c Phew, all done.
+c Yay, it's the weekend!
+c Darn, they're sold out.
+c Ouch, my back.
+c Shoot, I forgot the milk.
+c Gosh, it's cold.
+c Alright, I'm off.
+c Cool, sounds fun.
+c Nice, good luck.
+c Great, thanks so much.
+c Perfect, see you soon.
+c Awesome, love it.
+c I wonder when they'll open.
+c I'm not sure who's coming.
+c I don't know why it broke.
+c I can't remember the password.
+c I was wondering if you're free.
+c Ask him when he's leaving.
+c Tell them we're running late.
+c Let me know if it works.
+c Find out who won.
+c Check if it's still raining.
+c Guess where we're going.
+c Imagine the look on his face.
+c What a day it's been.
+c How nice.
+c What a view from up here.
+c Do you have a minute?
+c Can we leave now?
+c Is it your birthday?
+c What happened?
+c Where did everyone go?
+c Why is the cat on the roof?
+c How did you know?
+c Who left the door open?
+c Should I call him?
+c Would you mind?
+c You're joking, right?
+c It's not broken, is it?
+c We have enough, don't we?
+c Two more minutes.
+c Three days until vacation.
+c Give me five.
+c Four of us fit in the car.
+c One of these days.
+c The first snow of the year.
+c Second time this week.
+c Six feet apart.
+c Eight hours of sleep.
+c Nine to five.
+p:filler So, um, the plan changed. => So, the plan changed. ;; So the plan changed.
+p:filler The cake is, uh, almost done. => The cake is almost done.
+p:filler Um, did you move the key? => Did you move the key?
+p:question Did you see the fox. => Did you see the fox?
+p:question Is the car fixed. => Is the car fixed?
+p:number The fridge is twelve hundred dollars. => The fridge is $1,200. ;; The fridge is twelve hundred dollars.
+p:number We land at four forty five pm. => We land at 4:45 PM.
+p:command Picnic list colon | sandwiches, juice, blanket. => Picnic list: sandwiches, juice, blanket.
+p:command The baby rolled over exclamation point => The baby rolled over!
+p:selfcorrection The flight lands at noon, I mean, one. => The flight lands at one.
+p:quote My son was like, um, do I have to? => My son was like "Um, do I have to?"
+p:soundalike I need to by a new fridge. => I need to buy a new fridge.
+# batch 13, part 3
+c The printer at home is out of toner.
+c I'll print the tickets at the library.
+c That's fine.
+c Bring your library card.
+c It's in my wallet.
+c The library closes at six.
+c I'll go after lunch.
+c Grab me a book while you're there.
+c Anything by that mystery author.
+c The tire pressure light came on.
+c I filled them at the gas station.
+c It's still on.
+c Maybe there's a slow leak.
+c Take it to the tire shop.
+c They're open on Saturday.
+c I'll go in the morning.
+c Don't drive on the highway until then.
+c Good idea.
+c I'll take the side streets.
+c My plants are thriving.
+c I talk to them every day.
+c That's not weird at all.
+c They like it.
+c The fern is twice as big now.
+c I'm getting another one.
+c We're running out of windowsill.
+c I'll build a shelf.
+c You can't build a shelf.
+c Watch me.
+c The neighbors have a new baby goat.
+c In the suburbs.
+c Is that even allowed?
+c Apparently.
+c It's so cute.
+c It jumps on everything.
+c The kids want one now.
+c Absolutely not.
+c They're working on me.
+c It might be working.
+c My coworker got me a plant for my desk.
+c It's a cactus.
+c Hard to kill.
+c She knows me well.
+c I named it Spike.
+p:number They charge ten cents a page. => They charge 10 cents a page. ;; They charge ten cents a page.

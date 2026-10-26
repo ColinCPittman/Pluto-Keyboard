@@ -1,0 +1,88 @@
+{"id": "th01", "cat": "control", "input": "Back then we didn't have phones.", "expected": "Back then we didn't have phones."}
+{"id": "th02", "cat": "control", "input": "If you want, we can go then.", "expected": "If you want, we can go then."}
+{"id": "th03", "cat": "control", "input": "We ate and then we went home.", "expected": "We ate and then we went home."}
+{"id": "th04", "cat": "control", "input": "Back and forth all day.", "expected": "Back and forth all day."}
+{"id": "th05", "cat": "control", "input": "I'll see you then, bye.", "expected": "I'll see you then, bye."}
+{"id": "th06", "cat": "control", "input": "Since then it's been quiet.", "expected": "Since then it's been quiet."}
+{"id": "th07", "cat": "control", "input": "Just then the phone rang.", "expected": "Just then the phone rang."}
+{"id": "th08", "cat": "control", "input": "By then it was too late.", "expected": "By then it was too late."}
+{"id": "th09", "cat": "control", "input": "From what I heard it went well.", "expected": "From what I heard it went well."}
+{"id": "th10", "cat": "control", "input": "Where did you get that from?", "expected": "Where did you get that from?"}
+{"id": "th11", "cat": "control", "input": "Send it from your work email.", "expected": "Send it from your work email."}
+{"id": "th12", "cat": "control", "input": "Form follows function.", "expected": "Form follows function."}
+{"id": "th13", "cat": "control", "input": "They will form a new team.", "expected": "They will form a new team."}
+{"id": "th14", "cat": "control", "input": "Take it to the car.", "expected": "Take it to the car."}
+{"id": "th15", "cat": "control", "input": "She went to the store to buy milk.", "expected": "She went to the store to buy milk."}
+{"id": "th16", "cat": "control", "input": "It is too cold to swim.", "expected": "It is too cold to swim."}
+{"id": "th17", "cat": "control", "input": "I'd like to go to the beach.", "expected": "I'd like to go to the beach."}
+{"id": "th18", "cat": "control", "input": "Talk to you later.", "expected": "Talk to you later."}
+{"id": "th19", "cat": "control", "input": "In the end it worked out.", "expected": "In the end it worked out."}
+{"id": "th20", "cat": "control", "input": "On the other hand, it's cheap.", "expected": "On the other hand, it's cheap."}
+{"id": "th21", "cat": "control", "input": "I'm in the kitchen.", "expected": "I'm in the kitchen."}
+{"id": "th22", "cat": "control", "input": "It's on the counter.", "expected": "It's on the counter."}
+{"id": "th23", "cat": "control", "input": "Leave it on the porch.", "expected": "Leave it on the porch."}
+{"id": "th24", "cat": "control", "input": "We'll be in touch.", "expected": "We'll be in touch."}
+{"id": "th25", "cat": "control", "input": "Keep an eye on it.", "expected": "Keep an eye on it."}
+{"id": "th26", "cat": "control", "input": "I'll be home in a bit.", "expected": "I'll be home in a bit."}
+{"id": "th27", "cat": "control", "input": "He's on the phone right now.", "expected": "He's on the phone right now."}
+{"id": "th28", "cat": "control", "input": "It's an honor to meet you.", "expected": "It's an honor to meet you."}
+{"id": "th29", "cat": "control", "input": "What an amazing view.", "expected": "What an amazing view."}
+{"id": "th30", "cat": "control", "input": "Once an hour is fine.", "expected": "Once an hour is fine."}
+{"id": "th31", "cat": "control", "input": "Half an hour ago.", "expected": "Half an hour ago."}
+{"id": "th32", "cat": "control", "input": "Such an easy question.", "expected": "Such an easy question."}
+{"id": "th33", "cat": "control", "input": "Call or text, either is fine.", "expected": "Call or text, either is fine."}
+{"id": "th34", "cat": "control", "input": "Now or never.", "expected": "Now or never."}
+{"id": "th35", "cat": "control", "input": "Rain or shine, we'll be there.", "expected": "Rain or shine, we'll be there."}
+{"id": "th36", "cat": "control", "input": "Dead or alive.", "expected": "Dead or alive."}
+{"id": "th37", "cat": "control", "input": "Sooner or later it will happen.", "expected": "Sooner or later it will happen."}
+{"id": "th38", "cat": "control", "input": "Yes or no?", "expected": "Yes or no?"}
+{"id": "th39", "cat": "control", "input": "Do you want to stay in or go out?", "expected": "Do you want to stay in or go out?"}
+{"id": "th40", "cat": "control", "input": "It is what you make of it.", "expected": "It is what you make of it."}
+{"id": "th41", "cat": "control", "input": "It is up to you.", "expected": "It is up to you."}
+{"id": "th42", "cat": "control", "input": "Is it yours?", "expected": "Is it yours?"}
+{"id": "th43", "cat": "control", "input": "If it is, let me know.", "expected": "If it is, let me know."}
+{"id": "th44", "cat": "control", "input": "It is, isn't it?", "expected": "It is, isn't it?"}
+{"id": "th45", "cat": "control", "input": "Where is it?", "expected": "Where is it?"}
+{"id": "th46", "cat": "control", "input": "Were they nice?", "expected": "Were they nice?"}
+{"id": "th47", "cat": "control", "input": "You were right.", "expected": "You were right."}
+{"id": "th48", "cat": "control", "input": "The kids were asleep.", "expected": "The kids were asleep."}
+{"id": "th49", "cat": "control", "input": "Our dog is old.", "expected": "Our dog is old."}
+{"id": "th50", "cat": "control", "input": "Your order has shipped.", "expected": "Your order has shipped."}
+{"id": "th51", "cat": "control", "input": "You did great.", "expected": "You did great."}
+{"id": "th52", "cat": "control", "input": "His car is red.", "expected": "His car is red."}
+{"id": "th53", "cat": "control", "input": "This is his.", "expected": "This is his."}
+{"id": "th54", "cat": "control", "input": "He is here.", "expected": "He is here."}
+{"id": "th55", "cat": "control", "input": "Where have you been?", "expected": "Where have you been?"}
+{"id": "th56", "cat": "control", "input": "We were going to call you.", "expected": "We were going to call you."}
+{"id": "th57", "cat": "control", "input": "I was there.", "expected": "I was there."}
+{"id": "th58", "cat": "control", "input": "As far as I know, yes.", "expected": "As far as I know, yes."}
+{"id": "th59", "cat": "control", "input": "Has he called?", "expected": "Has he called?"}
+{"id": "th60", "cat": "control", "input": "He had a cold.", "expected": "He had a cold."}
+{"id": "th61", "cat": "control", "input": "One more time.", "expected": "One more time."}
+{"id": "th62", "cat": "control", "input": "Every day is different.", "expected": "Every day is different."}
+{"id": "th63", "cat": "control", "input": "Very nice!", "expected": "Very nice!"}
+{"id": "th64", "cat": "control", "input": "Many thanks.", "expected": "Many thanks."}
+{"id": "th65", "cat": "control", "input": "Any time.", "expected": "Any time."}
+{"id": "th66", "cat": "control", "input": "Here it is.", "expected": "Here it is."}
+{"id": "th67", "cat": "control", "input": "She told her mom.", "expected": "She told her mom."}
+{"id": "th68", "cat": "control", "input": "Be careful.", "expected": "Be careful."}
+{"id": "th69", "cat": "control", "input": "Tell me more.", "expected": "Tell me more."}
+{"id": "th70", "cat": "control", "input": "I must go.", "expected": "I must go."}
+{"id": "th71", "cat": "control", "input": "Just do it.", "expected": "Just do it."}
+{"id": "th72", "cat": "control", "input": "Use your time well.", "expected": "Use your time well."}
+{"id": "th73", "cat": "control", "input": "There are three of them.", "expected": "There are three of them."}
+{"id": "th74", "cat": "control", "input": "Three of them are there.", "expected": "Three of them are there."}
+{"id": "th75", "cat": "control", "input": "Name your price.", "expected": "Name your price."}
+{"id": "th76", "cat": "control", "input": "The area is closed.", "expected": "The area is closed."}
+{"id": "th77", "cat": "control", "input": "Times have changed.", "expected": "Times have changed."}
+{"id": "th78", "cat": "control", "input": "Who are you?", "expected": "Who are you?"}
+{"id": "th79", "cat": "control", "input": "It's in the bag.", "expected": "It's in the bag."}
+{"id": "th80", "cat": "control", "input": "The cat is in the box.", "expected": "The cat is in the box."}
+{"id": "th81", "cat": "control", "input": "The book is on the shelf.", "expected": "The book is on the shelf."}
+{"id": "th82", "cat": "control", "input": "He got in the car.", "expected": "He got in the car."}
+{"id": "th83", "cat": "control", "input": "She got on the bus.", "expected": "She got on the bus."}
+{"id": "th84", "cat": "control", "input": "Born in the USA.", "expected": "Born in the USA."}
+{"id": "th85", "cat": "control", "input": "Get in line.", "expected": "Get in line."}
+{"id": "th86", "cat": "control", "input": "It went on and on.", "expected": "It went on and on."}
+{"id": "th87", "cat": "control", "input": "I'm in.", "expected": "I'm in."}
+{"id": "th88", "cat": "control", "input": "Than what?", "expected": "Than what?"}
