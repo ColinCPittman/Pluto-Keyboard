@@ -727,6 +727,64 @@ public final class RichInputConnection implements PrivateCommandPerformer {
         return reloadTextCache();
     }
 
+    /**
+     * The last [n] characters before the cursor straight from the editor (never the cache), with
+     * the spans the editor kept (Smart corrections for typing checks its underline survived).
+     */
+    @Nullable
+    public CharSequence getStyledTextBeforeCursorFromEditor(final int n) {
+        updateConnection();
+        if (!isConnected()) return null;
+        final InputConnectionInternalComposingWrapper wrapper =
+                mIC instanceof InputConnectionInternalComposingWrapper
+                        ? (InputConnectionInternalComposingWrapper) mIC : null;
+        final InputConnection ic = wrapper != null && wrapper.getMTarget() != null ? wrapper.getMTarget() : mIC;
+        return ic.getTextBeforeCursor(n, InputConnection.GET_TEXT_WITH_STYLES);
+    }
+
+    /** Like [getStyledTextBeforeCursorFromEditor], for the first [n] characters after the cursor (or selection). */
+    @Nullable
+    public CharSequence getStyledTextAfterCursorFromEditor(final int n) {
+        updateConnection();
+        if (!isConnected()) return null;
+        final InputConnectionInternalComposingWrapper wrapper =
+                mIC instanceof InputConnectionInternalComposingWrapper
+                        ? (InputConnectionInternalComposingWrapper) mIC : null;
+        final InputConnection ic = wrapper != null && wrapper.getMTarget() != null ? wrapper.getMTarget() : mIC;
+        return ic.getTextAfterCursor(n, InputConnection.GET_TEXT_WITH_STYLES);
+    }
+
+    /**
+     * Replaces [start, end) before or after the cursor (not inside a selection) with [text], which
+     * may carry spans, and leaves the cursor and selection where they were (shifted if the change
+     * was before them). Smart corrections for typing uses it to undo or re-underline a fix anywhere.
+     */
+    public boolean replaceText(final int start, final int end, final CharSequence text) {
+        if (end <= mExpectedSelStart && mExpectedSelEnd == mExpectedSelStart) {
+            return replaceTextBeforeCursor(start, end, text);
+        }
+        if (!isConnected() || mComposingText.length() > 0) return false;
+        final int selStart = mExpectedSelStart;
+        final int selEnd = mExpectedSelEnd;
+        if (start < selEnd) return false;
+        final InputConnectionInternalComposingWrapper wrapper =
+                mIC instanceof InputConnectionInternalComposingWrapper
+                        ? (InputConnectionInternalComposingWrapper) mIC : null;
+        final InputConnection ic = wrapper != null && wrapper.getMTarget() != null ? wrapper.getMTarget() : mIC;
+        ic.beginBatchEdit();
+        try {
+            if (!ic.setSelection(start, end)) return false;
+            ic.commitText(text, 1);
+            ic.setSelection(selStart, selEnd);
+        } finally {
+            ic.endBatchEdit();
+        }
+        if (wrapper != null) wrapper.setSelection(selStart, selEnd);
+        mExpectedSelStart = selStart;
+        mExpectedSelEnd = selEnd;
+        return reloadTextCache();
+    }
+
     public void commitCorrection(final CorrectionInfo correctionInfo) {
         if (DEBUG_BATCH_NESTING) checkBatchEdit();
         if (DEBUG_PREVIOUS_TEXT) checkConsistencyForDebug();

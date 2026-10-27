@@ -10,6 +10,9 @@ object Tuning {
     @Suppress("UNUSED_PARAMETER")
     fun learningLog(context: android.content.Context, tag: String, message: () -> String) {}
 
+    @Suppress("UNUSED_PARAMETER")
+    fun diagnosticLog(context: android.content.Context, tag: String, message: String) {}
+
     @Composable
     fun DeveloperRows() {}
 }

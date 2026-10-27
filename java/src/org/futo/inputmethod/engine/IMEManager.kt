@@ -201,6 +201,8 @@ class IMEManager(
             )
         }
 
+        // Pluto: the typing side keeps its fixes through the dictation (same field)
+        org.futo.inputmethod.latin.uix.TypingFixes.dictationHandoff = true
         existingIme.onFinishInput()
 
         return ime

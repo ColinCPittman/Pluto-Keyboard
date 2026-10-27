@@ -79,7 +79,7 @@
     <string name="pluto_voice_setup_download">Download</string>
     <string name="pluto_voice_setup_import">Import</string>
     <string name="pluto_voice_setup_installed">✓ Installed</string>
-    <string name="pluto_voice_setup_release_page">Download from the Pluto release page</string>
+    <string name="pluto_voice_setup_release_page">Download from the Pluto models page</string>
     <string name="pluto_voice_setup_release_page_subtitle">Voice typing, punctuation and Smart corrections models (opens your browser)</string>
     <string name="pluto_explore_whisper_models">Explore Whisper voice models (FUTO)</string>
 
@@ -158,4 +158,6 @@
     <string name="typing_smart_corrections_show_bar">Show the suggestion bar</string>
     <!-- the settings page with Export and Import configuration (FUTO's "Miscellaneous") -->
     <string name="pluto_backup_restore_title">Backup and restore</string>
+    <!-- the eye button on a typing fix, which selects the fixed word in the text for a moment -->
+    <string name="typing_fix_show_description">Show where %1$s was changed to %2$s</string>
 </resources>

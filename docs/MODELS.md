@@ -1,6 +1,6 @@
 # Making your own model packages
 
-Pluto Keyboard has no internet permission. Every voice typing, punctuation and Smart corrections model gets onto the phone as a `.zip` "model package" that you import (Voice Input → Set up voice typing → Import, or Languages & Models → a language → Import). The official packages are on the [release page](https://github.com/ColinCPittman/Pluto-Keyboard/releases/latest). This page walks through the format, so you can build packages from other models too. If you only want to rebuild the official ones, see [BUILDING.md](BUILDING.md#building-the-model-packages).
+Pluto Keyboard has no internet permission. Every voice typing, punctuation and Smart corrections model gets onto the phone as a `.zip` "model package" that you import (Voice Input → Set up voice typing → Import, or Languages & Models → a language → Import). The official packages are on the [models page](https://github.com/ColinCPittman/Pluto-Keyboard/releases/tag/models), which also explains which ones to pick. This page walks through the format, so you can build packages from other models too. If you only want to rebuild the official ones, see [BUILDING.md](BUILDING.md#building-the-model-packages).
 
 ## The package format
 

@@ -191,8 +191,10 @@ The microphone button uses Pluto's own offline voice typing by default. On the V
 **Set it up.** It uses the Smart corrections model (the same one as voice). Turn it on in Text Prediction → Smart corrections for typing. English only. It needs the suggestion bar (that's where you see and undo its fixes), so it pauses while the bar is hidden and starts again when you show the bar. Hiding the bar while it's on asks you first.
 
 **Using fixes.**
-- Each fix shows up as a small button in the suggestion bar above the keyboard. Tap it to change the word back.
-- With several fixes, "+N" opens the list of all of them. A fix whose text you have since edited can't be undone from there.
+- Each fix shows up as a small button in the suggestion bar above the keyboard. Tap it to change the word back. The button follows your cursor: it shows the closest fix before the cursor (or the first one after it), so moving the cursor back through your text steps through the fixes. It gives way while you type a word, and comes back when you move the cursor.
+- Fixes stay tracked while you edit around them, by the words on either side, so adding or deleting text before a fix doesn't lose it.
+- The fixed word is also underlined in your text. If an app drops the underline later (Google Messages did once), Pluto puts it back on its own, without changing your text or moving the cursor. Some apps never draw it at all. Tap the eye on the button, or on a row of the list, to see exactly where the fix is. It selects the word for a few seconds (every app shows a selection and scrolls to it), then your cursor goes back. Typing during that time goes where you were typing, never over the word.
+- With several fixes, "+N" opens the list of all of them. A fix whose own word you have since edited can't be undone from there.
 - Right after an undo, the button offers **Stop** for a few seconds. Tapping it stops that fix everywhere by switching off its pair in your corrections list (or, for a missed typo, by adding the word to your never-change list).
 - **Typing fix buttons on the right** puts the undo and list buttons near your right thumb. Turn it off to put them on the left.
 
@@ -324,7 +326,7 @@ Settings → Help & Feedback has the feature tip switches, a button to run the s
 
 ## Getting the models
 
-Pluto can't download anything by itself (that's the point of having no internet permission). Get model files from the [release page](https://github.com/ColinCPittman/Pluto-Keyboard/releases/latest) in your browser and import them without unzipping (Voice Input → Set up voice typing, or Languages & Models → English).
+Pluto can't download anything by itself (that's the point of having no internet permission). Get model files from the [models page](https://github.com/ColinCPittman/Pluto-Keyboard/releases/tag/models) in your browser and import them without unzipping (Voice Input → Set up voice typing, or Languages & Models → English).
 
 The first time you open Pluto's settings (with no models yet), a setup tutorial walks you through it. It takes you to Languages & Models and lights up what to tap next, first for the voice model, then punctuation, then Smart corrections. For each one it shows the model's row, the release page link, and the import button, then the setting the model switched on (for Smart corrections, the voice switch and then the typing switch, which stays off until you turn it on). It ends back on the Smart corrections page, pointing out the other switches there to set the way you like, with a **Finish tutorial** button. Every step has **Skip step** and **Skip tutorial**, and if you wander off to another screen a small bar lets you continue. Skipping a model's row or its import skips that model. On a first run, a model you already have skips straight to the settings it turns on. Running the tutorial again from Help shows every step as a reminder, even for models you have, and those steps have **Next** instead of Skip step. If you skip the voice model, voice typing uses Whisper, so the punctuation step only explains that punctuation is for Moonshine, and the Smart corrections step says it works best with Moonshine (it still helps with typing). Both have a **Set up Moonshine** button that takes you back to the voice model. Settings → Help can start the tutorial again (**Show the setup tutorial again**). To build your own model packages, see [MODELS.md](MODELS.md). To build the app and the official packages, see [BUILDING.md](BUILDING.md).
 
@@ -515,7 +517,7 @@ Filler words, self-correction phrases, quote triggers, emoji names and voice com
 
 - **Fields.** It's off in password, incognito, email, web address and no-suggestion fields, and in fields where autocorrect isn't allowed. It's English only.
 - **Timing.** A check runs after a space or punctuation, never in the middle of a word. A finished sentence (ending in . ? or !) is checked once.
-- **Early checks.** While you're still typing a sentence, a word that has a pair gets an early check 3, 4, 5 and 6 words later (missed typos wait for the sentence to end).
+- **Early checks.** While you're still typing a sentence, a word that has a pair gets an early check 3, 4, 5 and 6 words later, and a missed typo (a word no dictionary knows) 2, 3, 4 and 5 words later. Checks also run while you're in the middle of a word (they look at the text before it), and a fix they find goes in when that word ends, so nothing changes under your fingers. A check for an unfinished sentence you've already typed past is skipped in favor of the newer text.
 - **Length.** Sentences shorter than 3 words aren't checked.
 - **Number of fixes.** Each check makes at most one fix (the one that wins by the most), and a sentence gets at most 2.
 - **Words left alone.** A word you picked from the suggestions, backspaced into, already got fixed, or undid is never changed again.

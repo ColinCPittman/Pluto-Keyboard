@@ -330,13 +330,13 @@ class GeneralIME(val helper: IMEHelper) : IMEInterface, WordLearner, SuggestionS
         composingSpanStart: Int,
         composingSpanEnd: Int
     ) {
-        inputLogic.onUpdateSelection(
+        val moved = inputLogic.onUpdateSelection(
             oldSelStart, oldSelEnd,
             newSelStart, newSelEnd,
             composingSpanStart, composingSpanEnd,
             Settings.getInstance().current
         )
-        typingCorrections.onSelectionChanged(newSelStart, newSelEnd)
+        typingCorrections.onSelectionChanged(newSelStart, newSelEnd, moved)
     }
 
     override fun isGestureHandlingAvailable(): Boolean =
@@ -344,6 +344,8 @@ class GeneralIME(val helper: IMEHelper) : IMEInterface, WordLearner, SuggestionS
 
     private fun onEventInternal(event: Event, ignoreSuggestionUpdate: Boolean = false) {
         helper.requestCursorUpdate()
+        // a typing fix shown by selecting it gives the cursor back first, so the key can't replace it
+        typingCorrections.endShow()
 
         val cursorBefore = inputLogic.mConnection.mExpectedSelStart
 

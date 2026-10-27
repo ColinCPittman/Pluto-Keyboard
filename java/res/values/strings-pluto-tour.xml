@@ -18,7 +18,7 @@
     <string name="tour_punctuation_row_title">Next, punctuation</string>
     <string name="tour_punctuation_row_text">Moonshine puts a period at almost every pause. This model takes those out and punctuates what you said again, with real sentences, commas and capital letters. Tap Punctuation Model.</string>
     <string name="tour_punctuation_download_title">Download the punctuation model</string>
-    <string name="tour_punctuation_download_text">Tap here to open the release page and download the English punctuation file, then come back here.</string>
+    <string name="tour_punctuation_download_text">Tap here to open the models page and download the English punctuation file, then come back here.</string>
     <string name="tour_punctuation_import_text">Tap here and pick the punctuation file you downloaded.</string>
     <string name="tour_punctuation_setting_title">Fix punctuation</string>
     <string name="tour_punctuation_setting_text">Importing the punctuation model switches this on. You can turn it on or off here any time.</string>
@@ -26,7 +26,7 @@
     <string name="tour_smart_corrections_row_title">Last, Smart corrections</string>
     <string name="tour_smart_corrections_row_text">This bigger model fixes words that sound alike, spells names your way and more, for voice typing and for typing. Tap Smart Corrections.</string>
     <string name="tour_smart_corrections_download_title">Download Smart corrections</string>
-    <string name="tour_smart_corrections_download_text">Tap here to open the release page and download the Smart corrections file (about 470 MB), then come back here.</string>
+    <string name="tour_smart_corrections_download_text">Tap here to open the models page and download the Smart corrections file (about 470 MB), then come back here.</string>
     <string name="tour_smart_corrections_import_text">Tap here and pick the Smart corrections file you downloaded.</string>
     <string name="tour_smart_corrections_voice_title">Smart corrections for voice</string>
     <string name="tour_smart_corrections_voice_text">Importing the model switches it on for voice typing. The options below choose what it may fix.</string>

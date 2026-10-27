@@ -562,13 +562,13 @@ val LanguageSettingsBottom = listOf(
             openModelImporter(nav.context)
         },
     ),
-    // Pluto: voice typing, punctuation and smart corrections packages are on Pluto's release page,
+    // Pluto: voice typing, punctuation and smart corrections packages are on Pluto's models page,
     // while FUTO's model page only has Whisper voice models.
     userSettingNavigationItem(
         title = R.string.pluto_voice_setup_release_page,
         subtitle = R.string.pluto_voice_setup_release_page_subtitle,
         style = NavigationItemStyle.Misc,
-        navigate = { nav -> nav.context.openURI(PlutoLinks.RELEASES_LATEST, true) },
+        navigate = { nav -> nav.context.openURI(PlutoLinks.MODELS_PAGE, true) },
     ),
     userSettingNavigationItem(
         title = R.string.pluto_explore_whisper_models,

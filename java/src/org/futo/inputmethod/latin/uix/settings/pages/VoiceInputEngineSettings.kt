@@ -200,7 +200,7 @@ fun contextModelDisplayName(context: Context, locale: Locale): String? {
     return if (ContextModels.supportsLocale(pkg, locale)) pkg.displayName else null
 }
 
-/** Pluto: link to the release page with Pluto's model packages (opens the browser, because the app has no internet access). */
+/** Pluto: link to the models page with Pluto's model packages (opens the browser, because the app has no internet access). */
 @Composable
 private fun PlutoReleasePageItem() {
     val context = LocalContext.current
@@ -211,7 +211,7 @@ private fun PlutoReleasePageItem() {
             style = NavigationItemStyle.ExternalLink,
             navigate = {
                 SetupTour.releasePageOpened(context)
-                context.openURI(PlutoLinks.RELEASES_LATEST, true)
+                context.openURI(PlutoLinks.MODELS_PAGE, true)
             }
         )
     }

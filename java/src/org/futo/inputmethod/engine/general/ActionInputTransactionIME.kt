@@ -91,6 +91,8 @@ class ActionInputTransactionIME(val helper: IMEHelper) : IMEInterface, ActionInp
     }
 
     override fun commit(text: String) {
+        // Pluto: dictation wrote text (for the log when an app drops a typing fix's underline)
+        org.futo.inputmethod.latin.uix.TypingFixes.lastInput = "voice"
         if (isFinished) return
         helper.requestCursorUpdate()
         isFinished = true

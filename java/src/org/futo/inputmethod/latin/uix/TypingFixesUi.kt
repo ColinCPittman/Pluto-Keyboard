@@ -199,14 +199,35 @@ val AddCorrectionAction = Action(
  */
 @Composable
 fun RowScope.TypingFixChip(fixes: List<TypingFix>, onOpenList: () -> Unit) {
-    val fix = fixes.lastOrNull() ?: return
+    // the fix closest before the cursor (it follows the cursor), the newest if that's not known yet
+    val fix = fixes.firstOrNull { it.id == TypingFixes.focusId.value } ?: fixes.lastOrNull { !it.stale } ?: return
     val manager = LocalManager.current
     val view = LocalView.current
     val revertLabel = stringResource(R.string.typing_fix_revert_description, fix.replacement, fix.original)
+    val showLabel = stringResource(R.string.typing_fix_show_description, fix.original, fix.replacement)
     Row(Modifier.fillMaxHeight().padding(vertical = 6.dp, horizontal = 2.dp), verticalAlignment = Alignment.CenterVertically) {
         Surface(color = LocalKeyboardScheme.current.keyboardContainer, shape = RoundedCornerShape(8.dp)) {
             CompositionLocalProvider(LocalContentColor provides LocalKeyboardScheme.current.onKeyboardContainer) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
+                    // Pluto: shows where the fix is (some apps don't draw the underline)
+                    Box(
+                        Modifier
+                            .clickable {
+                                manager.performHapticAndAudioFeedback(Constants.CODE_TAB, view)
+                                TypingFixes.show(fix)
+                            }
+                            .clearAndSetSemantics {
+                                role = Role.Button
+                                contentDescription = showLabel
+                                onClick(action = { TypingFixes.show(fix); true })
+                            }
+                            .padding(start = 6.dp, end = 2.dp, top = 4.dp, bottom = 4.dp)
+                    ) {
+                        Icon(
+                            painterResource(R.drawable.eye), contentDescription = null,
+                            modifier = Modifier.size(14.dp).alpha(if (TypingFixes.showing.value?.id == fix.id) 1f else 0.75f)
+                        )
+                    }
                     Row(
                         Modifier
                             .clickable {
@@ -277,7 +298,8 @@ val TypingFixListAction = Action(
                 LaunchedEffect(Unit) { TypingFixes.refreshStale() }
                 LaunchedEffect(fixes.isEmpty()) { if (fixes.isEmpty()) manager.closeActionWindow() }
                 LazyColumn(Modifier.fillMaxWidth()) {
-                    items(fixes.asReversed(), key = { it.id }) { fix -> TypingFixRow(fix) }
+                    // in the order they are in the text
+                    items(fixes.sortedBy { it.start }, key = { it.id }) { fix -> TypingFixRow(fix) }
                 }
             }
         }
@@ -317,6 +339,22 @@ private fun TypingFixRow(fix: TypingFix) {
             style = Typography.Body.Regular, maxLines = 2, overflow = TextOverflow.Ellipsis,
             modifier = Modifier.weight(1f)
         )
-        Icon(painterResource(R.drawable.undo), contentDescription = null, modifier = Modifier.padding(start = 12.dp).size(20.dp))
+        if (!fix.stale) {
+            val showLabel = stringResource(R.string.typing_fix_show_description, fix.original, fix.replacement)
+            Box(
+                Modifier
+                    .padding(start = 8.dp)
+                    .clickable { TypingFixes.show(fix) }
+                    .clearAndSetSemantics {
+                        role = Role.Button
+                        contentDescription = showLabel
+                        onClick(action = { TypingFixes.show(fix); true })
+                    }
+                    .padding(6.dp)
+            ) {
+                Icon(painterResource(R.drawable.eye), contentDescription = null, modifier = Modifier.size(20.dp))
+            }
+        }
+        Icon(painterResource(R.drawable.undo), contentDescription = null, modifier = Modifier.padding(start = 6.dp).size(20.dp))
     }
 }

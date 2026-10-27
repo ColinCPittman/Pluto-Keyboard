@@ -6,9 +6,12 @@ object PlutoLinks {
     const val PROJECT_PAGE = "https://github.com/ColinCPittman/Pluto-Keyboard"
     const val ISSUES = "https://github.com/ColinCPittman/Pluto-Keyboard/issues"
 
-    /** The latest release, where Pluto's model packages (voice, punctuation, smart corrections) are attached. */
-    const val RELEASES_LATEST = "https://github.com/ColinCPittman/Pluto-Keyboard/releases/latest"
-    private const val RELEASE_DOWNLOAD = RELEASES_LATEST + "/download/"
+    /**
+     * The models release (tag "models"), where Pluto's model packages (voice, punctuation, smart
+     * corrections) and how to pick them always live, whatever the latest app release is.
+     */
+    const val MODELS_PAGE = "https://github.com/ColinCPittman/Pluto-Keyboard/releases/tag/models"
+    private const val RELEASE_DOWNLOAD = "https://github.com/ColinCPittman/Pluto-Keyboard/releases/download/models/"
     const val MODEL_VOICE_MOONSHINE_SMALL_EN = RELEASE_DOWNLOAD + "pluto-voice-moonshine-small-en.zip"
     const val MODEL_PUNCTUATION_EN = RELEASE_DOWNLOAD + "pluto-punctuation-en.zip"
     const val MODEL_SMART_CORRECTIONS_EN = RELEASE_DOWNLOAD + "pluto-smart-corrections-en.zip"

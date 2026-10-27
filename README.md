@@ -43,7 +43,7 @@ For a full guide to every feature, how it works and how to get the most out of i
 |:-:|---|
 | **1** | **Get the app.** In [Obtainium](https://github.com/ImranR98/Obtainium), *Add App* → `https://github.com/ColinCPittman/Pluto-Keyboard`. Or download the `.apk` from the [latest release](https://github.com/ColinCPittman/Pluto-Keyboard/releases/latest). Android 7+, 64-bit. It installs next to FUTO Keyboard. |
 | **2** | **Switch keyboards.** Open Pluto and follow the setup. If you're coming from FUTO you can export your configuration there and import it here. |
-| **3** | **Add voice.** From the same release, download `pluto-voice-moonshine-small-en.zip`, plus `pluto-punctuation-en.zip` and `pluto-smart-corrections-en.zip` for the cleanup. Import them (don't unzip) under **Languages & Models**, which also links to the downloads. The first time you open the settings, a short tutorial walks you through it (you can skip it). [All models](docs/MODELS.md)|
+| **3** | **Add voice.** From the [models page](https://github.com/ColinCPittman/Pluto-Keyboard/releases/tag/models), download `pluto-voice-moonshine-small-en.zip`, plus `pluto-punctuation-en.zip` and `pluto-smart-corrections-en.zip` for the cleanup. Import them (don't unzip) under **Languages & Models**, which also links to the downloads. The first time you open the settings, a short tutorial walks you through it (you can skip it). [All models](docs/MODELS.md)|
 
 ## Privacy
 
@@ -86,4 +86,4 @@ Pluto Keyboard is a modified version of [FUTO Keyboard](https://github.com/futo-
 
 ## Building from source
 
-If you would like to build Pluto yourself, see [docs/BUILDING.md](docs/BUILDING.md). To make your own voice, punctuation or Smart corrections model packages, see [docs/MODELS.md](docs/MODELS.md). What changed in each version is on the [releases page](https://github.com/ColinCPittman/Pluto-Keyboard/releases).
+If you would like to build Pluto yourself, see [docs/BUILDING.md](docs/BUILDING.md). To make your own voice, punctuation or Smart corrections model packages, see [docs/MODELS.md](docs/MODELS.md). What changed in each version is on the [releases page](https://github.com/ColinCPittman/Pluto-Keyboard/releases), and the model files are always on the [models page](https://github.com/ColinCPittman/Pluto-Keyboard/releases/tag/models).

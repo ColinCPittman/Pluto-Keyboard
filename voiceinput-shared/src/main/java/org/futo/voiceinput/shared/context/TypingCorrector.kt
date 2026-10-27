@@ -14,6 +14,8 @@ data class TypingCorrectionConfig(
     val minWords: Int = 3,
     /** Before its sentence ends, a word is checked once this many words follow it. */
     val earlyWords: Int = 3,
+    /** ... and a missed typo (a word no dictionary knows, so plainly a slip) once this many do. */
+    val earlyTypoWords: Int = 2,
     /**
      * A candidate is scored only if its first token is at most this much less likely than the
      * typed word's where it starts (one pass for all), and 0 scores them all.
@@ -125,7 +127,7 @@ class TypingCorrector(
         if (words.count { it.range.first >= from } < config.minWords) return Result(null, trace, emptyList())
         // the words that may be missed typos (a sentence with many of them is probably another
         // language, code or jargon, so it is left alone, which also keeps the check quick)
-        val typos = if (config.missedTypos && finished && lexicon != null) {
+        val typos = if (config.missedTypos && lexicon != null) {
             words.filter { m ->
                 m.range.first >= from && !skip(m.range.first) && missedTypoShape(text, m) && !confusions.isNever(m.value) &&
                     unknown(m.range.first) && !lexicon.knows(m.value)
@@ -133,14 +135,18 @@ class TypingCorrector(
         } else emptySet()
         for ((wi, m) in words.withIndex()) {
             if (m.range.first < from || skip(m.range.first)) continue
-            if (!finished && words.size - 1 - wi < config.earlyWords) continue
+            // before the sentence ends, a word needs a few words after it to be judged
+            val wordsAfter = words.size - 1 - wi
+            val pairReady = finished || wordsAfter >= config.earlyWords
+            val typoReady = finished || wordsAfter >= config.earlyTypoWords
+            if (!pairReady && !typoReady) continue
             val s = m.range.first - cut
-            if (config.realWords) for (c in confusions.candidates(m.value)) {
+            if (config.realWords && pairReady) for (c in confusions.candidates(m.value)) {
                 val rep = matchCase(m.value, c)
                 cands.add(Cand(m, rep, scored.substring(0, s) + rep + scored.substring(s + m.value.length)))
             }
-            // a word no dictionary knows, so the real words it may be a slip of (finished sentences only)
-            if (m in typos) {
+            // a word no dictionary knows, so the real words it may be a slip of
+            if (typoReady && m in typos) {
                 for ((c, cost) in KeyboardTypos.candidates(m.value, lexicon!!.lowercaseWords, config.maxTypoCost, config.maxTypoCandidates)) {
                     val rep = matchCase(m.value, c)
                     cands.add(Cand(m, rep, scored.substring(0, s) + rep + scored.substring(s + m.value.length), cost))
