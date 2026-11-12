@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Voice Input → Set up voice typing: the voice models to choose from in step 1 -->
+    <string name="pluto_voice_setup_choice_parakeet_title">Parakeet (135 MB)</string>
+    <string name="pluto_voice_setup_choice_parakeet_body">Types your words when you finish speaking. Small and quick. Add the punctuation model (step 2) for proper sentences.</string>
+    <string name="pluto_voice_setup_choice_moonshine_title">Moonshine Small (124 MB)</string>
+    <string name="pluto_voice_setup_choice_moonshine_body">Shows your words as you talk. Add the punctuation model (step 2) for proper sentences.</string>
+    <string name="pluto_voice_setup_choice_nemotron_title">Nemotron (475 MB)</string>
+    <string name="pluto_voice_setup_choice_nemotron_body">Shows your words as you talk and was the most accurate in Pluto\'s tests. Add the punctuation model (step 2) for proper sentences. Needs a fast phone.</string>
+
+    <!-- step 2 while the voice model punctuates itself -->
+    <string name="pluto_voice_setup_punctuation_not_needed">Not needed: %1$s, your voice model, adds its own punctuation and capitals.</string>
+</resources>

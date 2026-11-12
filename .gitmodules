@@ -22,3 +22,6 @@
 [submodule "llama.cpp"]
 	path = voiceinput-shared/src/main/cpp/llama.cpp
 	url = https://github.com/ggml-org/llama.cpp.git
+[submodule "voiceinput-shared/src/main/cpp/transcribe.cpp"]
+	path = voiceinput-shared/src/main/cpp/transcribe.cpp
+	url = https://github.com/handy-computer/transcribe.cpp.git

@@ -219,12 +219,13 @@ class SmartCorrectionsTest {
             Kind.SELF_CORRECTION -> SpokenEdits.selfCorrectionGroups(w, segStarts)
             else -> SpokenEdits.commandGroups(w, segStarts, lexV2, PersonalNames.EMPTY)
         }
-        return gs.flatMap { g -> g.alternatives.map { a -> text.substring(0, a.start) + a.replacement + text.substring(a.end) } }
+        // (the edits a pause or punctuation marks; unmarked ones are left to the LM, see unmarkedCandidates)
+        return gs.flatMap { g -> g.alternatives.filter { !it.undelimited }.map { a -> text.substring(0, a.start) + a.replacement + text.substring(a.end) } }
     }
 
     @Test
     fun fillerCandidates() {
-        assertEquals(listOf("I think we should go."), groups("Um, I think we should go.", Kind.FILLER).map { it.trimStart() }.map { it })
+        assertEquals(listOf("I think we should go."), groups("Um, I think we should go.", Kind.FILLER))
         assertEquals(listOf("I was, thinking about it.", "I was thinking about it."), groups("I was, uh, thinking about it.", Kind.FILLER))
         assertEquals(emptyList<String>(), groups("We went to the ER last night.", Kind.FILLER))
         assertEquals(emptyList<String>(), groups("Uh-oh, I forgot my keys.", Kind.FILLER))
@@ -255,6 +256,50 @@ class SmartCorrectionsTest {
     }
 
     @Test
+    fun digitFormats() {
+        // clock times and phone numbers a voice model wrote as bare digits
+        fun fmt(t: String) = NumberWords.digitFormats(t).map { (a, b, f) -> t.substring(a, b) + "=" + f }
+        assertEquals(listOf("3.30=3:30"), fmt("The meeting is at 3.30."))
+        assertEquals(listOf("7 45=7:45"), fmt("The train leaves at 7 45"))
+        assertEquals(listOf("315=3:15"), fmt("Pick up the kids at 315."))
+        assertEquals(listOf("930=9:30"), fmt("The truck comes at 930 on Saturday."))
+        assertEquals(listOf("5551234=555-1234"), fmt("Call me at 5551234."))
+        // dollars and cents without the "and" a voice model drops, and digits said one by one
+        assertEquals("$45.99", NumberWords.centsForm("forty five dollars ninety nine cents"))
+        assertEquals("$45.99", NumberWords.centsForm("forty five dollars and ninety nine cents"))
+        assertEquals("$45.99", NumberWords.centsForm("$45 ninety nine cents"))
+        assertEquals("$1,200.05", NumberWords.centsForm("twelve hundred dollars and five cents"))
+        assertEquals(null, NumberWords.centsForm("forty five dollars"))
+        assertEquals("204", NumberWords.digitSequenceForm("two oh four"))
+        assertEquals(null, NumberWords.digitSequenceForm("one one"))
+        // a unit after it makes it an amount, not a time
+        for (t in listOf("Charge it at 100 percent.", "The rate is at 3.30 percent now.", "We drove at 65 miles an hour.",
+            "It sold at 250 dollars.", "Room 204 is at the end.", "I paid 1234567 for it.")) assertEquals(t, emptyList<String>(), fmt(t))
+    }
+
+    @Test
+    fun unmarkedCandidates() {
+        // with no pause or punctuation, a correction or command is still offered, for the LM to judge
+        // on the sentence alone ("bring three sorry four chairs" from a model that doesn't punctuate it)
+        fun unmarked(text: String, kind: Kind): List<String> {
+            val w = SpokenEdits.Words(text)
+            val gs = if (kind == Kind.SELF_CORRECTION) SpokenEdits.selfCorrectionGroups(w, emptySet())
+                else SpokenEdits.commandGroups(w, emptySet(), lexV2, PersonalNames.EMPTY)
+            return gs.flatMap { g -> g.alternatives.filter { it.undelimited }.map { a -> text.substring(0, a.start) + a.replacement + text.substring(a.end) } }
+        }
+        assertEquals(listOf("Bring four chairs"), unmarked("Bring three sorry four chairs", Kind.SELF_CORRECTION))
+        assertEquals(listOf("Dear Sam\nThanks for the update"), unmarked("Dear Sam new line thanks for the update", Kind.COMMAND))
+        assertEquals(listOf("I love this sentence."), unmarked("I hate this sentence scratch that I love this sentence.", Kind.COMMAND))
+        // and they are only offered unmarked
+        assertEquals(emptyList<String>(), groups("Bring three sorry four chairs", Kind.SELF_CORRECTION))
+        assertEquals(emptyList<String>(), groups("Dear Sam new line thanks for the update", Kind.COMMAND))
+        // "scratch that" mid-sentence only when the sentence is said again
+        assertEquals(emptyList<String>(), unmarked("Can you scratch that itch for me?", Kind.COMMAND))
+        // and never where the words are a noun ("a new line formed")
+        assertEquals(emptyList<String>(), unmarked("A new line formed outside the store.", Kind.COMMAND))
+    }
+
+    @Test
     fun selfCorrectionCandidates() {
         // the repair restarts with the reparandum's first word (that length only)
         assertEquals(listOf("I'll take the blue one."), groups("I'll take the red one, sorry, the blue one.", Kind.SELF_CORRECTION))
@@ -274,7 +319,7 @@ class SmartCorrectionsTest {
         assertEquals(listOf(true), parallel("Text Mom at five. I mean, at six."))
         assertEquals(listOf(true), parallel("Text Sam, sorry, Alex about it."))
         assertEquals(listOf(true), parallel("The party starts at eight, actually, nine."))
-        assertEquals(listOf(false), parallel("We need eggs, I mean, milk from the store.").take(1))
+        assertEquals(listOf(false, false), parallel("We need eggs, I mean, milk from the store."))
         for (s in listOf(
             "I mean it, you did a great job.", "What I mean is that we need more time.", "Actually, I think it's fine.",
             "Sorry I'm late.", "I'm sorry for your loss.", "I'd rather stay home.", "It was actually pretty good.",

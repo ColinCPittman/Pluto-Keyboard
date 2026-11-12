@@ -52,6 +52,8 @@ class SettingsBackupRoundTripTest {
         SMART_CORRECTIONS_EMOJI_LIST.key to "lol\t😂\nthumbs up\t0",
         SMART_CORRECTIONS_EMOJI_BUILT_IN.key to false,
         TYPING_FIX_MISSED_TYPOS.key to false,
+        TYPING_FIX_MISSING_WORDS.key to false,
+        TYPING_FIX_WORD_ENDINGS.key to false,
     )
 
     private fun plutoPreferences(): Preferences = mutablePreferencesOf(*plutoSettings.toTypedArray())
@@ -93,6 +95,8 @@ class SettingsBackupRoundTripTest {
         assertEquals(plutoPreferences(), restored)
         assertEquals("lol\t😂\nthumbs up\t0", restored[SMART_CORRECTIONS_EMOJI_LIST.key])
         assertEquals(false, restored[TYPING_FIX_MISSED_TYPOS.key])
+        assertEquals(false, restored[TYPING_FIX_MISSING_WORDS.key])
+        assertEquals(false, restored[TYPING_FIX_WORD_ENDINGS.key])
     }
 
     @Test

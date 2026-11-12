@@ -1,0 +1,109 @@
+{"id": "ud-c01", "cat": "control", "input": "I'm sorry I missed your call earlier.", "expected": "I'm sorry I missed your call earlier."}
+{"id": "ud-c02", "cat": "control", "input": "It was a rather long meeting but we got through it.", "expected": "It was a rather long meeting but we got through it."}
+{"id": "ud-c03", "cat": "control", "input": "I actually liked the second movie more than the first one.", "expected": "I actually liked the second movie more than the first one."}
+{"id": "ud-c04", "cat": "control", "input": "Sorry about the mess in the kitchen.", "expected": "Sorry about the mess in the kitchen."}
+{"id": "ud-c05", "cat": "control", "input": "The trial period ends next Friday.", "expected": "The trial period ends next Friday."}
+{"id": "ud-c06", "cat": "control", "input": "There was a long line at the coffee shop this morning.", "expected": "There was a long line at the coffee shop this morning."}
+{"id": "ud-c07", "cat": "control", "input": "They opened a new line of credit for the business.", "expected": "They opened a new line of credit for the business."}
+{"id": "ud-c08", "cat": "control", "input": "Put a comma after the first name in the list.", "expected": "Put a comma after the first name in the list."}
+{"id": "ud-c09", "cat": "control", "input": "She wrote a new paragraph about her trip to Spain.", "expected": "She wrote a new paragraph about her trip to Spain."}
+{"id": "ud-c10", "cat": "control", "input": "I would rather stay home tonight.", "expected": "I would rather stay home tonight."}
+{"id": "ud-c11", "cat": "control", "input": "Can you scratch that off the list for me?", "expected": "Can you scratch that off the list for me?"}
+{"id": "ud-c12", "cat": "control", "input": "I mean it when I say thank you.", "expected": "I mean it when I say thank you."}
+{"id": "ud-c13", "cat": "control", "input": "No wait times at the clinic today which was nice.", "expected": "No wait times at the clinic today which was nice."}
+{"id": "ud-c14", "cat": "control", "input": "We need two or three more chairs for the party.", "expected": "We need two or three more chairs for the party."}
+{"id": "ud-c15", "cat": "control", "input": "He said sorry to his sister after the fight.", "expected": "He said sorry to his sister after the fight."}
+{"id": "ud-c16", "cat": "control", "input": "That's a question mark on the whole plan honestly.", "expected": "That's a question mark on the whole plan honestly."}
+{"id": "ud-c17", "cat": "control", "input": "The cat actually jumped onto the counter again.", "expected": "The cat actually jumped onto the counter again."}
+{"id": "ud-c18", "cat": "control", "input": "I feel sorry for the guy who lost his wallet.", "expected": "I feel sorry for the guy who lost his wallet."}
+{"id": "ud-c19", "cat": "control", "input": "Hold on to your ticket until the end of the show.", "expected": "Hold on to your ticket until the end of the show."}
+{"id": "ud-c20", "cat": "control", "input": "My bad knee has been acting up all week.", "expected": "My bad knee has been acting up all week."}
+{"id": "ud-c21", "cat": "control", "input": "I'd like the red one rather than the blue one.", "expected": "I'd like the red one rather than the blue one."}
+{"id": "ud-c22", "cat": "control", "input": "Make it quick because we leave at five.", "expected": "Make it quick because we leave at five."}
+{"id": "ud-c23", "cat": "control", "input": "We waited a long period of time for the results.", "expected": "We waited a long period of time for the results."}
+{"id": "ud-c24", "cat": "control", "input": "The new line manager starts on Monday.", "expected": "The new line manager starts on Monday."}
+{"id": "ud-c25", "cat": "control", "input": "Three or four people said they would come.", "expected": "Three or four people said they would come."}
+{"id": "ud-c26", "cat": "control", "input": "Sorry to bother you but is the store still open?", "expected": "Sorry to bother you but is the store still open?"}
+{"id": "ud-c27", "cat": "control", "input": "Excuse me is this seat taken?", "expected": "Excuse me is this seat taken?"}
+{"id": "ud-c28", "cat": "control", "input": "I mean to call her tomorrow morning.", "expected": "I mean to call her tomorrow morning."}
+{"id": "ud-c29", "cat": "control", "input": "Actually I think we should go now.", "expected": "Actually I think we should go now."}
+{"id": "ud-c30", "cat": "control", "input": "The correction was printed in the paper the next day.", "expected": "The correction was printed in the paper the next day."}
+{"id": "ud-s01", "cat": "selfcorrection", "input": "Bring three sorry four chairs", "expected": "Bring four chairs"}
+{"id": "ud-s02", "cat": "selfcorrection", "input": "Let's meet at five no wait six o'clock", "expected": "Let's meet at six o'clock"}
+{"id": "ud-s03", "cat": "selfcorrection", "input": "Send it to Sam sorry Alex by tonight", "expected": "Send it to Alex by tonight"}
+{"id": "ud-s04", "cat": "selfcorrection", "input": "I'll be there on Monday I mean Tuesday", "expected": "I'll be there on Tuesday"}
+{"id": "ud-s05", "cat": "selfcorrection", "input": "We need two cups of flour sorry three cups of flour", "expected": "We need three cups of flour"}
+{"id": "ud-s06", "cat": "selfcorrection", "input": "Turn left at the bank no wait the library", "expected": "Turn left at the library"}
+{"id": "ud-s07", "cat": "selfcorrection", "input": "The meeting is in room twelve actually room fourteen", "expected": "The meeting is in room 14"}
+{"id": "ud-s08", "cat": "selfcorrection", "input": "Pick up some apples I mean oranges on the way home", "expected": "Pick up some oranges on the way home"}
+{"id": "ud-m01", "cat": "command", "input": "Dear Sam new line thanks for the update", "expected": "Dear Sam\nThanks for the update"}
+{"id": "ud-m02", "cat": "command", "input": "Hi Mom new paragraph I wanted to tell you about the trip", "expected": "Hi Mom\n\nI wanted to tell you about the trip"}
+{"id": "ud-m03", "cat": "command", "input": "I hate this sentence scratch that I love this sentence.", "expected": "I love this sentence."}
+{"id": "ud-m04", "cat": "command", "input": "Thanks for everything new line see you soon", "expected": "Thanks for everything\nSee you soon"}
+{"id": "ud-q01", "cat": "quote", "input": "She said, I'll be there in five minutes.", "expected": "She said \"I'll be there in five minutes.\""}
+{"id": "ud-q02", "cat": "quote", "input": "My boss said, I'm not paying for that.", "expected": "My boss said \"I'm not paying for that.\""}
+{"id": "ud-q03", "cat": "quote", "input": "He said, we'll figure it out tomorrow.", "expected": "He said \"We'll figure it out tomorrow.\""}
+{"id": "ud-c31", "cat": "control", "input": "She said I was right about the whole thing.", "expected": "She said I was right about the whole thing."}
+{"id": "ud-c32", "cat": "control", "input": "He said I should call you after lunch.", "expected": "He said I should call you after lunch."}
+{"id": "ud-c33", "cat": "control", "input": "I said I'll be there by noon.", "expected": "I said I'll be there by noon."}
+{"id": "ud-c34", "cat": "control", "input": "She said she'd be there in five minutes.", "expected": "She said she'd be there in five minutes."}
+{"id": "ud-c35", "cat": "control", "input": "They said I could borrow the car this weekend.", "expected": "They said I could borrow the car this weekend."}
+{"id": "ud-c36", "cat": "control", "input": "He said I'm welcome to stay as long as I want.", "expected": "He said I'm welcome to stay as long as I want."}
+{"id": "ud-p01", "cat": "command", "input": "Dear Sam, Newline, thanks for the update", "segments": ["Dear Sam, Newline, thanks for the update"], "expected": "Dear Sam,\nThanks for the update"}
+{"id": "ud-p02", "cat": "command", "input": "I hate this sentence scratch that I love this sentence", "segments": ["I", "hate this sentence scratch that I love this sentence"], "expected": "I love this sentence"}
+{"id": "ud-p03", "cat": "command", "input": "I hate this sentence, scratch that I love this sentence", "segments": ["I hate this sentence,", "scratch that I love this sentence"], "expected": "I love this sentence"}
+{"id": "ud-p04", "cat": "quote", "input": "She said I'll be there in five minutes", "segments": ["She said I'll be there in five minutes"], "expected": "She said \"I'll be there in five minutes.\""}
+{"id": "ud-p05", "cat": "control", "input": "Oh, sorry. Actually, there was something else I wanted to do, but I guess I didn't really get it to you in time. Sorry about that, but actually, I think we can do even better.", "segments": ["Oh, sorry.", "Actually,", "there was something else I wanted to do, but I guess", "I didn't really get it to you in time.", "Sorry about that, but actually,", "I think we can do even better."], "expected": "Oh, sorry. Actually, there was something else I wanted to do, but I guess I didn't really get it to you in time. Sorry about that, but actually, I think we can do even better."}
+{"id": "ud-c37", "cat": "control", "input": "He said I'm the best cook he knows", "expected": "He said I'm the best cook he knows"}
+{"id": "ud-c38", "cat": "control", "input": "The newline character ends each row in the file.", "expected": "The newline character ends each row in the file."}
+{"id": "ud-p06", "cat": "command", "input": "I hate this sentence. Scratch that, I love this sentence.", "left": "We need three cups", "segments": ["I hate this sentence.", "Scratch that, I love this sentence."], "expected": "I love this sentence."}
+{"id": "ud-n01", "cat": "number", "input": "It costs forty five dollars ninety nine cents", "expected": "It costs $45.99"}
+{"id": "ud-n02", "cat": "number", "input": "The meeting is in room two oh four", "expected": "The meeting is in room 204"}
+{"id": "ud-s09", "cat": "selfcorrection", "input": "Add two cups of sugar sorry one cup", "expected": "Add one cup"}
+{"id": "ud-s10", "cat": "selfcorrection", "input": "Text Sam sorry Alex about the party", "expected": "Text Alex about the party"}
+{"id": "ud-s11", "cat": "selfcorrection", "input": "The party starts at eight actually nine", "expected": "The party starts at nine"}
+{"id": "ud-s12", "cat": "selfcorrection", "input": "Book a table for four make it five", "expected": "Book a table for five"}
+{"id": "ud-s13", "cat": "selfcorrection", "input": "I'll see you at the park sorry the library", "expected": "I'll see you at the library"}
+{"id": "ud-x01", "cat": "selfcorrection", "input": "Get the red bag. Sorry, the blue bag.", "expected": "Get the blue bag."}
+{"id": "ud-x02", "cat": "selfcorrection", "input": "I'll see you at the park. Sorry, the library.", "expected": "I'll see you at the library."}
+{"id": "ud-x03", "cat": "selfcorrection", "input": "Meet me on Friday. Actually, Saturday.", "expected": "Meet me on Saturday."}
+{"id": "ud-x04", "cat": "selfcorrection", "input": "We need two cups of flour. Sorry, three cups.", "expected": "We need three cups."}
+{"id": "ud-x05", "cat": "selfcorrection", "input": "Get the red bag. Sorry. Blue bag.", "expected": "Get the blue bag."}
+{"id": "ud-c39", "cat": "control", "input": "That was my fault. Sorry, the kids were loud.", "expected": "That was my fault. Sorry, the kids were loud."}
+{"id": "ud-c40", "cat": "control", "input": "I watched the movie. I mean, the ending was weird.", "expected": "I watched the movie. I mean, the ending was weird."}
+{"id": "ud-c41", "cat": "control", "input": "I'm late. Sorry. Traffic was bad.", "expected": "I'm late. Sorry. Traffic was bad."}
+{"id": "ud-c42", "cat": "control", "input": "The food was great. Actually, the service was even better.", "expected": "The food was great. Actually, the service was even better."}
+{"id": "ud-c43", "cat": "control", "input": "We were sorry to see them go.", "expected": "We were sorry to see them go."}
+{"id": "ud-c44", "cat": "control", "input": "The movie was good actually.", "expected": "The movie was good actually."}
+{"id": "ud-c45", "cat": "control", "input": "There were actually four people at the party.", "expected": "There were actually four people at the party."}
+{"id": "ud-c46", "cat": "control", "input": "My cat likes to scratch that old chair.", "expected": "My cat likes to scratch that old chair."}
+{"id": "ud-c47", "cat": "control", "input": "I'll scratch that off the list.", "expected": "I'll scratch that off the list."}
+{"id": "ud-c48", "cat": "control", "input": "Can you scratch that itch for me?", "expected": "Can you scratch that itch for me?"}
+{"id": "ud-c49", "cat": "control", "input": "Do not scratch that, it will get infected.", "expected": "Do not scratch that, it will get infected."}
+{"id": "ud-c50", "cat": "control", "input": "Mom said I'm grounded for a week.", "expected": "Mom said I'm grounded for a week."}
+{"id": "ud-c51", "cat": "control", "input": "She said I'll be there and she was.", "expected": "She said I'll be there and she was."}
+{"id": "ud-c52", "cat": "control", "input": "He said I'll call his brother tomorrow.", "expected": "He said I'll call his brother tomorrow."}
+{"id": "ud-c53", "cat": "control", "input": "Class starts after second period, right?", "expected": "Class starts after second period, right?"}
+{"id": "ud-c54", "cat": "control", "input": "Write it on a new line, then send it.", "expected": "Write it on a new line, then send it."}
+{"id": "ud-c55", "cat": "control", "input": "Your order number is 1234567.", "expected": "Your order number is 1234567."}
+{"id": "ud-c56", "cat": "control", "input": "The rather old house on the corner sold last week.", "expected": "The rather old house on the corner sold last week."}
+{"id": "ud-c57", "cat": "control", "input": "I'm sorry the package arrived late.", "expected": "I'm sorry the package arrived late."}
+{"id": "ud-c58", "cat": "control", "input": "He actually finished the whole marathon.", "expected": "He actually finished the whole marathon."}
+{"id": "ud-c59", "cat": "control", "input": "Add a newline, then save the file.", "expected": "Add a newline, then save the file."}
+{"id": "ud-m05", "cat": "command", "input": "Hi Sam, new paragraph I wanted to tell you about the trip", "expected": "Hi Sam,\n\nI wanted to tell you about the trip"}
+{"id": "ud-m06", "cat": "command", "input": "Hi Sam new paragraph, I wanted to tell you about the trip", "expected": "Hi Sam\n\nI wanted to tell you about the trip"}
+{"id": "ud-m07", "cat": "command", "input": "Dear Sam Newline thanks for the update", "expected": "Dear Sam\nThanks for the update"}
+{"id": "ud-m08", "cat": "command", "input": "Thanks for everything newline see you soon", "expected": "Thanks for everything\nSee you soon"}
+{"id": "ud-m09", "cat": "command", "input": "Thanks comma see you soon", "expected": "Thanks, see you soon"}
+{"id": "ud-m10", "cat": "command", "input": "The store closes at 5 scratch that the store closes at 6", "expected": "The store closes at 6"}
+{"id": "ud-m12", "cat": "command", "input": "We need three cups. I hate this sentence. Scratch that, I love this sentence.", "expected": "We need three cups. I love this sentence."}
+{"id": "ud-m13", "cat": "command", "input": "I hate this sentence scratch that I love this sentence", "left": "Pick up milk", "expected": "I love this sentence"}
+{"id": "ud-q04", "cat": "quote", "input": "They said we're closed on Sundays.", "expected": "They said \"We're closed on Sundays.\""}
+{"id": "ud-q05", "cat": "quote", "input": "My boss said I'm not paying for that", "expected": "My boss said \"I'm not paying for that.\""}
+{"id": "ud-n03", "cat": "number", "input": "Pick up the kids at 315 on Friday.", "expected": "Pick up the kids at 3:15 on Friday."}
+{"id": "ud-n04", "cat": "number", "input": "The meeting is at 3.30.", "expected": "The meeting is at 3:30."}
+{"id": "ud-n05", "cat": "number", "input": "Call me at 5551234 tomorrow.", "expected": "Call me at 555-1234 tomorrow."}
+{"id": "ud-n06", "cat": "number", "input": "It costs $45 ninety nine cents.", "expected": "It costs $45.99."}
+{"id": "ud-n07", "cat": "number", "input": "Our flight leaves from gate two one", "expected": "Our flight leaves from gate 21"}
+{"id": "ud-n08", "cat": "number", "input": "The train leaves at 7 45", "expected": "The train leaves at 7:45"}
+{"id": "ud-n09", "cat": "number", "input": "It was twelve dollars and fifty cents", "expected": "It was $12.50"}

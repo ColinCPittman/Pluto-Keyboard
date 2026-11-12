@@ -28,12 +28,16 @@ import org.futo.voiceinput.shared.context.TypingCorrectionConfig
 import org.futo.voiceinput.shared.context.TypingPairEdits
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
+import org.futo.voiceinput.shared.engine.FastCores
+import org.futo.voiceinput.shared.engine.SmartFeaturePolicy
 import org.futo.voiceinput.shared.engine.TranscriptPostProcessor
+import org.futo.voiceinput.shared.engine.VoiceModelProfile
 import org.futo.voiceinput.shared.modelpackage.InstalledModelPackage
 import org.futo.voiceinput.shared.modelpackage.ModelPackageKinds
 import org.futo.voiceinput.shared.modelpackage.ModelPackages
 import java.io.File
 import java.util.Locale
+import java.util.concurrent.atomic.AtomicReference
 
 /**
  * Third pass for voice input (after punctuation). A small LM judges the finished transcript and
@@ -150,27 +154,43 @@ object ContextModels {
         ),
     )
 
+    /**
+     * [options] for transcripts from a voice model with [profile], without what that model already
+     * does well. [punctuationRan] says whether the punctuation stage runs before this one.
+     */
+    fun optionsFor(
+        context: Context,
+        profile: VoiceModelProfile,
+        punctuationRan: Boolean,
+        withEmojiNames: Boolean = false,
+    ): SmartCorrectionOptions = SmartFeaturePolicy.smartCorrections(options(context, withEmojiNames), profile, punctuationRan)
+
     /** Whether the context stage will run for [locale] (enabled, a model installed, an option on). */
     fun isActive(context: Context, locale: Locale): Boolean =
         packageFor(context, locale) != null && options(context).any
 
     /**
-     * The context stage for transcripts in [locale], or null if it is off or unavailable.
+     * The context stage for transcripts in [locale] from a voice model with [profile], or null if it
+     * is off, unavailable or has nothing to do for that model ([optionsFor]).
      * [personal] is the user's personal-dictionary / learned words (names), read when a transcript
      * is corrected. The stage gets the ASR's original segments (pauses) as `segments`.
      */
     fun processorFor(
         context: Context,
         locale: Locale,
+        profile: VoiceModelProfile,
+        punctuationRan: Boolean,
         personal: PersonalDictionary = PersonalDictionary.EMPTY,
         leftContext: () -> String = { "" },
     ): TranscriptPostProcessor? {
         val pkg = packageFor(context, locale) ?: return null
-        val options = options(context)
+        val options = optionsFor(context, profile, punctuationRan)
         if (!options.any) return null
         return TranscriptPostProcessor { raw, segments ->
             // usually ready, since preload started reading the names when voice input opened
-            val withNames = if (options.emoji) withContext(Dispatchers.Default) { options(context, withEmojiNames = true) } else options
+            val withNames = if (options.emoji) withContext(Dispatchers.Default) {
+                optionsFor(context, profile, punctuationRan, withEmojiNames = true)
+            } else options
             correct(context, pkg, raw, segments, withNames, personal, leftContext()).also { out ->
                 if (out != raw) withContext(Dispatchers.Main) { FeatureTips.offer(context, FeatureTip.VOICE_SMART_CORRECTIONS) }
             }
@@ -195,11 +215,23 @@ object ContextModels {
     private var typingPairsOf: TypingConfusions? = null
     @Volatile private var mergedPairs: Pair<Pair<String, Boolean>, TypingConfusions>? = null
 
-    /** The typing settings, covering which kinds of fixes and how readily. */
-    fun typingConfig(context: Context) = TypingCorrectionConfig(
-        realWords = context.getSetting(TYPING_FIX_REAL_WORDS),
-        missedTypos = context.getSetting(TYPING_FIX_MISSED_TYPOS),
-    ).withSensitivity(context.getSetting(TYPING_SMART_CORRECTIONS_SENSITIVITY))
+    /**
+     * The typing settings, covering which kinds of fixes and how readily. Joined, split and
+     * apostrophe words go with missed typos, and word order with missing and extra words.
+     */
+    fun typingConfig(context: Context): TypingCorrectionConfig {
+        val missed = context.getSetting(TYPING_FIX_MISSED_TYPOS)
+        val words = context.getSetting(TYPING_FIX_MISSING_WORDS)
+        return TypingCorrectionConfig(
+            realWords = context.getSetting(TYPING_FIX_REAL_WORDS),
+            missedTypos = missed,
+            missingWords = words,
+            leftoverWords = words,
+            wordOrder = words,
+            wordEndings = context.getSetting(TYPING_FIX_WORD_ENDINGS),
+            joinSplit = missed,
+        ).withSensitivity(context.getSetting(TYPING_SMART_CORRECTIONS_SENSITIVITY))
+    }
 
     /** The typing pairs in use, which are the built-in ones with your changes (the same object until they change). */
     fun typingPairs(context: Context): TypingConfusions {
@@ -210,6 +242,22 @@ object ContextModels {
         return merged
     }
     private var typingRelease: Job? = null
+
+    /**
+     * What a typing check came to. [ran] is false when it didn't really run (voice input was open,
+     * it was aborted or failed), so the sentence still needs a check. [ms] is how long it took.
+     */
+    class TypingCheck(
+        val ran: Boolean, val fix: TypingCorrector.Fix? = null, val ms: Long = 0,
+        /** It didn't run because the model failed on it (not because voice input took over). */
+        val failed: Boolean = false,
+    )
+
+    /** Typing checks wait while voice input is open. */
+    val typingPaused: Boolean get() = dictating
+
+    /** Called when voice input closes, so typing checks can look at what was dictated. */
+    @Volatile var typingResumed: (() -> Unit)? = null
 
     /**
      * Smart corrections for typing checks the sentence [from]..[to] of [text] (see
@@ -226,10 +274,13 @@ object ContextModels {
         skip: (Int) -> Boolean,
         caution: (String, String, String, String) -> Double,
         unknown: (Int) -> Boolean = { false },
-    ): TypingCorrector.Fix? {
-        val pkg = typingPackage(context, locale) ?: return null
+    ): TypingCheck {
+        // the speech model needs the fast cores while voice input is open (these checks halved its speed)
+        if (dictating) return TypingCheck(false)
+        val pkg = typingPackage(context, locale) ?: return TypingCheck(false)
         typingRelease?.cancel()
         return mutex.withLock {
+            if (dictating) return@withLock TypingCheck(false)
             try {
                 val model = obtainLocked(pkg)
                 // your changes to the pairs are read for every check, so they apply at once
@@ -251,6 +302,7 @@ object ContextModels {
                 typingCaution = caution
                 model.lm.setAbort(false)
                 busy = model
+                typingBusy = model
                 coroutineScope {
                     var done = false
                     val watcher = launch {
@@ -261,6 +313,8 @@ object ContextModels {
                         }
                     }
                     try {
+                        // voice input may have opened while the model loaded ([voiceOpened] aborts from here on)
+                        if (dictating) return@coroutineScope TypingCheck(false)
                         val ctx = coroutineContext
                         val start = System.nanoTime()
                         // a failed evaluation (seen once, right after a check) loses the sentence, so
@@ -270,26 +324,30 @@ object ContextModels {
                         } catch (e: kotlinx.coroutines.CancellationException) {
                             throw e
                         } catch (e: Throwable) {
-                            Log.w(TAG, "Typing check failed (${e.message}), trying again")
                             ctx.ensureActive()
+                            // aborted for voice input (voiceOpened): no second try
+                            if (dictating) throw e
+                            Log.w(TAG, "Typing check failed (${e.message}), trying again")
                             model.lm.setAbort(false)
                             corrector.check(text, from, to, finished, skip, { ctx.ensureActive() }, unknown)
                         }
+                        val ms = (System.nanoTime() - start) / 1_000_000
                         // counts and timings only, never the text
-                        Log.i(TAG, "Typing check over ${to - from} chars in ${(System.nanoTime() - start) / 1_000_000} ms" +
-                            if (r.fix != null) " (fix)" else "")
-                        r.fix
+                        Log.i(TAG, "Typing check over ${to - from} chars in $ms ms" + if (r.fix != null) " (fix)" else "")
+                        // voice input opened during it, so it may have been cut short
+                        if (dictating) TypingCheck(false) else TypingCheck(true, r.fix, ms)
                     } finally {
                         done = true
                         watcher.cancel()
                         busy = null
+                        typingBusy = null
                     }
                 }
             } catch (e: kotlinx.coroutines.CancellationException) {
                 throw e
             } catch (e: Throwable) {
-                Log.e(TAG, "Typing check failed", e)
-                null
+                if (dictating) Log.i(TAG, "Typing check stopped for voice input") else Log.e(TAG, "Typing check failed", e)
+                TypingCheck(false, failed = !dictating)
             } finally {
                 releaseTypingSoon(60_000L)
             }
@@ -312,13 +370,38 @@ object ContextModels {
     @Volatile
     private var voiceOpen = false
 
+    /**
+     * The open voice input session (the voice window or a hold-to-talk dictation), while typing
+     * checks wait (see [voiceOpened]). The latest one counts, since hold-to-talk hands over to the
+     * voice window when the press was a tap.
+     */
+    private val voiceSession = AtomicReference<Any?>(null)
+    private val dictating: Boolean get() = voiceSession.get() != null
+
+    /** The model a running typing check uses (to abort it from [voiceOpened], never a voice correction). */
+    @Volatile
+    private var typingBusy: ContextModel? = null
+
+    /**
+     * Voice input [session] opened: typing checks stop until it closes ([voiceClosed]), and a
+     * running one is aborted, so the speech model has the fast cores to itself (on a phone with 2
+     * fast cores, a typing check alongside made Nemotron about twice as slow).
+     */
+    fun voiceOpened(session: Any) {
+        voiceSession.set(session)
+        typingBusy?.lm?.setAbort(true)
+    }
+
     private var voiceRelease: Job? = null
 
     /**
-     * Voice input's window closed. The model stays loaded for [VOICE_KEEP_MS] in case another
-     * dictation follows (reloading it takes about a second), then it is freed.
+     * Voice input [session] closed. The model stays loaded for [VOICE_KEEP_MS] in case another
+     * dictation follows (reloading it takes about a second), then it is freed. A session that
+     * another one has replaced since changes nothing.
      */
-    fun voiceClosed() {
+    fun voiceClosed(session: Any) {
+        if (!voiceSession.compareAndSet(session, null)) return
+        typingResumed?.invoke()
         voiceOpen = false
         voiceRelease?.cancel()
         voiceRelease = scope.launch {
@@ -342,9 +425,15 @@ object ContextModels {
         }
     }
 
-    /** Starts loading the model for [locale] in the background (voice input just opened). */
-    fun preload(context: Context, locale: Locale) {
+    /**
+     * Starts loading the model for [locale] in the background (voice input just opened), unless it
+     * has nothing to do for a voice model with [profile].
+     */
+    fun preload(context: Context, locale: Locale, profile: VoiceModelProfile, punctuationRan: Boolean) {
+        // (only for an open session, which frees the model when it closes)
+        if (!dictating) return
         val pkg = packageFor(context, locale) ?: return
+        if (!optionsFor(context, profile, punctuationRan).any) return
         voiceOpen = true
         voiceRelease?.cancel()
         // the emoji names are built now too, so the first dictation doesn't wait for them
@@ -434,34 +523,11 @@ object ContextModels {
         }
         val start = System.nanoTime()
         val config = ContextModelFiles.loadConfig(pkg.dir)
-        val cpus = fastCores(config.threads)
+        val cpus = FastCores.fastest(config.threads)
         val model = ContextModel.load(pkg.dir, config.threads, cpus)
         Log.i(TAG, "Loaded context model ${pkg.id} (${model.lm.description}) in ${(System.nanoTime() - start) / 1_000_000} ms" +
             (cpus?.let { ", cpus ${it.joinToString(",")}" } ?: ""))
         loaded = Loaded(pkg.id, pkg.dir, stamp, model)
         return model
-    }
-
-    /**
-     * Ids of the [n] fastest cores (by EAS capacity, else max frequency) to pin the LM threads to,
-     * or null if the cores are all alike or the information is unavailable.
-     */
-    private fun fastCores(n: Int): IntArray? {
-        val count = Runtime.getRuntime().availableProcessors()
-        fun read(path: String): Long? = try {
-            File(path).readText().trim().toLong()
-        } catch (e: Exception) {
-            null
-        }
-        val cap = (0 until count).map { read("/sys/devices/system/cpu/cpu$it/cpu_capacity") }
-        val freq = (0 until count).map { read("/sys/devices/system/cpu/cpu$it/cpufreq/cpuinfo_max_freq") }
-        val score = when {
-            cap.all { it != null } -> cap.map { it!! }
-            freq.all { it != null } -> freq.map { it!! }
-            else -> return null
-        }
-        if (score.distinct().size < 2 || n >= count) return null
-        return (0 until count).sortedWith(compareByDescending<Int> { score[it] }.thenByDescending { it })
-            .take(n).sorted().toIntArray()
     }
 }

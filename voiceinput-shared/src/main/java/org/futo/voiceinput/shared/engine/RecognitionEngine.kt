@@ -7,11 +7,16 @@ import java.io.File
 
 /** Which speech recognition engine an [org.futo.voiceinput.shared.AudioRecognizer] drives. */
 sealed class RecognitionEngineConfiguration {
+    /** What the model does well itself, which decides the stages after it (see SmartFeaturePolicy). */
+    abstract val profile: VoiceModelProfile
+
     /**
      * The original whisper.cpp engine. Audio is recorded (up to 30 s, or more
      * with long-form input) and transcribed once recording stops.
      */
-    object Whisper : RecognitionEngineConfiguration()
+    object Whisper : RecognitionEngineConfiguration() {
+        override val profile get() = VoiceModelProfile.WHISPER
+    }
 
     /**
      * Moonshine streaming (English only) on ONNX Runtime. Audio is transcribed
@@ -23,7 +28,23 @@ sealed class RecognitionEngineConfiguration {
         val modelName: String,
         val runtime: OrtRuntimeOptions,
         /** Live text, refresh interval and the pause that ends a phrase (Voice Input -> Advanced options). */
-        val streaming: MoonshineStreamingTranscriber.Options = MoonshineStreamingTranscriber.Options()
+        val streaming: MoonshineStreamingTranscriber.Options = MoonshineStreamingTranscriber.Options(),
+        override val profile: VoiceModelProfile = VoiceModelProfile.MOONSHINE
+    ) : RecognitionEngineConfiguration()
+
+    /**
+     * A GGUF model on transcribe.cpp (NVIDIA Nemotron, Parakeet). Streaming models show text
+     * while recording, the others transcribe once recording stops. No length limit either way.
+     */
+    data class Transcribe(
+        /** The model's .gguf in an installed `transcribe` model package. */
+        val modelFile: File,
+        val modelName: String,
+        /** The keyboard's language ("en"), passed to models that list it (Nemotron 3.5 can't detect it). */
+        val language: String,
+        override val profile: VoiceModelProfile,
+        /** 0 lets the library choose. */
+        val threads: Int = 0,
     ) : RecognitionEngineConfiguration()
 }
 

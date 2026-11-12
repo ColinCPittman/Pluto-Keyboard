@@ -1,0 +1,8 @@
+/* Only the JNI entry points of libplutotranscribe are exported; transcribe.cpp's ggml stays
+   local so it cannot clash with llama.cpp's (libfutoctxlm) or whisper's (libjni_latinime). */
+{
+  global:
+    Java_org_futo_voiceinput_shared_transcribe_TranscribeNative_*;
+  local:
+    *;
+};

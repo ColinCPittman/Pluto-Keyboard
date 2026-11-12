@@ -54,7 +54,9 @@ import org.futo.inputmethod.latin.uix.SMART_CORRECTIONS_NUMBERS
 import org.futo.inputmethod.latin.uix.SMART_CORRECTIONS_SELF_CORRECTIONS
 import org.futo.inputmethod.latin.uix.SMART_CORRECTIONS_SOUND_ALIKE
 import org.futo.inputmethod.latin.uix.USE_SYSTEM_VOICE_INPUT
+import org.futo.inputmethod.latin.uix.TRANSCRIBE_MODEL_ID
 import org.futo.inputmethod.latin.uix.VOICE_ENGINE_MOONSHINE
+import org.futo.inputmethod.latin.uix.VOICE_ENGINE_TRANSCRIBE
 import org.futo.inputmethod.latin.uix.VOICE_ENGINE_WHISPER
 import org.futo.inputmethod.latin.uix.VOICE_INPUT_ENGINE
 import org.futo.inputmethod.latin.uix.VOICE_INPUT_SHOW_TIMING
@@ -69,6 +71,7 @@ import org.futo.inputmethod.latin.uix.settings.ScreenTitle
 import org.futo.inputmethod.latin.uix.settings.ScrollableList
 import org.futo.inputmethod.latin.uix.settings.SettingItem
 import org.futo.inputmethod.latin.uix.settings.SettingToggleDataStore
+import org.futo.inputmethod.latin.uix.settings.SettingToggleRaw
 import org.futo.inputmethod.latin.uix.settings.Tip
 import org.futo.inputmethod.latin.uix.settings.UserSetting
 import org.futo.inputmethod.latin.uix.settings.UserSettingsMenu
@@ -79,16 +82,19 @@ import org.futo.inputmethod.latin.uix.settings.useDataStore
 import org.futo.inputmethod.latin.uix.settings.useDataStoreValue
 import org.futo.inputmethod.latin.uix.theme.Typography
 import org.futo.inputmethod.updates.openURI
+import org.futo.voiceinput.shared.engine.RecognitionEngineConfiguration
+import org.futo.voiceinput.shared.engine.VoiceModelProfile
 import org.futo.voiceinput.shared.modelpackage.InstalledModelPackage
 import org.futo.voiceinput.shared.modelpackage.ModelPackageKinds
 import org.futo.voiceinput.shared.modelpackage.ModelPackages
 import org.futo.voiceinput.shared.moonshine.core.CpuTopology
 import org.futo.voiceinput.shared.moonshine.core.OrtAccelerator
+import org.futo.voiceinput.shared.transcribe.TranscribeModelFiles
 import java.util.Locale
 
 /*
  * Fork additions to voice input settings:
- *  - which voice model (Whisper or a Moonshine package), punctuation model and context model a language uses
+ *  - which voice model (Whisper, a Moonshine package or a Nemotron / Parakeet package), punctuation model and context model a language uses
  *    live in Languages & Models (per language card, see [VoiceModelScreen], [PunctuationModelScreen] and
  *    [ContextModelScreen]).
  *  - the punctuation and context pass on/off switches live on the Voice Input page
@@ -121,56 +127,77 @@ val InstalledModelPackage.displayName: String
 private val InstalledModelPackage.sizeText: String get() = "%.0f MB".format(sizeBytes / 1e6)
 
 /** Name of the voice input model [locale] uses, for the Languages & Models card, or null if none. */
-fun voiceInputModelDisplayName(context: Context, locale: Locale): String? {
-    if (locale.language == "en" && context.getSetting(VOICE_INPUT_ENGINE) == VOICE_ENGINE_MOONSHINE) {
-        VoiceInputEngines.selectedMoonshineModel(context)?.let { return it.name }
+fun voiceInputModelDisplayName(context: Context, locale: Locale): String? =
+    when (val engine = VoiceInputEngines.resolve(context, locale)) {
+        is RecognitionEngineConfiguration.MoonshineStreaming -> engine.modelName
+        is RecognitionEngineConfiguration.Transcribe -> engine.modelName
+        RecognitionEngineConfiguration.Whisper ->
+            ResourceHelper.tryFindingVoiceInputModelForLocale(context, locale)?.name?.let { context.getString(it) }
     }
-    return ResourceHelper.tryFindingVoiceInputModelForLocale(context, locale)?.name?.let { context.getString(it) }
+
+/**
+ * The voice model voice typing in a language uses, and what it does well itself (see [currentVoiceModel]).
+ * Only what settings need is exposed: the engine's other options (threads, live text) aren't part of
+ * the cache key, so they may be out of date.
+ */
+class CurrentVoiceModel(private val engine: RecognitionEngineConfiguration) {
+    /** The package name, or "Whisper" (Whisper's file names, like "English-39", mean little here). */
+    val name: String get() = when (engine) {
+        is RecognitionEngineConfiguration.MoonshineStreaming -> engine.modelName
+        is RecognitionEngineConfiguration.Transcribe -> engine.modelName
+        RecognitionEngineConfiguration.Whisper -> "Whisper"
+    }
+    val profile: VoiceModelProfile get() = engine.profile
+    val isWhisper: Boolean get() = engine is RecognitionEngineConfiguration.Whisper
+    val isMoonshine: Boolean get() = engine is RecognitionEngineConfiguration.MoonshineStreaming
+    val isTranscribe: Boolean get() = engine is RecognitionEngineConfiguration.Transcribe
 }
 
 /**
- * Whether English voice input runs on Whisper (picked, or the fallback when no Moonshine model is installed).
- * Whisper punctuates itself and already reads the whole dictation for context, so the punctuation pass is skipped after Whisper, and
- * Smart corrections mostly add delay; their settings say so.
+ * The voice model [locale] uses (the picked one, or Whisper when it is missing or doesn't handle the
+ * language), read live so settings redraw when the choice or the installed models change. Settings
+ * use it to say which features the model makes unnecessary instead of offering them.
  */
 @Composable
-internal fun whisperIsVoiceModel(): Boolean {
+fun currentVoiceModel(locale: Locale = Locale.ENGLISH): CurrentVoiceModel {
     val context = LocalContext.current
     val engine = useDataStoreValue(VOICE_INPUT_ENGINE)
+    val moonshineId = useDataStoreValue(MOONSHINE_MODEL_ID)
+    val transcribeId = useDataStoreValue(TRANSCRIBE_MODEL_ID)
     val changes by ModelPackages.changes.collectAsState()
-    val hasMoonshine = remember(changes) { VoiceInputEngines.installedMoonshineModels(context).isNotEmpty() }
-    return engine != VOICE_ENGINE_MOONSHINE || !hasMoonshine
-}
-
-/**
- * Whether voice typing in [locale] uses Moonshine (English, Moonshine picked and installed). Every
- * other case is Whisper, which punctuates itself, so the punctuation model is only for Moonshine.
- */
-@Composable
-fun usesMoonshine(locale: java.util.Locale): Boolean {
-    if (locale.language != "en") {
-        // still read the states, so the caller updates when they change
-        useDataStoreValue(VOICE_INPUT_ENGINE)
-        return false
+    return remember(engine, moonshineId, transcribeId, changes, locale) {
+        // resolving reads the model packages from disk, so every row of a page shares one answer
+        val key = listOf(engine, moonshineId, transcribeId, changes)
+        currentVoiceModelCache[locale]?.takeIf { it.first == key }?.second
+            ?: CurrentVoiceModel(VoiceInputEngines.resolve(context, locale))
+                .also { currentVoiceModelCache[locale] = key to it }
     }
-    return !whisperIsVoiceModel()
 }
 
+// one answer per language (the Languages & Models page shows several); only used from composition
+private val currentVoiceModelCache = HashMap<Locale, Pair<List<Any?>, CurrentVoiceModel>>()
+
 /**
- * Pluto: shown when you tap the punctuation model or switch while Whisper is your voice model.
- * [onOpenAnyway] (opening the punctuation model page, to import or delete one) is optional.
+ * Pluto: shown when you tap the punctuation model or switch while the voice model of [locale]
+ * punctuates by itself. [onOpenAnyway] (opening the punctuation model page, to import or delete one)
+ * is optional.
  */
 @Composable
-fun PunctuationIsForMoonshineDialog(onDismiss: () -> Unit, onOpenAnyway: (() -> Unit)? = null) {
+fun PunctuationIsForMoonshineDialog(
+    onDismiss: () -> Unit,
+    onOpenAnyway: (() -> Unit)? = null,
+    locale: Locale = Locale.ENGLISH,
+) {
     val navController = LocalNavController.current
+    val model = currentVoiceModel(locale)
     AlertDialog(
         onDismissRequest = onDismiss,
         title = { Text(stringResource(R.string.punctuation_whisper_dialog_title)) },
-        text = { Text(stringResource(R.string.punctuation_whisper_dialog_text)) },
+        text = { Text(stringResource(R.string.punctuation_whisper_dialog_text, model.name)) },
         confirmButton = {
             TextButton(onClick = {
                 onDismiss()
-                navController?.navigate(Route.VoiceModel("en"))
+                navController?.navigate(Route.VoiceModel(locale.toLanguageTag()))
             }) { Text(stringResource(R.string.punctuation_whisper_dialog_choose)) }
         },
         dismissButton = {
@@ -258,7 +285,7 @@ private fun DeleteModelPackageDialog(pkg: InstalledModelPackage, onDismiss: () -
     )
 }
 
-/** Languages & Models -> Voice Input Model, to choose between Whisper and installed Moonshine models for [locale]. */
+/** Languages & Models -> Voice Input Model, to choose between Whisper and installed Nemotron, Parakeet and Moonshine models for [locale]. */
 @Composable
 fun VoiceModelScreen(navController: NavHostController, locale: Locale) {
     val context = LocalContext.current
@@ -273,6 +300,16 @@ fun VoiceModelScreen(navController: NavHostController, locale: Locale) {
     val selectedMoonshine = moonshineModels.firstOrNull { it.id == moonshineId.value } ?: moonshineModels.firstOrNull()
     val usingMoonshine = isEnglish && engine.value == VOICE_ENGINE_MOONSHINE && selectedMoonshine != null
 
+    // Nemotron / Parakeet packages that handle this language (English ones, or multilingual Nemotron 3.5)
+    val transcribeId = useDataStore(TRANSCRIBE_MODEL_ID)
+    val allTranscribeModels = remember(changes) { VoiceInputEngines.installedTranscribeModels(context) }
+    val transcribeModels = allTranscribeModels.filter { VoiceInputEngines.transcribeSupports(it, locale) }
+    // the same pick as VoiceInputEngines.selectedTranscribeModel: when it is for another language,
+    // this language uses Whisper, so Whisper shows as selected
+    val selectedTranscribe = (allTranscribeModels.firstOrNull { it.id == transcribeId.value } ?: allTranscribeModels.firstOrNull())
+        ?.takeIf { pkg -> transcribeModels.any { it.id == pkg.id } }
+    val usingTranscribe = engine.value == VOICE_ENGINE_TRANSCRIBE && selectedTranscribe != null
+
     val whisperModel = remember(changes) { ResourceHelper.tryFindingVoiceInputModelForLocale(context, locale) }
     val whisperImported = remember(changes) {
         ResourceHelper.findFileForKind(context, locale, FileKind.VoiceInput)?.exists() == true
@@ -282,6 +319,7 @@ fun VoiceModelScreen(navController: NavHostController, locale: Locale) {
     deleteTarget?.let { pkg ->
         DeleteModelPackageDialog(pkg, onDismiss = { deleteTarget = null }) {
             if (moonshineId.value == pkg.id) moonshineId.setValue("")
+            if (transcribeId.value == pkg.id) transcribeId.setValue("")
         }
     }
 
@@ -293,9 +331,24 @@ fun VoiceModelScreen(navController: NavHostController, locale: Locale) {
             title = stringResource(R.string.voice_models_whisper_title, whisperModel?.let { stringResource(it.name) }
                 ?: stringResource(R.string.language_settings_resource_none)),
             subtitle = stringResource(R.string.voice_models_whisper_subtitle),
-            selected = !usingMoonshine,
+            selected = !usingMoonshine && !usingTranscribe,
             onClick = { engine.setValue(VOICE_ENGINE_WHISPER) }
         )
+        transcribeModels.forEach { pkg ->
+            val profile = remember(pkg) { TranscribeModelFiles.profile(pkg.manifest) }
+            RadioSettingItem(
+                title = pkg.displayName,
+                subtitle = stringResource(
+                    if (profile.streaming) R.string.voice_models_transcribe_streaming_subtitle else R.string.voice_models_transcribe_subtitle,
+                    pkg.sizeText
+                ),
+                selected = usingTranscribe && pkg.id == selectedTranscribe?.id,
+                onClick = {
+                    transcribeId.setValue(pkg.id)
+                    engine.setValue(VOICE_ENGINE_TRANSCRIBE)
+                }
+            )
+        }
         moonshineModels.forEach { pkg ->
             RadioSettingItem(
                 title = pkg.displayName,
@@ -307,7 +360,7 @@ fun VoiceModelScreen(navController: NavHostController, locale: Locale) {
                 }
             )
         }
-        if (isEnglish && moonshineModels.isEmpty()) {
+        if (isEnglish && moonshineModels.isEmpty() && transcribeModels.isEmpty()) {
             Tip(stringResource(R.string.voice_models_moonshine_none_installed))
         }
 
@@ -333,7 +386,7 @@ fun VoiceModelScreen(navController: NavHostController, locale: Locale) {
                 navigate = { ResourceHelper.deleteResourceForLanguage(context, FileKind.VoiceInput, locale) }
             )
         }
-        moonshineModels.forEach { pkg ->
+        (transcribeModels + moonshineModels).forEach { pkg ->
             NavigationItem(
                 title = stringResource(R.string.voice_models_delete, pkg.displayName),
                 style = NavigationItemStyle.MiscNoArrow,
@@ -495,21 +548,21 @@ val PunctuationRestorationSetting = UserSetting(
     val context = LocalContext.current
     val changes by ModelPackages.changes.collectAsState()
     val hasModel = remember(changes) { PunctuationModels.installed(context).isNotEmpty() }
-    val whisper = whisperIsVoiceModel()
+    // a voice model that punctuates well gets no punctuation pass (SmartFeaturePolicy), whatever the switch says
+    val model = currentVoiceModel()
+    val notNeeded = model.profile.punctuatesItself
     var explain by remember { mutableStateOf(false) }
     if (explain) PunctuationIsForMoonshineDialog(onDismiss = { explain = false })
-    Box(if (hasModel && whisper) Modifier.clickable { explain = true } else Modifier) {
+    Box(if (hasModel && notNeeded) Modifier.clickable { explain = true } else Modifier) {
         SettingToggleDataStore(
             title = stringResource(R.string.voice_input_settings_punctuation),
-            subtitle = stringResource(
-                when {
-                    !hasModel -> R.string.voice_input_settings_punctuation_no_model
-                    whisper -> R.string.voice_input_settings_punctuation_whisper
-                    else -> R.string.voice_input_settings_punctuation_subtitle
-                }
-            ),
+            subtitle = when {
+                !hasModel -> stringResource(R.string.voice_input_settings_punctuation_no_model)
+                notNeeded -> stringResource(R.string.voice_input_settings_punctuation_whisper, model.name)
+                else -> stringResource(R.string.voice_input_settings_punctuation_subtitle)
+            },
             setting = PUNCTUATION_RESTORATION_ENABLED,
-            disabled = !hasModel || whisper
+            disabled = !hasModel || notNeeded
         )
     }
 }
@@ -543,9 +596,9 @@ private fun <T> DropDownSetting(
 private const val AUTO_STOP_OFF = 0
 
 /**
- * Voice Input -> Advanced options, covering how Moonshine streams (live text, refresh rate, stop after
- * silence, greyed out unless a Moonshine model is the voice model) and benchmarking knobs for
- * Moonshine on ONNX Runtime.
+ * Voice Input -> Advanced options, covering how Moonshine streams (live text and refresh rate, greyed
+ * out unless a Moonshine model is the voice model), stop after silence (greyed out for Whisper) and
+ * benchmarking knobs for Moonshine on ONNX Runtime.
  */
 val VoiceInputAdvancedMenu = UserSettingsMenu(
     title = R.string.voice_input_advanced_title,
@@ -553,19 +606,34 @@ val VoiceInputAdvancedMenu = UserSettingsMenu(
     settings = listOf(
         userSettingDecorationOnly {
             SectionLabel(stringResource(R.string.voice_input_advanced_section_live))
-            if (whisperIsVoiceModel()) Tip(stringResource(R.string.voice_input_advanced_needs_moonshine))
+            if (!currentVoiceModel().isMoonshine) Tip(stringResource(R.string.voice_input_advanced_needs_moonshine))
         },
 
         UserSetting(
             name = R.string.voice_input_settings_moonshine_live_text,
             subtitle = R.string.voice_input_settings_moonshine_live_text_subtitle
         ) {
-            SettingToggleDataStore(
-                title = stringResource(R.string.voice_input_settings_moonshine_live_text),
-                subtitle = stringResource(R.string.voice_input_settings_moonshine_live_text_subtitle),
-                setting = MOONSHINE_LIVE_TEXT,
-                disabled = whisperIsVoiceModel()
-            )
+            val model = currentVoiceModel()
+            if (model.isMoonshine) {
+                SettingToggleDataStore(
+                    title = stringResource(R.string.voice_input_settings_moonshine_live_text),
+                    subtitle = stringResource(R.string.voice_input_settings_moonshine_live_text_subtitle),
+                    setting = MOONSHINE_LIVE_TEXT,
+                )
+            } else {
+                // locked: a streaming model always shows words as you talk, the others never do
+                SettingToggleRaw(
+                    title = stringResource(R.string.voice_input_settings_moonshine_live_text),
+                    enabled = model.profile.streaming,
+                    setValue = {},
+                    subtitle = stringResource(
+                        if (model.profile.streaming) R.string.voice_input_settings_live_text_always
+                        else R.string.voice_input_settings_live_text_never,
+                        model.name
+                    ),
+                    disabled = true,
+                )
+            }
         },
 
         UserSetting(
@@ -574,11 +642,16 @@ val VoiceInputAdvancedMenu = UserSettingsMenu(
         ) {
             val refresh = useDataStore(MOONSHINE_REFRESH_MS)
             val liveText = useDataStoreValue(MOONSHINE_LIVE_TEXT)
+            val model = currentVoiceModel()
             val res = LocalResources.current
             val choices = VoiceInputEngines.REFRESH_CHOICES_MS
             DropDownSetting(
                 title = stringResource(R.string.voice_input_settings_moonshine_refresh),
-                subtitle = stringResource(R.string.voice_input_settings_moonshine_refresh_subtitle),
+                subtitle = when {
+                    model.isMoonshine -> stringResource(R.string.voice_input_settings_moonshine_refresh_subtitle)
+                    model.profile.streaming -> stringResource(R.string.voice_input_settings_only_moonshine_refresh, model.name)
+                    else -> stringResource(R.string.voice_input_settings_live_text_never, model.name)
+                },
                 options = choices,
                 selection = choices.minBy { kotlin.math.abs(it - refresh.value) },
                 onSet = { refresh.setValue(it) },
@@ -592,7 +665,7 @@ val VoiceInputAdvancedMenu = UserSettingsMenu(
                         it / 1000f
                     )
                 },
-                disabled = whisperIsVoiceModel() || !liveText
+                disabled = !model.isMoonshine || !liveText
             )
         },
 
@@ -604,9 +677,13 @@ val VoiceInputAdvancedMenu = UserSettingsMenu(
             val silence = useDataStore(MOONSHINE_AUTO_STOP_MS)
             val res = LocalResources.current
             val choices = listOf(AUTO_STOP_OFF) + VoiceInputEngines.AUTO_STOP_CHOICES_MS
+            val whisper = currentVoiceModel().isWhisper
             DropDownSetting(
                 title = stringResource(R.string.voice_input_settings_moonshine_auto_stop),
-                subtitle = stringResource(R.string.voice_input_settings_moonshine_auto_stop_subtitle),
+                subtitle = stringResource(
+                    if (whisper) R.string.voice_input_settings_auto_stop_whisper
+                    else R.string.voice_input_settings_moonshine_auto_stop_subtitle
+                ),
                 options = choices,
                 selection = if (!autoStop.value) AUTO_STOP_OFF
                     else VoiceInputEngines.AUTO_STOP_CHOICES_MS.minBy { kotlin.math.abs(it - silence.value) },
@@ -625,7 +702,8 @@ val VoiceInputAdvancedMenu = UserSettingsMenu(
                         else -> res.getString(R.string.voice_input_settings_moonshine_auto_stop_seconds, it / 1000f)
                     }
                 },
-                disabled = whisperIsVoiceModel()
+                // applies to every model but Whisper (VoiceInputEngines.autoStopSilenceMs)
+                disabled = whisper
             )
         },
 
@@ -639,9 +717,11 @@ val VoiceInputAdvancedMenu = UserSettingsMenu(
         ) {
             val accelerator = useDataStore(MOONSHINE_ACCELERATOR)
             val res = LocalResources.current
+            val model = currentVoiceModel()
             DropDownSetting(
                 title = stringResource(R.string.voice_input_settings_moonshine_accelerator),
-                subtitle = stringResource(R.string.voice_input_settings_moonshine_accelerator_subtitle),
+                subtitle = if (model.isMoonshine) stringResource(R.string.voice_input_settings_moonshine_accelerator_subtitle)
+                    else stringResource(R.string.voice_input_settings_only_moonshine_accelerator, model.name),
                 options = OrtAccelerator.entries.toList(),
                 selection = OrtAccelerator.entries.firstOrNull { it.name == accelerator.value } ?: OrtAccelerator.CPU,
                 onSet = { accelerator.setValue(it.name) },
@@ -653,7 +733,8 @@ val VoiceInputAdvancedMenu = UserSettingsMenu(
                             OrtAccelerator.NNAPI -> R.string.voice_input_settings_moonshine_accelerator_nnapi
                         }
                     )
-                }
+                },
+                disabled = !model.isMoonshine
             )
         },
 
@@ -664,15 +745,18 @@ val VoiceInputAdvancedMenu = UserSettingsMenu(
             val threads = useDataStore(MOONSHINE_THREADS)
             val res = LocalResources.current
             val auto = remember { CpuTopology.autoThreadCount }
+            val model = currentVoiceModel()
             DropDownSetting(
                 title = stringResource(R.string.voice_input_settings_moonshine_threads),
-                subtitle = stringResource(R.string.voice_input_settings_moonshine_threads_subtitle),
+                subtitle = if (model.isMoonshine) stringResource(R.string.voice_input_settings_moonshine_threads_subtitle)
+                    else stringResource(R.string.voice_input_settings_only_moonshine_threads, model.name),
                 options = (0..8).toList(),
                 selection = threads.value.coerceIn(0, 8),
                 onSet = { threads.setValue(it) },
                 getDisplayName = {
                     if (it == 0) res.getString(R.string.voice_input_settings_moonshine_threads_auto, auto) else it.toString()
-                }
+                },
+                disabled = !model.isMoonshine
             )
         },
 

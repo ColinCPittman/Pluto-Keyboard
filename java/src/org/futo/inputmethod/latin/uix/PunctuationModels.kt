@@ -11,7 +11,9 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import org.futo.voiceinput.shared.engine.SmartFeaturePolicy
 import org.futo.voiceinput.shared.engine.TranscriptPostProcessor
+import org.futo.voiceinput.shared.engine.VoiceModelProfile
 import org.futo.voiceinput.shared.modelpackage.InstalledModelPackage
 import org.futo.voiceinput.shared.modelpackage.ModelPackageKinds
 import org.futo.voiceinput.shared.modelpackage.ModelPackages
@@ -76,15 +78,22 @@ object PunctuationModels {
         return pkg
     }
 
-    /** Punctuation stage for transcripts in [locale], or null if punctuation restoration is off or unavailable. */
-    fun processorFor(context: Context, locale: Locale): TranscriptPostProcessor? {
-        val pkg = packageFor(context, locale) ?: return null
+    /** The package to use after a voice model with [profile], or null (a model that punctuates well needs none). */
+    private fun packageFor(context: Context, locale: Locale, profile: VoiceModelProfile): InstalledModelPackage? =
+        if (SmartFeaturePolicy.punctuationStage(profile, enabled = true)) packageFor(context, locale) else null
+
+    /**
+     * Punctuation stage for transcripts in [locale] from a voice model with [profile], or null if
+     * punctuation restoration is off, unavailable or not needed by that model.
+     */
+    fun processorFor(context: Context, locale: Locale, profile: VoiceModelProfile): TranscriptPostProcessor? {
+        val pkg = packageFor(context, locale, profile) ?: return null
         return TranscriptPostProcessor { raw, segments -> restore(context, pkg, raw, segments) }
     }
 
     /** Starts loading the model for [locale] in the background so it is ready when the transcript is. */
-    fun preload(context: Context, locale: Locale) {
-        val pkg = packageFor(context, locale) ?: return
+    fun preload(context: Context, locale: Locale, profile: VoiceModelProfile) {
+        val pkg = packageFor(context, locale, profile) ?: return
         scope.launch {
             try {
                 mutex.withLock {

@@ -603,11 +603,13 @@
     <string name="voice_input_settings_audio_focus">Audio Focus</string>
     <string name="voice_input_settings_audio_focus_subtitle">Pause videos/music when voice input is activated</string>
     <string name="voice_input_settings_suppress_symbols">Suppress symbols</string>
+    <string name="voice_input_settings_suppress_symbols_not_whisper">Only for Whisper. %1$s, your voice model, doesn\'t use this.</string>
+    <string name="voice_input_settings_long_form_not_needed">Not needed: %1$s, your voice model, has no time limit.</string>
     <string name="voice_input_settings_suppress_symbols_subtitle">Prevent voice input from outputting symbols</string>
     <string name="voice_input_settings_long_form">Long-form voice input</string>
     <string name="voice_input_settings_long_form_subtitle">If disabled, voice input will auto-stop after 30 seconds.</string>
     <string name="voice_input_settings_autostop_vad">Auto-stop on silence</string>
-    <string name="voice_input_settings_autostop_vad_subtitle">Automatically stop when you stop talking. With Moonshine, choose how long a pause it waits for under Advanced options. Background noise can keep it listening.</string>
+    <string name="voice_input_settings_autostop_vad_subtitle">Automatically stop when you stop talking. Choose how long a pause it waits for under Advanced options (Whisper uses 2 seconds). Background noise can keep it listening.</string>
     <string name="voice_input_settings_animate_bubble">Animations</string>
     <string name="voice_input_settings_animate_bubble_subtitle">Display a bubble that reacts to speech</string>
     <string name="voice_input_settings_change_models">Models</string>

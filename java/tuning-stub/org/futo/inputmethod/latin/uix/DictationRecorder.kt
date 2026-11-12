@@ -10,6 +10,8 @@ object DictationRecorder {
 
     fun note(context: Context, key: String, value: Long) {}
 
+    fun text(context: Context, key: String, value: String) {}
+
     fun record(
         context: Context, locale: Locale, raw: String, segments: List<String>,
         stages: List<Pair<String, String>>, stageMs: List<Pair<String, Long>> = emptyList(),

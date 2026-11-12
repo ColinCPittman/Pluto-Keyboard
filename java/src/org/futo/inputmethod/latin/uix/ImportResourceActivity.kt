@@ -663,11 +663,13 @@ fun ModelPackageImportScreen(
     ScrollableList {
         ScreenTitleWithIcon(
             title = stringResource(R.string.resource_importer_import_title, stringResource(R.string.file_kind_model_package)),
-            painter = painterResource(id = if (manifest.kind == ModelPackageKinds.MOONSHINE_STREAMING) R.drawable.mic else R.drawable.cpu)
+            painter = painterResource(id = if (manifest.kind == ModelPackageKinds.MOONSHINE_STREAMING ||
+                manifest.kind == ModelPackageKinds.TRANSCRIBE) R.drawable.mic else R.drawable.cpu)
         )
 
         val kindName = when (manifest.kind) {
             ModelPackageKinds.MOONSHINE_STREAMING -> stringResource(R.string.resource_importer_model_package_kind_moonshine)
+            ModelPackageKinds.TRANSCRIBE -> stringResource(R.string.resource_importer_model_package_kind_transcribe)
             ModelPackageKinds.PUNCTUATION -> stringResource(R.string.resource_importer_model_package_kind_punctuation)
             ModelPackageKinds.CONTEXT -> stringResource(R.string.resource_importer_model_package_kind_context)
             else -> manifest.kind
@@ -761,6 +763,11 @@ class ImportResourceActivity : ComponentActivity() {
                         if (installed.kind == ModelPackageKinds.MOONSHINE_STREAMING) {
                             applicationContext.setSetting(MOONSHINE_MODEL_ID, installed.id)
                             applicationContext.setSetting(VOICE_INPUT_ENGINE, VOICE_ENGINE_MOONSHINE)
+                        }
+                        // Same for Nemotron / Parakeet models.
+                        if (installed.kind == ModelPackageKinds.TRANSCRIBE) {
+                            applicationContext.setSetting(TRANSCRIBE_MODEL_ID, installed.id)
+                            applicationContext.setSetting(VOICE_INPUT_ENGINE, VOICE_ENGINE_TRANSCRIBE)
                         }
                         // Same for punctuation models, and importing one also turns the second pass on.
                         if (installed.kind == ModelPackageKinds.PUNCTUATION) {

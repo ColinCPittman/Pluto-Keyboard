@@ -68,6 +68,7 @@ import org.futo.voiceinput.shared.context.VoiceCommand
 import org.futo.voiceinput.shared.context.VoiceCommandAction
 import org.futo.voiceinput.shared.context.VoiceCommands
 import org.futo.voiceinput.shared.modelpackage.ModelPackages
+import org.futo.voiceinput.shared.engine.VoiceModelProfile
 
 /*
  * Voice Input → Smart corrections (a page of its own, with the on/off switch first, then what the
@@ -118,8 +119,13 @@ val ContextModelSetting = UserSetting(
             !hasModel -> stringResource(R.string.voice_input_settings_context_no_model)
             else -> stateText(
                 enabled,
-                if (whisperIsVoiceModel()) R.string.smart_corrections_row_description_whisper
-                else R.string.smart_corrections_row_description
+                currentVoiceModel().let {
+                    when {
+                        it.isWhisper -> R.string.smart_corrections_row_description_whisper
+                        it.profile.hearsWordsItself -> R.string.smart_corrections_row_description_accurate
+                        else -> R.string.smart_corrections_row_description
+                    }
+                }
             )
         },
         disabled = false,
@@ -127,13 +133,16 @@ val ContextModelSetting = UserSetting(
     )
 }
 
-private fun smartCorrectionOption(title: Int, subtitle: Int, setting: SettingsKey<Boolean>) =
-    userSettingToggleDataStore(
-        title = title,
-        subtitle = subtitle,
-        setting = setting,
-        disabled = { !smartCorrectionsOn() }
-    )
+private fun smartCorrectionOption(title: Int, subtitle: Int, setting: SettingsKey<Boolean>, notNeeded: NotNeeded? = null) =
+    UserSetting(name = title, subtitle = subtitle) {
+        val notNeededReason = notNeededText(notNeeded)
+        SettingToggleDataStore(
+            title = stringResource(title),
+            subtitle = notNeededReason ?: stringResource(subtitle),
+            setting = setting,
+            disabled = !smartCorrectionsOn() || notNeededReason != null,
+        )
+    }
 
 /** Voice Input → Smart corrections, with the switch, then which kinds of edits the context pass may make. */
 val SmartCorrectionsMenu = UserSettingsMenu(
@@ -160,7 +169,16 @@ val SmartCorrectionsMenu = UserSettingsMenu(
         }.opensVoiceSetupGuideWhen { ContextModels.installed(it).isEmpty() && ContextModels.deviceSupported }
             .tourTarget(TourTargets.SMART_CORRECTIONS_VOICE),
         userSettingDecorationOnly {
-            if (whisperIsVoiceModel()) Tip(stringResource(R.string.smart_corrections_whisper_note))
+            val model = currentVoiceModel()
+            when {
+                model.isWhisper -> Tip(stringResource(R.string.smart_corrections_whisper_note))
+                // (SmartFeaturePolicy leaves what the model does well to it)
+                model.profile.hearsWordsItself && model.profile.capitalizesItself ->
+                    Tip(stringResource(R.string.smart_corrections_accurate_model_note, model.name))
+                model.profile.hearsWordsItself ->
+                    Tip(stringResource(R.string.smart_corrections_accurate_model_casing_note, model.name))
+                model.profile.punctuatesItself -> Tip(stringResource(R.string.smart_corrections_punctuating_model_note, model.name))
+            }
         },
         userSettingDecorationOnly {
             Text(
@@ -171,11 +189,11 @@ val SmartCorrectionsMenu = UserSettingsMenu(
                 modifier = Modifier.padding(start = 80.dp, end = 16.dp, top = 8.dp, bottom = 8.dp)
             )
         },
-        smartCorrectionOption(R.string.smart_corrections_sound_alike, R.string.smart_corrections_sound_alike_subtitle, SMART_CORRECTIONS_SOUND_ALIKE),
+        smartCorrectionOption(R.string.smart_corrections_sound_alike, R.string.smart_corrections_sound_alike_subtitle, SMART_CORRECTIONS_SOUND_ALIKE, notNeeded = SOUND_ALIKE_NOT_NEEDED),
         smartCorrectionOption(R.string.smart_corrections_names, R.string.smart_corrections_names_subtitle, SMART_CORRECTIONS_NAMES),
         smartCorrectionOption(R.string.smart_corrections_numbers, R.string.smart_corrections_numbers_subtitle, SMART_CORRECTIONS_NUMBERS),
         // the options with a list you can edit open their own page
-        subpageOption(R.string.smart_corrections_fillers, R.string.smart_corrections_fillers_subtitle, SMART_CORRECTIONS_FILLERS) {
+        subpageOption(R.string.smart_corrections_fillers, R.string.smart_corrections_fillers_subtitle, SMART_CORRECTIONS_FILLERS, notNeeded = FILLERS_NOT_NEEDED) {
             FillerWordsMenu.navPath
         },
         subpageOption(R.string.smart_corrections_quotes, R.string.smart_corrections_quotes_subtitle, SMART_CORRECTIONS_QUOTES) {
@@ -202,8 +220,34 @@ val SmartCorrectionsMenu = UserSettingsMenu(
     )
 )
 
-/** One option's sensitivity, in five steps from fewest to most changes. */
-internal fun sensitivitySlider(title: Int, setting: SettingsKey<Int>, subtitle: Int? = null) = UserSetting(name = title, appearsInSearch = false) {
+/** Why an option is skipped for a voice model (SmartFeaturePolicy), shown on its greyed-out row. */
+internal class NotNeeded(val reason: Int, val skipped: (VoiceModelProfile) -> Boolean)
+
+// (getters, since the menus above are built before this point of the file)
+private val QUESTIONS_NOT_NEEDED get() = NotNeeded(R.string.smart_corrections_questions_not_needed) { it.punctuatesItself }
+private val FILLERS_NOT_NEEDED get() = NotNeeded(R.string.smart_corrections_fillers_not_needed) { it.dropsFillers }
+private val SOUND_ALIKE_NOT_NEEDED get() = NotNeeded(R.string.smart_corrections_sound_alike_not_needed) { it.hearsWordsItself }
+
+/** "Not needed: <model> ..." when the current voice model makes [notNeeded] unnecessary, else null. */
+@Composable
+private fun notNeededText(notNeeded: NotNeeded?): String? {
+    // (fixed per row, so rows that can't be greyed out never look the voice model up)
+    if (notNeeded == null) return null
+    val model = currentVoiceModel()
+    return if (notNeeded.skipped(model.profile)) stringResource(notNeeded.reason, model.name) else null
+}
+
+/**
+ * One option's sensitivity, in five steps from fewest to most changes, greyed out (and saying why)
+ * while the voice model does the option's job itself ([notNeeded]).
+ */
+internal fun sensitivitySlider(
+    title: Int,
+    setting: SettingsKey<Int>,
+    subtitle: Int? = null,
+    notNeeded: NotNeeded? = null,
+) = UserSetting(name = title, appearsInSearch = false) {
+    val notNeededReason = notNeededText(notNeeded)
     val labels = listOf(
         R.string.smart_corrections_sensitivity_fewest, R.string.smart_corrections_sensitivity_fewer,
         R.string.smart_corrections_sensitivity_default, R.string.smart_corrections_sensitivity_more,
@@ -216,7 +260,8 @@ internal fun sensitivitySlider(title: Int, setting: SettingsKey<Int>, subtitle: 
         transform = { kotlin.math.round(it).toInt() },
         indicator = { labels[(it - SmartCorrectionSensitivity.MIN).coerceIn(0, labels.size - 1)] },
         steps = SmartCorrectionSensitivity.MAX - SmartCorrectionSensitivity.MIN - 1,
-        subtitle = subtitle?.let { stringResource(it) },
+        subtitle = notNeededReason ?: subtitle?.let { stringResource(it) },
+        disabled = notNeededReason != null,
     )
 }
 
@@ -236,11 +281,11 @@ val SmartCorrectionsSensitivityMenu = UserSettingsMenu(
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
             )
         },
-        sensitivitySlider(R.string.smart_corrections_sound_alike, SMART_CORRECTIONS_SENSITIVITY_SOUND_ALIKE),
+        sensitivitySlider(R.string.smart_corrections_sound_alike, SMART_CORRECTIONS_SENSITIVITY_SOUND_ALIKE, notNeeded = SOUND_ALIKE_NOT_NEEDED),
         sensitivitySlider(R.string.smart_corrections_names, SMART_CORRECTIONS_SENSITIVITY_NAMES),
-        sensitivitySlider(R.string.smart_corrections_questions, SMART_CORRECTIONS_SENSITIVITY_QUESTIONS),
+        sensitivitySlider(R.string.smart_corrections_questions, SMART_CORRECTIONS_SENSITIVITY_QUESTIONS, notNeeded = QUESTIONS_NOT_NEEDED),
         sensitivitySlider(R.string.smart_corrections_numbers, SMART_CORRECTIONS_SENSITIVITY_NUMBERS),
-        sensitivitySlider(R.string.smart_corrections_fillers, SMART_CORRECTIONS_SENSITIVITY_FILLERS),
+        sensitivitySlider(R.string.smart_corrections_fillers, SMART_CORRECTIONS_SENSITIVITY_FILLERS, notNeeded = FILLERS_NOT_NEEDED),
         sensitivitySlider(R.string.smart_corrections_quotes, SMART_CORRECTIONS_SENSITIVITY_QUOTES),
         sensitivitySlider(R.string.smart_corrections_emoji, SMART_CORRECTIONS_SENSITIVITY_EMOJI),
         sensitivitySlider(R.string.smart_corrections_commands, SMART_CORRECTIONS_SENSITIVITY_COMMANDS),
@@ -248,15 +293,19 @@ val SmartCorrectionsSensitivityMenu = UserSettingsMenu(
     )
 )
 
-/** An option with its own page, where the row says whether it is on and opens the page. */
-private fun subpageOption(title: Int, description: Int, setting: SettingsKey<Boolean>, navPath: () -> String) =
+/**
+ * An option with its own page, where the row says whether it is on and opens the page, greyed out
+ * (and saying why) while the voice model does the option's job itself ([notNeeded]).
+ */
+private fun subpageOption(title: Int, description: Int, setting: SettingsKey<Boolean>, notNeeded: NotNeeded? = null, navPath: () -> String) =
     UserSetting(name = title, subtitle = description) {
         val navController = LocalNavController.current
         val on = useDataStoreValue(setting)
+        val notNeededReason = notNeededText(notNeeded)
         SubpageRow(
             title = stringResource(title),
-            subtitle = stateText(on, description),
-            disabled = !smartCorrectionsOn(),
+            subtitle = notNeededReason ?: stateText(on, description),
+            disabled = !smartCorrectionsOn() || notNeededReason != null,
             onClick = { navController?.navigate(navPath()) }
         )
     }

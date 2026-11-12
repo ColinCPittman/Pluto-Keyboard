@@ -33,6 +33,8 @@ import org.futo.inputmethod.latin.uix.settings.DropDownPickerSettingItem
 import org.futo.inputmethod.latin.uix.settings.NavigationItemStyle
 import org.futo.inputmethod.latin.uix.settings.Tip
 import org.futo.inputmethod.latin.uix.settings.UserSetting
+import org.futo.inputmethod.latin.uix.SettingsKey
+import org.futo.inputmethod.latin.uix.settings.SettingToggleDataStore
 import org.futo.inputmethod.latin.uix.settings.UserSettingsMenu
 import org.futo.inputmethod.latin.uix.settings.useDataStore
 import org.futo.inputmethod.latin.uix.settings.useDataStoreValue
@@ -43,6 +45,18 @@ import org.futo.inputmethod.latin.uix.theme.Typography
 private val visibilityCheckNotSystemVoiceInput = @Composable {
     useDataStoreValue(USE_SYSTEM_VOICE_INPUT) == false
 }
+
+/** A Whisper-only switch, greyed out with [reason] (taking the model's name) for the other voice models. */
+private fun whisperOnly(title: Int, subtitle: Int?, setting: SettingsKey<Boolean>, reason: Int) =
+    UserSetting(name = title, subtitle = subtitle, visibilityCheck = visibilityCheckNotSystemVoiceInput) {
+        val model = currentVoiceModel()
+        SettingToggleDataStore(
+            title = stringResource(title),
+            subtitle = if (model.isWhisper) subtitle?.let { stringResource(it) } else stringResource(reason, model.name),
+            setting = setting,
+            disabled = !model.isWhisper,
+        )
+    }
 
 private data class VoiceIMEInfo(
     val builtin: Boolean,
@@ -186,16 +200,16 @@ val VoiceInputMenu = UserSettingsMenu(
             setting = AUDIO_FOCUS
         ).copy(visibilityCheck = visibilityCheckNotSystemVoiceInput),
 
-        userSettingToggleDataStore(
-            title = R.string.voice_input_settings_suppress_symbols,
-            setting = DISALLOW_SYMBOLS
-        ).copy(visibilityCheck = visibilityCheckNotSystemVoiceInput),
+        whisperOnly(
+            R.string.voice_input_settings_suppress_symbols, null, DISALLOW_SYMBOLS,
+            R.string.voice_input_settings_suppress_symbols_not_whisper
+        ),
 
-        userSettingToggleDataStore(
-            title = R.string.voice_input_settings_long_form,
-            subtitle = R.string.voice_input_settings_long_form_subtitle,
-            setting = CAN_EXPAND_SPACE
-        ).copy(visibilityCheck = visibilityCheckNotSystemVoiceInput),
+        // (the other models stream the audio as it comes, so there is no 30-second buffer to extend)
+        whisperOnly(
+            R.string.voice_input_settings_long_form, R.string.voice_input_settings_long_form_subtitle, CAN_EXPAND_SPACE,
+            R.string.voice_input_settings_long_form_not_needed
+        ),
 
         userSettingToggleDataStore(
             title = R.string.voice_input_settings_autostop_vad,

@@ -75,7 +75,11 @@ val ANIMATE_BUBBLE = SettingsKey(
     default = true
 )
 
-/** Speech recognition engine for built-in voice input, either [VOICE_ENGINE_WHISPER] or [VOICE_ENGINE_MOONSHINE]. */
+/**
+ * Speech recognition engine for built-in voice input: [VOICE_ENGINE_WHISPER], [VOICE_ENGINE_MOONSHINE]
+ * or [VOICE_ENGINE_TRANSCRIBE] (Nemotron, Parakeet). The settings show one list of voice models and
+ * choosing one sets this.
+ */
 val VOICE_INPUT_ENGINE = SettingsKey(
     key = stringPreferencesKey("voice_input_engine"),
     default = VOICE_ENGINE_WHISPER
@@ -83,6 +87,13 @@ val VOICE_INPUT_ENGINE = SettingsKey(
 
 const val VOICE_ENGINE_WHISPER = "whisper"
 const val VOICE_ENGINE_MOONSHINE = "moonshine"
+const val VOICE_ENGINE_TRANSCRIBE = "transcribe"
+
+/** Id of the selected `transcribe` model package (empty = first installed one). */
+val TRANSCRIBE_MODEL_ID = SettingsKey(
+    key = stringPreferencesKey("transcribe_model_id"),
+    default = ""
+)
 
 /** Id of the selected `moonshine-streaming` model package (empty = first installed one). */
 val MOONSHINE_MODEL_ID = SettingsKey(
@@ -171,10 +182,10 @@ val SMART_CORRECTIONS_NAMES = SettingsKey(
     default = true
 )
 
-/** Spoken numbers, times and amounts as digits. */
+/** Spoken numbers, times, amounts and dates as digits. On by default, so a spoken year or date never stays written out in words. */
 val SMART_CORRECTIONS_NUMBERS = SettingsKey(
     key = booleanPreferencesKey("smart_corrections_numbers"),
-    default = false
+    default = true
 )
 
 /** Spoken commands ("new line", "comma", "scratch that") at pauses. */

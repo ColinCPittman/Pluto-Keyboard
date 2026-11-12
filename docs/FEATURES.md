@@ -10,6 +10,7 @@ The first part of this guide explains each feature in everyday terms. If you wan
 
 - [Voice typing](#voice-typing)
   - [Live voice typing with Moonshine](#live-voice-typing-with-moonshine)
+  - [Nemotron and Parakeet voice models](#nemotron-and-parakeet-voice-models)
   - [Fix punctuation](#fix-punctuation)
   - [Smart corrections for voice](#smart-corrections-for-voice)
   - [Sensitivity dials](#sensitivity-dials)
@@ -40,8 +41,8 @@ The first part of this guide explains each feature in everyday terms. If you wan
 
 Voice input happens in a few short steps. Only the first one is required, and each of the others has its own switch.
 
-1. **Speech recognition** turns your voice into words. English uses Moonshine (live), and other languages use FUTO's Whisper (after you finish).
-2. **Fix punctuation** takes out the voice model's punctuation (which puts a period at every pause) and punctuates the whole dictation again, so pauses no longer break your sentences apart.
+1. **Speech recognition** turns your voice into words. For English you can choose Moonshine or Nemotron (both live) or Parakeet (after you finish), and other languages use FUTO's Whisper (after you finish).
+2. **Fix punctuation** takes out the voice model's periods and commas and punctuates the whole dictation again, so pauses no longer break your sentences apart (Moonshine puts a period at every pause) and a missing period or question mark gets added (Nemotron and Parakeet often leave them out). It runs after Moonshine, Nemotron and Parakeet, not after Whisper.
 3. **Smart corrections** reads the finished text with a small language model and fixes what only the whole sentence can tell, like misheard words, names, numbers and spoken commands.
 
 Tap the microphone to start. Tap again to finish, or tap **Cancel** to throw the dictation away without typing anything.
@@ -66,11 +67,26 @@ You can also hold the microphone button in the suggestion bar and talk, then let
 - Speak in phrases with natural pauses. Pauses tell the later steps where sentences and commands begin.
 - If live text feels laggy, try Tiny, or turn down **Live text refresh** under Advanced options.
 
+### Nemotron and Parakeet voice models
+
+**What they do.** Two NVIDIA speech models, English only, that add some punctuation and capital letters themselves.
+
+| Model | Size | How it types |
+|---|---|---|
+| Nemotron Streaming | about 475 MB | Live, like Moonshine. With the punctuation model, the most accurate of the voice models on Pluto's test bench (Moonshine Medium is close). |
+| Parakeet 110M | about 135 MB | All at once, right after you finish. Smaller and very quick, and it writes numbers as words (Smart corrections' Numbers fix turns them into digits). |
+
+**Set them up.** Import the package (a `.zip`) under Languages & Models → English → Voice Input Model. Importing one selects it, and you can switch between all your voice models on that page.
+
+**How they work.** Both run with transcribe.cpp, on your phone's fast cores. Their own punctuation often leaves the period off the end (24 of 44 dictations on the test phone) and misses question marks when your voice doesn't go up, so Fix punctuation runs after them, and so does Smart corrections' question-mark fix. On the test bench that gets about 18% more dictations exactly right with Nemotron. Both keep some "um" and "uh", so the Filler words fix runs for them too. Nemotron misses some capitals (months and names, as in "march" or "Hi mom"), so Smart corrections still capitalizes those from the dictionary. On the test phone, Nemotron keeps up with speech using about half the time you talk, and the text is in about half a second after you finish. Parakeet finishes a 10-second dictation in under a second.
+
+**Getting the most out of them.** Pick Nemotron if you like to see your words as you talk, and Parakeet for a smaller download and less memory. Add the punctuation model, and in Smart corrections switch on Voice commands, Filler words and Emoji (Numbers, times and amounts is already on). On the test bench each of the four fixed far more dictations than it broke with both models (Numbers matters most for Parakeet, which writes numbers as words). The setup tutorial's last step can switch them on for you. Both need a phone with plenty of free memory while you dictate, especially with Smart corrections loaded too.
+
 ### Fix punctuation
 
-**What it does.** After you stop speaking, it removes Moonshine's periods, commas and other punctuation and works out where your sentences really end, plus the commas and capital letters. It keeps Moonshine's question marks and exclamation marks (Moonshine heard your tone of voice), its capitals in the middle of a sentence (usually names), and the dots in abbreviations and numbers. It never changes your words.
+**What it does.** After you stop speaking, it removes the voice model's periods, commas and other punctuation and works out where your sentences really end, plus the commas and capital letters. A dictation that is only a greeting ("Dear team", "Hi Sarah") ends with a comma. It keeps the voice model's question marks and exclamation marks (the voice model heard your tone of voice), its capitals in the middle of a sentence (usually names), and the dots in abbreviations and numbers. It never changes your words.
 
-**Set it up.** Import a punctuation model (Languages & Models → English → Punctuation Model). Importing the model switches on **Fix punctuation** in Voice Input settings. The model (`pcs_en`, about 67 MB) restores punctuation, capitals and sentence breaks. Like Moonshine, it is English only. Whisper adds its own punctuation, so this step is skipped while Whisper is your voice model. That's why **Fix punctuation** and the Punctuation Model row are greyed out then (tap either one to see why, with a button to choose your voice model).
+**Set it up.** Import a punctuation model (Languages & Models → English → Punctuation Model). Importing the model switches on **Fix punctuation** in Voice Input settings. The model (`pcs_en`, about 67 MB) restores punctuation, capitals and sentence breaks. It is English only. Whisper adds its own punctuation, so this step is skipped while Whisper is your voice model. That's why **Fix punctuation** and the Punctuation Model row are greyed out then (tap either one to see why, with a button to choose your voice model).
 
 **How it works.** Moonshine ends a sentence at every pause, so "We should. You know, leave early." is common raw output. The punctuation model reads the whole transcript at once and decides where sentences really end. When Smart corrections is on, a further check (the *sentence-break veto*) asks the language model whether each break the punctuation step added mid-utterance reads better joined. A clause starting with "who" or "which" is rejoined with a comma ("to Marcus. Who locked…" becomes "to Marcus, who locked…"), unless that sentence is a question.
 
@@ -102,6 +118,8 @@ Writes spoken numbers as digits, like "twenty five dollars" → "$25", "three th
 - Amounts with a unit (dollars, percent and so on) always become digits, anywhere in a sentence. "Six hundred dollars profit" becomes "$600 profit". The same goes for digits followed by a spoken unit, so "800 dollars" becomes "$800".
 - A plain number that starts a sentence stays in words ("Three hundred people came"), as style guides recommend.
 - A lone number word with no unit needs more evidence, since "forty winks" and "the eleventh hour" read better spelled out.
+- Years and dates become digits too. "Twenty twenty one to twenty twenty four" becomes "2021-2024", "eleven eleven twenty twenty six" becomes "11/11/2026" and "november eleventh twenty twenty six" becomes "November 11th, 2026".
+- It is on by default and works the same with every voice model.
 
 #### Filler words
 
@@ -183,10 +201,14 @@ The microphone button uses Pluto's own offline voice typing by default. On the V
 
 ### Smart corrections for typing
 
-**What it does.** It rereads each sentence you finish and fixes typos that slipped past the usual autocorrect, using the words around them. It fixes two kinds, each with its own switch.
+**What it does.** It rereads each sentence you finish and fixes typos that slipped past the usual autocorrect, using the words around them. It looks at your message as it is, however the text got there. So a sentence you go back and change, text you dictate and then edit, or text you paste gets checked too, including the part after the cursor. Text that was already in the box when you opened it (a quoted email, a signature, an old note) is left alone until you change it, and so are quoted mail lines starting with ">". It fixes these kinds, each with its own switch.
 
 - **Fix typos that are real words.** These are slips that spell another word, which a spell checker can't catch, like "salt an pepper" → "salt and pepper" or "an email form my boss" → "from". It uses the [typing corrections list](#the-typing-corrections-list).
-- **Attempt to fix missed typos.** These are misspelled words that got through anyway, for example because the typo was the middle suggestion and the space bar kept it. It works out the word you meant from the letters you typed *and* the sentence around them, like "ststy the game" → "start the game".
+- **Attempt to fix missed typos.** These are misspelled words that got through anyway, for example because the typo was the middle suggestion and the space bar kept it. It works out the word you meant from the letters you typed *and* the sentence around them, like "ststy the game" → "start the game". This switch also covers a missed or extra space or apostrophe ("upto" → "up to", "thats" → "that's").
+- **Fix missing and extra words.** These are the slips of going back to change a message while you're distracted. A small word left out ("a cup coffee" → "a cup of coffee"), a word typed twice ("to to"), a word left over from what you had before, or two words the wrong way round.
+- **Fix word endings.** A word whose ending doesn't fit the words around it, often left behind when you change part of a sentence ("a long lists" → "a long list", "you friends" → "your friends").
+
+The last two start on, but like the rest they only work once you turn on Smart corrections for typing itself.
 
 **Set it up.** It uses the Smart corrections model (the same one as voice). Turn it on in Text Prediction → Smart corrections for typing. English only. It needs the suggestion bar (that's where you see and undo its fixes), so it pauses while the bar is hidden and starts again when you show the bar. Hiding the bar while it's on asks you first.
 
@@ -195,7 +217,8 @@ The microphone button uses Pluto's own offline voice typing by default. On the V
 - Fixes stay tracked while you edit around them, by the words on either side, so adding or deleting text before a fix doesn't lose it.
 - The fixed word is also underlined in your text. If an app drops the underline later (Google Messages did once), Pluto puts it back on its own, without changing your text or moving the cursor. Some apps never draw it at all. Tap the eye on the button, or on a row of the list, to see exactly where the fix is. It selects the word for a few seconds (every app shows a selection and scrolls to it), then your cursor goes back. Typing during that time goes where you were typing, never over the word.
 - With several fixes, "+N" opens the list of all of them. A fix whose own word you have since edited can't be undone from there.
-- Right after an undo, the button offers **Stop** for a few seconds. Tapping it stops that fix everywhere by switching off its pair in your corrections list (or, for a missed typo, by adding the word to your never-change list).
+- Right after an undo, the button offers **Stop** for a few seconds. Tapping it stops that fix everywhere by switching off its pair in your corrections list (or, for a missed typo, by adding the word to your never-change list). A missing or extra word, an ending or a join has no pair to stop, but undoing one still teaches caution and keeps it from coming back.
+- Changing a fix back by hand (say you delete the word it added) counts as an undo too.
 - **Typing fix buttons on the right** puts the undo and list buttons near your right thumb. Turn it off to put them on the left.
 
 **It learns from you.**
@@ -206,7 +229,8 @@ The microphone button uses Pluto's own offline voice typing by default. On the V
 **Sensitivity.** There is one dial for typing. Slide left and it holds back, changing your words only when it's sure. Slide right and it steps in more readily.
 
 **How it works.**
-- After a sentence ends (or a few words after a possible slip, while you keep typing), the sentence is checked in the background. Each candidate fix is scored as the whole text, including up to 300 characters before the sentence, with the same language model as voice. A sentence gets at most two fixes, and a word that was fixed or that you changed by hand is never changed again.
+- After a sentence ends (or a few words after a possible slip, while you keep typing), the sentence is checked in the background. A sentence that changes later (you go back and edit it, dictate into it, or paste) is checked again, and one that didn't change isn't. Each candidate fix is scored as the whole text, including up to 300 characters before the sentence, with the same language model as voice. A sentence gets at most two fixes, and a word that was fixed, that you picked from the suggestions or whose fix you undid is never changed again.
+- *Missing, extra and swapped words, endings and joins.* Each sentence has hundreds of these possible edits, and a slip shows up as a word the model finds surprising right after it. So edits are only tried around surprising words (a clean sentence has few or none, which keeps it quick), and only the few that fit best are scored. Each kind has its own margin. A removed word is judged by what it does to the words after it, since taking any word out makes a text shorter and so more likely.
 - *Real-word typos.* Candidates are the pairs of the typed word, for example "an" → "and". A fix must raise the probability of the whole text by a margin, and more for a sentence's first word (which has less context). The words after the fix must not get less likely. Your own pairs need less evidence.
 - *Missed typos.* A word none of the keyboard's dictionaries knows (the main dictionary, your personal dictionary, contacts and learned words) gets candidates from about 55,000 common words. They're ranked by how likely the slip is on a QWERTY keyboard. A neighbouring key costs less than a far one, and swapped, doubled and missing letters each have their own cost ("ststy" → "start" is three neighbour-key slips). Each candidate's score is how much more likely the sentence becomes, minus the cost of the slip. The best candidate is used only if it scores well **and** clearly beats the runner-up, and a near-tie is left alone rather than guessed. So it combines both kinds of evidence, the way you'd fill in the blank in "I've sent the order, so ____ the game now" knowing the typo was "ststy".
 - Missed typos never touch words with capitals inside or in all caps ("MCP"), a capitalized word mid-sentence (likely a name), words with digits or symbols, words shorter than three letters, or anything a dictionary knows. Words under five letters need stronger evidence, since they have many neighbours and are often abbreviations ("brb").
@@ -328,7 +352,7 @@ Settings → Help & Feedback has the feature tip switches, a button to run the s
 
 Pluto can't download anything by itself (that's the point of having no internet permission). Get model files from the [models page](https://github.com/ColinCPittman/Pluto-Keyboard/releases/tag/models) in your browser and import them without unzipping (Voice Input → Set up voice typing, or Languages & Models → English).
 
-The first time you open Pluto's settings (with no models yet), a setup tutorial walks you through it. It takes you to Languages & Models and lights up what to tap next, first for the voice model, then punctuation, then Smart corrections. For each one it shows the model's row, the release page link, and the import button, then the setting the model switched on (for Smart corrections, the voice switch and then the typing switch, which stays off until you turn it on). It ends back on the Smart corrections page, pointing out the other switches there to set the way you like, with a **Finish tutorial** button. Every step has **Skip step** and **Skip tutorial**, and if you wander off to another screen a small bar lets you continue. Skipping a model's row or its import skips that model. On a first run, a model you already have skips straight to the settings it turns on. Running the tutorial again from Help shows every step as a reminder, even for models you have, and those steps have **Next** instead of Skip step. If you skip the voice model, voice typing uses Whisper, so the punctuation step only explains that punctuation is for Moonshine, and the Smart corrections step says it works best with Moonshine (it still helps with typing). Both have a **Set up Moonshine** button that takes you back to the voice model. Settings → Help can start the tutorial again (**Show the setup tutorial again**). To build your own model packages, see [MODELS.md](MODELS.md). To build the app and the official packages, see [BUILDING.md](BUILDING.md).
+The first time you open Pluto's settings (with no models yet), a setup tutorial walks you through it. It takes you to Languages & Models and lights up what to tap next, first for the voice model, then punctuation, then Smart corrections. For each one it shows the model's row, the release page link, and the import button, then the setting the model switched on (for Smart corrections, the voice switch and then the typing switch, which stays off until you turn it on). It ends back on the Smart corrections page, pointing out the other switches there. For Moonshine, Nemotron and Parakeet it says which of the switches that start off helped that voice model most on the test bench, with a **Switch these on** button (Numbers, times and amounts, Voice commands, Filler words and Emoji) next to **Finish tutorial**. The texts along the way follow the voice model you imported: Nemotron and Parakeet are told why they need the punctuation model too, and Parakeet is pointed at the Numbers switch. Every step has **Skip step** and **Skip tutorial**, and if you wander off to another screen a small bar lets you continue. Skipping a model's row or its import skips that model. On a first run, a model you already have skips straight to the settings it turns on. Running the tutorial again from Help shows every step as a reminder, even for models you have, and those steps have **Next** instead of Skip step. If you skip the voice model, voice typing uses Whisper, so the punctuation step only explains that punctuation is for the other voice models, and the Smart corrections step says it does more with them (it still helps with typing). Both have a **Set up a voice model** button that takes you back to the voice model. Settings → Help can start the tutorial again (**Show the setup tutorial again**). To build your own model packages, see [MODELS.md](MODELS.md). To build the app and the official packages, see [BUILDING.md](BUILDING.md).
 
 ---
 
@@ -367,7 +391,7 @@ Some fixes are certain, which means the rules are sure enough that the model doe
 
 ### The order things happen in
 
-After Moonshine (or Whisper) finishes, punctuation runs first (only after Moonshine, since Whisper adds its own), then Smart corrections. Smart corrections works in this order.
+After the voice model finishes, punctuation runs first (after Moonshine, Nemotron and Parakeet; Whisper punctuates well by itself), then Smart corrections. The sentence-break check below runs only when the punctuation step ran, and question marks and capitals run unless the voice model already does them well (only Whisper does). Smart corrections works in this order.
 
 1. **Sentence-break check.** Breaks the punctuation step added in the middle of one spoken phrase can be joined back up (see [sentence breaks](#sentence-breaks)).
 2. **Rule-based fixes**, in this order (each only if its switch is on). Voice commands come first and run up to three times in a row (so two commands back to back both work), then emoji, quoted speech, filler words, self-corrections and numbers. Commands go first so a quote they open keeps the filler words inside it.
@@ -494,6 +518,9 @@ The punctuation step sometimes ends a sentence in the middle of a phrase you sai
 - **Always converted (certain).** Amounts with a unit ("six hundred dollars" to "$600", "fifty percent" to "50%", "two dollars and fifty cents" to "$2.50"), and digits the speech model already wrote followed by a unit word ("800 dollars" to "$800", "30 percent" to "30%").
 - **Converted when the model agrees.** Times with am or pm ("three thirty pm" to "3:30 PM"), times without am or pm only after words like at, by, until or around ("meet at three thirty"), years ("nineteen ninety five" to "1995"), numbers of 10 or more ("two hundred and fifty" to "250"), and ordinals of 10 or more ("twenty first" to "21st").
 - **A lone number word** with no unit ("forty", "eleventh") needs 5.0 points, because "forty winks" and "the eleventh hour" read better spelled out.
+- **Year ranges.** Two years joined by "to" or "through" become one range with a hyphen ("from twenty twenty one to twenty twenty four" to "from 2021-2024", and a short second year stays short, "2021-24"). Joined by "and", "or" or "until" the word stays ("between 1999 and 2005"). A range the speech model already wrote in digits ("2021 to 2024") gets the hyphen as well, unless both numbers are round ("1500 to 2000 points") or follow a "$".
+- **Dates said as numbers.** "Eleven eleven twenty twenty six" becomes "11/11/2026", with or without saying "slash". The month must be 1 to 12 and the day 1 to 31, and it is left alone after words like at, around, call or room, and before dollars, percent, am or pm. With a two-digit year and no "slash" it also needs a word like on, due or born before it.
+- **Month dates.** "November eleventh twenty twenty six" becomes "November 11th, 2026", "november eleven twenty twenty six" becomes "November 11, 2026", and "november twenty twenty six" becomes "November 2026". "May" and "march" count as months only when capitalized or after words like on, by or until.
 - **Never converted.** Single digits (zero to nine), ordinals below 10, "5 dollar bill", "$800 dollars", "ten four", "twenty four seven", "the nineteen eighties", and capitalized names like "Ocean's Eleven". A plain number at the start of a sentence usually stays in words, because the model prefers it that way there.
 
 ### Your phrase lists
@@ -516,13 +543,23 @@ Filler words, self-correction phrases, quote triggers, emoji names and voice com
 ### When a sentence is checked
 
 - **Fields.** It's off in password, incognito, email, web address and no-suggestion fields, and in fields where autocorrect isn't allowed. It's English only.
-- **Timing.** A check runs after a space or punctuation, never in the middle of a word. A finished sentence (ending in . ? or !) is checked once.
-- **Early checks.** While you're still typing a sentence, a word that has a pair gets an early check 3, 4, 5 and 6 words later, and a missed typo (a word no dictionary knows) 2, 3, 4 and 5 words later. Checks also run while you're in the middle of a word (they look at the text before it), and a fix they find goes in when that word ends, so nothing changes under your fingers. A check for an unfinished sentence you've already typed past is skipped in favor of the newer text.
+- **What it reads.** Up to 600 characters on each side of the cursor, split into sentences. A sentence cut off at either edge of that is left for later, and so is one starting within 80 characters of a cut-off start (its context would change with every key).
+- **Text that was already there.** When a field opens, the text already in it (up to 4,000 characters on each side of the cursor) is taken as it is and left alone, since it may not be yours (a quoted email, a signature, a template, an old note). A sentence of it is checked once you change it. Anything you type, dictate or paste after that is checked as usual. In a longer text, moving the cursor more than 2,000 characters from where that was read reads the text around the new place as already there too, before any of it is checked. When the same field comes back (back from voice typing, or the same conversation within 10 minutes with most of its fixes still there), what was left alone before still is, and nothing new is taken as already there, so what you typed just before leaving still gets its check. Lines of quoted mail (starting with ">") are never checked.
+- **Words it can't read whole.** The model's word list is plain A to Z, so a word with an accent ("café", "jalapeño"), a curly apostrophe ("that’s") or a digit run into it ("20dollars") is never changed or taken for a typo, and no fix spans it.
+- **Links, addresses and names.** The same goes for every piece of a link or path ("site.com/teh-best"), an email address, an @name, a #tag, a file name ("notes.txt") or code. That is any run of characters without spaces that has one of @ # / \ _ = & ~ | < > ^ in it, or a dot or colon right between two letters or digits.
+- **The text as it is.** It doesn't matter how the text got there (typed, swiped, dictated, pasted, or a draft the app brought back). A sentence that was checked and needed nothing isn't checked again while it stays the same (its text and the 80 characters before it). Any change to it, even one of its own fixes, makes it due again. This memory holds the last 256 checks and is kept when you switch fields, so a draft that comes back isn't checked all over again.
+- **Timing.** A check runs right after a space or punctuation. Other changes (a key in the middle of a word, dictation, a paste, moving the cursor) are looked at a quarter second after they settle, so a burst of changes makes one look. A finished sentence (ending in . ? or !, or a line break) is checked once. A sentence with no end mark counts as finished once the cursor is in another one.
+- **Editing in the middle.** A sentence with the cursor inside it (text on both sides) is judged as a whole, the words after the cursor included, once you've stopped for 1.5 seconds. The word the cursor is in or next to is never changed.
+- **Early checks.** While you're still typing a sentence, a word that has a pair gets an early check 3, 4, 5 and 6 words later, and a missed typo (a word no dictionary knows) 2, 3, 4 and 5 words later. A word typed twice ("to to") gets one 3 to 6 words later too. When you stop typing for 1.5 seconds, the unfinished sentence also gets one look for the other editing slips. Checks also run while you're in the middle of a word (they look at the text before it), and a fix they find goes in when that word ends, so nothing changes under your fingers. The check right after a key only happens when you're typing at the end of a line. With text after the cursor, the sentence waits for the pause described above.
+- **Order.** The sentence at the cursor goes first, then the others by how close they are (the one before the cursor first on a tie). One check runs at a time, and a running check whose sentence you change is stopped, since its answer would be no use.
 - **Length.** Sentences shorter than 3 words aren't checked.
 - **Number of fixes.** Each check makes at most one fix (the one that wins by the most), and a sentence gets at most 2.
-- **Words left alone.** A word you picked from the suggestions, backspaced into, already got fixed, or undid is never changed again.
-- **What the model sees.** Up to 300 characters before the sentence, plus the sentence itself (never anything after the cursor).
-- **Busy keyboard.** Checks run in the background. A fix found while you're typing a word waits until the word ends, and it's only applied if the text it checked hasn't changed.
+- **Words left alone.** A word you picked from the suggestions, a fix already made, and a fix you undid (with the button or by changing it back yourself) are never changed again. They're found by the text around them, so editing other parts of the message doesn't lose them. Backspacing into a word doesn't count, since leftovers from editing are exactly what it should catch.
+- **What the model sees.** Up to 300 characters before the sentence, plus the sentence itself. For a sentence you're editing in the middle of, that includes its words after the cursor.
+- **Busy keyboard.** Checks run in the background, and never while voice input is open (they pick up again when it closes). A fix found while you're typing a word waits until the word ends, and it's only applied if the text it checked is still there, word for word (found again if you edited elsewhere), and the cursor hasn't moved onto it. A fix after the cursor goes in without moving the cursor.
+- **Right after autocorrect.** When autocorrect has just changed the word before the cursor (say on a period), Backspace would change it back by its old length. So a fix before the cursor waits for your next key, and any fix before the cursor ends that Backspace undo.
+- **Careful with the app.** Before a fix goes in, the app must select exactly the words being changed, and afterwards the fix must read back as written. If an app selects something else, fixes after the cursor stop in that field (or all fixes, if it happened before the cursor), and nothing is written. If a fix doesn't read back as written, fixes stop in that field. And if the words aren't where the keyboard expects when it looks from the app's own cursor (the app moved the cursor or changed the text a moment ago), nothing is touched, the cursor included.
+- **A sentence the model can't take.** If a check fails twice on the same sentence, that sentence is left as it is, and the others still get their turn.
 
 ### Typos that are real words
 
@@ -552,6 +589,18 @@ Filler words, self-correction phrases, quote triggers, emoji names and voice com
 - **Winning.** The best candidate must score at least 2 points, and beat the runner-up by at least 3 points (if there's no runner-up, that test passes). A near tie is left alone rather than guessed.
 - **Short words.** They need 2 more points for each letter under 5 (4 for a 3-letter word, so 6 in total), because they have many neighbours and are often abbreviations.
 
+### Missing, extra and swapped words, endings and joins
+
+- **Which edits.** A small word added before a word (never before a sentence's first word), a word removed (any word but a sentence's first or last, with a word typed twice in a row, twice within 3 words or in two forms like "photos photo" counting as stronger evidence), two neighbouring words swapped, a different ending of the same word ("lists" → "list", "you" → "your"), and two words joined, one split or an apostrophe added or taken away. Words people double on purpose ("so so", "bye bye") are left alone.
+- **Where.** The first pass gives every word a score for how expected it was. A word at -6.5 points or lower is surprising (the first word of a sentence never counts). Edits are only tried on a surprising word or the 2 words before it. Exact repeats are always tried.
+- **Choosing.** At most 8 edits are scored per check, 2 of each kind (added words, removed words, endings and swaps), and what one kind doesn't use isn't given to another. Exact repeats and up to 2 joins are scored on top. Added words, endings and swaps are ranked by how well their first word fits where it goes. An added word must fit at least 3 points better there than the typed word, and an ending or swap must fit at least as well. Removed words are ranked by how surprising the word after them is.
+- **Two steps.** Each edit is first scored only up to 2 words after it, where a slip shows. The 2 that come closest (within 2 points of their margin) are then scored to the end of the text, and only those can win.
+- **Winning.** Each kind has its own margin at the default sensitivity. An added word needs 6 points, an ending 6.5, a swap 6.5 and a join 5.5. An exact repeat needs 6. Any other removed word is judged only by the words after it, which must become 8.5 points more likely (6 for a word typed twice within 3 words or in two forms). The first word of a sentence needs 3 more, as for real-word fixes.
+- **A removed word or a missing one.** A leftover word and a missing word can look the same ("we had dinner you last night" is missing "with", it doesn't have a "you" too many). So a word that isn't a repeat is not removed when another change at the same place (an added word, an ending, a swap or a pair) would gain 3 points or more.
+- **A swap either way.** A word one place off can be moved back or forward ("out running of time" is "running out of time", not "out of running time"). Before a swap is made, the swaps sharing a word with it are scored too, and the best one wins.
+- **Sensitivity.** The slider moves these margins by the same steps as the real-word one, but never below 1.
+- **Undo.** These have no pair, so an undo doesn't offer Stop. It teaches caution like any undo (counted by the whole change, like "to to" to "to"), and the sentence as the fix left it isn't made again in any form ("to call" → "call" gives the same sentence as "to to" → "to").
+
 ### The Sensitivity slider (typing)
 
 | Step | Real-word fix needs | Missed typo needs | Missed typo must beat the runner-up by |
@@ -568,14 +617,14 @@ The first-word extra, the "then/than" relief, your own pairs' relief and the 1.5
 
 Pluto keeps counts per change ("an" to "and") and per change in a context (the words just before and after, stored only as a hash). It never stores your text.
 
-- **Undoing a fix** adds 1.5 points of caution for that change everywhere, and 4 points in that context.
+- **Undoing a fix** (any kind) adds 1.5 points of caution for that change everywhere, and 4 points in that context. It also keeps a number for the sentence as the fix left it (a hash, not the text), and a fix that would leave a sentence that way again isn't made.
 - **Fixing a miss yourself** (a word with a pair that was left alone, which you then change into its pair word) takes 1 point off everywhere and 2 points in that context. This only works for real-word pairs.
 - **Limits.** The two cancel each other out, one for one. In total a change can get at most 15 points more careful or 4 points more ready.
 - **Missed typos.** Caution from undos also applies to missed typos, and it widens the lead over the runner-up they need.
 
 ### Undo, Stop and Add correction
 
-- **Undo.** Tapping the fix button in the suggestion bar puts your word back (only if the 20 characters around it haven't changed), teaches caution, and offers **Stop** for 8 seconds or until you type again.
+- **Undo.** Tapping the fix button in the suggestion bar puts your word back (only if the 20 characters around it haven't changed), teaches caution, and offers **Stop** for 8 seconds or until you type again. Changing a fix back by hand counts the same (without the Stop offer), once the cursor has left it. Either way that same change isn't made again. With the cursor inside the fix or a selection over it, the cursor goes to the end of your words first. If the undo can't be done, a short message says so.
 - **Stop.** It switches off that pair in your corrections list (removing it from your own pair, or switching off the built-in pair). For a missed typo it adds the word to your never-change list.
 - **Add correction.** It appears when exactly one word is selected (up to 40 characters, with spaces or punctuation around it allowed). Save adds your pair and replaces the selected word if it's still selected.
 - **Changes apply right away.** Pair and setting changes count from the very next check.
@@ -677,13 +726,15 @@ When **Follow system light/dark mode** is on, the day theme defaults to Pluto Fr
 
 ## Voice engine in detail
 
-- **Which engine.** Moonshine is used only when it's your chosen voice model, the language is English, and its files check out. Otherwise Pluto uses Whisper. Importing a Moonshine package selects it for you.
+- **Which engine.** Moonshine, Nemotron or Parakeet is used only when it's your chosen voice model, it handles the keyboard's language (English for all three today), and its files check out. Otherwise Pluto uses Whisper. Importing a Moonshine, Nemotron or Parakeet package selects it for you.
+- **What each model does by itself.** Pluto keeps a short description of every voice model: whether its punctuation and capitals are good, and whether it leaves out fillers. That decides which steps run after it (Whisper: punctuation and capitals good. Moonshine, Nemotron and Parakeet: both weak, and none of them reliably leaves out fillers). Each description comes from Pluto's test bench: for example Nemotron left the final mark off 24 of 44 dictations on the test phone and kept "um" in 2 of 4, so the punctuation step and the Filler words fix run after it. A model package can change this description in its manifest, see [MODELS.md](MODELS.md#what-a-voice-model-does-by-itself-capabilities).
 - **Splitting.** Moonshine splits speech into phrases at pauses, using Silero VAD if the package has it (otherwise a simpler loudness check). A phrase is capped at 15 seconds. After 10 seconds it's cut at the next quiet moment between words, and the overlap is merged so no words are lost or doubled.
+- **Pauses from Nemotron and Parakeet.** They don't split at pauses themselves, so Pluto finds the pauses from the time of each word: a silence of half a second or more between two words starts a new phrase. A word ends at its last sound, not at a "." or "?" the model attached after the pause, so the pause before it still counts.
 - **Live text refresh.** Fast every 0.25 seconds, Normal every 0.5 (default), or Slow every second.
 - **Stop after silence.** Off, or 1, 1.5, 2 (default), 3 or 5 seconds. It only starts counting after you've started talking. With Whisper it's fixed at 2 seconds.
 - **Processing mode.** Standard CPU (default), XNNPACK, or the phone's AI chip (NNAPI, experimental). If a mode fails to load or run on your phone, Pluto falls back to Standard by itself.
 - **Processor cores.** Auto uses your phone's fast cores (2 to 4). More threads on slow cores tends to make things slower, not faster.
-- **Punctuation model.** It restores periods, commas, question marks, capital letters and sentence breaks. It keeps a ? or ! the speech model heard, never changes, adds or drops words, and only runs after Moonshine. (The app can also read punctuation packages in the `horizon` format, see [MODELS.md](MODELS.md), but none is offered on the release page.)
+- **Punctuation model.** It restores periods, commas, question marks, capital letters and sentence breaks. It keeps a ? or ! the speech model heard, never changes, adds or drops words, and runs after Moonshine, Nemotron and Parakeet. (The app can also read punctuation packages in the `horizon` format, see [MODELS.md](MODELS.md), but none is offered on the release page.)
 - **Cancel.** It stops recording (or the processing after it), erases what that dictation typed, and closes the voice window. Once the text is in, Cancel no longer does anything.
 - **Other voice apps.** While one is selected, Pluto's own voice settings are hidden. Pluto shows a privacy reminder for any app outside a short list of offline ones (FUTO Voice Input, Transcribro and Transcribe).
 
@@ -707,6 +758,7 @@ Loading a model costs time, and keeping it costs memory, so each one has a keep-
 | Model | Size | Kept loaded after use |
 |---|---|---|
 | Moonshine (voice) | 39 to 239 MB depending on size | 2 minutes |
+| Nemotron or Parakeet (voice) | about 475 MB or 135 MB | 2 minutes |
 | Punctuation | about 67 MB (English) | 3 minutes |
 | Smart corrections | about 470 MB | 2 minutes after the voice window closes, or 1 minute after the last typing check |
 
@@ -741,18 +793,19 @@ Most phones have a few fast cores and several slow ones, and a calculation split
 - **Smart corrections** uses 2 threads and pins them to the phone's 2 fastest cores (found from the cores' capacity ratings, or their top speed if those aren't available).
 - **Its weights are repacked** when it loads, into the layout the fastest processor routines need. That makes every check faster, at the cost of keeping that copy in memory.
 - **Moonshine** uses Auto threads, which means your phone's fast cores (2 to 4). You can change this in Advanced options, but more threads on slow cores usually makes it slower.
+- **Nemotron and Parakeet** use one thread per fast core, pinned to those cores. While the voice window is open, typing checks wait, so they don't compete for the same cores. (Before that, Nemotron needed about as long as you spoke on the test phone. Now it needs about half.)
 - **The punctuation model** picks its own thread count.
 
 ### Live voice typing
 
-- **Streaming.** Moonshine is a streaming model, so it works on your speech as you talk instead of waiting until you stop. The words on screen catch up every 0.5 seconds by default (Live text refresh).
+- **Streaming.** Moonshine and Nemotron are streaming models, so they work on your speech as you talk instead of waiting until you stop. Parakeet runs once on the whole recording when you finish. The words on screen catch up every 0.5 seconds by default (Live text refresh).
 - **Short phrases.** Speech is split into phrases at your pauses (capped at 15 seconds each), so the model only ever works on a short stretch of audio. That's why dictation can go on as long as you like without slowing down.
 - **Catching up.** If the phone falls behind, audio queues up and the next refresh handles a bigger piece, so nothing is lost.
 - **Processing mode.** Standard CPU is usually fastest. XNNPACK and the phone's AI chip (NNAPI) are there to try, and if one fails to load or run, Pluto quietly falls back to Standard. "Show timing info" tells you how long you spoke and how long processing took, which is the easiest way to compare settings on your phone.
 
 ### Punctuation
 
-The punctuation step takes about 20 to 90 milliseconds per dictation, because it's a small model that reads the whole transcript in one pass. Long transcripts are read in overlapping windows (256 pieces with 16 overlapping), so a sentence on a window edge isn't cut off.
+The punctuation step replaces the voice model's periods and commas, keeps its ? and !, and always ends the dictation with a mark, except that a dictation that is only a greeting of up to four words ("Dear team", "Hi Sarah", "Good morning everyone") ends with a comma. It takes about 20 to 90 milliseconds per dictation, because it's a small model that reads the whole transcript in one pass. Long transcripts are read in overlapping windows (256 pieces with 16 overlapping), so a sentence on a window edge isn't cut off.
 
 ### Typing checks
 

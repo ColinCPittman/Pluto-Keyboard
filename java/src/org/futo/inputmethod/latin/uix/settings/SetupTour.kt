@@ -58,18 +58,28 @@ import kotlinx.coroutines.launch
 import org.futo.inputmethod.latin.R
 import org.futo.inputmethod.latin.uix.ContextModels
 import org.futo.inputmethod.latin.uix.PunctuationModels
+import org.futo.inputmethod.latin.uix.SMART_CORRECTIONS_COMMANDS
+import org.futo.inputmethod.latin.uix.SMART_CORRECTIONS_EMOJI
+import org.futo.inputmethod.latin.uix.SMART_CORRECTIONS_FILLERS
+import org.futo.inputmethod.latin.uix.SMART_CORRECTIONS_NUMBERS
 import org.futo.inputmethod.latin.uix.SettingsKey
 import org.futo.inputmethod.latin.uix.VoiceInputEngines
 import org.futo.inputmethod.latin.uix.getSetting
 import org.futo.inputmethod.latin.uix.setSetting
+import org.futo.inputmethod.latin.uix.settings.pages.CurrentVoiceModel
+import org.futo.inputmethod.latin.uix.settings.pages.currentVoiceModel
+import org.futo.inputmethod.latin.uix.settings.pages.hasVoiceModel
 import org.futo.inputmethod.latin.uix.theme.Typography
 import org.futo.voiceinput.shared.modelpackage.ModelPackages
+import java.util.Locale
 
 /**
  * Pluto: the setup tutorial. The first time settings open (with no models installed), it walks you
  * through getting each model: Languages & Models, the model's row, the release page, the import,
  * then the setting the model switched on. Each step spotlights what to tap, and every step can be
- * skipped (or the whole tutorial). Help can start it again.
+ * skipped (or the whole tutorial). Help can start it again. The steps after the voice model follow
+ * the one you picked: a model that punctuates itself (Nemotron, Parakeet, Whisper) gets a note
+ * instead of the punctuation model's steps, and the Smart corrections texts say what it adds there.
  */
 
 /** The step the tutorial is on ([SetupTourStep] name), "" before it ever ran, or [TOUR_DONE]. */
@@ -152,7 +162,7 @@ private fun modelScreenRoute(model: TourModel) = when (model) {
 }
 
 private fun modelInstalled(context: Context, model: TourModel) = when (model) {
-    TourModel.Voice -> VoiceInputEngines.installedMoonshineModels(context).isNotEmpty()
+    TourModel.Voice -> hasVoiceModel(context)
     TourModel.Punctuation -> PunctuationModels.installed(context).isNotEmpty()
     TourModel.SmartCorrections -> ContextModels.installed(context).isNotEmpty()
 }
@@ -226,8 +236,8 @@ object SetupTour {
         go(context, SetupTourStep.entries.getOrNull(current.ordinal + 1))
     }
 
-    /** Back to the voice model's row (Set up Moonshine, on a step that notes it was skipped). */
-    fun setUpMoonshine(context: Context) {
+    /** Back to the voice model's row (Set up a voice model, on a step that notes it was skipped). */
+    fun setUpVoiceModel(context: Context) {
         go(context, SetupTourStep.VoiceRow)
     }
 
@@ -235,6 +245,18 @@ object SetupTour {
     fun backToRow(context: Context) {
         val current = step.value ?: return
         go(context, SetupTourStep.entries.first { it.model == current.model && it.isRow })
+    }
+
+    /**
+     * Switches on the Smart corrections fixes that are off by default and fixed far more dictations
+     * than they broke for Moonshine, Nemotron and Parakeet on spoken set 2 (`ablate.py`, 2026-11-01).
+     */
+    fun switchOnRecommended(context: Context) {
+        scope.launch {
+            for (key in listOf(SMART_CORRECTIONS_NUMBERS, SMART_CORRECTIONS_COMMANDS, SMART_CORRECTIONS_FILLERS, SMART_CORRECTIONS_EMOJI)) {
+                context.setSetting(key, true)
+            }
+        }
     }
 
     /** Called when the release page link is opened from a model screen. */
@@ -277,8 +299,8 @@ object SetupTour {
                 // turns on (except on a replay from Help, which shows everything as a reminder)
                 !replay.value && (s.isRow || s.isDownload || s.isImport) && modelInstalled(context, s.model) -> true
                 s.isSetting && !modelInstalled(context, s.model) -> true
-                // the punctuation switch is greyed out while Whisper is the voice model
-                s == SetupTourStep.PunctuationSetting && !modelInstalled(context, TourModel.Voice) -> true
+                // the punctuation switch is greyed out while the voice model punctuates itself
+                s == SetupTourStep.PunctuationSetting && voicePunctuatesItself(context) -> true
                 else -> false
             }
             if (!skip) return s
@@ -290,6 +312,33 @@ object SetupTour {
     private fun save(context: Context, value: String) {
         scope.launch { context.setSetting(SETUP_TOUR_STEP, value) }
     }
+
+    /** Whether English voice typing uses a model that punctuates itself (Whisper). */
+    private fun voicePunctuatesItself(context: Context) =
+        VoiceInputEngines.resolve(context, Locale.ENGLISH).profile.punctuatesItself
+}
+
+/**
+ * The voice model the texts after the voice model's steps are written for: Whisper when that step was
+ * skipped, Nemotron and Parakeet by family, [Moonshine] for any other model that needs the punctuation
+ * model, and [Punctuating] for one that punctuates itself.
+ */
+private enum class TourVoice {
+    Whisper, Moonshine, Nemotron, Parakeet, Punctuating;
+
+    /** The punctuation model runs after this voice model. */
+    val needsPunctuation get() = this == Moonshine || this == Nemotron || this == Parakeet
+}
+
+private fun tourVoice(context: Context, model: CurrentVoiceModel): TourVoice {
+    if (model.isWhisper) return TourVoice.Whisper
+    if (model.isTranscribe) {
+        // (the family from the package id, as TranscribeModelFiles.profile reads it)
+        val id = VoiceInputEngines.selectedTranscribeModel(context)?.manifest?.id?.lowercase() ?: ""
+        if (id.startsWith("nemotron")) return TourVoice.Nemotron
+        if (id.startsWith("parakeet")) return TourVoice.Parakeet
+    }
+    return if (model.profile.punctuatesItself) TourVoice.Punctuating else TourVoice.Moonshine
 }
 
 /** Marks what a tutorial step spotlights, and scrolls it into view when that step comes up. */
@@ -392,31 +441,58 @@ fun SetupTourOverlay(navController: NavHostController) {
     }
 }
 
+/** The card's text for [step], worded for the voice model [voice] (named [name]). */
+@Composable
+private fun tourText(step: SetupTourStep, voice: TourVoice, name: String): String = when (step) {
+    SetupTourStep.PunctuationRow -> when (voice) {
+        TourVoice.Moonshine -> stringResource(step.text)
+        TourVoice.Nemotron, TourVoice.Parakeet -> stringResource(R.string.tour_punctuation_row_transcribe_text, name)
+        TourVoice.Whisper -> stringResource(R.string.tour_punctuation_whisper_text)
+        else -> stringResource(R.string.tour_punctuation_not_needed_text, name)
+    }
+    SetupTourStep.SmartCorrectionsRow -> when (voice) {
+        TourVoice.Moonshine -> stringResource(step.text)
+        TourVoice.Whisper -> stringResource(R.string.tour_smart_corrections_whisper_text)
+        TourVoice.Nemotron -> stringResource(R.string.tour_smart_corrections_row_nemotron_text)
+        TourVoice.Parakeet -> stringResource(R.string.tour_smart_corrections_row_parakeet_text)
+        TourVoice.Punctuating -> stringResource(R.string.tour_smart_corrections_row_punctuating_text, name)
+    }
+    SetupTourStep.SmartCorrectionsVoice -> when (voice) {
+        TourVoice.Moonshine, TourVoice.Nemotron, TourVoice.Parakeet -> stringResource(step.text)
+        TourVoice.Whisper -> stringResource(R.string.tour_smart_corrections_voice_whisper_text)
+        else -> stringResource(R.string.tour_smart_corrections_voice_punctuating_text, name)
+    }
+    // the fixes that are off by default and helped this model on set 2
+    SetupTourStep.SmartCorrectionsExplore -> when (voice) {
+        TourVoice.Moonshine -> stringResource(R.string.tour_smart_corrections_explore_moonshine_text)
+        TourVoice.Nemotron -> stringResource(R.string.tour_smart_corrections_explore_nemotron_text)
+        TourVoice.Parakeet -> stringResource(R.string.tour_smart_corrections_explore_parakeet_text)
+        else -> stringResource(step.text)
+    }
+    else -> stringResource(step.text)
+}
+
 @Composable
 private fun TourCard(step: SetupTourStep, modifier: Modifier) {
     val context = LocalContext.current
-    // Moonshine skipped (voice typing uses Whisper), so punctuation has nothing to do and Smart
-    // corrections less, and these steps say so
+    // the steps after the voice model's are worded for the one voice typing uses: skipped (Whisper),
+    // Moonshine, Nemotron or Parakeet (which the punctuation model is for), or a model that punctuates itself
     val changes by ModelPackages.changes.collectAsState()
-    val noMoonshine = remember(changes) { !modelInstalled(context, TourModel.Voice) }
-    val whisperNote = noMoonshine && step.model != TourModel.Voice
+    val model = currentVoiceModel()
+    val voice = remember(model, changes) { tourVoice(context, model) }
+    val skippedVoice = voice == TourVoice.Whisper && step.model != TourModel.Voice
     val title = when {
-        whisperNote && step == SetupTourStep.PunctuationRow -> R.string.tour_punctuation_whisper_title
-        else -> step.title
+        step != SetupTourStep.PunctuationRow || voice.needsPunctuation -> step.title
+        voice == TourVoice.Whisper -> R.string.tour_punctuation_whisper_title
+        else -> R.string.tour_punctuation_not_needed_title
     }
-    val text = when {
-        !whisperNote -> step.text
-        step == SetupTourStep.PunctuationRow -> R.string.tour_punctuation_whisper_text
-        step == SetupTourStep.SmartCorrectionsRow -> R.string.tour_smart_corrections_whisper_text
-        step == SetupTourStep.SmartCorrectionsVoice -> R.string.tour_smart_corrections_voice_whisper_text
-        else -> step.text
-    }
-    // the punctuation step is only a note then, so it has Next instead of Skip step
-    val whisperNext = whisperNote && step == SetupTourStep.PunctuationRow
+    val text = tourText(step, voice, model.name)
+    // the punctuation step is only a note then, so it has Next (past the punctuation model) instead of Skip step
+    val punctuationNext = !voice.needsPunctuation && step == SetupTourStep.PunctuationRow
     // on a replay, a model you already have moves on one step at a time
-    val replayNext = SetupTour.replay.value && !step.isSetting && !whisperNext &&
+    val replayNext = SetupTour.replay.value && !step.isSetting && !punctuationNext &&
         remember(changes, step) { modelInstalled(context, step.model) }
-    val nextOnly = step.isSetting || whisperNext || replayNext
+    val nextOnly = step.isSetting || punctuationNext || replayNext
     Surface(
         modifier = modifier.fillMaxWidth().padding(horizontal = 16.dp),
         shape = RoundedCornerShape(16.dp),
@@ -427,19 +503,31 @@ private fun TourCard(step: SetupTourStep, modifier: Modifier) {
         Column(Modifier.padding(start = 16.dp, end = 8.dp, top = 12.dp, bottom = 4.dp)) {
             Text(stringResource(title), style = Typography.Body.MediumMl, fontWeight = FontWeight.SemiBold)
             Text(
-                stringResource(text),
+                text,
                 style = Typography.SmallMl,
                 modifier = Modifier.padding(top = 4.dp, end = 8.dp)
             )
-            if (whisperNote && step.isRow) {
+            if (skippedVoice && step.isRow) {
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
-                    TextButton(onClick = { SetupTour.setUpMoonshine(context) }) {
-                        Text(stringResource(R.string.tour_set_up_moonshine))
+                    TextButton(onClick = { SetupTour.setUpVoiceModel(context) }) {
+                        Text(stringResource(R.string.tour_set_up_voice_model))
                     }
                 }
             }
             if (step.isLast) {
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                    // the models set 2 measured get the fixes that helped them in one tap
+                    if (voice.needsPunctuation) {
+                        var switched by remember { mutableStateOf(false) }
+                        TextButton(
+                            onClick = { SetupTour.switchOnRecommended(context); switched = true },
+                            enabled = !switched,
+                            modifier = Modifier.padding(bottom = 8.dp)
+                        ) {
+                            Text(stringResource(if (switched) R.string.tour_switched_on_recommended else R.string.tour_switch_on_recommended))
+                        }
+                        Spacer(Modifier.weight(1f))
+                    }
                     Button(onClick = { SetupTour.next(context) }, modifier = Modifier.padding(bottom = 8.dp)) {
                         Text(stringResource(R.string.tour_finish))
                     }
@@ -450,7 +538,7 @@ private fun TourCard(step: SetupTourStep, modifier: Modifier) {
                 }
                 Spacer(Modifier.weight(1f))
                 if (nextOnly) {
-                    Button(onClick = { if (whisperNext) SetupTour.skipStep(context) else SetupTour.next(context) }) {
+                    Button(onClick = { if (punctuationNext) SetupTour.skipStep(context) else SetupTour.next(context) }) {
                         Text(stringResource(R.string.tour_next))
                     }
                 } else {

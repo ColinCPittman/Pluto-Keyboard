@@ -24,8 +24,14 @@ data class ContextRescoreConfig(
     val homophoneMargin: Double = 3.1,
     /** ... and this for a near one ("pool" -> "poll", "noise" -> "news"), since the voice model heard a different sound. */
     val nearMargin: Double = 7.0,
-    /** Added to those for a word that opens its sentence (or follows only "The", "A", ...). */
+    /** Added to those for a word that opens its sentence (or follows only "The", "A", ...) ... */
     val openingMargin: Double = 6.5,
+    /**
+     * ... unless the words after it gain this much more than those margins ("The serial is in aisle
+     * five" -> "cereal"), which the opening word's own log-prob (only how often a word opens a
+     * sentence) has no part in.
+     */
+    val openingTailMargin: Double = 2.0,
     /** Candidates per word. */
     val k: Int = 6,
     /** Drop candidates whose first token is this much less likely than the original's. */
@@ -70,6 +76,34 @@ data class ContextRescoreConfig(
     val commandMargin: Double = 0.0,
     /** Total log-prob gain needed for a spoken "new line" / "new paragraph" (a veto, and the pause rules decide). */
     val lineBreakMargin: Double = -8.0,
+    /**
+     * A self-correction with neither a pause nor punctuation around its cue ("bring three sorry four
+     * chairs") is judged on the sentence alone, so it needs this change of the mean log-prob per token.
+     */
+    val undelimitedSelfCorrectionMargin: Double = 0.0,
+    /**
+     * A self-correction replaces the longest reparandum whose sentence reads within this much (mean
+     * log-prob per token) of the best one.
+     */
+    val selfCorrectionPickTolerance: Double = 0.5,
+    /** Same for a repair that mirrors what it replaces ("two cups sorry three cups", "Sam sorry Alex"). */
+    val undelimitedSelfCorrectionParallelMargin: Double = -1.0,
+    /**
+     * Same for a command or "scratch that" said mid-sentence ("Dear Sam new line thanks"). Also on the
+     * mean per token, since the total favours anything that drops words ("scratch that itch" -> "itch").
+     */
+    val undelimitedCommandMargin: Double = 0.5,
+    /**
+     * Same for "scratch that" mid-sentence, which the rules only offer when the sentence is said again
+     * ("I hate this sentence scratch that I love this sentence"), so the LM only vetoes.
+     */
+    val undelimitedScratchMargin: Double = -1.0,
+    /**
+     * Same for quoted speech shown only by the speaker's "I" ("she said I'll be there"), where
+     * the reported reading ("he said I'm welcome to stay") would need "she'd" or a past tense. The LM
+     * finds quotation marks unlikely even around plain quotes, so it only vetoes.
+     */
+    val undelimitedQuoteMargin: Double = -0.25,
     /** Total log-prob gain needed to write numbers as digits. */
     val numberMargin: Double = 0.0,
     /** A single number word without a unit as digits ("forty" -> "40") needs this total gain. */
@@ -96,6 +130,10 @@ data class ContextRescoreConfig(
                 prompt = (o["prompt"] as? JsonPrimitive)?.takeIf { it.isString }?.content ?: d.prompt,
                 surprise = num("surprise") ?: d.surprise,
                 maxWords = int("max_words") ?: d.maxWords,
+                homophoneMargin = num("homophone_margin") ?: d.homophoneMargin,
+                nearMargin = num("near_margin") ?: d.nearMargin,
+                openingMargin = num("opening_margin") ?: d.openingMargin,
+                openingTailMargin = num("opening_tail_margin") ?: d.openingTailMargin,
                 k = int("k") ?: d.k,
                 probeMargin = num("probe_margin") ?: d.probeMargin,
                 tailWords = int("tail_words") ?: d.tailWords,
@@ -117,6 +155,12 @@ data class ContextRescoreConfig(
                 selfCorrectionMargin = num("self_correction_margin") ?: d.selfCorrectionMargin,
                 selfCorrectionParallelMargin = num("self_correction_parallel_margin") ?: d.selfCorrectionParallelMargin,
                 scratchMargin = num("scratch_margin") ?: d.scratchMargin,
+                undelimitedSelfCorrectionMargin = num("undelimited_self_correction_margin") ?: d.undelimitedSelfCorrectionMargin,
+                selfCorrectionPickTolerance = num("self_correction_pick_tolerance") ?: d.selfCorrectionPickTolerance,
+                undelimitedSelfCorrectionParallelMargin = num("undelimited_self_correction_parallel_margin") ?: d.undelimitedSelfCorrectionParallelMargin,
+                undelimitedCommandMargin = num("undelimited_command_margin") ?: d.undelimitedCommandMargin,
+                undelimitedScratchMargin = num("undelimited_scratch_margin") ?: d.undelimitedScratchMargin,
+                undelimitedQuoteMargin = num("undelimited_quote_margin") ?: d.undelimitedQuoteMargin,
                 commandMargin = num("command_margin") ?: d.commandMargin,
                 lineBreakMargin = num("line_break_margin") ?: d.lineBreakMargin,
                 numberMargin = num("number_margin") ?: d.numberMargin,
@@ -204,11 +248,19 @@ class ContextRescorer(
 
     /** End of the scoring window for a change ending at [b], which is the end of its sentence plus a few words. */
     private fun windowEnd(text: String, b: Int): Int {
-        val m = sentenceEnd.find(text.substring(b))
-        var end = b + (m?.range?.last?.plus(1) ?: (text.length - b))
-        val tail = tailRegex.matchAt(text.substring(end), 0)
-        end += tail?.value?.length ?: 0
+        var end = sentenceEnd.find(text, b)?.range?.last?.plus(1) ?: text.length
+        end += tailRegex.matchAt(text, end)?.value?.length ?: 0
         return minOf(end, text.length)
+    }
+
+    /**
+     * [SpokenEdits.segmentStarts] / [SpokenEdits.addedBreaks] as word indices of [t], with [segments]
+     * aligned to the dictation only (from [focus]), since the field's text before it may repeat its words.
+     */
+    private fun onDictation(t: String, focus: Int, segments: List<String>, f: (String, List<String>) -> Set<Int>): Set<Int> {
+        if (focus <= 0) return f(t, segments)
+        val before = TranscriptGuard.tokenize(t.substring(0, focus)).words.size
+        return f(t.substring(focus), segments).mapTo(HashSet()) { it + before }
     }
 
     // ------------------------------------------------------------------------------------
@@ -227,7 +279,7 @@ class ContextRescorer(
         edits: MutableList<Edit>, sources: MutableList<String>, trace: MutableList<String>, checkpoint: () -> Unit,
     ): String {
         breakDeferred = false
-        if (!options.any || config.breakMargin.isInfinite() || segments.isEmpty() || !lexicon.hasCaseData) return text
+        if (!options.any || !options.sentenceBreaks || config.breakMargin.isInfinite() || segments.isEmpty() || !lexicon.hasCaseData) return text
         val tok = TranscriptGuard.tokenize(text)
         val words = tok.words
         val gaps = tok.gaps
@@ -237,7 +289,7 @@ class ContextRescorer(
             spans.add(intArrayOf(pos, pos + w.length))
             pos += w.length + gaps[k + 1].length
         }
-        val added = SpokenEdits.addedBreaks(text, segments)
+        val added = onDictation(text, focus, segments, SpokenEdits::addedBreaks)
         if (added.isEmpty()) return text
         class Cand(val k: Int, val start: Int, val end: Int, val replacements: List<String>, val sentence: Int) {
             var replacement = replacements[0]
@@ -315,7 +367,19 @@ class ContextRescorer(
     }
 
     /** The log-prob gain an edit needs (see [ContextRescoreConfig]). */
-    private fun margin(t: String, e: SpokenEdits.SpanEdit) = when (e.kind) {
+    private fun margin(t: String, e: SpokenEdits.SpanEdit) = if (e.undelimited) {
+        // nothing in the timing or punctuation backs the edit, so the sentence itself has to. These
+        // margins are per token, so the option's sensitivity moves them by MEAN_STEP
+        val s = options.sensitivity
+        fun shift(v: Int) = v.coerceIn(SmartCorrectionSensitivity.MIN, SmartCorrectionSensitivity.MAX) * SmartCorrectionSensitivity.MEAN_STEP
+        when (e.kind) {
+            SpokenEdits.Kind.SELF_CORRECTION -> (if (e.parallel) config.undelimitedSelfCorrectionParallelMargin
+                else config.undelimitedSelfCorrectionMargin) - shift(s.selfCorrections)
+            SpokenEdits.Kind.SCRATCH -> config.undelimitedScratchMargin - shift(s.commands)
+            SpokenEdits.Kind.QUOTE -> config.undelimitedQuoteMargin - shift(s.quotes)
+            else -> config.undelimitedCommandMargin - shift(s.commands)
+        }
+    } else when (e.kind) {
         SpokenEdits.Kind.FILLER -> config.fillerMargin
         SpokenEdits.Kind.REPEAT -> config.repeatMargin
         SpokenEdits.Kind.SELF_CORRECTION -> if (e.parallel) config.selfCorrectionParallelMargin else config.selfCorrectionMargin
@@ -325,18 +389,19 @@ class ContextRescorer(
         SpokenEdits.Kind.COMMAND -> if (e.replacement.contains('\n')) config.lineBreakMargin else config.commandMargin
         SpokenEdits.Kind.NUMBER ->
             // a lone number word without a unit ("forty winks", "the eleventh hour") is often
-            // better spelled out, so it needs more evidence
-            if (TranscriptGuard.tokenize(t.substring(e.start, e.end)).words.size == 1 && e.replacement.all { it.isLetterOrDigit() || it == ',' }) {
+            // better spelled out, so it needs more evidence ("twenty-five" is two number words)
+            if (TranscriptGuard.tokenize(t.substring(e.start, e.end)).words.singleOrNull()?.contains('-') == false &&
+                e.replacement.all { it.isLetterOrDigit() || it == ',' }) {
                 config.numberSingleWordMargin
             } else config.numberMargin
     }
 
     /**
-     * Self-corrections are accepted on the length-normalized score (mean log-prob per token of the
-     * edited sentence, since the total always favours deleting words). All alternatives of a group are
-     * compared by their total.
+     * Self-corrections, and edits no pause or punctuation marks, are accepted on the length-normalized
+     * score (mean log-prob per token of the edited sentence, since the total always favours deleting
+     * words), and the alternatives of such a group are picked as [selfCorrectionPickTolerance] says.
      */
-    private fun normalized(kind: SpokenEdits.Kind) = kind == SpokenEdits.Kind.SELF_CORRECTION
+    private fun normalized(e: SpokenEdits.SpanEdit) = e.kind == SpokenEdits.Kind.SELF_CORRECTION || e.undelimited
 
     /** Score of an edit the rules are certain of (sorts first when edits overlap). */
     private val CERTAIN_SCORE = 1e6
@@ -345,7 +410,7 @@ class ContextRescorer(
 
     /** Scores every group's alternatives against the unchanged text and returns the accepted, non-overlapping edits. */
     private fun judge(
-        t: String, groups: List<SpokenEdits.Group>, trace: MutableList<String>, checkpoint: () -> Unit,
+        t: String, focus: Int, groups: List<SpokenEdits.Group>, trace: MutableList<String>, checkpoint: () -> Unit,
     ): List<SpokenEdits.SpanEdit> {
         if (groups.isEmpty()) return emptyList()
         ensureBase(t, checkpoint)
@@ -357,10 +422,11 @@ class ContextRescorer(
             variants.add(t.substring(0, wEnd))
             for (a in g.alternatives) variants.add(t.substring(0, a.start) + a.replacement + t.substring(a.end, wEnd))
         }
-        // token index where each group's sentence starts (for the length-normalized score)
+        // token index where each group's sentence starts (for the length-normalized score), and the
+        // dictation starts one of its own (the field's text before it often has no final mark)
         val sentTok = groups.map { g ->
             var s0 = g.start
-            while (s0 > 0 && !(t[s0 - 1] == '\n' || (s0 >= 2 && t[s0 - 2] in ".?!" && t[s0 - 1].isWhitespace()))) s0--
+            while (s0 > focus && !(t[s0 - 1] == '\n' || (s0 >= 2 && t[s0 - 2] in ".?!" && t[s0 - 1].isWhitespace()))) s0--
             scorer.tokenCount(t.substring(0, s0).trimEnd())
         }
         checkpoint()
@@ -368,7 +434,7 @@ class ContextRescorer(
         val accepted = ArrayList<Judged>()
         for ((gi, g) in groups.withIndex()) {
             val o = sc[index[gi][0]]
-            var best: Judged? = null
+            val judged = ArrayList<Judged>()
             for ((ai, a) in g.alternatives.withIndex()) {
                 val v = sc[index[gi][1] + ai]
                 var l = 0
@@ -382,22 +448,34 @@ class ContextRescorer(
                 val nv = v.lps.size - l
                 val mean = if (no > 0 && nv > 0) sv / nv - so / no else total
                 // length-normalized over the whole sentence, as the mean log-prob per token from the
-                // start of the edited sentence to the end of the window
-                val ps = minOf(sentTok[gi], l)
-                var po = 0.0
-                for (i in ps until o.lps.size) po += o.lps[i]
-                var pv = 0.0
-                for (i in ps until v.lps.size) pv += v.lps[i]
-                val smean = if (o.lps.size > ps && v.lps.size > ps) pv / (v.lps.size - ps) - po / (o.lps.size - ps) else total
+                // start of the edited sentence to the end of the window, with or without its first token
+                // (when the edit keeps it), whichever reads better: that token only says how a sentence
+                // opens, and when it is surprising it outweighs a short corrected sentence ("Get the blue
+                // bag." against "Get the red bag. Sorry, the blue bag.")
+                fun sentenceMean(ps: Int): Double {
+                    var po = 0.0
+                    for (i in ps until o.lps.size) po += o.lps[i]
+                    var pv = 0.0
+                    for (i in ps until v.lps.size) pv += v.lps[i]
+                    return if (o.lps.size > ps && v.lps.size > ps) pv / (v.lps.size - ps) - po / (o.lps.size - ps) else total
+                }
+                val smean = maxOf(sentenceMean(minOf(sentTok[gi], l)), sentenceMean(minOf(sentTok[gi] + 1, l)))
                 trace.add(
                     "%s '%s' -> '%s': total %.2f mean %.3f smean %.3f".format(
                         g.kind.name.lowercase(), t.substring(a.start, a.end).replace("\n", "\\n"),
                         a.replacement.replace("\n", "\\n"), total, mean, smean
                     )
                 )
-                if (best == null || total > best.total) best = Judged(a, total, if (normalized(g.kind)) smean else total)
+                judged.add(Judged(a, total, if (normalized(a)) smean else total))
             }
-            if (g.certain && best != null) {
+            // the total favours the longest deletion ("up some apples, I mean, oranges" -> "Pick
+            // oranges"), so a normalized edit is picked by its total only among the alternatives
+            // that read nearly as well as the best ("toaster oven, I mean, air fryer" replaces both words)
+            val best = if (judged.isNotEmpty() && normalized(judged[0].edit)) {
+                val top = judged.maxOf { it.accept }
+                judged.filter { it.accept >= top - config.selfCorrectionPickTolerance }.maxByOrNull { it.total }
+            } else judged.maxByOrNull { it.total }
+            if (g.certain && best != null && !best.edit.undelimited) {
                 // the rules are sure of the edit, and the LM only picks among its alternatives
                 trace.add("%s '%s': certain".format(g.kind.name.lowercase(), t.substring(g.start, g.end).replace("\n", "\\n")))
                 accepted.add(Judged(best.edit, CERTAIN_SCORE, CERTAIN_SCORE))
@@ -427,6 +505,18 @@ class ContextRescorer(
         return t
     }
 
+    /**
+     * A command edit that starts in the gap before the dictation (at [focus]), such as "new line" said
+     * first ("Dear Sam," + "new line thanks" -> ",\nThanks"), as the same edit from [focus] on, which
+     * leaves the text before it as it is (",\nThanks" -> "\nThanks"), or null for any other edit.
+     */
+    private fun clip(t: String, e: SpokenEdits.SpanEdit, focus: Int): SpokenEdits.SpanEdit? {
+        if (e.start >= focus || e.kind != SpokenEdits.Kind.COMMAND || e.end <= focus) return null
+        val gap = t.substring(e.start, focus)
+        if (gap.any { it.isLetterOrDigit() }) return null
+        return e.copy(start = focus, replacement = e.replacement.dropWhile { !it.isWhitespace() && it in gap }.trimStart(' '))
+    }
+
     private fun optionStages(
         text: String, focus: Int, segments: List<String>, decisions: MutableList<TranscriptGuard.Decision>,
         edits: MutableList<Edit>, sources: MutableList<String>, trace: MutableList<String>, checkpoint: () -> Unit,
@@ -453,21 +543,33 @@ class ContextRescorer(
             val w = SpokenEdits.Words(t)
             if (w.size == 0) break
             val segStarts = if (stage == SpokenEdits.Kind.COMMAND || stage == SpokenEdits.Kind.SELF_CORRECTION) {
-                SpokenEdits.segmentStarts(t, segments)
+                // the dictation itself starts after a pause, even when the text before it has no
+                // final mark ("We need three cups" then "I hate this sentence. Scratch that, ...")
+                val dictationStart = if (focus > 0) (0 until w.size).firstOrNull { w.starts[it] >= focus } else null
+                onDictation(t, focus, segments, SpokenEdits::segmentStarts) + listOfNotNull(dictationStart)
             } else emptySet()
             val groups = when (stage) {
                 SpokenEdits.Kind.FILLER -> SpokenEdits.fillerGroups(w, options.fillerList, isWord)
-                SpokenEdits.Kind.COMMAND -> SpokenEdits.commandGroups(w, segStarts, lexicon, names, options.commandList)
+                SpokenEdits.Kind.COMMAND -> SpokenEdits.commandGroups(w, segStarts, lexicon, names, options.commandList, options.soundAlike)
                 SpokenEdits.Kind.SELF_CORRECTION -> SpokenEdits.selfCorrectionGroups(w, segStarts, options.correctionMarkers, isWord)
                 SpokenEdits.Kind.NUMBER -> SpokenEdits.numberGroups(w)
                 SpokenEdits.Kind.QUOTE -> SpokenEdits.quoteGroups(w, options.quoteTriggers, isWord)
                 SpokenEdits.Kind.EMOJI -> SpokenEdits.emojiGroups(w, options.emojiNames)
                 else -> emptyList()
-            }.filter { it.start >= focus }
+            }.mapNotNull { g ->
+                // only alternatives within the dictation ("scratch that" may also reach back to a
+                // sentence start in the text before it), but a command that opens it starts at the
+                // end of the text before it, and only the dictation's part is applied (see [clip])
+                if (g.start >= focus) g else g.alternatives.filter { it.start >= focus || clip(t, it, focus) != null }
+                    .takeIf { it.isNotEmpty() }?.let { SpokenEdits.Group(g.kind, it, g.label, g.certain) }
+            }
             if (groups.isEmpty()) continue
-            val accepted = judge(t, groups, trace, checkpoint)
+            val accepted = judge(t, focus, groups, trace, checkpoint).map { clip(t, it, focus) ?: it }
             val ok = accepted.filter { e ->
-                val d = TranscriptGuard.checkEdit(t, e, options.commandList, options.correctionMarkers, options.fillerList, options.emojiNames)
+                val d = TranscriptGuard.checkEdit(
+                    t, e, options.commandList, options.correctionMarkers, options.fillerList, options.emojiNames, focus,
+                    segStarts.mapTo(HashSet()) { w.starts[it] }, options.soundAlike,
+                )
                 decisions.add(d)
                 d.accepted
             }
@@ -494,15 +596,30 @@ class ContextRescorer(
 
     private fun metaCode(w: String) = DoubleMetaphone.encode(w).first
 
+    /**
+     * Sound-alikes of [w], lowercase, best first: the lexicon's, then those it doesn't pair with [w]
+     * (hand-listed homophones and near sound-alikes, and the plural of a possessive, see
+     * [Homophones]) that are words the lexicon knows. Function words get none, as in the lexicon.
+     */
+    private fun soundAlikeCandidates(w: String): List<String> {
+        val lex = lexicon.candidates(w)
+        val n = TranscriptGuard.normWord(w)
+        if (n in TranscriptGuard.FUNCTION_LOCK || n.length < 2 || n.any { it.isDigit() }) return lex
+        val extra = (Homophones.extraCandidates(n) + Homophones.possessiveVariants(n)).filter {
+            it != n && it !in lex && it !in TranscriptGuard.FUNCTION_LOCK && lexicon.knows(it)
+        }
+        return if (extra.isEmpty()) lex else (lex + extra).distinct()
+    }
+
     /** "Marcus" -> ["Mark is", "Mark's"] when "Mark" is a name in [known] (or the personal dictionary) that sounds like its start. */
     private fun nameSplitSlot(w: String, known: Collection<String>): List<String>? {
         if (!w.all { it.isLetter() }) return null
         val lw = w.lowercase()
-        if (lw in known.map { it.lowercase() }) return null
-        val pool = known + names.allNames()
-        for (n in pool) {
-            if (n.length < 3 || n.lowercase() == lw || lw[0] != n.lowercase()[0] || kotlin.math.abs(lw.length - n.length) > 3) continue
-            if (metaCode(lw) == metaCode(n + "s") || metaCode(lw) == metaCode(n + "is")) return listOf("$n is", "$n's")
+        if (known.any { it.equals(w, ignoreCase = true) }) return null
+        val code by lazy { metaCode(lw) }
+        for (n in known + names.allNames()) {
+            if (n.length < 3 || n.lowercase() == lw || lw[0] != n[0].lowercaseChar() || kotlin.math.abs(lw.length - n.length) > 3) continue
+            if (code == metaCode(n + "s") || code == metaCode(n + "is")) return listOf("$n is", "$n's")
         }
         return null
     }
@@ -574,10 +691,10 @@ class ContextRescorer(
                 if (sentenceStart(k) || TranscriptGuard.isPronounI(w) || w.any { it.isDigit() } || w.length < 2) continue
                 if (w.all { !it.isLetter() || it.isLowerCase() }) {
                     // a name / proper noun written lowercase ("jordan" -> "Jordan")
-                    val cased = names.name(w) ?: lexicon.capitalized(w)
+                    val cased = names.name(w) ?: if (options.lexiconCasing) lexicon.capitalized(w) else null
                     // (only the first letter, so "wifi" stays and doesn't become "WiFi")
                     if (cased != null && cased != w && cased.drop(1) == w.drop(1)) out.add(Slot(k, k + 1, listOf(cased), "case"))
-                } else if (k in segStarts && TranscriptGuard.normWord(w) !in CLAUSE_OPENERS && w[0].isUpperCase() && w.drop(1).all { !it.isLetter() || it.isLowerCase() } && !names.contains(w) &&
+                } else if (options.lexiconCasing && k in segStarts && TranscriptGuard.normWord(w) !in CLAUSE_OPENERS && w[0].isUpperCase() && w.drop(1).all { !it.isLetter() || it.isLowerCase() } && !names.contains(w) &&
                     TranscriptGuard.normWord(w) !in TranscriptGuard.FUNCTION_LOCK && lexicon.isLowercaseWord(w)) {
                     // (never "The", "A", "In", ... because capitalized function words mid-sentence are titles)
                     // a common word capitalized mid-sentence where the ASR started a new utterance
@@ -650,6 +767,8 @@ class ContextRescorer(
         val leftNames: Set<String> = if (focus > 0) tokenRegexForLeft.findAll(text.substring(0, focus)).map { it.value }.toSet() else emptySet()
         if (wordsOn) {
             for (k in words.indices) {
+                // (the text before the dictation is never changed)
+                if (spans[k][0] < focus) continue
                 // interjections and fillers are never "misheard words" ("Uh" -> "Ah", "Uh-oh" -> "Yo")
                 if (TranscriptGuard.normWord(words[k]) in INTERJECTIONS) continue
                 // a sentence opener ("See, I tried", "So I tried", "Well, ...") is fine either way,
@@ -672,7 +791,7 @@ class ContextRescorer(
                     w.drop(1).all { !it.isLetter() || it.isLowerCase() } && !lexicon.isLowercaseWord(w)) continue
                 // ... and neither is one that replaces a word with an opener ("Sew the button" -> "So the button")
                 val opensSentence = sentenceStart(k) || TranscriptGuard.punct(gaps[k]).contains(',')
-                val c = lexicon.candidates(words[k])
+                val c = soundAlikeCandidates(words[k])
                     .filter { it !in INTERJECTIONS && !TranscriptGuard.isTenseChange(words[k], it) }
                     // nor is a word swapped for a number ("To new beginnings" -> "Two")
                     .filter { !NumberWords.isSpokenNumber(it) }
@@ -685,12 +804,16 @@ class ContextRescorer(
                     .map { matchCase(words[k], it) }
                     // a name already written in the text before the dictation keeps its capital
                     .map { c -> if (focus > 0 && c[0].isLowerCase() && leftNames.contains(c.replaceFirstChar { x -> x.uppercase() })) c.replaceFirstChar { x -> x.uppercase() } else c }
-                if (c.isNotEmpty() && spans[k][0] >= focus) allCands[k] = c
+                if (c.isNotEmpty()) allCands[k] = c
             }
         }
-        val segStarts = if (options.names) SpokenEdits.segmentStarts(text, segments) else emptySet()
+        val segStarts = if (options.names) onDictation(text, focus, segments, SpokenEdits::segmentStarts) else emptySet()
         val slots = extraSlots(words, gaps, ::sentenceStart, segStarts).filter { spans[it.a][0] >= focus }
         val probeKeys = allCands.keys.sorted()
+        // nothing for the LM to judge (only the tools' surprisal list stays empty)
+        if (probeKeys.isEmpty() && slots.isEmpty() && !options.questions) {
+            return Result(text, text, text, emptyList(), emptyList(), emptyList(), 0, emptyList(), emptyList())
+        }
         checkpoint()
         val v = scorer.detail(
             text, ALTS,
@@ -725,29 +848,99 @@ class ContextRescorer(
             if (ok.isNotEmpty()) kept[k] = ok.take(config.k)
         }
         val candWords = kept.keys.filter { surpr[it] < config.surprise }.sortedBy { surpr[it] }.take(config.maxWords)
-        for (k in candWords) {
+        for ((idx, k) in probeKeys.withIndex()) {
+            if (surpr[k] >= config.surprise || k in candWords) continue
+            if (kept[k] == null && v.probes.getOrNull(idx)?.isNotEmpty() == true) {
+                trace.add("word '%s' (%.1f): probe drops %s".format(words[k], surpr[k], allCands.getValue(k)))
+            }
+        }
+
+        // word boundaries, names and capitalization use the same probe + surprise filters
+        class Scoring(val slot: Slot, val cands: List<String>, val sur: Double)
+        val chosen: List<Scoring> = run {
+            val scorings = ArrayList<Scoring>()
+            for ((si, s) in slots.withIndex()) {
+                val pr = v.probes.getOrNull(probeKeys.size + si) ?: continue
+                if (pr.isEmpty()) continue
+                val orig = pr[pr.size - 1].toDouble()
+                // a name spelling the personal dictionary has is scored even if its first token is unlikely
+                val ok = if (s.kind == "name-swap") s.cands else
+                    s.cands.indices.filter { it < pr.size - 1 && pr[it].toDouble() >= orig - config.probeMargin }.map { s.cands[it] }
+                if (ok.isEmpty()) continue
+                val sur = (s.a until s.b).minOf { surpr[it] }
+                // splitting a common compound ("everything") is rarely the fix, so only very surprising words
+                val threshold = if (s.kind == "split") config.splitSurprise else config.surprise
+                if (sur < threshold || s.always) scorings.add(Scoring(s, ok.take(config.k), if (s.always) Double.NEGATIVE_INFINITY else sur))
+            }
+            scorings.sortedBy { it.sur }.take(config.maxExtraSlots)
+        }
+
+        // every candidate of every word and spot is scored in one LM call, each against the text with
+        // only that change
+        val variants = ArrayList<String>()
+        val wordFirst = IntArray(candWords.size)
+        for ((i, k) in candWords.withIndex()) {
             val a = spans[k][0]
             val b = spans[k][1]
             val end = windowEnd(text, b)
-            val cands = kept.getValue(k)
-            val variants = listOf(text.substring(0, end)) + cands.map { text.substring(0, a) + it + text.substring(b, end) }
+            wordFirst[i] = variants.size
+            variants.add(text.substring(0, end))
+            for (c in kept.getValue(k)) variants.add(text.substring(0, a) + c + text.substring(b, end))
+        }
+        val slotFirst = IntArray(chosen.size)
+        for ((ci, c) in chosen.withIndex()) {
+            val a = spans[c.slot.a][0]
+            val b = spans[c.slot.b - 1][1]
+            val end = windowEnd(text, b)
+            slotFirst[ci] = variants.size
+            variants.add(text.substring(0, end))
+            for (cand in c.cands) variants.add(text.substring(0, a) + cand + text.substring(b, end))
+        }
+        val scored: List<LmScorer.Scored> = if (variants.isEmpty()) emptyList() else {
             checkpoint()
-            val rr = scorer.score(variants)
-            val lp0 = rr[0]
+            scorer.scoreDetailed(variants)
+        }
+
+        /** Log-prob gain of the tokens after the changed word, which only its context can explain. */
+        fun tailGain(o: LmScorer.Scored, w: LmScorer.Scored, oFrom: Int, wFrom: Int): Double {
+            var so = 0.0
+            for (i in minOf(oFrom, o.lps.size) until o.lps.size) so += o.lps[i]
+            var sw = 0.0
+            for (i in minOf(wFrom, w.lps.size) until w.lps.size) sw += w.lps[i]
+            return sw - so
+        }
+        // the tail gain of each word edit's replacement (same order as edits)
+        val tails = ArrayList<Double>()
+        for ((i, k) in candWords.withIndex()) {
+            val a = spans[k][0]
+            val b = spans[k][1]
+            val cands = kept.getValue(k)
+            val o = wordFirst[i]
+            val lp0 = scored[o].total
             // the best candidate for its kind, since a near sound-alike needs more than an exact homophone
             // ("I new it" -> "knew", not "know")
-            fun need(i: Int) = if (Homophones.isLoaded && !Homophones.same(words[k], cands[i - 1])) config.nearMargin - config.homophoneMargin else 0.0
+            fun need(j: Int) = if (Homophones.isLoaded && !Homophones.same(words[k], cands[j - 1])) config.nearMargin - config.homophoneMargin else 0.0
             var best = 1
-            for (i in 2 until variants.size) if (rr[i] - need(i) > rr[best] - need(best)) best = i
-            val delta = rr[best] - lp0
+            for (j in 2..cands.size) if (scored[o + j].total - need(j) > scored[o + best].total - need(best)) best = j
+            val oEnd = scorer.tokenCount(text.substring(0, b))
+            val tail = DoubleArray(cands.size + 1)
+            for (j in 1..cands.size) {
+                tail[j] = tailGain(scored[o], scored[o + j], oEnd, scorer.tokenCount(text.substring(0, a) + cands[j - 1]))
+                trace.add("word '%s' (%.1f) -> '%s': delta %.2f tail %.2f".format(words[k], surpr[k], cands[j - 1], scored[o + j].total - lp0, tail[j]))
+            }
+            val delta = scored[o + best].total - lp0
             if (delta > config.wordMargin) {
                 edits.add(Edit(a, b, cands[best - 1], "word", delta))
                 sources.add(text.substring(a, b))
+                tails.add(tail[best])
             }
         }
         // context must win, meaning the gain, less how much more common the replacement is anyway (the LM's
         // preference for a frequent word is no sign that the voice model misheard), must beat a
-        // margin, and a near sound-alike ("pool" -> "poll") was heard differently and needs far more
+        // margin, and a near sound-alike ("pool" -> "poll") was heard differently and needs far more.
+        // How common a word is only explains the gain at the word itself, never the gain on the words
+        // after it ("knew paragraph" -> "new paragraph" makes "paragraph" likely), so the discount is
+        // at most the word's own gain
         if (edits.isNotEmpty()) {
             val pv = ArrayList<String>()
             for ((i, e) in edits.withIndex()) for (f in PRIOR_FRAMES) {
@@ -761,11 +954,8 @@ class ContextRescorer(
                 var d = 0.0
                 for (j in PRIOR_FRAMES.indices) d += pr[2 * (i * PRIOR_FRAMES.size + j) + 1] - pr[2 * (i * PRIOR_FRAMES.size + j)]
                 d /= PRIOR_FRAMES.size
-                val adj = e.delta - maxOf(0.0, d)
+                val adj = e.delta - maxOf(0.0, minOf(d, e.delta - tails[i]))
                 val exact = Homophones.same(sources[i], e.replacement)
-                trace.add("prior '%s' -> '%s': delta %.2f prior %.2f adjusted %.2f %s".format(
-                    sources[i], e.replacement, e.delta, d, adj,
-                    if (exact) "homophone" else if (Homophones.confusable(sources[i], e.replacement)) "near" else "distant"))
                 // a sound-alike that differs in a clearly different sound ("fan" -> "phone") the voice
                 // model did not mishear, so it is never swapped
                 val margin = when {
@@ -774,16 +964,25 @@ class ContextRescorer(
                     else -> Double.POSITIVE_INFINITY
                 }
                 // with nothing before it in its sentence ("Pare the apples.", "The doe ran.", "A cent
-                // short."), the LM only knows which word usually opens a sentence, so more is needed
+                // short."), the LM only knows which word usually opens a sentence, so more is needed,
+                // or the words after it must show it ("The serial is in aisle five", "By two loaves of bread")
                 val k = spans.indexOfFirst { it[0] == e.start }
                 val opening = k >= 0 && (sentenceStart(k) || (k >= 1 && sentenceStart(k - 1) && TranscriptGuard.normWord(words[k - 1]) in OPENING_DETERMINERS))
-                if (adj > margin + (if (opening) config.openingMargin else 0.0)) keep.add(i)
+                trace.add("prior '%s' -> '%s': delta %.2f tail %.2f prior %.2f adjusted %.2f %s%s".format(
+                    sources[i], e.replacement, e.delta, tails[i], d, adj,
+                    if (exact) "homophone" else if (Homophones.confusable(sources[i], e.replacement)) "near" else "distant",
+                    if (opening) " opening" else ""))
+                val ok = if (!opening) adj > margin else
+                    adj > margin + config.openingMargin || (adj > margin && tails[i] > margin + config.openingTailMargin)
+                if (ok) keep.add(i)
             }
             if (keep.size < edits.size) {
                 val ke = keep.map { edits[it] }
                 val ks = keep.map { sources[it] }
+                val kt = keep.map { tails[it] }
                 edits.clear(); edits.addAll(ke)
                 sources.clear(); sources.addAll(ks)
+                tails.clear(); tails.addAll(kt)
             }
         }
         // fixes of neighbouring words were each judged with the other word unchanged ("over
@@ -812,71 +1011,42 @@ class ContextRescorer(
             }
         }
 
-        // word boundaries, names and capitalization use the same probe + surprise filters, all scored in one batch
-        if (slots.isNotEmpty()) {
-            class Scoring(val slot: Slot, val cands: List<String>, val sur: Double)
-            val scorings = ArrayList<Scoring>()
-            for ((si, s) in slots.withIndex()) {
-                val pr = v.probes.getOrNull(probeKeys.size + si) ?: continue
-                if (pr.isEmpty()) continue
-                val orig = pr[pr.size - 1].toDouble()
-                // a name spelling the personal dictionary has is scored even if its first token is unlikely
-                val ok = if (s.kind == "name-swap") s.cands else
-                    s.cands.indices.filter { it < pr.size - 1 && pr[it].toDouble() >= orig - config.probeMargin }.map { s.cands[it] }
-                if (ok.isEmpty()) continue
-                val sur = (s.a until s.b).minOf { surpr[it] }
-                // splitting a common compound ("everything") is rarely the fix, so only very surprising words
-                val threshold = if (s.kind == "split") config.splitSurprise else config.surprise
-                if (sur < threshold || s.always) scorings.add(Scoring(s, ok.take(config.k), if (s.always) Double.NEGATIVE_INFINITY else sur))
-            }
-            val chosen = scorings.sortedBy { it.sur }.take(config.maxExtraSlots)
-            if (chosen.isNotEmpty()) {
-                val variants = ArrayList<String>()
-                val first = ArrayList<Int>()
-                for (c in chosen) {
-                    val a = spans[c.slot.a][0]
-                    val b = spans[c.slot.b - 1][1]
-                    val end = windowEnd(text, b)
-                    first.add(variants.size)
-                    variants.add(text.substring(0, end))
-                    for (cand in c.cands) variants.add(text.substring(0, a) + cand + text.substring(b, end))
+        // word boundaries, names and capitalization (scored with the words above)
+        if (chosen.isNotEmpty()) {
+            val rr = DoubleArray(scored.size) { scored[it].total }
+            for ((ci, c) in chosen.withIndex()) {
+                val o = slotFirst[ci]
+                var best = 1
+                for (i in 2..c.cands.size) if (rr[o + i] > rr[o + best]) best = i
+                val delta = rr[o + best] - rr[o]
+                val a = spans[c.slot.a][0]
+                val b = spans[c.slot.b - 1][1]
+                for ((i, cand) in c.cands.withIndex()) {
+                    trace.add("%s '%s' -> '%s': %.2f".format(c.slot.kind, text.substring(a, b), cand, rr[o + 1 + i] - rr[o]))
                 }
-                checkpoint()
-                val rr = scorer.score(variants)
-                for ((ci, c) in chosen.withIndex()) {
-                    val o = first[ci]
-                    var best = 1
-                    for (i in 2..c.cands.size) if (rr[o + i] > rr[o + best]) best = i
-                    val delta = rr[o + best] - rr[o]
-                    val a = spans[c.slot.a][0]
-                    val b = spans[c.slot.b - 1][1]
-                    for ((i, cand) in c.cands.withIndex()) {
-                        trace.add("%s '%s' -> '%s': %.2f".format(c.slot.kind, text.substring(a, b), cand, rr[o + 1 + i] - rr[o]))
+                val margin = when (c.slot.kind) {
+                    "boundary", "split", "namesplit" -> config.boundaryMargin
+                    "name" -> config.nameMargin
+                    "name-swap" -> config.nameSwapMargin
+                    else -> config.caseMargin
+                }
+                if (delta > margin) {
+                    val e = Edit(a, b, c.cands[best - 1], if (c.slot.kind == "split" || c.slot.kind == "namesplit") "boundary" else c.slot.kind, delta)
+                    // overlapping or right next to a sound-alike word fix ("lives a lone"), the
+                    // larger gain wins (each was judged with the other unchanged)
+                    val clash = edits.filter { x ->
+                        val lo = minOf(x.end, e.end)
+                        val hi = maxOf(x.start, e.start)
+                        (x.start < e.end && e.start < x.end) || (lo <= hi && text.substring(lo, hi).none { it.isLetterOrDigit() })
                     }
-                    val margin = when (c.slot.kind) {
-                        "boundary", "split", "namesplit" -> config.boundaryMargin
-                        "name" -> config.nameMargin
-                        "name-swap" -> config.nameSwapMargin
-                        else -> config.caseMargin
-                    }
-                    if (delta > margin) {
-                        val e = Edit(a, b, c.cands[best - 1], if (c.slot.kind == "split" || c.slot.kind == "namesplit") "boundary" else c.slot.kind, delta)
-                        // overlapping or right next to a sound-alike word fix ("lives a lone"), the
-                        // larger gain wins (each was judged with the other unchanged)
-                        val clash = edits.filter { x ->
-                            val lo = minOf(x.end, e.end)
-                            val hi = maxOf(x.start, e.start)
-                            (x.start < e.end && e.start < x.end) || (lo <= hi && text.substring(lo, hi).none { it.isLetterOrDigit() })
+                    if (clash.all { it.delta < e.delta }) {
+                        for (x in clash) {
+                            val i = edits.indexOf(x)
+                            edits.removeAt(i)
+                            sources.removeAt(i)
                         }
-                        if (clash.all { it.delta < e.delta }) {
-                            for (x in clash) {
-                                val i = edits.indexOf(x)
-                                edits.removeAt(i)
-                                sources.removeAt(i)
-                            }
-                            edits.add(e)
-                            sources.add(text.substring(a, b))
-                        }
+                        edits.add(e)
+                        sources.add(text.substring(a, b))
                     }
                 }
             }
@@ -971,13 +1141,16 @@ class ContextRescorer(
     fun correctAll(text: String, segments: List<String> = emptyList(), checkpoint: () -> Unit = {}, left: String = ""): String {
         if (text.isBlank()) return text
         val chunks = splitChunks(text, config.maxChars)
-        return chunks.withIndex().joinToString("") { (ci, chunk) ->
+        val out = StringBuilder()
+        for (chunk in chunks) {
             val lead = chunk.takeWhile { it.isWhitespace() }
             val body = chunk.substring(lead.length)
             val trail = body.takeLastWhile { it.isWhitespace() }
             val core = body.substring(0, body.length - trail.length)
-            if (core.isEmpty()) chunk else lead + correctAfter(core, if (ci == 0) left else "", if (chunks.size == 1) segments else emptyList(), checkpoint).text + trail
+            // each chunk reads the end of the text before it (the field's, then the chunks already done)
+            out.append(if (core.isEmpty()) chunk else lead + correctAfter(core, left + out, if (chunks.size == 1) segments else emptyList(), checkpoint).text + trail)
         }
+        return out.toString()
     }
 
     /**

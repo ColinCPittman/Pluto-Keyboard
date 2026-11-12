@@ -11,6 +11,8 @@ import kotlinx.coroutines.withContext
 import kotlinx.coroutines.yield
 import org.futo.voiceinput.shared.engine.RecognitionEngineConfiguration
 import org.futo.voiceinput.shared.engine.RecognitionStats
+import org.futo.voiceinput.shared.engine.StreamingRecognitionSession
+import org.futo.voiceinput.shared.engine.StreamingRecognitionSession.Result
 import org.futo.voiceinput.shared.moonshine.core.EnergySpeechProbability
 import org.futo.voiceinput.shared.moonshine.core.MoonshineException
 import org.futo.voiceinput.shared.moonshine.core.MoonshineStreamingTranscriber
@@ -33,9 +35,7 @@ class MoonshineStreamingSession(
     private val manager: MoonshineModelManager,
     private val configuration: RecognitionEngineConfiguration.MoonshineStreaming,
     private val onPartial: suspend (String) -> Unit
-) {
-    /** [segments] are the decoded utterances (between pauses) that [text] was joined from. */
-    data class Result(val text: String, val segments: List<String>, val stats: RecognitionStats)
+) : StreamingRecognitionSession {
 
     private val audio = Channel<FloatArray>(Channel.UNLIMITED)
     private var lease: MoonshineModelManager.Lease? = null
@@ -47,8 +47,7 @@ class MoonshineStreamingSession(
     private var finishing = false
     @Volatile private var workerError: Throwable? = null
 
-    /** Loads the model (or reuses the cached one) and starts the worker. Throws on load failure. */
-    suspend fun start(scope: CoroutineScope) = withContext(Dispatchers.Default) {
+    override suspend fun start(scope: CoroutineScope) = withContext(Dispatchers.Default) {
         val lease = manager.obtain(configuration.modelDir, configuration.runtime)
         this@MoonshineStreamingSession.lease = lease
         if (cancelled) {
@@ -68,9 +67,16 @@ class MoonshineStreamingSession(
         }
         this@MoonshineStreamingSession.vad = vad
 
-        val transcriber = MoonshineStreamingTranscriber(lease.model, vad, configuration.streaming)
-        transcriber.start()
-        this@MoonshineStreamingSession.transcriber = transcriber
+        val transcriber = try {
+            MoonshineStreamingTranscriber(lease.model, vad, configuration.streaming).also {
+                this@MoonshineStreamingSession.transcriber = it
+                it.start()
+            }
+        } catch (e: Throwable) {
+            // AudioRecognizer only cancels after this, which can't see a worker to release with.
+            release()
+            throw e
+        }
 
         val job = scope.launch(Dispatchers.Default) {
             var lastPartial = ""
@@ -100,6 +106,8 @@ class MoonshineStreamingSession(
                 audio.close()
             }
         }
+        // The scope ending (the keyboard closing) means no finish() is coming.
+        job.invokeOnCompletion { if (it is CancellationException) cancel() }
         synchronized(lock) {
             worker = job
             if (cancelled) {
@@ -109,16 +117,11 @@ class MoonshineStreamingSession(
         }
     }
 
-    /** Called from the recording loop with 16 kHz mono samples. */
-    fun addAudio(samples: FloatArray) {
+    override fun addAudio(samples: FloatArray) {
         if (!cancelled) audio.trySend(samples)
     }
 
-    /**
-     * Ends the stream and returns the final transcript, or null if the session
-     * was cancelled or never started.
-     */
-    suspend fun finish(): Result? = withContext(Dispatchers.Default) {
+    override suspend fun finish(): Result? = withContext(Dispatchers.Default) {
         val stopTime = System.nanoTime()
         audio.close()
         worker?.join()
@@ -159,8 +162,7 @@ class MoonshineStreamingSession(
         }
     }
 
-    /** Stops without producing a result. Safe to call from any thread, any time. */
-    fun cancel() {
+    override fun cancel() {
         val w: Job?
         synchronized(lock) {
             cancelled = true

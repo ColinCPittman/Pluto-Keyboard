@@ -330,6 +330,9 @@ class GeneralIME(val helper: IMEHelper) : IMEInterface, WordLearner, SuggestionS
         composingSpanStart: Int,
         composingSpanEnd: Int
     ) {
+        // a selection a typing fix passed through on its way isn't a move of yours, so it mustn't
+        // reset what you're typing (the keyboard's bookkeeping already expects where it ends)
+        if (typingCorrections.isOwnEditStep(newSelStart, newSelEnd)) return
         val moved = inputLogic.onUpdateSelection(
             oldSelStart, oldSelEnd,
             newSelStart, newSelEnd,
@@ -345,7 +348,7 @@ class GeneralIME(val helper: IMEHelper) : IMEInterface, WordLearner, SuggestionS
     private fun onEventInternal(event: Event, ignoreSuggestionUpdate: Boolean = false) {
         helper.requestCursorUpdate()
         // a typing fix shown by selecting it gives the cursor back first, so the key can't replace it
-        typingCorrections.endShow()
+        typingCorrections.beforeEvent()
 
         val cursorBefore = inputLogic.mConnection.mExpectedSelStart
 

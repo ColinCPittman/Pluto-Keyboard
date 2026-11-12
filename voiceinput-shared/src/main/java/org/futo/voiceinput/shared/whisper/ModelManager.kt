@@ -3,6 +3,7 @@ package org.futo.voiceinput.shared.whisper
 import android.content.Context
 import org.futo.voiceinput.shared.ggml.WhisperGGML
 import org.futo.voiceinput.shared.moonshine.MoonshineModelManager
+import org.futo.voiceinput.shared.transcribe.TranscribeModelManager
 import org.futo.voiceinput.shared.types.ModelLoader
 
 
@@ -13,6 +14,9 @@ class ModelManager(
 
     /** Cache for the Moonshine streaming engine (same lifetime as the whisper models). */
     val moonshine = MoonshineModelManager()
+
+    /** Cache for the transcribe.cpp engine (Nemotron, Parakeet), same lifetime. */
+    val transcribe = TranscribeModelManager()
 
     fun obtainModel(model: ModelLoader): WhisperGGML {
         val key = model.key(context)
@@ -38,5 +42,6 @@ class ModelManager(
         loadedModels.clear()
 
         moonshine.cleanUp()
+        transcribe.cleanUp()
     }
 }

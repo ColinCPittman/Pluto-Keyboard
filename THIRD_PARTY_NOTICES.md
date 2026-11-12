@@ -11,6 +11,9 @@ own license text, and the licenses are summarised here:
 | Moonshine (code port and English streaming models) | Voice typing | MIT |
 | Silero VAD | Splitting speech into utterances | MIT |
 | ONNX Runtime | Running the voice and punctuation models | MIT |
+| transcribe.cpp (with its own copy of ggml, and miniz) | Running the Nemotron and Parakeet voice models | MIT |
+| NVIDIA Nemotron Speech Streaming EN 0.6B (GGUF) | Voice typing | NVIDIA Open Model License |
+| NVIDIA Parakeet TDT-CTC 110M (GGUF) | Voice typing | CC-BY-4.0 |
 | llama.cpp / ggml | Running the Smart corrections model | MIT |
 | Qwen3-0.6B (GGUF Q4_0) | Smart corrections language model | Apache-2.0 |
 | pcs_en punctuation model (1-800-BAD-CODE) | Punctuation, English | Apache-2.0 |
@@ -63,6 +66,80 @@ speech-to-text models: MIT). The packages also contain Silero VAD
 
 `com.microsoft.onnxruntime:onnxruntime-android` (MIT License, Copyright (c)
 Microsoft Corporation), <https://github.com/microsoft/onnxruntime>.
+
+## transcribe.cpp / ggml (Nemotron and Parakeet speech recognition)
+
+`voiceinput-shared/src/main/cpp/transcribe.cpp` is a git submodule of
+<https://github.com/handy-computer/transcribe.cpp>, pinned to commit
+`5700f127e38dd53c4735ea23ef743b4b538eacd4`. It is compiled (CPU backend only,
+statically, hidden symbols) into `libplutotranscribe.so` together with
+`voiceinput-shared/src/main/cpp/transcribe/`. transcribe.cpp brings its own copy
+of ggml (`transcribe.cpp/ggml`), separate from the one in llama.cpp.
+
+    MIT License
+    Copyright (c) 2026 The transcribe.cpp authors
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
+Its ggml copy is under the same MIT License, Copyright (c) 2023-2026 The ggml
+authors (full text in the llama.cpp / ggml section below). It also compiles in
+miniz (`transcribe.cpp/src/third_party/miniz`, <https://github.com/richgel999/miniz>):
+
+    Copyright 2013-2014 RAD Game Tools and Valve Software
+    Copyright 2010-2014 Rich Geldreich and Tenacious Software LLC
+
+    All Rights Reserved.
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
+
+The model weights are not part of this repository. They are imported by the
+user as model packages built by `tools/package-transcribe-models.py` from the
+GGUF conversions that the transcribe.cpp project publishes
+(<https://huggingface.co/handy-computer>). The weights were converted to GGUF and
+quantized, not retrained. Each package carries the model's LICENSE.txt and, where
+there is one, its NOTICE.txt.
+
+- NVIDIA Nemotron Speech Streaming EN 0.6B
+  (<https://huggingface.co/nvidia/nemotron-speech-streaming-en-0.6b>), as
+  `handy-computer/nemotron-speech-streaming-en-0.6b-gguf` (Q4_K_M). Licensed by
+  NVIDIA Corporation under the NVIDIA Open Model License
+  (<https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/>).
+- NVIDIA Parakeet TDT-CTC 110M (<https://huggingface.co/nvidia/parakeet-tdt_ctc-110m>),
+  as `handy-computer/parakeet-tdt_ctc-110m-gguf` (Q8_0), by NVIDIA, under the
+  Creative Commons Attribution 4.0 International license (CC-BY-4.0,
+  <https://creativecommons.org/licenses/by/4.0/>).
 
 ## llama.cpp / ggml (voice-input context model)
 

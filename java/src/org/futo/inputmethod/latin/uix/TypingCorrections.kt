@@ -5,6 +5,7 @@ import android.content.Context
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.SuggestionSpan
+import android.os.SystemClock
 import android.util.Log
 import android.widget.Toast
 import androidx.compose.runtime.mutableStateOf
@@ -12,6 +13,7 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
+import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -19,8 +21,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.futo.inputmethod.engine.IMEHelper
 import org.futo.inputmethod.event.Event
+import org.futo.inputmethod.latin.BuildConfig
 import org.futo.inputmethod.latin.R
-import org.futo.inputmethod.latin.common.Constants
+import org.futo.inputmethod.latin.TypingTextEdit
 import org.futo.inputmethod.latin.inputlogic.InputLogic
 import org.futo.inputmethod.latin.settings.Settings
 import org.futo.voiceinput.shared.context.OwnTypingPair
@@ -54,6 +57,21 @@ val TYPING_FIX_MISSED_TYPOS = SettingsKey(
     default = true
 )
 
+/**
+ * Fix missing, doubled and leftover words and two words in the wrong order, the slips of editing a
+ * message ("a cup coffee" -> "a cup of coffee", "to to" -> "to").
+ */
+val TYPING_FIX_MISSING_WORDS = SettingsKey(
+    key = booleanPreferencesKey("typing_fix_missing_words"),
+    default = true
+)
+
+/** Fix a word whose ending doesn't fit the words around it ("a long lists" -> "a long list"). */
+val TYPING_FIX_WORD_ENDINGS = SettingsKey(
+    key = booleanPreferencesKey("typing_fix_word_endings"),
+    default = true
+)
+
 /** Where the strip shows the typing fix chip, either on the right (next to the pinned actions) or the left. */
 val TYPING_FIX_CHIP_ON_RIGHT = SettingsKey(
     key = booleanPreferencesKey("typing_fix_chip_on_right"),
@@ -77,8 +95,10 @@ val TYPING_PAIRS_BUILT_IN = SettingsKey(
 
 /**
  * A fix Smart corrections for typing made in the current text field. [original] at [start] was
- * replaced by [replacement]. [before] / [after] are the characters around it when it was made,
- * so a revert can tell whether the text there was edited since ([stale]).
+ * replaced by [replacement] (either may be several words, like "to to" -> "to"). [before] / [after]
+ * are the characters around it when it was made, so a revert can tell whether the text there was
+ * edited since ([stale]). [kind] is the engine's ("pair", "typo", "add", "remove", "ending",
+ * "order" or "join").
  */
 data class TypingFix(
     val id: Long,
@@ -88,8 +108,15 @@ data class TypingFix(
     val before: String,
     val after: String,
     val stale: Boolean = false,
+    val kind: String = "pair",
 ) {
     val end: Int get() = start + replacement.length
+
+    /**
+     * Whether undoing it offers Stop. Only a swap of one word for another (a pair or a missed
+     * typo) has a pair to switch off or a word to never change. (Every kind's undo teaches caution.)
+     */
+    val canStop: Boolean get() = kind == "pair" || kind == "typo"
 
     /**
      * Whether [now] (the text from [before]'s start up to the cursor) still shows this fix as it
@@ -160,6 +187,7 @@ object TypingFixes {
     /** Switches off [fix]'s pair ("pour → pout") in the typing corrections list. */
     fun stopFix(context: Context, fix: TypingFix) {
         stopOffer.value = null
+        if (!fix.canStop) return
         val typed = fix.original.lowercase()
         val meant = fix.replacement.lowercase()
         // a missed typo has no pair to switch off, so the typed word goes on the never-change list
@@ -226,6 +254,15 @@ class TypingRevertMemory(private val get: (String) -> Int, private val put: (Map
 
     fun recordRevert(from: String, to: String, prev: String, next: String) = record("", MISS, from, to, prev, next)
 
+    /**
+     * An undone fix left its sentence as [result] ([TypingPlan.resultHash], a number, never the
+     * text). A fix that would make that same sentence again, in whatever form ("to to" -> "to" or
+     * "to call" -> "call"), isn't made ([refusesResult]), also later and in other fields.
+     */
+    fun recordRefusedResult(result: Long) = put(mapOf(RESULT + java.lang.Long.toHexString(result) to 1))
+
+    fun refusesResult(result: Long): Boolean = get(RESULT + java.lang.Long.toHexString(result)) > 0
+
     /** You changed [from] into [to] yourself where it wasn't fixed. */
     fun recordMiss(from: String, to: String, prev: String, next: String) = record(MISS, "", from, to, prev, next)
 
@@ -247,16 +284,32 @@ class TypingRevertMemory(private val get: (String) -> Int, private val put: (Map
         /** At most this much more ready (the corrector never goes below the floor of your own pairs). */
         const val MAX_READY = 4.0
         private const val MISS = "miss:"
+        private const val RESULT = "result:"
         const val PREFS = "typing_reverts"
+
+        /**
+         * The words just before and after a change (lowercase, "" at an edge), from the text
+         * around it ([before] / [after]), which is the context the corrector asks [caution] about.
+         * A change of several words ("to to" -> "to") is kept by its whole strings, spaces and all.
+         */
+        fun neighbours(before: String, after: String): Pair<String, String> {
+            // (like the corrector, a word before a sentence end isn't the previous word)
+            val prev = Regex("([A-Za-z']+)([^A-Za-z']*)$").find(before)?.takeIf { m -> m.groupValues[2].none { it in ".?!\n" } }
+                ?.groupValues?.get(1)?.lowercase() ?: ""
+            val next = Regex("^\\W*([A-Za-z']+)").find(after)?.groupValues?.get(1)?.lowercase() ?: ""
+            return prev to next
+        }
     }
 }
 
 /**
- * Smart corrections for typing in one text field. After a sentence ends (or a few words after a
- * word that may be a slip), the sentence is re-checked in the background with the context model
- * ([ContextModels.checkTyping]), and a fix is applied behind the cursor, with an auto-correction
- * [SuggestionSpan] (an underline offering the original, where the app supports it), and listed
- * in [TypingFixes] for the strip's chip and review list until the field closes.
+ * Smart corrections for typing in one text field. It judges the text around the cursor as it is,
+ * however it got there (typed, dictated, pasted, edited later): each sentence that changed since it
+ * was last found fine is checked again in the background with the context model
+ * ([ContextModels.checkTyping]), the one at the cursor first. A fix is applied where it is, before
+ * or after the cursor, with an auto-correction [SuggestionSpan] (an underline offering the original,
+ * where the app supports it), and listed in [TypingFixes] for the strip's chip and review list until
+ * the field closes.
  */
 class TypingCorrections(private val helper: IMEHelper, private val inputLogic: InputLogic) {
     private val context = helper.context
@@ -293,28 +346,99 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
             return ok
         }
     private var locale: Locale = Locale.ENGLISH
-    private var running: Job? = null
-    private var again = false
 
-    /** A fix found while a word was being typed is applied when the word ends. */
-    private var waiting: (() -> Unit)? = null
+    /** The running check (one at a time), and the text it checked with where that started. */
+    private var running: Job? = null
+    private var runningRegion: Pair<Int, String>? = null
+
+    /**
+     * A fix found while a word was being typed (or text was selected). It goes in once that's over,
+     * if the text it checked is still there ([region], which started at [regionAt] and at
+     * [regionStart] of the text the check read).
+     */
+    private class Waiting(val regionAt: Int, val region: String, val regionStart: Int, val fix: TypingCorrector.Fix)
+    private var waiting: Waiting? = null
     private var nextId = 1L
 
     /**
-     * Starts of words the user changed by hand (picked from the strip, deleted into) or that
-     * were already fixed, so they are never touched (again).
+     * Words to leave alone, picked from the strip or fixes you undid (by the button or by hand),
+     * found again by the text around them, so edits elsewhere never lose them. Fixes already
+     * made are left alone too (they're found the same way).
      */
-    private val handTouched = HashSet<Int>()
+    private val kept = ArrayList<TypingMark>()
 
-    /** Sentence starts -> fixes they got (at most [MAX_FIXES_PER_SENTENCE]), and checks already made. */
-    private val fixedSentences = HashMap<Int, Int>()
+    /** Fixes undone in this field ("an>and"), which are never made again here. */
+    private val refused = HashSet<String>()
 
     /**
-     * Words of finished, checked sentences that have pairs and were left as typed (start -> word).
-     * When one is changed later by hand into one of its pair words, that was a missed fix.
+     * Words of finished, checked sentences that have pairs and were left as typed. When one is
+     * changed later by hand into one of its pair words, that was a missed fix.
      */
-    private val seenWords = HashMap<Int, String>()
-    private val checked = HashSet<String>()
+    private val seen = ArrayList<TypingMark>()
+
+    /**
+     * Checks that found nothing to fix, by what they read ([TypingPlan.key]). They depend only on
+     * the text and the settings, so they're kept across fields (a draft that comes back isn't
+     * checked again).
+     */
+    private val checked = CheckedSentences()
+
+    /** The next look at the text ([request]), when it's due and whether it was asked for right away. */
+    private var passJob: Job? = null
+    private var passAt = 0L
+    private var passNow = false
+
+    /** The quick look right after a word ends ([requestQuick]). */
+    private var quickJob: Job? = null
+
+    /** Finding the fixes of a field that came back ([onStartInput]). */
+    private var restoreJob: Job? = null
+
+    /**
+     * The sentences that were in the field when it opened ([TypingPlan.baseline]), which are left
+     * alone until you change them, and whether they're still to be read.
+     */
+    private val baseline = HashSet<Long>()
+    private var baselinePending = false
+
+    /**
+     * The field had more text than was read for the [baseline] ([baselinePartial]), read around
+     * [baselineAnchor] (which typing moves along with the text). When you then move the cursor far
+     * from there, the text around the new place is read as already there too, before any of it is
+     * checked. [lastSelStart] is where the cursor was at the last report.
+     */
+    private var baselinePartial = false
+    private var baselineAnchor = -1
+    private var lastSelStart = -1
+
+    /**
+     * Whether the last full look found nothing but spaces after the cursor on its line, and you
+     * haven't moved the cursor since. Only then does the quick look after a key take the text
+     * before the cursor for a sentence being typed at its end.
+     */
+    private var typingAtEnd = false
+
+    /** Checks that failed, by [TypingPlan.key], so a sentence the model can't take is given up on. */
+    private val failedChecks = HashMap<Long, Int>()
+
+    /**
+     * This field's editor mishandled a fix after the cursor (it selected something else), so fixes
+     * after the cursor are off here ([afterOff]), or a fix didn't read back as written, so fixing
+     * is off here altogether ([broken]). Both last until the field closes.
+     */
+    private var afterOff = false
+    private var broken = false
+
+    /**
+     * The selections our own edit passes through on its way (the range it selects, the cursor
+     * after it writes), which the app may report. They're not your doing, so they're ignored
+     * ([isOwnEditStep]) until [ownStepsUntil].
+     */
+    private val ownSteps = ArrayList<Pair<Int, Int>>()
+    private var ownStepsUntil = 0L
+
+    /** When you last typed or the text or cursor last changed (an edited sentence waits [QUIET_MS] after it). */
+    private var lastInputAt = 0L
 
     fun launch(block: suspend kotlinx.coroutines.CoroutineScope.() -> Unit) = helper.lifecycleScope.launch(block = block)
 
@@ -326,57 +450,136 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
      * (the keyboard restarted, you switched apps and came back, or the app reloaded its draft, which
      * Google Messages does as plain text without the underlines).
      */
-    private var parked: Triple<String, Long, List<TypingFix>>? = null
+    private var parked: Parked? = null
+    private class Parked(
+        val key: String, val at: Long, val fixes: List<TypingFix>, val kept: List<TypingMark>, val refused: Set<String>,
+        /** The field's [baseline], so text that was left alone before it closed still is when it comes back. */
+        val baseline: Set<Long>,
+        val baselinePartial: Boolean,
+        val baselineAnchor: Int,
+    )
+
+    /** Stops the running check and every look and timer still to come, and drops a fix that was waiting. */
+    private fun stopChecks() {
+        running?.cancel()
+        running = null
+        runningRegion = null
+        passJob?.cancel()
+        passJob = null
+        quickJob?.cancel()
+        quickJob = null
+        restoreJob?.cancel()
+        restoreJob = null
+        healJob?.cancel()
+        waiting = null
+    }
+
+    /** Forgets what was kept per field (the words left alone, undone fixes and checked words). */
+    private fun forgetField() {
+        kept.clear()
+        refused.clear()
+        seen.clear()
+        waiting = null
+    }
 
     private fun currentFieldKey(): String? = helper.getCurrentEditorInfo()?.let { "${it.packageName}/${it.fieldId}/${it.inputType}" }
 
     fun onStartInput() {
-        running?.cancel()
-        waiting = null
+        stopChecks()
         TypingFixes.controller = this
-        // back from a dictation in the same field, so the fixes (and their underlines) are kept
+        // what was dictated is looked at once voice input closes
+        ContextModels.typingResumed = { helper.lifecycleScope.launch(Dispatchers.Main) { request(OPEN_DELAY_MS) } }
+        // back from a dictation in the same field, so the fixes (and their underlines) are kept,
+        // and what was dictated is checked like any other change
         val back = TypingFixes.dictationHandoff && currentFieldKey() == fieldKey
         TypingFixes.dictationHandoff = false
         if (back) {
             open = true
             modelOk = null
+            // (the text from before was read when the dictation began, see onFinishInput, and what
+            // was dictated must never be taken for it)
+            baselinePending = false
+            request(OPEN_DELAY_MS)
             return
         }
         fieldKey = currentFieldKey()
-        val restore = parked?.takeIf { (key, at, _) -> key == fieldKey && System.currentTimeMillis() - at < PARK_MS }?.third
+        val same = parked?.takeIf { it.key == fieldKey && System.currentTimeMillis() - it.at < PARK_MS }
         parked = null
         TypingFixes.selectedWord.value = null
         TypingFixes.stopOffer.value = null
         TypingFixes.fixes.value = emptyList()
         TypingFixes.listOpen.value = false
         TypingFixes.hiddenWhileTyping.value = false
-        handTouched.clear()
         heals.clear()
-        fixedSentences.clear()
-        seenWords.clear()
-        checked.clear()
+        forgetField()
+        afterOff = false
+        broken = false
+        // the text already in a new field isn't checked until you change it
+        baseline.clear()
+        baselinePending = true
+        baselinePartial = false
+        baselineAnchor = -1
+        lastSelStart = -1
+        typingAtEnd = false
         open = true
         modelOk = null
-        if (!restore.isNullOrEmpty()) {
-            // the same field is back, so its fixes come back too, but only the ones still in its
-            // text (found by the words around them), and their underlines are put back
-            TypingFixes.fixes.value = restore.map { it.copy(stale = false) }
-            launch {
+        request(OPEN_DELAY_MS)
+        if (same != null) {
+            // maybe the same field is back. Its fixes come back (with their underlines put back),
+            // and what you undid or picked there still counts, but only if most of them are still in
+            // its text, since an app may give different conversations the same field. Then it isn't
+            // taken as a new field, so what you typed just before leaving still gets its check.
+            restoreJob = launch {
                 delay(RESTORE_DELAY_MS)
+                restoreJob = null
                 val w = around()
-                val kept = TypingFixes.fixes.value.mapNotNull { locate(it, w) }
-                TypingFixes.fixes.value = kept
-                updateFocus()
-                diag("Same field back: ${kept.size} of ${restore.size} fixes still in the text")
-                if (kept.isNotEmpty()) heal()
+                val found = same.fixes.mapNotNull { locate(it.copy(stale = false), w) }
+                val taken = found.isNotEmpty() && found.size >= same.fixes.size * RESTORE_SHARE
+                diag("Same field back? ${found.size} of ${same.fixes.size} fixes still in the text, ${if (taken) "same field" else "a new one"}")
+                if (taken) {
+                    TypingFixes.fixes.value = found
+                    kept.addAll(same.kept)
+                    refused.addAll(same.refused)
+                    // what was left alone there before still is (and what you typed since isn't in it)
+                    baseline.addAll(same.baseline)
+                    baselinePartial = same.baselinePartial
+                    baselineAnchor = same.baselineAnchor
+                    baselinePending = false
+                    updateFocus()
+                    heal()
+                }
+                request(0L)
             }
         }
     }
 
+    /**
+     * Reads the text that's in the field now (up to [BASELINE_CHARS] on each side of the cursor)
+     * as the field's [baseline], when a new field opens, and again when the cursor is moved far
+     * from there in a field with more text than that.
+     */
+    private fun takeBaseline() {
+        if (!baselinePending) return
+        val sel = conn.expectedSelectionStart
+        if (sel < 0) return
+        val before = conn.getTextBeforeCursor(BASELINE_CHARS, 0)?.toString() ?: return
+        val selected = if (conn.hasSelection()) conn.getSelectedText(0)?.toString() ?: "" else ""
+        val after = conn.getTextAfterCursor(BASELINE_CHARS, 0)?.toString() ?: ""
+        baselinePending = false
+        val cutStart = sel > before.length
+        val cutEnd = after.length >= BASELINE_CHARS
+        if (baseline.size > MAX_BASELINE) baseline.clear()
+        baseline.addAll(TypingPlan.baseline(before + selected + after, cutStart, cutEnd))
+        baselinePartial = cutStart || cutEnd
+        baselineAnchor = sel
+        diag("Text already in the field: ${baseline.size} sentences left alone until changed")
+    }
+
     fun onFinishInput() {
-        running?.cancel()
+        // text that was there before a dictation stays left alone after it
+        if (TypingFixes.dictationHandoff && open && enabled) takeBaseline()
+        stopChecks()
         selectionTip?.cancel()
-        waiting = null
         endShow()
         if (TypingFixes.dictationHandoff) {
             // dictation is only borrowing the field, so the fixes stay for when typing resumes
@@ -385,7 +588,9 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
         }
         // the fixes stay in the text but the list of them goes, kept a while in case the field comes back
         fieldKey?.let { key ->
-            if (TypingFixes.fixes.value.isNotEmpty()) parked = Triple(key, System.currentTimeMillis(), TypingFixes.fixes.value)
+            if (TypingFixes.fixes.value.isNotEmpty() || refused.isNotEmpty()) {
+                parked = Parked(key, System.currentTimeMillis(), TypingFixes.fixes.value, kept.toList(), refused.toSet(), baseline.toSet(), baselinePartial, baselineAnchor)
+            }
         }
         TypingFixes.fixes.value = emptyList()
         TypingFixes.selectedWord.value = null
@@ -399,18 +604,19 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
 
     fun afterEvent(event: Event) {
         TypingFixes.lastInput = if (event.isGesture) "swipe" else "keys"
+        lastInputAt = SystemClock.uptimeMillis()
         if (!enabled) return
         // when typing goes on, the offer to stop an undone fix goes
         TypingFixes.stopOffer.value = null
-        val cursor = conn.expectedSelectionStart
-        when {
-            event.eventType == Event.EVENT_TYPE_SUGGESTION_PICKED -> wordStartBefore(cursor)?.let { handTouched.add(it) }
-            event.mKeyCode == Constants.CODE_DELETE || event.mCodePoint == Constants.CODE_DELETE ->
-                wordStartBefore(cursor)?.let { handTouched.add(it) }
-        }
+        // a word picked from the strip is your choice, so it's left alone
+        if (event.eventType == Event.EVENT_TYPE_SUGGESTION_PICKED) keepWordBeforeCursor()
         typedSinceMove = true
-        TypingFixes.hiddenWhileTyping.value = inputLogic.mWordComposer.isComposingWord
-        schedule()
+        val composing = inputLogic.mWordComposer.isComposingWord
+        TypingFixes.hiddenWhileTyping.value = composing
+        // a word just ended, so a quick look right after this key (an early check or a waiting
+        // fix, from the text before the cursor only), and the full look once typing pauses
+        if (!composing) requestQuick()
+        request(DEBOUNCE_MS)
     }
 
     /** Whether you've typed since you last moved the cursor (the chip gives way only to typing). */
@@ -418,7 +624,17 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
 
     /** [moved]: you moved the cursor (a tap or drag), rather than typing having moved it. */
     fun onSelectionChanged(newSelStart: Int, newSelEnd: Int, moved: Boolean) {
-        if (moved) typedSinceMove = false
+        lastInputAt = SystemClock.uptimeMillis()
+        if (moved) {
+            typedSinceMove = false
+            typingAtEnd = false
+            // far from the text that was read when the field opened, so what's here is read first
+            if (baselinePartial && baselineAnchor >= 0 && kotlin.math.abs(newSelStart - baselineAnchor) > BASELINE_CHARS / 2) baselinePending = true
+        } else if (baselineAnchor >= 0 && lastSelStart >= 0) {
+            // typing moves the text that was read along with the cursor
+            baselineAnchor = maxOf(0, baselineAnchor + newSelStart - lastSelStart)
+        }
+        lastSelStart = newSelStart
         if (TypingFixes.fixes.value.isNotEmpty()) {
             updateFocus(newSelStart)
             scheduleHeal()
@@ -450,132 +666,280 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
             if (TypingFixes.selectedWord.value == word && conn.hasSelection()) FeatureTips.offer(context, FeatureTip.ADD_CORRECTION)
         }
         // the app cleared the field (sent), so the fixes are kept and the list goes
-        if (newSelStart == 0 && TypingFixes.fixes.value.isNotEmpty() &&
+        if (newSelStart == 0 && (TypingFixes.fixes.value.isNotEmpty() || kept.isNotEmpty() || seen.isNotEmpty()) &&
             conn.getTextBeforeCursor(1, 0).isNullOrEmpty() && conn.getTextAfterCursor(1, 0).isNullOrEmpty()) {
             TypingFixes.fixes.value = emptyList()
             TypingFixes.listOpen.value = false
-            fixedSentences.clear()
-            seenWords.clear()
-            handTouched.clear()
-            checked.clear()
+            forgetField()
         }
         // a word the cursor was moved onto is offered for re-picking, but the chip stays until you type
         TypingFixes.hiddenWhileTyping.value = typedSinceMove && inputLogic.mWordComposer.isComposingWord
+        // the text or the cursor changed, maybe without a key (dictation, paste, the app, a move
+        // back into the text), so the text is looked at again once the changes settle
+        request(DEBOUNCE_MS)
     }
-
-    private fun wordStartBefore(cursor: Int): Int? {
-        val before = conn.getTextBeforeCursor(64, 0)?.toString() ?: return null
-        var i = before.length
-        while (i > 0 && before[i - 1].isWhitespace()) i--
-        val end = i
-        while (i > 0 && (before[i - 1].isLetter() || before[i - 1] == '\'')) i--
-        return if (i < end) cursor - before.length + i else null
-    }
-
-    private val sentenceEndAtCursor = Regex("[.?!][\"')]*\\s*$")
 
     /**
-     * Checks sentences as words end while typing goes on. A running check is never cancelled by
-     * typing (it just runs again afterwards), and a fix found in the middle of a word waits for
-     * the word to end.
+     * Asks for a look at the text ([pass]) in [delayMs]. A later request replaces an earlier one
+     * (so a burst of changes makes one look), except one asked for right away, which sees the
+     * newer change too. Nothing runs while the field is idle.
      */
-    private fun schedule() {
-        if (conn.hasSelection()) return
-        // Checks also run while a word is being typed (they look at the text before it), so a fix
-        // or the re-check after one never waits for the next space. A fix found meanwhile waits
-        // for the word to end ([waiting]), so it never changes text under your fingers.
+    private fun request(delayMs: Long) {
+        if (!open) return
+        val at = SystemClock.uptimeMillis() + delayMs
+        if (passJob?.isActive == true && passNow && passAt <= at) return
+        passJob?.cancel()
+        passAt = at
+        passNow = delayMs == 0L
+        // (the scope runs a coroutine at once until it waits, so the job is known before it starts,
+        // and a request made from inside the look isn't overwritten)
+        val job = helper.lifecycleScope.launch(start = CoroutineStart.LAZY) {
+            if (delayMs > 0) delay(delayMs)
+            if (passJob === coroutineContext[Job]) passJob = null
+            pass(full = true)
+        }
+        passJob = job
+        job.start()
+    }
+
+    /**
+     * A quick look right after the key that ended a word, posted so it runs after the key is
+     * handled. It reads only the text before the cursor (which the keyboard keeps), so a key
+     * press never waits on the app.
+     */
+    private fun requestQuick() {
+        if (!open || quickJob?.isActive == true) return
+        quickJob = helper.lifecycleScope.launch(Dispatchers.Main) { pass(full = false) }
+    }
+
+    /**
+     * The text around the cursor: [text] starts at [base] of the field, [cursor] is where the
+     * cursor is in it, [composeStart]..[composeEnd] the word being typed (-1 when none), and
+     * [cutStart] / [cutEnd] whether there's more text than was read on either side. Without
+     * [afterRead], only the text before the cursor was read.
+     */
+    private class Window(
+        val base: Int,
+        val text: String,
+        val cursor: Int,
+        val composeStart: Int,
+        val composeEnd: Int,
+        val cutStart: Boolean,
+        val cutEnd: Boolean,
+        val afterRead: Boolean = true,
+    )
+
+    /**
+     * Up to [TEXT_CHARS] on each side of the cursor (only before it without [full]), or null with
+     * a selection or no cursor.
+     */
+    private fun window(full: Boolean = true): Window? {
+        if (conn.hasSelection()) return null
+        val sel = conn.expectedSelectionStart
+        if (sel < 0) return null
+        val before = conn.getTextBeforeCursor(TEXT_CHARS, 0)?.toString() ?: return null
+        val after = if (full) conn.getTextAfterCursor(TEXT_CHARS, 0)?.toString() ?: "" else ""
+        var cs = -1
+        var ce = -1
         val composer = inputLogic.mWordComposer
-        val composing = composer.isComposingWord
-        if (composing && composer.isCursorFrontOrMiddleOfComposingWord) return
-        if (!composing) waiting?.let { waiting = null; it() }
-        if (running?.isActive == true) {
-            again = true
+        if (composer.isComposingWord) {
+            val typed = composer.typedWord
+            val n = typed.codePointCount(0, typed.length)
+            val inWord = typed.offsetByCodePoints(0, composer.sizeBeforeCursor().coerceIn(0, n))
+            cs = before.length - inWord
+            ce = cs + typed.length
+            if (cs < 0 || ce > before.length + after.length) return null
+        }
+        return Window(sel - before.length, before + after, before.length, cs, ce, sel > before.length, after.length >= TEXT_CHARS, full)
+    }
+
+    /**
+     * Looks at the text around the cursor as it is now. A waiting fix goes in first, then fixes
+     * you changed back by hand and words you fixed yourself are noticed, and then the first
+     * sentence that still needs a check (the one at the cursor first, see [TypingPlan.targets]) is
+     * checked. When it's done, this runs again for the next one. A running check whose text has
+     * changed is stopped, since its answer would be no use. The quick look (not [full]) right
+     * after a key only reads the text before the cursor, takes it as typing at the end, and leaves
+     * the rest (fixes undone by hand, missed fixes, stopping a check) to the full one.
+     */
+    private fun pass(full: Boolean) {
+        if (!enabled || broken || ContextModels.typingPaused) return
+        // a field that may be the same one coming back is sorted out first
+        if (restoreJob?.isActive == true) return
+        if (full) takeBaseline() else if (baselinePending) return
+        val w = window(full) ?: return
+        if (full) typingAtEnd = w.text.substring(w.cursor).takeWhile { it != '\n' }.isBlank()
+        if (applyWaiting(w)) {
+            // the text changed, so look again from the new text
+            request(0L)
             return
         }
-        val typedLen = if (composing) composer.typedWord.length else 0
-        val cursor = conn.expectedSelectionStart - typedLen
-        val before = (conn.getTextBeforeCursor(TEXT_CHARS + typedLen, 0)?.toString() ?: return).dropLast(typedLen)
-        if (before.isEmpty() || !(before.last().isWhitespace() || before.last() in ".?!,;:")) return
-        val base = cursor - before.length
-        learnMisses(before, base)
-        val sentences = TypingCorrector.sentences(before)
-        val last = sentences.lastOrNull() ?: return
-        val lastFinished = sentenceEndAtCursor.containsMatchIn(before.substring(last.first))
-        // every finished sentence in reach that wasn't checked yet, oldest first, then the
-        // unfinished one (early check)
-        val targets = sentences.mapIndexedNotNull { i, range ->
-            val finished = i < sentences.size - 1 || lastFinished
-            if ((fixedSentences[base + range.first] ?: 0) >= MAX_FIXES_PER_SENTENCE) return@mapIndexedNotNull null
-            // the first one may be cut off by the window
-            if (i == 0 && base > 0) return@mapIndexedNotNull null
-            val to = if (finished) range.last + 1 else before.trimEnd().length
-            val region = before.substring(range.first, to)
-            if (!finished && !hasEarlyCandidate(region)) return@mapIndexedNotNull null
-            val key = "${base + range.first}:${region.hashCode()}:$finished"
-            if (key in checked) null else Triple(range.first, to, finished) to key
+        if (full) {
+            learnMisses(w)
+            findUndos(w)
         }
-        if (targets.isEmpty()) return
-        // words of finished sentences that no dictionary of the keyboard knows (nor your words) are
-        // looked up here, on the keyboard's thread, for missed typos
-        val unknownStarts = HashSet<Int>()
-        if (context.getSetting(TYPING_FIX_MISSED_TYPOS)) {
-            for ((target, _) in targets) {
-                for (m in WORD.findAll(before.substring(target.first, target.second))) {
-                    if (m.value.length >= 3 && !inputLogic.isKnownWord(m.value)) unknownStarts.add(target.first + m.range.first)
+        running?.let { job ->
+            val r = runningRegion
+            if (!full || (job.isActive && r != null && TypingFind.findRegion(w.text, r.second, r.first - w.base) != null)) return
+            job.cancel()
+            running = null
+            runningRegion = null
+            diag("Typing check dropped, its text changed")
+        }
+        if (waiting != null) return
+        // with text after the cursor (or not known yet), the sentence isn't being typed at its end,
+        // and it's left to the full look, which reads both sides and waits for a pause
+        if (!full && !typingAtEnd) return
+        val config = ContextModels.typingConfig(context)
+        val salt = "${config.hashCode()}:${System.identityHashCode(ContextModels.typingPairs(context))}"
+        val (fixRanges, keptRanges) = keptRanges(w)
+        val skip = TypingPlan.protectedStarts(w.text, w.cursor, w.composeStart, w.composeEnd, keptRanges)
+        val quietFor = SystemClock.uptimeMillis() - lastInputAt
+        var wake = Long.MAX_VALUE
+        for (t in TypingPlan.targets(w.text, w.cursor, w.composeStart, w.composeEnd, w.cutStart, w.cutEnd, baseline)) {
+            // (an editor that mishandled a fix after the cursor gets none there)
+            if (afterOff && t.to > w.cursor) continue
+            if (fixRanges.count { it.first in t.from until t.to } >= MAX_FIXES_PER_SENTENCE) continue
+            val key = TypingPlan.key(w.text, t.from, t.to, t.finished, skip, salt)
+            if (key in checked) continue
+            // a sentence you're editing in the middle of is judged once you stop for a moment
+            if (t.editing && quietFor < QUIET_MS) {
+                wake = minOf(wake, QUIET_MS - quietFor)
+                continue
+            }
+            if (t.early) {
+                val region = w.text.substring(t.from, t.to)
+                if (!hasEarlyCandidate(region, config, quiet = quietFor >= QUIET_MS)) {
+                    if (quietFor < QUIET_MS && hasEarlyCandidate(region, config, quiet = true)) wake = minOf(wake, QUIET_MS - quietFor)
+                    continue
                 }
             }
+            start(w, t, key, skip, config)
+            return
         }
-        running = helper.lifecycleScope.launch {
-            for ((target, key) in targets) {
-                val (from, to, finished) = target
-                // an unfinished sentence you've typed past since (whole words, not the one you're
-                // typing) is checked from the newer text by the next check instead, so old checks
-                // don't hold up the one for what you just typed
-                val typingNow = if (inputLogic.mWordComposer.isComposingWord) inputLogic.mWordComposer.typedWord.length else 0
-                if (!finished && conn.expectedSelectionStart - typingNow - (base + to) > STALE_CHARS) continue
-                val fix = withContext(Dispatchers.Default) {
+        if (wake != Long.MAX_VALUE && full) request(wake)
+    }
+
+    /**
+     * Where the fixes ([first]) and every word to leave alone, fixes included ([second]), are in
+     * [w]'s text now. A kept word found again is saved with its new place.
+     */
+    private fun keptRanges(w: Window): Pair<List<IntRange>, List<IntRange>> {
+        val fixes = ArrayList<IntRange>()
+        for (f in TypingFixes.fixes.value) {
+            if (f.stale) continue
+            val i = TypingFind.locate(w.text, f.replacement, f.start - w.base, f.before, f.after) ?: continue
+            fixes.add(i until i + f.replacement.length)
+        }
+        val all = ArrayList(fixes)
+        for (k in kept.indices) {
+            val m = kept[k].located(w.text, w.base, CONTEXT_CHARS) ?: continue
+            kept[k] = m
+            all.add(m.start - w.base until m.end - w.base)
+        }
+        return fixes to all
+    }
+
+    /** Starts the check of [t] in [w] (one at a time), which looks at the text again when it's done. */
+    private fun start(w: Window, t: TypingTarget, key: Long, skip: Set<Int>, config: TypingCorrectionConfig) {
+        val text = w.text
+        val regionStart = maxOf(0, t.from - TypingPlan.KEY_LEFT_CHARS)
+        val region = text.substring(regionStart, t.to)
+        val regionAt = w.base + regionStart
+        // words of the sentence that no dictionary of the keyboard knows (nor your words) are
+        // looked up here, on the keyboard's thread, for missed typos (never a piece of a longer
+        // word the corrector can't see whole, like "caf" of "café", which is left alone)
+        val unknownStarts = HashSet<Int>()
+        if (config.missedTypos) {
+            for (m in WORD.findAll(text.substring(t.from, t.to))) {
+                val at = t.from + m.range.first
+                if (m.value.length >= 3 && at !in skip && !inputLogic.isKnownWord(m.value)) unknownStarts.add(at)
+            }
+        }
+        val side = if (t.to <= w.cursor) "before" else if (t.from >= w.cursor) "after" else "at"
+        val what = if (t.early) "early" else if (t.editing) "edited" else "finished"
+        val job = helper.lifecycleScope.launch(start = CoroutineStart.LAZY) {
+            val r = try {
+                withContext(Dispatchers.Default) {
                     ContextModels.checkTyping(
-                        context, locale, before, from, to, finished,
-                        skip = { base + it in handTouched },
+                        context, locale, text, t.from, t.to, t.finished,
+                        skip = { it in skip },
                         caution = { a, b, c, d -> memory.caution(a, b, c, d) },
                         unknown = { it in unknownStarts },
                     )
                 }
-                checked.add(key)
-                if (finished) rememberWords(before, base, from, to, skipAt = fix?.start)
-                if (fix != null) {
-                    val applyIt = { apply(base, before.substring(0, to), fix, base + from) }
-                    if (inputLogic.mWordComposer.isComposingWord || conn.hasSelection()) waiting = applyIt else applyIt()
-                    // the text moved, so look again from the new text
-                    again = true
-                    break
+            } finally {
+                if (running === coroutineContext[Job]) {
+                    running = null
+                    runningRegion = null
                 }
             }
-            running = null
-            if (again) {
-                again = false
-                schedule()
+            // a check that didn't really run (voice input, aborted) still needs doing, but one the
+            // model failed on twice is given up on, so it isn't tried at every pause for nothing
+            // and the sentences after it get their turn
+            if (!r.ran) {
+                if (!r.failed) return@launch
+                val n = (failedChecks[key] ?: 0) + 1
+                if (failedChecks.size > MAX_MARKS) failedChecks.clear()
+                failedChecks[key] = n
+                if (n < MAX_CHECK_FAILURES) return@launch
+                failedChecks.remove(key)
+                checked.add(key)
+                diag("Typing check failed $n times on a sentence, leaving it")
+                request(0L)
+                return@launch
             }
+            checked.add(key)
+            val fix = r.fix?.takeIf { allowed(it, text) }
+            diag("Typing check ${r.ms} ms, $what sentence $side the cursor: ${fix?.kind ?: if (r.fix != null) "fix not made again" else "no fix"}")
+            if (t.finished) rememberWords(text, w.base, t.from, t.to, skip, fix?.start)
+            if (fix != null) {
+                waiting = Waiting(regionAt, region, regionStart, fix)
+                window()?.let { applyWaiting(it) }
+            }
+            // the next sentence, or this one again after its fix
+            request(0L)
+        }
+        running = job
+        runningRegion = regionAt to region
+        job.start()
+    }
+
+    /**
+     * A fix that was undone in this field, one that would leave a sentence the way an undone fix
+     * did (in any field, in whatever form), or one that would undo one of ours, is not made.
+     * [text] is the text the check read.
+     */
+    private fun allowed(fix: TypingCorrector.Fix, text: String): Boolean {
+        if (refusal(fix.original, fix.replacement) in refused) return false
+        if (memory.refusesResult(TypingPlan.resultHash(text, fix.start, fix.end, fix.replacement))) return false
+        return TypingFixes.fixes.value.none {
+            it.replacement.equals(fix.original, ignoreCase = true) && it.original.equals(fix.replacement, ignoreCase = true)
         }
     }
+
+    private fun refusal(original: String, replacement: String) = "${original.lowercase()}>${replacement.lowercase()}"
 
     /**
      * Whether some word of an unfinished sentence that may be a slip has just got enough words
      * after it to be checked early (a few more words get it checked again, and the sentence end
-     * checks the rest).
+     * checks the rest). A doubled word counts too, and once you stop typing for a moment ([quiet])
+     * any word with enough words after it, for the other slips of editing.
      */
-    private fun hasEarlyCandidate(region: String): Boolean {
-        val words = Regex("[A-Za-z]+(?:'[A-Za-z]+)?").findAll(region).map { it.value }.toList()
-        val config = TypingCorrectionConfig()
+    private fun hasEarlyCandidate(region: String, config: TypingCorrectionConfig, quiet: Boolean): Boolean {
+        // (pieces of words the corrector can't see whole don't count, see TypingPlan.foreignStarts)
+        val foreign = TypingPlan.foreignStarts(region)
+        val words = WORD.findAll(region).filter { it.range.first !in foreign }.map { it.value }.toList()
         val n = config.earlyWords
         val nTypo = config.earlyTypoWords
         val pairs = ContextModels.typingPairs(context)
-        val missed = context.getSetting(TYPING_FIX_MISSED_TYPOS)
         return words.indices.any { i ->
             val after = words.size - 1 - i
-            (after in n..n + EARLY_RECHECKS && pairs.candidates(words[i]).isNotEmpty()) ||
+            (config.realWords && after in n..n + EARLY_RECHECKS && pairs.candidates(words[i]).isNotEmpty()) ||
                 // a word no dictionary knows is a likely slip, so it's checked sooner
-                (missed && after in nTypo..nTypo + EARLY_RECHECKS && words[i].length >= 3 && !inputLogic.isKnownWord(words[i]))
+                (config.missedTypos && after in nTypo..nTypo + EARLY_RECHECKS && words[i].length >= 3 && !inputLogic.isKnownWord(words[i])) ||
+                (config.leftoverWords && i > 0 && after in n..n + EARLY_RECHECKS && words[i].equals(words[i - 1], ignoreCase = true)) ||
+                (quiet && config.anyEdits && after >= n)
         }
     }
 
@@ -593,72 +957,237 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
         return text
     }
 
-    private fun apply(base: Int, checkedText: String, fix: TypingCorrector.Fix, sentenceStart: Int) {
-        if (inputLogic.mWordComposer.isComposingWord || conn.hasSelection()) return
-        // the text up to the end of the checked part must be unchanged
-        val cursor = conn.expectedSelectionStart
-        val now = conn.getTextBeforeCursor(cursor - base, 0)?.toString() ?: return
-        if (cursor - now.length != base || !now.startsWith(checkedText.trimEnd())) return
-        val start = base + fix.start
-        if (!conn.replaceTextBeforeCursor(start, start + fix.original.length, underlined(fix.replacement, fix.original))) return
-        fixedSentences[sentenceStart] = (fixedSentences[sentenceStart] ?: 0) + 1
-        // the sentence is checked again for another slip ("when your pour" -> "when you pour" -> "pout"),
-        // but this word stays as fixed
-        handTouched.add(start)
-        val after = checkedText.substring(fix.end, minOf(checkedText.length, fix.end + CONTEXT_CHARS))
-        val beforeCtx = checkedText.substring(maxOf(0, fix.start - CONTEXT_CHARS), fix.start)
-        val made = TypingFix(nextId++, start, fix.original, fix.replacement, beforeCtx, after)
-        TypingFixes.fixes.value = TypingFixes.fixes.value + made
-        TypingFixes.focusId.value = made.id
-        diag("Fix made in ${Settings.getInstance().current.mInputAttributes.mTargetApplicationPackageName ?: "?"} (${if (ContextModels.typingPairs(context).candidates(fix.original).any { it.equals(fix.replacement, ignoreCase = true) }) "real word" else "missed typo"}, last input ${TypingFixes.lastInput})")
-        checkUnderline(made)
-        val realWord = ContextModels.typingPairs(context).candidates(fix.original).any { it.equals(fix.replacement, ignoreCase = true) }
-        FeatureTips.offer(context, if (realWord) FeatureTip.TYPING_FIX else FeatureTip.MISSED_TYPO_FIX, fix.original, fix.replacement)
-        // later fixes and hand-touched words after this one moved
-        shiftAfter(start, fix.replacement.length - fix.original.length)
+    /**
+     * Puts in the waiting fix if nothing is being typed or selected, the text it checked is still
+     * there (found again if edits elsewhere moved it) and the cursor isn't on or next to it.
+     * Returns whether the text changed.
+     */
+    private fun applyWaiting(w: Window): Boolean {
+        val p = waiting ?: return false
+        if (w.composeStart >= 0 || inputLogic.mWordComposer.isComposingWord) return false
+        val at = TypingFind.findRegion(w.text, p.region, p.regionAt - w.base)
+        if (at == null) {
+            // (a quick look didn't read past the cursor, where it may be)
+            if (!w.afterRead) return false
+            waiting = null
+            diag("Typing fix dropped, its text changed")
+            return false
+        }
+        val s = at + (p.fix.start - p.regionStart)
+        val e = s + p.fix.original.length
+        if (s < 0 || e > w.text.length || !w.text.regionMatches(s, p.fix.original, 0, p.fix.original.length)) {
+            waiting = null
+            return false
+        }
+        // right after autocorrect changed a word, Backspace puts back what you typed by its old
+        // length, so a change before the cursor waits for the next key (which ends that)
+        if (!TypingPlan.mayApplyNow(e, w.cursor, inputLogic.mLastComposedWord.canRevertCommit())) return false
+        waiting = null
+        // the cursor may have come to it meanwhile, or one of its words was picked from the strip
+        val skip = TypingPlan.protectedStarts(w.text, w.cursor, -1, -1, keptRanges(w).second)
+        if ((s < w.cursor && w.cursor < e) || WORD.findAll(p.fix.original).any { s + it.range.first in skip }) {
+            diag("Typing fix dropped, the cursor is on it")
+            return false
+        }
+        if (afterOff && e > w.cursor) {
+            diag("Typing fix dropped, fixes after the cursor are off in this field")
+            return false
+        }
+        return apply(w, s, p.fix)
     }
 
-    /** Remembers the words of the checked sentence [from]..[to] of [before] that have pairs (not the one at [skipAt]). */
-    private fun rememberWords(before: String, base: Int, from: Int, to: Int, skipAt: Int?) {
+    /**
+     * Replaces [fix]'s original at [s] of [w]'s text, before or after the cursor, which stays where
+     * it is. The editor must select exactly the original first (some say yes to a selection and
+     * ignore it, which would put the fix at the cursor), and the fix must read back afterwards.
+     */
+    private fun apply(w: Window, s: Int, fix: TypingCorrector.Fix): Boolean {
+        val start = w.base + s
+        val end = start + fix.original.length
+        val beforeCursor = end <= w.base + w.cursor
+        val side = if (beforeCursor) "before" else "after"
+        val text = underlined(fix.replacement, fix.original)
+        expectOwnEdit(start, end, text.length, beforeCursor)
+        // (with nothing being typed, before the cursor it moves with the text, and after it stays)
+        val result = conn.replaceTextChecked(start, end, fix.original, text)
+        when (result) {
+            TypingTextEdit.DONE, TypingTextEdit.WRONG_AFTER -> {}
+            TypingTextEdit.NOT_SELECTED -> {
+                // the editor didn't select what it said it did, so nothing was written
+                if (beforeCursor) broken = true else afterOff = true
+                diag("Typing fix not made: the app selected something else ($side the cursor), " +
+                    if (beforeCursor) "fixes off in this field" else "fixes after the cursor off in this field")
+                return false
+            }
+            else -> {
+                diag("Typing fix not taken by the app ($side the cursor, $result)")
+                return false
+            }
+        }
+        // Backspace right after this mustn't put back an autocorrected word by its old length
+        if (beforeCursor) inputLogic.mLastComposedWord.deactivate()
+        val e = s + fix.original.length
+        val beforeCtx = w.text.substring(maxOf(0, s - CONTEXT_CHARS), s)
+        val afterCtx = w.text.substring(e, minOf(w.text.length, e + CONTEXT_CHARS))
+        // a checked word inside the fix wasn't missed, and the text after it moved
+        seen.removeAll { it.start < end && start < it.end }
+        shiftAfter(start, fix.replacement.length - fix.original.length)
+        val made = TypingFix(nextId++, start, fix.original, fix.replacement, beforeCtx, afterCtx, kind = fix.kind)
+        TypingFixes.fixes.value = TypingFixes.fixes.value + made
+        TypingFixes.focusId.value = made.id
+        diag("Fix made in ${Settings.getInstance().current.mInputAttributes.mTargetApplicationPackageName ?: "?"} (${fix.kind}, $side the cursor, last input ${TypingFixes.lastInput})")
+        if (result == TypingTextEdit.WRONG_AFTER) {
+            // the text there isn't what was written, so this editor can't be trusted with fixes
+            broken = true
+            diag("Typing fix didn't read back as written ($side the cursor), fixes off in this field")
+        }
+        checkUnderline(made)
+        FeatureTips.offer(context, if (fix.kind == "typo") FeatureTip.MISSED_TYPO_FIX else FeatureTip.TYPING_FIX, fix.original, fix.replacement)
+        return true
+    }
+
+    /**
+     * Our edit of [start]..[end] (to [length] characters) is about to go through, so the selections
+     * it passes through on its way are expected and not taken for yours ([isOwnEditStep]). The
+     * last selection, which puts the cursor back, is left to the keyboard's own bookkeeping.
+     */
+    private fun expectOwnEdit(start: Int, end: Int, length: Int, beforeCursor: Boolean) {
+        val selStart = conn.expectedSelectionStart
+        val selEnd = conn.expectedSelectionEnd
+        val delta = if (beforeCursor) length - (end - start) else 0
+        val final = (selStart + delta) to (selEnd + delta)
+        ownSteps.clear()
+        for (step in listOf(start to end, (start + length) to (start + length))) {
+            if (step != final && step != (selStart to selEnd)) ownSteps.add(step)
+        }
+        ownStepsUntil = SystemClock.uptimeMillis() + OWN_EDIT_MS
+    }
+
+    /**
+     * Whether a selection the app reports ([selStart]..[selEnd]) is one our own edit passed
+     * through, which the keyboard then ignores (so it doesn't reset what you're typing or offer
+     * Add correction for the range it selected for a moment).
+     */
+    fun isOwnEditStep(selStart: Int, selEnd: Int): Boolean {
+        if (ownSteps.isEmpty()) return false
+        if (SystemClock.uptimeMillis() > ownStepsUntil) {
+            ownSteps.clear()
+            return false
+        }
+        val i = ownSteps.indexOf(selStart to selEnd)
+        if (i < 0) return false
+        ownSteps.removeAt(i)
+        return true
+    }
+
+    /** Leaves [w]'s word [s]..[e] alone from now on, found again by the text around it. */
+    private fun keep(text: String, base: Int, s: Int, e: Int) {
+        keep(TypingMark(base + s, text.substring(s, e), text.substring(maxOf(0, s - CONTEXT_CHARS), s),
+            text.substring(e, minOf(text.length, e + CONTEXT_CHARS))))
+    }
+
+    private fun keep(mark: TypingMark) {
+        kept.removeAll { it.start == mark.start && it.word == mark.word }
+        kept.add(mark)
+        if (kept.size > MAX_MARKS) kept.removeAt(0)
+    }
+
+    /** The word just before the cursor (after any spaces), which you picked from the strip, is left alone. */
+    private fun keepWordBeforeCursor() {
+        val w = window(full = false) ?: return
+        var i = w.cursor
+        while (i > 0 && w.text[i - 1].isWhitespace()) i--
+        val end = i
+        while (i > 0 && (w.text[i - 1].isLetter() || w.text[i - 1] == '\'')) i--
+        if (i < end) keep(w.text, w.base, i, end)
+    }
+
+    /**
+     * Fixes you changed back to what you typed, by hand, are treated like an undo: that change
+     * isn't made again in this field, and it learns caution. Not while you're still on it.
+     */
+    private fun findUndos(w: Window) {
+        for (f in TypingFixes.fixes.value.toList()) {
+            val at = undoneByHand(f, w.text, w.base) ?: continue
+            val e = at + f.original.length
+            if (w.cursor in at..e || (w.composeStart >= 0 && w.composeStart <= e && at <= w.composeEnd)) continue
+            diag("Typing fix changed back by hand (${f.kind})")
+            forget(f, w.base + at, TypingPlan.resultHash(w.text, at, at + f.original.length, f.replacement))
+        }
+    }
+
+    /**
+     * [fix] was undone and its original is back at [at]: it goes from the list, its words are
+     * left alone, and the same change isn't made again in this field. Any kind is remembered in
+     * [TypingRevertMemory] too (the corrector asks it about every kind), so the same change in the
+     * same words needs much more evidence from then on, also in other fields and after a restart.
+     * [result] is the sentence as the fix had it ([TypingPlan.resultHash]), which isn't made again
+     * in any form (null when the text couldn't be read).
+     */
+    private fun forget(fix: TypingFix, at: Int, result: Long?) {
+        refused.add(refusal(fix.original, fix.replacement))
+        keep(TypingMark(at, fix.original, fix.before, fix.after))
+        val (prev, next) = TypingRevertMemory.neighbours(fix.before, fix.after)
+        memory.recordRevert(fix.original.lowercase(), fix.replacement.lowercase(), prev, next)
+        result?.let { memory.recordRefusedResult(it) }
+        TypingFixes.fixes.value = TypingFixes.fixes.value.filter { it.id != fix.id }
+        if (TypingFixes.fixes.value.isEmpty()) TypingFixes.listOpen.value = false
+        updateFocus()
+    }
+
+    /** Remembers the words of the checked sentence [from]..[to] of [text] that have pairs (not the one at [skipAt], nor ones left alone). */
+    private fun rememberWords(text: String, base: Int, from: Int, to: Int, skip: Set<Int>, skipAt: Int?) {
         val pairs = ContextModels.typingPairs(context)
-        for (m in WORD.findAll(before.substring(from, to))) {
+        for (m in WORD.findAll(text.substring(from, to))) {
             val at = from + m.range.first
-            if (at == skipAt || base + at in handTouched || pairs.candidates(m.value).isEmpty()) continue
-            seenWords[base + at] = m.value.lowercase()
+            if (at == skipAt || at in skip || pairs.candidates(m.value).isEmpty()) continue
+            if (seen.any { it.start == base + at && it.word == m.value }) continue
+            val e = at + m.value.length
+            seen.add(TypingMark(base + at, m.value, text.substring(maxOf(0, at - CONTEXT_CHARS), at), text.substring(e, minOf(text.length, e + CONTEXT_CHARS))))
+            if (seen.size > MAX_SEEN) seen.removeAt(0)
         }
     }
 
     /**
      * A remembered word you changed into one of its pair words ("pour" to "pout") was a fix that
-     * was missed, so the swap gets more ready (see [TypingRevertMemory.recordMiss]).
+     * was missed, so the swap gets more ready (see [TypingRevertMemory.recordMiss]). The word is
+     * found by the text around it, so edits elsewhere don't confuse it.
      */
-    private fun learnMisses(before: String, base: Int) {
-        if (seenWords.isEmpty()) return
+    private fun learnMisses(w: Window) {
+        if (seen.isEmpty()) return
         val pairs = ContextModels.typingPairs(context)
-        for ((abs, old) in seenWords.toList()) {
-            val at = abs - base
-            if (at < 0 || at >= before.length) continue
-            if (at > 0 && (before[at - 1].isLetter() || before[at - 1] == '\'')) { seenWords.remove(abs); continue }
-            val m = WORD.find(before, at)?.takeIf { it.range.first == at }
-            if (m == null) { seenWords.remove(abs); continue }
-            val now = m.value.lowercase()
-            if (now == old) continue
-            seenWords.remove(abs)
-            if (now !in pairs.candidates(old)) continue
-            val prev = Regex("([A-Za-z']+)\\W*$").find(before.substring(maxOf(0, at - CONTEXT_CHARS), at))?.groupValues?.get(1)?.lowercase() ?: ""
-            val next = Regex("^\\W*([A-Za-z']+)").find(before.substring(m.range.last + 1, minOf(before.length, m.range.last + 1 + CONTEXT_CHARS)))
-                ?.groupValues?.get(1)?.lowercase() ?: ""
-            memory.recordMiss(old, now, prev, next)
-            FeatureTips.offer(context, FeatureTip.TYPING_MISS_LEARNED, old, now)
+        val it = seen.listIterator()
+        while (it.hasNext()) {
+            val s = it.next()
+            val expected = s.start - w.base
+            val r = TypingFind.wordBetween(w.text, expected, s.before, s.after)
+            // (the cursor is on it, so it may be half typed)
+            val busy = { a: Int, b: Int -> w.cursor in a..b || (w.composeStart >= 0 && w.composeStart <= b && a <= w.composeEnd) }
+            if (r == null) {
+                if (expected in 0..w.text.length && !busy(expected - TypingFind.CHANGED_CONTEXT, expected + s.word.length + TypingFind.CHANGED_CONTEXT)) it.remove()
+                continue
+            }
+            if (busy(r.first, r.last + 1)) continue
+            val now = w.text.substring(r.first, r.last + 1)
+            if (now.equals(s.word, ignoreCase = true)) {
+                if (r.first != expected) it.set(s.copy(start = w.base + r.first))
+                continue
+            }
+            it.remove()
+            val old = s.word.lowercase()
+            val changed = now.lowercase()
+            if (changed !in pairs.candidates(old)) continue
+            val (prev, next) = TypingRevertMemory.neighbours(s.before, s.after)
+            memory.recordMiss(old, changed, prev, next)
+            FeatureTips.offer(context, FeatureTip.TYPING_MISS_LEARNED, old, changed)
         }
     }
 
+    /** After a change of length [delta] at [at] (one of ours), the fixes and words after it moved. */
     private fun shiftAfter(at: Int, delta: Int) {
         if (delta == 0) return
-        val touched = handTouched.map { if (it > at) it + delta else it }
-        handTouched.clear(); handTouched.addAll(touched)
-        val seen = seenWords.entries.associate { (k, v) -> (if (k > at) k + delta else k) to v }
-        seenWords.clear(); seenWords.putAll(seen)
+        for (i in kept.indices) if (kept[i].start > at) kept[i] = kept[i].copy(start = kept[i].start + delta)
+        for (i in seen.indices) if (seen[i].start > at) seen[i] = seen[i].copy(start = seen[i].start + delta)
         TypingFixes.fixes.value = shiftFixes(TypingFixes.fixes.value, at, delta)
     }
 
@@ -680,43 +1209,14 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
      * around it: where it was if it's still there, else wherever the surrounding text matches
      * best (you edited earlier text, which moves it, or a word next to it, or the app changed
      * the text). Its surroundings are then refreshed, so later edits next to it can still be
-     * followed. Null when it can't be found for sure (the word itself was changed or deleted, or
-     * two places match equally well). A move is saved in the list.
+     * followed. Null when it can't be found for sure (the words themselves were changed or deleted,
+     * or two places match equally well). A move is saved in the list.
      */
     private fun locate(fix: TypingFix, win: Around? = around()): TypingFix? {
         val w = win ?: return null
         val text = w.text
-        val word = fix.replacement
-        val len = word.length
-        if (len == 0) return null
-        fun isWordAt(i: Int) = i >= 0 && i + len <= text.length && text.regionMatches(i, word, 0, len) &&
-            (i == 0 || !text[i - 1].isLetterOrDigit()) && (i + len == text.length || !text[i + len].isLetterOrDigit())
-        // how many characters right around it still match what was around it
-        fun score(i: Int): Int {
-            var a = 0
-            while (a < fix.before.length && i - 1 - a >= 0 && text[i - 1 - a] == fix.before[fix.before.length - 1 - a]) a++
-            var b = 0
-            while (b < fix.after.length && i + len + b < text.length && text[i + len + b] == fix.after[b]) b++
-            return a + b
-        }
-        val here = fix.start - w.base
-        var best = -1
-        var bestScore = -1
-        var tie = false
-        if (isWordAt(here)) {
-            best = here
-            bestScore = score(here) + POSITION_BONUS
-        }
-        var from = 0
-        while (true) {
-            val i = text.indexOf(word, from)
-            if (i < 0) break
-            from = i + 1
-            if (i == here || !isWordAt(i)) continue
-            val sc = score(i)
-            if (sc > bestScore) { best = i; bestScore = sc; tie = false } else if (sc == bestScore) tie = true
-        }
-        if (best < 0 || tie || bestScore < MIN_CONTEXT) return null
+        val len = fix.replacement.length
+        val best = TypingFind.locate(text, fix.replacement, fix.start - w.base, fix.before, fix.after) ?: return null
         val start = w.base + best
         val located = fix.copy(
             start = start, stale = false,
@@ -803,6 +1303,15 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
     }
 
     /**
+     * Called before every key. A shown fix gives the cursor back ([endShow]), and in a field that
+     * just opened, the text already there is read as its [baseline] before the first key changes it.
+     */
+    fun beforeEvent() {
+        endShow()
+        if (baselinePending && open && enabled) takeBaseline()
+    }
+
+    /**
      * Ends [show], putting the cursor back where it was, unless the selection was moved meanwhile
      * (then it's left where you put it). Called before every key, so typing never replaces the
      * shown word.
@@ -826,18 +1335,33 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
         }
         val fix = locate(fix) ?: run {
             TypingFixes.fixes.value = TypingFixes.fixes.value.map { if (it.id == fix.id) it.copy(stale = true) else it }
+            undoFailed("fix not found")
             return
         }
-        if (!conn.replaceText(fix.start, fix.end, fix.original)) return
-        val prev = Regex("([A-Za-z']+)\\W*$").find(fix.before)?.groupValues?.get(1)?.lowercase() ?: ""
-        val next = Regex("^\\W*([A-Za-z']+)").find(fix.after)?.groupValues?.get(1)?.lowercase() ?: ""
-        memory.recordRevert(fix.original.lowercase(), fix.replacement.lowercase(), prev, next)
-        handTouched.add(fix.start)
-        TypingFixes.fixes.value = TypingFixes.fixes.value.filter { it.id != fix.id }
+        // with the cursor inside the fixed words, or a selection over them, the cursor goes to
+        // their end first, so the undo goes in before it and the cursor ends up after your words
+        if (conn.expectedSelectionStart < fix.end && conn.expectedSelectionEnd > fix.start && !conn.setSelection(fix.end, fix.end)) {
+            undoFailed("cursor on it")
+            return
+        }
+        // the sentence as the fix has it, which you're rejecting
+        val rejected = around()?.let { w ->
+            val s = fix.start - w.base
+            if (s >= 0 && s + fix.replacement.length <= w.text.length) TypingPlan.resultHash(w.text, s, s + fix.replacement.length, fix.replacement) else null
+        }
+        val beforeCursor = fix.end <= conn.expectedSelectionStart
+        expectOwnEdit(fix.start, fix.end, fix.original.length, beforeCursor)
+        val result = conn.replaceTextChecked(fix.start, fix.end, fix.replacement, fix.original)
+        if (result != TypingTextEdit.DONE && result != TypingTextEdit.WRONG_AFTER) {
+            undoFailed("not taken ($result)")
+            return
+        }
+        if (beforeCursor) inputLogic.mLastComposedWord.deactivate()
         shiftAfter(fix.start, fix.original.length - fix.replacement.length)
-        if (TypingFixes.fixes.value.isEmpty()) TypingFixes.listOpen.value = false
-        updateFocus()
-        // the undo makes this fix more careful here, and the chip offers to stop it everywhere
+        forget(fix, fix.start, rejected)
+        // a missing, extra or swapped word, an ending or a join has no pair to stop
+        if (!fix.canStop) return
+        // the chip offers to stop it everywhere
         TypingFixes.stopOffer.value = fix
         FeatureTips.offer(context, FeatureTip.TYPING_FIX_UNDONE)
         stopOfferTimeout?.cancel()
@@ -845,6 +1369,12 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
             delay(STOP_OFFER_MS)
             if (TypingFixes.stopOffer.value?.id == fix.id) TypingFixes.stopOffer.value = null
         }
+    }
+
+    /** An undo that couldn't be done is said, rather than nothing happening. */
+    private fun undoFailed(why: String) {
+        diag("Typing fix undo failed: $why")
+        Toast.makeText(context, context.getString(R.string.typing_fix_undo_failed), Toast.LENGTH_SHORT).show()
     }
 
     /**
@@ -867,9 +1397,12 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
         }
     }
 
-    /** A diagnostic line for the system log, also kept in a file by the private tuning build (no typed text). */
+    /**
+     * A diagnostic line, kept in a file by the private tuning build (no typed text). It names the app
+     * typed in, so it only goes to the system log in debug builds.
+     */
     private fun diag(message: String) {
-        Log.i(TAG, message)
+        if (BuildConfig.DEBUG) Log.i(TAG, message)
         Tuning.diagnosticLog(context, TAG, message)
     }
 
@@ -893,16 +1426,24 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
      * strips it every time can't loop (the eye button still shows where the fix is there).
      */
     private fun heal() {
-        if (!enabled || inputLogic.mWordComposer.isComposingWord || conn.hasSelection() || shown != null) return
+        if (!enabled || broken || inputLogic.mWordComposer.isComposingWord || conn.hasSelection() || shown != null) return
         val app = Settings.getInstance().current.mInputAttributes.mTargetApplicationPackageName ?: "?"
         for (f in TypingFixes.fixes.value.toList()) {
             if (f.stale) continue
+            val beforeCursor = f.end <= conn.expectedSelectionStart
+            if (afterOff && !beforeCursor) continue
             val count = heals[f.id] ?: 0
             if (count >= MAX_HEALS) continue
             if (underlineKept(f) != false) continue
             heals[f.id] = count + 1
             diag("Underline dropped in $app after ${TypingFixes.lastInput}, putting it back (${count + 1} of $MAX_HEALS)")
-            conn.replaceText(f.start, f.end, underlined(f.replacement, f.original))
+            expectOwnEdit(f.start, f.end, f.replacement.length, beforeCursor)
+            // (the same words are written again, and only if the app selects exactly them)
+            if (conn.replaceTextChecked(f.start, f.end, f.replacement, underlined(f.replacement, f.original)) == TypingTextEdit.NOT_SELECTED) {
+                if (beforeCursor) broken = true else afterOff = true
+                diag("Underline not put back: the app selected something else")
+                return
+            }
         }
     }
 
@@ -928,14 +1469,46 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
         conn.commitText(lead + TypingCorrector.matchCase(word, meant) + trail, 1)
         conn.endBatchEdit()
         conn.send()
-        handTouched.add(start + lead.length)
+        // your own correction is left alone
+        val w = window() ?: return
+        val s = start + lead.length - w.base
+        val e = s + meant.length
+        if (s >= 0 && e <= w.text.length) keep(w.text, w.base, s, e)
     }
 
     companion object {
         private const val TAG = "TypingCorrections"
 
-        /** Characters before the cursor a check reads. */
+        /** Characters on each side of the cursor a check reads. */
         const val TEXT_CHARS = 600
+
+        /** A burst of changes (keys within a word, dictation, paste, cursor moves) is looked at this long after the last one. */
+        const val DEBOUNCE_MS = 250L
+
+        /** A sentence you're editing in the middle of waits until you have stopped for this long. */
+        const val QUIET_MS = 1_500L
+
+        /** Text already in a field that just opened (or that was dictated) is looked at after this long. */
+        const val OPEN_DELAY_MS = 700L
+
+        /** Characters on each side of the cursor read as the text already in a field when it opens. */
+        const val BASELINE_CHARS = 4_000
+
+        /** A field is taken as the same one coming back when at least this share of its fixes is still in its text. */
+        const val RESTORE_SHARE = 0.5
+
+        /** How long the selections our own edit passes through are expected from the app. */
+        const val OWN_EDIT_MS = 300L
+
+        /** A check that fails this many times on the same sentence isn't tried again. */
+        const val MAX_CHECK_FAILURES = 2
+
+        /** More sentences than this taken as already there are forgotten before more are read (a very long text gone through end to end). */
+        const val MAX_BASELINE = 20_000
+
+        /** At most this many words left alone, and checked words remembered, per field. */
+        const val MAX_MARKS = 100
+        const val MAX_SEEN = 200
 
         /** An unfinished sentence is checked again for this many more words after a possible slip. */
         const val EARLY_RECHECKS = 3
@@ -953,12 +1526,7 @@ class TypingCorrections(private val helper: IMEHelper, private val inputLogic: I
         const val LOCATE_CHARS = 2_000
         /** The underline check waits this long after the text last changed, and puts it back at most this often per fix. */
         const val HEAL_DELAY_MS = 300L
-        /** Finding a fix again: the bonus for still being where it was, and the least matching context otherwise. */
-        const val POSITION_BONUS = 4
-        const val MIN_CONTEXT = 4
         const val MAX_HEALS = 2
-        /** An unfinished-sentence check is skipped once you've typed this many characters past it. */
-        const val STALE_CHARS = 1
         /** How long a closed field's fixes are kept in case it comes back, and how long its text gets to settle first. */
         const val PARK_MS = 10 * 60_000L
         const val RESTORE_DELAY_MS = 400L

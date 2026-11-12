@@ -22,10 +22,18 @@ plugins {
 
 val shared = "../../voiceinput-shared/src/main/java/org/futo/voiceinput/shared"
 
+// the voice model profiles and SmartFeaturePolicy (run --profile), without the rest of engine/ (Android)
+val policySources = tasks.register<Sync>("policySources") {
+    from("$shared/engine") { include("VoiceModelProfile.kt", "SmartFeaturePolicy.kt") }
+    into(layout.buildDirectory.dir("policy-src"))
+    outputs.upToDateWhen { false }  // always copy, so --profile never runs a stale policy
+}
+
 sourceSets {
     main {
         kotlin.srcDir("src/main/kotlin")
         kotlin.srcDir("$shared/context")
+        kotlin.srcDir(policySources)
         resources.srcDir("../../voiceinput-shared/src/main/resources")
     }
 }

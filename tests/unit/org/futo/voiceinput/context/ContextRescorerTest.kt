@@ -83,6 +83,9 @@ private class FakeLm(
     override fun close() {}
 }
 
+/** The last word of each of [ContextRescorer.PRIOR_FRAMES] ("I said ", "The word is ", "Word: ", "He wrote the word "). */
+private val PRIOR_WORDS = listOf("said", "is", ":", "word")
+
 class ContextRescorerTest {
     private val lexicon = SoundAlikeLexicon.fromBytes(
         SoundAlikeLexicon.build(
@@ -204,6 +207,94 @@ class ContextRescorerTest {
         assertEquals(setOf("right"), c.tagWords)
         assertEquals(-4.0, c.surprise, 0.0)
         assertEquals("Transcript of a casual voice message:\n", c.prompt)
+        // the margins of edits no pause or punctuation marks, and the self-correction pick tolerance
+        val d = ContextRescoreConfig()
+        val u = ContextRescoreConfig.parse(
+            """{"undelimited_command_margin": 1.5, "undelimited_quote_margin": 0, "self_correction_pick_tolerance": 0.25}"""
+        )
+        assertEquals(1.5, u.undelimitedCommandMargin, 0.0)
+        assertEquals(0.0, u.undelimitedQuoteMargin, 0.0)
+        assertEquals(0.25, u.selfCorrectionPickTolerance, 0.0)
+        assertEquals(d.undelimitedScratchMargin, u.undelimitedScratchMargin, 0.0)
+        assertEquals(d.undelimitedSelfCorrectionMargin, u.undelimitedSelfCorrectionMargin, 0.0)
+        assertEquals(d.undelimitedSelfCorrectionParallelMargin, u.undelimitedSelfCorrectionParallelMargin, 0.0)
+        // an unmarked self-correction needs more than a marked one (both on the mean per token)
+        assertTrue(d.undelimitedSelfCorrectionMargin > d.selfCorrectionMargin)
+        assertTrue(d.undelimitedSelfCorrectionParallelMargin > d.selfCorrectionParallelMargin)
+    }
+
+    @Test
+    fun allCandidatesScoredInOneCall() {
+        // two misheard words: one pass over the text, one call for both words' candidates, one for the priors
+        val lm = FakeLm(bigrams)
+        val r = ContextRescorer(lm, lexicon, ContextRescoreConfig(), SmartCorrectionOptions.NONE.copy(soundAlike = true))
+            .correct("We need bulls and spoons. Let's meat at noon.")
+        assertEquals("We need bowls and spoons. Let's meet at noon.", r.text)
+        assertEquals(1, lm.evalBaseCalls)
+        assertEquals(2, lm.variantCalls)
+    }
+
+    @Test
+    fun noCandidateNoLmCall() {
+        // no word has a sound-alike, so the LM is never asked
+        val lm = FakeLm(bigrams)
+        val r = ContextRescorer(lm, lexicon, ContextRescoreConfig(), SmartCorrectionOptions.NONE.copy(soundAlike = true))
+            .correct("I put it on the stove.")
+        assertEquals("I put it on the stove.", r.text)
+        assertEquals(0, lm.evalBaseCalls)
+        assertEquals(0, lm.variantCalls)
+    }
+
+    @Test
+    fun priorDiscountsOnlyTheWordsOwnGain() {
+        val lex = SoundAlikeLexicon.fromBytes(SoundAlikeLexicon.build(mapOf("knew" to listOf("new"), "new" to listOf("knew"))))
+        // "new" is far more common than "knew" anyway (the neutral frames)
+        val prior = PRIOR_WORDS.flatMap { f -> listOf((f to "new") to -1f, (f to "knew") to -5f) }.toMap()
+        val lm = { extra: Map<Pair<String, String>, Float> -> FakeLm(bigrams + prior + extra) }
+        val opts = SmartCorrectionOptions.NONE.copy(soundAlike = true)
+        // the word itself reads no better, but "paragraph" after it does: context, not frequency
+        val tail = mapOf(("mom" to "knew") to -9f, ("mom" to "new") to -9.5f, ("knew" to "paragraph") to -9f, ("new" to "paragraph") to -2f)
+        assertEquals("Hi mom new paragraph today.",
+            ContextRescorer(lm(tail), lex, ContextRescoreConfig(), opts).correct("Hi mom knew paragraph today.").text)
+        // all of the gain is at the word, which is what frequency explains, so it stays
+        val own = mapOf(("he" to "knew") to -6f, ("he" to "new") to -2f)
+        assertEquals("So he knew that.", ContextRescorer(lm(own), lex, ContextRescoreConfig(), opts).correct("So he knew that.").text)
+        // and a word used as it should be stays ("I knew it")
+        val right = mapOf(("i" to "knew") to -5f, ("i" to "new") to -3f, ("knew" to "it") to -1f, ("new" to "it") to -4f)
+        assertEquals("I knew it.", ContextRescorer(lm(right), lex, ContextRescoreConfig(), opts).correct("I knew it.").text)
+    }
+
+    @Test
+    fun openingWordJudgedOnTheWordsAfterIt() {
+        val lex = SoundAlikeLexicon.fromBytes(SoundAlikeLexicon.build(mapOf("serial" to listOf("cereal"), "doe" to listOf("dough"))))
+        val opts = SmartCorrectionOptions.NONE.copy(soundAlike = true)
+        // "The serial is in aisle five": the words after it show the fix
+        val serial = mapOf(("the" to "serial") to -8f, ("the" to "cereal") to -7f, ("serial" to "is") to -7f, ("cereal" to "is") to -1f)
+        assertEquals("The cereal is in aisle five.",
+            ContextRescorer(FakeLm(bigrams + serial), lex, ContextRescoreConfig(), opts).correct("The serial is in aisle five.").text)
+        // the opening word reads better but the words after it don't ("The doe ran."), so it stays
+        val doe = mapOf(("the" to "doe") to -8f, ("the" to "dough") to -3f, ("doe" to "ran") to -1f, ("dough" to "ran") to -1.5f)
+        assertEquals("The doe ran.", ContextRescorer(FakeLm(bigrams + doe), lex, ContextRescoreConfig(), opts).correct("The doe ran.").text)
+        // the same gain after it but not opening the sentence needs no more than the margin
+        val mid = mapOf(("buy" to "doe") to -8f, ("buy" to "dough") to -3f, ("doe" to "ran") to -1f, ("dough" to "ran") to -1.5f)
+        assertEquals("I buy dough ran.", ContextRescorer(FakeLm(bigrams + mid), lex, ContextRescoreConfig(), opts).correct("I buy doe ran.").text)
+    }
+
+    @Test
+    fun possessiveTheVoiceModelHeardAsPlural() {
+        // the lexicon has no sound-alike for "egg's", but its plural sounds the same ("First, the egg's")
+        val lex = SoundAlikeLexicon.fromBytes(SoundAlikeLexicon.buildV2(
+            mapOf("bulls" to listOf("bowls")), lowercase = setOf("eggs", "egg's", "mom's", "moms", "the", "then", "flour")))
+        val lm = FakeLm(bigrams + mapOf(
+            ("the" to "egg's") to -8f, ("the" to "eggs") to -2f, ("egg's" to "then") to -3f, ("eggs" to "then") to -1f,
+            // a possessive used as one: surprising, but the plural reads worse
+            ("my" to "mom's") to -6f, ("my" to "moms") to -7f, ("mom's" to "car") to -1f, ("moms" to "car") to -4f,
+        ))
+        val r = ContextRescorer(lm, lex)
+        assertEquals("First the eggs then the flour.", r.correct("First the egg's then the flour.").text)
+        assertEquals("My mom's car is red.", ContextRescorer(lm, lex).correct("My mom's car is red.").text)
+        // a contraction is no possessive ("it's" is never "its" here)
+        assertEquals("Then it's red.", ContextRescorer(lm, lex).correct("Then it's red.").text)
     }
 
     @Test
@@ -224,5 +315,9 @@ class ContextRescorerTest {
         // a real break the LM likes is kept
         val keep = "I locked the door. The dog barked."
         assertEquals(keep, ContextRescorer(lm(), lex).correct(keep, segments = listOf("i locked the door the dog barked")).text)
+        // without a punctuation stage (a model that punctuates well), the model's own breaks are kept
+        val noVeto = SmartCorrectionOptions(sentenceBreaks = false)
+        assertEquals(text, ContextRescorer(lm(), lex, ContextRescoreConfig(), noVeto)
+            .correct(text, segments = listOf("she spoke in a manner that is easier to follow")).text)
     }
 }

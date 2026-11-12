@@ -1,0 +1,121 @@
+{"id": "da01", "cat": "range", "input": "We lived there from twenty twenty one to twenty twenty four.", "expected": "We lived there from 2021-2024."}
+{"id": "da02", "cat": "range", "input": "He worked there between nineteen ninety nine and two thousand five.", "expected": "He worked there between 1999 and 2005."}
+{"id": "da03", "cat": "range", "input": "The lease runs twenty twenty one through twenty twenty four.", "expected": "The lease runs 2021-2024."}
+{"id": "da04", "cat": "range", "input": "I was in college from twenty twenty one to twenty four.", "expected": "I was in college from 2021-24."}
+{"id": "da05", "cat": "range", "input": "The study covers twenty twenty-one to twenty twenty-four.", "expected": "The study covers 2021-2024."}
+{"id": "da06", "cat": "range", "input": "She ran the shop from nineteen eighty five until nineteen ninety two.", "expected": "She ran the shop from 1985 until 1992."}
+{"id": "da07", "cat": "range", "input": "Prices rose sharply between twenty ten and twenty fifteen.", "expected": "Prices rose sharply between 2010 and 2015."}
+{"id": "da08", "cat": "range", "input": "The war lasted from nineteen thirty nine to nineteen forty five.", "expected": "The war lasted from 1939-1945."}
+{"id": "da09", "cat": "range", "input": "We kept the old car from two thousand eight to twenty nineteen.", "expected": "We kept the old car from 2008-2019."}
+{"id": "da10", "cat": "range", "input": "Twenty twenty one to twenty twenty three was a rough stretch.", "expected": "2021-2023 was a rough stretch."}
+{"id": "da11", "cat": "range", "input": "Her contract ran from twenty nineteen through twenty twenty two.", "expected": "Her contract ran from 2019-2022."}
+{"id": "da12", "cat": "range", "input": "The data from twenty eighteen to twenty twenty is missing.", "expected": "The data from 2018-2020 is missing."}
+{"id": "da13", "cat": "range", "input": "He played for them from nineteen ninety eight to oh four.", "expected": "He played for them from 1998-04."}
+{"id": "da14", "cat": "numdate", "input": "The invoice is due eleven eleven twenty twenty six.", "expected": "The invoice is due 11/11/2026."}
+{"id": "da15", "cat": "numdate", "input": "Write eleven slash eleven slash twenty twenty six on the form.", "expected": "Write 11/11/2026 on the form."}
+{"id": "da16", "cat": "numdate", "input": "My appointment is on eleven eleven twenty six.", "expected": "My appointment is on 11/11/26."}
+{"id": "da17", "cat": "numdate", "input": "The date is one fifteen twenty twenty five.", "expected": "The date is 1/15/2025."}
+{"id": "da18", "cat": "numdate", "input": "She was born on three fourteen nineteen ninety.", "expected": "She was born on 3/14/1990."}
+{"id": "da19", "cat": "numdate", "input": "Put the start date as six slash one slash twenty twenty seven.", "expected": "Put the start date as 6/1/2027."}
+{"id": "da20", "cat": "numdate", "input": "The check is dated twelve thirty one twenty twenty five.", "expected": "The check is dated 12/31/2025."}
+{"id": "da21", "cat": "numdate", "input": "The license expires on four twenty two twenty twenty eight.", "expected": "The license expires on 4/22/2028."}
+{"id": "da22", "cat": "numdate", "input": "Sign it with today's date, eleven eleven twenty twenty six.", "expected": "Sign it with today's date, 11/11/2026."}
+{"id": "da23", "cat": "numdate", "input": "The deadline is nine slash thirty slash twenty six.", "expected": "The deadline is 9/30/26."}
+{"id": "da24", "cat": "numdate", "input": "We closed on the house on seven fifteen two thousand nineteen.", "expected": "We closed on the house on 7/15/2019."}
+{"id": "da25", "cat": "numdate", "input": "The form says 11 slash 11 slash 2026.", "expected": "The form says 11/11/2026."}
+{"id": "da26", "cat": "monthdate", "input": "The wedding is on november eleventh twenty twenty six.", "expected": "The wedding is on November 11th, 2026."}
+{"id": "da27", "cat": "monthdate", "input": "It happened on the eleventh of november twenty twenty six.", "expected": "It happened on the 11th of November 2026."}
+{"id": "da28", "cat": "monthdate", "input": "The meeting moved to november eleven twenty twenty six.", "expected": "The meeting moved to November 11, 2026."}
+{"id": "da29", "cat": "monthdate", "input": "The new office opens in november twenty twenty six.", "expected": "The new office opens in November 2026."}
+{"id": "da30", "cat": "monthdate", "input": "She started on March third, twenty twenty two.", "expected": "She started on March 3rd, 2022."}
+{"id": "da31", "cat": "monthdate", "input": "My daughter was born June fifth twenty nineteen.", "expected": "My daughter was born June 5th, 2019."}
+{"id": "da32", "cat": "monthdate", "input": "The house was built in September nineteen eighty two.", "expected": "The house was built in September 1982."}
+{"id": "da33", "cat": "monthdate", "input": "The trial begins january twentieth twenty twenty seven.", "expected": "The trial begins January 20th, 2027."}
+{"id": "da34", "cat": "monthdate", "input": "We got the keys on the first of august twenty twenty three.", "expected": "We got the keys on the 1st of August 2023."}
+{"id": "da35", "cat": "monthdate", "input": "Our lease ends in july twenty twenty eight.", "expected": "Our lease ends in July 2028."}
+{"id": "da36", "cat": "monthdate", "input": "The tax deadline was April fifteenth, two thousand twenty five.", "expected": "The tax deadline was April 15th, 2025."}
+{"id": "da37", "cat": "monthdate", "input": "The store opened december twenty first twenty twenty.", "expected": "The store opened December 21st, 2020."}
+{"id": "da38", "cat": "monthdate", "input": "I last saw him in October two thousand nine.", "expected": "I last saw him in October 2009."}
+{"id": "da39", "cat": "monthdate", "input": "The party is on February twenty-eighth, twenty twenty-seven.", "expected": "The party is on February 28th, 2027."}
+{"id": "da40", "cat": "year", "input": "Back in twenty nineteen we had a dog.", "expected": "Back in 2019 we had a dog."}
+{"id": "da41", "cat": "year", "input": "The company has been around since two thousand eight.", "expected": "The company has been around since 2008."}
+{"id": "da42", "cat": "year", "input": "We want to be carbon neutral by twenty thirty.", "expected": "We want to be carbon neutral by 2030."}
+{"id": "da43", "cat": "year", "input": "I think twenty twenty-one was a strange year.", "expected": "I think 2021 was a strange year."}
+{"id": "da44", "cat": "year", "input": "The bridge was finished in nineteen oh seven.", "expected": "The bridge was finished in 1907."}
+{"id": "da45", "cat": "year", "input": "They expect to finish in twenty twenty-seven.", "expected": "They expect to finish in 2027."}
+{"id": "da46", "cat": "year", "input": "My grandmother came here in nineteen fifty two.", "expected": "My grandmother came here in 1952."}
+{"id": "da47", "cat": "year", "input": "The law changed in two thousand and twelve.", "expected": "The law changed in 2012."}
+{"id": "da48", "cat": "year", "input": "That was in twenty ten, I think.", "expected": "That was in 2010, I think."}
+{"id": "da49", "cat": "year", "input": "The original film came out in nineteen seventy nine.", "expected": "The original film came out in 1979."}
+{"id": "da50", "cat": "year", "input": "We're planning a big trip for twenty twenty eight.", "expected": "We're planning a big trip for 2028."}
+{"id": "da51", "cat": "numdate", "input": "Today is eleven slash eleven slash twenty twenty six.", "expected": "Today is 11/11/2026."}
+{"id": "da52", "cat": "range", "input": "Sales doubled from two thousand and eight to twenty nineteen.", "expected": "Sales doubled from 2008-2019."}
+{"id": "da53", "cat": "monthdate", "input": "the launch is on may twelfth twenty twenty seven", "expected": "the launch is on May 12th, 2027"}
+{"id": "da54", "cat": "year", "input": "they first met in nineteen ninety nine", "expected": "they first met in 1999"}
+{"id": "da55", "cat": "range", "input": "We lived there from 2021 to 2024.", "expected": "We lived there from 2021-2024."}
+{"id": "da56", "cat": "range", "input": "The survey ran 2019 through 2022.", "expected": "The survey ran 2019-2022."}
+{"id": "da57", "cat": "range", "input": "the old site was live from twenty fifteen to twenty eighteen", "expected": "the old site was live from 2015-2018"}
+{"id": "dac01", "cat": "control", "input": "Fashion from the twenty tens is back.", "expected": "Fashion from the twenty tens is back."}
+{"id": "dac02", "cat": "control", "input": "The store is open twenty four seven.", "expected": "The store is open twenty four seven."}
+{"id": "dac03", "cat": "control", "input": "In an emergency, dial nine one one.", "expected": "In an emergency, dial nine one one."}
+{"id": "dac04", "cat": "control", "input": "Ten four, I'll be right there.", "expected": "Ten four, I'll be right there."}
+{"id": "dac05", "cat": "control", "input": "We have been here from 2021 to now.", "expected": "We have been here from 2021 to now."}
+{"id": "dac06", "cat": "control", "input": "The form is dated 11/11/2026.", "expected": "The form is dated 11/11/2026."}
+{"id": "dac07", "cat": "control", "input": "Between 1999 and 2005 we moved twice.", "expected": "Between 1999 and 2005 we moved twice."}
+{"id": "dac08", "cat": "control", "input": "We march at noon on Saturday.", "expected": "We march at noon on Saturday."}
+{"id": "dac09", "cat": "control", "input": "You may want to bring a jacket.", "expected": "You may want to bring a jacket."}
+{"id": "dac10", "cat": "control", "input": "The band will march down the street.", "expected": "The band will march down the street."}
+{"id": "dac11", "cat": "control", "input": "She's one of the best in the class.", "expected": "She's one of the best in the class."}
+{"id": "dac12", "cat": "control", "input": "I need one or two more chairs.", "expected": "I need one or two more chairs."}
+{"id": "dac13", "cat": "control", "input": "They watched Ocean's Eleven again.", "expected": "They watched Ocean's Eleven again."}
+{"id": "dac14", "cat": "control", "input": "Count with me, one two three.", "expected": "Count with me, one two three."}
+{"id": "dac15", "cat": "control", "input": "The kids are eleven, nine and six.", "expected": "The kids are eleven, nine and six."}
+{"id": "dac16", "cat": "control", "input": "My two kids are twelve and ten.", "expected": "My two kids are twelve and ten."}
+{"id": "dac17", "cat": "control", "input": "He was born in the fifties.", "expected": "He was born in the fifties."}
+{"id": "dac18", "cat": "control", "input": "The twenty twenties have been a wild decade.", "expected": "The twenty twenties have been a wild decade."}
+{"id": "dac19", "cat": "control", "input": "May I have the second one?", "expected": "May I have the second one?"}
+{"id": "dac20", "cat": "control", "input": "In March we planted the garden.", "expected": "In March we planted the garden."}
+{"id": "dac21", "cat": "control", "input": "I'll see you in November.", "expected": "I'll see you in November."}
+{"id": "dac22", "cat": "control", "input": "It was the first of many trips.", "expected": "It was the first of many trips."}
+{"id": "dac23", "cat": "control", "input": "We'll talk about it on the third.", "expected": "We'll talk about it on the third."}
+{"id": "dac24", "cat": "control", "input": "The score was three to one at halftime.", "expected": "The score was three to one at halftime."}
+{"id": "dac25", "cat": "control", "input": "Two or three people showed up.", "expected": "Two or three people showed up."}
+{"id": "dac26", "cat": "control", "input": "She turned five on Monday.", "expected": "She turned five on Monday."}
+{"id": "dac27", "cat": "control", "input": "I'll call you in a minute or two.", "expected": "I'll call you in a minute or two."}
+{"id": "dac28", "cat": "control", "input": "Call me at 555-1234 tomorrow.", "expected": "Call me at 555-1234 tomorrow."}
+{"id": "dac29", "cat": "control", "input": "Her birthday is November 11th, 2026.", "expected": "Her birthday is November 11th, 2026."}
+{"id": "dac30", "cat": "control", "input": "We moved in 2019 and left in 2023.", "expected": "We moved in 2019 and left in 2023."}
+{"id": "dac31", "cat": "control", "input": "There were nine of us at dinner.", "expected": "There were nine of us at dinner."}
+{"id": "dac32", "cat": "control", "input": "One, two, three, go!", "expected": "One, two, three, go!"}
+{"id": "dac33", "cat": "control", "input": "He's a one in a million kind of guy.", "expected": "He's a one in a million kind of guy."}
+{"id": "dac34", "cat": "control", "input": "We are open seven days a week.", "expected": "We are open seven days a week."}
+{"id": "dac35", "cat": "control", "input": "I said it once, not twice.", "expected": "I said it once, not twice."}
+{"id": "dac36", "cat": "control", "input": "She has three cats and two dogs.", "expected": "She has three cats and two dogs."}
+{"id": "dac37", "cat": "control", "input": "Room for one more?", "expected": "Room for one more?"}
+{"id": "dac38", "cat": "control", "input": "There's a seven eleven near my house.", "expected": "There's a seven eleven near my house."}
+{"id": "dac39", "cat": "control", "input": "The kids counted down five four three two one.", "expected": "The kids counted down five four three two one."}
+{"id": "dac40", "cat": "control", "input": "Just give me one second.", "expected": "Just give me one second."}
+{"id": "dac41", "cat": "control", "input": "The final score was eleven nine.", "expected": "The final score was eleven nine."}
+{"id": "dac42", "cat": "control", "input": "We need ten four inch screws.", "expected": "We need ten four inch screws."}
+{"id": "dac43", "cat": "control", "input": "At ten fifteen twenty people showed up.", "expected": "At ten fifteen twenty people showed up."}
+{"id": "dac44", "cat": "control", "input": "Give me five ten minute breaks.", "expected": "Give me five ten minute breaks."}
+{"id": "dac45", "cat": "control", "input": "He ran the mile in four twelve.", "expected": "He ran the mile in four twelve."}
+{"id": "dac46", "cat": "control", "input": "The meeting is on 11/12 at noon.", "expected": "The meeting is on 11/12 at noon."}
+{"id": "dac47", "cat": "control", "input": "I want the second one, not the first.", "expected": "I want the second one, not the first."}
+{"id": "dac48", "cat": "control", "input": "Six of one, half a dozen of the other.", "expected": "Six of one, half a dozen of the other."}
+{"id": "dac49", "cat": "control", "input": "They won eleven to nine in overtime.", "expected": "They won eleven to nine in overtime."}
+{"id": "dac50", "cat": "control", "input": "The shift runs from nine to five.", "expected": "The shift runs from nine to five."}
+{"id": "dac51", "cat": "control", "input": "The combination is twelve thirty six twenty four.", "expected": "The combination is twelve thirty six twenty four."}
+{"id": "dac52", "cat": "control", "input": "One two three four, I declare a thumb war.", "expected": "One two three four, I declare a thumb war."}
+{"id": "dac53", "cat": "control", "input": "Call nine one one right now.", "expected": "Call nine one one right now."}
+{"id": "dac54", "cat": "control", "input": "On the count of three, one two three.", "expected": "On the count of three, one two three."}
+{"id": "dac55", "cat": "control", "input": "We bought two twenty pound bags of rice.", "expected": "We bought two twenty pound bags of rice."}
+{"id": "dac56", "cat": "control", "input": "The bus comes at ten fifteen twenty two times a day.", "expected": "The bus comes at ten fifteen twenty two times a day."}
+{"id": "dac57", "cat": "control", "input": "We moved to 2024 Elm Street last year.", "expected": "We moved to 2024 Elm Street last year."}
+{"id": "dac58", "cat": "control", "input": "We expect 5 to 10 people tonight.", "expected": "We expect 5 to 10 people tonight."}
+{"id": "dac59", "cat": "control", "input": "The store is open from 9 to 5.", "expected": "The store is open from 9 to 5."}
+{"id": "dac60", "cat": "control", "input": "Tickets cost $10 to $20.", "expected": "Tickets cost $10 to $20."}
+{"id": "dac61", "cat": "control", "input": "From 2021 until now, prices went up.", "expected": "From 2021 until now, prices went up."}
+{"id": "dac62", "cat": "control", "input": "Kids from five to ten can join.", "expected": "Kids from five to ten can join."}
+{"id": "dac63", "cat": "control", "input": "The team scored 1500 to 2000 points a season.", "expected": "The team scored 1500 to 2000 points a season."}
+{"id": "dac64", "cat": "control", "input": "We went from 2019 to the present day without a break.", "expected": "We went from 2019 to the present day without a break."}

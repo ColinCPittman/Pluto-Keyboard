@@ -50,7 +50,6 @@ import org.futo.inputmethod.latin.uix.KeyboardManagerForAction
 import org.futo.inputmethod.latin.uix.MOONSHINE_LAST_TIMING
 import org.futo.inputmethod.latin.uix.PREFER_BLUETOOTH
 import org.futo.inputmethod.latin.uix.PersistentActionState
-import org.futo.inputmethod.latin.uix.PunctuationModels
 import org.futo.inputmethod.latin.uix.ResourceHelper
 import org.futo.inputmethod.latin.uix.USE_PERSONAL_DICT
 import org.futo.inputmethod.latin.uix.SMART_CORRECTIONS_NAMES
@@ -235,7 +234,7 @@ internal class VoiceInputActionWindow(
         val useVAD = context.getSetting(USE_VAD_AUTOSTOP)
         val usePersonalDict = context.getSetting(USE_PERSONAL_DICT)
         val animateBubble = context.getSetting(ANIMATE_BUBBLE)
-        // Moonshine (English only) if selected and installed, otherwise whisper
+        // the selected voice model if it is installed and handles the language, otherwise whisper
         val engine = VoiceInputEngines.resolve(context, locales.firstOrNull() ?: Locale.ROOT)
         showTimingInfo = context.getSetting(VOICE_INPUT_SHOW_TIMING)
         usingStreamingEngine = engine !is RecognitionEngineConfiguration.Whisper
@@ -263,8 +262,8 @@ internal class VoiceInputActionWindow(
             synchronized(stageTimings) { stageTimings.add(name to ms) }
         }
         hasPostProcessing = postProcessor !== TranscriptPostProcessor.Identity
-        PunctuationModels.preload(context, locale)
-        ContextModels.preload(context, locale)
+        // (not for a hold-to-talk press already dropped, which has told ContextModels it closed)
+        if (!headlessEnded) VoiceInputEngines.preloadStages(context, engine, locale, session = this)
 
         return RecognizerViewSettings(
             shouldShowInlinePartialResult = false,
@@ -412,9 +411,11 @@ internal class VoiceInputActionWindow(
             inputTransaction.discard()
         }
         if (quick) {
-            // the voice window takes over the models (and tells ContextModels when it closes)
+            // the voice window takes over the models, which stay loaded for it, and typing checks
+            // wait for it instead
             initJob.cancel()
             inputTransaction.cancel()
+            ContextModels.voiceClosed(this)
         } else {
             close()
         }
@@ -487,7 +488,7 @@ internal class VoiceInputActionWindow(
         recognizerView.value?.cancel()
         state.modelManager.cancelAll()
         // the context model stays loaded for a couple of minutes, in case another dictation follows
-        ContextModels.voiceClosed()
+        ContextModels.voiceClosed(this)
         return CloseResult.Default
     }
 
@@ -547,6 +548,13 @@ internal class VoiceInputActionWindow(
     }
 
     override fun recognitionStats(stats: RecognitionStats) {
+        // a private tuning hook (DictationRecorder does nothing in public builds)
+        if (DictationRecorder.isEnabled(context)) {
+            DictationRecorder.text(context, "engine", stats.summary())
+            DictationRecorder.note(context, "audio_ms", (stats.audioSeconds * 1000).toLong())
+            DictationRecorder.note(context, "engine_ms", (stats.processingSeconds * 1000).toLong())
+            DictationRecorder.note(context, "stop_to_text_ms", (stats.finalizeSeconds * 1000).toLong())
+        }
         if (!showTimingInfo) return
         if (hasPostProcessing) {
             // shown with the post-processing times once the final text is ready

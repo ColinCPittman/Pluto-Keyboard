@@ -9,9 +9,9 @@
     <string name="tour_finished">Setup tutorial finished. You can run it again from Help.</string>
 
     <string name="tour_voice_row_title">Let\'s set up voice typing</string>
-    <string name="tour_voice_row_text">Voice typing, punctuation fixes and Smart corrections each need a model file (English only for now, because Moonshine only understands English). Pluto has no internet access, so you download the files yourself and import them here. Tap Voice Input Model to start.</string>
+    <string name="tour_voice_row_text">Voice typing and Smart corrections each need a model file (English only for now). Pluto has no internet access, so you download the files yourself and import them here. Tap Voice Input Model to start.</string>
     <string name="tour_voice_download_title">Download a voice model</string>
-    <string name="tour_voice_download_text">Tap here to open Pluto\'s release page in your browser. Download Moonshine Small (or Tiny for an older phone), then come back here. Don\'t unzip it.</string>
+    <string name="tour_voice_download_text">Tap here to open Pluto\'s models page in your browser, download one voice model, then come back here. Don\'t unzip it. Parakeet types your words when you finish speaking. Moonshine Small shows your words as you talk (Tiny for an older phone). Nemotron shows them as you talk and was the most accurate in Pluto\'s tests, but needs a fast phone.</string>
     <string name="tour_import_title">Now import it</string>
     <string name="tour_voice_import_text">Tap here and pick the voice model file you downloaded. Pluto starts using it right away.</string>
 
@@ -21,6 +21,10 @@
     <string name="tour_punctuation_download_text">Tap here to open the models page and download the English punctuation file, then come back here.</string>
     <string name="tour_punctuation_import_text">Tap here and pick the punctuation file you downloaded.</string>
     <string name="tour_punctuation_setting_title">Fix punctuation</string>
+    <!-- the punctuation steps when the voice model punctuates itself (an unknown family that says so): only a note -->
+    <string name="tour_punctuation_row_transcribe_text">%1$s often leaves the period off the end and misses question marks when your voice doesn\'t go up. This model punctuates what you said again after you stop speaking, with real sentences, commas and capital letters. Tap Punctuation Model.</string>
+    <string name="tour_punctuation_not_needed_title">No punctuation model needed</string>
+    <string name="tour_punctuation_not_needed_text">%1$s, your voice model, adds its own punctuation and capitals, so there\'s nothing to set up here.</string>
     <string name="tour_punctuation_setting_text">Importing the punctuation model switches this on. You can turn it on or off here any time.</string>
 
     <string name="tour_smart_corrections_row_title">Last, Smart corrections</string>
@@ -28,20 +32,30 @@
     <string name="tour_smart_corrections_download_title">Download Smart corrections</string>
     <string name="tour_smart_corrections_download_text">Tap here to open the models page and download the Smart corrections file (about 470 MB), then come back here.</string>
     <string name="tour_smart_corrections_import_text">Tap here and pick the Smart corrections file you downloaded.</string>
+    <string name="tour_smart_corrections_row_nemotron_text">Smart corrections fixes words that sound alike, question marks Nemotron leaves out and capitals for names and months, and, if you switch them on, filler words, voice commands, emoji and numbers. It also catches typos while you type. Tap Smart Corrections.</string>
+    <string name="tour_smart_corrections_row_parakeet_text">Smart corrections fixes words that sound alike and capitals for names and months, and makes the changes you switch on: numbers as digits (Parakeet writes them as words), voice commands like “new line”, self-corrections and quotation marks. It also catches typos while you type. Tap Smart Corrections.</string>
+    <string name="tour_smart_corrections_row_punctuating_text">%1$s, your voice model, adds its own punctuation and capitals, so Smart corrections fixes misheard words and makes the changes you switch on, like numbers as digits and voice commands. It also catches typos while you type. Tap Smart Corrections.</string>
     <string name="tour_smart_corrections_voice_title">Smart corrections for voice</string>
     <string name="tour_smart_corrections_voice_text">Importing the model switches it on for voice typing. The options below choose what it may fix.</string>
+    <string name="tour_smart_corrections_voice_punctuating_text">Importing the model switches it on for voice typing. %1$s punctuates itself, so Smart corrections leaves the punctuation alone. The options below choose what it may change.</string>
     <string name="tour_smart_corrections_typing_title">Smart corrections for typing</string>
     <string name="tour_smart_corrections_typing_text">It can also fix typos that slip past autocorrect while you type. Tap the switch to turn it on, or tap Next to leave it off.</string>
 
-    <!-- when the Moonshine step was skipped (voice typing uses Whisper) -->
-    <string name="tour_set_up_moonshine">Set up Moonshine</string>
-    <string name="tour_punctuation_whisper_title">Punctuation is for Moonshine</string>
-    <string name="tour_punctuation_whisper_text">You skipped the Moonshine voice model, so voice typing uses Whisper, which adds its own punctuation. The punctuation model only works with Moonshine, so there\'s nothing to set up here for now. If you add Moonshine later, you can import it from this row.</string>
-    <string name="tour_smart_corrections_whisper_text">You skipped the Moonshine voice model, so voice typing uses Whisper, which already reads your whole dictation for context. After Whisper, Smart corrections mostly adds a short wait. It still catches typos while you type, so you can set it up anyway. Tap Smart Corrections.</string>
-    <string name="tour_smart_corrections_voice_whisper_text">It\'s on, but with Whisper as your voice model it changes little. It does much more once you switch to Moonshine.</string>
+    <!-- when the voice model step was skipped (voice typing uses Whisper) -->
+    <string name="tour_set_up_voice_model">Set up a voice model</string>
+    <string name="tour_punctuation_whisper_title">Punctuation is for the other voice models</string>
+    <string name="tour_punctuation_whisper_text">You skipped the voice model, so voice typing uses Whisper, which adds its own punctuation. The punctuation model works with Moonshine, Nemotron and Parakeet, so there\'s nothing to set up here for now. If you add one of them later, you can import it from this row.</string>
+    <string name="tour_smart_corrections_whisper_text">You skipped the voice model, so voice typing uses Whisper, which already reads your whole dictation for context. After Whisper, Smart corrections mostly adds a short wait. It still catches typos while you type, so you can set it up anyway. Tap Smart Corrections.</string>
+    <string name="tour_smart_corrections_voice_whisper_text">It\'s on, but with Whisper as your voice model it changes little. It does more with the other voice models.</string>
 
     <string name="tour_smart_corrections_explore_title">More to explore here</string>
     <string name="tour_smart_corrections_explore_text">Each switch on this page turns one kind of voice fix on or off, like numbers as digits, voice commands, filler words or emoji by name. Look through them and set them the way you like. Smart corrections for typing has its own page under Text Prediction.</string>
+    <!-- the last step for the voice models set 2 measured: what helped that model, and a button to switch it on -->
+    <string name="tour_smart_corrections_explore_nemotron_text">Some fixes here are off until you switch them on. With Nemotron, Voice commands, Emoji and Filler words (it keeps some “um”) each fixed dozens of dictations in Pluto\'s tests and broke none. Numbers, times and amounts (already on) tidies the numbers it writes. Tap Switch these on, or set them yourself. Smart corrections for typing has its own page under Text Prediction.</string>
+    <string name="tour_smart_corrections_explore_parakeet_text">Some fixes here are off until you switch them on. Parakeet writes numbers as words, so Numbers, times and amounts (already on) fixed the most dictations for it in Pluto\'s tests. Voice commands, Filler words and Emoji also fixed many and broke almost none. Tap Switch these on, or set them yourself. Smart corrections for typing has its own page under Text Prediction.</string>
+    <string name="tour_smart_corrections_explore_moonshine_text">Some fixes here are off until you switch them on. With Moonshine, Filler words fixed the most dictations in Pluto\'s tests (it keeps “um” and “uh”), Voice commands and Emoji also fixed many and broke none, and Numbers, times and amounts (already on) helped too. Tap Switch these on, or set them yourself. Smart corrections for typing has its own page under Text Prediction.</string>
+    <string name="tour_switch_on_recommended">Switch these on</string>
+    <string name="tour_switched_on_recommended">Switched on</string>
     <string name="tour_finish">Finish tutorial</string>
 
     <string name="tour_restart">Show the setup tutorial again</string>

@@ -36,6 +36,16 @@ data class SmartCorrectionOptions(
     val emojiNames: Map<List<String>, String> = emptyMap(),
     /** How readily each option changes the text (the "Sensitivity" page). */
     val sensitivity: SmartCorrectionSensitivity = SmartCorrectionSensitivity(),
+    /**
+     * Joins sentence breaks the punctuation stage put inside an utterance. Not a setting: off when
+     * the punctuation stage didn't run (engine.SmartFeaturePolicy).
+     */
+    val sentenceBreaks: Boolean = true,
+    /**
+     * Capitalization from the lexicon (lowercase proper nouns, capitals left at utterance starts), as
+     * part of [names]. Not a setting: off when the voice model capitalizes well itself.
+     */
+    val lexiconCasing: Boolean = true,
 ) {
     /** [quoteTriggerPhrases] as words. */
     val quoteTriggers: List<List<String>> by lazy { QuoteTriggers.triggers(quoteTriggerPhrases) }

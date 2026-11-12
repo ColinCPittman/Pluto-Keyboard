@@ -4,6 +4,7 @@
 //   tools/moonshine-harness/build/install/moonshine-harness/bin/moonshine-harness
 //       transcribe <model-dir> <wav> [--mode final|stream|both] [--threads N] [--accel cpu|xnnpack|nnapi]
 //   ... package <model-package.zip> <scratch-dir>    (exercise the model package importer)
+//   ... bench / punct    (spoken bench, see tools/voice-bench/README.md)
 //
 // <model-dir> is an extracted model package (tools/package-models.py --no-zip
 // leaves one per model in its cache directory). reference.py runs the official
@@ -35,7 +36,14 @@ sourceSets {
         kotlin.srcDir("$shared/modelpackage")
         kotlin.srcDir("$shared/punctuation")
         kotlin.srcDir("$shared/context")  // ModelPackageStore validates context packages
+        // ModelPackageStore validates transcribe packages, and the bench asks SmartFeaturePolicy
+        // whether the punctuation stage runs after a voice model
+        kotlin.srcDir("$shared/transcribe")
+        kotlin.srcDir("$shared/engine")
         kotlin.exclude("**/ModelPackages.kt")
+        // (Android or coroutines)
+        kotlin.exclude("**/TranscribeModel.kt", "**/TranscribeModelManager.kt", "**/TranscribeSession.kt")
+        kotlin.exclude("**/StreamingRecognitionSession.kt")
     }
 }
 

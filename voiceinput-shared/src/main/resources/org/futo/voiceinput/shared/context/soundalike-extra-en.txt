@@ -1,0 +1,21 @@
+# Sound-alikes voice models write that the lexicon (soundalike-en.lex) doesn't pair, by hand (see Homophones.kt).
+# A line of words that sound exactly alike, or "~" and two words that differ in one similar sound.
+# Both directions are candidates, and the context LM decides as for the lexicon's pairs.
+# Common English homophones the lexicon leaves out (one word too rare for it, or spelled too differently):
+# (never a function word like "would", "been" or "him", which are never swapped)
+hi high
+hire higher
+ad add
+know no
+shore sure
+patience patients
+presence presents
+residence residents
+tense tents
+yoke yolk
+taught taut
+pause paws
+# a vowel before "r" that voice models mix up ("Bring four cheers")
+~ cheers chairs
+~ cheer chair
+~ clothes close

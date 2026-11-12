@@ -702,29 +702,54 @@ public final class RichInputConnection implements PrivateCommandPerformer {
      * typing). Nothing may be composing. Returns false if the editor refused.
      */
     public boolean replaceTextBeforeCursor(final int start, final int end, final CharSequence text) {
-        if (!isConnected() || mComposingText.length() > 0) return false;
-        final int cursor = mExpectedSelStart;
-        if (start < 0 || end > cursor || mExpectedSelEnd != cursor) return false;
-        final int newCursor = cursor + text.length() - (end - start);
+        if (end > mExpectedSelStart || mExpectedSelEnd != mExpectedSelStart) return false;
+        return replaceText(start, end, text);
+    }
+
+    /**
+     * Replaces [start, end) before or after the cursor or selection (not overlapping it) with
+     * [text], which may carry spans, and leaves the cursor and selection where they were (shifted
+     * if the change was before them). Smart corrections for typing uses it to undo or re-underline
+     * a fix anywhere. Returns false if it wasn't done.
+     */
+    public boolean replaceText(final int start, final int end, final CharSequence text) {
+        final int result = replaceTextChecked(start, end, null, text);
+        return result == TypingTextEdit.DONE || result == TypingTextEdit.WRONG_AFTER;
+    }
+
+    /**
+     * Like [replaceText], and when [expected] is given the range must read back as exactly that
+     * once selected, or nothing is written. Returns a [TypingTextEdit] result ([TypingTextEdit.DONE]
+     * and so on), and -1 when it wasn't tried (no connection, a composing word, a bad range).
+     */
+    public int replaceTextChecked(final int start, final int end, final String expected, final CharSequence text) {
+        if (!isConnected() || mComposingText.length() > 0) return -1;
+        final int selStart = mExpectedSelStart;
+        final int selEnd = mExpectedSelEnd;
+        if (start < 0 || end < start || (end > selStart && start < selEnd)) return -1;
         // the internal-composing wrapper types text at its own cursor and drops spans, so talk to
-        // the editor directly, then tell the wrapper where the cursor is
+        // the editor directly, then tell the wrapper where the selection is
         final InputConnectionInternalComposingWrapper wrapper =
                 mIC instanceof InputConnectionInternalComposingWrapper
                         ? (InputConnectionInternalComposingWrapper) mIC : null;
         final InputConnection ic = wrapper != null && wrapper.getMTarget() != null ? wrapper.getMTarget() : mIC;
-        ic.beginBatchEdit();
-        try {
-            if (!ic.setSelection(start, end)) return false;
-            // the new cursor position is relative to the end of the inserted text (1 = right after it)
-            ic.commitText(text, newCursor - (start + text.length()) + 1);
-            ic.setSelection(newCursor, newCursor);
-        } finally {
-            ic.endBatchEdit();
+        final int result = TypingTextEdit.INSTANCE.replace(ic, start, end, expected, text, selStart, selEnd);
+        if (result == TypingTextEdit.NOT_THERE) {
+            // nothing was touched; the text or the cursor isn't where the keyboard thought
+            reloadTextCache();
+            return result;
         }
-        if (wrapper != null) wrapper.setSelection(newCursor, newCursor);
-        mExpectedSelStart = newCursor;
-        mExpectedSelEnd = newCursor;
-        return reloadTextCache();
+        if (result == TypingTextEdit.REFUSED || result == TypingTextEdit.NOT_SELECTED) {
+            if (wrapper != null) wrapper.setSelection(selStart, selEnd);
+            reloadTextCache();
+            return result;
+        }
+        final int delta = end <= selStart ? text.length() - (end - start) : 0;
+        if (wrapper != null) wrapper.setSelection(selStart + delta, selEnd + delta);
+        mExpectedSelStart = selStart + delta;
+        mExpectedSelEnd = selEnd + delta;
+        reloadTextCache();
+        return result;
     }
 
     /**
@@ -752,37 +777,6 @@ public final class RichInputConnection implements PrivateCommandPerformer {
                         ? (InputConnectionInternalComposingWrapper) mIC : null;
         final InputConnection ic = wrapper != null && wrapper.getMTarget() != null ? wrapper.getMTarget() : mIC;
         return ic.getTextAfterCursor(n, InputConnection.GET_TEXT_WITH_STYLES);
-    }
-
-    /**
-     * Replaces [start, end) before or after the cursor (not inside a selection) with [text], which
-     * may carry spans, and leaves the cursor and selection where they were (shifted if the change
-     * was before them). Smart corrections for typing uses it to undo or re-underline a fix anywhere.
-     */
-    public boolean replaceText(final int start, final int end, final CharSequence text) {
-        if (end <= mExpectedSelStart && mExpectedSelEnd == mExpectedSelStart) {
-            return replaceTextBeforeCursor(start, end, text);
-        }
-        if (!isConnected() || mComposingText.length() > 0) return false;
-        final int selStart = mExpectedSelStart;
-        final int selEnd = mExpectedSelEnd;
-        if (start < selEnd) return false;
-        final InputConnectionInternalComposingWrapper wrapper =
-                mIC instanceof InputConnectionInternalComposingWrapper
-                        ? (InputConnectionInternalComposingWrapper) mIC : null;
-        final InputConnection ic = wrapper != null && wrapper.getMTarget() != null ? wrapper.getMTarget() : mIC;
-        ic.beginBatchEdit();
-        try {
-            if (!ic.setSelection(start, end)) return false;
-            ic.commitText(text, 1);
-            ic.setSelection(selStart, selEnd);
-        } finally {
-            ic.endBatchEdit();
-        }
-        if (wrapper != null) wrapper.setSelection(selStart, selEnd);
-        mExpectedSelStart = selStart;
-        mExpectedSelEnd = selEnd;
-        return reloadTextCache();
     }
 
     public void commitCorrection(final CorrectionInfo correctionInfo) {

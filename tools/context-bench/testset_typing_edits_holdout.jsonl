@@ -1,0 +1,115 @@
+{"id": "hadd001", "cat": "add", "input": "My cousin is coming to stay with us for couple of weeks.", "expected": "My cousin is coming to stay with us for a couple of weeks."}
+{"id": "hadd002", "cat": "add", "input": "I'm trying save money for a new bike.", "expected": "I'm trying to save money for a new bike."}
+{"id": "hadd003", "cat": "add", "input": "The neighbors were complaining about noise again.", "expected": "The neighbors were complaining about the noise again."}
+{"id": "hadd004", "cat": "add", "input": "Remind me call the dentist tomorrow morning.", "expected": "Remind me to call the dentist tomorrow morning."}
+{"id": "hadd005", "cat": "add", "input": "He is still not used waking up so early.", "expected": "He is still not used to waking up so early."}
+{"id": "hadd006", "cat": "add", "input": "We spent the whole afternoon at park with the dogs.", "expected": "We spent the whole afternoon at the park with the dogs."}
+{"id": "hadd007", "cat": "add", "input": "I don't have enough time finish everything today.", "expected": "I don't have enough time to finish everything today."}
+{"id": "hadd008", "cat": "add", "input": "There was huge line outside the bakery this morning.", "expected": "There was a huge line outside the bakery this morning."}
+{"id": "hadd009", "cat": "add", "input": "My grandma taught me how bake bread when I was little.", "expected": "My grandma taught me how to bake bread when I was little."}
+{"id": "hadd010", "cat": "add", "input": "The bus was late so we missed the start the show.", "expected": "The bus was late so we missed the start of the show."}
+{"id": "hadd011", "cat": "add", "input": "I told him that would help with the yard on Saturday.", "expected": "I told him that I would help with the yard on Saturday."}
+{"id": "hadd012", "cat": "add", "input": "She is looking forward the trip more than anyone.", "expected": "She is looking forward to the trip more than anyone."}
+{"id": "hadd013", "cat": "add", "input": "Can you believe it already November?", "expected": "Can you believe it is already November?", "alts": ["Can you believe it's already November?"]}
+{"id": "hadd014", "cat": "add", "input": "I need to take the trash out before truck comes.", "expected": "I need to take the trash out before the truck comes."}
+{"id": "hrem001", "cat": "remove", "input": "The plumber said he he would come back on Monday.", "expected": "The plumber said he would come back on Monday."}
+{"id": "hrem002", "cat": "remove", "input": "I could not find the the remote anywhere.", "expected": "I could not find the remote anywhere."}
+{"id": "hrem003", "cat": "remove", "input": "Our team won the game game last night.", "expected": "Our team won the game last night."}
+{"id": "hrem004", "cat": "remove", "input": "She wants to to learn how to play the guitar.", "expected": "She wants to learn how to play the guitar."}
+{"id": "hrem005", "cat": "remove", "input": "We were were stuck in traffic for an hour.", "expected": "We were stuck in traffic for an hour."}
+{"id": "hrem006", "cat": "remove", "input": "Please bring your your laptop to the meeting.", "expected": "Please bring your laptop to the meeting."}
+{"id": "hrem007", "cat": "remove", "input": "I made a soup soup for dinner and it was great.", "expected": "I made a soup for dinner and it was great."}
+{"id": "hrem008", "cat": "remove", "input": "He is is the best coach we have ever had.", "expected": "He is the best coach we have ever had."}
+{"id": "hrem009", "cat": "remove", "input": "They moved to to Denver last spring.", "expected": "They moved to Denver last spring."}
+{"id": "hrem010", "cat": "remove", "input": "The weather has been been really nice lately.", "expected": "The weather has been really nice lately."}
+{"id": "hrem011", "cat": "remove", "input": "I am so a excited for the holidays.", "expected": "I am so excited for the holidays."}
+{"id": "hrem012", "cat": "remove", "input": "We should probably probably book the hotel soon.", "expected": "We should probably book the hotel soon."}
+{"id": "hrem013", "cat": "remove", "input": "My neighbor gave us a bag of of tomatoes from her garden.", "expected": "My neighbor gave us a bag of tomatoes from her garden."}
+{"id": "hend001", "cat": "ending", "input": "My brother have a new girlfriend.", "expected": "My brother has a new girlfriend."}
+{"id": "hend002", "cat": "ending", "input": "The dishes is still in the sink.", "expected": "The dishes are still in the sink."}
+{"id": "hend003", "cat": "ending", "input": "She work at the library on weekends.", "expected": "She works at the library on weekends."}
+{"id": "hend004", "cat": "ending", "input": "I bought two ticket for the show on Friday.", "expected": "I bought two tickets for the show on Friday."}
+{"id": "hend005", "cat": "ending", "input": "We already clean the whole garage this morning.", "expected": "We already cleaned the whole garage this morning."}
+{"id": "hend006", "cat": "ending", "input": "There are a few thing I want to talk about.", "expected": "There are a few things I want to talk about."}
+{"id": "hend007", "cat": "ending", "input": "The flowers in the garden looks amazing this year.", "expected": "The flowers in the garden look amazing this year."}
+{"id": "hend008", "cat": "ending", "input": "He was play video games all night.", "expected": "He was playing video games all night."}
+{"id": "hend009", "cat": "ending", "input": "My kids loves the new playground.", "expected": "My kids love the new playground."}
+{"id": "hend010", "cat": "ending", "input": "Those cookie were the best I have ever had.", "expected": "Those cookies were the best I have ever had."}
+{"id": "hord001", "cat": "order", "input": "I have no what idea he meant.", "expected": "I have no idea what he meant."}
+{"id": "hord002", "cat": "order", "input": "Could you the pass salt please?", "expected": "Could you pass the salt please?"}
+{"id": "hord003", "cat": "order", "input": "We are meeting at the restaurant the near station.", "expected": "We are meeting at the restaurant near the station."}
+{"id": "hord004", "cat": "order", "input": "She is the friend best I have ever had.", "expected": "She is the best friend I have ever had."}
+{"id": "hord005", "cat": "order", "input": "Let me know when are you free.", "expected": "Let me know when you are free."}
+{"id": "hord006", "cat": "order", "input": "It will take about hours two to get there.", "expected": "It will take about two hours to get there."}
+{"id": "hjoi001", "cat": "join", "input": "Thats a great idea, let's do it.", "expected": "That's a great idea, let's do it."}
+{"id": "hjoi002", "cat": "join", "input": "I didnt see your message until now.", "expected": "I didn't see your message until now."}
+{"id": "hjoi003", "cat": "join", "input": "Some times I just need a quiet night in.", "expected": "Sometimes I just need a quiet night in."}
+{"id": "hjoi004", "cat": "join", "input": "Your package should arrive with in two days.", "expected": "Your package should arrive within two days."}
+{"id": "hjoi005", "cat": "join", "input": "We couldnt find a parking spot anywhere.", "expected": "We couldn't find a parking spot anywhere."}
+{"id": "hjoi006", "cat": "join", "input": "I think its too late to call him now.", "expected": "I think it's too late to call him now."}
+{"id": "hjoi007", "cat": "join", "input": "He isnt feeling well today.", "expected": "He isn't feeling well today."}
+{"id": "hcon001", "cat": "control", "input": "Morning! Coffee?", "expected": "Morning! Coffee?"}
+{"id": "hcon002", "cat": "control", "input": "On my way home now.", "expected": "On my way home now."}
+{"id": "hcon003", "cat": "control", "input": "Yep, see you at noon.", "expected": "Yep, see you at noon."}
+{"id": "hcon004", "cat": "control", "input": "Ok cool.", "expected": "Ok cool."}
+{"id": "hcon005", "cat": "control", "input": "So glad you liked it.", "expected": "So glad you liked it."}
+{"id": "hcon006", "cat": "control", "input": "But wait, there's more.", "expected": "But wait, there's more."}
+{"id": "hcon007", "cat": "control", "input": "And that was the end of that.", "expected": "And that was the end of that."}
+{"id": "hcon008", "cat": "control", "input": "So anyway, how was the trip?", "expected": "So anyway, how was the trip?"}
+{"id": "hcon009", "cat": "control", "input": "But I don't think he heard me.", "expected": "But I don't think he heard me."}
+{"id": "hcon010", "cat": "control", "input": "And yes, I remembered the cake.", "expected": "And yes, I remembered the cake."}
+{"id": "hcon011", "cat": "control", "input": "That that is how it works is the funny part.", "expected": "That that is how it works is the funny part."}
+{"id": "hcon012", "cat": "control", "input": "They had had the same car for twenty years.", "expected": "They had had the same car for twenty years."}
+{"id": "hcon013", "cat": "control", "input": "It was really really good.", "expected": "It was really really good."}
+{"id": "hcon014", "cat": "control", "input": "Hey hey, look who's back!", "expected": "Hey hey, look who's back!"}
+{"id": "hcon015", "cat": "control", "input": "Wow wow wow, that's amazing.", "expected": "Wow wow wow, that's amazing."}
+{"id": "hcon016", "cat": "control", "input": "Bye bye for now.", "expected": "Bye bye for now."}
+{"id": "hcon017", "cat": "control", "input": "Out of milk again.", "expected": "Out of milk again."}
+{"id": "hcon018", "cat": "control", "input": "Back in five.", "expected": "Back in five."}
+{"id": "hcon019", "cat": "control", "input": "Gym then groceries.", "expected": "Gym then groceries."}
+{"id": "hcon020", "cat": "control", "input": "Train delayed, sorry.", "expected": "Train delayed, sorry."}
+{"id": "hcon021", "cat": "control", "input": "Doctor appointment at 3.", "expected": "Doctor appointment at 3."}
+{"id": "hcon022", "cat": "control", "input": "We bought chips, salsa, soda and ice.", "expected": "We bought chips, salsa, soda and ice."}
+{"id": "hcon023", "cat": "control", "input": "Tuesday or Thursday is fine.", "expected": "Tuesday or Thursday is fine."}
+{"id": "hcon024", "cat": "control", "input": "It cost $12.50 with tax.", "expected": "It cost $12.50 with tax."}
+{"id": "hcon025", "cat": "control", "input": "Our flight is at 9:40 on Saturday.", "expected": "Our flight is at 9:40 on Saturday."}
+{"id": "hcon026", "cat": "control", "input": "I owe you $20 for lunch.", "expected": "I owe you $20 for lunch."}
+{"id": "hcon027", "cat": "control", "input": "The score was 3 to 1.", "expected": "The score was 3 to 1."}
+{"id": "hcon028", "cat": "control", "input": "Emily and Josh got engaged!", "expected": "Emily and Josh got engaged!"}
+{"id": "hcon029", "cat": "control", "input": "I'll grab a Chipotle bowl on the way.", "expected": "I'll grab a Chipotle bowl on the way."}
+{"id": "hcon030", "cat": "control", "input": "Our Spotify playlist is a mess.", "expected": "Our Spotify playlist is a mess."}
+{"id": "hcon031", "cat": "control", "input": "Mom says dinner is ready.", "expected": "Mom says dinner is ready."}
+{"id": "hcon032", "cat": "control", "input": "I'm driving the Honda today.", "expected": "I'm driving the Honda today."}
+{"id": "hcon033", "cat": "control", "input": "Did you get my text?", "expected": "Did you get my text?"}
+{"id": "hcon034", "cat": "control", "input": "What are you doing this weekend?", "expected": "What are you doing this weekend?"}
+{"id": "hcon035", "cat": "control", "input": "Can I borrow your charger?", "expected": "Can I borrow your charger?"}
+{"id": "hcon036", "cat": "control", "input": "Is that the one you wanted?", "expected": "Is that the one you wanted?"}
+{"id": "hcon037", "cat": "control", "input": "Why is it so cold in here?", "expected": "Why is it so cold in here?"}
+{"id": "hcon038", "cat": "control", "input": "Where is it now?", "expected": "Where is it now?"}
+{"id": "hcon039", "cat": "control", "input": "How long has it been?", "expected": "How long has it been?"}
+{"id": "hcon040", "cat": "control", "input": "I suppose we could leave at noon.", "expected": "I suppose we could leave at noon."}
+{"id": "hcon041", "cat": "control", "input": "She knew he was right.", "expected": "She knew he was right."}
+{"id": "hcon042", "cat": "control", "input": "He said he'd be a little late.", "expected": "He said he'd be a little late."}
+{"id": "hcon043", "cat": "control", "input": "I'm sure it'll be fine.", "expected": "I'm sure it'll be fine."}
+{"id": "hcon044", "cat": "control", "input": "We stayed in and ordered pizza.", "expected": "We stayed in and ordered pizza."}
+{"id": "hcon045", "cat": "control", "input": "They went to college together.", "expected": "They went to college together."}
+{"id": "hcon046", "cat": "control", "input": "I'll be at home all day.", "expected": "I'll be at home all day."}
+{"id": "hcon047", "cat": "control", "input": "She's in class until four.", "expected": "She's in class until four."}
+{"id": "hcon048", "cat": "control", "input": "We can figure it out tomorrow.", "expected": "We can figure it out tomorrow."}
+{"id": "hcon049", "cat": "control", "input": "Maybe we can go some other time.", "expected": "Maybe we can go some other time."}
+{"id": "hcon050", "cat": "control", "input": "I have to log in again every time.", "expected": "I have to log in again every time."}
+{"id": "hcon051", "cat": "control", "input": "It may be the best option we have.", "expected": "It may be the best option we have."}
+{"id": "hcon052", "cat": "control", "input": "Its battery lasts all day.", "expected": "Its battery lasts all day."}
+{"id": "hcon053", "cat": "control", "input": "The team is playing well this season.", "expected": "The team is playing well this season."}
+{"id": "hcon054", "cat": "control", "input": "I'm so proud of you.", "expected": "I'm so proud of you."}
+{"id": "hcon055", "cat": "control", "input": "Let me think about it and get back to you.", "expected": "Let me think about it and get back to you."}
+{"id": "hcon056", "cat": "control", "input": "Thanks for checking in.", "expected": "Thanks for checking in."}
+{"id": "hcon057", "cat": "control", "input": "That sounds like a lot of fun.", "expected": "That sounds like a lot of fun."}
+{"id": "hcon058", "cat": "control", "input": "I'm not sure yet, I'll let you know.", "expected": "I'm not sure yet, I'll let you know."}
+{"id": "hcon059", "cat": "control", "input": "We had a great time at the wedding.", "expected": "We had a great time at the wedding."}
+{"id": "hcon060", "cat": "control", "input": "Did you hear about the storm?", "expected": "Did you hear about the storm?"}
+{"id": "hcon061", "cat": "control", "input": "I can't believe it's already Friday.", "expected": "I can't believe it's already Friday."}
+{"id": "hcon062", "cat": "control", "input": "He finally fixed the leak in the bathroom.", "expected": "He finally fixed the leak in the bathroom."}
+{"id": "hcon063", "cat": "control", "input": "Call me when you wake up.", "expected": "Call me when you wake up."}
+{"id": "hcon064", "cat": "control", "input": "Don't forget your jacket, it's cold out.", "expected": "Don't forget your jacket, it's cold out."}
+{"id": "hcon065", "cat": "control", "input": "I'll send you the pictures later.", "expected": "I'll send you the pictures later."}

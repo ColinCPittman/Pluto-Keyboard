@@ -319,7 +319,7 @@ abstract public class ExpandableBinaryDictionary extends Dictionary {
         if (!mBinaryDictionary.addUnigramEntry(word, frequency,
                 shortcutTarget, shortcutProbability,
                 false /* isBeginningOfSentence */, isNotAWord, isPossiblyOffensive, timestamp)) {
-            Log.e(TAG, "Cannot add unigram entry. word: " + word);
+            Log.e(TAG, "Cannot add unigram entry (" + word.length() + " chars)");
         }
     }
 

@@ -23,16 +23,53 @@ A package is a zip file. At its root it has a `futo-model.json` manifest, plus t
 | Field | Required | Meaning |
 |---|---|---|
 | `format` | yes | Always `1`. |
-| `kind` | yes | `moonshine-streaming` (voice typing), `punctuation` or `context` (Smart corrections). |
+| `kind` | yes | `transcribe` or `moonshine-streaming` (voice typing), `punctuation`, or `context` (Smart corrections). |
 | `id` | yes | Lowercase letters, digits, `.`, `_` and `-`, starting with a letter or digit, up to 64 characters. Importing a package with the same `kind` and `id` replaces the installed one, so give your own models their own ids. |
 | `name` | yes | What the app shows in its model lists. Falls back to `id`. |
-| `language` | no | ISO language code (`en`, `de`, ...), or `multi` for any language. Empty or missing also means any language. Moonshine is only used for English. |
+| `language` | no | ISO language code (`en`, `de`, ...), or `multi` for any language. Empty or missing also means any language. Moonshine is only used for English. A `transcribe` model is offered only for keyboard languages that match its `language`. |
 | `engine` | depends | Which runtime to use. Needed for `punctuation` (`pcs` or `horizon`) and recommended for `context` (`qwen3-rescore`). |
 | `license`, `source`, `version` | no | Shown to nobody yet, but please fill them in so people know where a model came from. |
+| `capabilities` | no | Voice typing models only. What the model already does well by itself, so Pluto can skip the fixes it doesn't need. See [What a voice model does by itself](#what-a-voice-model-does-by-itself-capabilities). |
 
 When you import a package, the app checks that the files the engine needs are there. If anything is missing, it won't import the package, and it tells you which file it couldn't find. Installed packages live in the app's private storage under `models/<kind>/<id>/`.
 
 ## What Pluto can run
+
+### Voice typing with Nemotron and Parakeet (`kind` is `transcribe`)
+
+Pluto runs NVIDIA's Nemotron and Parakeet speech models with [transcribe.cpp](https://github.com/handy-computer/transcribe.cpp), from the GGUF files that the transcribe.cpp project converts and publishes on [Hugging Face](https://huggingface.co/handy-computer). The package needs one file.
+
+- One `.gguf` model file (exactly one, any name). The app checks that it really is a GGUF file.
+
+Nothing else is needed: the tokenizer and settings are inside the GGUF. Whether a model types while you talk (Nemotron streaming) or after you finish (Parakeet) comes from the model file too. A multilingual model (Nemotron 3.5) is told the keyboard's current language, so set `language` to `multi` for it, and to the model's language (`en`) for an English-only one.
+
+Pluto knows the model family by the start of the package `id` (`nemotron...`, `parakeet...`, and `moonshine...` for a GGUF Moonshine) and uses what it has measured about that family (see the next section). Keep that start if you package another size or quantization of the same family. For those families Pluto's own values always apply and the manifest's `capabilities` are ignored, so packages already imported pick up later tuning. A model with any other `id` is treated as one that needs every fix, unless its manifest says otherwise in `capabilities`.
+
+`tools/package-transcribe-models.py` downloads the official GGUF files and wraps them, together with each model's license and notice. To package another quantization (Q8_0, Q6_K, Q5_K_M or Q4_K_M), change the file name in the script's `MODELS` table. Smaller quantizations load faster and use less memory but make a few more mistakes.
+
+```
+python tools/package-transcribe-models.py --models nemotron-en,parakeet-110m --cache models --out packages
+```
+
+### What a voice model does by itself (`capabilities`)
+
+Some voice models already punctuate, capitalize, or leave out "um" and "uh". If Pluto ran its own fixes on top, they would only second-guess the model. The optional `capabilities` object in `futo-model.json` says what a model does well. Pluto then skips those fixes, and their settings say that the voice model already handles them.
+
+```json
+"capabilities": {"punctuation": "good", "casing": "weak", "pause_segments": true, "streaming": true, "drops_fillers": true}
+```
+
+| Key | Values | What it changes |
+|---|---|---|
+| `punctuation` | `"good"`, `"weak"` or `"none"` | `"good"`: the punctuation model is skipped, and so is Smart corrections' question-mark fix. `"weak"` and `"none"` keep both. |
+| `casing` | `"good"`, `"weak"` or `"none"` | `"good"`: Smart corrections leaves the model's capital letters alone. Otherwise it capitalizes names and months from the dictionary. |
+| `drops_fillers` | `true` or `false` | `true`: the model leaves out "um", "uh" and words said twice by itself, so Smart corrections' Filler words fix is skipped. |
+| `streaming` | `true` or `false` | Whether the voice model list describes it as typing while you talk. (The model file decides how it actually runs.) |
+| `pause_segments` | `true` or `false` | Whether the engine reports where you paused. Recorded for future use, nothing reads it yet. |
+
+`capabilities` is read only for a model whose family Pluto doesn't know; for Nemotron, Parakeet and Moonshine it is ignored, and the official packages leave it out. Every key is optional. A key you leave out keeps the "needs every fix" default. Unknown keys and values are ignored. Only claim what you've checked in the model's output yourself.
+
+Only `transcribe` packages read `capabilities` today. `moonshine-streaming` packages always use Pluto's Moonshine values (its own punctuation and capitals are weak, so every fix runs).
 
 ### Voice typing with Moonshine streaming models (`kind` is `moonshine-streaming`)
 
@@ -77,6 +114,6 @@ Its `--threads` option sets the default thread count in `context.json`. Edit the
 
 ## Tips
 
-- It's worth testing a new model on the desktop first. `tools/moonshine-harness`, `tools/punctuation-harness` and `tools/context-harness` run the same Kotlin code as the app (see [BUILDING.md](BUILDING.md#desktop-test-tools)).
+- It's worth testing a new model on the desktop first. `tools/moonshine-harness`, `tools/punctuation-harness` and `tools/context-harness` run the same Kotlin code as the app (see [BUILDING.md](BUILDING.md#desktop-test-tools)). For a `transcribe` model, `tools/voice-bench` runs it with transcribe.cpp's `transcribe-cli` on a few hundred spoken test sentences and scores it with and without Smart corrections, which is a quick way to fill in `capabilities` (see its README).
 - Keep each package's `id` stable between versions of the same model, so importing a new version replaces the old one instead of adding a second copy.
 - Please respect the model's license and include its license or notice file in the zip.

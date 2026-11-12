@@ -14,6 +14,8 @@ import org.futo.voiceinput.shared.context.LlamaContextLm
 import org.futo.voiceinput.shared.context.PersonalDictionary
 import org.futo.voiceinput.shared.context.SmartCorrectionOptions
 import org.futo.voiceinput.shared.context.SoundAlikeLexicon
+import org.futo.voiceinput.shared.engine.SmartFeaturePolicy
+import org.futo.voiceinput.shared.engine.VoiceModelProfile
 import java.io.File
 import kotlin.math.round
 
@@ -24,13 +26,25 @@ private fun usage(): Nothing {
           context-harness run --lib <libfutoctxlm> (--package-dir <dir> | --model <gguf> --lexicon <lex>)
                               --testset <jsonl> --out <jsonl> [--threads N] [--no-repack] [--fresh]
                               [--options default|all|none|soundalike,names,questions,numbers,commands,fillers,selfcorrections,quotes,emoji] [--gemoji gemoji.json]
+              --options: a "-name" entry switches that one off ("all,-fillers"), which also works for the two
+              parts that aren't settings: -sentencebreaks and -lexiconcasing (both on unless switched off)
                               [--personal <file: one personal-dictionary word per line>] [--only-option <name>]
+                              [--profile whisper|moonshine|nemotron|parakeet] [--punctuation-ran true|false]
+              --profile: what runs on the phone for that voice model (SmartFeaturePolicy drops what the model does itself)
+              --punctuation-ran: whether the testset's text went through the punctuation stage (default: as the app does for the profile)
               items may carry "left" (text already in the field before the dictation), "segments" (ASR utterances), "personal" (personal-dictionary words)
               and "learned" (capitalized words learned from typing)
           context-harness typing --lib <libfutoctxlm> --model <gguf> --testset <jsonl> --out <jsonl> [--threads N]
                               [--margin X] [--opening-margin X] [--tail-min X] [--prompt P] [--own <file: your pairs, "typed<TAB>intended">] [--early] [--max-fixes N]
               Smart corrections for typing: each sentence of an item is checked in turn, as the
               keyboard does when it ends (at most --max-fixes swaps per sentence, default 2)
+                              [--edits | --missing-words --leftover-words --word-endings --word-order --join-split]
+                              [--add-margin X] [--remove-margin X] [--repeat-margin X] [--near-repeat-margin X] [--ending-margin X] [--order-margin X]
+                              [--join-margin X] [--edit-budget N] [--edit-probe-drop X] [--add-min-probe X] [--first-letter-need X]
+                              [--spike-log-prob X] [--spike-below-median X] [--spike-window N] [--ambiguity-gain X] [--trace-edits]
+                              [--edit-window-words N] [--edit-window-slack X] [--edit-full-scores N]
+              --edits: also fix slips made while editing (a missing, leftover or swapped word, an ending, a join)
+              items may carry "left" (text before the input, scored as context and never changed)
           context-harness lexicon <lex> [words...]
           context-harness verify <lex> <metaphone-ref.tsv>   (Kotlin vs Python Double Metaphone; lexicon pairs sound alike)
         """.trimIndent()
@@ -107,6 +121,35 @@ private fun verify(args: List<String>) {
     println("lexicon: $pairs pairs, $rejected not sound-alike in Kotlin")
 }
 
+/** [SmartCorrectionOptions.parse], plus "-name" entries that switch one option off (tools/voice-bench/ablate.py). */
+private fun parseOptions(spec: String): SmartCorrectionOptions {
+    val parts = spec.split(',').map { it.trim().lowercase() }.filter { it.isNotEmpty() }
+    val known = setOf("all", "default", "none", "soundalike", "names", "questions", "numbers", "commands", "fillers",
+        "selfcorrections", "quotes", "emoji", "sentencebreaks", "lexiconcasing")
+    for (p in parts) if (p.removePrefix("-") !in known) {
+        System.err.println("unknown option '$p' in --options $spec")
+        kotlin.system.exitProcess(2)
+    }
+    var o = SmartCorrectionOptions.parse(parts.filterNot { it.startsWith("-") }.joinToString(","))
+    for (p in parts.filter { it.startsWith("-") }) {
+        o = when (p.drop(1)) {
+            "soundalike" -> o.copy(soundAlike = false)
+            "names" -> o.copy(names = false)
+            "questions" -> o.copy(questions = false)
+            "numbers" -> o.copy(numbers = false)
+            "commands" -> o.copy(commands = false)
+            "fillers" -> o.copy(fillers = false)
+            "selfcorrections" -> o.copy(selfCorrections = false)
+            "quotes" -> o.copy(quotes = false)
+            "emoji" -> o.copy(emoji = false)
+            "sentencebreaks" -> o.copy(sentenceBreaks = false)
+            "lexiconcasing" -> o.copy(lexiconCasing = false)
+            else -> usage()
+        }
+    }
+    return o
+}
+
 private fun run(args: List<String>) {
     var lib: String? = null
     var model: String? = null
@@ -122,6 +165,8 @@ private fun run(args: List<String>) {
     var personalFile: String? = null
     var onlyOption: String? = null
     var gemojiFile: String? = null
+    var profileName: String? = null
+    var punctuationRan: Boolean? = null
     var i = 0
     while (i < args.size) {
         when (args[i]) {
@@ -134,15 +179,30 @@ private fun run(args: List<String>) {
             "--threads" -> threads = args[++i].toInt()
             "--no-repack" -> repack = false
             "--fresh" -> fresh = true  // new rescorer per item (as in the app) instead of one for all
-            "--options" -> { optionsName = args[++i]; options = SmartCorrectionOptions.parse(optionsName) }
+            "--options" -> { optionsName = args[++i]; options = parseOptions(optionsName) }
             "--personal" -> personalFile = args[++i]
             "--gemoji" -> gemojiFile = args[++i]  // java/res/raw/gemoji.json holds the emoji names for "emoji"
             "--only-option" -> onlyOption = args[++i]  // items whose "option" field is this (testset_holdout.jsonl)
+            "--profile" -> profileName = args[++i]
+            // whether the punctuation stage ran on the test set's text (default: as the app runs it for the profile)
+            "--punctuation-ran" -> punctuationRan = args[++i].toBooleanStrict()
             else -> usage()
         }
         i++
     }
     if (lib == null || testset == null || out == null) usage()
+    if (profileName != null) {
+        val profile = when (profileName) {
+            "whisper" -> VoiceModelProfile.WHISPER
+            "moonshine" -> VoiceModelProfile.MOONSHINE
+            "nemotron" -> VoiceModelProfile.NEMOTRON
+            "parakeet" -> VoiceModelProfile.PARAKEET
+            else -> usage()
+        }
+        // (the testset is the voice model's own text, so the punctuation stage ran only for a model that needs it)
+        options = SmartFeaturePolicy.smartCorrections(options, profile, punctuationRan ?: SmartFeaturePolicy.punctuationStage(profile, true))
+        optionsName += "+$profileName"
+    }
     if (gemojiFile != null) options = options.copy(emojiNames = EmojiNames.builtIn(File(gemojiFile).readText()).names)
     var config = ContextRescoreConfig()
     if (pkgDir != null) {
@@ -277,6 +337,32 @@ private fun typing(args: List<String>) {
                 confusions, org.futo.voiceinput.shared.context.TypingPairEdits.parse(File(args[++i]).readText())
             )
             "--prompt" -> config = config.copy(prompt = args[++i].replace("\\n", "\n"))
+            // edits for slips made while editing: --edits switches on all five kinds, or one at a time
+            "--edits" -> config = config.copy(missingWords = true, leftoverWords = true, wordEndings = true, wordOrder = true, joinSplit = true)
+            "--missing-words" -> config = config.copy(missingWords = true)
+            "--leftover-words" -> config = config.copy(leftoverWords = true)
+            "--word-endings" -> config = config.copy(wordEndings = true)
+            "--word-order" -> config = config.copy(wordOrder = true)
+            "--join-split" -> config = config.copy(joinSplit = true)
+            "--add-margin" -> config = config.copy(addMargin = args[++i].toDouble())
+            "--remove-margin" -> config = config.copy(removeMargin = args[++i].toDouble())
+            "--repeat-margin" -> config = config.copy(repeatMargin = args[++i].toDouble())
+            "--near-repeat-margin" -> config = config.copy(nearRepeatMargin = args[++i].toDouble())
+            "--ending-margin" -> config = config.copy(endingMargin = args[++i].toDouble())
+            "--order-margin" -> config = config.copy(orderMargin = args[++i].toDouble())
+            "--join-margin" -> config = config.copy(joinMargin = args[++i].toDouble())
+            "--edit-budget" -> config = config.copy(editBudget = args[++i].toInt())
+            "--edit-probe-drop" -> config = config.copy(editProbeDrop = args[++i].toDouble())
+            "--add-min-probe" -> config = config.copy(addMinProbe = args[++i].toDouble())
+            "--spike-log-prob" -> config = config.copy(spikeLogProb = args[++i].toDouble())
+            "--spike-below-median" -> config = config.copy(spikeBelowMedian = args[++i].toDouble())
+            "--spike-window" -> config = config.copy(spikeWindow = args[++i].toInt())
+            "--ambiguity-gain" -> config = config.copy(ambiguityGain = args[++i].toDouble())
+            "--trace-edits" -> config = config.copy(traceEdits = true)
+            "--edit-window-words" -> config = config.copy(editWindowWords = args[++i].toInt())
+            "--edit-window-slack" -> config = config.copy(editWindowSlack = args[++i].toDouble())
+            "--edit-full-scores" -> config = config.copy(editFullScores = args[++i].toInt())
+            "--first-letter-need" -> config = config.copy(firstLetterNeed = args[++i].toDouble())
             else -> usage()
         }
         i++
@@ -291,13 +377,17 @@ private fun typing(args: List<String>) {
     File(out).bufferedWriter().use { w ->
         for (it in items) {
             val input = it["input"]!!.jsonPrimitive.content
-            var text = input
+            // the text before the item ("left") is context: it is scored but never changed
+            val left = (it["left"] as? JsonPrimitive)?.content ?: ""
+            var text = left + input
             val trace = ArrayList<String>()
             val ms = ArrayList<Double>()
             val t0 = System.nanoTime()
-            val nSentences = org.futo.voiceinput.shared.context.TypingCorrector.sentences(input).size
+            // the sentences that end in the input are checked (the first may start in "left", which stays as it is)
+            val nLeft = org.futo.voiceinput.shared.context.TypingCorrector.sentences(text).count { s -> s.last < left.length }
+            val nSentences = org.futo.voiceinput.shared.context.TypingCorrector.sentences(text).size
             val wordEnd = Regex("[A-Za-z']+(?=[\\s,;:]|$)")
-            for (k in 0 until nSentences) {
+            for (k in nLeft until nSentences) {
                 // as the keyboard does (up to maxFixes swaps per sentence, and a fixed word is not changed again)
                 val fixedAt = HashSet<Int>()
                 var fixes = 0
@@ -314,9 +404,10 @@ private fun typing(args: List<String>) {
                     while (fixes < maxFixes) {
                         // a swap never adds or removes a sentence end, but it moves the offsets after it
                         val sent = org.futo.voiceinput.shared.context.TypingCorrector.sentences(text)[k]
-                        val ends = wordEnd.findAll(text.substring(sent.first, sent.last + 1)).toList().dropLast(1)
+                        val from = maxOf(sent.first, left.length)
+                        val ends = wordEnd.findAll(text.substring(from, sent.last + 1)).toList().dropLast(1)
                         if (w >= ends.size) break
-                        val res = corrector.check(text, sent.first, sent.first + ends[w].range.last + 1, finished = false, skip = { it in fixedAt })
+                        val res = corrector.check(text, from, from + ends[w].range.last + 1, finished = false, skip = { it in fixedAt })
                         trace.addAll(res.trace.map { t -> "early $t" })
                         ms.addAll(res.timings)
                         val f = res.fix
@@ -325,7 +416,7 @@ private fun typing(args: List<String>) {
                 }
                 while (fixes < maxFixes) {
                     val sent = org.futo.voiceinput.shared.context.TypingCorrector.sentences(text)[k]
-                    val res = corrector.check(text, sent.first, sent.last + 1, skip = { it in fixedAt }, unknown = { true })
+                    val res = corrector.check(text, maxOf(sent.first, left.length), sent.last + 1, skip = { it in fixedAt }, unknown = { true })
                     trace.addAll(res.trace)
                     ms.addAll(res.timings)
                     apply(res.fix ?: break)
@@ -337,14 +428,14 @@ private fun typing(args: List<String>) {
                 put("id", it["id"]!!)
                 put("cat", it["cat"]!!)
                 put("input", input)
-                put("guarded", text)
+                put("guarded", text.substring(left.length))
                 put("trace", JsonArray(trace.map { t -> JsonPrimitive(t) }))
                 put("phone_ms", JsonArray(ms.map { x -> JsonPrimitive(r(x, 1)) }))
                 put("secs", secs)
             }
             w.write(rec.toString())
             w.write("\n")
-            System.err.println("%-8s %6.0f ms  %s".format(it["id"]!!.jsonPrimitive.content, secs * 1000, if (text != input) text else "(unchanged)"))
+            System.err.println("%-8s %6.0f ms  %s".format(it["id"]!!.jsonPrimitive.content, secs * 1000, if (text.substring(left.length) != input) text.substring(left.length) else "(unchanged)"))
         }
     }
     System.err.println("total %.1f s for %d items (mean %.0f ms)".format(totalMs / 1000, items.size, totalMs / items.size))

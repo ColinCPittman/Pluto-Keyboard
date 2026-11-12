@@ -26,6 +26,8 @@ class StressRegressionTest {
         val groups = when (kind) {
             Kind.FILLER, Kind.REPEAT -> SpokenEdits.fillerGroups(w, isWord = isWord).filter { it.kind == kind }
             Kind.SELF_CORRECTION -> SpokenEdits.selfCorrectionGroups(w, seg, isWord = isWord)
+                // (the edits a pause or punctuation marks; unmarked ones are left to the LM)
+                .map { g -> SpokenEdits.Group(g.kind, g.alternatives.filter { !it.undelimited }, g.label, g.certain) }
             Kind.QUOTE -> SpokenEdits.quoteGroups(w, isWord = isWord)
             else -> SpokenEdits.commandGroups(w, seg, null, org.futo.voiceinput.shared.context.PersonalNames.EMPTY)
         }
@@ -69,13 +71,15 @@ class StressRegressionTest {
     fun selfCorrections() {
         none(Kind.SELF_CORRECTION,
             "Thanks, sorry, gotta run.", "I can't make it tonight, sorry, my car broke down.", "It was a long, rather boring meeting.",
-            "Let me check, oh wait, the store is closed on Sundays.", "Add two cups of sugar, sorry, one cup.",
+            "Let me check, oh wait, the store is closed on Sundays.",
             "I'm late. Sorry. Traffic was bad.")
         // across the sentence ends the voice model writes at pauses
         assertEquals(listOf("The party is on Saturday."), candidates("The party is on Friday, no wait. Saturday.", Kind.SELF_CORRECTION))
         assertEquals(listOf("We need four chairs."), candidates("We need three. Actually, four chairs.", Kind.SELF_CORRECTION))
         assertTrue("Get the blue bag." in candidates("Get the red bag, no wait. Blue bag.", Kind.SELF_CORRECTION))
         assertEquals(listOf("Meet me at six."), candidates("Meet me at 5. I mean, six.", Kind.SELF_CORRECTION))
+        // a number repair goes back to the number it replaces, however long the phrase
+        assertEquals(listOf("Add one cup."), candidates("Add two cups of sugar, sorry, one cup.", Kind.SELF_CORRECTION))
     }
 
     @Test

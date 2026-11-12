@@ -13,6 +13,9 @@ Only lexicon pairs (word -> sound-alike candidate) count. Homophones: pronounced
 same by the speech engine, plus a few pairs it pronounces in their weak forms ("to" / "too");
 one group per line. Confusable: the same sounds but one, and that one is a similar sound
 (CONFUSABLE: lax/tense vowels, voicing, ...); one pair per line, starting with "~".
+
+Sound-alikes the lexicon doesn't pair at all ("high" / "hi", "cheers" / "chairs") are listed by hand
+in soundalike-extra-en.txt next to the output, in the same format, and this script leaves it alone.
 """
 
 from __future__ import annotations

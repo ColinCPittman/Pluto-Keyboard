@@ -465,6 +465,12 @@ object TranscriptGuard {
         markers: List<CorrectionMarker> = SpokenEdits.DEFAULT_MARKERS,
         fillers: List<FillerWords.Filler> = SpokenEdits.DEFAULT_FILLERS,
         emojiNames: Map<List<String>, String> = emptyMap(),
+        /** Where the dictation starts in [text] (after the text already in the field), a start of its own. */
+        dictationStart: Int = 0,
+        /** Where the voice model's utterances start in [text] (after a pause), starts of their own for "scratch that". */
+        pauses: Set<Int> = emptySet(),
+        /** A command may have one word written as its exact homophone ("knew paragraph", see [SpokenEdits.commandGroups]). */
+        soundAlikeCommands: Boolean = false,
     ): Decision {
         val src = text.substring(e.start, e.end)
         val dst = e.replacement
@@ -522,7 +528,9 @@ object TranscriptGuard {
                 val numbers = markerAt > 0 && number(sw[markerAt - 1]) && tokenize(rest).words.firstOrNull()?.let { number(it) } == true
                 for (g in 1 until sw.size) {
                     if (!sentenceEndInside(stk.gaps[g])) continue
-                    if (g != markerAt || !(mk.atSentenceStart || numbers)) return no("crosses a sentence end")
+                    // (or one the LM judged on the sentence alone: a voice model that punctuates ends a
+                    // sentence right at the cue, "the red bag. Sorry, the blue bag.")
+                    if (g != markerAt || !(mk.atSentenceStart || numbers || e.undelimited)) return no("crosses a sentence end")
                 }
                 // the repair follows (the voice model may have started a sentence at the pause before it)
                 if (rest.isEmpty() || !rest[0].isLetterOrDigit()) return no("no repair after the marker")
@@ -533,25 +541,32 @@ object TranscriptGuard {
                 val cmdLen = SpokenEdits.scratchCommands(commands).firstNotNullOfOrNull { c ->
                     (1 until sn.size).firstOrNull { st -> SpokenEdits.phraseLength(sn, st, c) == sn.size - st }?.let { sn.size - it }
                 } ?: return no("no scratch command")
-                // exactly one sentence (or utterance) before the command, which starts a sentence/utterance
+                // exactly one sentence (or utterance) before the command, which starts a sentence, an
+                // utterance ([pauses]) or the dictation
                 val tk = tokenize(src)
                 val nScratched = sw.size - cmdLen
                 val innerEnds = (1 until nScratched).count { sentenceEndInside(tk.gaps[it]) }
                 if (innerEnds > 0) return no("more than one sentence")
-                val textStart = e.start == 0 || text.substring(0, e.start).trimEnd().let { it.isEmpty() || it.last() in SENTENCE_END || it.endsWith("\n") } ||
+                val before = text.substring(0, e.start)
+                val textStart = e.start == 0 || e.start == dictationStart || e.start in pauses ||
+                    before.trimEnd().let { it.isEmpty() || it.last() in SENTENCE_END } || '\n' in before.takeLastWhile { it.isWhitespace() } ||
                     src.isNotEmpty() && !src[0].isLetterOrDigit()
                 if (!textStart) return no("does not start at a sentence")
                 return yes("scratch that")
             }
             SpokenEdits.Kind.NUMBER -> {
                 val forms = NumberWords.forms(src)
-                return if (dst in forms) yes("number") else no("not a written form of these words")
+                // (or the voice model's own digits as a clock time, the same digits: "3.30" -> "3:30")
+                val reformatted = src.filter { it.isDigit() } == dst.filter { it.isDigit() } && CLOCK_TIME.matches(dst)
+                // (or digits said one by one, or dollars and cents said in two parts)
+                val spoken = dst == NumberWords.phoneForm(src) || dst == NumberWords.centsForm(src) || dst == NumberWords.digitSequenceForm(src)
+                return if (dst in forms || reformatted || spoken) yes("number") else no("not a written form of these words")
             }
             SpokenEdits.Kind.COMMAND -> {
                 // (the command may be written with hyphens, as in "close-quote")
                 var cmdLen = 0
                 val cmd = SpokenEdits.punctuationCommands(commands).firstOrNull { c ->
-                    cmdLen = SpokenEdits.phraseLength(sn, 0, c.words)
+                    cmdLen = SpokenEdits.phraseLength(sn, 0, c.words, soundAlikeCommands)
                     cmdLen > 0
                 } ?: return no("no command")
                 val extra = sw.drop(cmdLen)
@@ -608,6 +623,8 @@ object TranscriptGuard {
             }
         }
     }
+
+    private val CLOCK_TIME = Regex("""\d{1,2}:\d{2}""")
 
     /** [to] is [from] with its first letter lowercased ("Thinking" -> "thinking"). */
     private fun isLowercased(from: String, to: String): Boolean =

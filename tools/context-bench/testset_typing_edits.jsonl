@@ -1,0 +1,239 @@
+{"id": "eadd001", "cat": "add", "input": "I asked the manager if she could call me when she gets chance.", "expected": "I asked the manager if she could call me when she gets a chance."}
+{"id": "eadd002", "cat": "add", "input": "We need to leave by six if we want get a good seat.", "expected": "We need to leave by six if we want to get a good seat."}
+{"id": "eadd003", "cat": "add", "input": "He is one of best players on the team.", "expected": "He is one of the best players on the team."}
+{"id": "eadd004", "cat": "add", "input": "She forgot her keys at home and had go back for them.", "expected": "She forgot her keys at home and had to go back for them."}
+{"id": "eadd005", "cat": "add", "input": "I'm not sure what kind dog that is.", "expected": "I'm not sure what kind of dog that is."}
+{"id": "eadd006", "cat": "add", "input": "She has been working at hospital for almost ten years.", "expected": "She has been working at the hospital for almost ten years."}
+{"id": "eadd007", "cat": "add", "input": "I think we should talk about this before we make decision.", "expected": "I think we should talk about this before we make a decision."}
+{"id": "eadd008", "cat": "add", "input": "They were trying find a parking spot for twenty minutes.", "expected": "They were trying to find a parking spot for twenty minutes."}
+{"id": "eadd009", "cat": "add", "input": "The kids are so excited go to the beach this weekend.", "expected": "The kids are so excited to go to the beach this weekend."}
+{"id": "eadd010", "cat": "add", "input": "Did you remember to turn off the stove before you left house?", "expected": "Did you remember to turn off the stove before you left the house?"}
+{"id": "eadd011", "cat": "add", "input": "I will call you as soon as get home from work.", "expected": "I will call you as soon as I get home from work."}
+{"id": "eadd012", "cat": "add", "input": "We ran out milk again so I stopped at the store.", "expected": "We ran out of milk again so I stopped at the store."}
+{"id": "eadd013", "cat": "add", "input": "My boss wants me finish the report by Friday.", "expected": "My boss wants me to finish the report by Friday."}
+{"id": "eadd014", "cat": "add", "input": "She said the meeting going to be moved to Thursday.", "expected": "She said the meeting is going to be moved to Thursday.", "alts": ["She said the meeting was going to be moved to Thursday."]}
+{"id": "eadd015", "cat": "add", "input": "I can't believe how much it costs fix a phone screen now.", "expected": "I can't believe how much it costs to fix a phone screen now."}
+{"id": "eadd016", "cat": "add", "input": "We should get there early because the line usually really long.", "expected": "We should get there early because the line is usually really long."}
+{"id": "eadd017", "cat": "add", "input": "I have been waiting for this all week and now it finally here.", "expected": "I have been waiting for this all week and now it is finally here."}
+{"id": "eadd018", "cat": "add", "input": "The doctor said I need rest for a few days.", "expected": "The doctor said I need to rest for a few days."}
+{"id": "eadd019", "cat": "add", "input": "I'm going to try fix the sink tonight after dinner.", "expected": "I'm going to try to fix the sink tonight after dinner."}
+{"id": "eadd020", "cat": "add", "input": "Could you send me copy of the lease when you get a chance?", "expected": "Could you send me a copy of the lease when you get a chance?"}
+{"id": "eadd021", "cat": "add", "input": "I forgot bring my charger so my phone is almost dead.", "expected": "I forgot to bring my charger so my phone is almost dead."}
+{"id": "eadd022", "cat": "add", "input": "He was the first person to show up and the last one leave.", "expected": "He was the first person to show up and the last one to leave."}
+{"id": "eadd023", "cat": "add", "input": "We are planning to go out for dinner the end of the month.", "expected": "We are planning to go out for dinner at the end of the month."}
+{"id": "eadd024", "cat": "add", "input": "I left my umbrella in car, so I got soaked.", "expected": "I left my umbrella in the car, so I got soaked.", "alts": ["I left my umbrella in my car, so I got soaked."]}
+{"id": "eadd025", "cat": "add", "input": "It is going to be hard to get used the new schedule.", "expected": "It is going to be hard to get used to the new schedule."}
+{"id": "erem001", "cat": "remove", "input": "I was going to to call you after lunch.", "expected": "I was going to call you after lunch."}
+{"id": "erem002", "cat": "remove", "input": "Can you send me the the address again?", "expected": "Can you send me the address again?"}
+{"id": "erem003", "cat": "remove", "input": "She said she would would be here by noon.", "expected": "She said she would be here by noon."}
+{"id": "erem004", "cat": "remove", "input": "We finally finished painting the the kitchen last night.", "expected": "We finally finished painting the kitchen last night."}
+{"id": "erem005", "cat": "remove", "input": "I think he is is still at the office.", "expected": "I think he is still at the office."}
+{"id": "erem006", "cat": "remove", "input": "My brother and I went to the store and and bought snacks.", "expected": "My brother and I went to the store and bought snacks."}
+{"id": "erem007", "cat": "remove", "input": "Let me know if you you want to come with us.", "expected": "Let me know if you want to come with us."}
+{"id": "erem008", "cat": "remove", "input": "I had a a really long day at work.", "expected": "I had a really long day at work."}
+{"id": "erem009", "cat": "remove", "input": "The dog keeps barking at the mailman mailman every morning.", "expected": "The dog keeps barking at the mailman every morning."}
+{"id": "erem010", "cat": "remove", "input": "We are going to the lake for for the weekend.", "expected": "We are going to the lake for the weekend."}
+{"id": "erem011", "cat": "remove", "input": "Did you get a chance to look at the photos photo I sent?", "expected": "Did you get a chance to look at the photos I sent?", "alts": ["Did you get a chance to look at the photo I sent?"]}
+{"id": "erem012", "cat": "remove", "input": "I need to pick up my my car from the shop.", "expected": "I need to pick up my car from the shop."}
+{"id": "erem013", "cat": "remove", "input": "We should have have left earlier to beat the traffic.", "expected": "We should have left earlier to beat the traffic."}
+{"id": "erem014", "cat": "remove", "input": "He bought a new a car last month.", "expected": "He bought a new car last month."}
+{"id": "erem015", "cat": "remove", "input": "I just wanted to say thank thank you for everything.", "expected": "I just wanted to say thank you for everything."}
+{"id": "erem016", "cat": "remove", "input": "Make sure you lock the door door when you leave.", "expected": "Make sure you lock the door when you leave."}
+{"id": "erem017", "cat": "remove", "input": "I will be there in about about ten minutes.", "expected": "I will be there in about ten minutes."}
+{"id": "erem018", "cat": "remove", "input": "She is a really good at drawing.", "expected": "She is really good at drawing."}
+{"id": "erem019", "cat": "remove", "input": "I didn't know that you were was coming today.", "expected": "I didn't know that you were coming today."}
+{"id": "erem020", "cat": "remove", "input": "I can't really can't make it tonight.", "expected": "I really can't make it tonight.", "alts": ["I can't really make it tonight."]}
+{"id": "erem021", "cat": "remove", "input": "He sent me a message about a the party.", "expected": "He sent me a message about the party.", "alts": ["He sent me a message about a party."]}
+{"id": "erem022", "cat": "remove", "input": "I have been to looking for my keys all morning.", "expected": "I have been looking for my keys all morning."}
+{"id": "erem023", "cat": "remove", "input": "We need to finish this before before the weekend.", "expected": "We need to finish this before the weekend."}
+{"id": "erem024", "cat": "remove", "input": "Tell your mom mom I said hi.", "expected": "Tell your mom I said hi."}
+{"id": "erem025", "cat": "remove", "input": "I hope you you have a great time at the concert.", "expected": "I hope you have a great time at the concert."}
+{"id": "erem026", "cat": "remove", "input": "Thanks for for the ride home last night.", "expected": "Thanks for the ride home last night."}
+{"id": "erem027", "cat": "remove", "input": "I was so tired I fell asleep asleep on the couch.", "expected": "I was so tired I fell asleep on the couch."}
+{"id": "erem028", "cat": "remove", "input": "We got a lot done done today.", "expected": "We got a lot done today."}
+{"id": "eend001", "cat": "ending", "input": "She has three cat and a dog.", "expected": "She has three cats and a dog."}
+{"id": "eend002", "cat": "ending", "input": "He always make dinner on Sundays.", "expected": "He always makes dinner on Sundays."}
+{"id": "eend003", "cat": "ending", "input": "The kids was playing outside all afternoon.", "expected": "The kids were playing outside all afternoon."}
+{"id": "eend004", "cat": "ending", "input": "I have a lot of question about the trip.", "expected": "I have a lot of questions about the trip."}
+{"id": "eend005", "cat": "ending", "input": "My parents is coming over for dinner tonight.", "expected": "My parents are coming over for dinner tonight."}
+{"id": "eend006", "cat": "ending", "input": "She walk to work every day when the weather is nice.", "expected": "She walks to work every day when the weather is nice."}
+{"id": "eend007", "cat": "ending", "input": "Yesterday I finish the whole book in one sitting.", "expected": "Yesterday I finished the whole book in one sitting."}
+{"id": "eend008", "cat": "ending", "input": "There are two car parked in front of our house.", "expected": "There are two cars parked in front of our house."}
+{"id": "eend009", "cat": "ending", "input": "This shoes are way too small for me.", "expected": "These shoes are way too small for me."}
+{"id": "eend010", "cat": "ending", "input": "He don't want to go to the party.", "expected": "He doesn't want to go to the party."}
+{"id": "eend011", "cat": "ending", "input": "I am looking forward to meeting you friends at the wedding.", "expected": "I am looking forward to meeting your friends at the wedding."}
+{"id": "eend012", "cat": "ending", "input": "We was supposed to meet at noon.", "expected": "We were supposed to meet at noon."}
+{"id": "eend013", "cat": "ending", "input": "The movie have a great soundtrack.", "expected": "The movie has a great soundtrack."}
+{"id": "eend014", "cat": "ending", "input": "She has been work on that project since March.", "expected": "She has been working on that project since March."}
+{"id": "eend015", "cat": "ending", "input": "I need to buy some new sock before the trip.", "expected": "I need to buy some new socks before the trip."}
+{"id": "eend016", "cat": "ending", "input": "He has already finish his homework for tomorrow.", "expected": "He has already finished his homework for tomorrow."}
+{"id": "eend017", "cat": "ending", "input": "There is a lot of different between the two plans.", "expected": "There is a lot of difference between the two plans."}
+{"id": "eend018", "cat": "ending", "input": "All of my friend are coming to the party.", "expected": "All of my friends are coming to the party."}
+{"id": "eend019", "cat": "ending", "input": "It were really cold this morning.", "expected": "It was really cold this morning."}
+{"id": "eend020", "cat": "ending", "input": "She call me every night before bed.", "expected": "She calls me every night before bed."}
+{"id": "eend021", "cat": "ending", "input": "Last week we visit my grandparents in Ohio.", "expected": "Last week we visited my grandparents in Ohio."}
+{"id": "eend022", "cat": "ending", "input": "The teacher gave us two assignment for the weekend.", "expected": "The teacher gave us two assignments for the weekend."}
+{"id": "eend023", "cat": "ending", "input": "My phone have been acting weird all day.", "expected": "My phone has been acting weird all day."}
+{"id": "eend024", "cat": "ending", "input": "I am really enjoy the new job so far.", "expected": "I am really enjoying the new job so far."}
+{"id": "eend025", "cat": "ending", "input": "We watched three movie last night.", "expected": "We watched three movies last night."}
+{"id": "eord001", "cat": "order", "input": "I have a rough of sense how long it takes.", "expected": "I have a rough sense of how long it takes."}
+{"id": "eord002", "cat": "order", "input": "Can you tell me where the is store?", "expected": "Can you tell me where the store is?", "alts": ["Can you tell me where is the store?"]}
+{"id": "eord003", "cat": "order", "input": "I will be there in minutes ten.", "expected": "I will be there in ten minutes."}
+{"id": "eord004", "cat": "order", "input": "She is the person best for the job.", "expected": "She is the best person for the job."}
+{"id": "eord005", "cat": "order", "input": "Let me know if are you coming tonight.", "expected": "Let me know if you are coming tonight."}
+{"id": "eord006", "cat": "order", "input": "I don't know what is it called.", "expected": "I don't know what it is called."}
+{"id": "eord007", "cat": "order", "input": "Thanks for coming, it means a lot me to.", "expected": "Thanks for coming, it means a lot to me."}
+{"id": "eord008", "cat": "order", "input": "We can meet at the coffee shop the near office.", "expected": "We can meet at the coffee shop near the office."}
+{"id": "eord009", "cat": "order", "input": "I will send you the later details.", "expected": "I will send you the details later."}
+{"id": "eord010", "cat": "order", "input": "She asked me if I could the watch kids tonight.", "expected": "She asked me if I could watch the kids tonight."}
+{"id": "eord011", "cat": "order", "input": "Do you know where my are keys?", "expected": "Do you know where my keys are?", "alts": ["Do you know where are my keys?"]}
+{"id": "eord012", "cat": "order", "input": "I have to go the to bank before it closes.", "expected": "I have to go to the bank before it closes."}
+{"id": "eord013", "cat": "order", "input": "We had a really time good at the concert.", "expected": "We had a really good time at the concert."}
+{"id": "eord014", "cat": "order", "input": "I am sure not if that will work.", "expected": "I am not sure if that will work."}
+{"id": "ejoi001", "cat": "join", "input": "It can take upto three days to ship.", "expected": "It can take up to three days to ship."}
+{"id": "ejoi002", "cat": "join", "input": "Every thing is ready for the party tonight.", "expected": "Everything is ready for the party tonight."}
+{"id": "ejoi003", "cat": "join", "input": "I think thats the best plan we have.", "expected": "I think that's the best plan we have."}
+{"id": "ejoi004", "cat": "join", "input": "Its going to rain all weekend.", "expected": "It's going to rain all weekend."}
+{"id": "ejoi005", "cat": "join", "input": "I dont think he is coming tonight.", "expected": "I don't think he is coming tonight."}
+{"id": "ejoi006", "cat": "join", "input": "Some one left their jacket at our house.", "expected": "Someone left their jacket at our house."}
+{"id": "ejoi007", "cat": "join", "input": "She said she didnt get my message.", "expected": "She said she didn't get my message."}
+{"id": "ejoi008", "cat": "join", "input": "I cant wait to see you this weekend.", "expected": "I can't wait to see you this weekend."}
+{"id": "ejoi009", "cat": "join", "input": "There is alot of traffic on the highway.", "expected": "There is a lot of traffic on the highway."}
+{"id": "ejoi010", "cat": "join", "input": "Any one can join the class if they want.", "expected": "Anyone can join the class if they want."}
+{"id": "ejoi011", "cat": "join", "input": "I will be there soon, im almost done.", "expected": "I will be there soon, I'm almost done."}
+{"id": "ejoi012", "cat": "join", "input": "He doesnt know about the surprise yet.", "expected": "He doesn't know about the surprise yet."}
+{"id": "ejoi013", "cat": "join", "input": "I was looking every where for my keys.", "expected": "I was looking everywhere for my keys."}
+{"id": "ejoi014", "cat": "join", "input": "My sister is coming over to night for dinner.", "expected": "My sister is coming over tonight for dinner."}
+{"id": "ejoi015", "cat": "join", "input": "The dog wagged it's tail when I got home.", "expected": "The dog wagged its tail when I got home."}
+{"id": "ejoi016", "cat": "join", "input": "I wasnt sure if you were awake.", "expected": "I wasn't sure if you were awake."}
+{"id": "ejoi017", "cat": "join", "input": "We need to leave right now, theres a storm coming.", "expected": "We need to leave right now, there's a storm coming."}
+{"id": "econ001", "cat": "control", "input": "lol ok see you soon", "expected": "lol ok see you soon"}
+{"id": "econ002", "cat": "control", "input": "Omw", "expected": "Omw"}
+{"id": "econ003", "cat": "control", "input": "Sounds good.", "expected": "Sounds good."}
+{"id": "econ004", "cat": "control", "input": "k thanks", "expected": "k thanks"}
+{"id": "econ005", "cat": "control", "input": "Heading to bed now.", "expected": "Heading to bed now."}
+{"id": "econ006", "cat": "control", "input": "brb gotta feed the dog", "expected": "brb gotta feed the dog"}
+{"id": "econ007", "cat": "control", "input": "Running late, be there in 10.", "expected": "Running late, be there in 10."}
+{"id": "econ008", "cat": "control", "input": "nvm found it", "expected": "nvm found it"}
+{"id": "econ009", "cat": "control", "input": "Can't talk rn, in a meeting.", "expected": "Can't talk rn, in a meeting."}
+{"id": "econ010", "cat": "control", "input": "Got it, thanks!", "expected": "Got it, thanks!"}
+{"id": "econ011", "cat": "control", "input": "Love you, night.", "expected": "Love you, night."}
+{"id": "econ012", "cat": "control", "input": "Haha yes exactly.", "expected": "Haha yes exactly."}
+{"id": "econ013", "cat": "control", "input": "Yep on my way.", "expected": "Yep on my way."}
+{"id": "econ014", "cat": "control", "input": "Same here honestly.", "expected": "Same here honestly."}
+{"id": "econ015", "cat": "control", "input": "Not today sorry.", "expected": "Not today sorry."}
+{"id": "econ016", "cat": "control", "input": "Just landed.", "expected": "Just landed."}
+{"id": "econ017", "cat": "control", "input": "Back home now, long day.", "expected": "Back home now, long day."}
+{"id": "econ018", "cat": "control", "input": "Leaving work now.", "expected": "Leaving work now."}
+{"id": "econ019", "cat": "control", "input": "Need anything from the store?", "expected": "Need anything from the store?"}
+{"id": "econ020", "cat": "control", "input": "Miss you already.", "expected": "Miss you already."}
+{"id": "econ021", "cat": "control", "input": "idk what she meant by that tbh", "expected": "idk what she meant by that tbh"}
+{"id": "econ022", "cat": "control", "input": "ya I saw it, so funny", "expected": "ya I saw it, so funny"}
+{"id": "econ023", "cat": "control", "input": "So I was thinking we could go on Saturday.", "expected": "So I was thinking we could go on Saturday."}
+{"id": "econ024", "cat": "control", "input": "But I already told her about it.", "expected": "But I already told her about it."}
+{"id": "econ025", "cat": "control", "input": "And then the power went out.", "expected": "And then the power went out."}
+{"id": "econ026", "cat": "control", "input": "So what do you think?", "expected": "So what do you think?"}
+{"id": "econ027", "cat": "control", "input": "But that is not what I said.", "expected": "But that is not what I said."}
+{"id": "econ028", "cat": "control", "input": "And I still have not heard back from them.", "expected": "And I still have not heard back from them."}
+{"id": "econ029", "cat": "control", "input": "So yeah, that happened.", "expected": "So yeah, that happened."}
+{"id": "econ030", "cat": "control", "input": "But honestly it was worth it.", "expected": "But honestly it was worth it."}
+{"id": "econ031", "cat": "control", "input": "And the kids loved it.", "expected": "And the kids loved it."}
+{"id": "econ032", "cat": "control", "input": "So we just stayed home and watched a movie.", "expected": "So we just stayed home and watched a movie."}
+{"id": "econ033", "cat": "control", "input": "I knew that that would happen.", "expected": "I knew that that would happen."}
+{"id": "econ034", "cat": "control", "input": "She had had enough of the noise.", "expected": "She had had enough of the noise."}
+{"id": "econ035", "cat": "control", "input": "It was very very cold this morning.", "expected": "It was very very cold this morning."}
+{"id": "econ036", "cat": "control", "input": "No no no, that is not what I meant.", "expected": "No no no, that is not what I meant."}
+{"id": "econ037", "cat": "control", "input": "Bye bye, see you tomorrow!", "expected": "Bye bye, see you tomorrow!"}
+{"id": "econ038", "cat": "control", "input": "What it is is a simple misunderstanding.", "expected": "What it is is a simple misunderstanding."}
+{"id": "econ039", "cat": "control", "input": "He said that that was fine with him.", "expected": "He said that that was fine with him."}
+{"id": "econ040", "cat": "control", "input": "I really really need a nap.", "expected": "I really really need a nap."}
+{"id": "econ041", "cat": "control", "input": "We waited and waited for the bus.", "expected": "We waited and waited for the bus."}
+{"id": "econ042", "cat": "control", "input": "It's so so good, you have to try it.", "expected": "It's so so good, you have to try it."}
+{"id": "econ043", "cat": "control", "input": "Yeah yeah, I know.", "expected": "Yeah yeah, I know."}
+{"id": "econ044", "cat": "control", "input": "The more I think about it, the more I like it.", "expected": "The more I think about it, the more I like it."}
+{"id": "econ045", "cat": "control", "input": "Great game tonight.", "expected": "Great game tonight."}
+{"id": "econ046", "cat": "control", "input": "Dinner at seven?", "expected": "Dinner at seven?"}
+{"id": "econ047", "cat": "control", "input": "Meeting moved to Friday.", "expected": "Meeting moved to Friday."}
+{"id": "econ048", "cat": "control", "input": "Package arrived today.", "expected": "Package arrived today."}
+{"id": "econ049", "cat": "control", "input": "Car's in the shop again.", "expected": "Car's in the shop again."}
+{"id": "econ050", "cat": "control", "input": "Traffic was terrible.", "expected": "Traffic was terrible."}
+{"id": "econ051", "cat": "control", "input": "Coffee first, then work.", "expected": "Coffee first, then work."}
+{"id": "econ052", "cat": "control", "input": "Home sick today, call you later.", "expected": "Home sick today, call you later."}
+{"id": "econ053", "cat": "control", "input": "Off to school now.", "expected": "Off to school now."}
+{"id": "econ054", "cat": "control", "input": "Movie starts at eight.", "expected": "Movie starts at eight."}
+{"id": "econ055", "cat": "control", "input": "We need eggs, milk, bread and butter.", "expected": "We need eggs, milk, bread and butter."}
+{"id": "econ056", "cat": "control", "input": "Bring a towel, sunscreen, snacks, and water.", "expected": "Bring a towel, sunscreen, snacks, and water."}
+{"id": "econ057", "cat": "control", "input": "Monday, Wednesday and Friday work for me.", "expected": "Monday, Wednesday and Friday work for me."}
+{"id": "econ058", "cat": "control", "input": "I packed socks, shirts, shorts and a jacket.", "expected": "I packed socks, shirts, shorts and a jacket."}
+{"id": "econ059", "cat": "control", "input": "Apples, bananas, grapes, whatever you can find.", "expected": "Apples, bananas, grapes, whatever you can find."}
+{"id": "econ060", "cat": "control", "input": "It was $45 for both tickets.", "expected": "It was $45 for both tickets."}
+{"id": "econ061", "cat": "control", "input": "The flight leaves at 6:15 tomorrow morning.", "expected": "The flight leaves at 6:15 tomorrow morning."}
+{"id": "econ062", "cat": "control", "input": "I ran 5 miles today.", "expected": "I ran 5 miles today."}
+{"id": "econ063", "cat": "control", "input": "Rent went up to $1,200 a month.", "expected": "Rent went up to $1,200 a month."}
+{"id": "econ064", "cat": "control", "input": "We are in room 214 on the second floor.", "expected": "We are in room 214 on the second floor."}
+{"id": "econ065", "cat": "control", "input": "We need 3 more chairs for the party.", "expected": "We need 3 more chairs for the party."}
+{"id": "econ066", "cat": "control", "input": "The game is at 7 so be there by 6:30.", "expected": "The game is at 7 so be there by 6:30."}
+{"id": "econ067", "cat": "control", "input": "It only took 20 minutes to get there.", "expected": "It only took 20 minutes to get there."}
+{"id": "econ068", "cat": "control", "input": "Sarah and Mike are coming over later.", "expected": "Sarah and Mike are coming over later."}
+{"id": "econ069", "cat": "control", "input": "I ordered it on Amazon last night.", "expected": "I ordered it on Amazon last night."}
+{"id": "econ070", "cat": "control", "input": "Can you grab me a Starbucks on the way?", "expected": "Can you grab me a Starbucks on the way?"}
+{"id": "econ071", "cat": "control", "input": "We watched Netflix all evening.", "expected": "We watched Netflix all evening."}
+{"id": "econ072", "cat": "control", "input": "I booked an Uber for 8.", "expected": "I booked an Uber for 8."}
+{"id": "econ073", "cat": "control", "input": "Jordan says hi.", "expected": "Jordan says hi."}
+{"id": "econ074", "cat": "control", "input": "Ask Grandma if she wants to come.", "expected": "Ask Grandma if she wants to come."}
+{"id": "econ075", "cat": "control", "input": "My iPhone keeps restarting.", "expected": "My iPhone keeps restarting."}
+{"id": "econ076", "cat": "control", "input": "We rented a uhaul for the move.", "expected": "We rented a uhaul for the move."}
+{"id": "econ077", "cat": "control", "input": "Taylor Swift tickets sold out in minutes.", "expected": "Taylor Swift tickets sold out in minutes."}
+{"id": "econ078", "cat": "control", "input": "Are you coming to the party tonight?", "expected": "Are you coming to the party tonight?"}
+{"id": "econ079", "cat": "control", "input": "What time does the store close?", "expected": "What time does the store close?"}
+{"id": "econ080", "cat": "control", "input": "Did you eat yet?", "expected": "Did you eat yet?"}
+{"id": "econ081", "cat": "control", "input": "Is it supposed to rain tomorrow?", "expected": "Is it supposed to rain tomorrow?"}
+{"id": "econ082", "cat": "control", "input": "Where did you park?", "expected": "Where did you park?"}
+{"id": "econ083", "cat": "control", "input": "Can you call me when you get a chance?", "expected": "Can you call me when you get a chance?"}
+{"id": "econ084", "cat": "control", "input": "How was your day?", "expected": "How was your day?"}
+{"id": "econ085", "cat": "control", "input": "Do you want to get pizza or tacos?", "expected": "Do you want to get pizza or tacos?"}
+{"id": "econ086", "cat": "control", "input": "Have you seen my keys anywhere?", "expected": "Have you seen my keys anywhere?"}
+{"id": "econ087", "cat": "control", "input": "Is it raining there?", "expected": "Is it raining there?"}
+{"id": "econ088", "cat": "control", "input": "What is it called again?", "expected": "What is it called again?"}
+{"id": "econ089", "cat": "control", "input": "Where are you right now?", "expected": "Where are you right now?"}
+{"id": "econ090", "cat": "control", "input": "I think we can make it on time.", "expected": "I think we can make it on time."}
+{"id": "econ091", "cat": "control", "input": "She said she would be late.", "expected": "She said she would be late."}
+{"id": "econ092", "cat": "control", "input": "I hope you feel better soon.", "expected": "I hope you feel better soon."}
+{"id": "econ093", "cat": "control", "input": "He knew the answer was wrong.", "expected": "He knew the answer was wrong."}
+{"id": "econ094", "cat": "control", "input": "Let me know what you decide.", "expected": "Let me know what you decide."}
+{"id": "econ095", "cat": "control", "input": "I guess we could try again tomorrow.", "expected": "I guess we could try again tomorrow."}
+{"id": "econ096", "cat": "control", "input": "Make sure you lock the door.", "expected": "Make sure you lock the door."}
+{"id": "econ097", "cat": "control", "input": "I wish I had known sooner.", "expected": "I wish I had known sooner."}
+{"id": "econ098", "cat": "control", "input": "Help me move the couch.", "expected": "Help me move the couch."}
+{"id": "econ099", "cat": "control", "input": "We went home early.", "expected": "We went home early."}
+{"id": "econ100", "cat": "control", "input": "I'll be home soon.", "expected": "I'll be home soon."}
+{"id": "econ101", "cat": "control", "input": "She's at school until three.", "expected": "She's at school until three."}
+{"id": "econ102", "cat": "control", "input": "He went to bed early.", "expected": "He went to bed early."}
+{"id": "econ103", "cat": "control", "input": "We're going to church on Sunday.", "expected": "We're going to church on Sunday."}
+{"id": "econ104", "cat": "control", "input": "I left work at five.", "expected": "I left work at five."}
+{"id": "econ105", "cat": "control", "input": "They're in town next week.", "expected": "They're in town next week."}
+{"id": "econ106", "cat": "control", "input": "Here it is.", "expected": "Here it is."}
+{"id": "econ107", "cat": "control", "input": "Not that I know of.", "expected": "Not that I know of."}
+{"id": "econ108", "cat": "control", "input": "It may be too late to change it.", "expected": "It may be too late to change it."}
+{"id": "econ109", "cat": "control", "input": "Log in to your account first.", "expected": "Log in to your account first."}
+{"id": "econ110", "cat": "control", "input": "Any one of them would work.", "expected": "Any one of them would work."}
+{"id": "econ111", "cat": "control", "input": "I need some time to think about it.", "expected": "I need some time to think about it."}
+{"id": "econ112", "cat": "control", "input": "Every day is a new chance.", "expected": "Every day is a new chance."}
+{"id": "econ113", "cat": "control", "input": "Its color is a little off.", "expected": "Its color is a little off."}
+{"id": "econ114", "cat": "control", "input": "Everyone was there.", "expected": "Everyone was there."}
+{"id": "econ115", "cat": "control", "input": "The news is good for once.", "expected": "The news is good for once."}
+{"id": "econ116", "cat": "control", "input": "My family is coming for the holidays.", "expected": "My family is coming for the holidays."}
+{"id": "econ117", "cat": "control", "input": "Sheep were everywhere on the road.", "expected": "Sheep were everywhere on the road."}
+{"id": "econ118", "cat": "control", "input": "I'm glad you made it home safe.", "expected": "I'm glad you made it home safe."}
+{"id": "econ119", "cat": "control", "input": "We should probably get going soon.", "expected": "We should probably get going soon."}
+{"id": "econ120", "cat": "control", "input": "Thanks again for dinner last night.", "expected": "Thanks again for dinner last night."}
+{"id": "econ121", "cat": "control", "input": "I can pick you up after work if you want.", "expected": "I can pick you up after work if you want."}
+{"id": "econ122", "cat": "control", "input": "She told me about it this morning.", "expected": "She told me about it this morning."}
+{"id": "econ123", "cat": "control", "input": "It took forever but we finally got it working.", "expected": "It took forever but we finally got it working."}
+{"id": "econ124", "cat": "control", "input": "He wants to meet up sometime next week.", "expected": "He wants to meet up sometime next week."}
+{"id": "econ125", "cat": "control", "input": "You did a great job today.", "expected": "You did a great job today."}
+{"id": "econ126", "cat": "control", "input": "Let's get together soon.", "expected": "Let's get together soon."}
+{"id": "econ127", "cat": "control", "input": "I'm about to leave, do you need anything?", "expected": "I'm about to leave, do you need anything?"}
+{"id": "econ128", "cat": "control", "input": "That's what I thought.", "expected": "That's what I thought."}
+{"id": "econ129", "cat": "control", "input": "Whatever works best for you.", "expected": "Whatever works best for you."}
+{"id": "econ130", "cat": "control", "input": "The kids are asleep finally.", "expected": "The kids are asleep finally."}

@@ -1,0 +1,150 @@
+{"id": "cadd001", "cat": "add", "input": "hey are you still coming over tonight? I need know by 6 so I can start dinner", "expected": "hey are you still coming over tonight? I need to know by 6 so I can start dinner"}
+{"id": "cadd002", "cat": "add", "input": "lol he showed up in his pajamas, it was funniest thing all week", "expected": "lol he showed up in his pajamas, it was the funniest thing all week"}
+{"id": "cadd003", "cat": "add", "input": "Can you grab couple of things from Target on your way home", "expected": "Can you grab a couple of things from Target on your way home"}
+{"id": "cadd004", "cat": "add", "input": "omw! traffic is bad so I will be there around 6:30 instead 6", "expected": "omw! traffic is bad so I will be there around 6:30 instead of 6"}
+{"id": "cadd005", "cat": "add", "input": "my mom wants us come for dinner on sunday, you free?", "expected": "my mom wants us to come for dinner on sunday, you free?"}
+{"id": "cadd006", "cat": "add", "input": "i think i left my wallet at restaurant last night 😩", "expected": "i think i left my wallet at the restaurant last night 😩"}
+{"id": "cadd007", "cat": "add", "input": "We should try get tickets before they sell out", "expected": "We should try to get tickets before they sell out"}
+{"id": "cadd008", "cat": "add", "input": "jake said he can't make it, his car still in the shop", "expected": "jake said he can't make it, his car is still in the shop"}
+{"id": "cadd009", "cat": "add", "input": "ok I booked the table for 7:30. let me know if want to change it", "expected": "ok I booked the table for 7:30. let me know if you want to change it"}
+{"id": "cadd010", "cat": "add", "input": "she has been so busy with work she hasn't had time call anyone", "expected": "she has been so busy with work she hasn't had time to call anyone"}
+{"id": "cadd011", "cat": "add", "input": "Just finished my run, best one I have had in long time", "expected": "Just finished my run, best one I have had in a long time"}
+{"id": "cadd012", "cat": "add", "input": "The kids had so much fun at the zoo, thank you inviting us!", "expected": "The kids had so much fun at the zoo, thank you for inviting us!"}
+{"id": "crem001", "cat": "remove", "input": "can you can pick up milk on the way home", "expected": "can you pick up milk on the way home"}
+{"id": "crem002", "cat": "remove", "input": "I was was thinking we could do tacos tonight", "expected": "I was thinking we could do tacos tonight"}
+{"id": "crem003", "cat": "remove", "input": "ugh my my phone is about to die, call you later", "expected": "ugh my phone is about to die, call you later"}
+{"id": "crem004", "cat": "remove", "input": "the the new place on Main St is actually really good", "expected": "the new place on Main St is actually really good"}
+{"id": "crem005", "cat": "remove", "input": "we got there early but the line was was already huge lol", "expected": "we got there early but the line was already huge lol"}
+{"id": "crem006", "cat": "remove", "input": "Did you see the game last night? Bulls lost by by 2 points", "expected": "Did you see the game last night? Bulls lost by 2 points"}
+{"id": "crem007", "cat": "remove", "input": "I just need to to finish this email and then I'm free", "expected": "I just need to finish this email and then I'm free"}
+{"id": "crem008", "cat": "remove", "input": "she said she she would call me back after lunch", "expected": "she said she would call me back after lunch"}
+{"id": "crem009", "cat": "remove", "input": "honestly I think it was is the best pizza in town", "expected": "honestly I think it is the best pizza in town", "alts": ["honestly I think it was the best pizza in town"]}
+{"id": "crem010", "cat": "remove", "input": "He told me he will can help us move on Saturday", "expected": "He told me he can help us move on Saturday", "alts": ["He told me he will help us move on Saturday"]}
+{"id": "crem011", "cat": "remove", "input": "the hotel was nice but the breakfast was a kind of meh", "expected": "the hotel was nice but the breakfast was kind of meh"}
+{"id": "crem012", "cat": "remove", "input": "thanks for the the ride, I owe you one", "expected": "thanks for the ride, I owe you one"}
+{"id": "cend001", "cat": "ending", "input": "my parents is flying in on friday so I am off work", "expected": "my parents are flying in on friday so I am off work"}
+{"id": "cend002", "cat": "ending", "input": "the tacos at that place was so good lol", "expected": "the tacos at that place were so good lol"}
+{"id": "cend003", "cat": "ending", "input": "I have three exam next week so I won't be around much", "expected": "I have three exams next week so I won't be around much"}
+{"id": "cend004", "cat": "ending", "input": "he always forget to text back, it drives me crazy", "expected": "he always forgets to text back, it drives me crazy"}
+{"id": "cend005", "cat": "ending", "input": "yesterday we walk all the way to the pier", "expected": "yesterday we walked all the way to the pier"}
+{"id": "cend006", "cat": "ending", "input": "this shoes are killing my feet", "expected": "these shoes are killing my feet"}
+{"id": "cend007", "cat": "ending", "input": "she don't like spicy food so maybe not thai", "expected": "she doesn't like spicy food so maybe not thai"}
+{"id": "cend008", "cat": "ending", "input": "My brother have two tickets for the game if you want one", "expected": "My brother has two tickets for the game if you want one"}
+{"id": "cend009", "cat": "ending", "input": "how many cookie did you make for the party?", "expected": "how many cookies did you make for the party?"}
+{"id": "cend010", "cat": "ending", "input": "the store close at 9 tonight so we should hurry", "expected": "the store closes at 9 tonight so we should hurry"}
+{"id": "cend011", "cat": "ending", "input": "my legs hurts after leg day lol", "expected": "my legs hurt after leg day lol"}
+{"id": "cend012", "cat": "ending", "input": "there is two coffee shops near my office", "expected": "there are two coffee shops near my office"}
+{"id": "cord001", "cat": "order", "input": "I can't remember where I my parked car", "expected": "I can't remember where I parked my car"}
+{"id": "cord002", "cat": "order", "input": "let me know when are you leaving so I can meet you", "expected": "let me know when you are leaving so I can meet you"}
+{"id": "cord003", "cat": "order", "input": "we should get pizza the at place downtown", "expected": "we should get pizza at the place downtown"}
+{"id": "cord004", "cat": "order", "input": "I need to the call bank before 5", "expected": "I need to call the bank before 5"}
+{"id": "cord005", "cat": "order", "input": "that was the movie worst I have ever seen lol", "expected": "that was the worst movie I have ever seen lol"}
+{"id": "cord006", "cat": "order", "input": "she bought a dress new for the wedding", "expected": "she bought a new dress for the wedding"}
+{"id": "cord007", "cat": "order", "input": "how was dinner your with the in-laws?", "expected": "how was your dinner with the in-laws?"}
+{"id": "cord008", "cat": "order", "input": "I will text you when I home get", "expected": "I will text you when I get home"}
+{"id": "cord009", "cat": "order", "input": "it takes about minutes twenty to walk there", "expected": "it takes about twenty minutes to walk there"}
+{"id": "cord010", "cat": "order", "input": "We are out running of time, hurry up", "expected": "We are running out of time, hurry up"}
+{"id": "cjoi001", "cat": "join", "input": "dont forget your charger this time lol", "expected": "don't forget your charger this time lol"}
+{"id": "cjoi002", "cat": "join", "input": "I think its going to rain later", "expected": "I think it's going to rain later"}
+{"id": "cjoi003", "cat": "join", "input": "can we meet up some where in between?", "expected": "can we meet up somewhere in between?"}
+{"id": "cjoi004", "cat": "join", "input": "he said he cant come tonight, something came up", "expected": "he said he can't come tonight, something came up"}
+{"id": "cjoi005", "cat": "join", "input": "there is alot of food left if you want some", "expected": "there is a lot of food left if you want some"}
+{"id": "cjoi006", "cat": "join", "input": "I didnt know you were back in town!", "expected": "I didn't know you were back in town!"}
+{"id": "cjoi007", "cat": "join", "input": "thats so cool, congrats!!", "expected": "that's so cool, congrats!!"}
+{"id": "cjoi008", "cat": "join", "input": "we will be there with in the hour", "expected": "we will be there within the hour"}
+{"id": "cjoi009", "cat": "join", "input": "my car wont start again 🙄", "expected": "my car won't start again 🙄"}
+{"id": "cjoi010", "cat": "join", "input": "every body loved the cake you made", "expected": "everybody loved the cake you made"}
+{"id": "cjoi011", "cat": "join", "input": "I'll pick you up at the air port at 5", "expected": "I'll pick you up at the airport at 5"}
+{"id": "cjoi012", "cat": "join", "input": "she isnt answering her phone", "expected": "she isn't answering her phone"}
+{"id": "ccon001", "cat": "control", "input": "lol", "expected": "lol"}
+{"id": "ccon002", "cat": "control", "input": "omw", "expected": "omw"}
+{"id": "ccon003", "cat": "control", "input": "heading out now", "expected": "heading out now"}
+{"id": "ccon004", "cat": "control", "input": "gym then dinner then bed", "expected": "gym then dinner then bed"}
+{"id": "ccon005", "cat": "control", "input": "brb", "expected": "brb"}
+{"id": "ccon006", "cat": "control", "input": "be there in 5", "expected": "be there in 5"}
+{"id": "ccon007", "cat": "control", "input": "k sounds good", "expected": "k sounds good"}
+{"id": "ccon008", "cat": "control", "input": "lmk when ur home", "expected": "lmk when ur home"}
+{"id": "ccon009", "cat": "control", "input": "u up?", "expected": "u up?"}
+{"id": "ccon010", "cat": "control", "input": "ya that works for me", "expected": "ya that works for me"}
+{"id": "ccon011", "cat": "control", "input": "nah I'm good thanks", "expected": "nah I'm good thanks"}
+{"id": "ccon012", "cat": "control", "input": "wait what happened??", "expected": "wait what happened??"}
+{"id": "ccon013", "cat": "control", "input": "omg that's hilarious 😂", "expected": "omg that's hilarious 😂"}
+{"id": "ccon014", "cat": "control", "input": "no worries at all", "expected": "no worries at all"}
+{"id": "ccon015", "cat": "control", "input": "haha same", "expected": "haha same"}
+{"id": "ccon016", "cat": "control", "input": "can't wait!!", "expected": "can't wait!!"}
+{"id": "ccon017", "cat": "control", "input": "night night", "expected": "night night"}
+{"id": "ccon018", "cat": "control", "input": "love you, drive safe", "expected": "love you, drive safe"}
+{"id": "ccon019", "cat": "control", "input": "running late sorry, traffic on 405 is insane", "expected": "running late sorry, traffic on 405 is insane"}
+{"id": "ccon020", "cat": "control", "input": "coffee tomorrow at 9?", "expected": "coffee tomorrow at 9?"}
+{"id": "ccon021", "cat": "control", "input": "dinner at Luigi's at 7:30, don't be late", "expected": "dinner at Luigi's at 7:30, don't be late"}
+{"id": "ccon022", "cat": "control", "input": "$25 each for the tickets, venmo me whenever", "expected": "$25 each for the tickets, venmo me whenever"}
+{"id": "ccon023", "cat": "control", "input": "it was like $80 for the whole thing which honestly isn't bad", "expected": "it was like $80 for the whole thing which honestly isn't bad"}
+{"id": "ccon024", "cat": "control", "input": "the flight lands at 10:45 pm so we won't be home till midnight", "expected": "the flight lands at 10:45 pm so we won't be home till midnight"}
+{"id": "ccon025", "cat": "control", "input": "need eggs, milk, coffee, and dog food", "expected": "need eggs, milk, coffee, and dog food"}
+{"id": "ccon026", "cat": "control", "input": "pizza, wings, or tacos? your pick", "expected": "pizza, wings, or tacos? your pick"}
+{"id": "ccon027", "cat": "control", "input": "Mike and Jess are coming too if that's ok", "expected": "Mike and Jess are coming too if that's ok"}
+{"id": "ccon028", "cat": "control", "input": "we're meeting at Starbucks on 5th and Pine", "expected": "we're meeting at Starbucks on 5th and Pine"}
+{"id": "ccon029", "cat": "control", "input": "just got back from Costco, the lines were crazy", "expected": "just got back from Costco, the lines were crazy"}
+{"id": "ccon030", "cat": "control", "input": "Sarah's flight got delayed again", "expected": "Sarah's flight got delayed again"}
+{"id": "ccon031", "cat": "control", "input": "headed to Chicago next weekend for work", "expected": "headed to Chicago next weekend for work"}
+{"id": "ccon032", "cat": "control", "input": "Grandma says thank you for the flowers 💐", "expected": "Grandma says thank you for the flowers 💐"}
+{"id": "ccon033", "cat": "control", "input": "did you watch the new episode yet? no spoilers pls", "expected": "did you watch the new episode yet? no spoilers pls"}
+{"id": "ccon034", "cat": "control", "input": "what time are we leaving tomorrow?", "expected": "what time are we leaving tomorrow?"}
+{"id": "ccon035", "cat": "control", "input": "is it cold out or should I bring a jacket", "expected": "is it cold out or should I bring a jacket"}
+{"id": "ccon036", "cat": "control", "input": "where did you put the car keys", "expected": "where did you put the car keys"}
+{"id": "ccon037", "cat": "control", "input": "how much was the Uber?", "expected": "how much was the Uber?"}
+{"id": "ccon038", "cat": "control", "input": "do you want me to grab anything on the way", "expected": "do you want me to grab anything on the way"}
+{"id": "ccon039", "cat": "control", "input": "so I talked to my boss today and she said I can work from home on Fridays now", "expected": "so I talked to my boss today and she said I can work from home on Fridays now"}
+{"id": "ccon040", "cat": "control", "input": "but honestly I don't even mind the commute that much", "expected": "but honestly I don't even mind the commute that much"}
+{"id": "ccon041", "cat": "control", "input": "and then the dog ate the whole sandwich lol", "expected": "and then the dog ate the whole sandwich lol"}
+{"id": "ccon042", "cat": "control", "input": "no no no don't tell him yet", "expected": "no no no don't tell him yet"}
+{"id": "ccon043", "cat": "control", "input": "bye bye see you soon!", "expected": "bye bye see you soon!"}
+{"id": "ccon044", "cat": "control", "input": "it's so so good, you have to try it", "expected": "it's so so good, you have to try it"}
+{"id": "ccon045", "cat": "control", "input": "very very tired today", "expected": "very very tired today"}
+{"id": "ccon046", "cat": "control", "input": "I said that that was fine, she just didn't listen", "expected": "I said that that was fine, she just didn't listen"}
+{"id": "ccon047", "cat": "control", "input": "he had had a long week so I let him sleep in", "expected": "he had had a long week so I let him sleep in"}
+{"id": "ccon048", "cat": "control", "input": "ok ok I'll do it", "expected": "ok ok I'll do it"}
+{"id": "ccon049", "cat": "control", "input": "yeah yeah I know I'm late", "expected": "yeah yeah I know I'm late"}
+{"id": "ccon050", "cat": "control", "input": "really really need a vacation", "expected": "really really need a vacation"}
+{"id": "ccon051", "cat": "control", "input": "We waited and waited and nobody came", "expected": "We waited and waited and nobody came"}
+{"id": "ccon052", "cat": "control", "input": "the more the merrier", "expected": "the more the merrier"}
+{"id": "ccon053", "cat": "control", "input": "I think we're good for tonight", "expected": "I think we're good for tonight"}
+{"id": "ccon054", "cat": "control", "input": "she said she'd be here by noon", "expected": "she said she'd be here by noon"}
+{"id": "ccon055", "cat": "control", "input": "I hope the interview goes well tomorrow!", "expected": "I hope the interview goes well tomorrow!"}
+{"id": "ccon056", "cat": "control", "input": "let me know if you need a ride", "expected": "let me know if you need a ride"}
+{"id": "ccon057", "cat": "control", "input": "I guess we'll see", "expected": "I guess we'll see"}
+{"id": "ccon058", "cat": "control", "input": "make sure you lock up when you leave", "expected": "make sure you lock up when you leave"}
+{"id": "ccon059", "cat": "control", "input": "he's at work till 6", "expected": "he's at work till 6"}
+{"id": "ccon060", "cat": "control", "input": "kids are at school, house is finally quiet", "expected": "kids are at school, house is finally quiet"}
+{"id": "ccon061", "cat": "control", "input": "back home, long day", "expected": "back home, long day"}
+{"id": "ccon062", "cat": "control", "input": "out of coffee again smh", "expected": "out of coffee again smh"}
+{"id": "ccon063", "cat": "control", "input": "game night at our place friday?", "expected": "game night at our place friday?"}
+{"id": "ccon064", "cat": "control", "input": "power's out on our street, any on yours?", "expected": "power's out on our street, any on yours?"}
+{"id": "ccon065", "cat": "control", "input": "Happy birthday!! hope it's a great one 🎉", "expected": "Happy birthday!! hope it's a great one 🎉"}
+{"id": "ccon066", "cat": "control", "input": "Congrats on the new job, so proud of you", "expected": "Congrats on the new job, so proud of you"}
+{"id": "ccon067", "cat": "control", "input": "I'm so sorry about your dog, let me know if you need anything", "expected": "I'm so sorry about your dog, let me know if you need anything"}
+{"id": "ccon068", "cat": "control", "input": "We should do this again soon. Thanks for having us", "expected": "We should do this again soon. Thanks for having us"}
+{"id": "ccon069", "cat": "control", "input": "Traffic was fine. Got here early actually", "expected": "Traffic was fine. Got here early actually"}
+{"id": "ccon070", "cat": "control", "input": "Ok I'm here. Where are you guys sitting?", "expected": "Ok I'm here. Where are you guys sitting?"}
+{"id": "ccon071", "cat": "control", "input": "The package came today. It looks great, thank you!", "expected": "The package came today. It looks great, thank you!"}
+{"id": "ccon072", "cat": "control", "input": "Is it ok if I bring my cousin? She just moved here", "expected": "Is it ok if I bring my cousin? She just moved here"}
+{"id": "ccon073", "cat": "control", "input": "It may be a little late, the oven is acting up", "expected": "It may be a little late, the oven is acting up"}
+{"id": "ccon074", "cat": "control", "input": "log in with your work email and it should let you in", "expected": "log in with your work email and it should let you in"}
+{"id": "ccon075", "cat": "control", "input": "Its screen cracked when I dropped it", "expected": "Its screen cracked when I dropped it"}
+{"id": "ccon076", "cat": "control", "input": "every day this week has been a mess", "expected": "every day this week has been a mess"}
+{"id": "ccon077", "cat": "control", "input": "any one of those works for me", "expected": "any one of those works for me"}
+{"id": "ccon078", "cat": "control", "input": "Maybe we can grab lunch some time next week", "expected": "Maybe we can grab lunch some time next week"}
+{"id": "ccon079", "cat": "control", "input": "Room 302, second floor, the door on the left", "expected": "Room 302, second floor, the door on the left"}
+{"id": "ccon080", "cat": "control", "input": "the score is 2-1 with 5 minutes left", "expected": "the score is 2-1 with 5 minutes left"}
+{"id": "ccon081", "cat": "control", "input": "we got 3 dozen donuts for the office lol", "expected": "we got 3 dozen donuts for the office lol"}
+{"id": "ccon082", "cat": "control", "input": "I need like 20 more minutes", "expected": "I need like 20 more minutes"}
+{"id": "ccon083", "cat": "control", "input": "ran 3 miles this morning, legs are dead", "expected": "ran 3 miles this morning, legs are dead"}
+{"id": "ccon084", "cat": "control", "input": "rent's due on the 1st", "expected": "rent's due on the 1st"}
+{"id": "ccon085", "cat": "control", "input": "My iPad won't charge, can I borrow your cable?", "expected": "My iPad won't charge, can I borrow your cable?"}
+{"id": "ccon086", "cat": "control", "input": "Netflix or Hulu tonight?", "expected": "Netflix or Hulu tonight?"}
+{"id": "ccon087", "cat": "control", "input": "Downtown parking is $15 now which is insane", "expected": "Downtown parking is $15 now which is insane"}
+{"id": "ccon088", "cat": "control", "input": "Heading to bed, early start tomorrow", "expected": "Heading to bed, early start tomorrow"}
+{"id": "ccon089", "cat": "control", "input": "Sounds like a plan", "expected": "Sounds like a plan"}
+{"id": "ccon090", "cat": "control", "input": "Not sure yet, I'll let you know", "expected": "Not sure yet, I'll let you know"}
+{"id": "ccon091", "cat": "control", "input": "Thanks, you're the best", "expected": "Thanks, you're the best"}
+{"id": "ccon092", "cat": "control", "input": "Me too lol", "expected": "Me too lol"}

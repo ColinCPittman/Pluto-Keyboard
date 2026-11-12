@@ -4,7 +4,10 @@ import org.futo.inputmethod.latin.uix.TypingFix
 import org.futo.inputmethod.latin.uix.TypingRevertMemory
 import org.futo.inputmethod.latin.uix.shiftFixes
 import org.futo.voiceinput.shared.context.ContextLm
+import org.futo.voiceinput.shared.context.SmartCorrectionSensitivity
+import org.futo.voiceinput.shared.context.SoundAlikeLexicon
 import org.futo.voiceinput.shared.context.TypingConfusions
+import org.futo.voiceinput.shared.context.TypingEdits
 import org.futo.voiceinput.shared.context.TypingCorrectionConfig
 import org.futo.voiceinput.shared.context.TypingCorrector
 import org.futo.voiceinput.shared.context.OwnTypingPair
@@ -193,6 +196,209 @@ class TypingCorrectorTest {
         val text = "First one. Second one? \"Third!\" Last"
         val s = TypingCorrector.sentences(text).map { text.substring(it.first, it.last + 1).trim() }
         assertEquals(listOf("First one.", "Second one?", "\"Third!\"", "Last"), s)
+    }
+}
+
+/** The edits for slips made while editing, each kind with a bigram LM that likes the fixed text. */
+class TypingEditsTest {
+    private val none = TypingConfusions(emptyMap())
+    private val allOn = TypingCorrectionConfig(missingWords = true, leftoverWords = true, wordEndings = true, wordOrder = true, joinSplit = true)
+
+    private fun check(bigrams: Map<Pair<String, String>, Float>, text: String, config: TypingCorrectionConfig = allOn, lexicon: SoundAlikeLexicon? = null) =
+        TypingCorrector(BigramLm(bigrams), none, config, lexicon).check(text)
+
+    private val doubled = mapOf(("going" to "to") to -1f, ("to" to "to") to -10f, ("to" to "call") to -1f)
+
+    @Test
+    fun nothingChangesWhenTheEditsAreOff() {
+        val text = "I was going to to call you."
+        assertNull(check(doubled, text, TypingCorrectionConfig()).fix)
+        assertNotNull(check(doubled, text).fix)
+        // the missed-typo path does not see a real word either
+        assertNull(check(doubled, text, TypingCorrectionConfig(missedTypos = true)).fix)
+    }
+
+    @Test
+    fun removesAnExactRepeat() {
+        val text = "I was going to to call you."
+        val fix = check(doubled, text, TypingCorrectionConfig(leftoverWords = true)).fix!!
+        assertEquals("remove", fix.kind)
+        assertEquals("to to", fix.original)
+        assertEquals("to", fix.replacement)
+        assertEquals(text.indexOf("to to"), fix.start)
+        assertEquals(text.indexOf("to to") + 5, fix.end)
+    }
+
+    @Test
+    fun keepsARepeatTheLmFindsFine() {
+        // "had had" is likely enough, so dropping one gains less than the repeat margin
+        val bigrams = mapOf(("she" to "had") to -1f, ("had" to "had") to -2f, ("had" to "enough") to -1f)
+        assertNull(check(bigrams, "She had had enough of it.").fix)
+    }
+
+    @Test
+    fun neverRemovesTheFirstWordOfASentence() {
+        // dropping "Was" would make the text far more likely, but a sentence opener is never removed
+        val bigrams = mapOf(("<prompt>" to "was") to -12f, ("<prompt>" to "it") to -0.5f, ("was" to "it") to -1f)
+        val r = check(bigrams, "Was it fun at the park?", TypingCorrectionConfig(leftoverWords = true))
+        assertNull(r.fix)
+    }
+
+    @Test
+    fun aRemovalIsJudgedByTheWordsAfterIt() {
+        // dropping the surprising "of" gains 10 in all, but "milk" gets no more likely, so it stays
+        val bigrams = mapOf(("out" to "of") to -10f, ("of" to "milk") to -3f, ("out" to "milk") to -3f)
+        val r = check(bigrams, "We ran out of milk again.", TypingCorrectionConfig(leftoverWords = true))
+        assertNull(r.fix)
+        assertTrue(r.trace.joinToString(), r.trace.any { it.startsWith("remove of milk->milk gain=10.00 tail=0.00") })
+        // a leftover word makes the next one far more likely once it is gone, and it may be any word
+        val leftover = mapOf(("got" to "the") to -1f, ("the" to "about") to -12f, ("got" to "about") to -2f)
+        val fix = check(leftover, "She got the about ten dollars back.", TypingCorrectionConfig(leftoverWords = true)).fix!!
+        assertEquals("the about", fix.original)
+        assertEquals("about", fix.replacement)
+        assertEquals(10.0, fix.tailGain, 1e-6)
+    }
+
+    @Test
+    fun aRemovalWaitsWhereAWordMayAsWellBeMissing() {
+        // "ran short milk": dropping "short" helps "milk" (11), but so does adding "of" (10), so no removal
+        val bigrams = mapOf(("short" to "milk") to -12f, ("short" to "of") to -1f, ("of" to "milk") to -1f, ("ran" to "milk") to -1f)
+        val config = TypingCorrectionConfig(missingWords = true, leftoverWords = true, editBudget = 40)
+        val r = check(bigrams, "We ran short milk again.", config)
+        assertEquals("of milk", r.fix?.replacement)
+        assertTrue(r.trace.joinToString(), r.trace.any { it.startsWith("remove short milk->milk") && "ambiguous" in it })
+        assertEquals("milk", check(bigrams, "We ran short milk again.", config.copy(ambiguityGain = 99.0, removeMargin = 5.0)).fix?.replacement)
+    }
+
+    @Test
+    fun aCleanSentenceHasNoEditsToScore() {
+        // no word is surprising, so no edit is tried (the one pass is all it costs)
+        val r = check(emptyMap(), "We ran out of milk again.")
+        assertNull(r.fix)
+        assertTrue(r.trace.joinToString(), r.trace.any { it.startsWith("edits scored 0/0 of") })
+    }
+
+    @Test
+    fun addsAMissingSmallWord() {
+        val bigrams = mapOf(("out" to "milk") to -12f, ("out" to "of") to -1f, ("of" to "milk") to -1f)
+        val text = "We ran out milk again."
+        val fix = check(bigrams, text, TypingCorrectionConfig(missingWords = true)).fix!!
+        assertEquals("add", fix.kind)
+        assertEquals("milk", fix.original)
+        assertEquals("of milk", fix.replacement)
+        assertEquals(text.indexOf("milk"), fix.start)
+    }
+
+    @Test
+    fun theBudgetLimitsWhatIsScoredButRepeatsAlwaysAre() {
+        val bigrams = mapOf(("out" to "milk") to -12f, ("out" to "of") to -1f, ("of" to "milk") to -1f) + doubled
+        val none = TypingCorrectionConfig(missingWords = true, leftoverWords = true, editBudget = 0)
+        assertNull(check(bigrams, "We ran out milk again.", none).fix)
+        assertEquals("to", check(bigrams, "I was going to to call you.", none).fix?.replacement)
+    }
+
+    @Test
+    fun fixesAnIrregularFormWithoutALexicon() {
+        val bigrams = mapOf(("we" to "was") to -12f, ("we" to "were") to -1f, ("were" to "supposed") to -1f, ("was" to "supposed") to -1f)
+        val fix = check(bigrams, "Then we was supposed to go.", TypingCorrectionConfig(wordEndings = true)).fix!!
+        assertEquals("ending", fix.kind)
+        assertEquals("were", fix.replacement)
+    }
+
+    @Test
+    fun endingsComeFromRealWords() {
+        val lex = SoundAlikeLexicon.fromBytes(SoundAlikeLexicon.buildV2(emptyMap(), lowercase = setOf("cat", "cats", "dog")))
+        val edits = TypingEdits(TypingCorrectionConfig(wordEndings = true), lex)
+        assertEquals(listOf("cats"), edits.forms("cat"))
+        assertEquals(listOf("cat"), edits.forms("cats"))
+        // without a lexicon, only the irregular pairs
+        assertEquals(emptyList<String>(), TypingEdits(TypingCorrectionConfig(), null).forms("cat"))
+        assertEquals(listOf("your"), TypingEdits(TypingCorrectionConfig(), null).forms("you"))
+        val bigrams = mapOf(("three" to "cat") to -12f, ("three" to "cats") to -1f, ("cats" to "and") to -1f, ("cat" to "and") to -1f)
+        val fix = check(bigrams, "She has three cat and a dog.", TypingCorrectionConfig(wordEndings = true), lex).fix!!
+        assertEquals("cats", fix.replacement)
+    }
+
+    @Test
+    fun swapsTwoWords() {
+        val bigrams = mapOf(
+            ("rough" to "of") to -10f, ("of" to "sense") to -10f, ("rough" to "sense") to -1f, ("sense" to "of") to -1f, ("of" to "how") to -1f,
+        )
+        val text = "I have a rough of sense how long."
+        val fix = check(bigrams, text, TypingCorrectionConfig(wordOrder = true)).fix!!
+        assertEquals("order", fix.kind)
+        assertEquals("of sense", fix.original)
+        assertEquals("sense of", fix.replacement)
+        assertEquals(text.indexOf("of sense"), fix.start)
+    }
+
+    @Test
+    fun aSwapLosesToABetterSwapOfTheSameWordThatWasNotScoredAtFirst() {
+        // "running" is one place off: moving it back ("running out") is not scored at first (its first
+        // word is less likely there than the typed one), and moving it on ("of running") passes alone
+        val bigrams = mapOf(
+            ("are" to "out") to -1f, ("out" to "running") to -10f, ("running" to "of") to -10f, ("of" to "time") to -1f,
+            ("are" to "running") to -1.5f, ("running" to "out") to -1f, ("out" to "of") to -1f,
+            ("of" to "running") to -6f, ("running" to "time") to -1f,
+        )
+        val text = "We are out running of time today."
+        val fix = check(bigrams, text, TypingCorrectionConfig(wordOrder = true)).fix!!
+        assertEquals("order", fix.kind)
+        assertEquals("out running", fix.original)
+        assertEquals("running out", fix.replacement)
+    }
+
+    @Test
+    fun addsAMissingApostrophe() {
+        val bigrams = mapOf(("think" to "thats") to -10f, ("thats" to "the") to -10f, ("think" to "that's") to -1f, ("that's" to "the") to -1f)
+        val fix = check(bigrams, "I think thats the plan.", TypingCorrectionConfig(joinSplit = true)).fix!!
+        assertEquals("join", fix.kind)
+        assertEquals("that's", fix.replacement)
+        val its = mapOf(("<prompt>" to "its") to -10f, ("<prompt>" to "it's") to -1f, ("it's" to "going") to -1f, ("its" to "going") to -9f)
+        // at the start of a sentence it needs the opening margin too, and gets it here
+        assertEquals("It's", check(its, "Its going to rain.", TypingCorrectionConfig(joinSplit = true)).fix?.replacement)
+    }
+
+    @Test
+    fun joinsAndSplitsWords() {
+        val lex = SoundAlikeLexicon.fromBytes(SoundAlikeLexicon.buildV2(emptyMap(), lowercase = setOf("every", "thing", "everything", "up", "to")))
+        val joined = mapOf(("<prompt>" to "every") to -3f, ("every" to "thing") to -12f, ("<prompt>" to "everything") to -2f, ("everything" to "is") to -1f, ("thing" to "is") to -3f)
+        assertEquals("Everything", check(joined, "Every thing is ready now.", TypingCorrectionConfig(joinSplit = true), lex).fix?.replacement)
+        val split = mapOf(("take" to "upto") to -12f, ("upto" to "three") to -12f, ("take" to "up") to -2f, ("up" to "to") to -1f, ("to" to "three") to -1f)
+        assertEquals("up to", check(split, "It can take upto three days.", TypingCorrectionConfig(joinSplit = true), lex).fix?.replacement)
+    }
+
+    @Test
+    fun anEditWaitsForWordsAfterItBeforeTheSentenceEnds() {
+        val c = TypingCorrector(BigramLm(doubled), none, TypingCorrectionConfig(leftoverWords = true))
+        assertNull(c.check("I was going to to call", finished = false).fix)
+        assertNotNull(c.check("I was going to to call you about it", finished = false).fix)
+    }
+
+    @Test
+    fun handCorrectedWordsAreNotEdited() {
+        val text = "I was going to to call you."
+        val at = text.indexOf("to to") + 3
+        assertNull(TypingCorrector(BigramLm(doubled), none, TypingCorrectionConfig(leftoverWords = true)).check(text, skip = { it == at }).fix)
+    }
+
+    @Test
+    fun aMissedTypoFixedOnlyByDroppingItsFirstLetterNeedsMore() {
+        val lex = SoundAlikeLexicon.fromBytes(SoundAlikeLexicon.buildV2(emptyMap(), lowercase = setOf("haul", "rented", "move", "for", "the")))
+        // "haul" gains 5 and costs 1 slip (score 3), which beats the plain need (2) but not the first-letter one
+        val bigrams = mapOf(("a" to "haul") to -2f, ("a" to "uhaul") to -6f, ("haul" to "for") to -2f, ("uhaul" to "for") to -3f)
+        val text = "We rented a uhaul for the move."
+        val config = TypingCorrectionConfig(missedTypos = true, realWords = false)
+        val r = TypingCorrector(BigramLm(bigrams), none, config, lex).check(text, unknown = { true })
+        assertNull(r.trace.joinToString(), r.fix)
+        assertEquals("haul", TypingCorrector(BigramLm(bigrams), none, config.copy(firstLetterNeed = 0.0), lex).check(text, unknown = { true }).fix?.replacement)
+    }
+
+    @Test
+    fun sensitivityMovesTheEditMargins() {
+        val c = TypingCorrectionConfig().withSensitivity(SmartCorrectionSensitivity.MAX)
+        assertTrue(c.addMargin < TypingCorrectionConfig().addMargin)
+        assertTrue(c.removeMargin < TypingCorrectionConfig().removeMargin)
     }
 }
 

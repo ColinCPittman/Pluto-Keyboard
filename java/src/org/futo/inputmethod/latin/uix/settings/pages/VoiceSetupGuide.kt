@@ -46,14 +46,19 @@ import org.futo.voiceinput.shared.modelpackage.ModelPackages
 
 /*
  * Pluto: "Set up voice typing" guide. The app has no internet permission, so each step opens the
- * model file's download link in the browser and then the model import file picker.
+ * model file's download link in the browser and then the model import file picker. The voice step
+ * offers each voice model with what it is like to use, and the punctuation step says when the
+ * chosen voice model doesn't need it.
  */
 
 const val VoiceSetupGuideRoute = "voiceSetupGuide"
 
-fun hasMoonshineModel(context: Context) = VoiceInputEngines.installedMoonshineModels(context).isNotEmpty()
+/** Whether a voice model of Pluto's own is installed (Moonshine, Nemotron or Parakeet; Whisper comes built in). */
+fun hasVoiceModel(context: Context) =
+    VoiceInputEngines.installedMoonshineModels(context).isNotEmpty() ||
+        VoiceInputEngines.installedTranscribeModels(context).isNotEmpty()
 
-/** Voice Input page (top), shown while no Moonshine voice model is installed. */
+/** Voice Input page (top), shown while no voice model of Pluto's own is installed. */
 val VoiceSetupGuideEntry = userSettingNavigationItem(
     title = R.string.pluto_voice_setup_title,
     subtitle = R.string.pluto_voice_setup_subtitle,
@@ -64,7 +69,7 @@ val VoiceSetupGuideEntry = userSettingNavigationItem(
     val context = LocalContext.current
     val changes by ModelPackages.changes.collectAsState()
     val useSystem = useDataStoreValue(USE_SYSTEM_VOICE_INPUT)
-    val missing = remember(changes) { !hasMoonshineModel(context) }
+    val missing = remember(changes) { !hasVoiceModel(context) }
     missing && !useSystem
 })
 
@@ -84,12 +89,18 @@ fun UserSetting.opensVoiceSetupGuideWhen(missing: (Context) -> Boolean): UserSet
     }
 })
 
+/**
+ * One model to get. [downloadUrl] is null when the model is picked from [choices] (each with its own
+ * Download button), and [note] (under "Installed", in the same color) says when the step isn't needed.
+ */
 @Composable
 private fun SetupStep(
     title: String,
     body: String,
     installed: Boolean,
-    downloadUrl: String,
+    downloadUrl: String?,
+    note: String? = null,
+    choices: (@Composable () -> Unit)? = null,
     extra: (@Composable () -> Unit)? = null
 ) {
     val context = LocalContext.current
@@ -102,18 +113,17 @@ private fun SetupStep(
     ) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text(title, style = Typography.Heading.RegularMl, color = MaterialTheme.colorScheme.onSurface)
-            if (installed) {
-                Text(
-                    stringResource(R.string.pluto_voice_setup_installed),
-                    style = Typography.Body.RegularMl,
-                    color = MaterialTheme.colorScheme.primary
-                )
+            listOfNotNull(if (installed) stringResource(R.string.pluto_voice_setup_installed) else null, note).forEach {
+                Text(it, style = Typography.Body.RegularMl, color = MaterialTheme.colorScheme.primary)
             }
             Text(body, style = Typography.Body.RegularMl, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            choices?.invoke()
             extra?.invoke()
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
-                Button(onClick = { context.openURI(downloadUrl, true) }) {
-                    Text(stringResource(R.string.pluto_voice_setup_download))
+                if (downloadUrl != null) {
+                    Button(onClick = { context.openURI(downloadUrl, true) }) {
+                        Text(stringResource(R.string.pluto_voice_setup_download))
+                    }
                 }
                 OutlinedButton(onClick = { openModelPackageImporter(context) }) {
                     Text(stringResource(R.string.pluto_voice_setup_import))
@@ -123,11 +133,29 @@ private fun SetupStep(
     }
 }
 
+/** One voice model to choose in the voice step: its name and size, what it is like to use, and its download. */
+@Composable
+private fun VoiceModelChoice(title: Int, body: Int, downloadUrl: String) {
+    val context = LocalContext.current
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Column(Modifier.weight(1f)) {
+            Text(stringResource(title), style = Typography.Body.MediumMl, color = MaterialTheme.colorScheme.onSurface)
+            Text(stringResource(body), style = Typography.SmallMl, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+        TextButton(onClick = { context.openURI(downloadUrl, true) }) {
+            Text(stringResource(R.string.pluto_voice_setup_download))
+        }
+    }
+}
+
 @Composable
 fun VoiceSetupGuideScreen(navController: NavHostController) {
     val context = LocalContext.current
     val changes by ModelPackages.changes.collectAsState()
-    val voiceInstalled = remember(changes) { hasMoonshineModel(context) }
+    val voiceInstalled = remember(changes) { hasVoiceModel(context) }
+    // a voice model that punctuates itself (not Whisper, which is only there while none is installed) has no use for step 2
+    val voiceModel = currentVoiceModel()
+    val punctuationNotNeeded = !voiceModel.isWhisper && voiceModel.profile.punctuatesItself
     val punctuationInstalled = remember(changes) { PunctuationModels.installed(context).isNotEmpty() }
     val contextInstalled = remember(changes) { ContextModels.installed(context).isNotEmpty() }
 
@@ -139,7 +167,12 @@ fun VoiceSetupGuideScreen(navController: NavHostController) {
             title = stringResource(R.string.pluto_voice_setup_step_voice_title),
             body = stringResource(R.string.pluto_voice_setup_step_voice_body),
             installed = voiceInstalled,
-            downloadUrl = PlutoLinks.MODEL_VOICE_MOONSHINE_SMALL_EN,
+            downloadUrl = null,
+            choices = {
+                VoiceModelChoice(R.string.pluto_voice_setup_choice_parakeet_title, R.string.pluto_voice_setup_choice_parakeet_body, PlutoLinks.MODEL_VOICE_PARAKEET_EN)
+                VoiceModelChoice(R.string.pluto_voice_setup_choice_moonshine_title, R.string.pluto_voice_setup_choice_moonshine_body, PlutoLinks.MODEL_VOICE_MOONSHINE_SMALL_EN)
+                VoiceModelChoice(R.string.pluto_voice_setup_choice_nemotron_title, R.string.pluto_voice_setup_choice_nemotron_body, PlutoLinks.MODEL_VOICE_NEMOTRON_EN)
+            },
             extra = {
                 TextButton(onClick = { navController.navigate(Route.VoiceModel("en")) }) {
                     Text(stringResource(R.string.pluto_voice_setup_other_sizes))
@@ -150,7 +183,8 @@ fun VoiceSetupGuideScreen(navController: NavHostController) {
             title = stringResource(R.string.pluto_voice_setup_step_punctuation_title),
             body = stringResource(R.string.pluto_voice_setup_step_punctuation_body),
             installed = punctuationInstalled,
-            downloadUrl = PlutoLinks.MODEL_PUNCTUATION_EN
+            downloadUrl = PlutoLinks.MODEL_PUNCTUATION_EN,
+            note = if (punctuationNotNeeded) stringResource(R.string.pluto_voice_setup_punctuation_not_needed, voiceModel.name) else null
         )
         SetupStep(
             title = stringResource(R.string.pluto_voice_setup_step_context_title),

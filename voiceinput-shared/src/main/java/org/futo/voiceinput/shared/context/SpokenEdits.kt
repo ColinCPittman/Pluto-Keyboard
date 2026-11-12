@@ -16,6 +16,8 @@ object SpokenEdits {
     data class SpanEdit(
         val start: Int, val end: Int, val replacement: String, val kind: Kind, val label: String = "",
         val parallel: Boolean = false,
+        /** No pause or punctuation marks it, so the LM decides from the sentence alone (a stricter margin). */
+        val undelimited: Boolean = false,
     )
 
     /**
@@ -48,11 +50,29 @@ object SpokenEdits {
 
         val size get() = words.size
 
+        // the rules ask these of every word many times, so they are worked out once
+        private val puncts = tok.gaps.map { TranscriptGuard.punct(it) }
+        private val startsSentence = BooleanArray(tok.gaps.size) { k -> k == 0 || puncts[k].any { it in ".?!" } || '\n' in tok.gaps[k] }
+
         /** Punctuation (non-space) of the gap before word k (the end of the text when k == size). */
-        fun punctBefore(k: Int) = TranscriptGuard.punct(gaps[k])
+        fun punctBefore(k: Int) = puncts[k]
 
         /** Word k starts a sentence (text start, or after . ? ! or a line break). */
-        fun sentenceStart(k: Int) = k == 0 || punctBefore(k).any { it in ".?!" } || '\n' in gaps[k]
+        fun sentenceStart(k: Int) = startsSentence[k]
+
+        /** Word k is inside quotation marks (an odd number of " or more “ than ” before it). */
+        val quoted: BooleanArray = BooleanArray(tok.words.size).also { q ->
+            var straight = 0
+            var curly = 0
+            for (k in tok.words.indices) {
+                for (ch in tok.gaps[k]) when (ch) {
+                    '"' -> straight++
+                    '“' -> curly++
+                    '”' -> curly--
+                }
+                q[k] = straight % 2 == 1 || curly > 0
+            }
+        }
 
         /** The gap before word k ends a sentence/line (text end when k == size). */
         fun sentenceEndBefore(k: Int) = k == size || sentenceStart(k)
@@ -84,18 +104,12 @@ object SpokenEdits {
     /** Asides said between pauses that start with a word the sentence may just have used ("Do you, you know, ..."). */
     private val ASIDES = listOf(listOf("you", "know"), listOf("you", "see"))
 
-    /** Word k is inside quotation marks (quoted speech keeps its fillers, as in she said "um, what?"). */
-    private fun insideQuotes(words: Words, k: Int): Boolean {
-        val before = words.text.substring(0, words.starts[k])
-        return before.count { it == '"' } % 2 == 1 || before.count { it == '“' } > before.count { it == '”' }
-    }
-
     /** Marks the voice model writes at a pause inside a sentence. */
     private const val PAUSE_MARKS = ",;—–…"
 
     /** Length (in words) of the filler starting at word k, or 0. */
     private fun fillerAt(words: Words, k: Int, fillers: List<FillerWords.Filler>): Int {
-        if (insideQuotes(words, k)) return 0
+        if (words.quoted[k]) return 0
         for (f in fillers) {
             val n = f.words.size
             if (k + n > words.size || words.norm.subList(k, k + n) != f.words) continue
@@ -195,6 +209,10 @@ object SpokenEdits {
                 if (a != b) continue
                 if (n == 1 && a[0] in PROTECTED_REPEATS) continue
                 if (a.any { it.any { c -> c.isDigit() } } || a.all { it in FILLERS }) continue
+                // a number said twice inside a longer number is a date, not a stutter ("eleven eleven twenty
+                // twenty six", "eleven slash eleven slash twenty six")
+                if (a.all { NumberWords.isSpokenNumber(it) || it == "slash" } && i + 2 * n < words.size &&
+                    words.punctBefore(i + 2 * n).isEmpty() && isNumberish(words.words[i + 2 * n])) continue
                 // the repeat must be within one sentence, separated by spaces/commas/dashes only
                 val inner = (i + 1..i + 2 * n - 1)
                 if (inner.any { words.sentenceStart(it) || !words.punctBefore(it).all { c -> c in ",-—–…" } }) continue
@@ -241,13 +259,26 @@ object SpokenEdits {
 
     private const val DELIMS = ",;-—–…:("
 
-    /** Prepositions and determiners that start a phrase ("on Monday", "the red one"). */
     /** Words that can come before a self-correction cue at the start of a dictation ("No, I mean", "Oh, sorry"). */
     private val OPENING_LEAD = setOf(
         "no", "nope", "oh", "ah", "um", "uh", "er", "well", "so", "and", "but", "or", "okay", "ok", "yeah", "yes",
         "sorry", "wait", "actually", "oops", "hmm", "hey", "nah", "ugh", "whoops", "shoot",
     )
 
+    /** Correction cues that are also a verb and its object ("scratch that itch", "make that call"). */
+    private val VERB_CUES = setOf(listOf("scratch", "that"), listOf("make", "that"))
+
+    /** Words that say when, said last in a phrase ("pasta tonight"). */
+    private val WHEN_WORDS = setOf("today", "tonight", "tomorrow", "yesterday", "now", "later", "soon")
+
+    /** Words a repair of a time has ("next week", "on Friday", besides a number). */
+    private val TIME_WORDS = WHEN_WORDS + setOf(
+        "morning", "afternoon", "evening", "night", "noon", "midnight", "week", "weekend", "month", "year",
+        "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "january", "february",
+        "march", "april", "may", "june", "july", "august", "september", "october", "november", "december",
+    )
+
+    /** Prepositions and determiners that start a phrase ("on Monday", "the red one"). */
     private val PHRASE_STARTS = setOf(
         "on", "at", "in", "to", "for", "with", "from", "by", "of", "about", "into", "onto", "after", "before",
         "until", "the", "a", "an", "my", "your", "his", "her", "our", "their", "this", "that", "these", "those", "some",
@@ -298,30 +329,45 @@ object SpokenEdits {
             // need three. Actually, four chairs."). A repair that starts a sentence follows a phrase made
             // for corrections, or mirrors a number ("three" -> "four")
             val repairStartsSentence = next < words.size && words.sentenceStart(next) && '\n' !in words.gaps[next]
-            val numbers = m > 0 && next < words.size && isNumberish(words.words[m - 1]) && isNumberish(words.words[next])
+            val numbers = next < words.size && isNumberish(words.words[m - 1]) && isNumberish(words.words[next])
             if (marker.numbersOnly && !numbers) {
                 m++
                 continue
             }
-            val sentenceOk = (!atSentenceStart || marker.atSentenceStart || (numbers && delimited(words, next, segmentStarts))) &&
-                (!repairStartsSentence || ((mw.size > 1 || numbers) && (atSentenceStart || delimited(words, m, segmentStarts))))
-            val ok = next < words.size && sentenceOk && (next >= words.size || '\n' !in words.gaps[next]) &&
-                (!needsDelim || atSentenceStart || delimited(words, m, segmentStarts)) && words.norm[next] !in CLAUSE_STARTERS && !words.norm[next].endsWith("n't") &&
+            // a voice model that punctuates often ends a sentence right at the cue ("the red bag. Sorry,
+            // the blue bag."), so a cue the rules wouldn't take there is still offered, for the LM to
+            // judge on the sentence alone
+            var acrossBreak = !((!atSentenceStart || marker.atSentenceStart || (numbers && delimited(words, next, segmentStarts))) &&
+                (!repairStartsSentence || ((mw.size > 1 || numbers) && (atSentenceStart || delimited(words, m, segmentStarts)))))
+            // a cue that is also an ordinary word ("I'm sorry", "a rather long") is marked by a pause or
+            // punctuation before it, and without one the sentence has to show it's a correction
+            val delimitedBefore = !needsDelim || atSentenceStart || delimited(words, m, segmentStarts)
+            // cues that are also a verb and its object ("scratch that itch", "make that call") need the
+            // pause, or for "make that" two numbers ("four make that five"); "scratch that" without one
+            // is left to the scratch command, which needs the sentence said again
+            if (!delimitedBefore && mw in VERB_CUES && !(numbers && mw[0] == "make")) {
+                m = next
+                continue
+            }
+            // a line break is a command or the text already there, never a pause the cue is said at
+            val repairOk = next < words.size && '\n' !in words.gaps[next] && '\n' !in words.gaps[m] &&
+                words.norm[next] !in CLAUSE_STARTERS && !words.norm[next].endsWith("n't") &&
                 words.norm[next] !in FILLERS
-            if (ok) {
-                // the repair is the words after the marker up to the next punctuation (at most 4)
-                var rEnd = next + 1
-                while (rEnd < words.size && rEnd - next < 4 && words.punctBefore(rEnd).isEmpty() && '\n' !in words.gaps[rEnd]) rEnd++
+            // the repair is the words after the marker up to the next punctuation (at most 4)
+            var rEnd = next + 1
+            while (rEnd < words.size && rEnd - next < 4 && words.punctBefore(rEnd).isEmpty() && '\n' !in words.gaps[rEnd]) rEnd++
+            // a time said last is only replaced by a time ("tonight, sorry, tomorrow", "today, I mean,
+            // Friday"), and "pasta tonight, actually tacos" is no correction of "tonight"
+            val timeOk = words.norm[m - 1] !in WHEN_WORDS ||
+                (next until minOf(rEnd, words.size)).any { words.norm[it] in TIME_WORDS || isNumberish(words.words[it]) }
+            if (repairOk && timeOk) {
                 val repairLen = rEnd - next
                 // across a sentence end ("... toaster oven? I mean, air fryer?") only a short
                 // repair that ends its sentence ("... the movie. I mean, the ending was weird" is a new thought)
                 if (atSentenceStart || repairStartsSentence) {
                     var sEnd = next + 1
                     while (sEnd < words.size && !words.sentenceStart(sEnd)) sEnd++
-                    if (sEnd - next > 3) {
-                        m = next
-                        continue
-                    }
+                    if (sEnd - next > 3) acrossBreak = true
                 }
                 // the reparandum is 1..4 words before the marker, within its clause
                 val lengths = ArrayList<Int>()
@@ -345,25 +391,27 @@ object SpokenEdits {
                 val parallelStart = notStart.filter { n ->
                     words.norm[m - n] !in PHRASE_STARTS || words.norm[next] in PHRASE_STARTS
                 }.ifEmpty { notStart.take(1) }
-                val chosen = if (restart != null) listOf(restart) else parallelStart.filter { it <= repairLen }
-                // a one-word marker ("sorry", "actually", "rather") said without a pause after it
-                // is an ordinary word ("a long, rather boring meeting")
+                // a repair that starts with a number goes back to the number it replaces, however long
+                // the phrase ("two cups of flour, sorry, three cups")
+                val numberBack = if (isNumberish(words.words[next])) lengths.firstOrNull { isNumberish(words.words[m - it]) } else null
+                val chosen = if (restart != null) listOf(restart)
+                    else (parallelStart.filter { it <= repairLen } + listOfNotNull(numberBack)).distinct()
                 val pauseAfter = delimited(words, next, segmentStarts)
                 val repairIsPhrase = words.norm[next] in PHRASE_STARTS
                 // a repair that starts with a number ("one cup") replaces a number ("two cups of sugar,
                 // sorry, one cup" is not "two cups of one cup")
                 val repairIsNumber = isNumberish(words.words[next])
+                val b = words.words[next]
+                val label = mw.joinToString(" ")
                 val alts = chosen.mapNotNull { n ->
                     // the repair mirrors the reparandum, so it restarts with the same word ("at five.
                     // I mean, at six"), or both are numbers or names ("Sam, sorry, Alex")
                     val a = words.words[m - n]
-                    val b = words.words[next]
                     val parallel = n == restart ||
-                        (isNumberish(a) && isNumberish(b)) ||
+                        (isNumberish(a) && repairIsNumber) ||
                         (n == 1 && isMidName(words, m - n) && isMidName(words, next))
-                    val ok = (parallel || (
+                    val fits = (parallel || (
                         (!repairIsNumber || isNumberish(a)) &&
-                        (mw.size > 1 || pauseAfter) &&
                             // a repair that starts a phrase ("the store is closed", "my car broke
                             // down") replaces a phrase of the same kind ("in the box, sorry, on the
                             // shelf"), or a name ("Sarah, I mean, my sister")
@@ -374,11 +422,14 @@ object SpokenEdits {
                         ))
                     // a repair the voice model capitalized after its pause goes on lowercase ("Blue bag." -> "blue bag.")
                     val lower = repairStartsSentence && b[0].isUpperCase() && !TranscriptGuard.isPronounI(b) && isWord?.invoke(b) == true
-                    if (!ok) null
-                    else if (lower) SpanEdit(words.starts[m - n], words.ends[next], b.substring(0, 1).lowercase() + b.substring(1), Kind.SELF_CORRECTION, mw.joinToString(" "), parallel)
-                    else SpanEdit(words.starts[m - n], words.starts[next], "", Kind.SELF_CORRECTION, mw.joinToString(" "), parallel)
+                    // a one-word cue ("sorry", "actually", "rather") without a pause after it reads as an
+                    // ordinary word ("a long, rather boring meeting") unless the sentence says otherwise
+                    val undelimited = acrossBreak || !delimitedBefore || (!parallel && mw.size == 1 && !pauseAfter)
+                    if (!fits) null
+                    else if (lower) SpanEdit(words.starts[m - n], words.ends[next], b.substring(0, 1).lowercase() + b.substring(1), Kind.SELF_CORRECTION, label, parallel, undelimited)
+                    else SpanEdit(words.starts[m - n], words.starts[next], "", Kind.SELF_CORRECTION, label, parallel, undelimited)
                 }
-                if (alts.isNotEmpty()) out.add(Group(Kind.SELF_CORRECTION, alts, mw.joinToString(" ")))
+                if (alts.isNotEmpty()) out.add(Group(Kind.SELF_CORRECTION, alts, label))
             }
             m = next
         }
@@ -521,25 +572,49 @@ object SpokenEdits {
      * of the phrase joined by hyphens ("open-quote", "close-quote", "new-line"), but it must hold
      * whole phrase words only.
      */
-    fun phraseAt(words: Words, k: Int, phrase: List<String>): Int = phraseLength(words.norm, k, phrase)
+    fun phraseAt(words: Words, k: Int, phrase: List<String>, soundAlike: Boolean = false): Int =
+        phraseLength(words.norm, k, phrase, soundAlike)
 
-    /** [phraseAt] on normalized words. */
-    fun phraseLength(norm: List<String>, k: Int, phrase: List<String>): Int {
+    /**
+     * [phraseAt] on normalized words. With [soundAlike], one word of a phrase of two or more words may
+     * be its exact homophone ("knew paragraph" for "new paragraph", see [Homophones.same]), since a
+     * voice model writes what it heard and the other word still says it is the command.
+     */
+    fun phraseLength(norm: List<String>, k: Int, phrase: List<String>, soundAlike: Boolean = false): Int {
         var i = 0
         var t = k
+        var alike = 0
         while (i < phrase.size) {
             if (t >= norm.size) return 0
             val parts = if ('-' in norm[t]) norm[t].split('-').filter { it.isNotEmpty() } else listOf(norm[t])
-            if (i + parts.size > phrase.size || phrase.subList(i, i + parts.size) != parts) return 0
-            i += parts.size
+            if (i + parts.size <= phrase.size && phrase.subList(i, i + parts.size) == parts) {
+                i += parts.size
+                t++
+                continue
+            }
+            if (soundAlike && alike == 0 && phrase.size >= 2 && parts.size == 1 && Homophones.same(norm[t], phrase[i])) {
+                alike++
+                i++
+                t++
+                continue
+            }
+            // a voice model may write the phrase as one word ("Newline" for "new line")
+            var j = i + 2
+            while (j <= phrase.size && phrase.subList(i, j).joinToString("") != norm[t]) j++
+            if (j > phrase.size) return 0
+            i = j
             t++
         }
         return t - k
     }
 
+    /**
+     * Spoken commands in [words]. With [soundAlike] (the "Misheard words" option), a command of two
+     * or more words may have one word written as its exact homophone ("knew paragraph").
+     */
     fun commandGroups(
         words: Words, segmentStarts: Set<Int>, lexicon: SoundAlikeLexicon?, names: PersonalNames,
-        commands: List<VoiceCommand> = VoiceCommands.DEFAULTS,
+        commands: List<VoiceCommand> = VoiceCommands.DEFAULTS, soundAlike: Boolean = false,
     ): List<Group> {
         val out = ArrayList<Group>()
         val t = words.text
@@ -562,7 +637,7 @@ object SpokenEdits {
             }
             var cmdLen = 0
             val cmd = punctuation.firstOrNull { c ->
-                val n = phraseAt(words, k, c.words)
+                val n = phraseAt(words, k, c.words, soundAlike)
                 cmdLen = n
                 n > 0 && (1 until n).none {
                     // the ASR writes a comma where you pause inside a command ("open, quote",
@@ -589,12 +664,19 @@ object SpokenEdits {
                 (prev in nounWords || (cmd.action == VoiceCommandAction.PERIOD && cmd.words.size == 1 && prev in PERIOD_NOUN_CONTEXT))
             // in "close quote for some reason" words like "for" only make a one-word mark a noun ("period for")
             val nounAfter = nextW != null && nextW in NOUN_FOLLOW && !cmd.isDistinctive
-            var ok = (before || after || cmd.isDistinctive) && !nounBefore && !nounAfter
+            // a pause (or the text's start or end) beside it marks a command; without one the sentence
+            // has to show it ("Dear Sam new line thanks") and the LM judges it more strictly
+            // (a comma, not the previous sentence's end: "That's the deal. Question mark or not")
+            val punctBeside = (k > 0 && words.punctBefore(k).any { it in ",;:" }) || (e < words.size && words.punctBefore(e).any { it in ",;:" })
+            var bounded = before || after || cmd.isDistinctive || punctBeside
+            var ok = !nounBefore && !nounAfter
             ok = ok && when (spacing) {
-                // a mark after a word. A one-word mark ("period", "comma") needs a pause after it,
-                // longer ones ("exclamation point") also work with a pause before
-                CommandSpacing.AFTER_WORD ->
-                    k > 0 && (after || cmd.isDistinctive || (cmd.words.size > 1 && before && nextStartsSentence(words, e, segmentStarts)))
+                // a mark after a word. A one-word mark ("period", "comma") is marked by a pause after it,
+                // longer ones ("exclamation point") also by a pause before
+                CommandSpacing.AFTER_WORD -> {
+                    bounded = bounded && (after || cmd.isDistinctive || punctBeside || (cmd.words.size > 1 && before && nextStartsSentence(words, e, segmentStarts)))
+                    k > 0
+                }
                 // a mark before a word ("open parenthesis", "dollar sign") needs that word
                 // ("At sign or at symbol?" doesn't count, since a handle, a tag or an amount is not "or", "means", ...)
                 CommandSpacing.BEFORE_WORD -> e < words.size &&
@@ -702,7 +784,7 @@ object SpokenEdits {
             }
             // a phrase of two or more words said on its own, between pauses, is meant as a command
             val certain = cmd.words.size > 1 && before && after
-            out.add(Group(Kind.COMMAND, listOf(SpanEdit(a, end, rep.toString(), Kind.COMMAND, cmd.words.joinToString(" "))), cmd.words.joinToString(" "), certain))
+            out.add(Group(Kind.COMMAND, listOf(SpanEdit(a, end, rep.toString(), Kind.COMMAND, cmd.words.joinToString(" "), undelimited = !bounded)), cmd.words.joinToString(" "), certain))
             k = e
         }
         return out
@@ -728,34 +810,44 @@ object SpokenEdits {
     /** "... at five. Scratch that. I'll be there at six." -> remove the previous sentence (or utterance) and the command. */
     private fun scratchGroup(words: Words, k: Int, e: Int, segmentStarts: Set<Int>): Group? {
         if (k == 0) return null
-        // the command stands on its own, with a pause/sentence boundary before it, and after it a
-        // sentence end, a comma, a pause or the text end
-        if (!(words.sentenceStart(k) || k in segmentStarts)) return null
+        // a pause/sentence boundary before it, and after it a sentence end, a comma, a pause or the
+        // text end mark the command; without them the sentence has to show it ("I hate this
+        // sentence scratch that I love this sentence") and the LM judges it more strictly
+        val beforeOk = words.sentenceStart(k) || k in segmentStarts
         val afterOk = e == words.size || words.sentenceStart(e) || e in segmentStarts || words.punctBefore(e).contains(',')
-        if (!afterOk) return null
-        // what is scratched goes back to the start of the previous sentence or utterance, whichever is closer
+        val undelimited = !(beforeOk && afterOk)
+        // what is scratched goes back to the start of the previous sentence or utterance, whichever is
+        // closer, and when that is an utterance, also to the sentence start for the LM to choose
         var s = k - 1
         while (s > 0 && !words.sentenceStart(s) && s !in segmentStarts) s--
-        if (s >= k || (s == 0 && e == words.size)) return null
-        // "delete that" is also an ordinary request ("I sent you a photo. Delete that."), so only
-        // when the user then says the sentence again (a content word in common)
-        // ("delete last sentence" is explicit enough on its own)
-        if (words.norm.subList(k, e) == listOf("delete", "that")) {
+        if (s == 0 && e == words.size) return null
+        var sentence = s
+        while (sentence > 0 && !words.sentenceStart(sentence)) sentence--
+        // "delete that" is also an ordinary request ("I sent you a photo. Delete that."), and so is
+        // "scratch that" mid-sentence ("can you scratch that itch"), so only when the user then says
+        // the sentence again (a content word in common) ("delete last sentence" is explicit enough on its own)
+        var said = 0
+        if (words.norm.subList(k, e) == listOf("delete", "that") || undelimited) {
             val gone = words.norm.subList(s, k).filter { it !in CONTENT_STOP }.toSet()
             var f = e
             val again = ArrayList<String>()
             while (f < words.size && (f == e || !words.sentenceStart(f))) again.add(words.norm[f++])
-            if (gone.intersect(again.toSet()).isEmpty()) return null
+            said = gone.intersect(again.toSet()).size
+            if (said == 0) return null
         }
         val end = if (e < words.size) words.starts[e] else words.text.length
-        val start = words.starts[s]
-        // at the text end nothing follows, so drop the trailing gap too
-        val a = if (e == words.size && s > 0) {
-            // keep the previous sentence's final punctuation, drop the space after it
-            val ws = words.gaps[s].indexOfFirst { it.isWhitespace() }
-            words.ends[s - 1] + (if (ws < 0) words.gaps[s].length else ws)
-        } else start
-        return Group(Kind.SCRATCH, listOf(SpanEdit(a, end, "", Kind.SCRATCH, words.norm.subList(k, e).joinToString(" "))), "scratch")
+        fun from(s: Int): SpanEdit {
+            // at the text end nothing follows, so drop the trailing gap too
+            val a = if (e == words.size && s > 0) {
+                // keep the previous sentence's final punctuation, drop the space after it
+                val ws = words.gaps[s].indexOfFirst { it.isWhitespace() }
+                words.ends[s - 1] + (if (ws < 0) words.gaps[s].length else ws)
+            } else words.starts[s]
+            // saying two of its words again ("the store closes at 5 scratch that the store closes at 6") shows the intent
+            return SpanEdit(a, end, "", Kind.SCRATCH, words.norm.subList(k, e).joinToString(" "), undelimited = undelimited && said < 2)
+        }
+        val alternatives = if (sentence < s && !(sentence == 0 && e == words.size)) listOf(from(s), from(sentence)) else listOf(from(s))
+        return Group(Kind.SCRATCH, alternatives, "scratch")
     }
 
     // ------------------------------------------------------------------------------------
@@ -809,21 +901,40 @@ object SpokenEdits {
         "hello", "sorry", "thanks", "please", "stop", "bro", "man", "well", "look", "listen",
     )
     private val WH_WORDS = setOf("what", "why", "how", "who", "where", "when", "which")
+
+    /** In someone's own words these would not be about the speaker ("he said I'm the best cook he knows"). */
+    private val THIRD_PERSON = setOf("he", "him", "his", "she", "her", "hers", "they", "them", "their", "he's", "she's", "they're", "he'd", "she'd", "they'd")
+
+    /** Speakers whose reported words keep "I" ("I said I'll be there" is reported). */
+    private val FIRST_PERSON_SPEAKERS = setOf("i", "we")
+
+    /** "I"/"we" in the present or future, which reported speech would shift ("she'd be there"). */
+    private val DIRECT_SPEECH_STARTS = setOf("i'll", "i'm", "i've", "we'll", "we're", "we've", "let's")
+
+    /** Verbs after a bare "I" that keep it in the present ("she said I am coming", "he goes I can't"). */
+    private val PRESENT_AFTER_I = setOf(
+        "am", "will", "can", "can't", "cannot", "don't", "won't", "need", "want", "have", "love", "hate", "think", "know",
+    )
+
+    /** After "I'm", what someone else lets you do or decides for you, so reported ("he said I'm welcome to stay", "mom said I'm grounded"). */
+    private val GRANTED = setOf("welcome", "allowed", "invited", "grounded", "fired", "hired", "banned", "excused", "forgiven")
+
     private val AUX_VERBS = setOf(
         "are", "is", "am", "was", "were", "do", "does", "did", "can", "could", "will", "would", "should", "have", "has",
     )
     private val PRONOUNS = setOf("you", "we", "they", "i", "he", "she", "it")
+
+    /** Words of an interjection said on its own before quoted speech ("um.", "oh my god!", "oh no."). */
+    private val LEAD_WORDS = FILLERS + setOf("oh", "wow", "whoa", "ugh", "omg", "my", "god", "gosh", "goodness", "no")
 
     /**
      * "and I was like um what are you doing" -> `and I was like "Um, what are you doing?"`. After a
      * person and "was like" / "said" / "asked" / "goes", the rest of the sentence is put in quotes
      * when it can only be quoted speech, meaning it starts with a filler or interjection ("um", "hey",
      * "wow"), is a question ("what are you doing"), or the voice model ended it with ? or !.
+     * [isWord] tells whether a word is a common lowercase word (lowercased after a pause that becomes
+     * a comma inside the quote).
      */
-    /** Words of an interjection said on its own before quoted speech ("um.", "oh my god!", "oh no."). */
-    private val LEAD_WORDS = FILLERS + setOf("oh", "wow", "whoa", "ugh", "omg", "my", "god", "gosh", "goodness", "no")
-
-    /** [isWord] tells whether a word is a common lowercase word (lowercased after a pause that becomes a comma inside the quote). */
     fun quoteGroups(
         words: Words, triggers: List<List<String>> = DEFAULT_QUOTE_TRIGGERS, isWord: ((String) -> Boolean)? = null,
     ): List<Group> {
@@ -869,7 +980,7 @@ object SpokenEdits {
             // already quoted (a spoken "open quote")
             val endPos = if (c < words.size) words.starts[c] else t.length
             if (t.substring(words.ends[i], endPos).any { it == '"' || it == '“' }) continue
-            val finalGap = if (c < words.size) words.gaps[c] else words.gaps[words.size]
+            val finalGap = words.gaps[c]
             val asrEnd = TranscriptGuard.punct(finalGap).firstOrNull { it in ".?!" }
             // skip a leading filler to look at the speech itself
             val first = words.norm[q]
@@ -886,7 +997,18 @@ object SpokenEdits {
             // after "she was all", "he answered", ... a ? or ! alone doesn't make it speech
             val speechOnly = trig in QuoteTriggers.SPEECH_ONLY
             val marked = (asrEnd == '?' || asrEnd == '!') && !speechOnly && bodyFirst !in NOT_SPEECH_STARTS
-            val quoted = opensSpeech || isQuestion || marked ||
+            // someone else speaking as "I" now ("she said I'll be there") is their own words; reported,
+            // it would be "she'd be there", or "I was right" about you
+            val speaker = words.norm[q - trig.size - 1]
+            fun bodyWord(j: Int) = if (j < c) words.norm[j] else null
+            // ... unless the words go on about the speaker ("he said I'm the best cook he knows"), or
+            // are what the speaker lets you do or decides for you ("he said I'm welcome to stay", "she said I am allowed to")
+            val granted = (bodyFirst == "i'm" && bodyWord(body + 1) in GRANTED) ||
+                (bodyFirst == "i" && bodyWord(body + 1) == "am" && bodyWord(body + 2) in GRANTED)
+            val pronounShift = speaker !in FIRST_PERSON_SPEAKERS && !granted && (bodyFirst in DIRECT_SPEECH_STARTS ||
+                (bodyFirst == "i" && bodyWord(body + 1) in PRESENT_AFTER_I)) &&
+                (body until c).none { words.norm[it] in THIRD_PERSON }
+            val quoted = opensSpeech || isQuestion || marked || pronounShift ||
                 (bodyFirst in QUOTE_STARTERS_BEFORE_PAUSE && pauseAfterFirst)
             if (!quoted) continue
             val mark = when {
@@ -896,7 +1018,7 @@ object SpokenEdits {
             }
             // the replacement runs from the end of "like"/"said" to the end of the sentence's own mark
             val markLen = finalGap.indexOfFirst { it.isWhitespace() }.let { if (it < 0) finalGap.length else it }
-            val end = (if (c < words.size) words.ends[c - 1] else words.ends[words.size - 1]) + markLen
+            val end = words.ends[c - 1] + markLen
             val sb = StringBuilder(" \"")
             for (k in q until c) {
                 var w = words.words[k]
@@ -925,7 +1047,10 @@ object SpokenEdits {
             val pauseAfterTrigger = TranscriptGuard.punct(words.gaps[q]).any { it in ",:—–-" }
             val certain = (opensSpeech && body + 1 < c) ||
                 (pauseAfterTrigger && (isQuestion || (bodyFirst in QUOTE_STARTERS_BEFORE_PAUSE && pauseAfterFirst)))
-            out.add(Group(Kind.QUOTE, listOf(SpanEdit(words.ends[i], end, sb.toString(), Kind.QUOTE, "quote")), "quote", certain))
+            // nothing but the pronoun shift ("she said I'll be there", no pause after "said") is judged
+            // on the sentence alone
+            val onlyShift = pronounShift && !(opensSpeech || isQuestion || marked || (bodyFirst in QUOTE_STARTERS_BEFORE_PAUSE && pauseAfterFirst))
+            out.add(Group(Kind.QUOTE, listOf(SpanEdit(words.ends[i], end, sb.toString(), Kind.QUOTE, "quote", undelimited = onlyShift)), "quote", certain))
         }
         return out
     }
@@ -979,13 +1104,14 @@ object SpokenEdits {
             // the name is the longest known name ending right before "emoji", within one sentence
             var start = -1
             var emoji: String? = null
+            // the punctuation model may make "emoji" a sentence of its own ("Mind blown. Emoji."), but
+            // then nothing may follow it in that sentence
             val emojiAlone = words.sentenceEndBefore(k + 1) || ',' in words.punctBefore(k + 1)
+            if (words.sentenceStart(nameEnd) && !emojiAlone) continue
             for (n in minOf(EmojiNames.MAX_WORDS, nameEnd) downTo 1) {
                 val s = nameEnd - n
-                // the punctuation model may also split the name ("Crying? Laughing emoji?"), so a
-                // sentence break inside it is allowed, and the longest name still wins
-                // the punctuation model may make "emoji" a sentence of its own ("Mind blown. Emoji.")
-                if (words.sentenceStart(nameEnd) && !emojiAlone) continue
+                // it may also split the name ("Crying? Laughing emoji?"), so a sentence break inside
+                // it is allowed, and the longest name still wins
                 // names are stored without hyphens, so "mind-blown" matches "mind blown"
                 val e = names[words.norm.subList(s, nameEnd).flatMap { VoiceCommands.phraseWords(it) }] ?: continue
                 // a name that gives no emoji (it fits several, or is switched off) gives none, not a shorter name's
@@ -1024,6 +1150,8 @@ object SpokenEdits {
     // ------------------------------------------------------------------------------------
     // Numbers
 
+    private val SPOKEN_DIGITS = setOf("zero", "oh", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
+
     fun numberGroups(words: Words): List<Group> {
         val out = ArrayList<Group>()
         for (c in NumberWords.candidates(words.words, words.gaps) { words.sentenceStart(it) }) {
@@ -1039,6 +1167,43 @@ object SpokenEdits {
         }
         // digits the voice model wrote, the unit as a word ("800 dollars" -> "$800")
         for ((a, b, form) in NumberWords.digitAmounts(words.text)) {
+            out.add(Group(Kind.NUMBER, listOf(SpanEdit(a, b, form, Kind.NUMBER, words.text.substring(a, b))), "number", certain = true))
+        }
+        // dollars and cents, also without "and" ("forty five dollars ninety nine cents" -> "$45.99"),
+        // replacing the dollars alone
+        for (c in 0 until words.size) {
+            if (words.norm[c] != "cents" && words.norm[c] != "cent") continue
+            for (k in maxOf(0, c - 9) until c - 1) {
+                val a = words.starts[k] - (if (words.gaps[k].endsWith("$")) 1 else 0)
+                val b = words.ends[c]
+                val form = NumberWords.centsForm(words.text.substring(a, b)) ?: continue
+                out.removeAll { it.start < b && a < it.end }
+                out.add(Group(Kind.NUMBER, listOf(SpanEdit(a, b, form, Kind.NUMBER, words.text.substring(a, b))), "number", certain = true))
+                break
+            }
+        }
+        // digits said one by one after "room", "gate", "flight", ... ("room two oh four" -> "room 204")
+        for (r in 0 until words.size - 2) {
+            if (words.norm[r] !in NumberWords.DIGIT_NOUNS) continue
+            var e = r + 1
+            while (e < words.size && (e == r + 1 || words.gaps[e] == " ") && words.norm[e] in SPOKEN_DIGITS) e++
+            // 2 to 5 digits, all of the run ("flight one two three four five six" is not "12345 six")
+            if (e - r !in 3..6) continue
+            val a = words.starts[r + 1]
+            val b = words.ends[e - 1]
+            val form = NumberWords.digitSequenceForm(words.text.substring(a, b)) ?: continue
+            out.removeAll { it.start < b && a < it.end }
+            out.add(Group(Kind.NUMBER, listOf(SpanEdit(a, b, form, Kind.NUMBER, words.text.substring(a, b))), "number", certain = true))
+        }
+        // and clock times and phone numbers it wrote as bare digits ("at 3.30", "at 7 45", "5551234")
+        for ((a, b, form) in NumberWords.digitFormats(words.text)) {
+            if (out.any { it.start < b && a < it.end }) continue
+            out.add(Group(Kind.NUMBER, listOf(SpanEdit(a, b, form, Kind.NUMBER, words.text.substring(a, b))), "number", certain = true))
+        }
+        // and a range of years it wrote as digits, as the spoken ones are written ("2021 to 2024" -> "2021-2024").
+        // Certain, since the LM prefers "from 2021 to 2024" and two later years joined by "to" are a range
+        for ((a, b, form) in NumberWords.digitYearRanges(words.text)) {
+            if (out.any { it.start < b && a < it.end }) continue
             out.add(Group(Kind.NUMBER, listOf(SpanEdit(a, b, form, Kind.NUMBER, words.text.substring(a, b))), "number", certain = true))
         }
         return out
@@ -1072,7 +1237,7 @@ object SpokenEdits {
             // the first aligned word at or after the segment start
             var i = g
             while (i < sw.size && map[i] < 0) i++
-            if (i < sw.size && (i == g || i - g <= 1)) out.add(map[i])
+            if (i < sw.size && i - g <= 1) out.add(map[i])
         }
         out.remove(0)
         return out

@@ -2,6 +2,7 @@ package org.futo.inputmethod.latin.uix.settings.pages
 
 import org.futo.inputmethod.latin.uix.VOICE_INPUT_ENGINE
 import org.futo.inputmethod.latin.uix.MOONSHINE_MODEL_ID
+import org.futo.inputmethod.latin.uix.TRANSCRIBE_MODEL_ID
 import org.futo.inputmethod.latin.uix.PUNCTUATION_RESTORATION_ENABLED
 import org.futo.inputmethod.latin.uix.PUNCTUATION_MODEL_ID
 import org.futo.inputmethod.latin.uix.CONTEXT_MODEL_ENABLED
@@ -618,12 +619,13 @@ val LanguageSettingsLite = UserSettingsMenu(
 @Preview(showBackground = true)
 @Composable
 fun LanguagesScreen(navController: NavHostController = rememberNavController()) {
-    // Pluto: the punctuation row's explanation while Whisper is the voice model
+    // Pluto: the punctuation row's explanation while the voice model punctuates by itself
     val punctuationDialogFor = remember { mutableStateOf<java.util.Locale?>(null) }
     punctuationDialogFor.value?.let { dialogLocale ->
         PunctuationIsForMoonshineDialog(
             onDismiss = { punctuationDialogFor.value = null },
-            onOpenAnyway = { navController.navigate(Route.PunctuationModel(dialogLocale.toLanguageTag())) }
+            onOpenAnyway = { navController.navigate(Route.PunctuationModel(dialogLocale.toLanguageTag())) },
+            locale = dialogLocale,
         )
     }
     val context = LocalContext.current
@@ -715,21 +717,23 @@ fun LanguagesScreen(navController: NavHostController = rememberNavController()) 
 
             val name = Subtypes.getName(subtypes.first())
 
-            // Pluto: the punctuation model is only for Moonshine (Whisper punctuates itself)
-            val punctuationUnused = !usesMoonshine(locale)
+            // Pluto: the punctuation model is only for voice models that don't punctuate well
+            // themselves (Moonshine), not Whisper, Nemotron or Parakeet
+            val punctuationUnused = currentVoiceModel(locale).profile.punctuatesItself
 
             // Pluto: the names below read settings directly, which give their defaults until the
             // settings finish loading after the app starts. Reading them here as live values redraws
             // the card once they're loaded (and whenever a model or choice changes).
             useDataStoreValue(VOICE_INPUT_ENGINE)
             useDataStoreValue(MOONSHINE_MODEL_ID)
+            useDataStoreValue(TRANSCRIBE_MODEL_ID)
             useDataStoreValue(PUNCTUATION_RESTORATION_ENABLED)
             useDataStoreValue(PUNCTUATION_MODEL_ID)
             useDataStoreValue(CONTEXT_MODEL_ENABLED)
             useDataStoreValue(CONTEXT_MODEL_ID)
             ModelPackages.changes.collectAsState().value
 
-            // Whisper model, or the selected Moonshine model for English when Moonshine is in use
+            // Whisper model, or the selected Moonshine / Nemotron / Parakeet model when one is in use
             val voiceInputModelName = voiceInputModelDisplayName(context, locale)
             val punctuationModelName = punctuationModelDisplayName(context, locale)
             val contextModelName = contextModelDisplayName(context, locale)

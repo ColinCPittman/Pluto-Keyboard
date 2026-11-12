@@ -19,6 +19,7 @@ private fun usage(): Nothing {
                      [--accel cpu|xnnpack|nnapi] [--threads N] [--no-silero] [--realtime]
                      [--split pause|reference] [--split-overlap-ms N]
           package <zip> <models-root>     import a model package zip (detect, validate, extract, list)
+          bench | punct ...               spoken bench (run without arguments for usage)
 
         WAV input must be 16 kHz mono 16-bit PCM.
         """.trimIndent()
@@ -187,6 +188,8 @@ fun main(args: Array<String>) {
     when (args[0]) {
         "transcribe" -> transcribe(args.drop(1))
         "package" -> packageTest(args.drop(1))
+        "bench" -> bench(args.drop(1))
+        "punct" -> punct(args.drop(1))
         else -> usage()
     }
 }

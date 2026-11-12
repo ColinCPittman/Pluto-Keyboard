@@ -68,11 +68,11 @@
     <!-- Voice Input → Set up voice typing -->
     <string name="pluto_voice_setup_title">Set up voice typing</string>
     <string name="pluto_voice_setup_subtitle">Get the voice typing model, plus optional punctuation and Smart corrections</string>
-    <string name="pluto_voice_setup_intro">These models are English only for now, because Moonshine only understands English. Pluto has no internet access, so it can\'t download models by itself. Tap Download to get a file in your browser, then come back here, tap Import and choose the file you downloaded.</string>
-    <string name="pluto_voice_setup_step_voice_title">1. Voice typing (Moonshine Small, English, 124 MB)</string>
-    <string name="pluto_voice_setup_step_voice_body">Recommended. Turns your speech into text as you talk. Other sizes are on the voice model page (Languages &amp; Models → English → Voice Input Model).</string>
+    <string name="pluto_voice_setup_intro">These models are English only for now. Pluto has no internet access, so it can\'t download models by itself. Tap Download to get a file in your browser, then come back here, tap Import and choose the file you downloaded.</string>
+    <string name="pluto_voice_setup_step_voice_title">1. Voice typing (pick one, English)</string>
+    <string name="pluto_voice_setup_step_voice_body">Turns your speech into text on your phone. You can import more than one and switch between them on the voice model page (Languages &amp; Models → English → Voice Input Model).</string>
     <string name="pluto_voice_setup_step_punctuation_title">2. Punctuation (optional, 67 MB)</string>
-    <string name="pluto_voice_setup_step_punctuation_body">Moonshine puts a period at almost every pause. This model replaces its punctuation with real sentences, commas and capital letters after you stop speaking.</string>
+    <string name="pluto_voice_setup_step_punctuation_body">Moonshine puts a period at almost every pause, and Nemotron and Parakeet often leave the period off the end and miss question marks. This model replaces their punctuation with real sentences, commas and capital letters after you stop speaking.</string>
     <string name="pluto_voice_setup_step_context_title">3. Smart corrections (optional, 470 MB, English)</string>
     <string name="pluto_voice_setup_step_context_body">Reads each finished dictation with a small language model and fixes what only the whole sentence can tell, like misheard words (“bulls” → “bowls”, “their” → “there”) and names and words from your personal dictionary. You can also turn on numbers as digits, voice commands like “new paragraph”, filler word removal, self-correction fixes, quotation marks and emoji by name. It never rephrases what you said and adds up to about two seconds after you stop speaking.</string>
     <string name="pluto_voice_setup_other_sizes">See other sizes</string>
@@ -102,16 +102,21 @@
     <string name="typing_smart_corrections">Smart corrections for typing</string>
     <string name="typing_smart_corrections_nav_subtitle">Catches typos that slip past autocorrect, using the words around them.</string>
     <string name="typing_smart_corrections_enable">Use Smart corrections for typing</string>
-    <string name="typing_smart_corrections_subtitle">Rereads each sentence you finish and fixes the typos that slipped through, using the words around them. Choose which kinds below. Tap the undo button above the keyboard to change a fix back. Undoing teaches it to be more careful there, and fixing a miss yourself builds its confidence. English only.</string>
+    <string name="typing_smart_corrections_subtitle">Rereads each sentence you finish (and any you go back and change, dictate or paste) and fixes the typos that slipped through, using the words around them. Choose which kinds below. Tap the undo button above the keyboard to change a fix back. Undoing teaches it to be more careful there, and fixing a miss yourself builds its confidence. English only.</string>
     <string name="typing_fix_real_words">Fix typos that are real words</string>
     <string name="typing_fix_real_words_subtitle">Catches slips that spell another word, like “salt an pepper” or “an email form my boss”, once the rest of the sentence makes it clear. Uses the typing corrections list.</string>
     <string name="typing_fix_missed_typos">Attempt to fix missed typos</string>
-    <string name="typing_fix_missed_typos_subtitle">When a misspelled word slips through, say because it was the middle suggestion so the space bar kept it, this works out the word you meant from the letters you typed and the sentence around them, like “ststy the game” → “start the game”. It only steps in when one word is the clear answer. Your own words, names and abbreviations are left alone.</string>
-    <string name="typing_smart_corrections_tags">typo real word fix sentence context autocorrect smart corrections</string>
+    <string name="typing_fix_missed_typos_subtitle">When a misspelled word slips through, say because it was the middle suggestion so the space bar kept it, this works out the word you meant from the letters you typed and the sentence around them, like “ststy the game” → “start the game”. It only steps in when one word is the clear answer. Your own words, names and abbreviations are left alone. It also fixes a missed or extra space or apostrophe, like “upto” → “up to” or “thats” → “that’s”.</string>
+    <string name="typing_fix_missing_words">Fix missing and extra words</string>
+    <string name="typing_fix_missing_words_subtitle">Catches the slips of going back to change a message, like a small word left out (“a cup coffee” → “a cup of coffee”), a word typed twice (“to to”), a word left over from what you had before, or two words the wrong way round.</string>
+    <string name="typing_fix_word_endings">Fix word endings</string>
+    <string name="typing_fix_word_endings_subtitle">Catches a word whose ending doesn\'t fit the words around it, often left behind when you change part of a sentence, like “a long lists” → “a long list” or “you friends” → “your friends”.</string>
+    <string name="typing_smart_corrections_tags">typo real word fix sentence context autocorrect smart corrections missing extra doubled word ending</string>
     <string name="typing_fix_revert_description">Changed to <xliff:g name="new" example="and">%1$s</xliff:g>. Tap to change back to <xliff:g name="old" example="an">%2$s</xliff:g>.</string>
     <string name="typing_fix_more_description">Review all <xliff:g name="count" example="3">%1$d</xliff:g> fixes</string>
     <string name="typing_fix_stale_description">%1$s to %2$s (the text there changed, so it can\'t be undone here).</string>
     <string name="typing_fix_list_title">Typing fixes</string>
+    <string name="typing_fix_undo_failed">Couldn\'t change this fix back here. The text around it may have changed.</string>
     <string name="typing_fix_chip_on_right">Typing fix buttons on the right</string>
     <string name="typing_fix_chip_on_right_subtitle">The undo button for a typing fix, and the close button of the fix list, sit on the right near your thumb. Turn off to put them on the left.</string>
     <string name="typing_pairs_title">Typing corrections list</string>

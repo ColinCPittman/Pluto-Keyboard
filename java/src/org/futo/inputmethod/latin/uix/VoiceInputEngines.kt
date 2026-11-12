@@ -5,6 +5,7 @@ import android.util.Log
 import kotlinx.coroutines.CancellationException
 import org.futo.voiceinput.shared.context.PersonalDictionary
 import org.futo.voiceinput.shared.engine.RecognitionEngineConfiguration
+import org.futo.voiceinput.shared.engine.SmartFeaturePolicy
 import org.futo.voiceinput.shared.engine.TranscriptPostProcessor
 import org.futo.voiceinput.shared.modelpackage.InstalledModelPackage
 import org.futo.voiceinput.shared.modelpackage.ModelPackageKinds
@@ -14,6 +15,7 @@ import org.futo.voiceinput.shared.moonshine.core.MoonshineModelFiles
 import org.futo.voiceinput.shared.moonshine.core.MoonshineStreamingTranscriber
 import org.futo.voiceinput.shared.moonshine.core.OrtAccelerator
 import org.futo.voiceinput.shared.moonshine.core.OrtRuntimeOptions
+import org.futo.voiceinput.shared.transcribe.TranscribeModelFiles
 import java.util.Locale
 
 /** Chooses the speech recognition engine for built-in voice input from the user's settings. */
@@ -31,12 +33,36 @@ object VoiceInputEngines {
     fun accelerator(context: Context): OrtAccelerator =
         OrtAccelerator.entries.firstOrNull { it.name == context.getSetting(MOONSHINE_ACCELERATOR) } ?: OrtAccelerator.CPU
 
+    fun installedTranscribeModels(context: Context): List<InstalledModelPackage> =
+        ModelPackages.list(context, ModelPackageKinds.TRANSCRIBE)
+
+    /** The selected transcribe.cpp package (Nemotron, Parakeet), falling back to the first installed one. */
+    fun selectedTranscribeModel(context: Context): InstalledModelPackage? {
+        val installed = installedTranscribeModels(context)
+        val id = context.getSetting(TRANSCRIBE_MODEL_ID)
+        return installed.firstOrNull { it.id == id } ?: installed.firstOrNull()
+    }
+
     /**
-     * Returns the engine to use for [locale]. Moonshine is English-only, so any
-     * other language (or a missing/broken Moonshine package) uses whisper.
+     * Whether the transcribe.cpp package [pkg] handles [locale]: its manifest's `language` is that
+     * language, "multi" (Nemotron 3.5) or missing.
+     */
+    fun transcribeSupports(pkg: InstalledModelPackage, locale: Locale): Boolean {
+        val language = pkg.manifest.language
+        return language.isNullOrEmpty() || language == "multi" || language == locale.language
+    }
+
+    /**
+     * Returns the engine to use for [locale]: the selected engine if its model handles the language
+     * and is installed and intact, else whisper (Moonshine is English-only, and transcribe.cpp
+     * models are English or multilingual per package).
      */
     fun resolve(context: Context, locale: Locale): RecognitionEngineConfiguration {
-        if (context.getSetting(VOICE_INPUT_ENGINE) != VOICE_ENGINE_MOONSHINE) return RecognitionEngineConfiguration.Whisper
+        when (context.getSetting(VOICE_INPUT_ENGINE)) {
+            VOICE_ENGINE_TRANSCRIBE -> return resolveTranscribe(context, locale) ?: RecognitionEngineConfiguration.Whisper
+            VOICE_ENGINE_MOONSHINE -> {}
+            else -> return RecognitionEngineConfiguration.Whisper
+        }
         if (locale.language != "en") return RecognitionEngineConfiguration.Whisper
 
         val model = selectedMoonshineModel(context) ?: return RecognitionEngineConfiguration.Whisper
@@ -56,13 +82,28 @@ object VoiceInputEngines {
         )
     }
 
+    private fun resolveTranscribe(context: Context, locale: Locale): RecognitionEngineConfiguration.Transcribe? {
+        val pkg = selectedTranscribeModel(context) ?: return null
+        if (!transcribeSupports(pkg, locale)) return null
+        val file = TranscribeModelFiles.modelFile(pkg.dir) ?: return null
+        return RecognitionEngineConfiguration.Transcribe(
+            modelFile = file,
+            modelName = pkg.name,
+            language = locale.language,
+            profile = TranscribeModelFiles.profile(pkg.manifest),
+        )
+    }
+
     /** Choices for [MOONSHINE_REFRESH_MS] and [MOONSHINE_AUTO_STOP_MS] (Voice Input -> Advanced options). */
     val REFRESH_CHOICES_MS = listOf(250, 500, 1000)
     val AUTO_STOP_CHOICES_MS = listOf(1000, 1500, 2000, 3000, 5000)
 
-    /** How long a silence ends a dictation on [engine], and only Moonshine has the setting. */
+    /**
+     * How long a silence ends a dictation on [engine]. The setting (under Moonshine's advanced
+     * options) applies to every engine that types while you talk.
+     */
     fun autoStopSilenceMs(context: Context, engine: RecognitionEngineConfiguration): Int =
-        if (engine is RecognitionEngineConfiguration.MoonshineStreaming) {
+        if (engine !is RecognitionEngineConfiguration.Whisper) {
             context.getSetting(MOONSHINE_AUTO_STOP_MS).coerceIn(500, 10000)
         } else {
             RecordingSettings.DEFAULT_AUTO_STOP_SILENCE_MS
@@ -87,7 +128,9 @@ object VoiceInputEngines {
      * transcript is never lost. [onStageDone] receives each stage's name and duration (for the
      * timing info). [personal] holds the user's personal words, for the context stage's names option. [leftContext] is
      * the text in the field before the dictation (read when the context stage runs), which the context stage reads but never edits.
-     * Whisper punctuates its own output, so the punctuation stage only runs after Moonshine.
+     * Which stages, and which Smart corrections, run depends on what the engine's model does well
+     * itself ([RecognitionEngineConfiguration.profile], [SmartFeaturePolicy]), so a model that
+     * punctuates well (Whisper, Nemotron) gets no punctuation stage.
      */
     fun postProcessorFor(
         context: Context,
@@ -97,11 +140,11 @@ object VoiceInputEngines {
         leftContext: () -> String = { "" },
         onStageDone: (name: String, millis: Long) -> Unit = { _, _ -> }
     ): TranscriptPostProcessor {
+        val punctuation = PunctuationModels.processorFor(context, locale, engine.profile)
         val stages = listOfNotNull(
-            PunctuationModels.processorFor(context, locale)
-                ?.takeIf { engine !is RecognitionEngineConfiguration.Whisper }
-                ?.let { Stage(STAGE_PUNCTUATION, it) },
-            ContextModels.processorFor(context, locale, personal, leftContext)?.let { Stage(STAGE_CONTEXT, it, originalSegments = true) },
+            punctuation?.let { Stage(STAGE_PUNCTUATION, it) },
+            ContextModels.processorFor(context, locale, engine.profile, punctuationRan = punctuation != null, personal, leftContext)
+                ?.let { Stage(STAGE_CONTEXT, it, originalSegments = true) },
         )
         // a private tuning hook (DictationRecorder does nothing in public builds)
         if (DictationRecorder.isEnabled(context)) {
@@ -116,6 +159,18 @@ object VoiceInputEngines {
         }
         if (stages.isEmpty()) return TranscriptPostProcessor.Identity
         return chain(stages, onStageDone)
+    }
+
+    /**
+     * Voice input [session] just opened: pauses typing checks until it closes
+     * ([ContextModels.voiceClosed]) and starts loading the models of the stages [postProcessorFor]
+     * will run for [engine].
+     */
+    fun preloadStages(context: Context, engine: RecognitionEngineConfiguration, locale: Locale, session: Any) {
+        ContextModels.voiceOpened(session)
+        PunctuationModels.preload(context, locale, engine.profile)
+        val punctuationRuns = PunctuationModels.processorFor(context, locale, engine.profile) != null
+        ContextModels.preload(context, locale, engine.profile, punctuationRuns)
     }
 
     const val STAGE_PUNCTUATION = "punctuation"

@@ -10,6 +10,7 @@ import kotlinx.serialization.json.put
 import org.futo.voiceinput.shared.context.ContextModelFiles
 import org.futo.voiceinput.shared.moonshine.core.MoonshineModelFiles
 import org.futo.voiceinput.shared.punctuation.PunctuationRestorers
+import org.futo.voiceinput.shared.transcribe.TranscribeModelFiles
 import java.io.BufferedInputStream
 import java.io.File
 import java.io.IOException
@@ -32,7 +33,8 @@ import java.util.zip.ZipInputStream
  *     "engine": "onnxruntime",                      // optional, engine-specific
  *     "license": "MIT",                             // optional
  *     "source": "https://...",                      // optional
- *     "version": "..."                              // optional
+ *     "version": "...",                             // optional
+ *     "capabilities": {"punctuation": "good"}       // optional, speech models (engine.VoiceModelProfile)
  *   }
  *
  * plus the model files (flat or in sub-directories). Packages are extracted to
@@ -45,8 +47,10 @@ object ModelPackageKinds {
     const val PUNCTUATION = "punctuation"
     /** LM that fixes misheard sound-alike words and question marks (see context.ContextModelFiles). */
     const val CONTEXT = "context"
+    /** A GGUF speech model for transcribe.cpp, such as NVIDIA Nemotron or Parakeet (see transcribe.TranscribeModelFiles). */
+    const val TRANSCRIBE = "transcribe"
 
-    val ALL = setOf(MOONSHINE_STREAMING, PUNCTUATION, CONTEXT)
+    val ALL = setOf(MOONSHINE_STREAMING, PUNCTUATION, CONTEXT, TRANSCRIBE)
 }
 
 class ModelPackageException(message: String, cause: Throwable? = null) : IOException(message, cause)
@@ -60,7 +64,9 @@ data class ModelPackageManifest(
     val engine: String? = null,
     val license: String? = null,
     val source: String? = null,
-    val version: String? = null
+    val version: String? = null,
+    /** Speech models only: what the model does well itself (see engine.VoiceModelProfile.withOverrides). */
+    val capabilities: JsonObject? = null
 ) {
     fun toJson(): String = buildJsonObject {
         put("format", format)
@@ -72,6 +78,7 @@ data class ModelPackageManifest(
         license?.let { put("license", it) }
         source?.let { put("source", it) }
         version?.let { put("version", it) }
+        capabilities?.let { put("capabilities", it) }
     }.toString()
 
     companion object {
@@ -106,7 +113,8 @@ data class ModelPackageManifest(
                 engine = str("engine"),
                 license = str("license"),
                 source = str("source"),
-                version = str("version")
+                version = str("version"),
+                capabilities = obj["capabilities"] as? JsonObject
             )
         }
     }
@@ -246,6 +254,7 @@ class ModelPackageStore(val root: File) {
             ModelPackageKinds.MOONSHINE_STREAMING -> MoonshineModelFiles.validateDirectory(dir)
             ModelPackageKinds.PUNCTUATION -> PunctuationRestorers.validate(manifest.engine, dir)
             ModelPackageKinds.CONTEXT -> ContextModelFiles.validate(manifest.engine, dir)
+            ModelPackageKinds.TRANSCRIBE -> TranscribeModelFiles.validate(dir)
             else -> listOf("unsupported kind '${manifest.kind}'")
         }
 

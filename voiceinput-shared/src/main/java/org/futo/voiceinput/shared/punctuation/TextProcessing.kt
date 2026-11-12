@@ -132,6 +132,7 @@ internal object TextProcessing {
     ): String {
         val sb = StringBuilder()
         var sentenceStart = true
+        val salutation = isSalutation(words, boundary)
         for (i in words.indices) {
             val w = words[i]
             var text = cased[i]
@@ -144,6 +145,8 @@ internal object TextProcessing {
                 if (mark != "?" && mark != "!") mark = "."
             }
             if (last && mark != "." && mark != "?" && mark != "!") { mark = "."; isBoundary = true }
+            // a dictation that is only a letter's opening line ("Dear team", "Hi Sarah") ends with a comma
+            if (last && salutation && mark == ".") { mark = ","; isBoundary = false }
             // The ASR heard the audio, so its "?" / "!" reflect intonation, which a text-only punctuation model
             // can't know ("...at the clubhouse, right? And bowls..."). Keep them as sentence ends.
             // ... except a "?" on a lone connective ("with his condition, | And? | Gets a little impatient"), because
@@ -160,6 +163,22 @@ internal object TextProcessing {
         }
         return sb.toString()
     }
+
+    /**
+     * Whether [words] are only a greeting that opens a message: up to four words starting with "hi",
+     * "hello", "hey", "dear" or "good morning/afternoon/evening", with no sentence end inside and no
+     * "?" or "!" the speech model heard.
+     */
+    private fun isSalutation(words: List<AsrWord>, boundary: BooleanArray): Boolean {
+        if (words.isEmpty() || words.size > 4) return false
+        if (words.any { it.asrTerminal == '?' || it.asrTerminal == '!' }) return false
+        if ((0 until words.size - 1).any { boundary[it] }) return false
+        val w = words.map { it.core.trimEnd { c -> c in CLOSERS || c == ',' || c == '.' }.lowercase(Locale.ROOT) }
+        return w[0] in GREETINGS || (w[0] == "good" && w.size > 1 && w[1] in DAY_PARTS)
+    }
+
+    private val GREETINGS = setOf("hi", "hello", "hey", "dear")
+    private val DAY_PARTS = setOf("morning", "afternoon", "evening")
 
     fun firstLetterIndex(s: String): Int {
         var i = 0

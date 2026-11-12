@@ -70,7 +70,10 @@ class VoiceCommandsTest {
     @Test
     fun builtInSelfCorrectionsIncludeOrWait() {
         val text = "He comes from the same town, or wait, city as me."
-        assertEquals(1, SpokenEdits.selfCorrectionGroups(SpokenEdits.Words(text), emptySet()).size)
+        val groups = SpokenEdits.selfCorrectionGroups(SpokenEdits.Words(text), emptySet())
+        assertEquals(1, groups.size)
+        val out = groups[0].alternatives.map { text.substring(0, it.start) + it.replacement + text.substring(it.end) }
+        assertTrue(out.toString(), "He comes from the same city as me." in out)
     }
 
     @Test
@@ -221,7 +224,11 @@ class VoiceCommandsTest {
     @Test
     fun numberAndSpeechOnlyPhrases() {
         fun corrections(s: String) = SpokenEdits.selfCorrectionGroups(SpokenEdits.Words(s), emptySet())
-        assertEquals(1, corrections("Book a table for four, make it five.").size)
+        val book = "Book a table for four, make it five."
+        assertEquals(
+            listOf("Book a table for five."),
+            corrections(book).flatMap { g -> g.alternatives.map { book.substring(0, it.start) + it.replacement + book.substring(it.end) } }
+        )
         assertTrue(corrections("Hurry up, make it quick.").isEmpty())
         fun quotes(s: String) = SpokenEdits.quoteGroups(SpokenEdits.Words(s))
         assertEquals(1, quotes("She texted me, are you coming tonight?").size)

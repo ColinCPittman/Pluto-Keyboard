@@ -86,7 +86,7 @@ Use `--models tiny,small,medium` to pick some, and `--cache DIR` for the downloa
 python tools/package-punctuation-models.py --reduce --out ./packages
 ```
 
-This writes `pluto-punctuation-en.zip` (pcs_en, engine `pcs`), the one on the release page, and `pluto-punctuation-multilingual.zip` (Horizon-Labs small, engine `horizon`), which isn't released because punctuation only runs after Moonshine, and Moonshine is English only. `--reduce` shrinks the ONNX files by storing weights as fp16. It needs `pip install onnx numpy`, and `--python` lets you pick the interpreter that has them. Use `--only pcs` or `--only horizon` to build one. `--work DIR` is the download cache.
+This writes `pluto-punctuation-en.zip` (pcs_en, engine `pcs`), the one on the release page, and `pluto-punctuation-multilingual.zip` (Horizon-Labs small, engine `horizon`), which isn't released because punctuation only runs after Moonshine, Nemotron and Parakeet, and Pluto uses them for English only. `--reduce` shrinks the ONNX files by storing weights as fp16. It needs `pip install onnx numpy`, and `--python` lets you pick the interpreter that has them. Use `--only pcs` or `--only horizon` to build one. `--work DIR` is the download cache.
 
 ### Smart corrections (context model)
 

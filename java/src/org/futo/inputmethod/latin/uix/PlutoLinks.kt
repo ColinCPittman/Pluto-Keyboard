@@ -13,6 +13,9 @@ object PlutoLinks {
     const val MODELS_PAGE = "https://github.com/ColinCPittman/Pluto-Keyboard/releases/tag/models"
     private const val RELEASE_DOWNLOAD = "https://github.com/ColinCPittman/Pluto-Keyboard/releases/download/models/"
     const val MODEL_VOICE_MOONSHINE_SMALL_EN = RELEASE_DOWNLOAD + "pluto-voice-moonshine-small-en.zip"
+    // (built by tools/package-transcribe-models.py)
+    const val MODEL_VOICE_PARAKEET_EN = RELEASE_DOWNLOAD + "pluto-voice-parakeet-110m-en.zip"
+    const val MODEL_VOICE_NEMOTRON_EN = RELEASE_DOWNLOAD + "pluto-voice-nemotron-en.zip"
     const val MODEL_PUNCTUATION_EN = RELEASE_DOWNLOAD + "pluto-punctuation-en.zip"
     const val MODEL_SMART_CORRECTIONS_EN = RELEASE_DOWNLOAD + "pluto-smart-corrections-en.zip"
 

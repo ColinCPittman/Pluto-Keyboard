@@ -4,12 +4,12 @@
     <string name="voice_input_settings_punctuation">Fix punctuation</string>
     <string name="voice_input_settings_punctuation_subtitle">After you stop speaking, replaces Moonshine\'s punctuation (a period at every pause) with proper sentences, commas and capitals. Your words stay as they are.</string>
     <string name="voice_input_settings_punctuation_no_model">Needs a punctuation model. Add one in Languages &amp; Models → Punctuation Model.</string>
-    <string name="punctuation_whisper_dialog_title">Punctuation is for Moonshine</string>
-    <string name="punctuation_whisper_dialog_text">Whisper adds its own punctuation, so the punctuation model isn\'t used while Whisper is your voice model. (Whisper is also the only voice model for languages other than English.) Switch your voice model to Moonshine to use it.</string>
+    <string name="punctuation_whisper_dialog_title">Your voice model punctuates</string>
+    <string name="punctuation_whisper_dialog_text">%1$s adds its own punctuation and capitals, so the punctuation model isn\'t used with it. The punctuation model is for Moonshine, Nemotron and Parakeet (English only), whose own punctuation needs fixing. Switch your voice model to one of them to use it.</string>
     <string name="punctuation_whisper_dialog_choose">Choose voice model</string>
     <string name="punctuation_whisper_dialog_open">Open anyway</string>
     <string name="punctuation_whisper_dialog_close">Close</string>
-    <string name="voice_input_settings_punctuation_whisper">Skipped while Whisper is your voice model, since Whisper adds its own punctuation. This is for Moonshine.</string>
+    <string name="voice_input_settings_punctuation_whisper">Not needed: %1$s, your voice model, adds its own punctuation and capitals. This is for Moonshine, Nemotron and Parakeet.</string>
 
     <!-- Voice Input page: context pass (the model is chosen in Languages & Models) -->
     <string name="voice_input_settings_context">Smart corrections</string>
@@ -23,8 +23,12 @@
     <!-- Smart corrections page (Voice Input → Smart corrections): the switch, then what the context pass may change -->
     <string name="smart_corrections_title">Smart corrections</string>
     <string name="smart_corrections_row_description">Fixes misheard words using the whole sentence.</string>
-    <string name="smart_corrections_row_description_whisper">Little benefit with Whisper (your current voice model). It\'s meant for Moonshine.</string>
-    <string name="smart_corrections_whisper_note">Whisper is your current voice model. It already reads your whole dictation for context, so Smart corrections will change little and add a short wait after you stop speaking. Smart corrections are meant for Moonshine.</string>
+    <string name="smart_corrections_row_description_whisper">Little benefit with Whisper (your current voice model). It\'s meant for the other voice models.</string>
+    <string name="smart_corrections_whisper_note">Whisper is your current voice model. It already reads your whole dictation for context, so Smart corrections will change little and add a short wait after you stop speaking. Smart corrections are meant for the other voice models.</string>
+    <string name="smart_corrections_row_description_accurate">Names, numbers, voice commands and the other changes you switch on.</string>
+    <string name="smart_corrections_accurate_model_note">%1$s, your voice model, punctuates, adds capitals and doesn\'t mix up words that sound alike, so Smart corrections only spells names your way and makes the changes switched on below.</string>
+    <string name="smart_corrections_accurate_model_casing_note">%1$s, your voice model, punctuates and doesn\'t mix up words that sound alike, so Smart corrections only fixes capitals for names and months, spells names your way and makes the changes switched on below.</string>
+    <string name="smart_corrections_punctuating_model_note">%1$s, your voice model, adds its own punctuation, so Smart corrections leaves it alone and makes only the changes switched on below.</string>
     <string name="smart_corrections_enable">Use Smart corrections</string>
     <string name="smart_corrections_intro">Choose what Smart corrections may change.</string>
     <string name="smart_corrections_needs_main_switch">Turn on Smart corrections to use this.</string>
@@ -38,6 +42,7 @@
     <string name="smart_corrections_sensitivity_subtitle">How readily each correction changes what you said.</string>
     <string name="smart_corrections_sensitivity_intro">Each correction only changes your words when the sentence clearly reads better. Slide left if one changes words it should leave alone, or right if it misses changes you want.</string>
     <string name="smart_corrections_questions">Question marks</string>
+    <string name="smart_corrections_questions_not_needed">Not needed: %1$s, your voice model, adds its own question marks.</string>
     <string name="smart_corrections_sensitivity_fewest">Fewest</string>
     <string name="smart_corrections_sensitivity_fewer">Fewer</string>
     <string name="smart_corrections_sensitivity_default">Default</string>
@@ -86,6 +91,8 @@
     <string name="quote_triggers_builtin">Built-in phrases</string>
     <string name="quote_triggers_builtin_subtitle">%d built-in phrases. Turn this off and only the ones you add start a quote.</string>
     <string name="smart_corrections_fillers">Filler words</string>
+    <string name="smart_corrections_sound_alike_not_needed">Not needed: %1$s, your voice model, doesn\'t mix up words that sound alike (like “bulls” for “bowls”), which is what this fixes, so it would only add a wait.</string>
+    <string name="smart_corrections_fillers_not_needed">Not needed: %1$s, your voice model, already leaves out “um”, “uh” and repeated words, and keeps the “like” and “basically” you meant.</string>
     <string name="smart_corrections_fillers_subtitle">Removes “um”, “uh”, a “like” or “basically” between pauses, and words you said twice by accident. Fillers inside a quote are kept.</string>
     <string name="smart_corrections_commands">Voice commands</string>
     <string name="smart_corrections_commands_subtitle">Say “new line”, “comma” or “scratch that” to format as you speak, with a short pause before or after. When the words are part of your sentence, like “a new line formed”, they stay as words.</string>
@@ -175,10 +182,16 @@
     <string name="voice_input_advanced_subtitle">Live text, auto-stop and speed settings for live voice typing</string>
 
     <!-- Advanced options page (technical names may appear in parentheses here) -->
-    <string name="voice_input_advanced_section_live">Live voice typing (Moonshine)</string>
+    <string name="voice_input_advanced_section_live">Live voice typing</string>
     <string name="voice_input_advanced_section_speed">Speed</string>
-    <string name="voice_input_advanced_needs_moonshine">These settings only apply when a Moonshine model is your English voice input model (Languages &amp; Models).</string>
+    <string name="voice_input_advanced_needs_moonshine">Live text and its refresh rate are settings of Moonshine. Stop after silence applies to every voice model except Whisper.</string>
     <string name="voice_input_settings_moonshine_live_text">Show words while speaking</string>
+    <string name="voice_input_settings_live_text_always">Always on: %1$s shows your words as you talk.</string>
+    <string name="voice_input_settings_live_text_never">Not available: %1$s types your words when you finish speaking.</string>
+    <string name="voice_input_settings_only_moonshine_refresh">Only for Moonshine. %1$s updates the words by itself.</string>
+    <string name="voice_input_settings_auto_stop_whisper">Whisper always stops after 2 seconds of silence.</string>
+    <string name="voice_input_settings_only_moonshine_accelerator">Only for Moonshine. %1$s picks the fastest way by itself.</string>
+    <string name="voice_input_settings_only_moonshine_threads">Only for Moonshine. %1$s uses your phone\'s fast cores by itself.</string>
     <string name="voice_input_settings_moonshine_live_text_subtitle">Words appear as you speak. Turn this off and each phrase appears when you pause, which uses less battery but takes a moment longer when you finish.</string>
     <string name="voice_input_settings_moonshine_refresh">Live text refresh</string>
     <string name="voice_input_settings_moonshine_refresh_subtitle">How often the words on screen catch up with your speech. Faster feels more live but uses more battery.</string>
@@ -199,7 +212,7 @@
     <string name="voice_input_settings_moonshine_threads_subtitle">How many processor cores live voice typing uses. Auto picks your phone\'s fast cores (more isn\'t always faster).</string>
     <string name="voice_input_settings_moonshine_threads_auto">Auto (%1$d)</string>
     <string name="voice_input_settings_show_timing">Show timing info</string>
-    <string name="voice_input_settings_show_timing_subtitle">After live voice typing, shows how long you spoke and how long it took to process.</string>
+    <string name="voice_input_settings_show_timing_subtitle">After voice typing, shows how long you spoke and how long it took to process.</string>
     <string name="voice_input_settings_last_timing">Last run: %1$s</string>
 
     <!-- Languages & Models: voice input model picker -->
@@ -209,10 +222,12 @@
     <string name="voice_models_whisper_title">Whisper: %1$s</string>
     <string name="voice_models_whisper_subtitle">Types your words after you finish speaking. Works in many languages.</string>
     <string name="voice_models_moonshine_subtitle">Live, so words appear as you speak, with no time limit. English only. %1$s</string>
-    <string name="voice_models_moonshine_none_installed">For live voice typing in English, import a Moonshine model package (.zip).</string>
+    <string name="voice_models_transcribe_streaming_subtitle">Live, so words appear as you speak, with no time limit. %1$s</string>
+    <string name="voice_models_transcribe_subtitle">Types your words after you finish speaking, with no time limit. %1$s</string>
+    <string name="voice_models_moonshine_none_installed">For voice typing in English with no time limit, import a Nemotron, Parakeet or Moonshine model package (.zip). Nemotron and Moonshine show words as you speak.</string>
     <string name="voice_models_import">Import voice model</string>
-    <string name="voice_models_import_subtitle">A Whisper model file (.bin)</string>
-    <string name="voice_models_import_subtitle_en">A Whisper model file (.bin) or a Moonshine model package (.zip)</string>
+    <string name="voice_models_import_subtitle">A Whisper model file (.bin) or a multilingual Nemotron model package (.zip)</string>
+    <string name="voice_models_import_subtitle_en">A Whisper model file (.bin), or a Nemotron, Parakeet or Moonshine model package (.zip)</string>
     <string name="voice_models_remove_imported_whisper">Remove imported Whisper model</string>
     <string name="voice_models_delete">Delete %1$s</string>
     <string name="voice_models_delete_confirm">Delete %1$s? You\'ll need to import it again to use it.</string>
@@ -222,7 +237,7 @@
     <!-- Languages & Models: punctuation model picker -->
     <string name="punctuation_models_row_title">Punctuation Model</string>
     <string name="punctuation_models_title">Punctuation model (%1$s)</string>
-    <string name="punctuation_models_explanation">After you stop speaking, the punctuation model takes out Moonshine\'s punctuation and punctuates what you said again, with real sentences, commas and capital letters. Moonshine\'s question marks and exclamation marks are kept, because it heard your tone of voice. Your words stay as they are. The model you choose is used for every language it supports.</string>
+    <string name="punctuation_models_explanation">After you stop speaking, the punctuation model takes out the voice model\'s periods and commas and punctuates what you said again, with real sentences, commas and capital letters. The voice model\'s question marks and exclamation marks are kept, because it heard your tone of voice. Your words stay as they are. The model you choose is used for every language it supports.</string>
     <string name="punctuation_models_none">None</string>
     <string name="punctuation_models_none_subtitle">Keep punctuation as the voice model wrote it</string>
     <string name="punctuation_models_pcs_subtitle">Periods, commas, question marks, capital letters and sentence breaks. %1$s</string>
@@ -251,6 +266,7 @@
     <string name="resource_importer_model_package_license">License: %1$s</string>
     <string name="resource_importer_model_package_source">Source: %1$s</string>
     <string name="resource_importer_model_package_kind_moonshine">Live voice typing (Moonshine)</string>
+    <string name="resource_importer_model_package_kind_transcribe">Voice typing model (Nemotron / Parakeet)</string>
     <string name="resource_importer_model_package_kind_punctuation">Punctuation fixing</string>
     <string name="resource_importer_model_package_kind_context">Smart corrections</string>
     <string name="resource_importer_model_package_importing">Importing… %1$s</string>

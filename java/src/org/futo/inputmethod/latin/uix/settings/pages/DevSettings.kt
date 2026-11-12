@@ -92,8 +92,6 @@ import kotlin.system.exitProcess
 
 val IS_DEVELOPER = SettingsKey(booleanPreferencesKey("isDeveloperMode"), false)
 
-/** Pluto: log what the typing heatmap and adaptive swipe learn (words included), for tuning. Needs developer mode. */
-
 @OptIn(DebugOnly::class)
 @Composable
 fun DevKeyboardScreen(navController: NavHostController = rememberNavController()) {

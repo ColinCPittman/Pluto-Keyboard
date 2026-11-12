@@ -479,6 +479,7 @@ fun<T: Number> SettingSliderForDataStoreItem(
     power: Float = 1.0f,
     subtitle: String? = null,
     steps: Int = 0,
+    disabled: Boolean = false,
 ) {
     val context = LocalContext.current
 
@@ -505,14 +506,21 @@ fun<T: Number> SettingSliderForDataStoreItem(
     LaunchedEffect(isTextFieldVisible) {
         if(isTextFieldVisible) focusRequester.requestFocus()
     }
+    LaunchedEffect(disabled) {
+        if(disabled) isTextFieldVisible = false
+    }
 
+    // greyed like a disabled SettingItem's text; the Slider greys itself
+    val textAlpha = if (disabled) 0.5f else 1.0f
     Column {
-        ScreenTitle(title, showBack = false)
-        if(subtitle != null) {
-            Text(subtitle, style = Typography.Body.MediumMl, modifier = Modifier.padding(12.dp, 0.dp))
+        Column(modifier = Modifier.alpha(textAlpha)) {
+            ScreenTitle(title, showBack = false)
+            if(subtitle != null) {
+                Text(subtitle, style = Typography.Body.MediumMl, modifier = Modifier.padding(12.dp, 0.dp))
+            }
         }
         Row(modifier = Modifier.padding(16.dp, 0.dp)) {
-            if (isTextFieldVisible) {
+            if (isTextFieldVisible && !disabled) {
                 val apply = {
                     if(isTextFieldVisible) {
                         val number = textFieldValue.text.trim().toFloatOrNull()
@@ -557,7 +565,8 @@ fun<T: Number> SettingSliderForDataStoreItem(
                     modifier = Modifier
                         .weight(0.33f)
                         .align(Alignment.CenterVertically)
-                        .clickable {
+                        .alpha(textAlpha)
+                        .clickable(enabled = !disabled) {
                             hasTextFieldFocusedYet = false
                             isTextFieldVisible = true
                         },
@@ -570,7 +579,7 @@ fun<T: Number> SettingSliderForDataStoreItem(
                     virtualValue = it
                     setValue(transform(it.pow(power))) },
                 valueRange = range.start.pow(1.0f / power) .. range.endInclusive.pow(1.0f / power),
-                enabled = !isTextFieldVisible,
+                enabled = !isTextFieldVisible && !disabled,
                 modifier = Modifier.weight(1.0f),
                 steps = steps
             )
@@ -590,7 +599,8 @@ fun<T: Number> SettingSlider(
     hardRange: ClosedFloatingPointRange<Float> = range,
     power: Float = 1.0f,
     subtitle: String? = null,
-    steps: Int = 0
+    steps: Int = 0,
+    disabled: Boolean = false,
 ) {
     SettingSliderForDataStoreItem(
         title = title,
@@ -602,7 +612,8 @@ fun<T: Number> SettingSlider(
         hardRange = hardRange,
         power = power,
         subtitle = subtitle,
-        steps = steps
+        steps = steps,
+        disabled = disabled,
     )
 }
 

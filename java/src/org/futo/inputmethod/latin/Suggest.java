@@ -504,7 +504,8 @@ public final class Suggest {
                 && TextUtils.equals(suggestionsContainer.get(0).mWord,
                    wordComposer.getRejectedBatchModeSuggestion())) {
             final SuggestedWordInfo rejected = suggestionsContainer.remove(0);
-            Log.i(TAG, "Swipe: Swapping top candidate [ " + rejected.mWord + " ] as it was previously rejected by user");
+            // Pluto: the word is left out, so nothing the user swiped goes to the system log
+            Log.i(TAG, "Swipe: Swapping top candidate as it was previously rejected by user");
             suggestionsContainer.add(1, rejected);
         }
         SuggestedWordInfo.removeDups(null /* typedWord */, suggestionsContainer);

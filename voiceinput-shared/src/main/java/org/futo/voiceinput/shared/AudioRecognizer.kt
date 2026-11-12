@@ -41,7 +41,9 @@ import org.futo.voiceinput.shared.types.Language
 import org.futo.voiceinput.shared.types.MagnitudeState
 import org.futo.voiceinput.shared.types.ModelInferenceCallback
 import org.futo.voiceinput.shared.types.ModelLoader
+import org.futo.voiceinput.shared.engine.StreamingRecognitionSession
 import org.futo.voiceinput.shared.moonshine.MoonshineStreamingSession
+import org.futo.voiceinput.shared.transcribe.TranscribeSession
 import org.futo.voiceinput.shared.ui.MicrophoneDeviceState
 import org.futo.voiceinput.shared.whisper.DecodingConfiguration
 import org.futo.voiceinput.shared.whisper.ModelManager
@@ -113,7 +115,7 @@ class ModelDoesNotExistException(val models: List<ModelLoader>) : Throwable()
 class AudioRecognizer(
     private val context: Context,
     private val lifecycleScope: LifecycleCoroutineScope,
-    modelManager: ModelManager,
+    private val modelManager: ModelManager,
     private val listener: AudioRecognizerListener,
     private val settings: AudioRecognizerSettings
 ) {
@@ -127,10 +129,10 @@ class AudioRecognizer(
 
     private val modelRunner = MultiModelRunner(modelManager)
 
-    private val moonshineManager = modelManager.moonshine
-    private val moonshineConfig = settings.engine as? RecognitionEngineConfiguration.MoonshineStreaming
-    private val isStreamingEngine = moonshineConfig != null
-    @Volatile private var moonshineSession: MoonshineStreamingSession? = null
+    // Moonshine and transcribe.cpp take the audio while recording (a session per dictation), and
+    // whisper gets the whole recording at the end
+    private val isStreamingEngine = settings.engine !is RecognitionEngineConfiguration.Whisper
+    @Volatile private var streamingSession: StreamingRecognitionSession? = null
 
     private val canExpandSpace = settings.recordingConfiguration.canExpandSpace
     private val useVAD = settings.recordingConfiguration.useVADAutoStop
@@ -233,7 +235,7 @@ class AudioRecognizer(
 
     @Throws(ModelDoesNotExistException::class)
     private fun verifyModelsExist() {
-        // Moonshine model packages are validated when loading (errors are shown in the UI).
+        // Moonshine and transcribe.cpp model packages are validated when loading (errors are shown in the UI).
         if (isStreamingEngine) return
 
         val modelsThatDoNotExist = mutableListOf<ModelLoader>()
@@ -270,8 +272,8 @@ class AudioRecognizer(
 
         modelRunner.cancelAll()
 
-        moonshineSession?.cancel()
-        moonshineSession = null
+        streamingSession?.cancel()
+        streamingSession = null
 
         unfocusAudio()
 
@@ -339,13 +341,18 @@ class AudioRecognizer(
     }
 
     private suspend fun preloadModels() {
-        if (moonshineConfig != null) {
-            val session = MoonshineStreamingSession(moonshineManager, moonshineConfig) { partial ->
-                withContext(Dispatchers.Main) {
-                    if (moonshineSession != null) runnerCallback.partialResult(partial)
-                }
+        val onPartial: suspend (String) -> Unit = { partial ->
+            withContext(Dispatchers.Main) {
+                if (streamingSession != null) runnerCallback.partialResult(partial)
             }
-            moonshineSession = session
+        }
+        val session = when (val engine = settings.engine) {
+            is RecognitionEngineConfiguration.MoonshineStreaming -> MoonshineStreamingSession(modelManager.moonshine, engine, onPartial)
+            is RecognitionEngineConfiguration.Transcribe -> TranscribeSession(modelManager.transcribe, engine, onPartial)
+            RecognitionEngineConfiguration.Whisper -> null
+        }
+        if (session != null) {
+            streamingSession = session
             session.start(lifecycleScope)
         } else {
             modelRunner.preload(settings.modelRunConfiguration)
@@ -393,7 +400,7 @@ class AudioRecognizer(
             recordedSamples = samplesRecorded
             val chunk = FloatArray(n) { samples[it].toFloat() / Short.MAX_VALUE.toFloat() }
             if (isStreamingEngine) {
-                moonshineSession?.addAudio(chunk)
+                streamingSession?.addAudio(chunk)
                 true
             } else if (floatSamples.remaining() < n && !expandSpaceIfAllowed()) {
                 false
@@ -668,9 +675,9 @@ class AudioRecognizer(
         deliverResult(text, listOf(text))
     }
 
-    /** Finalizes the Moonshine stream (flushing the remaining audio) and delivers its transcript. */
+    /** Finalizes the streaming session (flushing the remaining audio) and delivers its transcript. */
     private suspend fun runStreamingFinish() {
-        val session = moonshineSession ?: return
+        val session = streamingSession ?: return
         val result = try {
             session.finish()
         } catch (e: Throwable) {
@@ -682,7 +689,7 @@ class AudioRecognizer(
             }
             return
         } ?: return
-        moonshineSession = null
+        streamingSession = null
 
         withContext(Dispatchers.Main) {
             listener.recognitionStats(result.stats)
@@ -702,8 +709,12 @@ class AudioRecognizer(
                 listener.decodingStatus(InferenceState.PostProcessing)
             }
             try {
+                val start = System.nanoTime()
                 withContext(Dispatchers.Default) {
                     settings.postProcessor.process(rawText, segments)
+                }.also { processed ->
+                    // lengths and times only: what was dictated never goes to the system log
+                    Log.i("AudioRecognizer", "Post-processing ${rawText.length} chars in ${(System.nanoTime() - start) / 1_000_000} ms")
                 }
             } catch (e: Exception) {
                 if (e is CancellationException) throw e

@@ -25,7 +25,9 @@ import org.futo.inputmethod.latin.uix.LocalNavController
 import org.futo.inputmethod.latin.uix.TYPING_FIX_CHIP_ON_RIGHT
 import org.futo.inputmethod.latin.uix.SettingsKey
 import org.futo.inputmethod.latin.uix.TYPING_FIX_MISSED_TYPOS
+import org.futo.inputmethod.latin.uix.TYPING_FIX_MISSING_WORDS
 import org.futo.inputmethod.latin.uix.TYPING_FIX_REAL_WORDS
+import org.futo.inputmethod.latin.uix.TYPING_FIX_WORD_ENDINGS
 import org.futo.inputmethod.latin.uix.TYPING_SMART_CORRECTIONS
 import org.futo.inputmethod.latin.uix.TYPING_SMART_CORRECTIONS_SENSITIVITY
 import org.futo.inputmethod.latin.uix.settings.SettingItem
@@ -103,6 +105,8 @@ val TypingSmartCorrectionsMenu = UserSettingsMenu(
         },
         typingFixKind(R.string.typing_fix_real_words, R.string.typing_fix_real_words_subtitle, TYPING_FIX_REAL_WORDS),
         typingFixKind(R.string.typing_fix_missed_typos, R.string.typing_fix_missed_typos_subtitle, TYPING_FIX_MISSED_TYPOS),
+        typingFixKind(R.string.typing_fix_missing_words, R.string.typing_fix_missing_words_subtitle, TYPING_FIX_MISSING_WORDS),
+        typingFixKind(R.string.typing_fix_word_endings, R.string.typing_fix_word_endings_subtitle, TYPING_FIX_WORD_ENDINGS),
         UserSetting(name = R.string.typing_fix_chip_on_right, subtitle = R.string.typing_fix_chip_on_right_subtitle) {
             SettingToggleDataStore(
                 title = stringResource(R.string.typing_fix_chip_on_right),
