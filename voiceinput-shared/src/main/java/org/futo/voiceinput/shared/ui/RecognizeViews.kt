@@ -192,6 +192,7 @@ fun InnerRecognize(
             MagnitudeState.NOT_TALKED_YET -> stringResource(R.string.try_saying_something)
             MagnitudeState.MIC_MAY_BE_BLOCKED -> stringResource(R.string.no_audio_detected_is_your_microphone_blocked)
             MagnitudeState.TALKING -> stringResource(R.string.listening)
+            MagnitudeState.MIC_IN_USE_ELSEWHERE -> stringResource(R.string.mic_in_use_by_another_app)
         }
 
         Text(

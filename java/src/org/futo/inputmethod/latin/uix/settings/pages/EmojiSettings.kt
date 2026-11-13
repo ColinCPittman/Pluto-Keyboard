@@ -70,6 +70,9 @@ import org.futo.voiceinput.shared.context.VoiceCommands
 /** How many search results are shown at once. */
 private const val MAX_RESULTS = 50
 
+/** Saved changes longer than this (an old list held every official name) are read off the main thread. */
+private const val QUICK_PARSE_CHARS = 4_000
+
 /** Add / edit dialog for one of your emoji names. [original] is null (or has only the emoji) when [adding]. */
 @Composable
 private fun EmojiNameDialog(
@@ -255,9 +258,25 @@ private val EmojiNameList = UserSetting(name = R.string.emoji_names_header, appe
 private fun EmojiNameListContent(index: EmojiNameIndex) {
     val (stored, setStored) = useDataStore(SMART_CORRECTIONS_EMOJI_LIST)
     val (builtIn, setBuiltIn) = useDataStore(SMART_CORRECTIONS_EMOJI_BUILT_IN)
-    // your changes (your own names, and built-in names you switched off, kept with the built-in names off),
-    // a short list, read right away so a change always starts from the saved one
-    val entries = remember(stored) { EmojiNames.parse(stored, index) }
+    // your changes (your own names, and built-in names you switched off, kept with the built-in names off).
+    // A short list is read right away so a change always starts from the saved one, and a long one
+    // (thousands of lines, which froze the page for seconds) off the main thread
+    val quick = stored.length <= QUICK_PARSE_CHARS
+    val quickEntries = remember(stored) { if (quick) EmojiNames.parse(stored, index) else null }
+    val slowEntries by produceState<List<EmojiNickname>?>(null, stored) {
+        if (quick) return@produceState
+        value = withContext(Dispatchers.Default) {
+            val start = System.nanoTime()
+            EmojiNames.parse(stored, index).also {
+                // counts only, never the names
+                android.util.Log.i("EmojiSettings", "${it.size} saved emoji name changes read in ${(System.nanoTime() - start) / 1_000_000} ms")
+            }
+        }
+    }
+    val entries = quickEntries ?: slowEntries ?: run {
+        LoadingLine()
+        return
+    }
     // the map copies the ~9,000 built-in names, so it is made off the main thread
     val names by produceState<Map<List<String>, String>>(emptyMap(), entries, builtIn) {
         value = withContext(Dispatchers.Default) { EmojiNames.nameMap(index, entries, builtIn) }
@@ -352,7 +371,8 @@ private fun EmojiNameListContent(index: EmojiNameIndex) {
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 8.dp)
             )
-            entries.forEachIndexed { i, e ->
+            // (only the first ones, since every row is drawn at once on this page)
+            entries.take(MAX_RESULTS).forEachIndexed { i, e ->
                 SettingItem(
                     title = e.phrase,
                     icon = { Text(e.emoji, fontSize = 24.sp) },
@@ -367,6 +387,7 @@ private fun EmojiNameListContent(index: EmojiNameIndex) {
                     )
                 }
             }
+            if (entries.size > MAX_RESULTS) Tip(stringResource(R.string.emoji_names_more_changes, MAX_RESULTS, entries.size))
         } else {
             // what saying it gives, so you know before you try
             when {

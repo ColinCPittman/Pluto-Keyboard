@@ -45,6 +45,16 @@ val AUDIO_FOCUS = SettingsKey(
     default = true
 )
 
+/**
+ * Pluto: voice input records privately (Android 11 and up), so while it records no other app can
+ * listen to the microphone. Off for anyone who needs another app (a screen or call recorder) to
+ * keep hearing the microphone while they dictate.
+ */
+val PRIVATE_MIC = SettingsKey(
+    key = booleanPreferencesKey("private_mic"),
+    default = true
+)
+
 val USE_VAD_AUTOSTOP = SettingsKey(
     key = booleanPreferencesKey("use_vad_autostop"),
     default = true

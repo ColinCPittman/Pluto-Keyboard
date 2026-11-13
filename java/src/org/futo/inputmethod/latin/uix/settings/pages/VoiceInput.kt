@@ -19,6 +19,7 @@ import androidx.core.content.getSystemService
 import org.futo.inputmethod.latin.R
 import org.futo.inputmethod.latin.uix.ANIMATE_BUBBLE
 import org.futo.inputmethod.latin.uix.AUDIO_FOCUS
+import org.futo.inputmethod.latin.uix.PRIVATE_MIC
 import org.futo.inputmethod.latin.uix.CAN_EXPAND_SPACE
 import org.futo.inputmethod.latin.uix.ContextModels
 import org.futo.inputmethod.latin.uix.PunctuationModels
@@ -199,6 +200,15 @@ val VoiceInputMenu = UserSettingsMenu(
             subtitle = R.string.voice_input_settings_audio_focus_subtitle,
             setting = AUDIO_FOCUS
         ).copy(visibilityCheck = visibilityCheckNotSystemVoiceInput),
+
+        // (Android 10 and older can't record privately)
+        userSettingToggleDataStore(
+            title = R.string.voice_input_settings_private_mic,
+            subtitle = R.string.voice_input_settings_private_mic_subtitle,
+            setting = PRIVATE_MIC
+        ).copy(visibilityCheck = @Composable {
+            android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R && visibilityCheckNotSystemVoiceInput()
+        }),
 
         whisperOnly(
             R.string.voice_input_settings_suppress_symbols, null, DISALLOW_SYMBOLS,

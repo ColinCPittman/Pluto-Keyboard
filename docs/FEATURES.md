@@ -47,6 +47,8 @@ Voice input happens in a few short steps. Only the first one is required, and ea
 
 Tap the microphone to start. Tap again to finish, or tap **Cancel** to throw the dictation away without typing anything.
 
+While you dictate, no other app can listen to the microphone (Android 11 and up). It goes back to normal the moment you stop. If you use a screen recorder or call recorder that needs to keep hearing you while you dictate, turn off **Keep the microphone to yourself** on the Voice Input page. If Android gives the microphone to another app instead, the voice window says so rather than listening to silence. This happens in the Gemini app while "Hey Google" is on, because its listener keeps the microphone there. To use voice typing inside Gemini, switch off "Hey Google" in the Google app.
+
 You can also hold the microphone button in the suggestion bar and talk, then let go to finish (like a walkie-talkie). It starts listening the moment you touch it (a quick tap still opens the voice window). The voice window stays closed, a soft bubble grows out from the button over the keyboard as you talk, and a small spinner shows on the button while the text is being finished. If you let go before it starts listening, nothing is typed.
 
 ### Live voice typing with Moonshine

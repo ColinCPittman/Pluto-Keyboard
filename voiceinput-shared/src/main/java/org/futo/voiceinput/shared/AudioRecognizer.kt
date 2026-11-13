@@ -93,7 +93,9 @@ data class RecordingSettings(
     val canExpandSpace: Boolean,
     val useVADAutoStop: Boolean,
     /** With [useVADAutoStop], how long a silence after speech stops recording. */
-    val autoStopSilenceMs: Int = DEFAULT_AUTO_STOP_SILENCE_MS
+    val autoStopSilenceMs: Int = DEFAULT_AUTO_STOP_SILENCE_MS,
+    /** Record privately (Android 11 and up): no other app hears the microphone meanwhile, and none can take it away. */
+    val privateMic: Boolean = true,
 ) {
     companion object {
         const val DEFAULT_AUTO_STOP_SILENCE_MS = 2000
@@ -323,7 +325,27 @@ class AudioRecognizer(
 
     @Throws(SecurityException::class)
     private fun createAudioRecorder(): AudioRecord {
-        val recorder = AudioRecord(
+        val recorder = (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && settings.recordingConfiguration.privateMic) {
+            // A privacy-sensitive capture is one Android won't share, so nothing else can listen in
+            // while you dictate. (It doesn't beat an assistant app that is on screen: Android 13
+            // still silences the keyboard then, and [MagnitudeState.MIC_IN_USE_ELSEWHERE] says so.)
+            try {
+                AudioRecord.Builder()
+                    .setAudioSource(MediaRecorder.AudioSource.VOICE_RECOGNITION)
+                    .setAudioFormat(
+                        AudioFormat.Builder()
+                            .setSampleRate(16000)
+                            .setChannelMask(AudioFormat.CHANNEL_IN_MONO)
+                            .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
+                            .build()
+                    )
+                    .setBufferSizeInBytes(16000 * 2 * 5)
+                    .setPrivacySensitive(true)
+                    .build()
+            } catch (e: UnsupportedOperationException) {
+                null
+            }
+        } else null) ?: AudioRecord(
             MediaRecorder.AudioSource.VOICE_RECOGNITION,
             16000,
             AudioFormat.CHANNEL_IN_MONO,
@@ -383,6 +405,10 @@ class AudioRecognizer(
             false
         }
         var isMicBlocked = false
+        // Android gives the mic to one app at a time and silences the others (they read zeros), for
+        // example while the assistant's app is on top with its "Hey Google" listener on
+        var isSilenced = false
+        var silenceChecks = 0
 
         val vadSampleBuffer = ShortBuffer.allocate(480)
         var numConsecutiveNonSpeech = 0
@@ -484,6 +510,15 @@ class AudioRecognizer(
                 isMicBlocked = false
             }
 
+            // Whether Android is silencing this capture for another app (checked twice a second)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && silenceChecks++ % 5 == 0) {
+                isSilenced = try {
+                    recorder.activeRecordingConfiguration?.isClientSilenced == true
+                } catch (e: Exception) {
+                    false
+                }
+            }
+
             // Check if mic is blocked
             val blockCheckTimePassed = (recordedSoFar() > 2 * 16000) // two seconds
             if (!anyNoiseAtAll && canMicBeBlocked && blockCheckTimePassed) {
@@ -492,7 +527,9 @@ class AudioRecognizer(
 
             val magnitude = (1.0f - 0.1f.pow(24.0f * rms))
 
-            val state = if (hasTalked) {
+            val state = if (isSilenced) {
+                MagnitudeState.MIC_IN_USE_ELSEWHERE
+            } else if (hasTalked) {
                 MagnitudeState.TALKING
             } else if (isMicBlocked) {
                 MagnitudeState.MIC_MAY_BE_BLOCKED

@@ -54,6 +54,7 @@ class SettingsBackupRoundTripTest {
         TYPING_FIX_MISSED_TYPOS.key to false,
         TYPING_FIX_MISSING_WORDS.key to false,
         TYPING_FIX_WORD_ENDINGS.key to false,
+        PRIVATE_MIC.key to false,
     )
 
     private fun plutoPreferences(): Preferences = mutablePreferencesOf(*plutoSettings.toTypedArray())
@@ -97,6 +98,7 @@ class SettingsBackupRoundTripTest {
         assertEquals(false, restored[TYPING_FIX_MISSED_TYPOS.key])
         assertEquals(false, restored[TYPING_FIX_MISSING_WORDS.key])
         assertEquals(false, restored[TYPING_FIX_WORD_ENDINGS.key])
+        assertEquals(false, restored[PRIVATE_MIC.key])
     }
 
     @Test

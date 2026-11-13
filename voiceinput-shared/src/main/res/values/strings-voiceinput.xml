@@ -8,6 +8,7 @@
 
     <!-- Appears when voice input is recording and no sound has been detected in a while, this is typically caused by disabling the microphone in Android quick settings -->
     <string name="no_audio_detected_is_your_microphone_blocked">No audio detected, is your microphone blocked?</string>
+    <string name="mic_in_use_by_another_app">Another app is using the microphone, so nothing is heard</string>
 
     <!-- Appears when voice input is recording and speech is being actively detected. Must be fairly short. -->
     <string name="listening">Listening…</string>

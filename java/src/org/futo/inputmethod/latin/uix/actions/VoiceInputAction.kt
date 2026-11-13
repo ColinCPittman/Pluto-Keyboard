@@ -37,6 +37,7 @@ import kotlinx.coroutines.yield
 import org.futo.inputmethod.latin.R
 import org.futo.inputmethod.latin.uix.ANIMATE_BUBBLE
 import org.futo.inputmethod.latin.uix.AUDIO_FOCUS
+import org.futo.inputmethod.latin.uix.PRIVATE_MIC
 import org.futo.inputmethod.latin.uix.Action
 import org.futo.inputmethod.latin.uix.ActionWindow
 import org.futo.inputmethod.latin.uix.CAN_EXPAND_SPACE
@@ -283,7 +284,8 @@ internal class VoiceInputActionWindow(
                 requestAudioFocus = requestAudioFocus,
                 canExpandSpace = canExpandSpace,
                 useVADAutoStop = useVAD,
-                autoStopSilenceMs = VoiceInputEngines.autoStopSilenceMs(context, engine)
+                autoStopSilenceMs = VoiceInputEngines.autoStopSilenceMs(context, engine),
+                privateMic = context.getSetting(PRIVATE_MIC),
             ),
             engine = engine,
             postProcessor = postProcessor

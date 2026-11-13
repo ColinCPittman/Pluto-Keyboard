@@ -7,7 +7,6 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.dialog
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
@@ -155,7 +154,7 @@ value class NavGraphBuilderWrapper(val parent: NavGraphBuilder)
 internal inline fun <reified T : Any> NavGraphBuilderWrapper.dialog(noinline content: @Composable (T) -> Unit) =
     parent.dialog<T> { content(it.toRoute()) }
 internal inline fun <reified T : Any> NavGraphBuilderWrapper.composable(noinline content: @Composable (T) -> Unit) =
-    parent.composable<T> { content(it.toRoute()) }
+    parent.settingsPage<T> { content(it.toRoute()) }
 
 
 @Composable
@@ -178,7 +177,7 @@ fun SettingsNavigator(
                 composable<Route.PunctuationModel> { PunctuationModelScreen(nav, it.lang.toLocale()) }
                 composable<Route.ContextModel> { ContextModelScreen(nav, it.lang.toLocale()) }
 
-                parent.composable<Route.PersonalDictList> {
+                parent.settingsPage<Route.PersonalDictList> {
                     val route = it.toRoute<Route.PersonalDictList>()
                     PersonalDictionaryLanguageListForLocale(nav, it, route.lang?.toLocale())
                 }
@@ -195,39 +194,39 @@ fun SettingsNavigator(
                 dialog<Route.Error> { ErrorDialog(it.title, it.body, nav) }
                 dialog<Route.Info> { InfoDialog(it.title, it.body, nav) }
             }
-            composable("home") { HomeScreen(navController) }
-            composable("search") { SearchScreen(navController) }
-            composable("languages") { LanguagesScreen(navController) }
-            composable("addLanguage") { SelectLanguageScreen(navController) }
-            composable("pdict") {
+            settingsPage("home") { HomeScreen(navController) }
+            settingsPage("search") { SearchScreen(navController) }
+            settingsPage("languages") { LanguagesScreen(navController) }
+            settingsPage("addLanguage") { SelectLanguageScreen(navController) }
+            settingsPage("pdict") {
                 PersonalDictionaryLanguageList()
             }
-            composable("advancedparams") { AdvancedParametersScreen(navController) }
-            composable("actionEdit") { ActionEditorScreen(navController) }
+            settingsPage("advancedparams") { AdvancedParametersScreen(navController) }
+            settingsPage("actionEdit") { ActionEditorScreen(navController) }
             SettingsMenus.forEach { menu ->
-                if(menu.registerNavPath) composable(menu.navPath) { UserSettingsMenuScreen(menu) }
+                if(menu.registerNavPath) settingsPage(menu.navPath) { UserSettingsMenuScreen(menu) }
             }
-            composable("keyboardAndTyping") { KeyboardAndTypingScreen(navController) }
-            composable("resize") { ResizeScreen(navController) }
-            composable("themes") { ThemeScreen(navController) }
-            composable("developer") { DeveloperScreen(navController) }
-            composable("devtextedit") { DevEditTextVariationsScreen(navController) }
-            composable("devbuggytextedit") { BuggyTextEditVariations(navController) }
-            composable("devlayouts") { DevLayoutList(navController) }
-            composable("devlayouteditor") { DevLayoutEditor(navController) }
-            composable("devtheme") { DevThemeImportScreen(navController) }
-            composable("dynamicpalette") { DevPaletteScreen(navController) }
-            composable("devkeyboard") { DevKeyboardScreen(navController) }
-            composable("blacklist") { BlacklistScreen(navController) }
-            composable("typingHeatmap") { TypingHeatmapScreen(navController) }
-            composable(CopyLearnedWordsRoute) { CopyLearnedWordsScreen(navController) }
-            composable(HiddenLearnedWordsRoute) { HiddenLearnedWordsScreen(navController) }
-            composable(VoiceSetupGuideRoute) { VoiceSetupGuideScreen(navController) }
-            composable("payment") { PaymentScreen(navController) { navController.navigateUp() } }
-            composable("paid") { PaymentThankYouScreen { navController.navigateUp() } }
-            composable("credits") { CreditsScreen(navController) }
-            composable("exportingcfg") { ExportingMenu(navController) }
-            composable("kasroz") { KASROZMenu() }
+            settingsPage("keyboardAndTyping") { KeyboardAndTypingScreen(navController) }
+            settingsPage("resize") { ResizeScreen(navController) }
+            settingsPage("themes") { ThemeScreen(navController) }
+            settingsPage("developer") { DeveloperScreen(navController) }
+            settingsPage("devtextedit") { DevEditTextVariationsScreen(navController) }
+            settingsPage("devbuggytextedit") { BuggyTextEditVariations(navController) }
+            settingsPage("devlayouts") { DevLayoutList(navController) }
+            settingsPage("devlayouteditor") { DevLayoutEditor(navController) }
+            settingsPage("devtheme") { DevThemeImportScreen(navController) }
+            settingsPage("dynamicpalette") { DevPaletteScreen(navController) }
+            settingsPage("devkeyboard") { DevKeyboardScreen(navController) }
+            settingsPage("blacklist") { BlacklistScreen(navController) }
+            settingsPage("typingHeatmap") { TypingHeatmapScreen(navController) }
+            settingsPage(CopyLearnedWordsRoute) { CopyLearnedWordsScreen(navController) }
+            settingsPage(HiddenLearnedWordsRoute) { HiddenLearnedWordsScreen(navController) }
+            settingsPage(VoiceSetupGuideRoute) { VoiceSetupGuideScreen(navController) }
+            settingsPage("payment") { PaymentScreen(navController) { navController.navigateUp() } }
+            settingsPage("paid") { PaymentThankYouScreen { navController.navigateUp() } }
+            settingsPage("credits") { CreditsScreen(navController) }
+            settingsPage("exportingcfg") { ExportingMenu(navController) }
+            settingsPage("kasroz") { KASROZMenu() }
             dialog("update") {
                 UpdateDialog(navController = navController)
             }

@@ -165,4 +165,7 @@
     <string name="pluto_backup_restore_title">Backup and restore</string>
     <!-- the eye button on a typing fix, which selects the fixed word in the text for a moment -->
     <string name="typing_fix_show_description">Show where %1$s was changed to %2$s</string>
+    <!-- voice input: record so no other app can use the microphone meanwhile -->
+    <string name="voice_input_settings_private_mic">Keep the microphone to yourself</string>
+    <string name="voice_input_settings_private_mic_subtitle">While you dictate, no other app can listen to the microphone. Turn off if a screen recorder or call recorder needs to keep hearing you while you dictate.</string>
 </resources>

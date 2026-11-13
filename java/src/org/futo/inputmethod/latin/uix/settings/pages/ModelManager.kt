@@ -2,7 +2,7 @@ package org.futo.inputmethod.latin.uix.settings.pages
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.composable
+import org.futo.inputmethod.latin.uix.settings.settingsPage
 import androidx.navigation.compose.dialog
 import org.futo.inputmethod.latin.uix.settings.pages.modelmanager.FinetuneModelScreen
 import org.futo.inputmethod.latin.uix.settings.pages.modelmanager.ModelDeleteConfirmScreen
@@ -15,18 +15,18 @@ import java.io.File
 fun NavGraphBuilder.addModelManagerNavigation(
     navController: NavHostController
 ) {
-    composable("models") { ModelListScreen(navController) }
-    composable("finetune/{modelPath}") {
+    settingsPage("models") { ModelListScreen(navController) }
+    settingsPage("finetune/{modelPath}") {
         val path = it.arguments!!.getString("modelPath")!!.urlDecode()
         FinetuneModelScreen(
             File(path), navController
         )
 
     }
-    composable("finetune") {
+    settingsPage("finetune") {
         FinetuneModelScreen(file = null, navController = navController)
     }
-    composable("model/{modelPath}") {
+    settingsPage("model/{modelPath}") {
         val path = it.arguments!!.getString("modelPath")!!.urlDecode()
         ModelScreenNav(
             File(path), navController

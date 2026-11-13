@@ -68,6 +68,7 @@
     <string name="emoji_names_say">Say: %1$s</string>
     <string name="emoji_names_names_of">Names for %1$s</string>
     <string name="emoji_names_more">Showing the first %1$d. Type more to narrow it down.</string>
+    <string name="emoji_names_more_changes">Showing %1$d of your %2$d changes. Search above to find the others.</string>
     <string name="emoji_names_add">Add a name</string>
     <string name="emoji_names_edit">Edit name</string>
     <string name="emoji_names_name_label">What you say before “emoji”</string>

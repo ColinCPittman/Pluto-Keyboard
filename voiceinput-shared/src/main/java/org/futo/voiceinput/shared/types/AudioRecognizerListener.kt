@@ -4,7 +4,9 @@ import org.futo.voiceinput.shared.engine.RecognitionStats
 import org.futo.voiceinput.shared.ui.MicrophoneDeviceState
 
 enum class MagnitudeState {
-    NOT_TALKED_YET, MIC_MAY_BE_BLOCKED, TALKING
+    NOT_TALKED_YET, MIC_MAY_BE_BLOCKED, TALKING,
+    /** Android is giving the microphone to another app (like an assistant's "Hey Google"), so this one hears nothing. */
+    MIC_IN_USE_ELSEWHERE
 }
 
 interface AudioRecognizerListener {
